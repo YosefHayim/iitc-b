@@ -1,23 +1,33 @@
-# IITC Bootcamp - Automation Developer for Combat Soldiers
+# IITC Full Stack & Automation Developer Bootcamp
 
-Welcome to my IITC Bootcamp repository. This course is part of the “Combat Soldiers to High-Tech” program, focusing on Automation Development, with a strong emphasis on Python, JavaScript, and QA automation.
+Welcome to my IITC Bootcamp repository. This bootcamp is part of the “Combat Soldiers to High-Tech” program, focusing on Full Stack development and Automation. The program covers a wide range of technologies, including JavaScript, Node.js, React, Python, and QA automation, with hands-on projects to solidify learning.
 
 ## Course Overview
 
-- **Automation Development**: A comprehensive curriculum tailored to combat soldiers, focusing on developing automation frameworks and projects.
-- **Full Stack Development**: Learn the fundamentals of web development, including HTML, CSS, JavaScript, and Python.
-- **QA Automation**: Gaining practical experience in testing methodologies, manual testing, and automated testing frameworks.
-- **Collaboration with Hi-Tech Companies**: Hands-on workshops and final projects in collaboration with industry-leading companies.
+- **Full Stack Development**: Mastering frontend and backend development with technologies like HTML, CSS, JavaScript, Node.js, Express, React, and databases (SQL, MongoDB).
+- **Automation Development**: Building automation projects using JavaScript and Python.
+- **QA Automation**: Working with tools like Cypress, Jest, and Selenium to create automated tests for web applications.
+- **Advanced Web Technologies**: Gaining experience with state management (Redux, Context), advanced CSS (Flexbox, Grid, Tailwind CSS), and TypeScript for scalable applications.
 
 ## Contents
 
-1. **Basic Computer and Network Skills**: Introduction to computer basics, Linux, and networking.
-2. **Testing Methodologies and ISTQB**: Learning the foundations of testing, bug reporting, and preparing for the ISTQB certification.
-3. **Web and Mobile Testing**: Ensuring the quality of web and mobile applications.
-4. **Agile and Scrum**: Understanding Agile methodologies and Scrum frameworks.
-5. **Python Development**: Covering data types, variables, functions, classes, and modules like PyTest, Requests, and Pandas.
-6. **QA Automation Tools**: Working with Cypress.io, Jest, Selenium, Appium, JMeter, and more.
-7. **Database Management**: Gaining knowledge in SQL, MySQL, and MongoDB.
-8. **Automation Projects**: Building automation testing frameworks for real projects.
-9. **Final Project**: Developing an automation framework that incorporates the latest technologies, including AI integration.
-10. **Tools**: Utilizing Git, Visual Studio Code, Pycharm, Postman, Docker, Jenkins, and more.
+1. **JavaScript Basics**: Covering variables, functions, arrays, objects, and basic DOM manipulation.
+2. **Node.js and Express**: Building simple Full Stack projects, integrating SQL and MongoDB, and managing authentication.
+3. **Frontend Development**: HTML, CSS (including advanced topics like Grid and Flexbox), and Vanilla JavaScript projects.
+4. **React Development**: Building SPAs with React, working with state and props, data fetching, and using component libraries (MUI).
+5. **State Management**: Managing application state with Redux and Context API.
+6. **TypeScript**: Using TypeScript in React and Express for better code quality and scalability.
+7. **Testing Methodologies**: Manual and automated testing, using tools like Jira, Postman, Cypress, and Jest.
+8. **QA Automation**: Implementing automation projects with Python and JavaScript.
+9. **Automation Tools**: Working with Cypress, Selenium, and more.
+10. **Final Projects**: Developing Full Stack and automation projects incorporating all learned technologies.
+
+## Tools and Technologies
+
+- **Languages**: JavaScript, Python, TypeScript
+- **Frontend**: HTML, CSS, React, Tailwind CSS
+- **Backend**: Node.js, Express, SQL, MongoDB
+- **Testing**: Cypress, Jest, Selenium, Postman
+- **Automation**: Python, JavaScript
+- **Version Control**: Git, GitHub
+- **Others**: Docker, Jenkins, Jira

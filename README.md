@@ -2,6 +2,11 @@
 
 Welcome to my IITC Bootcamp repository. This bootcamp is part of the “Combat Soldiers to High-Tech” program, focusing on Full Stack development and Automation. The program covers a wide range of technologies, including JavaScript, Node.js, React, Python, and QA automation, with hands-on projects to solidify learning.
 
+## Projects
+
+The `Projects` folder contains all the projects completed during the IITC bootcamp. Each project represents practical applications of the technologies covered in the program, including Full Stack development and automation tasks.
+
+
 ## Course Overview
 
 - **Full Stack Development**: Mastering frontend and backend development with technologies like HTML, CSS, JavaScript, Node.js, Express, React, and databases (SQL, MongoDB).

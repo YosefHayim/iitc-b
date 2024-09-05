@@ -41,7 +41,7 @@ describe("post /api/products", () => {
    image: "https://i.pravatar.cc",
    category: "electronic",
   };
-  const response = await request(app).get(`/products`).send(product);
+  const response = await request(app).get(`POST /products`).send(product);
   expect(response.statusCode).toBe(200);
   expect(response.body).toBeDefined();
  });

@@ -1,5 +1,18 @@
-Key points of today:
-1 - In Postman, I can add a base URL which will act as the environment for that specific run, making the API calls more dynamic and easier to execute.
-2 - Postman allows to use dynamic global variables to make the tests more dynamic.
-3 - Postman is mostly used for QA Automations and manually QA.
-4 - Task assignment from the zoom class to do a QA test for more than few different methods and to record their results by request data, response, parameters, headers, etc...
+## Key Points of Today
+
+1. **Base URL in Postman**  
+   Postman allows setting a base URL as the environment for a run, making API calls dynamic and easier to manage.
+
+2. **Dynamic Global Variables**  
+   You can use dynamic global variables in Postman, enabling more flexible and dynamic tests.
+
+3. **Postman Usage**  
+   Postman is widely used for both QA automation and manual QA processes.
+
+4. **Task from Zoom Class**  
+   The task involves conducting QA tests on multiple methods and recording the following information:
+   - Request data
+   - Response details
+   - Parameters
+   - Headers  
+     etc.

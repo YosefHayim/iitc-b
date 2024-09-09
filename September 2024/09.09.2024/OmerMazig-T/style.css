@@ -1,17 +1,22 @@
+/* Resetting margin and padding for body and html */
 body,
 html {
   margin: 0;
   padding: 0;
 }
 
+/* Universal selector to apply common properties */
 * {
+  font-weight: normal;
   box-sizing: border-box;
 }
 
+/* Style for all h3 elements */
 h3 {
   color: red;
 }
 
+/* First div section styling */
 .firstdiv {
   background-color: yellow;
   border: 3px solid blue;
@@ -23,10 +28,20 @@ h3 {
   margin-right: 10px;
 }
 
+/* Style for the last sentence in the first div */
+.lastsentence {
+  color: white;
+  background-color: grey;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* Styling for the "exclude" class, applied on the black span */
 .exclude {
   color: black;
 }
 
+/* Second div section styling */
 .seconddiv {
   background-color: yellow;
   display: flex;
@@ -41,6 +56,7 @@ h3 {
   margin-right: 10px;
 }
 
+/* Circle styles */
 .redcircle {
   background-color: red;
   width: 100px;
@@ -65,15 +81,9 @@ h3 {
   margin-right: 10px;
 }
 
-.lastsentence {
-  background-color: grey;
-  color: white;
-  padding: 10px;
-  margin: 40px;
-  border-radius: 10px;
-}
-
+/* Third div section styling */
 .thirddiv {
+  position: relative; /* Ensures children are positioned relative to this div */
   border: 3px solid blue;
   margin: 0;
   padding: 10px;
@@ -81,5 +91,89 @@ h3 {
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  background-color: yellow;
+  background-color: yellow; /* This will be the background of the parent */
+  height: 300px; /* Set a fixed height for the container */
+}
+
+/* Sub-container with red background */
+.subthirddivv {
+  position: relative;
+  top: 25%;
+  width: 100%; /* full width of the parent */
+  height: 50%; /* Set a fixed height to ensure it's visible */
+  background-color: red; /* Red background for sub-container */
+  border: 3px solid black; /* Border for the sub-container */
+}
+
+/* Positioning the leftword at the top-left */
+.leftword {
+  position: absolute;
+  top: 0; /* Aligns it at the very top */
+  left: 0; /* Aligns it at the very left */
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding: 5px;
+  width: 40px;
+  margin: 0; /* Removes any default margins */
+}
+
+/* Positioning the rightword at the top-right */
+.rightword {
+  position: absolute;
+  top: 0; /* Aligns it at the very top */
+  right: 0; /* Aligns it at the very right */
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding: 5px;
+  width: 50px;
+  margin: 0; /* Removes any default margins */
+}
+
+/* Positioning the middleword at the center */
+.middleword {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centers it both horizontally and vertically */
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding: 5px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 15px white;
+}
+
+.explore {
+  text-align: center;
+  color: white;
+  font-weight: bold; /* Make font bold */
+  background-color: purple;
+  width: 100px; /* Reduce width by 2px */
+  height: 30px; /* Reduce height */
+  padding: 7px 0; /* Keep padding */
+  display: inline-block;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+  margin-left: 11px;
+  border-radius: 3px;
+}
+
+.join {
+  text-align: center;
+  color: white;
+  font-weight: bold; /* Make font bold */
+  background-color: purple;
+  width: 60px; /* Reduce width by 2px */
+  height: 25px; /* Reduce height */
+  padding: 3px 0; /* Keep padding */
+  border-radius: 20px;
+  display: inline-block;
+  font-family: sans-serif;
+  margin-bottom: 30px;
 }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omer T 11.09.2024</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 18px;
+      }
+      .header {
+        background-color: grey;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: row;
+        gap: 10px; /* Space between nav items */
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch;
+        padding: 20px;
+        flex-wrap: wrap; /* Enable wrapping if space is too small */
+      }
+      .flex-item {
+        background-color: red;
+        padding: 20px;
+        margin: 10px;
+        flex: 1; /* Each item takes equal space */
+      }
+      p {
+        font-size: 14px;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+
+    <div class="header">
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div class="navbar">
+        <h1>Home</h1>
+        <h1>About</h1>
+        <h1>Contact</h1>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-item pone">
+        <h1>header1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae itaque
+          nostrum voluptatem?
+        </p>
+      </div>
+      <div class="flex-item ptwo">
+        <h1>header2</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+          numquam.
+        </p>
+      </div>
+      <div class="flex-item pthree">
+        <h1>header2</h1>
+
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+  </body>
+</html>

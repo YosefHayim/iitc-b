@@ -1,13 +1,12 @@
 @font-face {
   font-family: "outfit";
-  src: url("/12.09.2024/Omer-T/assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+  src: url("assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
     format("truetype");
 }
 
 @font-face {
   font-family: "young-serif";
-  src: url("/12.09.2024/Omer-T/assets/fonts/young-serif/YoungSerif-Regular.ttf")
-    format("truetype");
+  src: url("assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
 }
 
 :root {
@@ -19,36 +18,33 @@
 }
 
 body {
-  position: absolute;
   background: hsla(14, 45%, 36%, 0.247);
   color: hsl(30, 10%, 34%);
   font-weight: 400;
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  font-family: "outfit";
+  font-size: 15px;
 }
 
-.secp h3 {
-  font-weight: 700;
-}
-
-img {
+article div img {
   width: 100%;
+  max-width: 100%;
   height: auto;
-  z-index: 9999;
 }
 
 article {
-  margin-top: 20px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   background: var(--bg-color-article);
-  position: relative;
-  max-width: 400px;
+  width: 350px;
   width: 100%;
-  left: 30%;
-  padding: 20px;
+}
+
+.data {
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  font-family: "outfit";
 }
 
 h1 {
@@ -64,9 +60,11 @@ h2 {
 }
 
 .bgprepration {
-  margin-top: 10px;
+  margin-top: 1.5rem;
+  max-width: 90%;
   background: hsla(324, 84%, 80%, 0.116);
   border-radius: 5px;
+  padding-bottom: 1.4rem;
 }
 
 .bgprepration h3 {
@@ -76,32 +74,52 @@ h2 {
 }
 
 .ulprepration li {
-  margin-bottom: 2%;
+  margin-bottom: 0.7rem;
 }
 
 .ulingredients {
   display: flex;
   flex-direction: column;
+  gap: 0.7rem;
+  padding-left: 1.5rem;
+  margin-left: -0.5rem;
+}
+
+.ulingredients li {
+  padding-left: 0.9rem;
+  list-style-type: square;
 }
 
 .ulingredients li::marker {
   color: brown;
+  font-size: 0.7rem;
 }
 
-.instructions {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
+.instructions,
 .ulinstructions {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.ulinstructions {
   left: -5%;
 }
 
+.ulinstructions li {
+  margin-bottom: 1rem;
+  padding-left: 0.6rem;
+}
+
 .ulinstructions li::marker {
+  font-family: "outfit";
+  font-size: 1rem;
+  font-weight: 450;
   color: brown;
+}
+
+.ulingredients li:last-child {
+  margin-top: 1.3rem;
 }
 
 .nutrition {
@@ -116,10 +134,11 @@ h2 {
 }
 
 .ulnutrtion li {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 2%;
-  max-width: 60%;
+  width: 63%;
+  gap: 45px;
 }
 
 span {
@@ -133,10 +152,22 @@ span {
 }
 
 hr {
-  position: relative;
   border: none;
   height: 0.2px;
   background-color: #e9e6e6;
-  margin: 20px 0;
-  max-width: 95%;
+  margin: 10px 0;
+}
+
+.ulnutrtion hr {
+  position: relative;
+  margin-left: -2.4rem;
+}
+
+@media (min-width: 968px) {
+  article {
+    width: 100%;
+  }
+  br {
+    display: none;
+  }
 }

@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "outfit";
+  src: url("/12.09.2024/Omer-T/assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "young-serif";
+  src: url("/12.09.2024/Omer-T/assets/fonts/young-serif/YoungSerif-Regular.ttf")
+    format("truetype");
+}
+
+:root {
+  --bg-color-article: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: absolute;
+  background: hsla(14, 45%, 36%, 0.247);
+  color: hsl(30, 10%, 34%);
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "outfit";
+}
+
+.secp h3 {
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  z-index: 9999;
+}
+
+article {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color-article);
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  left: 30%;
+  padding: 20px;
+}
+
+h1 {
+  font-family: "young-serif";
+  font-size: 1.92rem;
+  font-weight: 600;
+  color: black;
+}
+
+h2 {
+  font-family: "young-serif";
+  color: hsl(14, 45%, 36%);
+}
+
+.bgprepration {
+  margin-top: 10px;
+  background: hsla(324, 84%, 80%, 0.116);
+  border-radius: 5px;
+}
+
+.bgprepration h3 {
+  margin-left: 3%;
+  margin-bottom: -5px;
+  color: hsl(334, 40%, 47%);
+}
+
+.ulprepration li {
+  margin-bottom: 2%;
+}
+
+.ulingredients {
+  display: flex;
+  flex-direction: column;
+}
+
+.ulingredients li::marker {
+  color: brown;
+}
+
+.instructions {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.ulinstructions {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: -5%;
+}
+
+.ulinstructions li::marker {
+  color: brown;
+}
+
+.nutrition {
+  display: flex;
+  flex-direction: column;
+}
+
+.ulnutrtion {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.ulnutrtion li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+  max-width: 60%;
+}
+
+span {
+  font-weight: 600;
+  color: hsl(30, 10%, 34%);
+}
+
+.stats-nut {
+  font-weight: 600;
+  color: hsl(14, 45%, 36%);
+}
+
+hr {
+  position: relative;
+  border: none;
+  height: 0.2px;
+  background-color: #e9e6e6;
+  margin: 20px 0;
+  max-width: 95%;
+}

@@ -76,6 +76,9 @@ h2 {
 .ulprepration li {
   margin-bottom: 0.7rem;
 }
+ul li {
+  padding-left: 10px;
+}
 
 .ulingredients {
   display: flex;
@@ -93,6 +96,10 @@ h2 {
 .ulingredients li::marker {
   color: brown;
   font-size: 0.7rem;
+}
+
+body > article > article > div.thirdp > div > ul > li:nth-child(5) {
+  width: 75%;
 }
 
 .instructions,
@@ -116,10 +123,6 @@ h2 {
   font-size: 1rem;
   font-weight: 450;
   color: brown;
-}
-
-.ulingredients li:last-child {
-  margin-top: 1.3rem;
 }
 
 .nutrition {
@@ -163,11 +166,47 @@ hr {
   margin-left: -2.4rem;
 }
 
-@media (min-width: 968px) {
-  article {
-    width: 100%;
+@media (min-width: 1440px) {
+  html {
+    height: 100%;
+    background-color: hsla(14, 45%, 36%, 0.405);
+  }
+
+  body {
+    border-radius: 20px;
+    max-width: 80%;
+    margin: 50px auto 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: white;
   }
   br {
     display: none;
+  }
+  img {
+    margin-top: 50px;
+    border-radius: 20px;
+  }
+  h1 {
+    margin-top: 15px;
+    font-size: 4.6rem;
+    color: rgba(0, 0, 0, 0.757);
+  }
+  .firstp {
+    width: 110%;
+    margin-top: -55px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .bgprepration {
+    border-radius: 10px;
+  }
+
+  .bgprepration,
+  .thirdp,
+  .instructions,
+  .nutrtion {
+    font-size: 1.5rem;
+    max-width: 110%;
   }
 }

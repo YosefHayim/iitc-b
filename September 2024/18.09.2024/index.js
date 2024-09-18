@@ -80,6 +80,9 @@ function filterData() {
     }
   });
 }
+
+// Bonus Feature Edit Todos
+
 // Bonus Feature Persistence
 
 addTask();

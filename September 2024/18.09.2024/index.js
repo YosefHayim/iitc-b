@@ -48,7 +48,6 @@ function toggleData() {
   elUL.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
       event.target.classList.toggle("grayColorNlineStrike");
-      saveTasks();
     }
   });
 }
@@ -82,10 +81,17 @@ function filterData() {
 }
 
 // Bonus Feature Edit Todos
-
+function modiText() {
+  elUL.addEventListener("mouseup", (event) => {
+    if (event.target.tagName === "LI") {
+      event.target.contentEditable = true;
+      this.focus();
+    }
+  });
+}
 // Bonus Feature Persistence
-
 addTask();
 removeTask();
 toggleData();
 filterData();
+modiText();

@@ -1,111 +1,132 @@
-const addItemBtns = document.querySelectorAll(".add-item");
-const table = document.querySelector("table");
-let number = 4;
+// Select all the buttons with class "add-item"
+const addItemButtons = document.querySelectorAll(".add-item");
+// Select the table where inventory items will be listed
+const inventoryTable = document.querySelector("table");
+// Initialize a counter to generate unique row numbers for new items
+let rowCounter = 4;
 
-function addItemtoInventory() {
-  for (let i = 0; i < addItemBtns.length; i++) {
-    const elBtn = addItemBtns[i];
+// Function to handle adding new items to the inventory
+function addItemToInventory() {
+  // Loop through each "Add" button and add a click event listener
+  for (let i = 0; i < addItemButtons.length; i++) {
+    const button = addItemButtons[i];
 
-    elBtn.addEventListener("click", (event) => {
+    // Event listener for adding an item when "Add" button is clicked
+    button.addEventListener("click", (event) => {
       const clickedButton = event.target;
-      const parentLi = clickedButton.parentElement;
-      const name = parentLi.childNodes[0].textContent.trim();
-      const priceElement = parentLi.querySelector(".dollar-sign");
-      const price = parseFloat(
+      // Find the parent list item of the clicked button
+      const parentListItem = clickedButton.parentElement;
+      // Get the name of the item (first text node of the list item)
+      const itemName = parentListItem.childNodes[0].textContent.trim();
+      // Get the price element (span with class "dollar-sign")
+      const priceElement = parentListItem.querySelector(".dollar-sign");
+      // Extract the price from the price element and convert it to a number
+      const itemPrice = parseFloat(
         priceElement.parentElement.textContent.replace("$", "").trim()
       );
 
-      let itemExists = false;
-      const rows = table.querySelectorAll("tr");
-      for (let j = 1; j < rows.length; j++) {
-        const row = rows[j];
-        const itemName = row.querySelector("td").textContent.trim();
+      let itemAlreadyExists = false;
+      const tableRows = inventoryTable.querySelectorAll("tr");
+      // Loop through the table rows to check if the item already exists
+      for (let j = 1; j < tableRows.length; j++) {
+        const row = tableRows[j];
+        const existingItemName = row.querySelector("td").textContent.trim();
 
-        if (itemName === name) {
+        if (existingItemName === itemName) {
+          // If the item already exists, update the price
           const priceCell = row.querySelectorAll("td")[1];
           let currentPrice = parseFloat(
             priceCell.textContent.replace("$", "").trim()
           );
-          currentPrice += price;
+          currentPrice += itemPrice;
+          // Update the price cell in the table
           priceCell.innerHTML = `<span class="dollar-sign">$</span> ${currentPrice.toFixed(
             2
           )}`;
-          itemExists = true;
-          eachRowTotalPriceCount();
-          totalPriceInventory(); // Recalculate total after updating item price
+          itemAlreadyExists = true;
+          eachRowTotalPriceCount(); // Update total price for the row
+          totalPriceInventory(); // Update total price for all items in inventory
           break;
         }
       }
 
-      if (!itemExists) {
-        number++;
+      // If the item does not exist, add a new row to the table
+      if (!itemAlreadyExists) {
+        rowCounter++; // Increment the row counter for unique row identifiers
         const newRow = `
         <tr>
-          <td class="row-${number}">${name}</td>
-          <td><span class="dollar-sign">$</span>${price.toFixed(2)}</td>
+          <td class="row-${rowCounter}">${itemName}</td>
+          <td><span class="dollar-sign">$</span>${itemPrice.toFixed(2)}</td>
           <td>
             <button class="up">Up</button> 1 <button class="down">Down</button>
           </td>
-          <td class="total-price"><span class="dollar-sign">$</span>${price.toFixed(
+          <td class="total-price"><span class="dollar-sign">$</span>${itemPrice.toFixed(
             2
           )}</td>
           <td><button class="remove-button">Remove</button></td>
         </tr>
         `;
-        table.insertAdjacentHTML("beforeend", newRow);
-        eachRowTotalPriceCount(); // Ensure the total is calculated for the new row
-        totalPriceInventory(); // Recalculate the entire inventory total
+        // Insert the new row into the table
+        inventoryTable.insertAdjacentHTML("beforeend", newRow);
+        eachRowTotalPriceCount(); // Calculate total price for the new row
+        totalPriceInventory(); // Update total price for all items in inventory
       }
     });
   }
 }
 
-function upDownAmount() {
-  table.addEventListener("click", function (event) {
+// Function to handle increasing or decreasing item amounts
+function adjustItemAmount() {
+  inventoryTable.addEventListener("click", function (event) {
     if (event.target.classList.contains("up")) {
+      // If "Up" button is clicked, increase the item amount
       const upButton = event.target;
       const row = upButton.closest("tr");
       const amountCell = row.querySelectorAll("td")[2];
-      const amountTextNode = amountCell.childNodes[2];
-      const amount = parseInt(amountTextNode.textContent.trim());
+      const amountText = amountCell.childNodes[2];
+      const currentAmount = parseInt(amountText.textContent.trim());
 
-      amountTextNode.textContent = ` ${amount + 1} `;
-      eachRowTotalPriceCount(); // Recalculate row total price
-      totalPriceInventory(); // Recalculate total after quantity change
+      amountText.textContent = ` ${currentAmount + 1} `; // Increase the amount by 1
+      eachRowTotalPriceCount(); // Recalculate the row total price
+      totalPriceInventory(); // Recalculate the total for all items in the table
     }
 
     if (event.target.classList.contains("down")) {
+      // If "Down" button is clicked, decrease the item amount (but not below 1)
       const downButton = event.target;
       const row = downButton.closest("tr");
       const amountCell = row.querySelectorAll("td")[2];
-      const amountTextNode = amountCell.childNodes[2];
-      const amount = parseInt(amountTextNode.textContent.trim());
+      const amountText = amountCell.childNodes[2];
+      const currentAmount = parseInt(amountText.textContent.trim());
 
-      if (amount > 1) {
-        amountTextNode.textContent = ` ${amount - 1} `;
-        eachRowTotalPriceCount(); // Recalculate row total price
-        totalPriceInventory(); // Recalculate total after quantity change
+      if (currentAmount > 1) {
+        amountText.textContent = ` ${currentAmount - 1} `; // Decrease the amount by 1
+        eachRowTotalPriceCount(); // Recalculate the row total price
+        totalPriceInventory(); // Recalculate the total for all items in the table
       }
     }
   });
 }
 
-function removeRowData() {
-  table.addEventListener("click", function (event) {
+// Function to remove an item row from the table
+function removeItemFromTable() {
+  inventoryTable.addEventListener("click", function (event) {
     if (event.target.classList.contains("remove-button")) {
-      const removeBtn = event.target;
-      const row = removeBtn.closest("tr");
-      row.remove();
-      totalPriceInventory(); // Recalculate total after removing an item
+      const removeButton = event.target;
+      const row = removeButton.closest("tr");
+      row.remove(); // Remove the row from the table
+      totalPriceInventory(); // Recalculate the total after removing the item
     }
   });
 }
 
+// Function to calculate and update the total price for each row
 function eachRowTotalPriceCount() {
-  const rows = table.querySelectorAll("tr");
+  const tableRows = inventoryTable.querySelectorAll("tr");
 
-  for (let j = 1; j < rows.length; j++) {
-    const row = rows[j];
+  // Start from row 1 to skip the header row
+  for (let j = 1; j < tableRows.length; j++) {
+    const row = tableRows[j];
     const priceCell = row.querySelectorAll("td")[1];
     const amountCell = row.querySelectorAll("td")[2];
     const totalPriceCell = row.querySelectorAll("td")[3];
@@ -113,6 +134,7 @@ function eachRowTotalPriceCount() {
     const price = parseFloat(priceCell.textContent.replace("$", "").trim());
     const amount = parseInt(amountCell.childNodes[2].textContent.trim());
 
+    // Calculate the total price by multiplying price and amount
     const totalPrice = price * amount;
     totalPriceCell.innerHTML = `<span class="dollar-sign">$</span>${totalPrice.toFixed(
       2
@@ -120,25 +142,26 @@ function eachRowTotalPriceCount() {
   }
 }
 
+// Function to calculate and update the total inventory price
 function totalPriceInventory() {
-  const totalPriceCells = table.querySelectorAll(".total-price");
+  const totalPriceCells = inventoryTable.querySelectorAll(".total-price");
 
-  let totalSum = 0;
+  let totalInventoryPrice = 0;
 
   // Loop through each total price cell and sum the values
   for (let i = 0; i < totalPriceCells.length; i++) {
-    const cell = totalPriceCells[i];
-    const price = parseFloat(cell.textContent.replace("$", "").trim());
-    totalSum += price;
+    const priceCell = totalPriceCells[i];
+    const price = parseFloat(priceCell.textContent.replace("$", "").trim());
+    totalInventoryPrice += price;
   }
 
   // Update the footer with the sum of all total prices
   const totalFooter = document.querySelector(".total-prices-row-footer td");
-  totalFooter.textContent = `$${totalSum.toFixed(2)}`;
+  totalFooter.textContent = `$${totalInventoryPrice.toFixed(2)}`;
 }
 
-addItemtoInventory();
-upDownAmount();
-removeRowData();
+addItemToInventory();
+adjustItemAmount();
+removeItemFromTable();
 eachRowTotalPriceCount();
 totalPriceInventory();

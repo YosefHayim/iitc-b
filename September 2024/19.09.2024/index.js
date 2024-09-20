@@ -23,23 +23,17 @@ function addItemtoInventory() {
       }
 
       if (existingRow) {
-        const priceTd = existingRow.children[1];
         const amountTd = existingRow.children[2];
-        const existingPrice = parseFloat(priceTd.textContent.replace("$", ""));
-        const newPrice = existingPrice * 2;
         oneItemAdd++;
         amountTd.textContent = `${oneItemAdd}`;
-        priceTd.textContent = `$${newPrice.toFixed(2)}`;
       } else {
         // If item does not exist, add a new row
         const newRow = `
           <tr class="row-${rowNumAdding}">
             <td>${name}</td>
             <td>${price}</td>
-            <td>${oneItemAdd}</td>
+            <td><button>⬇️</button> ${oneItemAdd} <button>⬆️</button></td>
             <td><button class="${name}">Remove</button></td>
-            <td><button>Click to Increase</button></td>
-            <td><button>Click to Decrease</button></td>
           </tr>
         `;
 

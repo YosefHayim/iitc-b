@@ -55,6 +55,11 @@ li {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out; /* Smooth transition for both moving and zooming */
+}
+
+li:hover {
+  transform: translateY(-2px) scale(1.05); /* Move the card up and zoom in slightly */
 }
 
 .action-buttons {

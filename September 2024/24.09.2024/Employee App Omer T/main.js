@@ -111,24 +111,6 @@ const employees = [
     department: "Logistics",
     salary: 50000,
   },
-  {
-    profileImg: getRandomProfileImage(),
-    firstName: "Laura",
-    lastName: "White",
-    age: 32,
-    startDate: "2016-11-03",
-    department: "Logistics",
-    salary: 50000,
-  },
-  {
-    profileImg: getRandomProfileImage(),
-    firstName: "Laura",
-    lastName: "White",
-    age: 32,
-    startDate: "2016-11-03",
-    department: "Logistics",
-    salary: 50000,
-  },
 ];
 
 const employeeListEl = document.querySelector(".employee-list");

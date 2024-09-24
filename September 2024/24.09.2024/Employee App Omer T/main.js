@@ -1,4 +1,4 @@
-const data = [
+const employees = [
   {
     firstName: "Alice",
     lastName: "Smith",
@@ -57,148 +57,128 @@ const data = [
   },
 ];
 
-const employeeList = document.querySelector(".employee-list");
+const employeeListEl = document.querySelector(".employee-list");
 
-function makeId() {
-  let id = "";
-  const possible =
+function generateId() {
+  let randomId = "";
+  const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   for (let i = 0; i < 5; i++) {
-    id += possible.charAt(Math.floor(Math.random() * possible.length));
+    randomId += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
   }
-  return id;
+  return randomId;
 }
 
-function showData() {
-  for (let i = 0; i < data.length; i++) {
-    const fName = data[i].firstName;
-    const Lname = data[i].lastName;
-    const age = data[i].age;
-    const startDateEmployee = data[i].startDate;
-    const departmentEmployee = data[i].department;
-    const salary = data[i].salary;
+function displayAllEmployees() {
+  for (let i = 0; i < employees.length; i++) {
+    const employee = employees[i];
 
-    const employeeRowData = document.createElement("li");
-    employeeRowData.classList.add(`${makeId()}`);
+    const listItemEl = document.createElement("li");
+    listItemEl.classList.add(`${generateId()}`);
 
-    employeeRowData.innerHTML = `
-      <p>First Name: ${fName}</p>
-      <p>Last Name: ${Lname}</p>
-      <p>Age: ${age}</p>
-      <p>Start Date: ${startDateEmployee}</p>
-      <p>Department: ${departmentEmployee}</p>
-      <p>Salary: ${salary}</p>
-            <div>
-      <button class="delete-button">Delete Employee</button>
-      <button class="edit-button">Edit Employee</button>
-      <button class="update-button">Update Employee</button>
-      </div>
-    `;
-    employeeList.append(employeeRowData);
-  }
-}
-
-function addEmployeeRow() {
-  const formDataEl = document.querySelector(".formData");
-
-  formDataEl.addEventListener("submit", (ev) => {
-    ev.preventDefault();
-
-    const firstNameInputValue = document.querySelector("#fname").value;
-    const lastNameInputValue = document.querySelector("#lname").value;
-    const ageInputValue = document.querySelector("#age").value;
-    const startDateInputValue = document.querySelector("#start-date").value;
-    const departmentDropdownChoice = document.querySelector(
-      "#department-employees"
-    ).value;
-    const salaryInput = document.querySelector("#salary").value;
-
-    const employeeRowData = document.createElement("li");
-    employeeRowData.classList.add(`${makeId()}`);
-
-    employeeRowData.innerHTML = `
-      <p>First Name: ${firstNameInputValue}</p>
-      <p>Last Name: ${lastNameInputValue}</p>
-      <p>Age: ${ageInputValue}</p>
-      <p>Start Date: ${startDateInputValue}</p>
-      <p>Department: ${departmentDropdownChoice}</p>
-      <p>Salary: ${salaryInput}</p>
+    listItemEl.innerHTML = `
+      <p>First Name: ${employee.firstName}</p>
+      <p>Last Name: ${employee.lastName}</p>
+      <p>Age: ${employee.age}</p>
+      <p>Start Date: ${employee.startDate}</p>
+      <p>Department: ${employee.department}</p>
+      <p>Salary: ${employee.salary}</p>
       <div>
-      <button class="delete-button">Delete Employee</button>
-      <button class="edit-button">Edit Employee</button>
-      <button class="update-button">Update Employee</button>
+        <button class="delete-button">Delete</button>
+        <button class="edit-button">Edit</button>
+        <button class="update-button">Update</button>
       </div>
     `;
+    employeeListEl.append(listItemEl);
+  }
+}
 
-    employeeList.append(employeeRowData);
+function addNewEmployee() {
+  const formEl = document.querySelector(".formData");
+
+  formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const firstName = document.querySelector("#fname").value;
+    const lastName = document.querySelector("#lname").value;
+    const age = document.querySelector("#age").value;
+    const startDate = document.querySelector("#start-date").value;
+    const department = document.querySelector("#department-employees").value;
+    const salary = document.querySelector("#salary").value;
+
+    const newEmployeeEl = document.createElement("li");
+    newEmployeeEl.classList.add(`${generateId()}`);
+
+    newEmployeeEl.innerHTML = `
+      <p>First Name: ${firstName}</p>
+      <p>Last Name: ${lastName}</p>
+      <p>Age: ${age}</p>
+      <p>Start Date: ${startDate}</p>
+      <p>Department: ${department}</p>
+      <p>Salary: ${salary}</p>
+      <div>
+        <button class="delete-button">Delete</button>
+        <button class="edit-button">Edit</button>
+        <button class="update-button">Update</button>
+      </div>
+    `;
+    employeeListEl.append(newEmployeeEl);
   });
 }
-function deleteEmployeeRow() {
-  employeeList.addEventListener("click", function (ev) {
-    if (ev.target.classList.contains("delete-button")) {
-      ev.target.closest("li").remove();
+
+function removeEmployee() {
+  employeeListEl.addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete-button")) {
+      event.preventDefault();
+      event.target.closest("li").remove();
     }
   });
 }
 
-function editEmployeeRow() {
-  employeeList.addEventListener("click", function (ev) {
-    if (ev.target.classList.contains("edit-button")) {
-      const employeeDataLi = ev.target.closest("li");
+function filterByDepartment() {
+  const filterDropdownEl = document.querySelector("#filter-department");
 
-      const firstNameInputValue = document.querySelector("#fname").value;
-      const lastNameInputValue = document.querySelector("#lname").value;
-      const ageInputValue = document.querySelector("#age").value;
-      const startDateInputValue = document.querySelector("#start-date").value;
-      const departmentDropdownChoice = document.querySelector(
-        "#department-employees"
-      ).value;
-      const salaryInput = document.querySelector("#salary").value;
+  filterDropdownEl.addEventListener("change", (event) => {
+    event.preventDefault();
+    const selectedDepartment = event.target.value.toLowerCase();
 
-      employeeDataLi.innerHTML = `
-        <p contenteditable="true" id="edit-firstname">First Name: ${firstNameInputValue}</p>
-        <p contenteditable="true" id="edit-lastname">Last Name: ${lastNameInputValue}</p>
-        <p contenteditable="true" id="edit-age">Age: ${ageInputValue}</p>
-        <p contenteditable="true" id="edit-startdate">Start Date: ${startDateInputValue}</p>
-        <p contenteditable="true" id="edit-department">Department: ${departmentDropdownChoice}</p>
-        <p contenteditable="true" id="edit-salary">Salary: ${salaryInput}</p>
-        <div>
-          <button class="delete-button">Delete Employee</button>
-          <button class="edit-button">Edit Employee</button>
-        <button class="update-button">Update Employee</button>
-          
-        </div>
-      `;
-    }
+    employeeListEl.innerHTML = "";
 
-    if (ev.target.classList.contains("save-button")) {
-      const employeeDataLi = ev.target.closest("li");
+    if (selectedDepartment === "all" || selectedDepartment === "") {
+      displayAllEmployees();
+    } else {
+      for (let i = 0; i < employees.length; i++) {
+        const employeeDepartment = employees[i].department.toLowerCase();
 
-      const updatedFirstName = document.querySelector("#edit-firstname").textContent.replace("First Name: ", "");
-      const updatedLastName = document.querySelector("#edit-lastname").textContent.replace("Last Name: ", "");
-      const updatedAge = document.querySelector("#edit-age").textContent.replace("Age: ", "");
-      const updatedStartDate = document.querySelector("#edit-startdate").textContent.replace("Start Date: ", "");
-      const updatedDepartment = document.querySelector("#edit-department").textContent.replace("Department: ", "");
-      const updatedSalary = document.querySelector("#edit-salary").textContent.replace("Salary: ", "");
+        if (employeeDepartment === selectedDepartment) {
+          const eachEmployee = employees[i];
 
-      employeeDataLi.innerHTML = `
-        <p>First Name: ${updatedFirstName}</p>
-        <p>Last Name: ${updatedLastName}</p>
-        <p>Age: ${updatedAge}</p>
-        <p>Start Date: ${updatedStartDate}</p>
-        <p>Department: ${updatedDepartment}</p>
-        <p>Salary: ${updatedSalary}</p>
-        <div>
-          <button class="delete-button">Delete Employee</button>
-          <button class="edit-button">Edit Employee</button>
-        </div>
-      `;
+          const filteredEmployeeEl = document.createElement("li");
+          filteredEmployeeEl.classList.add(`${generateId()}`);
+
+          filteredEmployeeEl.innerHTML = `
+            <p>First Name: ${eachEmployee.firstName}</p>
+            <p>Last Name: ${eachEmployee.lastName}</p>
+            <p>Age: ${eachEmployee.age}</p>
+            <p>Start Date: ${eachEmployee.startDate}</p>
+            <p>Department: ${eachEmployee.department}</p>
+            <p>Salary: ${eachEmployee.salary}</p>
+            <div>
+              <button class="delete-button">Delete</button>
+              <button class="edit-button">Edit</button>
+              <button class="update-button">Update</button>
+            </div>
+          `;
+          employeeListEl.append(filteredEmployeeEl);
+        }
+      }
     }
   });
 }
 
-
-showData();
-addEmployeeRow();
-deleteEmployeeRow();
-editEmployeeRow();
+displayAllEmployees();
+addNewEmployee();
+removeEmployee();
+filterByDepartment();

@@ -1,42 +1,60 @@
+@font-face {
+  font-family: "Lato-light";
+  src: url("./fonts/Lato-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato-bold";
+  src: url("./fonts/Lato-Bold.ttf") format("truetype");
+}
+
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  display: grid;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  font-family: "Lato-light", sans-serif;
 }
 
 body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 80%;
+  grid-template-rows: auto;
+  text-align: center;
   gap: 2rem;
+  margin: auto;
 }
 
 h1 {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  font-family: "Lato-bold";
 }
 
+.employee-info,
 .employee-list {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-
   gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .employee-info {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
 }
 
 li {
-  width: 12rem;
   display: grid;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  align-content: start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .action-buttons {
@@ -46,7 +64,76 @@ li {
 }
 
 label {
-  display: grid;
   font-weight: 900;
+  font-size: 0.8rem;
+}
+
+button,
+.submit {
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 0.2rem;
+}
+
+.filling-form,
+.formData,
+.filter-department,
+.filter-data-department {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.formData {
+  gap: 0.4rem;
+}
+
+#department-employees {
+  text-align: center;
+  min-width: 1rem;
+}
+
+.filter-data-department {
+  gap: 0.5rem;
+}
+
+select {
   font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-align-last: center;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+img {
+  border-radius: 50%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: -12px;
+  margin-left: 15px;
+}
+
+p {
+  font-size: 0.8rem;
 }

@@ -10,6 +10,23 @@
     <div class="title">
       <h1>Employee Management Application</h1>
     </div>
+    <div class="filter-data-department">
+      <h2>Filter the required department:</h2>
+      <select
+        class="filter-department"
+        name="filter-department"
+        id="filter-department"
+      >
+        <option value="all">All Departments</option>
+        <option value="marketing">Marketing</option>
+        <option value="sales">Sales</option>
+        <option value="it">IT</option>
+        <option value="finance">Finance</option>
+        <option value="hr">HR</option>
+        <option value="operations">Operations</option>
+        <option value="logistics">Logistics</option>
+      </select>
+    </div>
     <div class="employee-data">
       <ol class="employee-list"></ol>
     </div>
@@ -17,11 +34,28 @@
       <form class="formData">
         <h2>Add another employee to the list:</h2>
         <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname" />
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Type your first name here"
+        />
         <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" />
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder=" Type your last name here"
+        />
         <label for="age">Age:</label>
-        <input type="text" id="age" name="age" />
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Type your age here (Max: 120)."
+          min="0"
+          max="120"
+        />
         <label for="start-date">Start Date:</label>
         <input type="date" id="start-date" name="startDate" />
         <label for="department-employees">Choose a department:</label>
@@ -39,21 +73,6 @@
         <input type="text" id="salary" name="salary" />
         <input class="submit" type="submit" value="Submit" />
       </form>
-    </div>
-    <div class="filter-data-department">
-      <h2>Filter the required department:</h2>
-      <label for="filter-department">Filter the relevant department:</label>
-
-      <select name="filter-department" id="filter-department">
-        <option value="all">All Departments</option>
-        <option value="marketing">Marketing</option>
-        <option value="sales">Sales</option>
-        <option value="it">IT</option>
-        <option value="finance">Finance</option>
-        <option value="hr">HR</option>
-        <option value="operations">Operations</option>
-        <option value="logistics">Logistics</option>
-      </select>
     </div>
     <script src="main.js"></script>
   </body>

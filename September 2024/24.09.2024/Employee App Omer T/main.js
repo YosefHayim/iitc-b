@@ -1,5 +1,55 @@
+const profileImages = [
+  "https://randomuser.me/api/portraits/men/40.jpg",
+  "https://randomuser.me/api/portraits/men/15.jpg",
+  "https://randomuser.me/api/portraits/men/73.jpg",
+  "https://randomuser.me/api/portraits/men/50.jpg",
+  "https://randomuser.me/api/portraits/men/17.jpg",
+  "https://randomuser.me/api/portraits/men/69.jpg",
+  "https://randomuser.me/api/portraits/men/22.jpg",
+  "https://randomuser.me/api/portraits/men/65.jpg",
+  "https://randomuser.me/api/portraits/men/54.jpg",
+  "https://randomuser.me/api/portraits/men/56.jpg",
+  "https://randomuser.me/api/portraits/men/61.jpg",
+  "https://randomuser.me/api/portraits/men/21.jpg",
+  "https://randomuser.me/api/portraits/men/91.jpg",
+  "https://randomuser.me/api/portraits/men/14.jpg",
+  "https://randomuser.me/api/portraits/men/68.jpg",
+  "https://randomuser.me/api/portraits/men/35.jpg",
+  "https://randomuser.me/api/portraits/men/46.jpg",
+  "https://randomuser.me/api/portraits/men/23.jpg",
+  "https://randomuser.me/api/portraits/men/28.jpg",
+  "https://randomuser.me/api/portraits/men/93.jpg",
+  "https://randomuser.me/api/portraits/women/32.jpg",
+  "https://randomuser.me/api/portraits/women/47.jpg",
+  "https://randomuser.me/api/portraits/women/18.jpg",
+  "https://randomuser.me/api/portraits/women/11.jpg",
+  "https://randomuser.me/api/portraits/women/55.jpg",
+  "https://randomuser.me/api/portraits/women/71.jpg",
+  "https://randomuser.me/api/portraits/women/89.jpg",
+  "https://randomuser.me/api/portraits/women/24.jpg",
+  "https://randomuser.me/api/portraits/women/36.jpg",
+  "https://randomuser.me/api/portraits/women/44.jpg",
+  "https://randomuser.me/api/portraits/women/64.jpg",
+  "https://randomuser.me/api/portraits/women/85.jpg",
+  "https://randomuser.me/api/portraits/women/76.jpg",
+  "https://randomuser.me/api/portraits/women/26.jpg",
+  "https://randomuser.me/api/portraits/women/99.jpg",
+  "https://randomuser.me/api/portraits/women/53.jpg",
+  "https://randomuser.me/api/portraits/women/38.jpg",
+  "https://randomuser.me/api/portraits/women/58.jpg",
+  "https://randomuser.me/api/portraits/women/62.jpg",
+  "https://randomuser.me/api/portraits/women/12.jpg",
+];
+
+// Function to return a random profile image
+function getRandomProfileImage() {
+  const randomIndex = Math.floor(Math.random() * profileImages.length);
+  return `<img src="${profileImages[randomIndex]}" alt="Profile Employee Image" width="50" height="50">`;
+}
+
 const employees = [
   {
+    profileImg: getRandomProfileImage(),
     firstName: "Alice",
     lastName: "Smith",
     age: 28,
@@ -8,6 +58,7 @@ const employees = [
     salary: 50000,
   },
   {
+    profileImg: getRandomProfileImage(),
     firstName: "John",
     lastName: "Doe",
     age: 35,
@@ -16,6 +67,7 @@ const employees = [
     salary: 60000,
   },
   {
+    profileImg: getRandomProfileImage(),
     firstName: "Emma",
     lastName: "Johnson",
     age: 42,
@@ -24,6 +76,7 @@ const employees = [
     salary: 70000,
   },
   {
+    profileImg: getRandomProfileImage(),
     firstName: "Michael",
     lastName: "Brown",
     age: 30,
@@ -32,6 +85,7 @@ const employees = [
     salary: 55000,
   },
   {
+    profileImg: getRandomProfileImage(),
     firstName: "Sophia",
     lastName: "Williams",
     age: 26,
@@ -40,6 +94,7 @@ const employees = [
     salary: 45000,
   },
   {
+    profileImg: getRandomProfileImage(),
     firstName: "David",
     lastName: "Taylor",
     age: 39,
@@ -48,6 +103,25 @@ const employees = [
     salary: 64000,
   },
   {
+    profileImg: getRandomProfileImage(),
+    firstName: "Laura",
+    lastName: "White",
+    age: 32,
+    startDate: "2016-11-03",
+    department: "Logistics",
+    salary: 50000,
+  },
+  {
+    profileImg: getRandomProfileImage(),
+    firstName: "Laura",
+    lastName: "White",
+    age: 32,
+    startDate: "2016-11-03",
+    department: "Logistics",
+    salary: 50000,
+  },
+  {
+    profileImg: getRandomProfileImage(),
     firstName: "Laura",
     lastName: "White",
     age: 32,
@@ -80,6 +154,8 @@ function displayAllEmployees() {
 
     employeeDataLI.innerHTML = `
     <div class="employee-info">
+    <label>Profile Image:</label>
+    <p class="profile-img">${employee.profileImg}</p>
       <label>First Name:</label>
       <p class="fName">${employee.firstName}</p>
   
@@ -109,12 +185,15 @@ function displayAllEmployees() {
   }
 }
 
+displayAllEmployees();
+
 function addNewEmployee() {
   const formEl = document.querySelector(".formData");
 
   formEl.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    const profileImgClass = document.querySelector(".profile-img").value;
     const firstNameInputValue = document.querySelector("#fname").value;
     const lastNameInputValue = document.querySelector("#lname").value;
     const ageInputValue = document.querySelector("#age").value;
@@ -125,6 +204,7 @@ function addNewEmployee() {
     const salaryInputValue = document.querySelector("#salary").value;
 
     const newEmployee = {
+      profileImg: profileImgClass,
       firstName: firstNameInputValue,
       lastName: lastNameInputValue,
       age: ageInputValue,
@@ -140,6 +220,8 @@ function addNewEmployee() {
 
     newEmployeeEl.innerHTML = `
     <div class="employee-info">
+      <label>Profile Image:</label>
+      <p class="profile-img">${getRandomProfileImage()}</p>
       <label>First Name:</label>
       <p class="fName">${firstNameInputValue}</p>
   
@@ -200,6 +282,8 @@ function filterByDepartment() {
 
           filteredEmployeeEl.innerHTML = `
           <div class="employee-info">
+          <label>Profile Image:</label>
+          <p class="profile-img">${employee.profileImg}</p>
             <label>First Name:</label>
             <p class="fName">${employee.firstName}</p>
         

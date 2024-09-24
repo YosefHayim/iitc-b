@@ -79,18 +79,32 @@ function displayAllEmployees() {
     employeeDataLI.classList.add(`${generateId()}`);
 
     employeeDataLI.innerHTML = `
-      <p class="fName">First Name: ${employee.firstName}</p>
-      <p class="lName">Last Name: ${employee.lastName}</p>
-      <p class="age">Age: ${employee.age}</p>
-      <p class="s-date">Start Date: ${employee.startDate}</p>
-      <p class="department">Department: ${employee.department}</p>
-      <p class="salary">Salary: ${employee.salary}</p>
-      <div>
-        <button class="delete-button">Delete</button>
-        <button class="edit-button">Edit</button>
-        <button class="update-button">Update</button>
-      </div>
-    `;
+    <div class="employee-info">
+      <label>First Name:</label>
+      <p class="fName">${employee.firstName}</p>
+  
+      <label>Last Name:</label>
+      <p class="lName">${employee.lastName}</p>
+  
+      <label>Age:</label>
+      <p class="age">${employee.age}</p>
+  
+      <label>Start Date:</label>
+      <p class="s-date">${employee.startDate}</p>
+  
+      <label>Department:</label>
+      <p class="department">${employee.department}</p>
+  
+      <label>Salary:</label>
+      <p class="salary">${employee.salary}</p>
+    </div>
+    <div class="action-buttons">
+      <button class="delete-button">Delete</button>
+      <button class="edit-button">Edit</button>
+      <button class="update-button">Update</button>
+    </div>
+  `;
+
     employeeListEl.append(employeeDataLI);
   }
 }
@@ -125,18 +139,31 @@ function addNewEmployee() {
     newEmployeeEl.classList.add(`${generateId()}`);
 
     newEmployeeEl.innerHTML = `
-      <p class="fName">First Name: ${firstNameInputValue}</p>
-      <p class="lName">Last Name: ${lastNameInputValue}</p>
-      <p class="age">Age: ${ageInputValue}</p>
-      <p class="s-date">Start Date: ${startDateInputValue}</p>
-      <p class="department">Department: ${departmentInputValue}</p>
-      <p class="salary">Salary: ${salaryInputValue}</p>
-      <div>
-        <button class="delete-button">Delete</button>
-        <button class="edit-button">Edit</button>
-        <button class="update-button">Update</button>
-      </div>
-    `;
+    <div class="employee-info">
+      <label>First Name:</label>
+      <p class="fName">${firstNameInputValue}</p>
+  
+      <label>Last Name:</label>
+      <p class="lName">${lastNameInputValue}</p>
+  
+      <label>Age:</label>
+      <p class="age">${ageInputValue}</p>
+  
+      <label>Start Date:</label>
+      <p class="s-date">${startDateInputValue}</p>
+  
+      <label>Department:</label>
+      <p class="department">${departmentInputValue}</p>
+  
+      <label>Salary:</label>
+      <p class="salary">${salaryInputValue}</p>
+    </div>
+    <div class="action-buttons">
+      <button class="delete-button">Delete</button>
+      <button class="edit-button">Edit</button>
+      <button class="update-button">Update</button>
+    </div>
+  `;
 
     employeeListEl.append(newEmployeeEl);
   });
@@ -172,18 +199,32 @@ function filterByDepartment() {
           filteredEmployeeEl.classList.add(`${generateId()}`);
 
           filteredEmployeeEl.innerHTML = `
-        <p class="fName">First Name: ${employee.firstName}</p>
-        <p class="lName">Last Name: ${employee.lastName}</p>
-        <p class="age">Age: ${employee.age}</p>
-        <p class="s-date">Start Date: ${employee.startDate}</p>
-        <p class="department">Department: ${employee.department}</p>
-        <p class="salary">Salary: ${employee.salary}</p>
-        <div>
+          <div class="employee-info">
+            <label>First Name:</label>
+            <p class="fName">${employee.firstName}</p>
+        
+            <label>Last Name:</label>
+            <p class="lName">${employee.lastName}</p>
+        
+            <label>Age:</label>
+            <p class="age">${employee.age}</p>
+        
+            <label>Start Date:</label>
+            <p class="s-date">${employee.startDate}</p>
+        
+            <label>Department:</label>
+            <p class="department">${employee.department}</p>
+        
+            <label>Salary:</label>
+            <p class="salary">${employee.salary}</p>
+          </div>
+        <div class="action-buttons">
           <button class="delete-button">Delete</button>
           <button class="edit-button">Edit</button>
           <button class="update-button">Update</button>
         </div>
-          `;
+        `;
+
           employeeListEl.append(filteredEmployeeEl);
         }
       }

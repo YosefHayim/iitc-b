@@ -4,17 +4,49 @@
 }
 
 body {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  height: 200vh;
+  gap: 2rem;
 }
 
-ol {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+h1 {
+  margin-top: 2rem;
+}
+
+.employee-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 1rem;
+}
+
+.employee-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+li {
+  width: 12rem;
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  align-content: start;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  font-weight: 900;
+  font-size: 1.1rem;
 }

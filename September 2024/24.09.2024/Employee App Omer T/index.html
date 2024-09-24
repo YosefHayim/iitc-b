@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omer T 24.09.2024</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>Employee Management Application</h1>
+    </div>
+    <div class="employee-data">
+      <ol class="employee-list"></ol>
+    </div>
+    <div class="delete-button-employee-list">
+      <label for="employee-delete">Choose an employee to delete:</label>
+      <select name="employee-delete" id="employee-delete"></select>
+    </div>
+    <div class="filling-form">
+      <form class="formData">
+        <h2>Add another employee to the list:</h2>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" /><br /><br />
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" /><br /><br />
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" /><br /><br />
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" name="startDate" /><br /><br />
+        <label for="department-employees">Choose a department:</label>
+        <select name="department" id="department-employees">
+          <option value="marketing">Marketing</option>
+          <option value="sales">Sales</option>
+          <option value="it">IT</option>
+          <option value="finance">Finance</option>
+          <option value="hr">HR</option>
+          <option value="operations">Operations</option>
+          <option value="logistics">Logistics</option>
+        </select>
+        <br />
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary" /><br /><br />
+        <input class="submit" type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

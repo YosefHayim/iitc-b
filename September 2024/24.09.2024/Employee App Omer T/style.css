@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

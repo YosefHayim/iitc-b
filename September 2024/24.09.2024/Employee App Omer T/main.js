@@ -58,6 +58,7 @@ const data = [
 ];
 
 const employeeList = document.querySelector(".employee-list");
+
 function makeId() {
   let id = "";
   const possible =
@@ -70,7 +71,6 @@ function makeId() {
 
 function showData() {
   for (let i = 0; i < data.length; i++) {
-    const idNum = data[i].id;
     const fName = data[i].firstName;
     const Lname = data[i].lastName;
     const age = data[i].age;
@@ -88,6 +88,7 @@ function showData() {
       <p>Start Date: ${startDateEmployee}</p>
       <p>Department: ${departmentEmployee}</p>
       <p>Salary: ${salary}</p>
+      <button class="delete-button">Delete Employee</button>
     `;
     employeeList.append(employeeRowData);
   }
@@ -118,6 +119,7 @@ function addEmployeeRow() {
       <p>Start Date: ${startDateInputValue}</p>
       <p>Department: ${departmentDropdownChoice}</p>
       <p>Salary: ${salaryInput}</p>
+      <button class="delete-button">Delete Employee</button>
     `;
 
     employeeList.append(employeeRowData);
@@ -125,14 +127,13 @@ function addEmployeeRow() {
 }
 
 function deleteEmployeeRow() {
-  const dataRows = employeeList.querySelectorAll("li");
-  const optionsEmployees = document.querySelector("#employee-delete");
+  const employeesRows = document.querySelectorAll("li");
+  for (let i = 0; i < employeesRows.length; i++) {
+    const employeeRowData = employeesRows[i];
 
-  for (let i = 0; i < dataRows.length; i++) {
-    const employeeData = dataRows[i];
-
-    const createOptionEl = document.createElement("option");
-    
+    employeeRowData.addEventListener("click", (ev) => {
+      employeeRowData.remove();
+    });
   }
 }
 

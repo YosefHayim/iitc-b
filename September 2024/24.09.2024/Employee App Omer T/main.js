@@ -47,7 +47,7 @@ function getRandomProfileImage() {
   return `<img src="${profileImages[randomIndex]}" alt="Profile Employee Image" width="50" height="50">`;
 }
 
-const employees = [
+let employees = [
   {
     profileImg: getRandomProfileImage(),
     firstName: "Alice",
@@ -166,8 +166,6 @@ function displayAllEmployees() {
     employeeListEl.append(employeeDataLI);
   }
 }
-
-displayAllEmployees();
 
 function addNewEmployee() {
   const formEl = document.querySelector(".formData");
@@ -342,8 +340,13 @@ function editCurrentEmployee() {
   });
 }
 
+function convertToLocalStorage() {
+  localStorage.setItem("employees", JSON.stringify(employees));
+}
+
 displayAllEmployees();
 addNewEmployee();
 removeEmployee();
 filterByDepartment();
 editCurrentEmployee();
+convertToLocalStorage();

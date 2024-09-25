@@ -18,8 +18,8 @@ html,
 body {
   height: 100%;
   display: grid;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  justify-content: center;
+  align-items: center;
   font-family: "Lato-light", sans-serif;
 }
 
@@ -55,14 +55,27 @@ li {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out; /* Smooth transition for both moving and zooming */
+  transition: transform 0.2s ease-in-out;
+}
+
+.delete-button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.edit-button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.update-button:hover {
+  transform: translateY(-2px) scale(1.05);
 }
 
 li:hover {
-  transform: translateY(-2px) scale(1.05); /* Move the card up and zoom in slightly */
+  transform: translateY(-2px) scale(1.05);
 }
 
 .action-buttons {
+  opacity: 50%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;

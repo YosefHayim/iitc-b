@@ -1,4 +1,4 @@
-const profileImages = [
+const employeeImages = [
   "https://randomuser.me/api/portraits/men/40.jpg",
   "https://randomuser.me/api/portraits/men/15.jpg",
   "https://randomuser.me/api/portraits/men/73.jpg",
@@ -41,15 +41,15 @@ const profileImages = [
   "https://randomuser.me/api/portraits/women/12.jpg",
 ];
 
-// Function to return a random profile image
-function getRandomProfileImage() {
-  const randomIndex = Math.floor(Math.random() * profileImages.length);
-  return `<img src="${profileImages[randomIndex]}" alt="Profile Employee Image" width="50" height="50">`;
+// Function to return a random employee image
+function getRandomEmployeeImage() {
+  const randomIndex = Math.floor(Math.random() * employeeImages.length);
+  return `<img src="${employeeImages[randomIndex]}" alt="Employee Image" width="50" height="50">`;
 }
 
-let employees = JSON.parse(localStorage.getItem("employeeData")) || [
+let employeeList = JSON.parse(localStorage.getItem("employeeData")) || [
   {
-    profileImg: getRandomProfileImage(),
+    profileImage: getRandomEmployeeImage(),
     firstName: "Alice",
     lastName: "Smith",
     age: 28,
@@ -58,7 +58,7 @@ let employees = JSON.parse(localStorage.getItem("employeeData")) || [
     salary: 50000,
   },
   {
-    profileImg: getRandomProfileImage(),
+    profileImage: getRandomEmployeeImage(),
     firstName: "John",
     lastName: "Doe",
     age: 35,
@@ -67,7 +67,7 @@ let employees = JSON.parse(localStorage.getItem("employeeData")) || [
     salary: 60000,
   },
   {
-    profileImg: getRandomProfileImage(),
+    profileImage: getRandomEmployeeImage(),
     firstName: "Emma",
     lastName: "Johnson",
     age: 42,
@@ -76,7 +76,7 @@ let employees = JSON.parse(localStorage.getItem("employeeData")) || [
     salary: 70000,
   },
   {
-    profileImg: getRandomProfileImage(),
+    profileImage: getRandomEmployeeImage(),
     firstName: "Michael",
     lastName: "Brown",
     age: 30,
@@ -85,7 +85,7 @@ let employees = JSON.parse(localStorage.getItem("employeeData")) || [
     salary: 55000,
   },
   {
-    profileImg: getRandomProfileImage(),
+    profileImage: getRandomEmployeeImage(),
     firstName: "Sophia",
     lastName: "Williams",
     age: 26,
@@ -94,7 +94,7 @@ let employees = JSON.parse(localStorage.getItem("employeeData")) || [
     salary: 45000,
   },
   {
-    profileImg: getRandomProfileImage(),
+    profileImage: getRandomEmployeeImage(),
     firstName: "David",
     lastName: "Taylor",
     age: 39,
@@ -103,7 +103,7 @@ let employees = JSON.parse(localStorage.getItem("employeeData")) || [
     salary: 64000,
   },
   {
-    profileImg: getRandomProfileImage(),
+    profileImage: getRandomEmployeeImage(),
     firstName: "Laura",
     lastName: "White",
     age: 32,
@@ -113,9 +113,9 @@ let employees = JSON.parse(localStorage.getItem("employeeData")) || [
   },
 ];
 
-const employeeListEl = document.querySelector(".employee-list");
+const employeeListElement = document.querySelector(".employee-list");
 
-function generateId() {
+function createUniqueId() {
   let randomId = "";
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -127,32 +127,27 @@ function generateId() {
   return randomId;
 }
 
-function displayAllEmployees() {
-  for (let i = 0; i < employees.length; i++) {
-    const employee = employees[i];
+function showAllEmployees() {
+  for (let i = 0; i < employeeList.length; i++) {
+    const employee = employeeList[i];
 
-    const employeeDataLI = document.createElement("li");
-    employeeDataLI.classList.add(`${generateId()}`);
+    const employeeItem = document.createElement("li");
+    employeeItem.classList.add(`${createUniqueId()}`);
 
-    employeeDataLI.innerHTML = `
+    employeeItem.innerHTML = `
     <div class="employee-info">
-    <label>Profile Image:</label>
-    <p class="profile-img">${employee.profileImg}</p>
+      <label>Profile Image:</label>
+      <p class="profile-image">${employee.profileImage}</p>
       <label>First Name:</label>
-      <p class="fName">${employee.firstName}</p>
-  
+      <p class="first-name">${employee.firstName}</p>
       <label>Last Name:</label>
-      <p class="lName">${employee.lastName}</p>
-  
+      <p class="last-name">${employee.lastName}</p>
       <label>Age:</label>
       <p class="age">${employee.age}</p>
-  
       <label>Start Date:</label>
-      <p class="s-date">${employee.startDate}</p>
-  
+      <p class="start-date">${employee.startDate}</p>
       <label>Department:</label>
       <p class="department">${employee.department}</p>
-  
       <label>Salary:</label>
       <p class="salary">${employee.salary}</p>
     </div>
@@ -163,64 +158,59 @@ function displayAllEmployees() {
     </div>
   `;
 
-    employeeListEl.append(employeeDataLI);
+    employeeListElement.append(employeeItem);
   }
 }
 
 function addNewEmployee() {
-  const formEl = document.querySelector(".formData");
+  const formElement = document.querySelector(".formData");
 
-  formEl.addEventListener("submit", (event) => {
+  formElement.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const profileImgClass = document.querySelector(".profile-img").value;
-    const firstNameInputValue = document.querySelector("#fname").value;
-    const lastNameInputValue = document.querySelector("#lname").value;
-    const ageInputValue = document.querySelector("#age").value;
-    const startDateInputValue = document.querySelector("#start-date").value;
-    const departmentInputValue = document.querySelector(
+    const profileImageInput = document.querySelector(".profile-image").value;
+    const firstNameInput = document.querySelector("#fname").value;
+    const lastNameInput = document.querySelector("#lname").value;
+    const ageInput = document.querySelector("#age").value;
+    const startDateInput = document.querySelector("#start-date").value;
+    const departmentInput = document.querySelector(
       "#department-employees"
     ).value;
-    const salaryInputValue = document.querySelector("#salary").value;
+    const salaryInput = document.querySelector("#salary").value;
 
     const newEmployee = {
-      profileImg: profileImgClass,
-      firstName: firstNameInputValue,
-      lastName: lastNameInputValue,
-      age: ageInputValue,
-      startDate: startDateInputValue,
-      department: departmentInputValue,
-      salary: salaryInputValue,
+      profileImage: profileImageInput,
+      firstName: firstNameInput,
+      lastName: lastNameInput,
+      age: ageInput,
+      startDate: startDateInput,
+      department: departmentInput,
+      salary: salaryInput,
     };
 
-    employees.push(newEmployee);
+    employeeList.push(newEmployee);
 
-    saveToLocal();
+    saveToLocalStorage();
 
-    const newEmployeeEl = document.createElement("li");
-    newEmployeeEl.classList.add(`${generateId()}`);
+    const newEmployeeElement = document.createElement("li");
+    newEmployeeElement.classList.add(`${createUniqueId()}`);
 
-    newEmployeeEl.innerHTML = `
+    newEmployeeElement.innerHTML = `
     <div class="employee-info">
       <label>Profile Image:</label>
-      <p class="profile-img">${getRandomProfileImage()}</p>
+      <p class="profile-image">${getRandomEmployeeImage()}</p>
       <label>First Name:</label>
-      <p class="fName">${firstNameInputValue}</p>
-  
+      <p class="first-name">${firstNameInput}</p>
       <label>Last Name:</label>
-      <p class="lName">${lastNameInputValue}</p>
-  
+      <p class="last-name">${lastNameInput}</p>
       <label>Age:</label>
-      <p class="age">${ageInputValue}</p>
-  
+      <p class="age">${ageInput}</p>
       <label>Start Date:</label>
-      <p class="s-date">${startDateInputValue}</p>
-  
+      <p class="start-date">${startDateInput}</p>
       <label>Department:</label>
-      <p class="department">${departmentInputValue}</p>
-  
+      <p class="department">${departmentInput}</p>
       <label>Salary:</label>
-      <p class="salary">${salaryInputValue}</p>
+      <p class="salary">${salaryInput}</p>
     </div>
     <div class="action-buttons">
       <button class="delete-button">Delete</button>
@@ -229,171 +219,155 @@ function addNewEmployee() {
     </div>
   `;
 
-    employeeListEl.append(newEmployeeEl);
+    employeeListElement.append(newEmployeeElement);
   });
 }
 
 function removeEmployee() {
-  employeeListEl.addEventListener("click", function (event) {
+  employeeListElement.addEventListener("click", function (event) {
     if (event.target.classList.contains("delete-button")) {
       event.preventDefault();
 
-      // Find the employee element to remove
-      const currentEmployeeData = event.target.closest("li");
-      const employeeIndex = Array.from(employeeListEl.children).indexOf(
-        currentEmployeeData
+      const employeeItem = event.target.closest("li");
+      const employeeIndex = Array.from(employeeListElement.children).indexOf(
+        employeeItem
       );
 
-      // Remove employee from array
-      employees.splice(employeeIndex, 1);
+      employeeList.splice(employeeIndex, 1);
 
-      // Save the updated array to localStorage
-      saveToLocal();
+      saveToLocalStorage();
 
-      // Remove the employee element from the DOM
-      currentEmployeeData.remove();
+      employeeItem.remove();
     }
   });
 }
 
-function filterByDepartment() {
-  const filterDropdownEl = document.querySelector("#filter-department");
+function filterEmployeesByDepartment() {
+  const filterDropdownElement = document.querySelector("#filter-department");
 
-  filterDropdownEl.addEventListener("change", (event) => {
+  filterDropdownElement.addEventListener("change", (event) => {
     event.preventDefault();
     const selectedDepartment = event.target.value.toLowerCase();
 
-    employeeListEl.innerHTML = "";
+    employeeListElement.innerHTML = "";
 
     if (selectedDepartment === "all" || selectedDepartment === "") {
-      displayAllEmployees();
+      showAllEmployees();
     } else {
-      for (let i = 0; i < employees.length; i++) {
-        const employee = employees[i];
+      for (let i = 0; i < employeeList.length; i++) {
+        const employee = employeeList[i];
         const employeeDepartment = employee.department.toLowerCase();
 
         if (employeeDepartment === selectedDepartment) {
-          const filteredEmployeeEl = document.createElement("li");
-          filteredEmployeeEl.classList.add(`${generateId()}`);
+          const filteredEmployeeElement = document.createElement("li");
+          filteredEmployeeElement.classList.add(`${createUniqueId()}`);
 
-          filteredEmployeeEl.innerHTML = `
+          filteredEmployeeElement.innerHTML = `
           <div class="employee-info">
-          <label>Profile Image:</label>
-          <p class="profile-img">${employee.profileImg}</p>
+            <label>Profile Image:</label>
+            <p class="profile-image">${employee.profileImage}</p>
             <label>First Name:</label>
-            <p class="fName">${employee.firstName}</p>
-        
+            <p class="first-name">${employee.firstName}</p>
             <label>Last Name:</label>
-            <p class="lName">${employee.lastName}</p>
-        
+            <p class="last-name">${employee.lastName}</p>
             <label>Age:</label>
             <p class="age">${employee.age}</p>
-        
             <label>Start Date:</label>
-            <p class="s-date">${employee.startDate}</p>
-        
+            <p class="start-date">${employee.startDate}</p>
             <label>Department:</label>
             <p class="department">${employee.department}</p>
-        
             <label>Salary:</label>
             <p class="salary">${employee.salary}</p>
           </div>
-        <div class="action-buttons">
-          <button class="delete-button">Delete</button>
-          <button class="edit-button">Edit</button>
-          <button class="update-button">Update</button>
-        </div>
+          <div class="action-buttons">
+            <button class="delete-button">Delete</button>
+            <button class="edit-button">Edit</button>
+            <button class="update-button">Update</button>
+          </div>
         `;
 
-          employeeListEl.append(filteredEmployeeEl);
+          employeeListElement.append(filteredEmployeeElement);
         }
       }
     }
   });
 }
 
-function editCurrentEmployee() {
-  employeeListEl.addEventListener("click", function (event) {
+function editEmployee() {
+  employeeListElement.addEventListener("click", function (event) {
     if (event.target.classList.contains("edit-button")) {
       event.preventDefault();
 
-      const currentEmployeeData = event.target.closest("li");
+      const employeeItem = event.target.closest("li");
 
-      const fName = currentEmployeeData.querySelector(".fName");
-      const lName = currentEmployeeData.querySelector(".lName");
-      const age = currentEmployeeData.querySelector(".age");
-      const startDate = currentEmployeeData.querySelector(".s-date");
-      const department = currentEmployeeData.querySelector(".department");
-      const salary = currentEmployeeData.querySelector(".salary");
+      const firstNameElement = employeeItem.querySelector(".first-name");
+      const lastNameElement = employeeItem.querySelector(".last-name");
+      const ageElement = employeeItem.querySelector(".age");
+      const startDateElement = employeeItem.querySelector(".start-date");
+      const departmentElement = employeeItem.querySelector(".department");
+      const salaryElement = employeeItem.querySelector(".salary");
 
-      fName.contentEditable = "true";
-      lName.contentEditable = "true";
-      age.contentEditable = "true";
-      startDate.contentEditable = "true";
-      department.contentEditable = "true";
-      salary.contentEditable = "true";
+      firstNameElement.contentEditable = "true";
+      lastNameElement.contentEditable = "true";
+      ageElement.contentEditable = "true";
+      startDateElement.contentEditable = "true";
+      departmentElement.contentEditable = "true";
+      salaryElement.contentEditable = "true";
 
-      currentEmployeeData.style.backgroundColor = "#f0f0f0";
+      employeeItem.style.backgroundColor = "#f0f0f0";
     }
 
     if (event.target.classList.contains("update-button")) {
       event.preventDefault();
 
-      // Get the employee's index from the data-index attribute (add this when generating the employee list)
-      const currentEmployeeData = event.target.closest("li");
-      const employeeIndex = Array.from(employeeListEl.children).indexOf(
-        currentEmployeeData
-      ); // Find the index of the current employee in the DOM
+      const employeeItem = event.target.closest("li");
+      const employeeIndex = Array.from(employeeListElement.children).indexOf(
+        employeeItem
+      );
 
-      const fName = currentEmployeeData
-        .querySelector(".fName")
+      const firstName = employeeItem
+        .querySelector(".first-name")
         .textContent.trim();
-      const lName = currentEmployeeData
-        .querySelector(".lName")
+      const lastName = employeeItem
+        .querySelector(".last-name")
         .textContent.trim();
-      const age = currentEmployeeData.querySelector(".age").textContent.trim();
-      const startDate = currentEmployeeData
-        .querySelector(".s-date")
+      const age = employeeItem.querySelector(".age").textContent.trim();
+      const startDate = employeeItem
+        .querySelector(".start-date")
         .textContent.trim();
-      const department = currentEmployeeData
+      const department = employeeItem
         .querySelector(".department")
         .textContent.trim();
-      const salary = currentEmployeeData
-        .querySelector(".salary")
-        .textContent.trim();
+      const salary = employeeItem.querySelector(".salary").textContent.trim();
 
-      // Update the corresponding employee in the array
-      employees[employeeIndex] = {
-        ...employees[employeeIndex], // Keep other properties intact (like profileImg)
-        firstName: fName,
-        lastName: lName,
+      employeeList[employeeIndex] = {
+        ...employeeList[employeeIndex],
+        firstName: firstName,
+        lastName: lastName,
         age: age,
         startDate: startDate,
         department: department,
         salary: salary,
       };
 
-      // Save the updated employees array to localStorage
-      saveToLocal();
+      saveToLocalStorage();
 
-      // Disable content editing
-      currentEmployeeData
+      employeeItem
         .querySelectorAll(".employee-info p")
         .forEach((p) => (p.contentEditable = "false"));
 
-      // Optionally, reset the background color after updating
-      currentEmployeeData.style.backgroundColor = "";
+      employeeItem.style.backgroundColor = "";
     }
   });
 }
 
-function saveToLocal() {
-  localStorage.setItem("employeeData", JSON.stringify(employees));
+function saveToLocalStorage() {
+  localStorage.setItem("employeeData", JSON.stringify(employeeList));
 }
 
-saveToLocal();
-displayAllEmployees();
+saveToLocalStorage();
+showAllEmployees();
 addNewEmployee();
 removeEmployee();
-filterByDepartment();
-editCurrentEmployee();
+filterEmployeesByDepartment();
+editEmployee();

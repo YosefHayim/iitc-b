@@ -49,6 +49,19 @@ body {
   text-align: center;
 }
 
+body > div.filling-form > form > h2 {
+  margin-top: 3rem;
+  font-family: "Lato-bold";
+  background-color: rgb(18, 205, 18);
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 5px;
+}
+
 /* Filter department styling */
 .filter-department {
   display: grid;
@@ -62,6 +75,10 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 1rem;
+}
+
+label {
+  font-weight: 600;
 }
 
 /* Employee list and info layout */
@@ -90,7 +107,8 @@ li {
   transition: transform 0.2s ease-in-out;
 }
 
-li:hover {
+li:hover,
+.submit:hover {
   transform: translateY(-2px) scale(1.05);
 }
 
@@ -101,6 +119,11 @@ button,
   border-radius: 5px;
   border: 0.1px solid white;
   padding: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.submit {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .delete-button {

@@ -10,26 +10,6 @@
     <div class="title">
       <h1>Employee Management Application</h1>
     </div>
-    <div class="filter-data-department">
-      <h2>Filter the required department:</h2>
-      <select
-        class="filter-department"
-        name="filter-department"
-        id="filter-department"
-      >
-        <option value="all">All Departments</option>
-        <option value="marketing">Marketing</option>
-        <option value="sales">Sales</option>
-        <option value="it">IT</option>
-        <option value="finance">Finance</option>
-        <option value="hr">HR</option>
-        <option value="operations">Operations</option>
-        <option value="logistics">Logistics</option>
-      </select>
-    </div>
-    <div class="employee-data">
-      <ol class="employee-list"></ol>
-    </div>
     <div class="filling-form">
       <form class="formData">
         <h2>Add another employee to the list:</h2>
@@ -71,9 +51,29 @@
         <br />
         <label for="salary">Salary:</label>
         <input type="text" id="salary" name="salary" />
-        <input class="submit" type="submit" value="submit" />
+        <input class="submit" type="submit" value="Submit" />
       </form>
     </div>
-    <script src="main.js"></script>
+    <div class="filter-data-department">
+      <h2>Filter the required department:</h2>
+      <select
+        class="filter-department"
+        name="filter-department"
+        id="filter-department"
+      >
+        <option value="all">All Departments</option>
+        <option value="marketing">Marketing</option>
+        <option value="sales">Sales</option>
+        <option value="it">IT</option>
+        <option value="finance">Finance</option>
+        <option value="hr">HR</option>
+        <option value="operations">Operations</option>
+        <option value="logistics">Logistics</option>
+      </select>
+    </div>
+    <div class="employee-data">
+      <ol class="employee-list"></ol>
+    </div>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

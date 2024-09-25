@@ -47,7 +47,7 @@ function getRandomProfileImage() {
   return `<img src="${profileImages[randomIndex]}" alt="Profile Employee Image" width="50" height="50">`;
 }
 
-let employees = [
+let employees = JSON.parse(localStorage.getItem("employeeData")) || [
   {
     profileImg: getRandomProfileImage(),
     firstName: "Alice",
@@ -195,6 +195,8 @@ function addNewEmployee() {
 
     employees.push(newEmployee);
 
+    saveToLocal();
+
     const newEmployeeEl = document.createElement("li");
     newEmployeeEl.classList.add(`${generateId()}`);
 
@@ -235,7 +237,21 @@ function removeEmployee() {
   employeeListEl.addEventListener("click", function (event) {
     if (event.target.classList.contains("delete-button")) {
       event.preventDefault();
-      event.target.closest("li").remove();
+
+      // Find the employee element to remove
+      const currentEmployeeData = event.target.closest("li");
+      const employeeIndex = Array.from(employeeListEl.children).indexOf(
+        currentEmployeeData
+      );
+
+      // Remove employee from array
+      employees.splice(employeeIndex, 1);
+
+      // Save the updated array to localStorage
+      saveToLocal();
+
+      // Remove the employee element from the DOM
+      currentEmployeeData.remove();
     }
   });
 }
@@ -323,30 +339,61 @@ function editCurrentEmployee() {
     if (event.target.classList.contains("update-button")) {
       event.preventDefault();
 
-      fName.textContent = ` ${fName.textContent}`;
-      lName.textContent = `${lName.textContent}`;
-      age.textContent = `${age.textContent}`;
-      startDate.textContent = `${startDate.textContent}`;
-      department.textContent = `${department.textContent}`;
-      salary.textContent = `${salary.textContent}`;
+      // Get the employee's index from the data-index attribute (add this when generating the employee list)
+      const currentEmployeeData = event.target.closest("li");
+      const employeeIndex = Array.from(employeeListEl.children).indexOf(
+        currentEmployeeData
+      ); // Find the index of the current employee in the DOM
 
-      fName.contentEditable = "false";
-      lName.contentEditable = "false";
-      age.contentEditable = "false";
-      startDate.contentEditable = "false";
-      department.contentEditable = "false";
-      salary.contentEditable = "false";
+      const fName = currentEmployeeData
+        .querySelector(".fName")
+        .textContent.trim();
+      const lName = currentEmployeeData
+        .querySelector(".lName")
+        .textContent.trim();
+      const age = currentEmployeeData.querySelector(".age").textContent.trim();
+      const startDate = currentEmployeeData
+        .querySelector(".s-date")
+        .textContent.trim();
+      const department = currentEmployeeData
+        .querySelector(".department")
+        .textContent.trim();
+      const salary = currentEmployeeData
+        .querySelector(".salary")
+        .textContent.trim();
+
+      // Update the corresponding employee in the array
+      employees[employeeIndex] = {
+        ...employees[employeeIndex], // Keep other properties intact (like profileImg)
+        firstName: fName,
+        lastName: lName,
+        age: age,
+        startDate: startDate,
+        department: department,
+        salary: salary,
+      };
+
+      // Save the updated employees array to localStorage
+      saveToLocal();
+
+      // Disable content editing
+      currentEmployeeData
+        .querySelectorAll(".employee-info p")
+        .forEach((p) => (p.contentEditable = "false"));
+
+      // Optionally, reset the background color after updating
+      currentEmployeeData.style.backgroundColor = "";
     }
   });
 }
 
-function convertToLocalStorage() {
-  localStorage.setItem("employees", JSON.stringify(employees));
+function saveToLocal() {
+  localStorage.setItem("employeeData", JSON.stringify(employees));
 }
 
+saveToLocal();
 displayAllEmployees();
 addNewEmployee();
 removeEmployee();
 filterByDepartment();
 editCurrentEmployee();
-convertToLocalStorage();

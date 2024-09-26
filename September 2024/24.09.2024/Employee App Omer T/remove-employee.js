@@ -10,7 +10,7 @@ function removeEmployee(employeeListElement, employeeList, saveToLocalStorage) {
 
       employeeList.splice(employeeIndex, 1);
 
-      saveToLocalStorage();
+      saveToLocalStorage(employeeList);
 
       employeeItem.remove();
     }

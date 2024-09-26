@@ -33,7 +33,3 @@ A simple app to manage employee data with the ability to add, edit, delete, and 
 ## Technologies
 
 - HTML, CSS, JavaScript (ES6), `localStorage`.
-
-## License
-
-MIT License.

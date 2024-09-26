@@ -41,7 +41,6 @@ const employeeImages = [
   "https://randomuser.me/api/portraits/women/12.jpg",
 ];
 
-// Function to return a random employee image
 function getRandomEmployeeImage() {
   const randomIndex = Math.floor(Math.random() * employeeImages.length);
   return `<img src="${employeeImages[randomIndex]}" alt="Employee Image" width="50" height="50">`;

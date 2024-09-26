@@ -55,7 +55,7 @@ function editEmployee(employeeListElement, employeeList, saveToLocalStorage) {
         salary: salary,
       };
 
-      saveToLocalStorage();
+      saveToLocalStorage(employeeList);
 
       employeeItem
         .querySelectorAll(".employee-info p")

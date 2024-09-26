@@ -33,7 +33,7 @@ function addNewEmployee(
 
     employeeList.push(newEmployee);
 
-    saveToLocalStorage();
+    saveToLocalStorage(employeeList);
 
     const newEmployeeElement = document.createElement("li");
     newEmployeeElement.classList.add(`${createUniqueId()}`);

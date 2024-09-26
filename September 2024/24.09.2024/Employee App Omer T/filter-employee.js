@@ -13,7 +13,7 @@ function filterEmployeesByDepartment(
     employeeListElement.innerHTML = "";
 
     if (selectedDepartment === "all" || selectedDepartment === "") {
-      showAllEmployees();
+      showAllEmployees(employeeList, createUniqueId);
     } else {
       for (let i = 0; i < employeeList.length; i++) {
         const employee = employeeList[i];

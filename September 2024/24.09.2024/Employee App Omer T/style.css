@@ -28,7 +28,7 @@ body {
 
 body {
   width: 100%;
-  max-width: 80%;
+  max-width: 100%;
   grid-template-rows: auto;
   gap: 2rem;
   margin: auto;
@@ -60,6 +60,25 @@ body > div.filling-form > form > h2 {
   margin-top: 1rem;
   text-align: center;
   padding: 5px;
+}
+
+[for="fname"],
+[for="lname"],
+[for="age"],
+[for="start-date"],
+[for="department-employees"],
+[for="salary"] {
+  margin-top: 3rem;
+  font-family: "Lato-bold";
+  background-color: rgb(18, 205, 18);
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 5px;
+  max-width: 50%;
 }
 
 /* Filter department styling */

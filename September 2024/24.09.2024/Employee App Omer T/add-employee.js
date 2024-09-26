@@ -58,7 +58,7 @@ function addNewEmployee(
     <div class="action-buttons">
       <button class="delete-button">Delete</button>
       <button class="edit-button">Edit</button>
-      <button class="update-button">Update</button>
+      <button class="update-button">Save</button>
     </div>
   `;
 

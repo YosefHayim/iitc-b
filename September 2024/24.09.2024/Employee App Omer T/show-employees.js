@@ -1,8 +1,6 @@
-// Displays the list of employees and provides UI for adding, editing, and deleting employees.
 const employeeListElement = document.querySelector(".employee-list");
 
-
-function showAllEmployees(employeeList,createUniqueId) {
+function showAllEmployees(employeeList, createUniqueId) {
   for (let i = 0; i < employeeList.length; i++) {
     const employee = employeeList[i];
 

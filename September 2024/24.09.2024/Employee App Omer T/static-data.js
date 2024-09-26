@@ -1,3 +1,5 @@
+import { getRandomEmployeeImage } from "./employees-images.js";
+
 let employeeList = JSON.parse(localStorage.getItem("employeeData")) || [
   {
     profileImage: getRandomEmployeeImage(),

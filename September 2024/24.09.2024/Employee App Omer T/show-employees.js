@@ -22,7 +22,7 @@ function showAllEmployees(employeeList, createUniqueId) {
       <label>Department:</label>
       <p class="department">${employee.department}</p>
       <label>Salary:</label>
-      <p class="salary">${employee.salary}</p>
+      <p class="salary">${employee.salary}<span> ¥</span></p>
     </div>
     <div class="action-buttons">
       <button class="delete-button">Delete</button>

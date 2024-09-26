@@ -35,42 +35,6 @@ if (employeeData?.length > 0) {
       department: "IT",
       salary: 70000,
     },
-    {
-      profileImage: getRandomEmployeeImage(),
-      firstName: "Michael",
-      lastName: "Brown",
-      age: 30,
-      startDate: "2019-07-01",
-      department: "Finance",
-      salary: 55000,
-    },
-    {
-      profileImage: getRandomEmployeeImage(),
-      firstName: "Sophia",
-      lastName: "Williams",
-      age: 26,
-      startDate: "2021-05-20",
-      department: "HR",
-      salary: 45000,
-    },
-    {
-      profileImage: getRandomEmployeeImage(),
-      firstName: "David",
-      lastName: "Taylor",
-      age: 39,
-      startDate: "2017-09-14",
-      department: "Operations",
-      salary: 64000,
-    },
-    {
-      profileImage: getRandomEmployeeImage(),
-      firstName: "Laura",
-      lastName: "White",
-      age: 32,
-      startDate: "2016-11-03",
-      department: "Logistics",
-      salary: 50000,
-    },
   ];
 }
 

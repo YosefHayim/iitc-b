@@ -53,7 +53,7 @@ function addNewEmployee(
       <label>Department:</label>
       <p class="department">${departmentInput}</p>
       <label>Salary:</label>
-      <p class="salary">${salaryInput}</p>
+      <p class="salary">${salaryInput}<span> ¥</span></p>
     </div>
     <div class="action-buttons">
       <button class="delete-button">Delete</button>

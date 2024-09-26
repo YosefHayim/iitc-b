@@ -5,6 +5,7 @@ function filterEmployeesByDepartment(
   showAllEmployees
 ) {
   const filterDropdownElement = document.querySelector("#filter-department");
+  const dataSection = document.querySelector(".employee-data");
 
   filterDropdownElement.addEventListener("change", (event) => {
     event.preventDefault();
@@ -15,11 +16,15 @@ function filterEmployeesByDepartment(
     if (selectedDepartment === "all" || selectedDepartment === "") {
       showAllEmployees(employeeList, createUniqueId);
     } else {
+      let employeeFound = false; // Flag to track if an employee is found
+
       for (let i = 0; i < employeeList.length; i++) {
         const employee = employeeList[i];
         const employeeDepartment = employee.department.toLowerCase();
 
         if (employeeDepartment === selectedDepartment) {
+          employeeFound = true; // Set flag if an employee is found
+
           const filteredEmployeeElement = document.createElement("li");
           filteredEmployeeElement.classList.add(`${createUniqueId()}`);
 
@@ -38,7 +43,7 @@ function filterEmployeesByDepartment(
             <label>Department:</label>
             <p class="department">${employee.department}</p>
             <label>Salary:</label>
-            <p class="salary">${employee.salary}</p>
+            <p class="salary">${employee.salary}<span> ¥</span></p>
           </div>
           <div class="action-buttons">
             <button class="delete-button">Delete</button>
@@ -49,6 +54,16 @@ function filterEmployeesByDepartment(
 
           employeeListElement.append(filteredEmployeeElement);
         }
+      }
+
+      // If no employee is found, show the message
+      if (!employeeFound) {
+        const noEmployeeDiv = document.createElement("div");
+        noEmployeeDiv.innerHTML = `
+        <h1 class="no-employee-message">
+          Empty department, no employees.
+        </h1>`;
+        dataSection.append(noEmployeeDiv);
       }
     }
   });

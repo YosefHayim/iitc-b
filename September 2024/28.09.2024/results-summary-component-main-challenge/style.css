@@ -6,22 +6,28 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; 
+
 }
 
 body {
   font-family: "Hanken-Grotesk Reg";
   font-size: 18px;
   background-color: gray;
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  margin: 0;
+  padding: 0;
 }
 
 .card {
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  width:auto;
-  height: auto;
-  margin:160px;
-  margin-top: 0;
+  max-width: 400px;           
+  width: 100%;                
   background-color: white;
 }
 
@@ -101,22 +107,27 @@ body {
   gap: 15px;
 }
 
-img {
-  display: block;
-}
-
-p {
+.visual-text,.verbal-text,.memory-text,.reaction-text {
+  width:100%;
   font-size: 1rem;
-  margin-left: 8px;
+  margin-left: 10px;
+  display: flex;
+  font-weight: 700;
 }
 
 span {
-  font-size: 0.9rem;
-  color: hsl(224, 30%, 27%);
+  color:  hsl(224, 30%, 27%);
+  margin-right: 5px;
+  font-weight: 700;
 }
 
-.score-out-of {
+.reaction-stats,.memory-stats,.verbal-stats,.visual-stats{
+  width:100%;
+  font-size: 0.9rem;
   color: hsl(241, 100%, 89%);
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 .reaction,.memory,.verbal,.visual {
@@ -154,4 +165,25 @@ span {
   color:hsl(234, 85%, 45%);
   font-weight: 500;
   
+}
+
+.continue-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+  
+button {
+  font-weight: 700;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color:hsl(224, 30%, 27%);
+  color:white;
+  border-radius: 50px;
+  padding: 12px;
 }

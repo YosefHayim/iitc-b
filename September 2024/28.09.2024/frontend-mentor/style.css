@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "inter-regular";
+  src: url(./fonts/static/Inter_18pt-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "inter-regular";
+}
+
+.social-media-links {
+  font-family: "inter-regular";
+  font-weight: 600;
+}
+
+.name-container {
+  font-family: "inter-regular";
+  font-weight: 700;
+}

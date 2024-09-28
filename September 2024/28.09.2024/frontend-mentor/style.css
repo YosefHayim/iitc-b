@@ -10,14 +10,85 @@
 
 body {
   font-family: "inter-regular";
+  background-color: hsl(0, 0%, 8%);
+  color:hsl(0, 0%, 100%);
+  width:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.social-media-links {
+.profile-container {
+  background-color: hsl(0, 0%, 12%);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.7rem;
+  width:50%;
+  height: auto;
+  position: relative;
+}
+
+img {
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.name-container {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+  font-family: "inter-regular";
+  font-weight: 700;
+  text-align: center;
+}
+.location-container {
+  font-size: 0.8rem;
+  color:hsl(75, 94%, 57%);
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.quote-container {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.social-media-links-container {
   font-family: "inter-regular";
   font-weight: 600;
+  font-size: 0.70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.name-container {
-  font-family: "inter-regular";
+.github-container,.frontend-mentor-container,.linkedin-container,.twitter-container,.instagram-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.8rem;
+  background-color:hsl(0, 0%, 20%);
+  padding:0.7rem;
+  border-radius: 6px;
+  width:75%;
+  max-width: 100%;
+}
+
+.github,.frontend-mentor,.linkedin,.twitter,.instagram{
+  text-decoration: none;
+  color: white;
+}
+
+.github-container:hover,.frontend-mentor-container:hover,.linkedin-container:hover,.twitter-container:hover,.instagram-container:hover {
+  background-color:hsl(75, 94%, 57%);
+  color: hsl(0, 0%, 12%);
   font-weight: 700;
 }

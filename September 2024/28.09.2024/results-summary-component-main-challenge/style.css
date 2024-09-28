@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "Hanken-Grotesk Reg";
+  src: url(./assets/fonts/static/HankenGrotesk-Medium.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hanken-Grotesk Reg";
+  font-size: 18px;
+  background-color: gray;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width:auto;
+  height: auto;
+  margin:160px;
+  margin-top: 0;
+  background-color: white;
+}
+
+.your-result {
+  margin:5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.your-result,.seventy-six,.great {
+  font-weight: 900;
+}
+
+.result-container {
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%)); 
+  border-radius: 0px 0px 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.circle-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0)); 
+
+}
+
+.seventy-six {
+  color: white;
+  font-size: 2rem;
+}
+
+.of-onehundred {
+  font-size: 0.8rem;
+  margin: 8px;
+}
+
+.great {
+  margin-top: 20px;
+  margin-bottom: -10px;
+  color:white
+  
+}
+
+.quote {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 15px;
+  margin-bottom: 25px;
+}
+
+.of-onehundred,.quote,.your-result {
+  color: hsl(241, 100%, 89%);
+}
+
+.summary-word {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color:hsl(224, 30%, 27%);
+  font-weight: 900;
+  margin:15px;
+}
+
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 15px;
+}
+
+span {
+  color: black;
+}
+
+.reaction,.memory,.verbal,.visual {
+  display: flex;
+  flex-direction: row;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.reaction {
+  background-color: hsla(0, 100%, 67%, 0.5);
+  color:hsl(0, 100%, 67%);
+  font-weight: 500;
+  
+}

@@ -123,4 +123,93 @@ const fiveLetterFunc = () => {
   console.log(fiveOnly);
 }
 
-fiveLetterFunc()
+// fiveLetterFunc()
+
+//Q13
+array = [5, 10, 15, 20, 25]
+const aboveTenFunc = () => {
+  onlyTenAbove = array.filter(function (number) {
+    return number > 10
+  })
+  console.log(onlyTenAbove);
+}
+// aboveTenFunc()
+
+//Q14
+array = ['תפוח', 'בננה', 'תפוז', 'דובדבן']
+const onlyTafFunc = () => {
+  onlyTafArray = array.filter(function (string) {
+    return string[0] === 'ת'
+  })
+  console.log(onlyTafArray);
+}
+// onlyTafFunc()
+
+//Q15
+array = [6,5,4,3,2,1]
+const pairsOnlyFunc = () => {
+  pairsOnly = array.filter(function (number) {
+    return number % 2 === 0
+  })
+  console.log(pairsOnly);
+  
+}
+// pairsOnlyFunc()
+
+//Q16
+array = [5,4,3,2,1]
+const sumUseReduceFunc = () => {
+  sumNumbers = array.reduce(function (total,number) {
+    return total + number
+  }, [])
+  console.log(sumNumbers);
+}
+// sumUseReduceFunc()
+
+//Q17
+const factorialFunc = () => {
+  factorialNumbers = array.reduce(function (total,number) {
+    return total *= number
+  }, [])
+  console.log(factorialNumbers);
+}
+// factorialFunc()
+
+//Q18
+array = [10, 5, 15, 20, 25];
+const biggestNumberFunc = () => {
+  let biggestNum = array.reduce(function (total, number) {
+    return total > number ? total : number;
+  },[]);
+  console.log(biggestNum);
+}
+// biggestNumberFunc();
+
+//Q19
+array = ['שלום', ' ', 'עולם', '!']
+const connectUseReduce = () => {
+  let connectWords = array.reduce(function (firstAString,firstBString) {
+    return firstAString+firstBString
+  },[])
+  console.log(connectWords);
+}
+// connectUseReduce()
+
+// Q20
+array = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+const countNumTimesFunc = () => {
+  let countNumbersTimes = array.reduce(function (acc, currentNum) {
+    if (acc[currentNum]) {
+      acc[currentNum]++;
+    } else {
+      acc[currentNum] = 1;
+    }
+    return acc; 
+  }, {}); 
+
+  console.log(countNumbersTimes);
+}
+
+// countNumTimesFunc();
+
+

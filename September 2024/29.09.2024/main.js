@@ -421,5 +421,14 @@ const infinityFlat = () => {
 }
 // infinityFlat()
 
+//Q41
+array = ['א', 'ב', 'ג', 'ד']
+const forEachFunc = () => {
+  let logEachLetter = array.forEach(function (letter){
+    console.log(letter);
+    
+  })
+}
+// forEachFunc()
 
-
+//Q42

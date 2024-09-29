@@ -243,10 +243,8 @@ let isAboveSix = array.some(function (string) {
 // ifMoreThanSix()
 
 //Q24
-// Q24
 array = ['cat', 'dog', 'elephant'];
 const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
-
 const funcIsZleli = () => {
   let letterConstant = array.every(function (string) {
     // Check if the first character of the string is in the consonants array
@@ -255,3 +253,173 @@ const funcIsZleli = () => {
   console.log(letterConstant);
 }
 // funcIsZleli();
+
+//Q25
+array = [false, false, true, false];
+const isTrueFunc = () => {
+  let isTruthy = array.some(function (condition) {
+    return condition;
+  });
+  
+  console.log(isTruthy);
+}
+
+// isTrueFunc();
+
+//Q26
+array = [1, 2, 3, 4, 5]
+const findFBigNum = () => {
+  let firstAboveThree = array.find(function (number){
+    return number > 3
+  })
+  console.log(firstAboveThree);
+  
+}
+// findFBigNum()
+
+//Q27
+array = [1, 3, 5, 2, 4, 6]
+const findFirstPair = () => {
+  let firstIndexPairMatch = array.findIndex(function (number) {
+    return number % 2 === 0;
+  });
+  
+  console.log(firstIndexPairMatch);
+}
+
+// findFirstPair();
+
+//Q28
+array = ['תפוח', 'בננה', 'דובדבן']
+const firstAboveFiveL = () => {
+  let firstAboveFive = array.find(function (string) {
+    return string.length > 5
+  })
+  console.log(firstAboveFive);
+  
+}
+// firstAboveFiveL()
+
+//Q29
+array = ['תפוח', 'בננה', 'דובדבן', 'תמר'];
+const findCherryFunc = () => {
+  let findCherry = array.findIndex(function (word) {
+    return word === 'דובדבן';
+  });
+  
+  if (findCherry !== -1) {
+    console.log(`Found 'דובדבן' at index ${findCherry}`);
+  } else {
+    console.log('Didn\'t find דובדבן.');
+  }
+}
+// findCherryFunc();
+
+//Q30
+array = [1, 2, 3, -4, 5, -6]
+const findFNegativeFunc = () => {
+  let firstN = array.find(function (n) {
+    return n < 0
+  })
+  console.log(firstN);
+  
+}
+// findFNegativeFunc()
+
+//Q31
+array = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+const upOrderFunc = () => {
+  let upOrder = array.sort(function (a,b) {
+    return a-b 
+  })
+  console.log(upOrder);
+  
+}
+// upOrderFunc()
+
+//Q32
+array = ['banana', 'cherry', 'apple', 'date'];
+const alphabetOrderFunc = () => {
+  let alphabetOrder = array.sort(function (a, b) {
+    return a.localeCompare(b);
+  });
+  
+  console.log(alphabetOrder);
+}
+// alphabetOrderFunc();
+
+//Q33
+array =  [3, 1, 4, 1, 5, 9, 2, 6, 5]
+const downOrderFunc = () => {
+  let upOrder = array.sort(function (a,b) {
+    return b-a 
+  })
+  console.log(upOrder);
+  
+}
+// downOrderFunc()
+
+//Q34
+array = ['banana', 'cherry', 'apple', 'date'];
+const lengthFunc = () => {
+  let lengthSort = array.sort(function (a, b) {
+    return a.length - b.length; // Sort based on string length
+  });
+  
+  console.log(lengthSort);
+}
+// lengthFunc();
+
+//Q35
+let arrayObj =  [{name: 'יוחנן', age: 25}, {name: 'יעל', age: 30}, {name: 'בועז', age: 20}]
+const sortArrayObj = () => {
+  let sortThis = arrayObj.sort(function (a,b) {
+    return b.age - a.age
+  })
+  console.log(sortThis);
+}
+// sortArrayObj()
+
+//Q36
+array = [1, [2, 3], [4, [5, 6]]]
+const flatArrayFunc = () => {
+  let flatArray = array.flat(4)
+  console.log(flatArray);
+  
+}
+// flatArrayFunc()
+
+//Q37
+array = [1, [2, [3, [4]]]]
+const flatArrayFuncTwo = () => {
+  let flatArray = array.flat(2)
+  console.log(flatArray);
+}
+// flatArrayFuncTwo()
+
+//Q38
+array = [1, 2, , 4, 5]
+const flatClean = () => {
+  let newFClean = array.flat(1)
+  console.log(newFClean);
+}
+// flatClean()
+
+//Q39
+array = ['א', ['ב', 'ג'], 'ד']
+const alefBetFunc = () => {
+  let newAlef = array.flat(2)
+  console.log(newAlef);
+}
+// alefBetFunc()
+
+//Q40
+array = [1, [2, [3, [4, [5]]]]]
+const infinityFlat = () => {
+  let infinityUse = array.flat(Infinity)
+  console.log(infinityUse);
+}
+// infinityFlat()
+
+
+

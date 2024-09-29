@@ -209,7 +209,49 @@ const countNumTimesFunc = () => {
 
   console.log(countNumbersTimes);
 }
-
 // countNumTimesFunc();
 
+//Q21
+array = [1, 2, 3, 4, 5] 
+const ifAboveThree = () => {
+let isAboveThree = array.some(function (number) {
+    return number > 3
+  })
+  console.log(isAboveThree);
+  
+}
+// ifAboveThree()
 
+//Q22
+array = [2, 4, 6, 8, 10] 
+const ifAllPairs = () => {
+  let onlyPairs = array.every(function (number){
+    return number % 2 === 0
+  })
+  console.log(onlyPairs);
+}
+// ifAllPairs()
+
+//Q23
+array = ['תפוח', 'בננה', 'דובדבן']
+const ifMoreThanSix = () => {
+let isAboveSix = array.some(function (string) {
+    return string.length > 6
+  })
+  console.log(isAboveSix);
+}
+// ifMoreThanSix()
+
+//Q24
+// Q24
+array = ['cat', 'dog', 'elephant'];
+const consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+
+const funcIsZleli = () => {
+  let letterConstant = array.every(function (string) {
+    // Check if the first character of the string is in the consonants array
+    return consonants.includes(string[0]);
+  });
+  console.log(letterConstant);
+}
+// funcIsZleli();

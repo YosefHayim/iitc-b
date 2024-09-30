@@ -547,3 +547,55 @@ const arrangeArrayLengthFunc = () => {
 };
 // arrangeArrayLengthFunc()
 
+//Q50
+array = [1, [2, [3]], [4, [5]]]
+const flatFunc = () => {
+  let flatArray = array.flat(1)
+  console.log(flatArray);
+  return flatArray
+}
+// flatFunc()
+
+//Q51
+array =['ש', 'ל', 'ו', 'ם']
+const connectLettersFunc = () => {
+  let word = ""
+  let connectL = array.forEach(letter => word += letter)
+  console.log(word);
+}
+// connectLettersFunc()
+
+//Q52
+array = [1, 2, 3, 4, 5] 
+const newArrayFunc = () => {
+  let newArrayPlusTen = array.map(number => number + 10)
+  console.log(newArrayPlusTen);
+  return newArrayPlusTen
+}
+// newArrayFunc()
+
+//Q53
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const divideByThreeFunc = () => {
+  let divideByTh = array.filter(number => number % 3 === 0)
+  console.log(divideByTh);
+  return divideByTh
+}
+// divideByThreeFunc()
+
+//Q54
+array = ['קצר', 'בינוני', 'הכי ארוך', 'ארוך יותר'];
+const longestWFunc = () => {
+  let longestW = array.reduce((wordA, wordB) => wordA.length > wordB.length ? wordA : wordB);
+  console.log(longestW);
+};
+// longestWFunc()
+
+//Q55
+array = [1, 3, 5, 7, 9]
+const pairNumber = () => {
+  let pairN = array.some(number => number % 2 === 0);
+  console.log(pairN);
+  return pairN
+}
+// pairNumber()

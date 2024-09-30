@@ -599,3 +599,160 @@ const pairNumber = () => {
   return pairN
 }
 // pairNumber()
+
+//Q56
+array = ['תפוח', 'תפ', 'תפוז']
+const hasTPFunc = () => {
+  let hasTP = array.every(letters => letters.includes('תפ'))
+  console.log(hasTP);
+  return hasTP
+}
+// hasTPFunc()
+
+//Q57
+array = [{id: 1, completed: false}, {id: 2, completed: true}]
+const firstCFunc = () => {
+  let firstCFound = array.find(word => word.completed === true)
+  console.log(firstCFound);
+  return firstCFound
+}
+// firstCFunc()
+
+//Q58
+array = ['תפוח', 'בננה', 'דובדבן']
+let result = array.findIndex(word => word === 'בננה')
+// console.log(result);
+
+//Q59
+array = [{name: 'יוחנן', age: 25}, {name: 'יעל', age: 30}, {name: 'בועז', age: 20}]
+let byOrderName = array.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+// console.log(byOrderName);
+
+
+//Q60
+array = [1, [2, 3], [4, [5, 6]]]
+let flatSquareBrackets = array.flat(2)
+// console.log(flatSquareBrackets);
+
+//Q61
+let word = "שלום"; // Use spread syntax to convert string into an array of letters
+// let letterLoop = [...word].forEach(letter => console.log(letter)) 
+
+
+//Q62
+array = ['תפוח', 'בננה', 'דובדבן']
+// let fLetterOnly = array.map(word => console.log(word[0]))
+
+//Q63
+array = ['א', 'אב', 'אבג', 'אבגד'];
+let up3Strings = array.filter(word => word.length > 3);
+// console.log(up3Strings);
+
+//Q64
+array = ['תפוח', 'בננה', 'דובדבן'];
+let count = array.reduce((accumulator, word) => accumulator + word.length, 0);
+// console.log(count);
+
+//Q65
+array = ['שלום', 'עולם', 'ג\'אווהסקריפט'];
+let above10L = array.some(word => word.length > 10)
+// console.log(above10L);
+
+//Q66
+array = [10, 20, 30, 40, 50]
+let above5Int = array.every(number => number > 5)
+// console.log(above5Int);
+
+//Q67
+array = ['ספר', 'דלת', 'חלון']
+let findFVav = array.find(word => word.includes('ו'))
+// console.log(findFVav);
+
+//Q68
+array = [5, 10, 15, 20]
+let findFIndexAboveTen = array.findIndex(n => n > 10)
+// console.log(findFIndexAboveTen);
+
+//Q69
+array = ['אאא', 'בב', 'ג'];
+let arrangeByLength = array.sort((a, b) =>  b.length - a.length);
+// console.log(arrangeByLength);
+
+//Q70
+array = [1, [2, [3, [4]]]] 
+let flatArr = array.flat(2)
+// console.log(flatArr);
+
+//Q71
+array = [1, 4, 9, 16];
+let squareNum = [];
+array.forEach(n => {squareNum.push(n ** 2);});
+// console.log(squareNum);
+
+//Q72
+array = ['א', 'ב', 'ג']
+let doubledL = array.map(letter => letter + letter , [])
+// console.log(doubledL);
+
+//Q73
+array = [5, 10, 15, 20, 25]
+let between10ToTwenty = array.filter(n => n > 10 && n <= 20)
+// console.log(between10ToTwenty);
+
+//Q74
+array = [{א: 1}, {ב: 2}, {ג: 3}];
+// Merge total and current object
+let oneObjectCreate = array.reduce((total, current) => {return {...total, ...current}; 
+ // Initial value is an empty object
+}, {});
+// console.log(oneObjectCreate);
+
+//Q75
+array = [{x: 1}, {y: 2}, {z: 3}];
+let checkIfHasY = array.some(letter => 'y' in letter);
+// console.log(checkIfHasY);
+
+//Q76
+array = ['א1', 'ב2', 'ג3'];
+let hasIntNString = array.every(word => {
+  return /^[\u0590-\u05FF]/.test(word[0]) && /\d/.test(word[1]);
+});
+// console.log(hasIntNString);
+
+//Q77
+array = [{מחיר: 60}, {מחיר: 40}, {מחיר: 70}];
+let firstBelowFifty = array.find(prices => prices.מחיר < 50);
+// console.log(firstBelowFifty);
+
+//Q78
+array = [1, '', true, 0, null, 'שלום']
+let firstNunIndex = array.findIndex(value => value === null)
+// console.log(firstNunIndex);
+
+//Q79
+array = [3.14, 2.71, 1.41, 1.73]
+let sortByFloat = array.sort((a,b) => a - b)
+// console.log(sortByFloat);
+
+//Q80
+array = ['א', ['ב', ['ג']]]
+let infiniteFlatQEighty = array.flat(Infinity)
+// console.log(infiniteFlatQEighty);
+
+//Q81
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let filterNMap = array.map(n => (n ** 2)).filter(n => n % 2 === 0);
+// console.log(filterNMap);
+
+
+
+
+
+
+
+
+
+
+
+
+

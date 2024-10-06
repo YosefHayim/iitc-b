@@ -6,7 +6,6 @@ const checkPinCorrect = (storedPIN) => {
   formEl.addEventListener('submit', (ev) => {
     ev.preventDefault();
     let userInput = document.querySelector('input').value;
-    console.log(userInput);
     
     if (userInput === storedPIN) {
       userAccess();

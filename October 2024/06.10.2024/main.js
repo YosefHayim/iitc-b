@@ -1,5 +1,8 @@
 import {storedPIN} from "./static-data.js";
 import { checkPinCorrect } from "./checkPIN.js";
 
-// Start checking PIN
-checkPinCorrect(storedPIN);
+const main = () => {
+  checkPinCorrect(storedPIN);
+}
+
+main()

@@ -74,7 +74,6 @@ p {
   display: flex;                
   justify-content: center;    
   align-items: center;         
-  color: white;
   font-size: 0.7rem;        
 }
 
@@ -107,4 +106,10 @@ button:hover,.number-one:hover, .number-two:hover, .number-three:hover, .number-
 .number-one:active, .number-two:active, .number-three:active, .number-four:active, .number-five:active {
   background-color: hsl(25, 97%, 53%);
   color: black;
+  z-index: 9999;
 }
+
+.hidden {
+  display: none;
+}
+

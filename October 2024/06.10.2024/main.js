@@ -1,4 +1,21 @@
-import { data,storedData,parsedData,storedPIN,storedBalance,transactions,bodyHTML } from "./staticData.js";
+// Define the data object
+const data = {
+  PIN: '1234',
+  currentBalance: `1,500,123`,
+  transactions: [] // Array to store transaction history
+};
+
+// Store the initial data in localStorage
+localStorage.setItem("userData", JSON.stringify(data));
+
+// Retrieve and parse the stored data
+let storedData = localStorage.getItem("userData");
+let parsedData = JSON.parse(storedData);
+
+let storedPIN = parsedData.PIN;
+let storedBalance = parseInt(parsedData.currentBalance.replace(/,/g, '')); // Convert string balance to number
+let transactions = parsedData.transactions; // Retrieve the transactions array
+let bodyHTML = document.body; // Define bodyHTML
 
 // Function to check PIN correctness
 const checkPinCorrect = (storedPIN) => {
@@ -68,7 +85,7 @@ const userActivity = (storedBalance) => {
       if (button.textContent === 'Withdraw') {
         if (!document.querySelector('.withdraw-display')) {
           const withdrawContainer = document.createElement('div');
-          withdrawContainer.classList.add('withdraw-display'); // Use this class for checking
+          withdrawContainer.classList.add('withdraw-display');
 
           const withdrawLabel = document.createElement('label');
           withdrawLabel.textContent = `Provide withdraw amount:`;
@@ -126,7 +143,7 @@ const userActivity = (storedBalance) => {
       if (button.textContent === 'Deposit') {
         if (!document.querySelector('.deposit-display')) {
           const depositContainer = document.createElement('div');
-          depositContainer.classList.add('deposit-display'); // Use this class for checking
+          depositContainer.classList.add('deposit-display');
 
           const depositLabel = document.createElement('label');
           depositLabel.textContent = `Provide deposit amount:`;
@@ -184,7 +201,7 @@ const userActivity = (storedBalance) => {
       if (button.textContent === 'Last Transaction') {
         if (!document.querySelector('.transaction-display')) {
           const transactionContainer = document.createElement('div');
-          transactionContainer.classList.add('transaction-display'); // Use this class for checking
+          transactionContainer.classList.add('transaction-display');
       
           const transactionList = document.createElement('ul');
       
@@ -196,7 +213,6 @@ const userActivity = (storedBalance) => {
           } else {
             transactions.forEach((transaction) => {
               const listItem = document.createElement('li');
-              // Use parseInt to ensure correct number formatting
               listItem.textContent = `${transaction[0]}: $${parseInt(transaction[1]).toLocaleString()}`;
               transactionList.appendChild(listItem);
             });
@@ -206,8 +222,9 @@ const userActivity = (storedBalance) => {
           bodyHTML.appendChild(transactionContainer);
         }
       }
-      
+    });
   });
-})};
+};
 
+// Start checking PIN
 checkPinCorrect(storedPIN);

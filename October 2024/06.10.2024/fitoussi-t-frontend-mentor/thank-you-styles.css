@@ -70,3 +70,37 @@ p {
   font-size: 0.8rem;
 }
 
+@media screen and (min-width: 1024px) {
+  body {
+    width:100%;
+    height: auto;
+    background-color: hsl(216, 12%, 8%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+  }
+  
+  .thank-you-state-container {
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    max-width:400px;
+  }
+
+  img {
+    margin-top: -10px;
+  }
+
+  h2 {
+    margin-bottom: -10px;
+  }
+
+  p {
+    line-height: 1.5rem;
+    font-size: 1rem;
+  }
+
+}

@@ -57,6 +57,7 @@ p,.numbers-container {
 p {
   margin-bottom: 15px;
   margin-left: 25px;
+  line-height: 1.5rem;
 
 }
 
@@ -98,13 +99,13 @@ button {
   text-shadow: none;        
 }
 
-button:hover,.number-one:hover, .number-two:hover, .number-three:hover, .number-four:hover, .number-five:hover {
-  background-color: white;
+.number-one:hover, .number-two:hover, .number-three:hover, .number-four:hover, .number-five:hover {
+  background-color: hsl(25, 97%, 53%);
   color: black;
 }
 
 .number-one:active, .number-two:active, .number-three:active, .number-four:active, .number-five:active {
-  background-color: hsl(25, 97%, 53%);
+  background-color: white;
   color: black;
   z-index: 9999;
 }
@@ -113,3 +114,36 @@ button:hover,.number-one:hover, .number-two:hover, .number-three:hover, .number-
   display: none;
 }
 
+@media screen and (min-width: 1024px) {
+  body {
+    width:100%;
+    height: auto;
+    background-color: hsl(216, 12%, 8%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+  }
+  
+  form {
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    max-width:400px;
+  }
+
+  p {
+    padding: 10px;
+  }
+
+  .numbers-container {
+    gap: 25px; 
+  }
+  
+  .submit {
+    margin: 20px;
+  }
+
+}

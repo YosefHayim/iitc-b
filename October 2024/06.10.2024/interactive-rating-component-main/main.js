@@ -14,14 +14,11 @@ allNumberDivs.forEach(div => {
   });
 });
 
-// No need to check for submitBtn's existence since we know it's on the page
 const submitBtn = document.querySelector('.submit');
 submitBtn.addEventListener('click', (ev) => {
   ev.preventDefault();
   
-  // Store the vote count in localStorage
   localStorage.setItem('selectedVote', countVote);
   
-  // Navigate to the thank-you page
   window.location.href = 'thank-you-mobile.html';
 });

@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="4F136JA1XKHSDher4EPY">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-1" target="oz9gLDhGOWMXEWqY0QJJ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-1" value="Wake up in the morning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-2" target="oz9gLDhGOWMXEWqY0QJJ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-2" target="oz9gLDhGOWMXEWqY0QJJ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-2" value="Go to the bathroom" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-4" target="oz9gLDhGOWMXEWqY0QJJ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-4" value="Has toothbrush" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="130" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-6" target="oz9gLDhGOWMXEWqY0QJJ-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-6" value="Doesnt have toothbrush" style="rhombus;whiteSpace=wrap;html=1;rounded=0;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="130" width="81" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-10" target="oz9gLDhGOWMXEWqY0QJJ-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-10" value="Go to the closet and get a new toothbrush" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-12" target="oz9gLDhGOWMXEWqY0QJJ-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-12" value="Apply the toothpaste on the toothbrush" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-14" target="oz9gLDhGOWMXEWqY0QJJ-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-14" value="Brush my teeth for 2 min each side" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-16" value="Wash the mouth and return the thoothbrush to the spot" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-21" target="oz9gLDhGOWMXEWqY0QJJ-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-21" value="Apply the toothpaste on the toothbrush" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="oz9gLDhGOWMXEWqY0QJJ-23" target="oz9gLDhGOWMXEWqY0QJJ-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-23" value="Brush my teeth for 2 min each side" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oz9gLDhGOWMXEWqY0QJJ-24" value="Wash the mouth and return the thoothbrush to the spot" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

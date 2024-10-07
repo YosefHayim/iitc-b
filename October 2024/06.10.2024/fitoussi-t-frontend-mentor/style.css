@@ -20,9 +20,9 @@ body {
 }
 
 form {
-  height: 325px;
+  height: 345px;
   margin-top: 50px;
-  width:375px;
+  width:340px;
   background-color: hsl(213, 19%, 18%);
   border-radius: 12px;
 }
@@ -55,16 +55,19 @@ p,.numbers-container {
 }
 
 p {
+  padding:2px;
   margin-bottom: 15px;
   margin-left: 25px;
+  margin-right: 25px;
   line-height: 1.5rem;
-
+  font-size: 0.9rem;
 }
 
 .numbers-container,.submit-btn-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
 }
 
 .number-one, .number-two, .number-three, .number-four, .number-five {
@@ -73,15 +76,14 @@ p {
   width: 35px;                  
   border-radius: 50%;          
   display: flex;                
-  justify-content: center;    
-  align-items: center;         
+  justify-content: space-around;    
   font-size: 0.7rem;        
 }
 
 .submit {
   border: none;
   background-color: hsl(25, 97%, 53%);
-  width:100%;
+  width:270px;
   padding:10px;
   font-weight: 900;
   letter-spacing: 2px;

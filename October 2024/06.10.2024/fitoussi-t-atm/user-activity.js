@@ -1,4 +1,4 @@
-import { parsedData,transactions, bodyHTML } from "./static-data.js";
+import { parsedData, transactions, bodyHTML } from "./static-data.js";
 
 // Function to display user options and handle button actions
 const userActivity = (storedBalance) => {
@@ -27,149 +27,126 @@ const userActivity = (storedBalance) => {
         }
       }
 
-      // Withdraw functionality
+      // Withdraw functionality (display every time button is clicked)
       if (button.textContent === 'Withdraw') {
-        if (!document.querySelector('.withdraw-display')) {
-          const withdrawContainer = document.createElement('div');
-          withdrawContainer.classList.add('withdraw-display');
+        const withdrawContainer = document.createElement('div');
+        withdrawContainer.classList.add('withdraw-display');
 
-          const withdrawLabel = document.createElement('label');
-          withdrawLabel.textContent = `Provide withdraw amount:`;
-          withdrawLabel.setAttribute('for', 'withdraw-amount');
-          
-          const withdrawInput = document.createElement('input');
-          withdrawInput.setAttribute('type', 'number'); 
-          withdrawInput.setAttribute('id', 'withdraw-amount'); 
-          withdrawInput.setAttribute('min', '1'); 
-          withdrawInput.setAttribute('placeholder', 'Enter amount'); 
-          
-          const submitWithdraw = document.createElement('button');
-          submitWithdraw.textContent = 'Submit Withdrawal';
+        const withdrawLabel = document.createElement('label');
+        withdrawLabel.textContent = `Provide withdraw amount:`;
+        withdrawLabel.setAttribute('for', 'withdraw-amount');
+        
+        const withdrawInput = document.createElement('input');
+        withdrawInput.setAttribute('type', 'number'); 
+        withdrawInput.setAttribute('id', 'withdraw-amount'); 
+        withdrawInput.setAttribute('min', '1'); 
+        withdrawInput.setAttribute('placeholder', 'Enter amount'); 
+        
+        const submitWithdraw = document.createElement('button');
+        submitWithdraw.textContent = 'Submit Withdrawal';
 
-          // Append the input, label, and button to the withdraw container
-          withdrawContainer.appendChild(withdrawLabel);
-          withdrawContainer.appendChild(withdrawInput);
-          withdrawContainer.appendChild(submitWithdraw);
+        withdrawContainer.appendChild(withdrawLabel);
+        withdrawContainer.appendChild(withdrawInput);
+        withdrawContainer.appendChild(submitWithdraw);
 
-          // Append the withdraw container to the body
-          bodyHTML.appendChild(withdrawContainer);
-          
-          // Add event listener to the withdraw submission
-          submitWithdraw.addEventListener('click', () => {
-            let userAmountWithdraw = parseInt(withdrawInput.value);
+        bodyHTML.appendChild(withdrawContainer);
+        
+        submitWithdraw.addEventListener('click', () => {
+          let userAmountWithdraw = parseInt(withdrawInput.value);
 
-            // Check if the withdraw amount is valid
-            if (!isNaN(userAmountWithdraw) && userAmountWithdraw <= storedBalance) {
-              storedBalance -= userAmountWithdraw; // Deduct from balance
-              
-              // Update the balance in localStorage and transaction history
-              parsedData.currentBalance = storedBalance.toLocaleString(); // Update balance as string
-              transactions.push(['withdraw', userAmountWithdraw]); // Add transaction to history
-              parsedData.transactions = transactions;
-              localStorage.setItem("userData", JSON.stringify(parsedData));
+          if (!isNaN(userAmountWithdraw) && userAmountWithdraw <= storedBalance) {
+            storedBalance -= userAmountWithdraw;
+            parsedData.currentBalance = storedBalance.toLocaleString();
+            transactions.push(['withdraw', userAmountWithdraw]);
+            parsedData.transactions = transactions;
+            localStorage.setItem("userData", JSON.stringify(parsedData));
 
-              // Show success message and updated balance
-              const successMessage = document.createElement('h2');
-              successMessage.textContent = `Withdrawal successful! Your updated balance is: $${storedBalance.toLocaleString()}`;
-              bodyHTML.appendChild(successMessage);
+            const successMessage = document.createElement('h2');
+            successMessage.textContent = `Withdrawal successful! Your updated balance is: $${storedBalance.toLocaleString()}`;
+            bodyHTML.appendChild(successMessage);
 
-              // Update the displayed balance if it's already shown
-              const balanceDisplay = document.querySelector('.balance-display');
-              if (balanceDisplay) {
-                balanceDisplay.textContent = `Balance: $${storedBalance.toLocaleString()}`;
-              }
-            } else {
-              alert('Invalid or insufficient amount');
+            const balanceDisplay = document.querySelector('.balance-display');
+            if (balanceDisplay) {
+              balanceDisplay.textContent = `Balance: $${storedBalance.toLocaleString()}`;
             }
-          });
-        }
-      }
-
-      // Deposit functionality
-      if (button.textContent === 'Deposit') {
-        if (!document.querySelector('.deposit-display')) {
-          const depositContainer = document.createElement('div');
-          depositContainer.classList.add('deposit-display');
-
-          const depositLabel = document.createElement('label');
-          depositLabel.textContent = `Provide deposit amount:`;
-          depositLabel.setAttribute('for', 'deposit-amount');
-          
-          const depositInput = document.createElement('input');
-          depositInput.setAttribute('type', 'number'); 
-          depositInput.setAttribute('id', 'deposit-amount'); 
-          depositInput.setAttribute('min', '1'); 
-          depositInput.setAttribute('placeholder', 'Enter amount'); 
-          
-          const submitDeposit = document.createElement('button');
-          submitDeposit.textContent = 'Submit Deposit';
-
-          // Append the input, label, and button to the deposit container
-          depositContainer.appendChild(depositLabel);
-          depositContainer.appendChild(depositInput);
-          depositContainer.appendChild(submitDeposit);
-
-          // Append the deposit container to the body
-          bodyHTML.appendChild(depositContainer);
-          
-          // Add event listener to the deposit submission
-          submitDeposit.addEventListener('click', () => {
-            let userAmountDeposit = parseInt(depositInput.value);
-
-            // Check if the deposit amount is valid
-            if (!isNaN(userAmountDeposit) && userAmountDeposit > 0) {
-              storedBalance += userAmountDeposit; // Add to balance
-              
-              // Update the balance in localStorage and transaction history
-              parsedData.currentBalance = storedBalance.toLocaleString(); // Update balance as string
-              transactions.push(['deposit', userAmountDeposit]); // Add transaction to history
-              parsedData.transactions = transactions;
-              localStorage.setItem("userData", JSON.stringify(parsedData));
-
-              // Show success message and updated balance
-              const successMessage = document.createElement('h2');
-              successMessage.textContent = `Deposit successful! Your updated balance is: $${storedBalance.toLocaleString()}`;
-              bodyHTML.appendChild(successMessage);
-
-              // Update the displayed balance if it's already shown
-              const balanceDisplay = document.querySelector('.balance-display');
-              if (balanceDisplay) {
-                balanceDisplay.textContent = `Balance: $${storedBalance.toLocaleString()}`;
-              }
-            } else {
-              alert('Invalid amount');
-            }
-          });
-        }
-      }
-
-      // Last transaction functionality
-      if (button.textContent === 'Last Transaction') {
-        if (!document.querySelector('.transaction-display')) {
-          const transactionContainer = document.createElement('div');
-          transactionContainer.classList.add('transaction-display');
-      
-          const transactionList = document.createElement('ul');
-      
-          // Check if there are any transactions, if not show a message
-          if (transactions.length === 0) {
-            const noTransactionMessage = document.createElement('li');
-            noTransactionMessage.textContent = 'No transactions available.';
-            transactionList.appendChild(noTransactionMessage);
           } else {
-            transactions.forEach((transaction) => {
-              const listItem = document.createElement('li');
-              listItem.textContent = `${transaction[0]}: $${parseInt(transaction[1]).toLocaleString()}`;
-              transactionList.appendChild(listItem);
-            });
+            alert('Invalid or insufficient amount');
           }
-      
-          transactionContainer.appendChild(transactionList);
-          bodyHTML.appendChild(transactionContainer);
+        });
+      }
+
+      // Deposit functionality (display every time button is clicked)
+      if (button.textContent === 'Deposit') {
+        const depositContainer = document.createElement('div');
+        depositContainer.classList.add('deposit-display');
+
+        const depositLabel = document.createElement('label');
+        depositLabel.textContent = `Provide deposit amount:`;
+        depositLabel.setAttribute('for', 'deposit-amount');
+        
+        const depositInput = document.createElement('input');
+        depositInput.setAttribute('type', 'number'); 
+        depositInput.setAttribute('id', 'deposit-amount'); 
+        depositInput.setAttribute('min', '1'); 
+        depositInput.setAttribute('placeholder', 'Enter amount'); 
+        
+        const submitDeposit = document.createElement('button');
+        submitDeposit.textContent = 'Submit Deposit';
+
+        depositContainer.appendChild(depositLabel);
+        depositContainer.appendChild(depositInput);
+        depositContainer.appendChild(submitDeposit);
+
+        bodyHTML.appendChild(depositContainer);
+        
+        submitDeposit.addEventListener('click', () => {
+          let userAmountDeposit = parseInt(depositInput.value);
+
+          if (!isNaN(userAmountDeposit) && userAmountDeposit > 0) {
+            storedBalance += userAmountDeposit;
+            parsedData.currentBalance = storedBalance.toLocaleString();
+            transactions.push(['deposit', userAmountDeposit]);
+            parsedData.transactions = transactions;
+            localStorage.setItem("userData", JSON.stringify(parsedData));
+
+            const successMessage = document.createElement('h2');
+            successMessage.textContent = `Deposit successful! Your updated balance is: $${storedBalance.toLocaleString()}`;
+            bodyHTML.appendChild(successMessage);
+
+            const balanceDisplay = document.querySelector('.balance-display');
+            if (balanceDisplay) {
+              balanceDisplay.textContent = `Balance: $${storedBalance.toLocaleString()}`;
+            }
+          } else {
+            alert('Invalid amount');
+          }
+        });
+      }
+
+      // Last transaction functionality (display every time button is clicked)
+      if (button.textContent === 'Last Transaction') {
+        const transactionContainer = document.createElement('div');
+        transactionContainer.classList.add('transaction-display');
+    
+        const transactionList = document.createElement('ul');
+    
+        if (transactions.length === 0) {
+          const noTransactionMessage = document.createElement('li');
+          noTransactionMessage.textContent = 'No transactions available.';
+          transactionList.appendChild(noTransactionMessage);
+        } else {
+          transactions.forEach((transaction) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${transaction[0]}: $${parseInt(transaction[1]).toLocaleString()}`;
+            transactionList.appendChild(listItem);
+          });
         }
+    
+        transactionContainer.appendChild(transactionList);
+        bodyHTML.appendChild(transactionContainer);
       }
     });
   });
 };
 
-export {userActivity}
+export { userActivity };

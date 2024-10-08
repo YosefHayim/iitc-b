@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "Work Sans";
+  src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-pink);
+  font-size: 16px;
+  font-family: "Work Sans";
+  align-items: center;
+}
+
+img {
+  width: 510px;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.icon-star {
+  height: 30px;
+  width: 30px;
+  margin-right: 25px;
+}
+
+h1 {
+  margin-top: -8px;
+  font-size: 40px;
+  color: var(--dark-purple);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: -25px;
+}
+
+.card-container {
+  padding: 30px;
+  top: -140px;
+  position: relative;
+  z-index: 9999;
+  border-radius: 10px;
+  background-color: white;
+  width: 380px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.faq-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  color: var(--dark-purple);
+  font-weight: var(--font-weight-bold);
+}
+
+.question-area-container-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-plus,button {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+hr {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 1px; 
+  background-color: var(--light-pink); /* Change color if needed */
+  border: none; 
+}
+
+p {
+  line-height: 1.4rem;
+  color: var(--grayish-purple);
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}

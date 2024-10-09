@@ -74,26 +74,92 @@ q5(buddyFunc5)
 // 6. Callback with Timeouts
 // Write a function that accepts a callback and executes it after a delay using setTimeout.
 // Expected Output (after a delay): This message is delayed!
+const q6 = (cb) => {
+  cb()
+}
+
+const buddyFunc6 = () => {
+  setTimeout(() => {
+    console.log('This message is delayed!');
+    
+  },1000)
+}
+q6(buddyFunc6)
 
 // 7. Success and Failure Callbacks
 // Create a function that randomly either calls a "success" or a "failure" callback depending on a random condition (e.g., using Math.random()).
 // Expected Output: Request succeeded! OR Request failed!
+const q7 = (cb) => {
+  cb() > 0.5 ? console.log('success') : console.log('failed');
+}
+
+const buddyfunc7 = () => {
+  return Math.random(); 
+}
+q7(buddyfunc7);
 
 // 8. Event Simulation with Callback
 // Simulate an event (like a button click) by calling a function and passing a callback. The callback should be executed after the simulated event.
 // Expected Output: Button clicked! Callback triggered after click!
+const q8 = (cb) => {
+  setTimeout(() => {
+    cb()
+  },1000)
+}
+
+const buddyfunc8 = () => {
+  return console.log('Button clicked! Callback triggered after click!');
+}
+q8(buddyfunc8)
 
 // 9. Callback with Array Map
 // Use the built-in map() method on an array, passing a callback function to modify each element in the array.
 // Expected Output: [2, 4, 6, 8, 10]
 
+let arrayNumbers = [1,2,3,4,5];
+const q9 = (cb) => {
+  cb(arrayNumbers);
+}
+
+const buddyfunc9 = (array) => {
+  const modifiedArray = array.map((item) => item + item);
+  console.log(modifiedArray);
+} 
+q9(buddyfunc9);
+
 // 10. Filter Array with Callback
 // Use the built-in filter() method on an array to filter elements based on a condition provided by a callback function.
 // Expected Output: ["banana", "cherry"]
+let arrayWords = ['apple','cherry','wikipedia','mazda','apple watch']
+const q10 = (cb) => {
+  cb(arrayWords)
+}
+
+const buddyfunc10 = (array) => {
+  const filteredWords = array.filter((word) => {
+    return word.length > 6;
+  });
+  
+  console.log(filteredWords); 
+}
+q10(buddyfunc10)
 
 // 11. Sorting Array with Callback
 // Use the built-in sort() method on an array, passing a callback function to define the sorting behavior.
 // Expected Output: [3, 5, 8, 10]
+let arrayN = [1,5403,310,2100000,23,1,232,430,540,100,54399]
+
+const q11 = (cb) => {
+  cb(arrayN)
+}
+
+const buddyfunc11 = (array) => {
+  let updatedArray = array.sort((a,b) => {
+    return a - b
+  })
+  console.log(updatedArray);
+}
+q11(buddyfunc11)
 
 // 12. Reduce Array with Callback
 // Use the built-in reduce() method on an array, passing a callback to reduce all elements into a single value (e.g., sum of numbers).

@@ -186,19 +186,106 @@ const q21 = new Promise((resolve,reject) => {
 q21.then((result) => console.log(result)).finally(console.log('q - 21 | Finished!'))
 
 // 22. Write a function that returns a Promise which resolves with "Data received" after simulating a 2-second network request using setTimeout.
+const fnDR = () => {
+  const q22 = new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(`q - 22 Data received`)
+    },2000)
+  })
+  return q22
+}
+fnDR().then((result) => console.log(result))
 
 // 23. Write a function that uses Promise.all() to wait for three Promises that resolve with different values and logs all the values once all Promises are resolved.
+const fnDRAll = async () => {
+  const q23A = await new Promise((resolve) => {
+    resolve('q - 23 | A');
+  });
+
+  const q23B = await new Promise((resolve) => {
+    resolve('q - 23 | B');
+  });
+
+  const q23C = await new Promise((resolve) => {
+    resolve('q - 23 | C');
+  });
+
+  return [q23A, q23B, q23C];
+};
+
+fnDRAll().then((result) => console.log(result)).catch((error) => console.log(error));
+
 
 // 24. Write a function that returns a Promise which rejects if a given string is empty and resolves if it is not empty.
+let string = "This isn't empty brother";
+const fnDP24 = () => {
+  return new Promise((resolve, reject) => {
+    string.length === 0 ? reject('q - 24 This string is empty') : resolve('q - 24 This string is not empty');
+  });
+};
+
+fnDP24()
+  .then((result) => console.log(result)) 
+  .catch((error) => console.log(error)); 
 
 // 25. Write a Promise that resolves with the square of a given number.
 
+let n = 5
+
+const solveSquareP = new Promise((resolve,reject) => {
+  resolve(n ** 2)
+  return
+})
+
+solveSquareP.then((result)=> console.log(`q - 25 answer: ` + result))
+
 // 26. Create a Promise that resolves with the value of a given number multiplied by 2 after 2 seconds.
+const q26 = new Promise((resolve, reject) => {
+  let n = 5
+  setTimeout(() => {
+    const result = n * 2; 
+    resolve(result); 
+  }, 2000);
+});
+
+q26.then((result) => console.log(`q - 26 answer: ${result}`));
 
 // 27. Write a function that returns a Promise which resolves with a greeting message for a given name.
+const fnc27 = (name) => {
+  const q27 = new Promise ((resolve,reject) => {
+    resolve(`Welcome dear friend ${name}`)
+  })
+  return q27
+}
+
+fnc27('q - 27 Josepha').then((result) => console.log(result))
 
 // 28. Write a Promise that resolves with "File downloaded" after simulating a file download with setTimeout.
+const q28 = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    resolve('File downloaded')
+  },1500)
+})
+
+q28.then((result) => console.log(`q - 28 ` + result))
 
 // 29. Write a Promise that rejects with "Network error" if a given boolean is false and resolves with "Network success" if true.
+let condition = false
+const q29 = new Promise((resolve,reject) => {
+  condition === true ? resolve('q - 29 Network Success') : reject('q - 29  Network error')
+})
+
+q29.then((result) => console.log(result))
+  .catch((error) => console.log(error))
 
 // 30. Write a function that returns a Promise which resolves with "API call successful" after simulating an API call with setTimeout.
+const fnLast = () => {
+  const q30 = new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve('q - 30 API call successful')
+    })
+  })
+  return q30
+}
+
+fnLast().then((result) => console.log(result)).catch((error) => console.log(error))

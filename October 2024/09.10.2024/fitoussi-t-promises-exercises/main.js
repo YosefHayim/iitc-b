@@ -58,32 +58,132 @@ const q7 = new Promise((resolve, reject) => {
 q7.then(() => {console.log('q7 - Promise Resolved!')});
 
 // 8. Write a function that returns a resolved Promise with a given message.
+const qEightFunc = (name) => {
+  const q8 = new Promise((resolve, reject) => {
+    resolve(`q8 - Hey there this has been resolved successfully ${name}`)
+  })
+  return q8
+}
+
+qEightFunc('Joseph').then((result) => console.log(result))
 
 // 9. Write a function that returns a rejected Promise with a given error message.
+const qNineFunc = (name) => {
+  const q8 = new Promise((resolve, reject) => {
+    reject(`q9 - Error example ${name}`)
+  })
+  return q8
+}
+
+qNineFunc('Question Number Nine!').catch((error) => console.log(error))
 
 // 10. Create a Promise that resolves after 3 seconds and logs the value "3 seconds passed".
+const q10 = new Promise ((resolve,reject) => {
+  setTimeout(() => {
+    resolve('q10 - 3 seconds passed')
+  ,3000})
+})
+
+q10.then((result) => console.log(result))
 
 // 11. Chain two Promises together where the second Promise resolves with the value of the first Promise plus " and then some".
+const q11 = new Promise((resolve, reject) => {
+  resolve('q11 - first Chain');
+});
+
+q11.then((result) => {return `${result} and then some`;})
+  .then((finalResult) => {console.log(finalResult);});
 
 // 12. Write a Promise that resolves with an array of numbers and logs the sum of those numbers using .then().
+const q12 = new Promise((resolve, reject) => {
+  let arrayNum = [1, 2, 3, 4, 5];
+  resolve(arrayNum.reduce((acc, curr) => acc + curr, 0));
+});
+
+q12.then((result) => console.log('q - 12 ' + result)); 
 
 // 13. Create a Promise that rejects if a given number is less than 10 and resolves if it's 10 or greater.
+let num = 10 
+const q13 = new Promise ((resolve,reject) => {
+  num > 10 ? resolve('q - 13 Greater than 10') : reject('q - 13Less or equal to 10')
+})
+
+q13.then((result) => console.log(result))
+  .catch((error) => console.log(error))
 
 // 14. Write a function that returns a Promise which resolves after a given number of milliseconds.
+const q14 = new Promise ((resolve, reject) => {
+  setTimeout(() => {
+    resolve('q - 14 after milliseconds')
+  },100)
+})
 
+q14.then((result) => console.log(result)
+)
 // 15. Write a Promise that resolves with the current date and time.
+const d = new Date()
+let time = d.getTime();
+
+const q15 = new Promise ((resolve, reject) => {
+  resolve(`q - 15 | current time: ${time}, current date: ${d}`)
+})
+
+q15.then((result) => console.log(result))
 
 // 16. Use Promise.all() to wait for two Promises to resolve and then log their results.
+const q16 = Promise.all([q1,q3]).then((result) => console.log(`q - 16 ` + result))
 
 // 17. Create a Promise that resolves with a user's name and another that resolves with the user's age. Use Promise.all() to wait for both and then log a message "Name: [name], Age: [age]".
+const namePromise = new Promise((resolve, reject) => {
+  resolve('Joseph');
+});
+
+const agePromise = new Promise((resolve, reject) => {
+  resolve(20);
+});
+
+Promise.all([namePromise, agePromise])
+  .then(([name, age]) => {
+    console.log(`q - 17 | Name: ${name}, Age: ${age}`);
+  })
+  .catch((error) => console.log(error));
 
 // 18. Write a function that returns a Promise which resolves with a random number after 1 second.
+const randomNumFunc = () => {
+  let random = Math.random();
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(`q - 18 | random number is: ${random}`);
+    }, 1000);
+  });
+};
+
+randomNumFunc()
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
 
 // 19. Create a Promise that rejects with a specific error message and handle it using .catch() and log the error.
+const q19 = new Promise((resolve,reject) => {
+  reject('q - 19 error message displayed')
+})
+
+q19.then((result) => console.log(result)).
+  catch((error) => console.log(error))
 
 // 20. Write a Promise that resolves with "Success!" and logs "Operation was successful!" using .then().
+const q20 = new Promise ((resolve,reject) => {
+  resolve('q - 20 | Success!')
+})
+
+q20.then(result => result)
+  .then(console.log(`q - 20 | Operation was successful!`));
 
 // 21. Write a Promise that resolves with "Done!" and always logs "Finished!" using .finally().
+const q21 = new Promise((resolve,reject) => {
+  resolve('q - 21 | Done!')
+})
+
+q21.then((result) => console.log(result)).finally(console.log('q - 21 | Finished!'))
 
 // 22. Write a function that returns a Promise which resolves with "Data received" after simulating a 2-second network request using setTimeout.
 

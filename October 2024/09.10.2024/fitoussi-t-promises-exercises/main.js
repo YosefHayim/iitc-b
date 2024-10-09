@@ -1,16 +1,61 @@
 // 1. Create a new Promise that resolves with the value "Hello, World!".
+const q1 = new Promise((resolve, reject) => {
+  resolve('q1 - Hello, World!');
+});
+console.log(q1);
 
 // 2. Create a new Promise that rejects with the value "Error occurred".
+const q2 = new Promise((resolve, reject) => {
+  reject('q2 - Error occurred')
+})
+
+q2.then(
+  (result) => console.log(result), 
+  (error) => console.log(error)
+);
 
 // 3. Write a Promise that resolves after 2 seconds with the value "Resolved!".
+const q3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('q3 - Resolved!')
+  },2000)
+})
+
+q3.then((result) => console.log(result))
+  .catch((error) => console.log(error));
 
 // 4. Write a Promise that rejects after 1 second with the value "Rejected!".
+const q4 = new Promise ( (resolve, reject) => {
+  setTimeout(() => {
+    reject('q4 - Rejected!')
+  },1000)
+})
+
+q4.then((result) => console.log(result))
+  .catch((error) => console.log(error));
 
 // 5. Create a Promise that resolves with a given value and log the resolved value using .then().
+const q5 = new Promise ((resolve, reject) => {
+  resolve('q5 - this is a resolve type')
+  reject('This is just another use just for learning')
+})
+
+q5.then((result) => console.log(result));
 
 // 6. Create a Promise that rejects with a given value and handle the rejection using .catch().
+const q6 = new Promise ((resolve, reject) => {
+  reject('q6 - Reject log')
+})
+
+q6.then((result) => (result))
+  .catch((error) => console.log(error)) 
 
 // 7. Write a Promise that resolves with the value "Hello, World!" and logs "Promise Resolved!" after it resolves.
+const q7 = new Promise((resolve, reject) => {
+  resolve('Hello, World!');
+});
+
+q7.then(() => {console.log('q7 - Promise Resolved!')});
 
 // 8. Write a function that returns a resolved Promise with a given message.
 

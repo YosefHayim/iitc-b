@@ -9,19 +9,21 @@
   margin: 0;
 }
 
+html,body{
+  min-height: 100vh;
+}
+
 body {
-  width:100%;
   background-color: hsl(216, 12%, 8%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: 15px;
 } 
 
 form {
-  height: 345px;
-  margin-top: 50px;
-  width:340px;
+  width:375px;
   background-color: hsl(213, 19%, 18%);
   border-radius: 12px;
 }
@@ -29,7 +31,6 @@ form {
 .father-container {
   display: flex;
   flex-direction: column;
-
 }
 
 img {

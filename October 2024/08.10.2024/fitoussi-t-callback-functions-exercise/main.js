@@ -174,7 +174,6 @@ const buddyfunc12 = (array) => {
   },0)
   console.log(`q12 = ` + reduceArray);
 }
-
 // q12(buddyfunc12)
 
 // 13. Callback in a Custom Function
@@ -194,7 +193,6 @@ const fetchDataFn = (data) => {
 const q13 = (cb) => {
   cb(localData)
 }
-
 // q13(fetchDataFn)
 
 // 14. Passing Multiple Callbacks
@@ -215,8 +213,7 @@ const q14 = (cb1,cb2) => {
   cb1(numOne,numTwo)
   cb2(numOne,numTwo)
 }
-
-q14(additionFnc,multiplicationFnc)
+// q14(additionFnc,multiplicationFnc)
 
 // 15. Check if Element Exists using Callback
 // Write a function that checks if a given element exists in an array, and pass a callback that logs a message depending on whether the element was found.
@@ -236,25 +233,102 @@ const checkElArray = (array) => {
 const q15 = (cb) => {
   cb(arrayNums);
 }
-
-q15(checkElArray);
+// q15(checkElArray);
 
 // 16. Callback with Conditional Execution
 // Create a function that checks if a number is even or odd, and pass two callbacks—one for even numbers and one for odd numbers.
 // Expected Output (for even): Even number! OR (for odd): Odd number!
+let num = 15
+const isEven = (n) => {
+  if (n % 2 === 0) {
+    console.log(`q - 16 This num is even`);
+  }
+}
+
+const isntEven = (n) => {
+  if (n % 2 !== 0) {
+    console.log(`q - 16 This is not even number`);
+    
+  }
+}
+
+const q16 = (cb,cbTwo) => {
+  if (num % 2 === 0) {
+    cb(num)
+  } else {
+    cbTwo(num)
+  }
+}
+// q16(isEven,isntEven)
 
 // 17. Simulating an Asynchronous Operation with Callbacks
 // Write a function that simulates an asynchronous operation (e.g., loading data) and accepts a callback to handle the data after a delay.
 // Expected Output: John
+const simulateFnc = () => {
+  let simulate = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+      resolve('John')
+    },1000)
+
+  })
+  return simulate
+}
+
+const q17 = (cb) => {
+  return cb()
+}
+// q17(simulateFnc)
+// .then((result) => console.log(result))
+// .catch((error) => console.log(error))
 
 // 18. Modifying Array Elements with Callbacks
 // Create a function that modifies every element in an array using a callback function and returns the modified array.
 // Expected Output: [3, 6, 9, 12]
+array = [1.5,3,4.5,6]
+const modifyArray = (array) => {
+  let newArray = array.map((number) => number * 2)
+  console.log(newArray);
+}
+const q18 = (cb) => {
+   return cb(array)
+}
+// q18(modifyArray)
 
 // 19. Callback Chain
 // Write two functions. The first function should call the second function using a callback after logging a message.
 // Expected Output: Step 1, Step 2
+const fFunc = (cb) => {
+  return cb()
+}
+
+const sFunc = () => {
+  setTimeout(() => {
+    console.log(`Step 1, Step 2`);
+  },1000)
+}
+// fFunc(sFunc)
 
 // 20. Callback for Error Handling
 // Write a function that attempts to divide two numbers, and pass two callbacks—one for success and one for error (e.g., division by zero).
 // Expected Output (for valid division): Result: 5 OR (for division by zero): Error: Cannot divide by zero!
+let n = 0;
+let divisor = 3;
+
+const q20 = (cbOne, cbTwo) => {
+  if (divisor === 0) {
+    return cbTwo();
+  } else {
+    return cbOne(n / divisor);
+  }
+}
+
+const aFunc = (result) => {
+  console.log(`Result: ${result}`);
+}
+
+const bFunc = () => {
+  console.log(`Error: Cannot divide by zero!`);
+}
+
+// q20(aFunc, bFunc);

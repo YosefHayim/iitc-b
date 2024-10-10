@@ -123,15 +123,12 @@ p {
     margin: 0;
     padding: 0;
   }
-  body {
-    width: 100%;
-  }
 
   .hero-image-area {
-    width: 110%;
+    width: 100%;
     content: url(./assets/images/background-pattern-desktop.svg);
   }
-
+  
   br {
     display: none;
   }

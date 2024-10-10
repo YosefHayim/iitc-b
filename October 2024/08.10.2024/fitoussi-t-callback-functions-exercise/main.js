@@ -1,5 +1,3 @@
-// Callback Exercises for Beginners
-
 // 1. Simple Callback Execution
 // Write a function that takes another function (a callback) as an argument and executes it.
 const q1 = (cb) => {
@@ -9,7 +7,7 @@ const q1 = (cb) => {
 const buddyFunc = () => {
   console.log(`Hello World!`);
 }
-q1(buddyFunc)
+// q1(buddyFunc)
 
 // 2. Callback with Parameters
 // Create a function that accepts a name and a callback function. The callback should display a greeting using the provided name.
@@ -22,7 +20,7 @@ const q2 = (cb) => {
 const buddyFunc2 = (name) => {
   console.log(`Hello ${name}`);
 }
-q2(buddyFunc2)
+// q2(buddyFunc2)
 
 
 // 3. Callback with Anonymous Function
@@ -38,7 +36,7 @@ const buddyFunc3 = () => {
     console.log(item * 2);
   })
 }
-q3(buddyFunc3)
+// q3(buddyFunc3)
 
 // 4. Math Operation Callback
 // Write a function that accepts two numbers and a callback function. The callback should define a mathematical operation (like addition or multiplication).
@@ -52,7 +50,7 @@ const buddyFunc4 = (a,b) => {
   console.log(`Result of q4 is: ` + (a + b));
   
 }
-q4(5,2,buddyFunc4)
+// q4(5,2,buddyFunc4)
 
 // 5. Array Iteration with Callback
 // Create a function that accepts an array and a callback function. The callback should be called for each element of the array.
@@ -69,7 +67,7 @@ const buddyFunc5 = (array) => {
     console.log(n);
   })
 }
-q5(buddyFunc5)
+// q5(buddyFunc5)
 
 // 6. Callback with Timeouts
 // Write a function that accepts a callback and executes it after a delay using setTimeout.
@@ -84,7 +82,7 @@ const buddyFunc6 = () => {
     
   },1000)
 }
-q6(buddyFunc6)
+// q6(buddyFunc6)
 
 // 7. Success and Failure Callbacks
 // Create a function that randomly either calls a "success" or a "failure" callback depending on a random condition (e.g., using Math.random()).
@@ -96,7 +94,7 @@ const q7 = (cb) => {
 const buddyfunc7 = () => {
   return Math.random(); 
 }
-q7(buddyfunc7);
+// q7(buddyfunc7);
 
 // 8. Event Simulation with Callback
 // Simulate an event (like a button click) by calling a function and passing a callback. The callback should be executed after the simulated event.
@@ -110,7 +108,7 @@ const q8 = (cb) => {
 const buddyfunc8 = () => {
   return console.log('Button clicked! Callback triggered after click!');
 }
-q8(buddyfunc8)
+// q8(buddyfunc8)
 
 // 9. Callback with Array Map
 // Use the built-in map() method on an array, passing a callback function to modify each element in the array.
@@ -125,7 +123,7 @@ const buddyfunc9 = (array) => {
   const modifiedArray = array.map((item) => item + item);
   console.log(modifiedArray);
 } 
-q9(buddyfunc9);
+// q9(buddyfunc9);
 
 // 10. Filter Array with Callback
 // Use the built-in filter() method on an array to filter elements based on a condition provided by a callback function.
@@ -142,7 +140,7 @@ const buddyfunc10 = (array) => {
   
   console.log(filteredWords); 
 }
-q10(buddyfunc10)
+// q10(buddyfunc10)
 
 // 11. Sorting Array with Callback
 // Use the built-in sort() method on an array, passing a callback function to define the sorting behavior.
@@ -159,23 +157,87 @@ const buddyfunc11 = (array) => {
   })
   console.log(updatedArray);
 }
-q11(buddyfunc11)
+// q11(buddyfunc11)
 
 // 12. Reduce Array with Callback
 // Use the built-in reduce() method on an array, passing a callback to reduce all elements into a single value (e.g., sum of numbers).
 // Expected Output: 10
+let arraySumMinus = [5,5]
+const q12 = (cb) => {
+  cb(arraySumMinus)
+}
+
+const buddyfunc12 = (array) => {
+  let reduceArray = array.reduce((accumulator,currentValue) => {
+    return accumulator + currentValue
+
+  },0)
+  console.log(`q12 = ` + reduceArray);
+}
+
+// q12(buddyfunc12)
 
 // 13. Callback in a Custom Function
 // Create a function that fetches some data (e.g., a name), and pass a callback function that processes the data.
 // Expected Output: Alice
+let localData = [{
+  name: 'Alice',
+  age: 25,
+  workPlace: "Google"
+}]
+
+const fetchDataFn = (data) => {
+  let fetchDataFName = data[0].name
+  console.log(`q 13 = ` + fetchDataFName);
+}
+
+const q13 = (cb) => {
+  cb(localData)
+}
+
+// q13(fetchDataFn)
 
 // 14. Passing Multiple Callbacks
 // Write a function that accepts multiple callbacks (e.g., one for addition, one for multiplication) and uses them to perform operations on two numbers.
 // Expected Output: 8, 15
+let numOne = 10
+let numTwo = 20
+
+const additionFnc = (a,b) => {
+  return console.log(a + b);
+}
+
+const multiplicationFnc = (a,b) => {
+  return console.log(a * b);
+}
+
+const q14 = (cb1,cb2) => {
+  cb1(numOne,numTwo)
+  cb2(numOne,numTwo)
+}
+
+q14(additionFnc,multiplicationFnc)
 
 // 15. Check if Element Exists using Callback
 // Write a function that checks if a given element exists in an array, and pass a callback that logs a message depending on whether the element was found.
 // Expected Output: Number found OR Number not found
+let arrayNums = [1, 2, 3, 4, 5, 6, 7];
+
+const checkElArray = (array) => {
+  let isElFound = array.find((n) => n === 7);
+  
+  if (isElFound) {
+    console.log(`Num found ${isElFound}`);
+  } else {
+    console.log("Num not found");
+  }
+}
+
+const q15 = (cb) => {
+  cb(arrayNums);
+}
+
+q15(checkElArray);
 
 // 16. Callback with Conditional Execution
 // Create a function that checks if a number is even or odd, and pass two callbacks—one for even numbers and one for odd numbers.

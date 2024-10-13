@@ -17,131 +17,98 @@ const userActivity = (storedBalance) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
 
+      // Remove any existing display containers
+      document.querySelectorAll('.withdraw-display, .deposit-display, .transaction-display').forEach(el => el.remove());
+
       // Display balance
       if (button.textContent === 'Balance') {
-        if (!document.querySelector('.balance-display')) {
-          const currentBalance = document.createElement('h2');
-          currentBalance.textContent = `Balance: $${storedBalance.toLocaleString()}`;
-          currentBalance.classList.add('balance-display');
-          bodyHTML.appendChild(currentBalance);
+        let balanceDisplay = document.querySelector('.balance-display');
+        if (!balanceDisplay) {
+          balanceDisplay = document.createElement('h2');
+          balanceDisplay.classList.add('balance-display');
+          bodyHTML.appendChild(balanceDisplay);
         }
+        balanceDisplay.textContent = `Balance: $${storedBalance.toLocaleString()}`;
       }
 
-      // Withdraw functionality (display every time button is clicked)
+      // Withdraw functionality
       if (button.textContent === 'Withdraw') {
         const withdrawContainer = document.createElement('div');
         withdrawContainer.classList.add('withdraw-display');
 
-        const withdrawLabel = document.createElement('label');
-        withdrawLabel.textContent = `Provide withdraw amount:`;
-        withdrawLabel.setAttribute('for', 'withdraw-amount');
-        
-        const withdrawInput = document.createElement('input');
-        withdrawInput.setAttribute('type', 'number'); 
-        withdrawInput.setAttribute('id', 'withdraw-amount'); 
-        withdrawInput.setAttribute('min', '1'); 
-        withdrawInput.setAttribute('placeholder', 'Enter amount'); 
-        
-        const submitWithdraw = document.createElement('button');
-        submitWithdraw.textContent = 'Submit Withdrawal';
-
-        withdrawContainer.appendChild(withdrawLabel);
-        withdrawContainer.appendChild(withdrawInput);
-        withdrawContainer.appendChild(submitWithdraw);
-
+        withdrawContainer.innerHTML = `
+          <label for="withdraw-amount">Provide withdraw amount:</label>
+          <input type="number" id="withdraw-amount" min="1" placeholder="Enter amount">
+          <button id="submit-withdraw">Submit Withdrawal</button>
+        `;
         bodyHTML.appendChild(withdrawContainer);
-        
-        submitWithdraw.addEventListener('click', () => {
-          let userAmountWithdraw = parseInt(withdrawInput.value);
+
+        withdrawContainer.querySelector('#submit-withdraw').addEventListener('click', () => {
+          const withdrawInput = withdrawContainer.querySelector('#withdraw-amount');
+          const userAmountWithdraw = parseInt(withdrawInput.value);
 
           if (!isNaN(userAmountWithdraw) && userAmountWithdraw <= storedBalance) {
             storedBalance -= userAmountWithdraw;
             parsedData.currentBalance = storedBalance.toLocaleString();
             transactions.push(['withdraw', userAmountWithdraw]);
-            parsedData.transactions = transactions;
             localStorage.setItem("userData", JSON.stringify(parsedData));
 
-            const successMessage = document.createElement('h2');
-            successMessage.textContent = `Withdrawal successful! Your updated balance is: $${storedBalance.toLocaleString()}`;
-            bodyHTML.appendChild(successMessage);
-
-            const balanceDisplay = document.querySelector('.balance-display');
-            if (balanceDisplay) {
-              balanceDisplay.textContent = `Balance: $${storedBalance.toLocaleString()}`;
-            }
+            alert(`Withdrawal successful! Your updated balance is: $${storedBalance.toLocaleString()}`);
+            withdrawContainer.remove();
+            document.querySelector('.balance-display').textContent = `Balance: $${storedBalance.toLocaleString()}`;
           } else {
             alert('Invalid or insufficient amount');
           }
         });
       }
 
-      // Deposit functionality (display every time button is clicked)
+      // Deposit functionality
       if (button.textContent === 'Deposit') {
         const depositContainer = document.createElement('div');
         depositContainer.classList.add('deposit-display');
 
-        const depositLabel = document.createElement('label');
-        depositLabel.textContent = `Provide deposit amount:`;
-        depositLabel.setAttribute('for', 'deposit-amount');
-        
-        const depositInput = document.createElement('input');
-        depositInput.setAttribute('type', 'number'); 
-        depositInput.setAttribute('id', 'deposit-amount'); 
-        depositInput.setAttribute('min', '1'); 
-        depositInput.setAttribute('placeholder', 'Enter amount'); 
-        
-        const submitDeposit = document.createElement('button');
-        submitDeposit.textContent = 'Submit Deposit';
-
-        depositContainer.appendChild(depositLabel);
-        depositContainer.appendChild(depositInput);
-        depositContainer.appendChild(submitDeposit);
-
+        depositContainer.innerHTML = `
+          <label for="deposit-amount">Provide deposit amount:</label>
+          <input type="number" id="deposit-amount" min="1" placeholder="Enter amount">
+          <button id="submit-deposit">Submit Deposit</button>
+        `;
         bodyHTML.appendChild(depositContainer);
-        
-        submitDeposit.addEventListener('click', () => {
-          let userAmountDeposit = parseInt(depositInput.value);
+
+        depositContainer.querySelector('#submit-deposit').addEventListener('click', () => {
+          const depositInput = depositContainer.querySelector('#deposit-amount');
+          const userAmountDeposit = parseInt(depositInput.value);
 
           if (!isNaN(userAmountDeposit) && userAmountDeposit > 0) {
             storedBalance += userAmountDeposit;
             parsedData.currentBalance = storedBalance.toLocaleString();
             transactions.push(['deposit', userAmountDeposit]);
-            parsedData.transactions = transactions;
             localStorage.setItem("userData", JSON.stringify(parsedData));
 
-            const successMessage = document.createElement('h2');
-            successMessage.textContent = `Deposit successful! Your updated balance is: $${storedBalance.toLocaleString()}`;
-            bodyHTML.appendChild(successMessage);
-
-            const balanceDisplay = document.querySelector('.balance-display');
-            if (balanceDisplay) {
-              balanceDisplay.textContent = `Balance: $${storedBalance.toLocaleString()}`;
-            }
+            alert(`Deposit successful! Your updated balance is: $${storedBalance.toLocaleString()}`);
+            depositContainer.remove();
+            document.querySelector('.balance-display').textContent = `Balance: $${storedBalance.toLocaleString()}`;
           } else {
             alert('Invalid amount');
           }
         });
       }
 
-      // Last transaction functionality (display every time button is clicked)
+      // Last transaction functionality
       if (button.textContent === 'Last Transaction') {
         const transactionContainer = document.createElement('div');
         transactionContainer.classList.add('transaction-display');
-    
+
         const transactionList = document.createElement('ul');
-    
         if (transactions.length === 0) {
-          const noTransactionMessage = document.createElement('li');
-          noTransactionMessage.textContent = 'No transactions available.';
-          transactionList.appendChild(noTransactionMessage);
+          transactionList.innerHTML = `<li>No transactions available.</li>`;
         } else {
-          transactions.forEach((transaction) => {
+          transactions.forEach(([type, amount]) => {
             const listItem = document.createElement('li');
-            listItem.textContent = `${transaction[0]}: $${parseInt(transaction[1]).toLocaleString()}`;
+            listItem.textContent = `${type}: $${amount.toLocaleString()}`;
             transactionList.appendChild(listItem);
           });
         }
-    
+
         transactionContainer.appendChild(transactionList);
         bodyHTML.appendChild(transactionContainer);
       }

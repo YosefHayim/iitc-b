@@ -114,7 +114,7 @@ submitBtn.addEventListener('click', (ev) => {
 const updatePost = async (postId, title) => {
   try {
     const response = await fetch(`https://api-playground-ten.vercel.app/posts/${postId}`, {
-      method: 'PATCH', // Specify the HTTP method for updating
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -229,7 +229,6 @@ const displayAllPostis = async (filterTitle) => {
   try {
     const response = await axios.get('https://api-playground-ten.vercel.app/posts');
     
-    // Filter posts based on the filterTitle
     const filteredPosts = response.data.filter(post => 
       post.title.toLowerCase().includes(filterTitle.toLowerCase())
     );
@@ -261,7 +260,7 @@ formFilter.addEventListener('submit', (ev) => {
   ev.preventDefault();
   
   const inputFilter = document.querySelector('.exercise-19-filter-post-by-title-input').value;
-  displayAllPostis(inputFilter); // Call the function with the filter value
+  displayAllPostis(inputFilter); 
 });
 
 
@@ -270,12 +269,10 @@ const sortAllPostsByOrder = async () => {
   try {
     const response = await axios.get('https://api-playground-ten.vercel.app/posts');
     
-    // Sort posts alphabetically by title
     const sortedPosts = response.data.sort((a, b) => 
       a.title.localeCompare(b.title)
     );
 
-    // Clear the mainDiv before appending new content
     mainDiv.innerHTML = ''; 
 
     let count = 0;
@@ -287,7 +284,7 @@ const sortAllPostsByOrder = async () => {
         <p>Content post: ${post.content}</p>
         <p>Post ID: ${post._id}</p>
       `;
-      mainDiv.append(createLi); // Append each post to mainDiv
+      mainDiv.append(createLi);
     });
 
     console.log(`Total posts found: ${count}`);
@@ -296,9 +293,8 @@ const sortAllPostsByOrder = async () => {
   }
 };
 
-// Event listener to trigger the sorting function
 const alphabeticSortBtn = document.querySelector('.sort-alphabetic');
 alphabeticSortBtn.addEventListener('click', (ev) => {
   ev.preventDefault();
-  sortAllPostsByOrder(); // Call the sorting function when the button is clicked
+  sortAllPostsByOrder();
 });

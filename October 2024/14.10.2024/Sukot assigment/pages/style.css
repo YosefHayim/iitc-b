@@ -25,6 +25,13 @@ body {
   align-items: center;
 }
 
+.searchbar-container,.navbar-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 main,.popular-movies-container,.movie-card-container,.movie-card {
   display: flex;
   flex-direction: column;

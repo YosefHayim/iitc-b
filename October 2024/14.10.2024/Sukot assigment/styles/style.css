@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Tanseek";
+  src: url(../fonts/Tanseek\ Modern\ Pro\ Arabic\ Book.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,html {
+  min-height: 100vh;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: black;
+  color: white;
+  font-family: "Tanseek";
+  font-size: 1em;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+  padding: 1em;
+  background: #ffff0073;
+}
+
+.container-img {
+  background: black;
+  border: 2em;
+  border-radius: 2em;
+}
+
+.logo-img {
+  border-radius: 2em;
+}
+
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.input-search-bar {
+  border-radius: 1em;
+  padding: 0.5em;
+  border: none;
+  text-align: center;
+  background: black;
+}
+
+::placeholder {
+  color: white;
+}
+
+.submit-btn {
+  border: none;
+  border-radius: 1em;
+  padding: 0.5em;
+  background: black;
+  color: white;
+}

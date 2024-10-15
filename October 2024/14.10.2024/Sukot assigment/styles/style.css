@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Tanseek Modern Pro Arabic Book";
   src: url(../fonts/Tanseek\ Modern\ Pro\ Arabic\ Book.ttf);
 }
@@ -31,9 +31,9 @@ body {
   font-family: "Tanseek Modern Pro Arabic Book";
 }
 
-.desktop-navbar-container {
+/* .desktop-navbar-container {
   display: none;
-}
+} */
 
 main {
   display: flex;
@@ -185,4 +185,4 @@ ul {
   transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease; 
   filter: blur(5px); 
   box-shadow: 0 5px 15px 5px var(--title-bg); 
-}
+} */

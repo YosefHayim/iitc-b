@@ -1,9 +1,0 @@
-.about-us-data {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  width: -webkit-fill-available;
-  font-size: 1.3em;
-}

@@ -13,10 +13,13 @@ const popularMovies = async () => {
   const popularMoviesList = await response.json();
   console.log(popularMoviesList);
   
-  popularMoviesList.results.forEach((movie,index) => {
+  popularMoviesList.results.forEach((movie) => {
     movieContainer.innerHTML += `
     <div class="movie-card-container">
-    <h2>${movie.original_title}<h2>
+    <div class="movie-title-container"><h2>${movie.original_title}</h2></div>
+
+    <div class="img-container"><img src="https://image.tmdb.org/t/p/w500/${movie.backdrop_path}" alt="movie-poster-img" class="movie-poster-img"> </div>
+    <div class="p-container"><p>${movie.overview}</p>
     </div>
     `    
   });

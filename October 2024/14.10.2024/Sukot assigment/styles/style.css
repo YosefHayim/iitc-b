@@ -67,8 +67,30 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: min-content;
+  gap: 2.5em;
   margin-top: 2em;
+}
+
+.movie-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  gap: 0.5em;
+}
+
+.movie-poster-img {
+  width: 300px;
+}
+
+.p-container {
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: start;
+  line-height: 1em;
+  font-size: 1.3em;
 }
 
 h1 {

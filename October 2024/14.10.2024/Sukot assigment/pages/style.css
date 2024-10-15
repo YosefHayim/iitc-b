@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Monteserrat";
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,html {
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main,.popular-movies-container,.movie-card-container,.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-img,.overview {
+  width: 35vh;
+}
+
+

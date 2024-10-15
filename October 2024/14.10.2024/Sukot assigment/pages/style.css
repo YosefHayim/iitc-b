@@ -52,14 +52,14 @@ body {
   margin-bottom: 5em;
 }
 
-main,.popular-movies-container,.trending-movies-container,.movie-card-container,.movie-card {
+main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.trending-movies-container,.popular-movies-container {
+.top-trending-movies-container,.popular-movies-container {
   flex-direction: row;
   gap: 7em;
   margin-bottom: 5em;
@@ -93,7 +93,11 @@ main {
   border-radius: 2em;
   background: #0000001f;
   cursor: pointer;
+  color: white;
+}
 
+input:active {
+  color: white;
 }
 
 ::placeholder {
@@ -107,6 +111,7 @@ main {
 }
 
 .title {
+  text-align: center;
   width: 100%;
   font-size: 1.2em;
 }
@@ -154,5 +159,50 @@ main {
   border: none;
   position: absolute;
   cursor: pointer;
+}
+
+.play-button-img:hover {
+  background: #ffffff63;
+  color: #ffffff00;
+  box-shadow: 0em 0em 10em 1em;
+}
+
+.play-button-img:active {
+  background: #ff0000a3;
+  box-shadow: 0em 0em 1em #f4f4f4;
+}
+
+.search-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  gap: 7em;
+}
+
+/* Cards flow to the right animation */
+.movie-card {
+  position: relative;
+  /* animation: moveRight 30s linear infinite;  */
+}
+
+.movie-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+
+}
+
+.movie-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0em 0em 1.5em rgba(255, 255, 255, 1);
+}
+
+@keyframes moveRight {
+  0% {
+    left: 0; /* Start from the initial position */
+  }
+  100% {
+    left: 20%; /* Move completely to the right */
+  }
 }
 

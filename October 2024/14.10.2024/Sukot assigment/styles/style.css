@@ -3,6 +3,21 @@
   src: url(../fonts/Tanseek\ Modern\ Pro\ Arabic\ Book.ttf);
 }
 
+:root {
+  --font-weight-minimal: 100;
+  --font-bold: 900;
+  --color-white: #ffffff;
+  --color-light-gray: #f4f4f4;
+  --color-black: #000000;
+  --color-gray: gray;
+  --color-red: red;
+  --color-dodgerblue: dodgerblue;
+  --color-goldenrod: goldenrod;
+  --color-black-transparent-05: rgba(0, 0, 0, 0.05);
+  --color-black-transparent-12: rgba(0, 0, 0, 0.12);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -19,8 +34,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: black;
-  color: white;
+  color: var(--color-white);
   font-family: "Tanseek";
   font-size: 1em;
 }
@@ -35,13 +49,13 @@ main {
 }
 
 form {
+  background-color: var(--color-black);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2em;
   width: 100%;
   padding: 1em;
-  background: gray;
 }
 
 .container-img {
@@ -78,27 +92,55 @@ form {
   justify-content: center;
   align-items: center;
   width: max-content;
+  border: 1px solid var(--color-white);
+  padding: 1em;
+  border-radius: 2em;
+  background: var(--color-black-transparent-12);
+  color: black;
+  gap: 0.5em;
+}
+
+h2 {
+  color: white;
+  background: var(--color-black-transparent-05);
+  border-radius: 50px;
+  font-weight: var(--font-weight-minimal);
 }
 
 .movie-title-container {
-  background: hsla(0, 0%, 0%, 0.5);
   padding: 0.4em;
-  border-radius: 50px;
-  transform: translateY(2.5em);
+  width: 100%;
+  text-align: center;
+  background:var(--color-black-transparent-05);;
+  border-radius: 1em;
 }
 
 .movie-poster-img {
   width: 35vh;
-  border-radius: 5em;
+  border-radius: 1em;
+  border: 1px solid var(--color-light-gray);
 }
 
 .p-container {
   padding-left: 1em;
   padding-right: 1em;
-  text-align: start;
+  text-align: center;
   line-height: 1em;
   font-size: 1.3em;
   width: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-bottom: 0.3em;
+  width: 115%;
+}
+
+.movie-data {
+  text-align: start;
 }
 
 .buttons-container {
@@ -116,19 +158,40 @@ form {
   align-items: center;
 }
 
-.like-button {
+.like-button,.share-button,.rating-button {
   border: none;
   background: gray;
   border-radius: 50px;
   cursor: pointer;
+  display: flex;
 }
 
-.reg-heart-icon {
+.reg-heart-icon,.reg-share-icon,.reg-rating-icon {
   width: 50px;
+}
+
+.btn-text {
+  font-weight:  var(--font-bold);;
+  letter-spacing: 0.05em;
 }
 
 h1 {
   font-size: 2em;
+}
+
+.like-button:hover {
+  background: red;
+  border-radius: 50px;
+}
+
+.share-button:hover {
+  background: dodgerblue;
+  border-radius: 50px;
+}
+
+.rating-button:hover {
+  border-radius: 50px;
+  background: goldenrod;
 }
 
 .input-search-bar {
@@ -136,17 +199,17 @@ h1 {
   padding: 0.5em;
   border: none;
   text-align: center;
-  background: black;
+  background: var(--color-light-gray);
 }
 
 ::placeholder {
-  color: white;
+  color: var(--color-black);
 }
 
 .submit-btn {
   border: none;
   border-radius: 1em;
   padding: 0.5em;
-  background: black;
-  color: white;
+  background: var(--color-light-gray);
+  color: var(--color-black);
 }

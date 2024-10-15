@@ -1,2 +1,1 @@
-inspiration for app
-https://dribbble.com/shots/3582624-ticket-recommend/attachments/799825?mode=media
+https://dribbble.com/shots/21891328-Steary-Stream-App-Spatial-UI-Concept

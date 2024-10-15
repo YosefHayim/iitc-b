@@ -46,6 +46,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--color-light-gray);
 }
 
 form {

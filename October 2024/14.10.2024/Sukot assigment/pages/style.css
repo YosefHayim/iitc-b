@@ -32,8 +32,27 @@ main,.popular-movies-container,.movie-card-container,.movie-card {
   align-items: center;
 }
 
+.popular-movies-container {
+  gap: 7em;
+}
+
 .movie-img,.overview {
   width: 35vh;
 }
+
+.rating-img {
+  position: absolute;
+  transform: translate(-18em, -14em);
+}
+
+.overview-container {
+  display: none;
+}
+
+.rating-number-txt {
+  position: absolute;
+  transform: translate(3.3em, 0.55em);
+}
+
 
 

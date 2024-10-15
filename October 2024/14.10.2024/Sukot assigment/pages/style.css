@@ -8,6 +8,14 @@
   src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
+:root {
+  --primary-button: #FF5C00;
+  --secondary-button: #5FDBA7;
+  --text-color: #1F1F1F; 
+  --input-background: #E5E5E5; 
+  --accent-color: #A3C9F1; 
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -23,7 +31,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image:url(../images/background-img.svg) ;
+  background-image:url(../images/background-img.svg);
+  color: white;
 }
 
 .searchbar-container,.navbar-mobile {
@@ -32,6 +41,15 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vh;
+}
+
+.navbar-mobile {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background: #00000024;
+  border-radius: 2em;
+  padding: 0.5em;
+  margin-bottom: 5em;
 }
 
 main,.popular-movies-container,.trending-movies-container,.movie-card-container,.movie-card {
@@ -44,6 +62,7 @@ main,.popular-movies-container,.trending-movies-container,.movie-card-container,
 .trending-movies-container,.popular-movies-container {
   flex-direction: row;
   gap: 7em;
+  margin-bottom: 5em;
 }
 
 .movie-card {
@@ -54,14 +73,15 @@ main {
   width: 50vh;
 }
 
-.black-burger-icon {
+.white-burger-icon {
   width: 2.5em;
 }
 
-.btn-serchbar-glass {
+.btn-serachbar-glass {
   border: none;
+  transform: translateX(-14em);
   background: none;
-  transform: translateX(-3em);
+  color: white; 
 }
 
 .input-search-bar {
@@ -69,15 +89,26 @@ main {
   border-radius: 2em;
   padding: 0.6em;
   width: 25vh;
-  text-align: start;
+  text-align: center;
+  border-radius: 2em;
+  background: #0000001f;
+  cursor: pointer;
+
 }
 
-.black-search-bar {
+::placeholder {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.white-search-bar {
   width: 1.5em;
 }
 
 .title {
   width: 100%;
+  font-size: 1.2em;
 }
 
 .img-container {
@@ -91,7 +122,7 @@ main {
 }
 
 .movie-img {
-  border-radius: 0.5em;
+  border-radius: 1.5em;
 }
 
 .rating-img {
@@ -100,23 +131,28 @@ main {
 
 .rating-number-txt {
   font-size: 2.5em;
+  transform: translateY(0.1em);
 }
 
 .overview-container {
   display: none;
 }
 
-.hero-section {
-  width: 100%;
-  position: relative;
-  text-align: center; /* Centers content inside */
+.play-button-img {
+  height: 4em;
+  border: 1px solid #00000063;
+  background: #000000a1;
+  border-radius: 5em;
+  padding: 1em;
+  box-shadow: 0em 0em 15em 5em;
+  position: absolute;
 }
 
-.hero-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.play-button-btn {
+  transform: translate(-3em, -30em);
+  background: none;
+  border: none;
+  position: absolute;
+  cursor: pointer;
 }
-
-
 

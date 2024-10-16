@@ -215,7 +215,6 @@ input:active {
   gap: 7em;
 }
 
-/* Cards flow to the right animation */
 .movie-card {
   position: relative;
   animation: moveRight 120s linear infinite; 
@@ -235,10 +234,10 @@ input:active {
 
 @keyframes moveRight {
   0% {
-    left: 0; /* Start from the initial position */
+    left: 0; 
   }
   100% {
-    left: 20%; /* Move completely to the right */
+    left: 20%; 
   }
 }
 
@@ -262,10 +261,34 @@ input:active {
 
 .copy-right-txt {
   margin-top: 1em;
+  position: fixed;
+  bottom: 2em;
+  width: 100%;
+  text-align: center;
 }
 
 .navbar-desktop {
   display: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2em;
+  height: 75vh;
 }
 
 @media screen and (min-width:1024px) {

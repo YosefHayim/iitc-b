@@ -292,6 +292,7 @@ input:active {
   }
 
   .navbar-desktop { 
+  position: static;
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -195,10 +195,11 @@ const currentlyInTheaters = () => {
     });
   });
 };
-
+if (window.location.pathname.endsWith("index.html")) {
 resetPlaceholder();
 upComingMovies();
 topRatedMovies();
 popularMovies();
 currentlyInTheaters();
 searchMovies();
+}

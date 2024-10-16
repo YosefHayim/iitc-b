@@ -38,20 +38,36 @@ body {
 .searchbar-container,.navbar-mobile {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: normal;
-  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
 }
 
 .navbar-mobile {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background: #00000024;
-  border-radius: 2em;
-  padding: 0.5em;
-  margin-bottom: 5em;
   position: static;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #000000;
+  padding: 0.5em;
+  margin-bottom: 3em;
+  width: -webkit-fill-available;
+  justify-content: center;
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: #00000085;
+}
+
 
 main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container{
   display: flex;
@@ -76,10 +92,13 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background: none;
 }
 
 .white-burger-icon {
   width: 2.5em;
+  position: static;
+
 }
 
 .btn-serachbar-glass {
@@ -96,7 +115,7 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   padding: 0.6em;
   width: 25vh;
   text-align: center;
-  background: #0000001f;
+  background: #ffffff24;
   cursor: pointer;
   color: white;
 }
@@ -120,6 +139,7 @@ input:active {
   width: fit-content;
   font-size: 0.9em;
   color: snow;
+  width: max-content;
 }
 
 .img-container {
@@ -143,7 +163,7 @@ input:active {
 .rating-number-txt {
   font-size: 1.8em;
   transform: translateY(0.05em);
-  color: hsl(48, 100%, 51%);
+  color: #ffcd05;
   font-weight: bold;
 }
 
@@ -220,7 +240,7 @@ input:active {
 .movie-card {
   gap: 0.6em;
   position: relative;
-  animation: moveRight 120s linear infinite; 
+  animation: moveRight 200s linear infinite; 
 }
 
 .movie-img {
@@ -253,12 +273,12 @@ input:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ff0000a1;
-  width: 100%;
+  background: #ff0000bf;;
   text-align: center;
   line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
   font-size: 0.6em;
+  width: -webkit-fill-available;
 }
 
 .copy-right-txt {
@@ -279,6 +299,7 @@ footer {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 10em;
 }
 
 .about-us {
@@ -291,19 +312,93 @@ footer {
   height: 75vh;
 }
 
+.favorite-effect-img {
+  display: none;
+  position: fixed;
+  transform: translate(0em, -10em);
+  z-index: 1;
+  height: 24vh;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.loader {
+  position: fixed;
+  left: 5em;
+  top: 25em;
+  border-top: 16px solid #000000;
+  border-right: 16px solid #ff0000;
+  border-bottom: 16px solid #000000;
+  border-left: 16px solid #ff0000;
+  border-radius: 50%;
+  width: 8em;
+  height: 8em;
+  animation: spin 2s cubic-bezier(0.58, -0.19, 0, 1.19) infinite;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media screen and (min-width:1024px) {
+
+  .search-results-container {
+    flex-direction: row;
+  }
+
+  .github-full-logo-white,.discord-full-logo-white {
+    transform: translateY(0.1em);
+  }
+  
+  .overlay {
+    display: none;
+    position: none;
+    width: none;
+    height: none;
+    top: none;
+    left: none;
+    right: none;
+    bottom: none;
+    z-index: none;
+    background: none;
+  }
+
+  .searchbar-container {
+    width: 100%;
+  }
 
   .top-navbar-desktop {
   text-decoration: none;
   color: white;
-  background: #00000057;
-  border-radius: 2em;
+  border-radius: 3em;
   padding: 0.5em;
+  position: relative;
+  display: inline-block;
   }
 
-  .top-navbar-desktop:hover,.top-navbar-desktop:active {
-    background-color: white;
-    color: black;
+  .top-navbar-desktop:active {
+    color: #ff0000bf;
+    background: #ffffff1c;
+  }
+  
+  .top-navbar-desktop::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.1em;
+    background-color: white; /* Explicitly set the color to white */
+    transition: width 0.3s ease;
+  }
+  
+  .top-navbar-desktop:hover::after {
+    width: 100%;
   }
 
   .navbar-mobile {
@@ -314,17 +409,22 @@ footer {
     display: none;
   }
 
+  .logo-icon {
+    margin-left: 2em;
+  }
+
   .navbar-desktop { 
-  position: static;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: -webkit-fill-available;
-  background: #0000005e;
-  padding: 0.5em;
-  margin-bottom: 3em;
-  width: 100vw;
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: -webkit-fill-available;
+    background: #000000;
+    padding: 0.5em;
+    margin-bottom: 3em;
+    width: 100vw;
+    gap: 5em;
   }
   .desktop-navbar-container {
   display: flex;

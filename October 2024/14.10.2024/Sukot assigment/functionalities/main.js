@@ -2,6 +2,8 @@
 import { apiKey, apiToken, accountId } from "./env.js";
 
 // Updated selectors to select all relevant elements
+const logo = document.querySelector('.logo-icon')
+const burgerIcon = document.querySelector('.white-burger-icon')
 const favMoviesContainer = document.querySelector('.fav-movies-container')
 const upComingMoviesContainer = document.querySelector('.upcoming-movies-container');
 const popularMoviesContainer = document.querySelector('.popular-movies-container');
@@ -11,9 +13,48 @@ const theatresContainer = document.querySelector('.currently-movies-in-theatres-
 const searchInputs = document.querySelectorAll('.input-search-bar');
 const whiteGlassSearches = document.querySelectorAll('.white-search-bar');
 const formData = document.querySelectorAll('form');
-const titlesContainers = document.querySelectorAll(
-  '.trending-movies-container-title, .upcoming-movies-container-title, .popular-movies-container-title'
-);
+const titlesContainers = document.querySelectorAll('.trending-movies-container-title, .upcoming-movies-container-title, .popular-movies-container-title');
+
+const burgerIconActivate = () => {
+  
+  burgerIcon.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    if (burgerIcon.src.includes("white-remove-icon.svg")) {
+      burgerIcon.src = "../images/white-burger-icon.svg";
+    } else {
+      burgerIcon.src = "../images/white-remove-icon.svg";
+    }
+  });
+}
+
+burgerIconActivate()
+
+// const logoRedirectHome = () => {
+//   logo.addEventListener('click', (ev) => {
+//     ev.preventDefault();
+//     window.location.href = "../pages/index.html"  
+//   })
+// }
+
+// logoRedirectHome()
+
+
+    // Hide content and show loader on load
+    window.addEventListener('load', function () {
+      // Show loader
+      document.querySelector('.loader').style.display = 'block';
+      
+      // Hide content
+      const content = document.querySelector('main');
+      content.style.display = 'none';
+      
+      // Optional: Delay to simulate loading time, then restore content
+      setTimeout(() => {
+        // Hide loader and show content again
+        document.querySelector('.loader').style.display = 'none';
+        content.style.display = 'flex';
+      }, 200); // Adjust delay as needed
+    });
 
 // Function to fetch data from the API
 const getData = async (url, cb) => {
@@ -91,12 +132,25 @@ const createMovieCard = (movie) => {
     // Add the event listener to the white-heart-trailer-btn
     const heartButton = movieCardDiv.querySelector('.white-heart-trailer-btn');
     heartButton.addEventListener('click', (ev) => {
-      ev.preventDefault()
+      ev.preventDefault();
       const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
-      addfavoriteMovieToList(movieCardId)
-      alert('Movie has been added to favorite list.')
-
+      addfavoriteMovieToList(movieCardId);
+    
+      const imgContainer = ev.target.closest('.img-container');
+      const favoriteImgGif = document.createElement('img');
+      favoriteImgGif.src = "../images/favourite-reaction.gif";
+      favoriteImgGif.alt = "favorite-effect-img";
+      favoriteImgGif.classList.add('favorite-effect-img');
+      
+      imgContainer.appendChild(favoriteImgGif);
+      favoriteImgGif.style.display = "block";
+    
+      setTimeout(() => {
+        favoriteImgGif.style.display = "none";
+        imgContainer.removeChild(favoriteImgGif); // remove the img after display
+      }, 2000);
     });
+    
   return movieCardDiv;
 };
 
@@ -173,7 +227,8 @@ const displayFavoriteMoviesList = () => {
       favMoviesContainer.addEventListener('click', (ev) => {
         const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
         removeFavMovie(movieCardId)
-        alert('Movie has been removed from favorites.')
+        console.log(`removed`);
+        
       })
     });
   });
@@ -255,7 +310,7 @@ const searchMovies = () => {
           if (data.results.length === 0) {
             window.location.href = 'error404.html';
           } else {
-            domTitleTxt.textContent = `Total movies found: ${data.total_results}`;
+            domTitleTxt.textContent = `Total movies found for ${inputValue.charAt(0).toUpperCase() + inputValue.slice(1)} : ${data.total_results}`;
             data.results.forEach((movie) => {
               const movieCard = createMovieCard(movie);
               searchResultContainer.appendChild(movieCard);
@@ -275,7 +330,7 @@ const resetPlaceholder = () => {
     const whiteGlassSearch = whiteGlassSearches[index];
     searchInput.addEventListener('focus', () => {
       searchInput.placeholder = '';
-      if (whiteGlassSearch) whiteGlassSearch.style.display = 'none';
+      if (whiteGlassSearch) whiteGlassSearch.style.display = 'fixed';
     });
 
     searchInput.addEventListener('blur', () => {
@@ -315,3 +370,4 @@ if (window.location.pathname.endsWith("index.html")) {
   currentlyInTheaters();
   searchMovies();
 }
+

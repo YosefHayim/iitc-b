@@ -35,12 +35,12 @@ body {
   color: white;
 }
 
-.searchbar-container,.navbar-mobile {
+#searchbar-container,.navbar-mobile {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100vh;
+  width: 100vw;
 }
 
 .navbar-mobile {
@@ -50,6 +50,7 @@ body {
   border-radius: 2em;
   padding: 0.5em;
   margin-bottom: 5em;
+  position: static;
 }
 
 main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card {
@@ -114,6 +115,8 @@ input:active {
   text-align: center;
   width: 100%;
   font-size: 1.2em;
+  color: snow;
+  letter-spacing: 0.05em;
 }
 
 .img-container {
@@ -137,39 +140,63 @@ input:active {
 .rating-number-txt {
   font-size: 2.5em;
   transform: translateY(0.1em);
+  color: hsl(48, 100%, 51%);
+  font-weight: bold;
 }
 
 .overview-container {
   display: none;
 }
 
-.play-button-img {
+.play-button-img,.white-share-img,.white-heart-img {
   height: 4em;
   border: 1px solid #00000063;
   background: #000000a1;
   border-radius: 5em;
   padding: 1em;
-  box-shadow: 0em 0em 15em 5em;
-  position: absolute;
+  position: sticky;
 }
 
 .play-button-btn {
-  transform: translate(-3em, -30em);
+      transform: translate(0em, -10em);
+
+}
+.white-share-trailer-btn,.white-heart-trailer-btn,.play-button-btn {
   background: none;
   border: none;
   position: absolute;
   cursor: pointer;
+  z-index: 3;
+}
+
+.white-heart-img,.white-share-img {
+  height: 4em;
+}
+
+.white-heart-trailer-btn {
+  transform: translate(7em, -10em);
+}
+
+.white-heart-img:hover {
+  background: #ff0000;
+}
+
+.white-share-trailer-btn {
+  transform: translate(-7em, -10em);
+}
+
+.white-share-img:hover {
+  background: hsl(48, 95%, 44%);
 }
 
 .play-button-img:hover {
-  background: #ffffff63;
-  color: #ffffff00;
-  box-shadow: 0em 0em 10em 1em;
+  background: #ff0000;
 }
 
 .play-button-img:active {
-  background: #ff0000a3;
-  box-shadow: 0em 0em 1em #f4f4f4;
+  background: #ffffff63;
+  color: #ffffff00;
+  box-shadow: 0em 0em 10em 1em;
 }
 
 .search-results-container {
@@ -188,8 +215,7 @@ input:active {
 }
 
 .movie-img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-
+  transition: transform 0.5s ease, box-shadow 0.5s ease; 
 }
 
 .movie-img:hover {

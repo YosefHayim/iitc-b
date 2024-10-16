@@ -88,9 +88,10 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
 
 .btn-serachbar-glass {
   border: none;
-  transform: translateX(-14em);
+  transform: translateX(-15em);
   background: none;
   color: white; 
+  position: relative;
 }
 
 .input-search-bar {
@@ -99,7 +100,6 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   padding: 0.6em;
   width: 25vh;
   text-align: center;
-  border-radius: 2em;
   background: #0000001f;
   cursor: pointer;
   color: white;
@@ -226,7 +226,7 @@ input:active {
 }
 
 .movie-img:hover,.movie-img:focus{
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 .movie-img:hover {
   box-shadow: 0em 0em 1.5em rgba(255, 255, 255, 1);
@@ -244,7 +244,7 @@ input:active {
 
 .popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   margin-bottom: 5em;
-  border-radius: 2em;
+  border-radius: 3em;
   padding: 1.3em;
   letter-spacing: 1.2em;
   color: #ffffff;
@@ -252,37 +252,62 @@ input:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ff00003d;
-  width: 75vw;
+  background: #ff0000a1;
+  width: 100%;
   text-align: center;
+  line-height: 3em;
+  box-shadow: 0em 0em 3.2em -1em;
+  font-size: 0.8em;
 }
 
-.pages {
+.copy-right-txt {
+  margin-top: 1em;
+}
+
+.navbar-desktop {
+  display: none;
+}
+
+@media screen and (min-width:1024px) {
+
+  .top-navbar-desktop {
+  text-decoration: none;
   color: white;
-  text-decoration: none;
-  border-radius: 5em;
-  background: #00000063;
-  padding: 0.7em;
-}
-
-.pages:hover {
-  color: black;
-  text-decoration: none;
-  border-radius: 5em;
-  background: white;
+  background: #00000057;
+  border-radius: 2em;
   padding: 0.5em;
+  }
 
-}
+  .top-navbar-desktop:hover,.top-navbar-desktop:active {
+    background-color: white;
+    color: black;
+  }
 
-footer {
+  .navbar-mobile {
+    display: none;
+  }
+  
+  .white-burger-icon {
+    display: none;
+  }
+
+  .navbar-desktop { 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fill-available;
+  background: #0000005e;
+  padding: 0.5em;
+  margin-bottom: 3em;
+  width: 100vw;
+  }
+  .desktop-navbar-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 2em;
-  width: max-content;
-}
+  }
 
-.copy-right-txt {
-  margin-top: 1em;
 }

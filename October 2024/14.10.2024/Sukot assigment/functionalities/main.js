@@ -9,8 +9,9 @@ const theatresContainer = document.querySelector('.currently-movies-in-theatres-
 const searchInput = document.querySelector('.input-search-bar');
 const whiteGlassSearch = document.querySelector('.white-search-bar')
 const formData = document.querySelector('form');
-const movieCard = document.querySelectorAll('.movie-card')
-
+const titlesContainers = document.querySelectorAll(
+  '.trending-movies-container-title, .upcoming-movies-container-title,.popular-movies-container-title'
+);
 // Function to fetch data from the API
 const getData = async (url, cb) => {
   const get = {
@@ -58,21 +59,36 @@ const createMovieCard = (movie) => {
       <h2 class="rating-number-txt">${movie.vote_average.toFixed(1)}</h2>
     </div>
   `;
-
+  
   getMoviesTrailers(movie.id, movieCardDiv);
   return movieCardDiv;
 };
 
-// Function to get trailers for a movie and set href on play button
+// Function to get trailers for a movie, set href on play and share button, and copy trailer URL on click
 const getMoviesTrailers = (movieId, movieCardDiv) => {
   const playButton = movieCardDiv.querySelector('.play-button-btn');
+  const shareButton = movieCardDiv.querySelector('.white-share-trailer-btn');
+  
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`, (data) => {
     const video = data.videos?.results?.find(vid => vid.key);
     
     if (video) {
-      playButton.setAttribute('href', `https://www.youtube.com/watch?v=${video.key}`);
+      const trailerUrl = `https://www.youtube.com/watch?v=${video.key}`;
+      playButton.setAttribute('href', trailerUrl);
+      
+      // Set href for the share button and add click event to copy URL
+      shareButton.setAttribute('href', trailerUrl);
+      shareButton.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevents navigation
+        navigator.clipboard.writeText(trailerUrl)
+          .then(() => {
+            alert('Trailer Url copied');
+          })
+          .catch(err => console.error('Failed to copy trailer URL', err));
+      });
     } else {
       playButton.style.display = 'none';
+      shareButton.style.display = 'none'; // Hide the share button if there's no trailer
     }
   });
 };
@@ -103,14 +119,41 @@ const searchMovies = () => {
     ev.preventDefault();
     const inputValue = formData.querySelector('input').value.trim();
     if (inputValue.length >= 2) {
+
+      titlesContainers.forEach(title => {
+        title.style.display = 'none';
+      });
+      const domTitleTxt = document.querySelector('.currently-movies-in-theatres-container-title')
+      domTitleTxt.style.cssText = `
+      margin-bottom: 2em;
+      border-radius: 3em;
+      letter-spacing: 0em;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ff0000a1;
+      width: 100%;
+      text-align: center;
+      line-height: 0em;
+      box-shadow: 0em 0em 0em 0em;
+      font-size: 1.5em;
+      `
+      upComingMoviesContainer.style.display = `none`
+      theatresContainer.style.display = `none`
       popularMoviesContainer.style.display = 'none';
       topRatedMoviesContainer.style.display = 'none';
       searchResultContainer.innerHTML = '';
+
       getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=1`, (data) => {
+        
         if (data.results.length === 0) {
           window.location.href = 'error404.html';
         } else {
+
           data.results.forEach((movie) => {
+            domTitleTxt.textContent = `${`Total movies found: ${data.total_results}`}`
             const movieCard = createMovieCard(movie);
             searchResultContainer.appendChild(movieCard);
           });
@@ -126,12 +169,12 @@ const searchMovies = () => {
 const resetPlaceholder = () => {
   searchInput.addEventListener('focus', () => {
     searchInput.placeholder = '';
-    whiteGlassSearch.style.display = 'none'; // Hide whiteGlassSearch on focus
+    whiteGlassSearch.style.display = 'none';
   });
 
   searchInput.addEventListener('blur', () => {
     searchInput.placeholder = 'Search movies';
-    whiteGlassSearch.style.display = 'block'; // Show whiteGlassSearch on blur
+    whiteGlassSearch.style.display = 'block';
   });
 };
 
@@ -153,18 +196,9 @@ const currentlyInTheaters = () => {
   });
 };
 
-document.addEventListener('click', (ev) => {
-  ev.preventDefault();
-
-  const shareButton = ev.target.closest('.white-share-trailer-btn');
-  if (shareButton) {
-    console.log("Share button clicked!");
-  }
-});
-
 resetPlaceholder();
-searchMovies();
 upComingMovies();
 topRatedMovies();
 popularMovies();
-currentlyInTheaters()
+currentlyInTheaters();
+searchMovies();

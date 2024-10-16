@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>MovieMingle</title>
 </head>
 <body>
   <main>
+
     <div class="navbar-mobile">
       <form name="search-bar-input" id="searchbar-container">
         <div class="group-input-btn-search-container">
@@ -21,8 +22,27 @@
         </form>
         </div>
     </div>
+
+    <div class="navbar-desktop">
+      <form name="search-bar-input" id="searchbar-container">
+        <div class="group-input-btn-search-container">
+          <input type="text" placeholder="Search movies" class="input-search-bar" required>
+          <button class="btn-serachbar-glass">
+            <img src="../images/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+          </button>
+        </div>
+        <div class="desktop-navbar-container">
+          <div><a href="./index.html" class="top-navbar-desktop">Home</a></div>
+          <div><a href="./about-us.html" class="top-navbar-desktop">About us</a></div>
+          <div><a href="./search-movie.html" class="top-navbar-desktop">Search movie</a></div>
+          <div><a href="./favourite.html" class="top-navbar-desktop">Favorites</a></div>
+        </div>
+        </form>
+        </div>
+    </div>
     
     <div class="currently-movies-in-theatres-container-title"><h2>CURRENTLY IN THEATERS</h2></div>
+
     <div class="currently-movies-in-theatres-container"></div>
 
     <div class="upcoming-movies-container-title"><h2>UP COMING MOVIES</h2></div>
@@ -38,20 +58,6 @@
 
     <div class="search-results-container"></div>
   </main>
-  <footer>
-    <div class="navbar-footer-container">
-      <div><a href="./index.html" class="pages">Home</a></div>
-      <div><a href="./index.html" class="pages">About us</a></div>
-      <div><a href="./index.html" class="pages">Search movie</a></div>
-      <div><a href="./index.html" class="pages">Favorites</a></div>
-      </div>
-
-    <div class="policy-pages-container">
-    <div><a href="./index.html" class="pages">Privacy policy</a></div>
-    <div> <a href="./index.html" class="pages">Terms of agreement</a></div>
-    <div><a href="./index.html" class="pages">About developer</a></div>
-    </div>
-  </footer>
 <script type="module" src="../functionalities/main.js"></script>
 <span class="copy-right-txt">© 2024 Joseph Sabagos </span>
 </body>

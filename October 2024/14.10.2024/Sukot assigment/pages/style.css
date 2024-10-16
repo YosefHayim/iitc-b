@@ -62,8 +62,8 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
 
 .top-trending-movies-container,.popular-movies-container,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container {
   flex-direction: row;
-  gap: 7em;
-  margin-bottom: 5em;
+  gap: 2em;
+  margin-bottom: 2em;
 }
 
 .navbar-footer-container,.policy-pages-container {
@@ -76,10 +76,6 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.movie-card {
-  gap: 0.6em;
 }
 
 .white-burger-icon {
@@ -121,10 +117,9 @@ input:active {
 
 .title {
   text-align: center;
-  width: 100%;
-  font-size: 1.2em;
+  width: fit-content;
+  font-size: 0.9em;
   color: snow;
-  letter-spacing: 0.05em;
 }
 
 .img-container {
@@ -134,7 +129,7 @@ input:active {
 }
 
 .movie-img,.overview {
-  width: 35vh;
+  width: 25vh;
 }
 
 .movie-img {
@@ -142,12 +137,12 @@ input:active {
 }
 
 .rating-img {
-  height: 3em;
+  height: 2em;
 }
 
 .rating-number-txt {
-  font-size: 2.5em;
-  transform: translateY(0.1em);
+  font-size: 1.8em;
+  transform: translateY(0.05em);
   color: hsl(48, 100%, 51%);
   font-weight: bold;
 }
@@ -156,20 +151,24 @@ input:active {
   display: none;
 }
 
-.play-button-img,.white-share-img,.white-heart-img {
-  height: 2.5em;
+.play-button-img,.white-share-img,.white-heart-img,.remove-btn-img {
+  height: 2em;
   border: 1px solid #00000063;
   background: #000000a1;
-  border-radius: 5em;
-  padding: 1em;
-  position: sticky;
+  border-radius: 2em;
+  padding: 0.5em;
+  position: relative;
+}
+
+.play-button-img {
+  height: 3em;
 }
 
 .play-button-btn {
-  transform: translate(0em, -8.5em);
-
+  transform: translate(0, -6.5em);
 }
-.white-share-trailer-btn,.white-heart-trailer-btn,.play-button-btn {
+
+.white-share-trailer-btn,.white-heart-trailer-btn,.play-button-btn,.remove-btn-icon {
   background: none;
   border: none;
   position: absolute;
@@ -177,27 +176,30 @@ input:active {
 }
 
 .white-heart-img,.white-share-img {
-  height: 3.5em;
+  height: 2em;
 }
 
 .white-heart-trailer-btn {
-  transform: translate(7em, -10em);
+  transform: translate(5em, -7em);
 }
 
 .white-heart-img:hover {
   background: #ff0000;
+  transform: scale(1.1);
 }
 
 .white-share-trailer-btn {
-  transform: translate(-7em, -10em);
+  transform: translate(-5em, -7em);
 }
 
 .white-share-img:hover {
   background: hsl(48, 95%, 44%);
+  transform: scale(1.1);
 }
 
 .play-button-img:hover {
   background: #ff0000;
+  transform: scale(1.1);
 }
 
 .play-button-img:active {
@@ -216,12 +218,13 @@ input:active {
 }
 
 .movie-card {
+  gap: 0.6em;
   position: relative;
   animation: moveRight 120s linear infinite; 
 }
 
 .movie-img {
-  transition: transform 0.5s ease, box-shadow 0.5s ease; 
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .movie-img:hover,.movie-img:focus{
@@ -229,7 +232,6 @@ input:active {
 }
 .movie-img:hover {
   box-shadow: 0em 0em 1.5em rgba(255, 255, 255, 1);
-
 }
 
 @keyframes moveRight {
@@ -239,13 +241,13 @@ input:active {
   100% {
     left: 20%; 
   }
-}
+} 
 
 .popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
-  margin-bottom: 5em;
+  margin-bottom: 3em;
   border-radius: 3em;
-  padding: 1.3em;
-  letter-spacing: 1.2em;
+  padding: 1em;
+  letter-spacing: 0.5em;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -255,8 +257,8 @@ input:active {
   width: 100%;
   text-align: center;
   line-height: 3em;
-  box-shadow: 0em 0em 3.2em -1em;
-  font-size: 0.8em;
+  box-shadow: 0em 0em 2.5em -1em;
+  font-size: 0.6em;
 }
 
 .copy-right-txt {

@@ -9,7 +9,7 @@ const theatresContainer = document.querySelector('.currently-movies-in-theatres-
 const searchInput = document.querySelector('.input-search-bar');
 const whiteGlassSearch = document.querySelector('.white-search-bar')
 const formData = document.querySelector('form');
-const mainContainer = document.querySelector('main');
+const movieCard = document.querySelectorAll('.movie-card')
 
 // Function to fetch data from the API
 const getData = async (url, cb) => {
@@ -68,7 +68,6 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
   const playButton = movieCardDiv.querySelector('.play-button-btn');
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`, (data) => {
     const video = data.videos?.results?.find(vid => vid.key);
-    console.log(video);
     
     if (video) {
       playButton.setAttribute('href', `https://www.youtube.com/watch?v=${video.key}`);
@@ -136,16 +135,6 @@ const resetPlaceholder = () => {
   });
 };
 
-// Event delegation for like buttons
-mainContainer.addEventListener('click', (ev) => {
-  ev.preventDefault();
-  const movieElement = ev.target.closest('[id^="movie"]');
-  if (movieElement) {
-    const movieId = movieElement.id.replace('movie-', '').trim();
-    console.log(movieId);
-  }
-});
-
 const upComingMovies = () => {
   getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, (data) => {
     data.results.forEach((movie) => {
@@ -163,6 +152,15 @@ const currentlyInTheaters = () => {
     });
   });
 };
+
+document.addEventListener('click', (ev) => {
+  ev.preventDefault();
+
+  const shareButton = ev.target.closest('.white-share-trailer-btn');
+  if (shareButton) {
+    console.log("Share button clicked!");
+  }
+});
 
 resetPlaceholder();
 searchMovies();

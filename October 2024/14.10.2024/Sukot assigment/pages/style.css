@@ -265,7 +265,7 @@ input:active {
   padding: 0.7em;
 }
 
-a:hover {
+.pages:hover {
   color: black;
   text-decoration: none;
   border-radius: 5em;

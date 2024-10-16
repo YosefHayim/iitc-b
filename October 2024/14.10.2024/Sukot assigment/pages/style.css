@@ -39,8 +39,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
+  align-items: normal;
+  width: 100%;
 }
 
 .navbar-mobile {
@@ -53,25 +53,33 @@ body {
   position: static;
 }
 
-main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card {
+main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.top-trending-movies-container,.popular-movies-container {
+.top-trending-movies-container,.popular-movies-container,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container {
   flex-direction: row;
   gap: 7em;
   margin-bottom: 5em;
 }
 
-.movie-card {
-  gap: 0.6em;
+.navbar-footer-container,.policy-pages-container {
+  gap: 2em;
+  margin-bottom: 0em;
+  
+}
+.group-input-btn-search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-main {
-  width: 50vh;
+.movie-card {
+  gap: 0.6em;
 }
 
 .white-burger-icon {
@@ -149,7 +157,7 @@ input:active {
 }
 
 .play-button-img,.white-share-img,.white-heart-img {
-  height: 4em;
+  height: 2.5em;
   border: 1px solid #00000063;
   background: #000000a1;
   border-radius: 5em;
@@ -158,7 +166,7 @@ input:active {
 }
 
 .play-button-btn {
-      transform: translate(0em, -10em);
+  transform: translate(0em, -8.5em);
 
 }
 .white-share-trailer-btn,.white-heart-trailer-btn,.play-button-btn {
@@ -166,11 +174,10 @@ input:active {
   border: none;
   position: absolute;
   cursor: pointer;
-  z-index: 3;
 }
 
 .white-heart-img,.white-share-img {
-  height: 4em;
+  height: 3.5em;
 }
 
 .white-heart-trailer-btn {
@@ -211,16 +218,19 @@ input:active {
 /* Cards flow to the right animation */
 .movie-card {
   position: relative;
-  /* animation: moveRight 30s linear infinite;  */
+  animation: moveRight 120s linear infinite; 
 }
 
 .movie-img {
   transition: transform 0.5s ease, box-shadow 0.5s ease; 
 }
 
-.movie-img:hover {
+.movie-img:hover,.movie-img:focus{
   transform: scale(1.05);
+}
+.movie-img:hover {
   box-shadow: 0em 0em 1.5em rgba(255, 255, 255, 1);
+
 }
 
 @keyframes moveRight {
@@ -232,3 +242,47 @@ input:active {
   }
 }
 
+.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
+  margin-bottom: 5em;
+  border-radius: 2em;
+  padding: 1.3em;
+  letter-spacing: 1.2em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ff00003d;
+  width: 75vw;
+  text-align: center;
+}
+
+.pages {
+  color: white;
+  text-decoration: none;
+  border-radius: 5em;
+  background: #00000063;
+  padding: 0.7em;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  border-radius: 5em;
+  background: white;
+  padding: 0.5em;
+
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  width: max-content;
+}
+
+.copy-right-txt {
+  margin-top: 1em;
+}

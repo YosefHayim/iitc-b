@@ -11,10 +11,11 @@ const theatresContainer = document.querySelector('.currently-movies-in-theatres-
 const searchInputs = document.querySelectorAll('.input-search-bar');
 const whiteGlassSearches = document.querySelectorAll('.white-search-bar');
 const formData = document.querySelectorAll('form');
-const titlesContainers = document.querySelectorAll('.trending-movies-container-title, .upcoming-movies-container-title, .popular-movies-container-title');
 const popularOfTheDayDiv = document.querySelector('.popular-of-day-container')
 const popularOfTheWeekDiv = document.querySelector('.popular-movies-of-week-container')
 const overlayDiv = document.querySelector('.overlay')
+const titlesContainers = document.querySelectorAll('.trending-movies-container-title, .upcoming-movies-container-title, .popular-movies-container-title');
+const movieCardsDivs = document.querySelector('.theatresContainer .upComingMoviesContainer .popularMoviesContainer .topRatedMoviesContainer .favMoviesContainer')
 
 export {alertMessageContainer,
   dropDownMenu,domTitleTxt,
@@ -30,5 +31,5 @@ export {alertMessageContainer,
   titlesContainers
   ,popularOfTheDayDiv
   ,popularOfTheWeekDiv,
-  overlayDiv
+  overlayDiv,movieCardsDivs
 }

@@ -1,6 +1,5 @@
 import { apiToken } from "./env.js";
 
-
 const getData = async (url, cb) => {
   const get = {
     method: 'GET',

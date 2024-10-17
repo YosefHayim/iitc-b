@@ -8,6 +8,7 @@
 </head>
 <body>
   <main>
+    
     <!-- Overlay for mobile -->
     <div class="overlay"></div>
 
@@ -40,9 +41,21 @@
 
         <!-- start of navbar desktop container -->
         <div class="desktop-navbar-container">
-          <div>
-          <a href="./index.html" class="top-navbar-desktop">Home</a>
-          </div>
+          <div class="top-navbar">
+
+            <a href="./index.html" class="top-navbar-desktop dropdown">Home</a>
+            <div class="dropdown-content">
+
+                <div class="popular-day-container">
+                  <a href="./popular-day.html">Popular of the Day</a>
+                </div>
+
+                <div class="popular-week-container">
+                  <a href="./popular-week.html">Popular of the Week</a>
+                </div>
+            </div>
+        </div>
+        
 
           <div>
           <a href="./about-us.html" class="top-navbar-desktop">About us</a>

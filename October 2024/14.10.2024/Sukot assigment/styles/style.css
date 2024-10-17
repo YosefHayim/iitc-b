@@ -517,7 +517,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 .current-page-number {
-      position: fixed;
+    position: absolute;
     font-weight: 900;
     font-size: 3em;
     margin-top: -4em;
@@ -803,7 +803,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 .alert-message-container {
   display: none;
   padding: 20px;
-  background-color: #0fba19b0;
+  background-color: #1d9325;
   color: white;
   margin-bottom: 2em;
   transform: translateY(-9em);

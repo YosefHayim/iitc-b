@@ -1,31 +1,32 @@
 import { apiKey } from "../env.js";
 import { getData } from "../api-functions.js";
-import { popularOfTheWeekDiv, 
-  titlesContainers,
-  domTitleTxt,movieCardsDivs,
-} from "../dom/domEls.js";
+import { popularOfTheWeekDiv, titlesContainers, domTitleTxt, movieCardsDivs, currentPage } from "../dom/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 
-const popularMoviesOfWeek = () => {
-
+const popularMoviesOfWeek = (pageNumber = 1) => {
   popularOfTheWeekDiv.innerHTML = ``;
-
   titlesContainers.forEach(title => title.remove());
 
   movieCardsDivs.forEach(container => {
     container.style.display = container.classList.contains('popular-movies-of-week-container') ? 'flex' : 'none';
   });
 
-  getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=${apiKey}`, (data) => {
-    console.log(data); 
-    data.results.forEach((movie) => {
-      const movieCard = createMovieCard(movie);
-      popularOfTheWeekDiv.appendChild(movieCard);
-    });
+  getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${pageNumber}&api_key=${apiKey}`, (data) => {
+    if (data && data.results) {
+      data.results.forEach((movie) => {
+        const movieCard = createMovieCard(movie);
+        popularOfTheWeekDiv.appendChild(movieCard);
+      });
 
-    domTitleTxt.style.fontSize = '1em';
-    domTitleTxt.textContent = `POPULAR MOVIES OF THE WEEK`;
+      domTitleTxt.style.fontSize = '1em';
+      domTitleTxt.textContent = `POPULAR MOVIES OF THE WEEK`;
+
+      currentPage.style.display = `block`;
+      currentPage.textContent = `${pageNumber} / ${data.total_pages - pageNumber} PAGES`;
+    } else {
+      console.error("No data received from the API.");
+    }
   });
-}
+};
 
-export {popularMoviesOfWeek}
+export { popularMoviesOfWeek };

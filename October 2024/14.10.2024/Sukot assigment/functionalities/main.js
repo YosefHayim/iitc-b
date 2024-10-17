@@ -1,20 +1,35 @@
-import {resetPlaceholder} from "./functionalities/user-experience/reset-placeholder-input.js"
-import {upComingMovies} from "./functionalities/api/get-calls/get-upcoming-movies.js"
-import {topRatedMovies} from "./functionalities/api/get-calls/get-top-rated-movies.js"
-import {popularMovies} from "./get-calls/get-popular-movies.js"
-import {currentlyInTheaters} from "./get-calls/get-current-movies-in-theatres.js"
-import {searchMovies} from "./get-calls/get-search-movies-input.js"
+import { burgerIconActivate } from "./burger-open-mobile-menu.js";
+import { createFavMovieCard } from "./create-favorite-movie-card.js";
+import { createMovieCard } from "./dom-movies-cards.js";
+import { domDropDown } from "./drop-down-homepage.js";
+import { currentlyInTheaters } from "./get-current-movies-in-theatres.js";
+import { displayFavoriteMoviesList } from "./get-fav-movies-list.js";
+import { getMoviesTrailers } from "./get-movies-trailer.js";
+import { popularMovies } from "./get-popular-movies.js";
+import { getStarRatingImage } from "./get-rating-movie.js";
+import { searchMovies } from "./get-search-movies-input.js";
+import { topRatedMovies } from "./get-top-rated-movies.js";
+import { upComingMovies } from "./get-upcoming-movies.js";
+import { addfavoriteMovieToList } from "./post-movies-to-favorite-list.js";
+import { removeFavMovie } from "./post-remove-fav-movie.js";
+import { resetPlaceholder } from "./reset-placeholder-input.js";
+
+
+
 
 
 if (window.location.pathname.endsWith('favorite.html')) {
-  displayFavoriteMoviesList()
+  displayFavoriteMoviesList(); 
 }
 
 if (window.location.pathname.endsWith("index.html")) {
-  resetPlaceholder();
-  upComingMovies();
-  topRatedMovies();
+  burgerIconActivate();
+  domDropDown();
+  currentlyInTheaters(); 
+  displayFavoriteMoviesList();
   popularMovies();
-  currentlyInTheaters();
-  searchMovies()
+  searchMovies();
+  topRatedMovies();
+  upComingMovies();
+  resetPlaceholder();
 }

@@ -1,5 +1,15 @@
-import { getData } from "../api-functions.js";
-import {apiKey} from "../security/env.js"
+import { getData } from "./api-functions.js";
+import {apiKey} from "./env.js"
+import { formData, 
+  titlesContainers,
+  domTitleTxt,
+  upComingMoviesContainer
+  ,theatresContainer,
+  popularMoviesContainer
+  ,topRatedMoviesContainer
+  ,searchResultContainer,favMoviesContainer } from "./domEls.js";
+  import {createMovieCard} from "./dom-movies-cards.js"
+
 
 const searchMovies = () => {
 
@@ -37,6 +47,7 @@ formData.forEach(form => {
       theatresContainer.style.display = 'none';
       popularMoviesContainer.style.display = 'none';
       topRatedMoviesContainer.style.display = 'none';
+      favMoviesContainer.style.display = `none`
       searchResultContainer.innerHTML = '';
 
       getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=1`, (data) => {

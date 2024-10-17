@@ -1,3 +1,15 @@
+import {apiKey} from "./env.js"
+import {getData} from "./api-functions.js"
+import {popularOfTheDayDiv, 
+  popularOfTheWeekDiv,
+  titlesContainers,
+  domTitleTxt,
+  upComingMoviesContainer,
+  theatresContainer,
+  popularMoviesContainer,
+  topRatedMoviesContainer,dropDownMenu} from "./domEls.js"
+import { createMovieCard } from "./dom-movies-cards.js"
+
 const domDropDown = () => {
   dropDownMenu.addEventListener('click', (ev) => {
   ev.preventDefault()

@@ -1,7 +1,8 @@
-import { getData } from "../api-functions.js";
-import {accountId} from "../security/env.js"
-
-
+import { getData } from "./api-functions.js";
+import {accountId} from "./env.js"
+import {favMoviesContainer,alertMessageContainer} from "./domEls.js"
+import {removeFavMovie} from "./post-remove-fav-movie.js"
+import {createFavMovieCard} from "./create-favorite-movie-card.js"
 
 const displayFavoriteMoviesList = () => {
   getData(`https://api.themoviedb.org/3/account/${accountId}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`, (data) => {

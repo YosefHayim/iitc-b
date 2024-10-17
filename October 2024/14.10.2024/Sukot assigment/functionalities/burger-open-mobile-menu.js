@@ -1,3 +1,5 @@
+import {burgerIcon,overlayDiv} from "./domEls.js"
+
 const burgerIconActivate = () => {
   burgerIcon.addEventListener('click', (ev) => {
     ev.preventDefault();

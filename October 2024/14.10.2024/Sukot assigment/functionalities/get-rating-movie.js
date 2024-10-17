@@ -1,4 +1,3 @@
-
 const getStarRatingImage = (vote_average) => {
   if (vote_average < 2) return "../images/user-activity/one-star-icon.svg";
   else if (vote_average < 4) return "../images/user-activity/two-stars-icon.svg";

@@ -1,3 +1,7 @@
+import {getMoviesTrailers} from "./get-movies-trailer.js"
+import {getStarRatingImage} from "./get-rating-movie.js"
+import {addfavoriteMovieToList} from "./post-movies-to-favorite-list.js"
+
 // Function to create movie card
 const createMovieCard = (movie) => {
   const movieCardDiv = document.createElement('div');

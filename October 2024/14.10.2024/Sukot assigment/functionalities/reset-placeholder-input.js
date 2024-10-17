@@ -1,4 +1,4 @@
-import {searchInputs,whiteGlassSearches} from "../elements/domEls.js"
+import {searchInputs,whiteGlassSearches} from "./domEls.js"
 
 const resetPlaceholder = () => {
   searchInputs.forEach((searchInput, index) => {

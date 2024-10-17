@@ -1,5 +1,5 @@
-import { getData } from "../api-functions.js";
-import {apiKey} from "../security/env.js"
+import { getData } from "./api-functions.js";
+import {apiKey} from "./env.js"
 
 
 

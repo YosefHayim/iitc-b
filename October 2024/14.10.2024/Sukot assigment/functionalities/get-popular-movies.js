@@ -1,5 +1,7 @@
-import { getData } from "../api-functions.js";
-import {apiKey} from "../security/env.js"
+import { getData } from "./api-functions.js";
+import {apiKey} from "./env.js"
+import { popularMoviesContainer } from "./domEls.js";
+import {createMovieCard} from "./dom-movies-cards.js"
 
 
 

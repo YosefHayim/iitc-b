@@ -37,7 +37,6 @@ body {
 
 main {
   position: relative;
-  margin-bottom: 5em;
 }
 
 .searchbar-container,.navbar-mobile {
@@ -247,31 +246,6 @@ input:active {
   gap: 3em;
 }
 
-.movie-img {
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-}
-
-.movie-img:hover {
-  transform: scale(1.04);
-  box-shadow: 0em 0em 2em 0em;
-  cursor: pointer;
-}
-
-
-.movie-card {
-  animation: scrollRight 20s linear infinite; 
-  gap: 0.5em;
-}
-
-@keyframes scrollRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 .feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   margin-bottom: 3em;
   border-radius: 3em;
@@ -289,7 +263,8 @@ input:active {
   font-size: 0.6em;
   width: -webkit-fill-available;
   border-style: dashed;
-}
+  margin-top: 8em;
+} 
 
 .feedback-me-form {
   display: flex;
@@ -310,12 +285,9 @@ input:active {
 }
 
 .copy-right-txt {
-  margin-top: 1em;
-  text-align: center;
-  position: relative;
-  margin-bottom: 3em;
-  margin-top: 3em;
-  width: -webkit-fill-available;
+    text-align: center;
+    position: relative;
+    margin-top: 1em;
 }
 
 .navbar-desktop {
@@ -329,8 +301,9 @@ footer {
   align-items: center;
   width: -webkit-fill-available;
   background: black;
-  gap: 1em;
   text-align: center;
+  bottom: 0;
+  position: fixed;
 }
 
 hr {
@@ -344,7 +317,6 @@ hr {
   align-items: center;
   flex-direction: column;
   gap: 1em;
-  margin-top: 1em;
 }
 
 .links-container-footer {
@@ -412,6 +384,14 @@ a {
   width: min-content;
 }
 
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fill-available;
+}
+
 .name,.email,.message,.submit-button {
   background: #ff0000bf;
   border-radius: 0.2em;
@@ -422,14 +402,23 @@ a {
   border: dashed;
 }
 
+#name,#email,#message {
+  background: white;
+  border-radius: 0.2em;
+  padding: 0.2em;
+  width: -webkit-fill-available;
+  display: block;
+  text-align: unset;
+  border: dashed;
+}
+
 .submit-button {
   border: none;
-  border-radius: 1em;
+  border-radius: 0.2em;
   text-align: center;
   font-size: large;
   font-weight: 900;
   color: white;
-
 }
 
 label {
@@ -498,6 +487,40 @@ input {
 
 body > main > div.navbar-mobile > form > div > button > img {
   transform: translateY(0em);
+}
+
+.buttons-pagination-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-bottom: 0em;
+  gap: 33em;
+  z-index: 1;
+}
+
+.next-page,.previous-page {
+  border: none;
+  background: #000000a1;
+  border-radius: 20em;
+  cursor: pointer;
+}
+
+.left-button,.right-button {
+  width: 2.5em;
+}
+
+.left-button:hover,.right-button:hover {
+  background: #ffcd05;
+  border-radius: 10em;
+}
+
+.current-page-number {
+      position: fixed;
+    font-weight: 900;
+    font-size: 3em;
+    margin-top: -4em;
 }
 
 @media screen and (min-width:1024px) {

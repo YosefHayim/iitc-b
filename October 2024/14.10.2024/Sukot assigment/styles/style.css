@@ -442,6 +442,14 @@ input {
   width: -webkit-fill-available;
 }
 
+#grand-finalle {
+  box-shadow: 0em 0em 2em 0em #f4f4f4;
+  background: wheat;
+  color: black;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
 @media screen and (min-width:1024px) {
 
   .fav-movies-container {

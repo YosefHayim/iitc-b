@@ -2,6 +2,7 @@
 import { apiKey, apiToken, accountId } from "./env.js";
 
 // Updated selectors to select all relevant elements
+const dropDownMenu = document.querySelector('.dropdown-content')
 const domTitleTxt = document.querySelector('.currently-movies-in-theatres-container-title');
 const logo = document.querySelector('.logo-icon')
 const burgerIcon = document.querySelector('.white-burger-icon')
@@ -15,9 +16,9 @@ const searchInputs = document.querySelectorAll('.input-search-bar');
 const whiteGlassSearches = document.querySelectorAll('.white-search-bar');
 const formData = document.querySelectorAll('form');
 const titlesContainers = document.querySelectorAll('.trending-movies-container-title, .upcoming-movies-container-title, .popular-movies-container-title');
+const popularOfTheDayDiv = document.querySelector('.popular-of-day-container')
 
 const burgerIconActivate = () => {
-  
   burgerIcon.addEventListener('click', (ev) => {
     ev.preventDefault();
     if (burgerIcon.src.includes("white-remove-icon.svg")) {
@@ -27,7 +28,6 @@ const burgerIconActivate = () => {
     }
   });
 }
-
 burgerIconActivate()
 
 // const logoRedirectHome = () => {
@@ -36,9 +36,77 @@ burgerIconActivate()
 //     window.location.href = "../pages/index.html"  
 //   })
 // }
-
 // logoRedirectHome()
 
+
+dropDownMenu.addEventListener('click', (ev) => {
+  ev.preventDefault()
+
+  const pageClicked = ev.target.closest('a').textContent
+  if (pageClicked === 'Popular of the Day') {
+    getData(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=${apiKey}`, (data) => {
+      data.results.forEach((movie) => {
+        const movieCard = createMovieCard(movie);
+        popularOfTheDayDiv.appendChild(movieCard);
+
+        titlesContainers.forEach(title => title.style.display = 'none');
+        domTitleTxt.style.cssText = `
+          margin-bottom: 2em;
+          border-radius: 3em;
+          letter-spacing: 0em;
+          color: #ffffff;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: #ff0000a1;
+          width: 100%;
+          text-align: center;
+          line-height: 0em;
+          box-shadow: 0em 0em 0em 0em;
+          font-size: 1.5em;
+        `;
+
+        domTitleTxt.textContent = `POPULAR MOVIES OF TODAY`
+        upComingMoviesContainer.style.display = 'none';
+        theatresContainer.style.display = 'none';
+        popularMoviesContainer.style.display = 'none';
+        topRatedMoviesContainer.style.display = 'none';
+      });
+    });
+  } else {
+    getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=${apiKey}`, (data) => {
+      data.results.forEach((movie) => {
+        const movieCard = createMovieCard(movie);
+        popularOfTheDayDiv.appendChild(movieCard);
+
+        titlesContainers.forEach(title => title.style.display = 'none');
+        domTitleTxt.style.cssText = `
+          margin-bottom: 2em;
+          border-radius: 3em;
+          letter-spacing: 0em;
+          color: #ffffff;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: #ff0000a1;
+          width: 100%;
+          text-align: center;
+          line-height: 0em;
+          box-shadow: 0em 0em 0em 0em;
+          font-size: 1.5em;
+        `;
+
+        domTitleTxt.textContent = `POPULAR MOVIES OF THE WEEK`
+        upComingMoviesContainer.style.display = 'none';
+        theatresContainer.style.display = 'none';
+        popularMoviesContainer.style.display = 'none';
+        topRatedMoviesContainer.style.display = 'none';
+      });
+  })
+  }
+})
 
 // Function to fetch data from the API
 const getData = async (url, cb) => {

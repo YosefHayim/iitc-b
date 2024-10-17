@@ -56,7 +56,7 @@ main {
   background: #000000;
   padding: 0.5em;
   margin-bottom: 3em;
-  width: -webkit-fill-available;
+  width: 100vw;
   justify-content: center;
 }
 
@@ -524,7 +524,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 
 @media screen and (min-width:1024px) {
 
-  .popular-of-day-container,.popular-week-container {
+  .popular-of-day-container,.popular-movies-of-week-container {
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -80,15 +80,13 @@ const postData = async (url, cb, favMovie) => {
   }
 };
 
-
-
 // Function to get the star rating image based on vote_average
 const getStarRatingImage = (vote_average) => {
   if (vote_average < 2) return "../images/one-star-icon.svg";
-  else if (vote_average < 4) return "../images/two-stars-icon.svg";
-  else if (vote_average < 6) return "../images/three-stars-icon.svg";
-  else if (vote_average < 8) return "../images/four-stars-icon.svg";
-  else return "../images/five-stars-icon.svg";
+  else if (vote_average < 4) return "../images/user-activity/two-stars-icon.svg";
+  else if (vote_average < 6) return "../images/user-activity/three-stars-icon.svg";
+  else if (vote_average < 8) return "../images/user-activity/four-stars-icon.svg";
+  else return "../images/user-activity/five-stars-icon.svg";
 };
 
 // Function to create movie card
@@ -104,9 +102,9 @@ const createMovieCard = (movie) => {
     <h1 class="title">${movie.original_title}</h1>
     <div class="img-container">
       <img src="${starRatingImage}" alt="rating-img" class="rating-img">
-      <a class="play-button-btn"><img src="../images/play-button-icon.svg" alt="play-button-icon" class="play-button-img"></a>
-      <button class="white-share-trailer-btn"><img src="../images/white-share-icon.svg" alt="white-share-img" class="white-share-img"></button>
-      <button class="white-heart-trailer-btn"><img src="../images/white-heart-icon.svg" alt="white-heart-img" class="white-heart-img"></button>
+      <a class="play-button-btn"><img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img"></a>
+      <button class="white-share-trailer-btn"><img src="../images/user-activity/white-share-icon.svg" alt="white-share-img" class="white-share-img"></button>
+      <button class="white-heart-trailer-btn"><img src="../images/user-activity/white-heart-icon.svg" alt="white-heart-img" class="white-heart-img"></button>
       <h2 class="rating-number-txt">${movie.vote_average.toFixed(1)}</h2>
     </div>
   `;
@@ -122,7 +120,7 @@ const createMovieCard = (movie) => {
     
       const imgContainer = ev.target.closest('.img-container');
       const favoriteImgGif = document.createElement('img');
-      favoriteImgGif.src = "../images/favourite-reaction.gif";
+      favoriteImgGif.src = "../images/user-activity/favorite-reaction.gif";
       favoriteImgGif.alt = "favorite-effect-img";
       favoriteImgGif.classList.add('favorite-effect-img');
       

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../styles/style.css">
   <title>MovieMingle</title>
 </head>
 <style>
@@ -18,8 +18,9 @@
 
   .favorite-movies-title-container {
     width: 100vw;
+    position: fixed;
+    top: 10em;
   }
-
 </style>
 <body>
   <main>
@@ -92,11 +93,46 @@
   </main>
 
 <!-- Start of footer -->
-  <footer>
-    <span class="copy-right-txt">© 2024 Joseph Sabagos </span>
-  </footer>
-  <!-- end of footer -->
-  
+<footer>
+  <div class="desktop-navbar-container-footer">
+    <div class="links-container-footer">
+      <div>        
+      <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
+      </div>
+      <div>
+      <a href="./index.html" class="top-navbar-desktop">Home</a>
+      </div>
+      <div>
+      <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+      </div>
+      <div>
+      <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+      </div>
+    </div>
+
+    <div class="group-input-btn-search-container">
+      <input type="text" placeholder="Search movies" class="input-search-bar" required="">
+      <button class="btn-serachbar-glass">
+        <img src="../images/desktop-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+      </button>
+    </div>
+
+    <div class="contact-links-footer">
+      <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
+        <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+      </a>
+        
+      <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+      <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+      </a>   
+    </div>
+  </div>
+  <hr>
+  <span class="copy-right-txt">
+    <p>© 2024 No rights reserved. Design by Joseph Sabag</p>
+  </span>
+</footer>
+<!-- end of footer -->
 <script type="module" src="../functionalities/main.js"></script>
 </body>
 </html>

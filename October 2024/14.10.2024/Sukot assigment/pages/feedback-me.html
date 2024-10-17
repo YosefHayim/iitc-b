@@ -9,37 +9,38 @@
 </head>
 <style>
   .navbar-desktop {
-  position: fixed;
-}
+    position: fixed;
+  }
 
-footer {
-  position: fixed;
-  bottom: 0;
-}
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
 
-.feedback-me-container-title {
-  position: fixed;
-  top: 10em;
-  margin-bottom: 3em;
-  border-radius: 3em;
-  padding: 1em;
-  letter-spacing: 0.5em;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #ff0000bf;
-  text-align: center;
-  line-height: 3em;
-  box-shadow: 0em 0em 2.5em -1em;
-  font-size: 0.6em;
-  width: -webkit-fill-available;
-  border-style: dashed;
-}
+  .feedback-me-container-title {
+    position: fixed;
+    top: 10em;
+    margin-bottom: 3em;
+    border-radius: 3em;
+    padding: 1em;
+    letter-spacing: 0.5em;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ff0000bf;
+    text-align: center;
+    line-height: 3em;
+    box-shadow: 0em 0em 2.5em -1em;
+    font-size: 0.6em;
+    width: -webkit-fill-available;
+    border-style: dashed;
+  }
 </style>
 <body>
   <main>
+
     <!-- Overlay for mobile -->
     <div class="overlay"></div>
 
@@ -54,13 +55,12 @@ footer {
           </button>
           <img src="../images/mobile-navbar/white-burger-icon.svg" alt="white-burger-icon" class="white-burger-icon">
         </div>
-        </form>
-      </div>
+      </form>
+    </div>
     <!-- End of navbar mobile -->
 
     <!-- Start of desktop navbar -->
     <div class="navbar-desktop">
-      
       <form name="search-bar-input" class="searchbar-container">
         <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
         <div class="group-input-btn-search-container">
@@ -72,103 +72,119 @@ footer {
 
         <!-- start of navbar desktop container -->
         <div class="desktop-navbar-container">
-          <div class="top-navbar">
-
-            <a href="./index.html" class="top-navbar-desktop dropdown">Home</a>
-            <div class="dropdown-content">
-
-                <div class="popular-day-container">
-                  <a href="./popular-day.html">Popular of the Day</a>
-                </div>
-
-                <div class="popular-week-container">
-                  <a href="./popular-week.html">Popular of the Week</a>
-                </div>
-            </div>
-        </div>
-        
-
           <div>
-          <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+            <a href="./index.html" class="top-navbar-desktop">Home</a>
           </div>
-
           <div>
-          <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+            <a href="./about-us.html" class="top-navbar-desktop">About us</a>
           </div>
-
+          <div>
+            <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+          </div>
           <div>
             <a href="./feedback-me.html" class="top-navbar-desktop">Feedback me</a>
           </div>
 
           <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
-          <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+            <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+          </a>
+
+          <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+            <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+          </a>
+          <a href="https://www.linkedin.com/in/yosef-sabag-113841239/P" target="_blank" rel="noopener noreferrer">
+            <img src="../images/desktop-navbar/linkedin-logo.svg" alt="Linkedin Logo" class="linkedin-logo">
           </a>
           
-          <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
-          <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
-          </a>   
-            <!-- end of navbar desktop container -->
         </div>
+        <!-- end of navbar desktop container -->
       </form>
     </div>
-    <!-- End of navbar desktop -->
-  </div>
-  </div>
+    <!-- End of desktop navbar -->
+
+    <!-- main content displayed start here -->
+    <div class="feedback-me-container-title">
+      <h2>FEEDBACK ME</h2>
+    </div>
+
+    <div class="form-container">
+      <form name="feedback-me" class="feedback-me-form">
+        <!-- Name Field -->
+        <label for="name" class="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="First name">
+
+        <!-- Email Field -->
+        <label for="email" class="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email address">
+
+        <!-- Message Field -->
+        <label for="message" class="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="I admire honesty so go ahead..."></textarea>
+
+        <!-- Rating Field -->
+        <div class="rating-container">
+          <label for="rating" class="rating">&#x2B50; Rating (1 to 10):</label>
+          <input type="number" id="rating" name="rating" min="1" max="10">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
   </main>
   <!-- main content displayed ends here -->
 
+  <!-- Start of footer -->
+  <footer>
+    <div class="desktop-navbar-container-footer">
+      <div class="group-input-btn-search-container">
+        <form>
+          <input type="text" placeholder="Search movies" class="input-search-bar" required="">
+          <button class="btn-serachbar-glass">
+            <img src="../images/desktop-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+          </button>
+        </form>
+      </div>
 
+      <div class="links-container-footer">
+        <div>
+          <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
+        </div>
+        <div class="link-container">
+          <a href="./index.html" class="top-navbar-desktop">Home</a>
+        </div>
+        <div class="link-container">
+          <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+        </div>
+        <div class="link-container">
+          <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+        </div>
+        <div class="link-container">
+          <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
+        </div>
+      </div>
 
-<!-- Start of footer -->
-<footer>
-  <div class="desktop-navbar-container-footer">
-    <div class="group-input-btn-search-container">
-      <form>
-        <input type="text" placeholder="Search movies" class="input-search-bar" required="">
-        <button class="btn-serachbar-glass">
-          <img src="../images/desktop-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
-      </form>
-      </button>
+      <div class="contact-links-footer">
+        <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
+          <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+        </a>
+
+        <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+          <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+        </a>
+
+        <a href="https://www.linkedin.com/in/yosef-sabag-113841239/P" target="_blank" rel="noopener noreferrer">
+          <img src="../images/desktop-navbar/linkedin-logo.svg" alt="Linkedin Logo" class="linkedin-logo">
+        </a>
+      </div>
     </div>
+    <hr>
+    <span class="copy-right-txt">
+      <p>© 2024 No rights reserved. Design by Joseph Sabag</p>
+    </span>
+  </footer>
+  <!-- end of footer -->
 
-    <div class="links-container-footer">
-      <div>        
-      <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
-      </div>
-
-      <div class="link-container">
-      <a href="./index.html" class="top-navbar-desktop">Home</a>
-      </div>
-
-      <div class="link-container">
-      <a href="./about-us.html" class="top-navbar-desktop">About us</a>
-      </div>
-
-      <div class="link-container">
-      <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
-      </div>
-
-      <div class="link-container">
-      <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
-      </div>
-    </div>
-
-    <div class="contact-links-footer">
-      <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
-        <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
-      </a>
-        
-      <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
-      <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
-      </a>   
-    </div>
-  </div>
-  <hr>
-  <span class="copy-right-txt">
-    <p>© 2024 No rights reserved. Design by Joseph Sabag</p>
-  </span>
-</footer>
-<!-- end of footer -->
-<script type="module" src="../feedback-me/main.js"></script>
+  <script type="module" src="../feedback-me/main.js"></script>
 </body>
 </html>

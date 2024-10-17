@@ -272,7 +272,6 @@ input:active {
   }
 }
 
-
 .feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   margin-bottom: 3em;
   border-radius: 3em;
@@ -291,6 +290,15 @@ input:active {
   width: -webkit-fill-available;
   border-style: dashed;
 }
+
+.feedback-me-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+}
+
 
 .about-us-container-title h2,.favorite-movies-title-container h2 ,.feedback-me-container-title h2 {
   font-size: 5em;
@@ -505,7 +513,7 @@ input {
   color: black;
 }
 
-.github-full-logo-white:active,.discord-full-logo-white:active,.github-full-logo-white:hover,.discord-full-logo-white:hover {
+.github-full-logo-white:active,.discord-full-logo-white:active,.github-full-logo-white:hover,.discord-full-logo-white:hover,.linkedin-logo:hover,.linkedin-logo:active {
   background: #ff0000bf;
   border-radius: 5em;
 }
@@ -545,11 +553,11 @@ body > main > div.navbar-mobile > form > div > button > img {
     flex-direction: row;
   }
 
-  .github-full-logo-white,.discord-full-logo-white {
+  .github-full-logo-white,.discord-full-logo-white,.linkedin-logo {
     transform: translateY(0.1em);
   }
 
-  .github-full-logo-white,.discord-full-logo-white {
+  .github-full-logo-white,.discord-full-logo-white,.linkedin-logo {
     background: #ffffff24;
     border-radius: 3em;
   }

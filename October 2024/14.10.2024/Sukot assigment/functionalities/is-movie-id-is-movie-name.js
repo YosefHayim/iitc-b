@@ -13,6 +13,7 @@ const isIdOrisName = () => {
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const inputValue = form.querySelector('input').value.trim();
+      
 
       if (/^[a-zA-Z]+$/.test(inputValue)) {
         searchMovieByName(inputValue)

@@ -14,8 +14,9 @@ const formData = document.querySelectorAll('form');
 const popularOfTheDayDiv = document.querySelector('.popular-of-day-container')
 const popularOfTheWeekDiv = document.querySelector('.popular-movies-of-week-container')
 const overlayDiv = document.querySelector('.overlay')
+
 const titlesContainers = document.querySelectorAll('.trending-movies-container-title, .upcoming-movies-container-title, .popular-movies-container-title');
-const movieCardsDivs = document.querySelector('.theatresContainer .upComingMoviesContainer .popularMoviesContainer .topRatedMoviesContainer .favMoviesContainer')
+const movieCardsDivs = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container');
 
 export {alertMessageContainer,
   dropDownMenu,domTitleTxt,

@@ -7,9 +7,11 @@
   <title>MovieMingle</title>
 </head>
 <body>
-
   <main>
+    <!-- Overlay for mobile -->
     <div class="overlay"></div>
+
+    <!-- start of navbar mobile -->
     <div class="navbar-mobile">
       <form name="search-bar-input" class="searchbar-container">
         <img src="../images/logo.svg" alt="logo" class="logo">
@@ -20,12 +22,14 @@
           </button>
           <img src="../images/white-burger-icon.svg" alt="white-burger-icon" class="white-burger-icon">
         </div>
-        <div class="burger-icon-menu">
         </form>
       </div>
-    </div>
+    <!-- End of navbar mobile -->
+
+    <!-- Start of desktop navbar -->
     <div class="navbar-desktop">
       <a href="../pages/index.html"><img src="../images/logo.svg" alt="logo-icon" class="logo-icon"></a>
+
       <form name="search-bar-input" class="searchbar-container">
         <div class="group-input-btn-search-container">
           <input type="text" placeholder="Search movies" class="input-search-bar" required>
@@ -33,39 +37,80 @@
             <img src="../images/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
           </button>
         </div>
+
+        <!-- start of navbar desktop container -->
         <div class="desktop-navbar-container">
-          <div><a href="./index.html" class="top-navbar-desktop">Home</a></div>
-          <div><a href="./about-us.html" class="top-navbar-desktop">About us</a></div>
-          <div><a href="./search-movie.html" class="top-navbar-desktop">Search movie</a></div>
-          <div><a href="./favorite.html" class="top-navbar-desktop">Favorites</a></div>
+          <div>
+          <a href="./index.html" class="top-navbar-desktop">Home</a>
+          </div>
+
+          <div>
+          <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+          </div>
+
+          <div>
+          <a href="./search-movie.html" class="top-navbar-desktop">Search movie</a>
+          </div>
+
+          <div>
+          <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+          </div>
+
           <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
-            <img src="../images/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+          <img src="../images/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
           </a>
           
           <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
-            <img src="../images/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
-          </a>     
+          <img src="../images/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+          </a>   
+            <!-- end of navbar desktop container -->
         </div>
-        
-        
       </form>
     </div>
+    <!-- End of navbar desktop -->
   </div>
-  <div class="loader"></div>
-    <div class="currently-movies-in-theatres-container-title"><h2>CURRENTLY IN THEATERS</h2></div>
-    <div class="currently-movies-in-theatres-container"></div>
-    <div class="upcoming-movies-container-title"><h2>UP COMING MOVIES</h2></div>
-    <div class="upcoming-movies-container"></div>
-    <div class="popular-movies-container-title"><h2>LATEST POPULAR MOVIES</h2></div>
-    <div class="popular-movies-container"></div>
-      <div class="trending-movies-container-title"><h2>TOP TRENDING MOVIES</h2></div>
-    <div class="top-trending-movies-container"></div>
-    <div class="search-results-container"></div>
+  </div>
+
+  <!-- warning message display -->
+
+  <!-- main content displayed start here -->
+    <div class="currently-movies-in-theatres-container-title">
+      <h2>CURRENTLY IN THEATERS</h2>
+    </div>
+
+    <div class="currently-movies-in-theatres-container">
+    </div>
+
+    <div class="upcoming-movies-container-title">
+      <h2>UP COMING MOVIES</h2>
+    </div>
+
+    <div class="upcoming-movies-container">
+    </div>
+
+    <div class="popular-movies-container-title">
+      <h2>LATEST POPULAR MOVIES</h2>
+    </div>
+
+    <div class="popular-movies-container">
+    </div>
+
+      <div class="trending-movies-container-title">
+        <h2>TOP TRENDING MOVIES</h2>
+      </div>
+
+    <div class="top-trending-movies-container">
+    </div>
+
+    <div class="search-results-container">
+    </div>
   </main>
-  
+
+<!-- Start of footer -->
   <footer>
     <span class="copy-right-txt">© 2024 Joseph Sabagos </span>
   </footer>
+  <!-- end of footer -->
   
 <script type="module" src="../functionalities/main.js"></script>
 </body>

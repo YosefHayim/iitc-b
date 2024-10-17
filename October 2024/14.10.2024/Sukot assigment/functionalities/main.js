@@ -2,6 +2,7 @@
 import { apiKey, apiToken, accountId } from "./env.js";
 
 // Updated selectors to select all relevant elements
+const domTitleTxt = document.querySelector('.currently-movies-in-theatres-container-title');
 const logo = document.querySelector('.logo-icon')
 const burgerIcon = document.querySelector('.white-burger-icon')
 const favMoviesContainer = document.querySelector('.fav-movies-container')
@@ -38,23 +39,6 @@ burgerIconActivate()
 
 // logoRedirectHome()
 
-
-    // Hide content and show loader on load
-    window.addEventListener('load', function () {
-      // Show loader
-      document.querySelector('.loader').style.display = 'block';
-      
-      // Hide content
-      const content = document.querySelector('main');
-      content.style.display = 'none';
-      
-      // Optional: Delay to simulate loading time, then restore content
-      setTimeout(() => {
-        // Hide loader and show content again
-        document.querySelector('.loader').style.display = 'none';
-        content.style.display = 'flex';
-      }, 200); // Adjust delay as needed
-    });
 
 // Function to fetch data from the API
 const getData = async (url, cb) => {
@@ -227,7 +211,7 @@ const displayFavoriteMoviesList = () => {
       favMoviesContainer.addEventListener('click', (ev) => {
         const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
         removeFavMovie(movieCardId)
-        console.log(`removed`);
+        location.reload()
         
       })
     });
@@ -278,12 +262,9 @@ const searchMovies = () => {
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
       const inputValue = form.querySelector('input').value.trim();
-      if (inputValue.length >= 2) {
 
-        titlesContainers.forEach(title => {
-          title.style.display = 'none';
-        });
-        const domTitleTxt = document.querySelector('.currently-movies-in-theatres-container-title');
+      if (/^[a-zA-Z]+$/.test(inputValue)) {
+        titlesContainers.forEach(title => title.style.display = 'none');
         domTitleTxt.style.cssText = `
           margin-bottom: 2em;
           border-radius: 3em;
@@ -317,12 +298,42 @@ const searchMovies = () => {
             });
           }
         });
+      } else if (/^[0-9]+$/.test(inputValue)) {
+        getData(`https://api.themoviedb.org/3/movie/${inputValue}?api_key=${apiKey}`, (data) => {
+          titlesContainers.forEach(title => title.style.display = 'none');
+          domTitleTxt.style.cssText = `
+            margin-bottom: 2em;
+            border-radius: 3em;
+            letter-spacing: 0em;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #ff0000a1;
+            width: 100%;
+            text-align: center;
+            line-height: 0em;
+            box-shadow: 0em 0em 0em 0em;
+            font-size: 1.5em;
+          `;
+          upComingMoviesContainer.style.display = 'none';
+          theatresContainer.style.display = 'none';
+          popularMoviesContainer.style.display = 'none';
+          topRatedMoviesContainer.style.display = 'none';
+          searchResultContainer.innerHTML = '';
+          domTitleTxt.textContent = `Movie name is: ${data.title}`;
+          const movieCard = createMovieCard(data);
+          searchResultContainer.appendChild(movieCard);
+        });
       } else {
-        alert('Please provide a movie name');
+        // Handle invalid input
+        alert('Please enter a valid movie title or ID.')
       }
     });
   });
 };
+
 
 // Function to reset the placeholder text in the search input
 const resetPlaceholder = () => {

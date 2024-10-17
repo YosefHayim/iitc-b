@@ -35,6 +35,11 @@ body {
   color: white;
 }
 
+main {
+  position: fixed;
+  top: 0;
+}
+
 .searchbar-container,.navbar-mobile {
   display: flex;
   flex-direction: row;
@@ -107,6 +112,10 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   background: none;
   color: white; 
   position: relative;
+}
+
+.remove-btn-img {
+  transform: translate(5em, -7em);
 }
 
 .input-search-bar {
@@ -240,15 +249,16 @@ input:active {
 .movie-card {
   gap: 0.6em;
   position: relative;
-  animation: moveRight 200s linear infinite; 
+  animation: moveRight 10s linear infinite; 
 }
 
-.movie-img {
+.movie-card {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.movie-img:hover,.movie-img:focus{
+.movie-card:hover,.movie-img:focus{
   transform: scale(1.07);
+  cursor: pointer;
 }
 .movie-img:hover {
   box-shadow: 0em 0em 1.5em rgba(255, 255, 255, 1);
@@ -263,7 +273,7 @@ input:active {
   }
 } 
 
-.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
+.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   margin-bottom: 3em;
   border-radius: 3em;
   padding: 1em;
@@ -273,12 +283,13 @@ input:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ff0000bf;;
+  background: #ff0000bf;
   text-align: center;
   line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
   font-size: 0.6em;
   width: -webkit-fill-available;
+  border-style: dashed;
 }
 
 .copy-right-txt {
@@ -325,7 +336,7 @@ a {
   text-decoration: none;
 }
 
-.loader {
+/* .loader {
   position: fixed;
   left: 5em;
   top: 25em;
@@ -338,14 +349,24 @@ a {
   height: 8em;
   animation: spin 2s cubic-bezier(0.58, -0.19, 0, 1.19) infinite;
   z-index: 9999;
-}
+} */
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
+
 @media screen and (min-width:1024px) {
+
+  .fav-movies-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    margin-top: 8em;
+  }
 
   .search-results-container {
     flex-direction: row;
@@ -353,6 +374,20 @@ a {
 
   .github-full-logo-white,.discord-full-logo-white {
     transform: translateY(0.1em);
+  }
+
+  .github-full-logo-white,.discord-full-logo-white {
+    background: #ffffff24;
+    border-radius: 3em;
+  }
+
+  .github-full-logo-white:active,.discord-full-logo-white:active,.github-full-logo-white:hover,.discord-full-logo-white:hover {
+    background: #ff0000bf;
+  }
+
+  .remove-btn-img:active,.remove-btn-img:hover {
+    background: red;
+    position: relative;
   }
   
   .overlay {
@@ -370,6 +405,7 @@ a {
 
   .searchbar-container {
     width: 100%;
+    justify-content: center;
   }
 
   .top-navbar-desktop {
@@ -383,7 +419,7 @@ a {
 
   .top-navbar-desktop:active {
     color: #ff0000bf;
-    background: #ffffff1c;
+    background: #ffffff24;
   }
   
   .top-navbar-desktop::after {
@@ -393,7 +429,7 @@ a {
     bottom: 0;
     width: 0;
     height: 0.1em;
-    background-color: white; /* Explicitly set the color to white */
+    background-color: white; 
     transition: width 0.3s ease;
   }
   
@@ -414,7 +450,6 @@ a {
   }
 
   .navbar-desktop { 
-    position: static;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -422,9 +457,11 @@ a {
     width: -webkit-fill-available;
     background: #000000;
     padding: 0.5em;
-    margin-bottom: 3em;
     width: 100vw;
     gap: 5em;
+    position: relative;
+    top: 0;
+    margin-bottom: 2em;
   }
   .desktop-navbar-container {
   display: flex;

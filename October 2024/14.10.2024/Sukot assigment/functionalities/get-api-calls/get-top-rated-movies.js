@@ -1,6 +1,6 @@
 import { getData } from "../api-functions.js";
 import { apiKey } from "../env.js";
-import { topRatedMoviesContainer, currentPage } from "../dom/domEls.js";
+import { topRatedMoviesContainer, topTrendingPage } from "../dom/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 
 const topRatedMovies = (pageNumber = 1) => {
@@ -12,8 +12,10 @@ const topRatedMovies = (pageNumber = 1) => {
         const movieCard = createMovieCard(movie);
         topRatedMoviesContainer.appendChild(movieCard);
       });
-      currentPage.style.display = `block`;
-      currentPage.textContent = `${pageNumber} / ${data.total_pages - pageNumber} PAGES`;
+      topTrendingPage.style.display = `block`;
+      topTrendingPage.textContent = `PAGES: ${pageNumber} / ${data.total_pages - pageNumber}`
+
+      
     } else {
       console.error("No data received from the API.");
     }

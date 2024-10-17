@@ -1,5 +1,5 @@
 import { getData } from "../api-functions.js";
-import {theatresContainer,currentPage} from "../dom/domEls.js"
+import {theatresContainer,currentTheaterPage} from "../dom/domEls.js"
 import {createMovieCard} from "../dom/dom-movies-cards.js"
 
 let pageNumber;
@@ -14,8 +14,10 @@ const currentlyInTheaters = (pageNumber = 1) => {
         const movieCard = createMovieCard(movie);
         theatresContainer.appendChild(movieCard);
       });
-      currentPage.style.display = `block`
-      currentPage.textContent = `${pageNumber} / ${data.total_pages - pageNumber} PAGES`
+      currentTheaterPage.style.display = `block`
+      currentTheaterPage.textContent = `PAGES: ${pageNumber} / ${data.total_pages - pageNumber}`
+      
+
 
     } else {
       console.error("No data received from the API.");

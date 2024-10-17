@@ -15,12 +15,17 @@ const popularOfTheDayDiv = document.querySelector('.popular-of-day-container')
 const popularOfTheWeekDiv = document.querySelector('.popular-movies-of-week-container')
 const overlayDiv = document.querySelector('.overlay')
 const paginationBtns = document.querySelectorAll('.next-page,.previous-page')
-const currentPage = document.querySelector('.current-page-number')
+const currentTheaterPage = document.querySelector('.current-theaters-page')
+const upComingMoviePage = document.querySelector('.current-upcoming-movies-number')
+const latestPopularPage = document.querySelector('.current-popular-movies-number')
+const topTrendingPage = document.querySelector('.top-trending-movie-number')
+const popDayMoviePage = document.querySelector('.popular-day-number')
+const popWeekMoviePage = document.querySelector('.popular-week-number')
 
-const titlesContainers = document.querySelectorAll('.search-results-container-title, .popular-of-day-container-title, .popular-movies-of-week-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .popular-movies-container-title, .currently-movies-in-theatres-container-title');
+const titlesContainers = document.querySelectorAll('div[class*="container-title"]');
 const movieCardsDivs = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container');
 
-export {alertMessageContainer,
+export {alertMessageContainer,popWeekMoviePage,
   dropDownMenu,domTitleTxt,
   burgerIcon,favMoviesContainer,
   upComingMoviesContainer,
@@ -30,10 +35,10 @@ export {alertMessageContainer,
   ,topRatedMoviesContainer,
   searchResultContainer,
   whiteGlassSearches,
-  formData,
+  formData,popDayMoviePage,
   titlesContainers
   ,popularOfTheDayDiv
   ,popularOfTheWeekDiv,
-  overlayDiv,movieCardsDivs,paginationBtns,currentPage
+  overlayDiv,movieCardsDivs,paginationBtns,currentTheaterPage,upComingMoviePage,latestPopularPage,topTrendingPage
 }
 

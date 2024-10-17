@@ -55,7 +55,7 @@ main {
   background: #000000;
   padding: 0.5em;
   margin-bottom: 3em;
-  width: 100vw;
+  width: -webkit-fill-available;
   justify-content: center;
 }
 
@@ -246,7 +246,7 @@ input:active {
   gap: 3em;
 }
 
-.feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
+.search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   margin-bottom: 3em;
   border-radius: 3em;
   padding: 1em;
@@ -264,7 +264,11 @@ input:active {
   width: -webkit-fill-available;
   border-style: dashed;
   margin-top: 8em;
-} 
+}
+
+.search-results-container-title {
+  display: none;
+}
 
 .feedback-me-form {
   display: flex;
@@ -299,11 +303,12 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: -webkit-fill-available;
+  width: 1000vw;
   background: black;
   text-align: center;
-  bottom: 0;
-  position: fixed;
+  position: relative;
+  z-index: 1001;
+
 }
 
 hr {
@@ -516,7 +521,7 @@ body > main > div.navbar-mobile > form > div > button > img {
   border-radius: 10em;
 }
 
-.current-page-number {
+.current-theaters-page,.current-upcoming-movies-number,.current-popular-movies-number,.top-trending-movie-number {
     position: absolute;
     font-weight: 900;
     font-size: 3em;
@@ -524,6 +529,10 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 @media screen and (min-width:1024px) {
+
+  .currently-movies-in-theatres-container-title {
+    margin-top: 20em;
+  }
 
   .popular-of-day-container,.popular-movies-of-week-container {
     display: flex;
@@ -643,11 +652,12 @@ body > main > div.navbar-mobile > form > div > button > img {
     width: -webkit-fill-available;
     background: #000000;
     padding: 0.5em;
-    width: 100vw;
     gap: 5em;
     position: relative;
     top: 0;
     margin-bottom: 2em;
+    position: fixed;
+    z-index: 1000;
   }
   .desktop-navbar-container {
   display: flex;

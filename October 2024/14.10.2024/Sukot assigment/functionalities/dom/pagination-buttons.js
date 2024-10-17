@@ -9,9 +9,7 @@ import { popularMovies } from "../get-api-calls/get-popular-movies.js";
 import { topRatedMovies } from "../get-api-calls/get-top-rated-movies.js";
 import { upComingMovies } from "../get-api-calls/get-upcoming-movies.js";
 
-let pageNumber = 1;
-
-// Extended function mapping to handle both search by ID and by name
+// Mapping each container to its respective function
 const functionMap = {
   'currently-movies-in-theatres-container-title': currentlyInTheaters,
   'upcoming-movies-container-title': upComingMovies,
@@ -20,36 +18,45 @@ const functionMap = {
   'popular-of-day-container-title': popularMoviesOfDay,
   'popular-movies-of-week-container-title': popularMoviesOfWeek,
   'favorite-movies-container-title': displayFavoriteMoviesList,
-  'search-results-container-title-name': searchMovieByName,
-  'search-results-container-title-id': searchMovieById,
+};
+
+// Object to store page number for each category
+const pageNumbers = {
+  'currently-movies-in-theatres-container-title': 1,
+  'upcoming-movies-container-title': 1,
+  'popular-movies-container-title': 1,
+  'trending-movies-container-title': 1,
+  'popular-of-day-container-title': 1,
+  'popular-movies-of-week-container-title': 1,
+  'favorite-movies-container-title': 1,
 };
 
 const redirectPages = () => {
-  titlesContainers.forEach((movieCarousel) => {
-    movieCarousel.addEventListener('click', (ev) => {
-      ev.preventDefault();
+  titlesContainers.forEach((container) => {
+    container.addEventListener('click', (event) => {
+      event.preventDefault();
 
-      // Identify the container class, specifically for search
-      const containerClass = Array.from(movieCarousel.classList).find(cls => functionMap[cls]);
+      // Find which function to call based on the container's class
+      const containerClass = Array.from(container.classList).find(cls => functionMap[cls]);
       let targetFunction = functionMap[containerClass];
 
-      // Example of differentiating by another attribute for search by ID or name
+      // Special case for search results
       if (containerClass === 'search-results-container-title') {
-        const searchTerm = movieCarousel.dataset.searchTerm;
+        const searchTerm = container.dataset.searchTerm;
         targetFunction = isNaN(searchTerm) ? searchMovieByName : searchMovieById;
       }
 
+      // Only proceed if a valid function was found
       if (targetFunction) {
-        console.log(targetFunction);
-        
-        if (ev.target.closest('.right-button')) {
-          console.log(++pageNumber);
-          targetFunction(pageNumber);
-
-        } else if (ev.target.closest('.left-button')) {
-          console.log(++pageNumber);
-          targetFunction(pageNumber);
+        // Update page number based on button click
+        if (event.target.closest('.right-button')) {
+          pageNumbers[containerClass]++;
+        } else if (event.target.closest('.left-button')) {
+          pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1); // Prevents going below 1
         }
+
+        // Call the target function with the updated page number
+        targetFunction(pageNumbers[containerClass]);
       } else {
         console.error("No matching function for this container.");
       }

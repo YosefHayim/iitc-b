@@ -1,6 +1,6 @@
 import { apiKey } from "../env.js";
 import { getData } from "../api-functions.js";
-import { popularOfTheWeekDiv, titlesContainers, domTitleTxt, movieCardsDivs, currentPage } from "../dom/domEls.js";
+import { popularOfTheWeekDiv, titlesContainers, domTitleTxt, movieCardsDivs, popWeekMoviePage } from "../dom/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 
 const popularMoviesOfWeek = (pageNumber = 1) => {
@@ -21,8 +21,8 @@ const popularMoviesOfWeek = (pageNumber = 1) => {
       domTitleTxt.style.fontSize = '1em';
       domTitleTxt.textContent = `POPULAR MOVIES OF THE WEEK`;
 
-      currentPage.style.display = `block`;
-      currentPage.textContent = `${pageNumber} / ${data.total_pages - pageNumber} PAGES`;
+      popWeekMoviePage.style.display = `block`;
+      console.log(`popularOfTheWeekDiv: ${pageNumber} / ${data.total_pages - pageNumber}`);
     } else {
       console.error("No data received from the API.");
     }

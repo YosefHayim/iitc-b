@@ -245,14 +245,31 @@ input:active {
   gap: 7em;
 }
 
+.movie-img {
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
 
-.movie-card:hover,.movie-img:focus{
-  transform: scale(1.07);
+.movie-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0em 0em 2em 0em;
   cursor: pointer;
 }
-.movie-img:hover {
-  box-shadow: 0em 0em 1.5em rgba(255, 255, 255, 1);
+
+
+.movie-card {
+  animation: scrollRight 20s linear infinite; 
+  gap: 0.5em;
 }
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 
 .about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   margin-bottom: 3em;
@@ -515,6 +532,38 @@ a {
     width: -webkit-fill-available;
     margin-bottom: -3em;
     margin-top: 1em;
+  }
+
+  .contact-links-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .error-container {
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .return-home-btn {
+    border: none;
+    background: black;
+    border-radius: 2em;
+    color: white;
+    padding: 1em;
+    width: 25vw;
+    margin-bottom: 6em;
+    font-size: 1em;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .return-home-btn:hover {
+    background-color: #ff0000bf;
+
   }
 
 }

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Trailer Time</title>
+</head>
+
+<style>
+  .navbar-desktop {
+    position: fixed;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+
+</style>
+<body>
+  <main>
+    <!-- Overlay for mobile -->
+    <div class="overlay"></div>
+
+    <!-- start of navbar mobile -->
+    <div class="navbar-mobile">
+      <form name="search-bar-input" class="searchbar-container">
+        <img src="../images/logo.svg" alt="logo" class="logo">
+        <div class="group-input-btn-search-container">
+          <input type="text" placeholder="Search movies" class="input-search-bar" required>
+          <button class="btn-serachbar-glass">
+            <img src="../images/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+          </button>
+          <img src="../images/white-burger-icon.svg" alt="white-burger-icon" class="white-burger-icon">
+        </div>
+        </form>
+      </div>
+    <!-- End of navbar mobile -->
+
+    <!-- Start of desktop navbar -->
+    <div class="navbar-desktop">
+      <a href="../pages/index.html"><img src="../images/logo.svg" alt="logo-icon" class="logo-icon"></a>
+
+      <form name="search-bar-input" class="searchbar-container">
+        <div class="group-input-btn-search-container">
+          <input type="text" placeholder="Search movies" class="input-search-bar" required>
+          <button class="btn-serachbar-glass">
+            <img src="../images/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+          </button>
+        </div>
+
+        <!-- start of navbar desktop container -->
+        <div class="desktop-navbar-container">
+          <div>
+          <a href="./index.html" class="top-navbar-desktop">Home</a>
+          </div>
+
+          <div>
+          <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+          </div>
+
+          <div>
+          <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+          </div>
+
+          <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
+          <img src="../images/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+          </a>
+          
+          <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+          <img src="../images/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+          </a>   
+            <!-- end of navbar desktop container -->
+        </div>
+      </form>
+    </div>
+    <!-- End of navbar desktop -->
+  </div>
+  </div>
+
+  <!-- warning message display -->
+
+  <!-- main content displayed start here -->
+
+      <div class="error-container">
+        <img src="../images/404-error-img.svg" alt="404-error-img" class="404-error-img">
+        <a href="./index.html"><button class="return-home-btn">Click me to return Home</button></a>
+      </div>
+
+    <div class="top-trending-movies-container">
+    </div>
+
+    <div class="search-results-container">
+    </div>
+  </main>
+
+<!-- Start of footer -->
+  <footer>
+    <div class="desktop-navbar-container-footer">
+      <div class="links-container-footer">
+        <div>
+        <a href="./index.html" class="top-navbar-desktop">Home</a>
+        </div>
+        <div>
+        <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+        </div>
+        <div>
+        <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+        </div>
+      </div>
+
+      <div class="contact-links-footer">
+        <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
+        <img src="../images/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+        </a>
+        
+        <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+        <img src="../images/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+        </a>
+      </div>
+    </div>
+    <hr>
+    <span class="copy-right-txt">© 2024 Joseph Sabagos </span>
+  </footer>
+  <!-- end of footer -->
+  
+<script type="module" src="../functionalities/main.js"></script>
+</body>
+</html>

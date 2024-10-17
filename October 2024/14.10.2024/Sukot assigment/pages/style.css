@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image:url(../images/background-img.svg);
+  background-image:url(../images/homepage-bg/background-img.svg);
   color: white;
 }
 
@@ -256,7 +256,7 @@ input:active {
 }
 
 
-.movie-card {
+/* .movie-card {
   animation: scrollRight 20s linear infinite; 
   gap: 0.5em;
 }
@@ -268,7 +268,7 @@ input:active {
   100% {
     transform: translateX(100%);
   }
-}
+} */
 
 
 .about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
@@ -288,6 +288,11 @@ input:active {
   font-size: 0.6em;
   width: -webkit-fill-available;
   border-style: dashed;
+}
+
+.about-us-container-title h2,.favorite-movies-title-container h2 {
+  font-size: 5em;
+  padding: 0.5em;
 }
 
 .copy-right-txt {
@@ -559,11 +564,6 @@ a {
     font-size: 1em;
     font-weight: 800;
     cursor: pointer;
-  }
-
-  .return-home-btn:hover {
-    background-color: #ff0000bf;
-
   }
 
 }

@@ -2,6 +2,7 @@
 import { apiKey, apiToken, accountId } from "./env.js";
 
 // Updated selectors to select all relevant elements
+const alertMessageContainer = document.querySelector('.alert-message-container')
 const dropDownMenu = document.querySelector('.dropdown-content')
 const domTitleTxt = document.querySelector('.currently-movies-in-theatres-container-title');
 const logo = document.querySelector('.logo-icon')
@@ -150,11 +151,14 @@ const postData = async (url, cb, favMovie) => {
 
 // Function to get the star rating image based on vote_average
 const getStarRatingImage = (vote_average) => {
-  if (vote_average < 2) return "../images/one-star-icon.svg";
+  if (vote_average < 2) return "../images/user-activity/one-star-icon.svg";
   else if (vote_average < 4) return "../images/user-activity/two-stars-icon.svg";
   else if (vote_average < 6) return "../images/user-activity/three-stars-icon.svg";
   else if (vote_average < 8) return "../images/user-activity/four-stars-icon.svg";
-  else return "../images/user-activity/five-stars-icon.svg";
+  else if (vote_average <= 10) return "../images/user-activity/five-stars-icon.svg";
+  else {
+      return "../images/user-activity/no-stars-rating.svg";
+  }
 };
 
 // Function to create movie card
@@ -166,16 +170,17 @@ const createMovieCard = (movie) => {
   const starRatingImage = getStarRatingImage(movie.vote_average);
 
   movieCardDiv.innerHTML = `
-    <img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="movie-img" class="movie-img">
-    <h1 class="title">${movie.original_title}</h1>
-    <div class="img-container">
-      <img src="${starRatingImage}" alt="rating-img" class="rating-img">
-      <a class="play-button-btn"><img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img"></a>
-      <button class="white-share-trailer-btn"><img src="../images/user-activity/white-share-icon.svg" alt="white-share-img" class="white-share-img"></button>
-      <button class="white-heart-trailer-btn"><img src="../images/user-activity/white-heart-icon.svg" alt="white-heart-img" class="white-heart-img"></button>
-      <h2 class="rating-number-txt">${movie.vote_average.toFixed(1)}</h2>
-    </div>
-  `;
+  <img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="movie-img" class="movie-img">
+  <h1 class="title">${movie.original_title}</h1>
+  <div class="img-container">
+    <img src="${starRatingImage}" alt="rating-img" class="rating-img">
+    <a class="play-button-btn"><img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img"></a>
+    <button class="white-share-trailer-btn"><img src="../images/user-activity/white-share-icon.svg" alt="white-share-img" class="white-share-img"></button>
+    <button class="white-heart-trailer-btn"><img src="../images/user-activity/white-heart-icon.svg" alt="white-heart-img" class="white-heart-img"></button>
+    <h2 class="rating-number-txt">${(movie.vote_average ?? 0).toFixed(1)}</h2>
+  </div>
+`;
+
   
   getMoviesTrailers(movie.id, movieCardDiv);
 
@@ -216,9 +221,9 @@ const createFavMovieCard = (movie) => {
     <h1 class="title">${movie.original_title}</h1>
     <div class="img-container">
       <img src="${starRatingImage}" alt="rating-img" class="rating-img">
-      <a class="play-button-btn"><img src="../images/play-button-icon.svg" alt="play-button-icon" class="play-button-img"></a>
-      <button class="white-share-trailer-btn"><img src="../images/white-share-icon.svg" alt="white-share-img" class="white-share-img"></button>
-      <button class="remove-btn-icon"><img src="../images/white-remove-icon.svg" alt="remove-btn-img" class="remove-btn-img"></button>
+      <a class="play-button-btn"><img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img"></a>
+      <button class="white-share-trailer-btn"><img src="../images/user-activity/white-share-icon.svg" alt="white-share-img" class="white-share-img"></button>
+      <button class="remove-btn-icon"><img src="../images/user-activity/white-remove-icon.svg" alt="remove-btn-img" class="remove-btn-img"></button>
       <h2 class="rating-number-txt">${movie.vote_average.toFixed(1)}</h2>
     </div>
   `;
@@ -270,16 +275,21 @@ const addfavoriteMovieToList = (movieCardId) => {
 // Function to display favorite movies on favorite page
 const displayFavoriteMoviesList = () => {
   getData(`https://api.themoviedb.org/3/account/${accountId}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`, (data) => {
-      data.results.forEach((movie) => {
+    data.results.forEach((movie) => {
       const movieCard = createFavMovieCard(movie);
       favMoviesContainer.appendChild(movieCard);
+    });
 
-      favMoviesContainer.addEventListener('click', (ev) => {
-        const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
-        removeFavMovie(movieCardId)
-        location.reload()
-        
-      })
+    // Move the click event listener outside the loop
+    favMoviesContainer.addEventListener('click', (ev) => {
+      const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
+      removeFavMovie(movieCardId);
+      alertMessageContainer.style.display = 'block';
+      setTimeout(() => {
+        alertMessageContainer.style.display = 'none';
+        location.reload();
+      }, 1000);
+
     });
   });
 };
@@ -354,7 +364,7 @@ const searchMovies = () => {
         searchResultContainer.innerHTML = '';
 
         getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=1`, (data) => {
-          if (data.results.length === 0) {
+          if (data.status_code === 7) {
             window.location.href = 'error404.html';
           } else {
             domTitleTxt.textContent = `Total movies found for ${inputValue.charAt(0).toUpperCase() + inputValue.slice(1)} : ${data.total_results}`;

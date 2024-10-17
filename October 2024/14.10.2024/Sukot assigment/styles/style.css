@@ -415,6 +415,10 @@ a {
   border: none;
   border-radius: 1em;
   text-align: center;
+  font-size: large;
+  font-weight: 900;
+  color: white;
+
 }
 
 label {

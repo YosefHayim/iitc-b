@@ -17,9 +17,24 @@ footer {
 }
 
 .feedback-me-container-title {
-  width: 100vw;
   position: fixed;
   top: 10em;
+  margin-bottom: 3em;
+  border-radius: 3em;
+  padding: 1em;
+  letter-spacing: 0.5em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ff0000bf;
+  text-align: center;
+  line-height: 3em;
+  box-shadow: 0em 0em 2.5em -1em;
+  font-size: 0.6em;
+  width: -webkit-fill-available;
+  border-style: dashed;
 }
 </style>
 <body>
@@ -69,7 +84,7 @@ footer {
           </div>
 
           <div>
-            <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
+            <a href="./feedback-me.html" class="top-navbar-desktop">Feedback me</a>
           </div>
 
           <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
@@ -100,7 +115,7 @@ footer {
     
       <!-- Email Field -->
       <label for="email" class="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="last name">
+      <input type="email" id="email" name="email" placeholder="email address">
     
       <!-- Message Field -->
       <label for="message" class="message">Message:</label>
@@ -109,7 +124,7 @@ footer {
       <!-- Rating Field -->
       <div class="rating-container">
         <label for="rating" class="rating">&#x2B50; Rating (1 to 10):</label>
-        <input type="number" id="rating" name="rating" min="1" max="10" required>
+        <input type="number" id="rating" name="rating" min="1" max="10">
       </div>
     
       <!-- Submit Button -->
@@ -120,51 +135,51 @@ footer {
   </main>
   <!-- main content displayed ends here -->
 
+
 <!-- Start of footer -->
-  <footer>
-    <div class="desktop-navbar-container-footer">
-      <div class="links-container-footer">
-        <div>        
-        <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
-        </div>
-        <div>
-        <a href="./index.html" class="top-navbar-desktop">Home</a>
-        </div>
-        <div>
-        <a href="./about-us.html" class="top-navbar-desktop">About us</a>
-        </div>
-        <div>
-        <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
-        </div>
-        <div>
-        <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
-        </div>
+<footer>
+  <div class="desktop-navbar-container-footer">
+    <div class="links-container-footer">
+      <div>        
+      <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
       </div>
-
-      <div class="group-input-btn-search-container">
-        <input type="text" placeholder="Search movies" class="input-search-bar" required="">
-        <button class="btn-serachbar-glass">
-          <img src="../images/desktop-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
-        </button>
+      <div>
+      <a href="./index.html" class="top-navbar-desktop">Home</a>
       </div>
-
-      <div class="contact-links-footer">
-        <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
-          <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
-        </a>
-          
-        <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
-        <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
-        </a>   
+      <div>
+      <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+      </div>
+      <div>
+      <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+      </div>
+      <div>
+      <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
       </div>
     </div>
-    <hr>
-    <span class="copy-right-txt">
-      <p>© 2024 No rights reserved. Design by Joseph Sabag</p>
-    </span>
-  </footer>
-  <!-- end of footer -->
-  
-<script type="module" src="../functionalities/main.js"></script>
+
+    <div class="group-input-btn-search-container">
+      <input type="text" placeholder="Search movies" class="input-search-bar" required="">
+      <button class="btn-serachbar-glass">
+        <img src="../images/desktop-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+      </button>
+    </div>
+
+    <div class="contact-links-footer">
+      <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
+        <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+      </a>
+        
+      <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+      <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+      </a>   
+    </div>
+  </div>
+  <hr>
+  <span class="copy-right-txt">
+    <p>© 2024 No rights reserved. Design by Joseph Sabag</p>
+  </span>
+</footer>
+<!-- end of footer -->
+<script type="module" src="../feedback-me/main.js"></script>
 </body>
 </html>

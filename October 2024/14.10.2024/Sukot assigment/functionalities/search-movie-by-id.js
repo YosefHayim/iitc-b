@@ -1,7 +1,7 @@
 import { movieCardsDivs, titlesContainers,domTitleTxt,searchResultContainer } from "./domEls.js"
-import {createMovieCard} from "./create-favorite-movie-card.js"
+import {createMovieCard} from "./dom-movies-cards.js"
 import {apiKey} from "./env.js"
-import {getData} from "api-functions.js"
+import {getData} from "./api-functions.js"
 
 const searchMovieById = (inputValue) => {
   getData(`https://api.themoviedb.org/3/movie/${inputValue}?api_key=${apiKey}`, (data) => {

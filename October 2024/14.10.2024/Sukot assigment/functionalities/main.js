@@ -15,7 +15,7 @@ if (window.location.pathname.endsWith('favorite.html')) {
 }
 
 if (window.location.pathname.endsWith("index.html")) {
-  isIdOrisName
+  isIdOrisName()
   burgerIconActivate();
   isDayOrWeek()
   currentlyInTheaters(); 

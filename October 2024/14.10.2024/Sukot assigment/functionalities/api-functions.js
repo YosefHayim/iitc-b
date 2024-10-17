@@ -1,4 +1,4 @@
-import { apiToken } from "./env.js";
+import {apiToken} from "./env.js"
 
 const getData = async (url, cb) => {
   const get = {

@@ -1,5 +1,5 @@
 import { movieCardsDivs, titlesContainers,domTitleTxt,searchResultContainer } from "./domEls.js"
-import {createMovieCard} from "./create-favorite-movie-card.js"
+import {createMovieCard} from "./dom-movies-cards.js"
 
 
 const searchMovieByName = (inputValue) => {

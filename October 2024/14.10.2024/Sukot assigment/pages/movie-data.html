@@ -11,20 +11,37 @@
 <body>
   <main>
     <!----------------------------------------------------------------------------------------------------------------- Main content ----------------------------------------------------------------------------------------------------------------->
-    <div class="overlay"></div>
-    <div class="loader"></div>
-    <!----------------------------------------------------------------------------------------------------------------- Start navbar mobile ----------------------------------------------------------------------------------------------------------------->
-    <div class="navbar-mobile">
-      <form name="search-bar-input" class="searchbar-container">
-        <img src="../images/mobile-navbar/logo-mobile/logo-mobile.svg" alt="logo" class="logo">
-        <div class="group-input-btn-search-container">
-          <input type="text" placeholder="Search movies" class="input-search-bar" required>
-          <button class="btn-serachbar-glass">
-            <img src="../images/mobile-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
-          </button>
-          <img src="../images/mobile-navbar/white-burger-icon.svg" alt="white-burger-icon" class="white-burger-icon">
+    <div class="overlay-container">
+      <div class="overlay"></div>
+      <div class="loader"></div>
+      <!----------------------------------------------------------------------------------------------------------------- Start navbar mobile ----------------------------------------------------------------------------------------------------------------->
+      <div class="navbar-mobile">
+        <form name="search-bar-input" class="searchbar-container">
+          <a href="./index.html" class="logo-link-mobile"><img src="../images/mobile-navbar/logo-mobile/logo-mobile.svg" alt="logo" class="logo"></a>
+          <div class="group-input-btn-search-container">
+            <input type="text" placeholder="Search movies" class="input-search-bar" required>
+            <button class="btn-serachbar-glass">
+              <img src="../images/mobile-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+            </button>
+            <img src="../images/mobile-navbar/white-burger-icon.svg" alt="white-burger-icon" class="white-burger-icon">
+          </div>
+        </form>
+      </div>
+      <div class="top-navbar-mobile">
+        <hr>
+        <a href="./index.html" class="top-navbar-desktop dropdown">Home</a>
+        <div class="dropdown-content">
+          <div class="popular-day-container">
+            <a href="./popular-day.html">Popular of the Day</a>
+          </div>
+          <div class="popular-week-container">
+            <a href="./popular-week.html">Popular of the Week</a>
+          </div>
         </div>
-      </form>
+        <div> <a href="./about-us.html">About us</a></div>
+        <div> <a href="./favorite.html">Favorites</a></div>
+        <div> <a href="./feedback-me.html">Feedback me</a></div>
+      </div>
     </div>
     <!----------------------------------------------------------------------------------------------------------------- End navbar mobile ----------------------------------------------------------------------------------------------------------------->
     <!----------------------------------------------------------------------------------------------------------------- Start navbar desktop ----------------------------------------------------------------------------------------------------------------->
@@ -85,57 +102,65 @@
   </main>
 
   <footer>
-      <!----------------------------------------------------------------------------------------------------------------- Start of footer ----------------------------------------------------------------------------------------------------------------->
-    <div class="desktop-navbar-container-footer">
-      <div class="group-input-btn-search-container">
-        <form>
-          <input type="text" placeholder="Search movies" class="input-search-bar" required="">
-          <button class="btn-serachbar-glass">
-            <img src="../images/desktop-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
-          </button>
-        </form>
+    <!----------------------------------------------------------------------------------------------------------------- Start of footer ----------------------------------------------------------------------------------------------------------------->
+  <div class="desktop-navbar-container-footer">
+    <div class="group-input-btn-search-container">
+      <form>
+        <input type="text" placeholder="Search movies" class="input-search-bar" required="">
+        <button class="btn-serachbar-glass">
+          <img src="../images/desktop-navbar/white-search-icon.svg" alt="white-search-bar" class="white-search-bar">
+        </button>
+      </form>
+    </div>
+
+    <div class="links-container-footer">
+      <div>        
+        <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
       </div>
 
-      <div class="links-container-footer">
-        <div>        
-          <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
-        </div>
-
-        <div class="link-container">
-          <a href="./index.html" class="top-navbar-desktop">Home</a>
-        </div>
-
-        <div class="link-container">
-          <a href="./about-us.html" class="top-navbar-desktop">About us</a>
-        </div>
-
-        <div class="link-container">
-          <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
-        </div>
-
-        <div class="link-container">
-          <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
+      <div class="top-navbar">
+        <a href="./index.html" class="top-navbar-desktop dropdown">Home</a>
+        <div class="dropdown-content">
+          <div class="popular-day-container">
+            <a href="./popular-day.html">Popular of the Day</a>
+          </div>
+          <div class="popular-week-container">
+            <a href="./popular-week.html">Popular of the Week</a>
+          </div>
         </div>
       </div>
 
-      <div class="contact-links-footer">
-        <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
-          <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
-        </a>
-          
-        <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
-          <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
-        </a>
+      <div class="link-container">
+        <a href="./about-us.html" class="top-navbar-desktop">About us</a>
+      </div>
 
-        <a href="https://www.linkedin.com/in/yosef-sabag-113841239/P" target="_blank" rel="noopener noreferrer">
-          <img src="../images/desktop-navbar/linkedin-logo.svg" alt="Linkedin Logo" class="linkedin-logo">
-        </a>
+      <div class="link-container">
+        <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
+      </div>
+
+      <div class="link-container">
+        <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
       </div>
     </div>
-    <span class="copy-right-txt">
-      <p>© 2024 No rights reserved. Design by Joseph Sabag</p>
-    </span>
-    <!----------------------------------------------------------------------------------------------------------------- End of footer ----------------------------------------------------------------------------------------------------------------->
+
+    <div class="contact-links-footer">
+      <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
+        <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
+      </a>
+        
+      <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+        <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+      </a>
+
+      <a href="https://www.linkedin.com/in/yosef-sabag-113841239/P" target="_blank" rel="noopener noreferrer">
+        <img src="../images/desktop-navbar/linkedin-logo.svg" alt="Linkedin Logo" class="linkedin-logo">
+      </a>
+    </div>
+  </div>
+  <span class="copy-right-txt">
+    <p>© 2024 No rights reserved. Design by Joseph Sabag</p>
+  </span>
+  <!----------------------------------------------------------------------------------------------------------------- End of footer ----------------------------------------------------------------------------------------------------------------->
   </footer>
   <script type="module" src="../functionalities/main.js"></script>
 </body>

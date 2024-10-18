@@ -55,7 +55,7 @@ main {
   background: #000000;
   padding: 0.5em;
   margin-bottom: 3em;
-  width: -webkit-fill-available;
+  width:200vw;
   justify-content: center;
 }
 
@@ -65,12 +65,14 @@ main {
   width: -webkit-fill-available;
   height: -webkit-fill-available;
   top: 0;
-  left: 0;
+  left: 5em;
   right: 0;
   bottom: 0;
   z-index: 100;
-  background: #00000085;
+  background: #000000f2;
 }
+
+
 
 h2 {
   font-size: 0.9em;
@@ -92,13 +94,32 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
 
 .top-navbar-mobile {
   z-index: 1000;
-  transform: translate(14em, 6em);
-  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.top-navbar-mobile a:active {
+  background: red;
+  padding: 1em;
+  border-radius: 5em;
+  color: white;
+}
+
+.top-navbar-mobile a:hover {
+  color: black;
+  background: white;
+  padding: 1em;
+  border-radius: 5em;
+}
+
+.overlay-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
-  gap: 1em;
+  align-items: center;
 }
 
 .navbar-footer-container,.policy-pages-container {
@@ -125,6 +146,7 @@ body > footer > div > div.group-input-btn-search-container {
 .white-burger-icon {
   width: 2.5em;
   position: static;
+  z-index: 99999;
 
 }
 
@@ -353,9 +375,23 @@ footer {
 }
 
 hr {
-  border: 0.1em solid white;
-  width: -webkit-fill-available;
+  border: 0.01em solid white;
+  width: 100vw;
+  position: fixed;
+  transform: translate(100vw, -7em); 
+  animation: slideIn 0.3s ease-out forwards; 
+  animation-iteration-count: 1;
 }
+
+@keyframes slideIn {
+  from {
+    transform: translate(100vw, -7em); 
+  }
+  to {
+    transform: translate(0, -7em); 
+  }
+}
+
 
 .desktop-navbar-container-footer {
   display: flex;

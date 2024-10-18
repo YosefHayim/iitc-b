@@ -25,11 +25,12 @@ const templateTitle = document.querySelector('.template-title')
 const searchResultTitle = document.querySelector('.search-results-name')
 const footer = document.querySelector('footer')
 const singleMovieCard = document.querySelector('.single-movie-card')
+const mobileMenu = document.querySelector('.top-navbar-mobile')
 
 const titlesContainers = document.querySelectorAll('div[class*="container-title"]');
 const movieCardsDivs = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container');
 
-export {alertMessageContainer,popWeekMoviePage,templateTitle,searchResultTitle,footer,singleMovieCard,
+export {alertMessageContainer,popWeekMoviePage,templateTitle,searchResultTitle,footer,singleMovieCard,mobileMenu,
   dropDownMenu,domTitleTxt,
   burgerIcon,favMoviesContainer,
   upComingMoviesContainer,

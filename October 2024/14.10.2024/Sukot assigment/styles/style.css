@@ -216,6 +216,25 @@ body > footer > div > div.group-input-btn-search-container > form {
   border-radius: 1.5em;
 }
 
+.movie-img:hover {
+  transform: scale(1.05);
+  transition: transform 1s ease-in-out;
+}
+
+.movie-card {
+  animation: flowUpDown 2s ease-in-out infinite alternate;
+}
+
+@keyframes flowUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1vh); 
+  }
+}
+
+
 .rating-img {
   height: 2em;
 }
@@ -591,7 +610,9 @@ body > main > div.navbar-mobile > form > div > button > img {
   font-family: cursive;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  color: white;
+  color: black;
+  background: white;
+  border-style: dashed;
 }
 
 .search-results-container .buttons-pagination-container {
@@ -738,6 +759,8 @@ body > footer > div > div.group-input-btn-search-container {
 
   .top-navbar-desktop {
     padding: 1em;
+    width: max-content;
+    display: block;
   }
 
   .title {

@@ -24,7 +24,7 @@ text-align: center;
   background: #ff0000bf;
   text-align: center;
   border-style: dashed;
-  width: 200vw;
+  width: 1000vw;
   padding: 0.2em;
 }
 
@@ -77,6 +77,7 @@ text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 6em;
 }
 
 .play-button-img {
@@ -91,10 +92,11 @@ text-align: center;
   border-radius: 0.5em;
   background-color: #ff0000bf;
   cursor: pointer;
-  width: 90vw;
+  width: 1000vw;
   height: 4em;
-  margin-top: -2em;
   margin-bottom: 2em;
+  margin-top: 3em;
+
 }
 
 .movie-link:hover {
@@ -119,4 +121,71 @@ text-align: center;
   width: 1000vw;
   text-align: center;
   padding: 1em;
+}
+
+.actor-img {
+  box-shadow: 0em 0em 2em 0.05em;
+}
+
+.play-button-icon,.play-button-img {
+  cursor: pointer;
+}
+
+.actor-img {
+  animation: flowUpDown 2s ease-in-out infinite alternate;
+}
+
+@keyframes flowUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1vh); 
+  }
+}
+
+
+.single-movie-img {
+  animation: trophyShadow 5s ease-in-out infinite alternate;
+  box-shadow: 0 0 15px gold; /* Initial shadow */
+}
+
+@keyframes trophyShadow {
+  0% {
+    box-shadow: 0 0 10px #cda434, 0 0 20px #f5d442, 0 0 30px #ffdf00;
+  }
+  50% {
+    box-shadow: 0 0 20px #ffdd44, 0 0 30px #f2a400, 0 0 40px #ffd700;
+  }
+  100% {
+    box-shadow: 0 0 10px #cda434, 0 0 20px #f5d442, 0 0 30px #ffdf00;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  
+  .single-movie-img {
+    width: 15vw;
+  }
+
+  .actor-img {
+    width: 15vw;
+  }
+
+  .movie-details {
+    width: 100vw;
+  }
+
+  .movie-link {
+    width: 38vw;
+  }
+
+  .actor-name {
+    width: 14vw;
+    border-radius: 0.4em;
+  }
+  .cast-container {
+    flex-direction: row;
+  }
+  
 }

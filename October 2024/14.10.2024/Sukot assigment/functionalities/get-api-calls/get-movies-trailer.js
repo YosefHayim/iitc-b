@@ -16,17 +16,13 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
       
       // Set href for the share button and add click event to copy URL
       shareButton.setAttribute('href', trailerUrl);
-      shareButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevents navigation
-        navigator.clipboard.writeText(trailerUrl)
-          .then(() => {
-            alert('Trailer URL copied');
+      shareButton.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        navigator.clipboard.writeText(trailerUrl).then(() => {
+        alert('Trailer URL copied');
           })
           .catch(err => console.error('Failed to copy trailer URL', err));
       });
-    } else {
-      playButton.style.display = 'none';
-      shareButton.style.display = 'none'; // Hide the share button if there's no trailer
     }
   });
 };

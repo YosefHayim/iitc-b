@@ -5,6 +5,7 @@ import { presentSingleMovieById } from "../get-api-calls/movie-page-dom.js";
 
 // Function to create movie card
 const createMovieCard = (movie) => {
+  // Must recreate each time a new movie card per iteration, couldn't place it in the domEl folder because it will return after one time and stop.
   const movieCardDiv = document.createElement('div');
   movieCardDiv.classList.add('movie-card');
   movieCardDiv.id = `movieN-${movie.id}`;
@@ -61,14 +62,36 @@ const createMovieCard = (movie) => {
         imgContainer.removeChild(favoriteImgGif); 
       }, 1000);
     });
-
     const dataButton = movieCardDiv.querySelector('.white-data-btn')
     dataButton.addEventListener('click', (ev) => {
-      ev.preventDefault()
-      const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
-      console.log(movieCardId);
-      window.location.href = `movie-data.html?movieId=${movieCardId}`;
-    })
+      ev.preventDefault();
+    
+      // Get the parent movie card div
+      const movieCardDiv = ev.target.closest('.movie-card');
+    
+      // Find the play button anchor element inside the movie card
+      const playButton = movieCardDiv.querySelector('.play-button-btn');
+      
+      // Check if playButton exists to avoid the error
+      if (playButton) {
+        const videoUrl = playButton.getAttribute('href');
+        console.log(videoUrl);
+
+        // get only the last part of the yt url
+        const videoId = videoUrl.split('v=')[1];        
+    
+        // Get the movie card id
+        const movieCardId = movieCardDiv.getAttribute('id').replace(/\D/g, '');
+        console.log(movieCardId);
+        
+        // Redirect to movie-data page with movieId and videoUrl in URL
+        window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;
+      } else {
+        console.error("Play button not found!");
+      }
+    });
+    
+    
     
   return movieCardDiv;
 };

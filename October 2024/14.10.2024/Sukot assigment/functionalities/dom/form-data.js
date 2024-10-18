@@ -17,6 +17,3 @@ const formAnswer = () => {
 };
 
 export { formAnswer };
-
-// I wanted to sent that via Node.js 
-// but from searching i found it a bit more challenging for first time so... hopefully this is nice too

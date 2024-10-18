@@ -60,7 +60,7 @@ main {
   background: #000000;
   padding: 0.5em;
   margin-bottom: 3em;
-  width:1000vw;
+  width:100%;
   justify-content: center;
 }
 
@@ -356,7 +356,7 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
   font-size: 0.6em;
   border-style: dashed;
   font-size: 2em;
-  width: 1000vw;
+  width: 100%;
 }
 
 .search-results-container-title {
@@ -368,7 +368,7 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50vw;
+  width: 100%;
 }
 
 
@@ -392,7 +392,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1000vw;
+  width: 100%;
   background: black;
   text-align: center;
   z-index: 1;
@@ -400,7 +400,7 @@ footer {
 
 hr {
   border: 0.01em solid white;
-  width: 1000vw;
+  width: 100%;
   position: fixed;
   transform: translate(100vw, -7em); 
   animation: slideIn 0.3s ease-out forwards; 
@@ -442,7 +442,7 @@ hr {
   text-align: justify;
   gap: 2em;
   height: 75vh;
-  width: 55vw;
+  width: 100%;
 }
 
 .favorite-effect-img {
@@ -459,7 +459,7 @@ a {
 }
 
 .hero-image-about-us {
-  width: 65vw;
+  width: 100%;
   border-radius: 1em;
 }
 
@@ -628,7 +628,7 @@ body > main > div.navbar-mobile > form > div > button > img {
   border-style: dashed;
   margin-top: 1em;
   font-size: 1.5em;
-  width: 200vw;
+  width: 100%;
   display: none;
 }
  
@@ -691,7 +691,7 @@ body > main > div.navbar-mobile > form > div > button > img {
   display: block;
   background: black;
   border-radius: 100em;
-  width: 13vw;
+  width: 100%;
   text-align: center;
 }
 
@@ -747,11 +747,10 @@ body > footer > div > div.group-input-btn-search-container {
 }
 
 /* Desktop design 1024px */
-
 @media screen and (min-width:1024px) {
 
   .dropdown-content a {
-    width: 7vw;
+    width: 100%;
   }
 
   .top-navbar-desktop {
@@ -863,7 +862,7 @@ body > footer > div > div.group-input-btn-search-container {
     margin-bottom: 2em;
     position: fixed;
     z-index: 1000;
-    width: 200vw;
+    width: 100%s;
   }
   .desktop-navbar-container {
   display: flex;
@@ -918,7 +917,7 @@ body > footer > div > div.group-input-btn-search-container {
     border-radius: 2em;
     color: white;
     padding: 1em;
-    width: 25vw;
+    width: 100%;
     margin-bottom: 6em;
     font-size: 1em;
     cursor: pointer;
@@ -942,7 +941,7 @@ body > footer > div > div.group-input-btn-search-container {
   transform: translateY(-9em);
   border-radius: 2em;
   margin-top: 2em;
-  width: 35vw;
+  width: 100%;
   text-align: center;
   position: fixed;
   z-index: 2;
@@ -984,7 +983,7 @@ footer {
   border-style: dashed;
   margin-top: 1em;
   font-size: 2em;
-  width: 200vw;
+  width: 100%;
   display: none;
 }
 

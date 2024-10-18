@@ -18,6 +18,7 @@ const functionMap = {
   'popular-of-day-container-title': popularMoviesOfDay,
   'popular-movies-of-week-container-title': popularMoviesOfWeek,
   'favorite-movies-container-title': displayFavoriteMoviesList,
+  'search-results-container-title' : searchMovieByName ,
 };
 
 // Object to store page number for each category
@@ -29,6 +30,7 @@ const pageNumbers = {
   'popular-of-day-container-title': 1,
   'popular-movies-of-week-container-title': 1,
   'favorite-movies-container-title': 1,
+  'search-results-container-title':1,
 };
 
 const redirectPages = () => {

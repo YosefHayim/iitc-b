@@ -1,0 +1,29 @@
+.navbar-desktop {
+  position: fixed;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.feedback-me-container-title {
+  position: fixed;
+  top: 3em;
+  margin-bottom: 3em;
+  border-radius: 3em;
+  padding: 1em;
+  letter-spacing: 0.5em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ff0000bf;
+  text-align: center;
+  line-height: 3em;
+  box-shadow: 0em 0em 2.5em -1em;
+  font-size: 0.6em;
+  width: -webkit-fill-available;
+  border-style: dashed;
+}

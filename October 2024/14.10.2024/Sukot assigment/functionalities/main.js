@@ -8,6 +8,9 @@ import { resetPlaceholder } from "./dom/reset-placeholder-input.js";
 import { isDayOrWeek } from "./dom/drop-down-menu.js";
 import { isIdOrisName } from "./dom/is-movie-id-is-movie-name.js";
 import { redirectPages } from "./dom/pagination-buttons.js";
+import { popularMoviesOfDay } from "./get-api-calls/get-popular-movies-of-day.js";
+import { popularMoviesOfWeek } from "./get-api-calls/get-popular-movies-of-week.js";
+
 
 
 
@@ -16,9 +19,6 @@ if (window.location.pathname.endsWith('favorite.html')) {
 }
 
 if (window.location.pathname.endsWith("index.html")) {
-  isIdOrisName()
-  burgerIconActivate();
-  isDayOrWeek()
   currentlyInTheaters(); 
   popularMovies();
   topRatedMovies();
@@ -27,3 +27,10 @@ if (window.location.pathname.endsWith("index.html")) {
   redirectPages()
 }
 
+if(window.location.pathname.endsWith('popular-day.html')) {
+  popularMoviesOfDay()
+}
+
+if(window.location.pathname.endsWith('popular-week.html')) {
+  popularMoviesOfWeek()
+}

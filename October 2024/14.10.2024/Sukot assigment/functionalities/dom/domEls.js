@@ -21,11 +21,12 @@ const latestPopularPage = document.querySelector('.current-popular-movies-number
 const topTrendingPage = document.querySelector('.top-trending-movie-number')
 const popDayMoviePage = document.querySelector('.popular-day-number')
 const popWeekMoviePage = document.querySelector('.popular-week-number')
+const templateTitle = document.querySelector('.template-title')
 
 const titlesContainers = document.querySelectorAll('div[class*="container-title"]');
 const movieCardsDivs = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container');
 
-export {alertMessageContainer,popWeekMoviePage,
+export {alertMessageContainer,popWeekMoviePage,templateTitle,
   dropDownMenu,domTitleTxt,
   burgerIcon,favMoviesContainer,
   upComingMoviesContainer,

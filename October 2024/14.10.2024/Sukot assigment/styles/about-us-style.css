@@ -1,0 +1,6 @@
+body {
+  background-image: url(../images/about-us-page/hero-image-about-us.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(0.2px);
+}

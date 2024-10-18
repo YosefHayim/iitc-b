@@ -1,0 +1,14 @@
+.navbar-desktop {
+  position: fixed;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.favorite-movies-title-container {
+  width: 100vw;
+  position: fixed;
+  top: 10em;
+}

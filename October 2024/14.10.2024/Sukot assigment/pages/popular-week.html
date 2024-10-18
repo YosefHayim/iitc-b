@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../images/favicon-logo/favicon-logo.png" type="image/x-icon">
   <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/error-404.css">
+  <link rel="stylesheet" href="../styles/popular-week.css">
   <title>Trailer Time</title>
 </head>
+</style>
 <body>
-  <main>
+<main>
     <!-- Overlay for mobile -->
     <div class="overlay"></div>
 
@@ -69,30 +69,37 @@
             <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
           </a>
 
-          <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
-            <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
-          </a>
-
           <a href="https://www.linkedin.com/in/yosef-sabag-113841239/P" target="_blank" rel="noopener noreferrer">
             <img src="../images/desktop-navbar/linkedin-logo.svg" alt="Linkedin Logo" class="linkedin-logo">
           </a>
 
+          <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
+            <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
+          </a>
+          
         </div>
         <!-- end of navbar desktop container -->
       </form>
     </div>
     <!-- End of navbar desktop -->
 
-    <!-- main content starts -->
-    <div class="error-container">
-      <img src="../images/error-404-page/404-error-img.svg" alt="404-error-img" class="404-error-img">
-      <a href="./index.html"><button class="return-home-btn">Click me to return Home</button></a>
+    <!-- main content of website -->
+    <div class="template-title-container">
+      <h2 class="template-title">POPULAR MOVIES OF THE WEEK</h2>
+      <div class="popular-movies-of-week-container">
+        <div class="buttons-pagination-container">
+          <span class="popular-week-number">0 / 1</span>
+          <button class="next-page">
+            <img src="../images/buttons-pagination/right-button.svg" alt="right-button" class="right-button">
+          </button>
+          <button class="previous-page">
+            <img src="../images/buttons-pagination/left-button.svg" alt="left-button" class="left-button">
+          </button>
+        </div>
+      </div>
     </div>
-
-    <div class="top-trending-movies-container"></div>
-    <div class="search-results-container"></div>
   </main>
-  <!-- main content End -->
+  <!-- end of content -->
 
   <!-- Start of footer -->
   <footer>
@@ -107,18 +114,22 @@
       </div>
 
       <div class="links-container-footer">
-        <div>
+        <div>        
           <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
         </div>
+
         <div class="link-container">
           <a href="./index.html" class="top-navbar-desktop">Home</a>
         </div>
+
         <div class="link-container">
           <a href="./about-us.html" class="top-navbar-desktop">About us</a>
         </div>
+
         <div class="link-container">
           <a href="./favorite.html" class="top-navbar-desktop">Favorites</a>
         </div>
+
         <div class="link-container">
           <a href="./feedback-me.html" class="top-navbar-desktop">Feedback Me</a>
         </div>
@@ -128,6 +139,7 @@
         <a href="https://github.com/YosefHayim" target="_blank" rel="noopener noreferrer">
           <img src="../images/desktop-navbar/github-full-logo-white.svg" alt="GitHub Logo" class="github-full-logo-white">
         </a>
+          
         <a href="https://discord.gg/yGwnaTPP" target="_blank" rel="noopener noreferrer">
           <img src="../images/desktop-navbar/discord-full-logo-white.svg" alt="Discord Logo" class="discord-full-logo-white">
         </a>
@@ -135,7 +147,6 @@
         <a href="https://www.linkedin.com/in/yosef-sabag-113841239/P" target="_blank" rel="noopener noreferrer">
           <img src="../images/desktop-navbar/linkedin-logo.svg" alt="Linkedin Logo" class="linkedin-logo">
         </a>
-        
       </div>
     </div>
     <span class="copy-right-txt">
@@ -143,7 +154,6 @@
     </span>
   </footer>
   <!-- end of footer -->
-
   <script type="module" src="../functionalities/main.js"></script>
 </body>
 </html>

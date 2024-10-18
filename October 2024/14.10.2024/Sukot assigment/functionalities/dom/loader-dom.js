@@ -1,22 +1,18 @@
-// Loader manipulation
-const loader = () => {
-  window.addEventListener('load', function() {
-    // Initially hide everything except the loader
-    document.querySelectorAll('body *:not(.loader)').forEach(function(element) {
-      element.style.display = 'none'; // Set display to none for all elements except .loader
+const loaderManipulation = () => {
+  window.addEventListener('load', () => {
+    document.body.querySelectorAll('*:not(.loader)').forEach((element) => {
+      element.style.display = 'none'; 
     });
   
-    // Show the loader for 2 seconds, then display the content
-    setTimeout(function() {
-      // Show everything else
-      document.querySelectorAll('body *:not(.loader)').forEach(function(element) {
-        element.style.display = ''; // Reset display to default (make visible)
+    setTimeout(() => {
+      document.querySelectorAll('*:not(.loader)').forEach((element) => {
+        element.style.display = ''; 
       });
       
       document.querySelector('.loader').style.display = 'none';
-    }, 200); 
+    }, 300); 
   });
   
 }
 
-export {loader}
+export {loaderManipulation}

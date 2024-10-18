@@ -8,7 +8,7 @@
 }
 
 body > footer {
-  position: absolute;
+  position: relative;
 }
 
 .submit-button {
@@ -89,9 +89,6 @@ label {
   color: gray;
 }
 
-/* I tried to set the default font from the body but was unable due to 
-checks on internet found out this is needed to be more specific */
-
 input::placeholder,input,textarea {
   font-family: "SignWood Reg";
 }
@@ -105,9 +102,9 @@ input::placeholder,input,textarea {
   #rating {
     margin-bottom: 2em;
   }
-  
-  #rating::placeholder {
-    text-align: center;
-  } 
 
+  body > footer {
+    position: absolute;
+  }
+  
 }

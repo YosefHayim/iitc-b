@@ -3,7 +3,7 @@ body {
 }
 
 body > footer {
-  position: fixed;
+  position: relative;
 }
 
 .about-us-section {

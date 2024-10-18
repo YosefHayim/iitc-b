@@ -9,11 +9,11 @@ import { isIdOrisName } from "./dom/is-movie-id-is-movie-name.js";
 import { redirectPages } from "./dom/pagination-buttons.js";
 import { popularMoviesOfDay } from "./get-api-calls/get-popular-movies-of-day.js";
 import { popularMoviesOfWeek } from "./get-api-calls/get-popular-movies-of-week.js";
-import { loader } from "./dom/loader-dom.js";
+import { loaderManipulation } from "./dom/loader-dom.js";
 import { presentSingleMovieById } from "./get-api-calls/movie-page-dom.js";
 import { formAnswer } from "./dom/form-data.js";
 
-loader()
+loaderManipulation()
 burgerIconActivate()
 resetPlaceholder();
 

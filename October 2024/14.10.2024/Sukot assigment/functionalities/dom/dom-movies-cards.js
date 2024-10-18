@@ -1,7 +1,6 @@
 import {getMoviesTrailers} from "../get-api-calls/get-movies-trailer.js"
 import {getStarRatingImage} from "../get-api-calls/get-rating-movie.js"
 import {addfavoriteMovieToList} from "../post-api-calls/post-movies-to-favorite-list.js"
-import { presentSingleMovieById } from "../get-api-calls/movie-page-dom.js";
 
 // Function to create movie card
 const createMovieCard = (movie) => {
@@ -12,9 +11,10 @@ const createMovieCard = (movie) => {
 
   const starRatingImage = getStarRatingImage(movie.vote_average);
 
+  // in the h1 I split the title for two words only since some movie titles has more and these specifically ones effecting the symmetrical
   movieCardDiv.innerHTML = `
   <img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="movie-img" class="movie-img">
-  <h1 class="title">${movie.original_title}</h1>
+  <h1 class="title">${movie.original_title.split(' ').length >= 4 ? movie.original_title.split(' ').slice(0, 3).join(' ') : movie.original_title.split(' ').slice(0, 2).join(' ')}</h1>
   <div class="img-container">
 
     <img src="${starRatingImage}" alt="rating-img" class="rating-img">

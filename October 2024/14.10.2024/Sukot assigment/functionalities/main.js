@@ -13,6 +13,7 @@ import { loader } from "./dom/loader-dom.js";
 import { presentSingleMovieById } from "./get-api-calls/movie-page-dom.js";
 
 loader()
+burgerIconActivate()
 
 if (window.location.pathname.endsWith("index.html")) {
   currentlyInTheaters(); 
@@ -22,7 +23,6 @@ if (window.location.pathname.endsWith("index.html")) {
   resetPlaceholder();
   redirectPages()
   isIdOrisName()
-  burgerIconActivate()
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {

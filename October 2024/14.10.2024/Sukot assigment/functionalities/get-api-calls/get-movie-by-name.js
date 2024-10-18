@@ -6,7 +6,9 @@ import { getData } from "../api-functions.js";
 
 const searchMovieByName = (inputValue) => {
   getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=1`, (data) => {
-    if (!data || !data.results) {
+      console.log(data.results);
+      
+    if (data.results.length === 0) {
       window.location.href = 'error404.html';
       return;
     }

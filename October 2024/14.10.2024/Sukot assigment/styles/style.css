@@ -55,7 +55,7 @@ main {
   background: #000000;
   padding: 0.5em;
   margin-bottom: 3em;
-  width:200vw;
+  width:1000vw;
   justify-content: center;
 }
 
@@ -325,9 +325,8 @@ input:active {
   box-shadow: 0em 0em 2.5em -1em;
   font-size: 0.6em;
   border-style: dashed;
-  margin-top: 1em;
   font-size: 2em;
-  width: 200vw;
+  width: 1000vw;
 }
 
 .search-results-container-title {
@@ -348,10 +347,6 @@ input:active {
   padding: 0.5em;
 }
 
-.favorite-movies-title-container {
-  z-index: -1;
-}
-
 .copy-right-txt {
   text-align: center;
   position: relative;
@@ -368,15 +363,17 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 200vw;
+  width: 1000vw;
   background: black;
   text-align: center;
   z-index: 1001;
+  position: fixed;
+  bottom: 0;
 }
 
 hr {
   border: 0.01em solid white;
-  width: 100vw;
+  width: 1000vw;
   position: fixed;
   transform: translate(100vw, -7em); 
   animation: slideIn 0.3s ease-out forwards; 
@@ -630,6 +627,27 @@ body > main > div.navbar-mobile > form > div > button > img {
   display: none;
 }
  
+.return-home-btn {
+  border: none;
+  padding: 1em;
+  background: white;
+  font-size: 1.5em;
+  font-weight: 700;
+  border-radius: 5em;
+}
+
+.return-home-btn:active,.return-home-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 /* Desktop design 1024px */
 

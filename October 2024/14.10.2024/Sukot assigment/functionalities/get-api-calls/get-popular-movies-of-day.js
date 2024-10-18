@@ -28,7 +28,7 @@ const popularMoviesOfDay = (pageNumber = 1) => {
       }
 
       popDayMoviePage.style.display = `block`;
-      console.log(`popularMoviesOfDay: ${pageNumber} / ${data.total_pages - pageNumber}`);
+      console.log(`popularMoviesOfDay: ${pageNumber} / ${data.total_pages}`);
 
     } else {
       console.error("No data received from the API.");

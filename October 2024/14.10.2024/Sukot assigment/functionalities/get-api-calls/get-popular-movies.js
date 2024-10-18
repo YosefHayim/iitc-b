@@ -13,7 +13,7 @@ const popularMovies = (pageNumber = 1) => {
         popularMoviesContainer.appendChild(movieCard);
       });
       latestPopularPage.style.display = `block`;
-      latestPopularPage.textContent = `PAGES: ${pageNumber} / ${data.total_pages - pageNumber}`
+      latestPopularPage.textContent = `PAGES: ${pageNumber} / ${data.total_pages}`
     } else {
       console.error("No data received from the API.");
     }

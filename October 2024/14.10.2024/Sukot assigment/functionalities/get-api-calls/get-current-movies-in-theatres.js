@@ -15,7 +15,7 @@ const currentlyInTheaters = (pageNumber = 1) => {
         theatresContainer.appendChild(movieCard);
       });
       currentTheaterPage.style.display = `block`
-      currentTheaterPage.textContent = `PAGES: ${pageNumber} / ${data.total_pages - pageNumber}`
+      currentTheaterPage.textContent = `PAGES: ${pageNumber} / ${data.total_pages}`
       
 
 

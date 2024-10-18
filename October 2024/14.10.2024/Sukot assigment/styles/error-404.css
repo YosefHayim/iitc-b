@@ -6,3 +6,19 @@ footer {
   position: fixed;
   bottom: 0;
 }
+
+.sorry-message {
+  padding: 1em;
+  border-radius: 5em;
+  width: inherit;
+  margin-bottom: 0.5em;
+}
+
+.overlay-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -67px;
+}

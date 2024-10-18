@@ -27,7 +27,7 @@ const popularMoviesOfWeek = (pageNumber = 1) => {
       });
 
       popWeekMoviePage.style.display = `block`;
-      console.log(`popularOfTheWeekDiv: ${pageNumber} / ${data.total_pages - pageNumber}`);
+      console.log(`popularOfTheWeekDiv: ${pageNumber} / ${data.total_pages}`);
     } else {
       console.error("No data received from the API.");
     }

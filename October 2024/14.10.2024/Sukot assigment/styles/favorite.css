@@ -12,3 +12,21 @@ footer {
   position: fixed;
   top: 10em;
 }
+
+.alert-message-container {
+  display: none;
+}
+
+.favorite-movies-title-container {
+  position: fixed;
+  width: 1000vw;
+  font-size: 0.5em;
+}
+.fav-movies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  margin-top: 5em;
+}

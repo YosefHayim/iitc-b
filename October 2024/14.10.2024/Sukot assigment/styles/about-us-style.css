@@ -4,3 +4,25 @@ body {
   background-size: cover;
   filter: blur(0.2px);
 }
+
+.about-us-container-title h2 {
+  font-size: 2em;
+  padding: 0em;
+}
+
+.hero-image-about-us {
+  position: relative;
+  animation: flowUpDown 5s ease-in-out infinite;
+}
+
+@keyframes flowUpDown {
+  0% {
+    transform: translateY(0); 
+  }
+  50% {
+    transform: translateY(-20px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}

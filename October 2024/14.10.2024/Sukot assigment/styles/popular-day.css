@@ -49,10 +49,7 @@ footer {
 
 .popular-of-day-container {
   flex-direction: row;
-}
-
-.template-title {
-  margin-top: 8em;
+  margin-bottom: 10em;
 }
 
 .next-page,.previous-page {

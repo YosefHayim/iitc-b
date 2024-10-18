@@ -25,6 +25,7 @@ if (window.location.pathname.endsWith("index.html")) {
   upComingMovies();
   resetPlaceholder();
   redirectPages()
+  isIdOrisName()
 }
 
 if(window.location.pathname.endsWith('popular-day.html')) {

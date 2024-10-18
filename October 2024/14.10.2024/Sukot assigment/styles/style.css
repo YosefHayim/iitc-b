@@ -359,20 +359,19 @@ a {
   border-radius: 1em;
 }
 
-/* .loader {
+.loader {
   position: fixed;
-  left: 5em;
   top: 25em;
   border-top: 16px solid #000000;
   border-right: 16px solid #ff0000;
   border-bottom: 16px solid #000000;
   border-left: 16px solid #ff0000;
   border-radius: 50%;
-  width: 8em;
-  height: 8em;
+  width: 12em;
+  height: 12em;
   animation: spin 2s cubic-bezier(0.58, -0.19, 0, 1.19) infinite;
   z-index: 9999;
-} */
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -832,8 +831,9 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
+  
 }
 
 .search-results-name {

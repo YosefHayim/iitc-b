@@ -2,6 +2,10 @@ body {
   background-color: black;
 }
 
+body > footer {
+  position: absolute;
+}
+
 .about-us-section {
   display: flex;
   flex-direction: column;

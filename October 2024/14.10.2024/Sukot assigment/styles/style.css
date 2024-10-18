@@ -194,6 +194,10 @@ input:active {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+input::placeholder {
+  font-family: "Roboto";
+}
+
 .white-search-bar {
   width: 1.5em;
   display: flex;
@@ -236,7 +240,7 @@ form {
 }
 
 .movie-card {
-  animation: flowUpDown 2s ease-in-out infinite alternate;
+  animation: flowUpDown 2s linear infinite alternate;
 }
 
 @keyframes flowUpDown {
@@ -573,7 +577,6 @@ body > main > div.navbar-mobile > form > div > button > img {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
   z-index: 1;
 }
 
@@ -587,33 +590,28 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 .dropdown-content a:hover {
-  background-color: var(--rating--color);
+  background-color: white;
   border-radius: 3em;
-  color: white;
+  color: black;
 }
 
 .top-navbar:hover .dropdown-content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
   color: white;
-  gap: 1em;
+  gap: 3em;
   background: none;
-  position: absolute;
-  margin-bottom: -11em;
-  top: 2.1em;
-  left: -3em;
+  left: -13em;
+  top: 2.5em;
+  width: max-content;
 }
 
 .popular-week-container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 3em;
   background: black;
-  width: max-content;
+
 }
 
 .top-navbar{
@@ -625,7 +623,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 .dropdown-content a:active {
-  background-color: white;
+  background-color: red;
   color: black;
 }
 
@@ -635,10 +633,6 @@ body > main > div.navbar-mobile > form > div > button > img {
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
-
-  .dropdown-content a {
-    width: 100%;
-  }
 
   .top-navbar-desktop {
     padding: 1em;
@@ -840,11 +834,8 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 body > footer {
-  width: 100%;
-  background: black;
-  flex-direction: column;
-  align-items: center;
   padding-bottom: 2em;
+  position: relative;
 }
 
 body > footer > div > div.group-input-btn-search-container > form {

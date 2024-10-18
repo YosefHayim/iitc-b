@@ -1,4 +1,4 @@
-import { movieCardsDivs, titlesContainers,domTitleTxt,searchResultContainer } from "../dom/domEls.js"
+import { movieCardsDivs, titlesContainers,domTitleTxt,searchResultContainer,searchResultTitle } from "../dom/domEls.js"
 import {createMovieCard} from "../dom/dom-movies-cards.js"
 import {apiKey} from "../env.js"
 import {getData} from "../api-functions.js"
@@ -10,10 +10,14 @@ const searchMovieById = (inputValue) => {
       return;
     }
     
-    titlesContainers.forEach(title => title.style.display = 'none');
-    movieCardsDivs.forEach((container) => container.style.display = 'none');
+    titlesContainers.forEach(title => title.remove());
+
+    movieCardsDivs.forEach((container) => container.remove());
+
     searchResultContainer.innerHTML = '';
-    domTitleTxt.textContent = `Movie name is: ${data.title}`;
+
+    searchResultTitle.textContent = `NAME OF THE MOVIE IS: ${data.title}`;
+
     const movieCard = createMovieCard(data);
     searchResultContainer.appendChild(movieCard);
   });

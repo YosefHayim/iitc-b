@@ -39,29 +39,15 @@ body {
   color: white;
 }
 
-main {
-  position: relative;
-}
-
-
 .searchbar-container,.navbar-mobile {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
   gap: 1em;
 }
 
 .navbar-mobile {
-  position: static;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: #000000;
-  padding: 0.5em;
-  margin-bottom: 3em;
-  width:100%;
+  background: black;
   justify-content: center;
+  width: 100vw;
 }
 
 .overlay {
@@ -77,16 +63,12 @@ main {
   background: #000000f2;
 }
 
-h2 {
-  font-family: "SignWood Italic";
-  font-size: 0.9em;
-}
-
 main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .top-trending-movies-container,.popular-movies-container,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container {
@@ -125,6 +107,8 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .navbar-footer-container,.policy-pages-container {
@@ -342,8 +326,6 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
 }
 
 .search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
-  margin-bottom: 3em;
-  border-radius: 3em;
   color: white;
   display: flex;
   flex-direction: column;
@@ -351,9 +333,7 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
   align-items: center;
   background: var(--lighter-red-color);
   text-align: center;
-  line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
-  font-size: 0.6em;
   border-style: dashed;
   font-size: 2em;
   width: 100%;
@@ -363,24 +343,10 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
   display: none;
 }
 
-.feedback-me-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-
-.about-us-container-title h2,.favorite-movies-title-container h2 ,.feedback-me-container-title h2 {
-  font-size: 5em;
-  padding: 0.5em;
-}
-
 .copy-right-txt {
   text-align: center;
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .navbar-desktop {
@@ -388,14 +354,13 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
 }
 
 footer {
+  width: 100%;
+  background: black;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background: black;
-  text-align: center;
-  z-index: 1;
 }
 
 hr {
@@ -417,32 +382,12 @@ hr {
   }
 }
 
-
-.desktop-navbar-container-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1em;
-}
-
 .links-container-footer {
   gap: 0.8em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.about-us-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  text-align: justify;
-  gap: 2em;
-  height: 75vh;
-  width: 100%;
 }
 
 .favorite-effect-img {
@@ -456,11 +401,6 @@ hr {
 a {
   color: white;
   text-decoration: none;
-}
-
-.hero-image-about-us {
-  width: 100%;
-  border-radius: 1em;
 }
 
 .loader {
@@ -574,14 +514,14 @@ body > main > div.navbar-mobile > form > div > button > img {
   align-items: center;
   position: absolute;
   margin-bottom: 0em;
-  gap: 10em;
+  gap: 7em;
   z-index: 1;
-  transform: translate(0em, 3.5em);
+  transform: translate(0em, 0.8em);
 }
 
 .next-page,.previous-page {
   border: none;
-  background: #000000a1;
+  background: black;
   border-radius: 20em;
   cursor: pointer;
 }
@@ -596,17 +536,12 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 .current-theaters-page,.current-upcoming-movies-number,.current-popular-movies-number,.top-trending-movie-number {
-  position: absolute;
-  font-weight: 100;
-  font-size: 1em;
-  margin-top: 7em;
-  background: #00000042;
-  border-radius: 0.4em;
+  border-radius: 0.1em;
   padding-left: 0.5em;
   padding-right: 0.5em;
   color: black;
   background: white;
-  border-style: dashed;
+  margin-bottom: 0.1em;
 }
 
 .search-results-container .buttons-pagination-container {
@@ -622,7 +557,6 @@ body > main > div.navbar-mobile > form > div > button > img {
   align-items: center;
   background: var(--lighter-red-color);
   text-align: center;
-  line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
   font-size: 0.6em;
   border-style: dashed;
@@ -822,11 +756,6 @@ body > footer > div > div.group-input-btn-search-container {
     background: none;
   }
 
-  .searchbar-container {
-    width: 100%;
-    justify-content: center;
-  }
-
   .top-navbar-desktop:active {
     color: black;
     background: white;
@@ -851,18 +780,13 @@ body > footer > div > div.group-input-btn-search-container {
 
   .navbar-desktop { 
     display: flex;
-    flex-direction: row;
-    justify-content: start;
+    background: black;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    background: #000000;
-    padding: 0.5em;
-    gap: 5em;
-    position: relative;
+    position: absolute;
     top: 0;
-    margin-bottom: 2em;
-    position: fixed;
-    z-index: 1000;
-    width: 100%s;
   }
   .desktop-navbar-container {
   display: flex;
@@ -932,21 +856,6 @@ body > footer > div > div.group-input-btn-search-container {
   display: inline-block;
 }
 
-.alert-message-container {
-  display: none;
-  padding: 20px;
-  background-color: #1d9325;
-  color: white;
-  margin-bottom: 2em;
-  transform: translateY(-9em);
-  border-radius: 2em;
-  margin-top: 2em;
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  z-index: 2;
-}
-
 .closebtn {
   margin-left: 15px;
   color: white;
@@ -959,12 +868,6 @@ body > footer > div > div.group-input-btn-search-container {
 
 .closebtn:hover {
   color: black;
-}
-
-footer {
-  margin-top: 5em;
-  position: relative;
-  bottom: 0;
 }
 
 .search-results-name {

@@ -7,6 +7,8 @@ const popularMoviesOfDay = (pageNumber = 1) => {
 
   getData(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=${pageNumber}&api_key=${apiKey}`, (data) => {
     if (data && data.results) {
+      console.log(data);
+      
       data.results.forEach((movie) => {
         const movieCard = createMovieCard(movie);
         popularOfTheDayDiv.appendChild(movieCard);
@@ -24,7 +26,6 @@ const popularMoviesOfDay = (pageNumber = 1) => {
         });
       }
 
-      popDayMoviePage.style.display = `block`;
       console.log(`popularMoviesOfDay: ${pageNumber} / ${data.total_page}`);
 
     } else {

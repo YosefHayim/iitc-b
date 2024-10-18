@@ -12,3 +12,18 @@
   text-align: center;
   position: relative;
 }
+
+@media screen and (min-width:1024px) {
+  .popular-movies-of-week-container {
+    flex-direction: row;
+    margin-top: 1em;
+  }
+
+  .navbar-desktop {
+    display: flex;
+    background: black;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+  }
+}

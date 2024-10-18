@@ -18,6 +18,7 @@
   --lighter-red-color: #ff0000bf;
   --background-grey-color-btns: #ffffff24;
   --font-bold: bold;
+  --trans-white-bg: #ffffff2e;
 }
 
 * {
@@ -353,7 +354,7 @@ form {
   gap: 3em;
 }
 
-.search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
+.template-title-container,.search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   color: white;
   display: flex;
   flex-direction: column;
@@ -842,4 +843,8 @@ body > footer > div > div.group-input-btn-search-container > form {
   flex-wrap: nowrap;
 }
 
+}
+
+@media screen and (min-width:624px) {
+  
 }

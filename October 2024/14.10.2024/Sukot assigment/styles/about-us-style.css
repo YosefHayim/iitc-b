@@ -3,7 +3,7 @@ body {
 }
 
 body > footer {
-  position: absolute;
+  position: fixed;
 }
 
 .about-us-section {
@@ -26,7 +26,7 @@ body > footer {
 }
 
 #grand-finalle {
-  box-shadow: 0em 0em 2em 0em #f4f4f4;
+  box-shadow: 0em 0em 2em 0em var(--rating--color);
   background: var(--rating--color);
   color: black;
   border-radius: 0.5em;
@@ -34,6 +34,15 @@ body > footer {
   text-align: center;
 }
 
+#grand-finalle:hover,#grand-finalle:active {
+  background: white;
+  color: red;
+  box-shadow: 0em 0em 0.1em 0.0001em black;
+}
+
+.content {
+  padding: 2em;
+}
 
 @keyframes flowUpDown {
   0% {
@@ -44,5 +53,24 @@ body > footer {
   }
   100% {
     transform: translateY(0); 
+  }
+}
+
+.contact-info {
+  background: black;
+  border-style: dashed;
+}
+
+@media screen and (min-width:1024px) {
+  .about-us-section {
+    margin-top: 1em;
+    font-size: 1.5em;
+    background-color: var(--trans-white-bg);
+    color: black;
+    border-style:dotted;
+  }
+
+  body > footer {
+    position: absolute;
   }
 }

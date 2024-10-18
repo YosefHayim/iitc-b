@@ -10,6 +10,8 @@ import { redirectPages } from "./dom/pagination-buttons.js";
 import { popularMoviesOfDay } from "./get-api-calls/get-popular-movies-of-day.js";
 import { popularMoviesOfWeek } from "./get-api-calls/get-popular-movies-of-week.js";
 import { loader } from "./dom/loader-dom.js";
+import { presentSingleMovieById } from "./get-api-calls/movie-page-dom.js";
+
 loader()
 
 if (window.location.pathname.endsWith("index.html")) {
@@ -20,6 +22,7 @@ if (window.location.pathname.endsWith("index.html")) {
   resetPlaceholder();
   redirectPages()
   isIdOrisName()
+  burgerIconActivate()
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {
@@ -32,4 +35,8 @@ if(window.location.pathname.endsWith('popular-day.html')) {
 
 if(window.location.pathname.endsWith('popular-week.html')) {
   popularMoviesOfWeek()
+}
+
+if(window.location.pathname.endsWith('movie-data.html')) {
+  presentSingleMovieById()
 }

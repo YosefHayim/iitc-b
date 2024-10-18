@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../images/favicon-logo/favicon-logo.png" type="image/x-icon">
   <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/movie-data.css">
   <title>Trailer Time</title>
 </head>
 <body>
@@ -14,26 +15,8 @@
     <div class="loader"></div>
     <!----------------------------------------------------------------------------------------------------------------- Start navbar mobile ----------------------------------------------------------------------------------------------------------------->
     <div class="navbar-mobile">
-      
-      <div class="top-navbar-mobile">
-        <a href="./index.html" class="top-navbar-desktop dropdown">Home</a>
-        <div class="dropdown-content">
-          <div class="popular-day-container">
-            <a href="./popular-day.html">Popular of the Day</a>
-          </div>
-          <div class="popular-week-container">
-            <a href="./popular-week.html">Popular of the Week</a>
-          </div>
-        </div>
-        <div> <a href="./about-us.html">About us</a></div>
-        <div> <a href="./favorite.html">Favorites</a></div>
-        <div> <a href="./feedback-me.html">Feedback me</a></div>
-      </div>
-
-
-
       <form name="search-bar-input" class="searchbar-container">
-        <a href="./index.html" class="logo-link-mobile"><img src="../images/mobile-navbar/logo-mobile/logo-mobile.svg" alt="logo" class="logo"></a>
+        <img src="../images/mobile-navbar/logo-mobile/logo-mobile.svg" alt="logo" class="logo">
         <div class="group-input-btn-search-container">
           <input type="text" placeholder="Search movies" class="input-search-bar" required>
           <button class="btn-serachbar-glass">
@@ -96,75 +79,9 @@
       </form>
     </div>
     <!----------------------------------------------------------------------------------------------------------------- End navbar desktop ----------------------------------------------------------------------------------------------------------------->
-    <div class="currently-movies-in-theatres-container-title">
-      <h2>CURRENTLY IN THEATERS</h2>
-      <span class="current-theaters-page">0 / 1</span>
-      <div class="buttons-pagination-container">
-        <button class="next-page"><img src="../images/buttons-pagination/right-button.svg" alt="left-button" class="right-button"></button>
-        <button class="previous-page"><img src="../images/buttons-pagination/left-button.svg" alt="left-button" class="left-button"></button>
-      </div>
-    </div>
-    <div class="currently-movies-in-theatres-container"></div>
 
-    <div class="upcoming-movies-container-title">
-      <h2>UP COMING MOVIES</h2>
-      <span class="current-upcoming-movies-number">0 / 1</span>
-      <div class="buttons-pagination-container">
-        <button class="next-page"><img src="../images/buttons-pagination/right-button.svg" alt="left-button" class="right-button"></button>
-        <button class="previous-page"><img src="../images/buttons-pagination/left-button.svg" alt="left-button" class="left-button"></button>
-      </div>
-    </div>
-    <div class="upcoming-movies-container"></div>
-
-    <div class="popular-movies-container-title">
-      <h2>LATEST POPULAR MOVIES</h2>
-      <span class="current-popular-movies-number">0 / 1</span>
-      <div class="buttons-pagination-container">
-        <button class="next-page"><img src="../images/buttons-pagination/right-button.svg" alt="left-button" class="right-button"></button>
-        <button class="previous-page"><img src="../images/buttons-pagination/left-button.svg" alt="left-button" class="left-button"></button>
-      </div>
-    </div>
-    <div class="popular-movies-container"></div>
-
-    <div class="trending-movies-container-title">
-      <h2>TOP TRENDING MOVIES</h2>
-      <span class="top-trending-movie-number">0 / 1</span>
-      <div class="buttons-pagination-container">
-        <button class="next-page">
-          <img src="../images/buttons-pagination/right-button.svg" alt="left-button" class="right-button"></button>
-        <button class="previous-page">
-          <img src="../images/buttons-pagination/left-button.svg" alt="left-button" class="left-button"></button>
-      </div>
-    </div>
-    
-    <div class="top-trending-movies-container">
-      <h2></h2>
-      <span class="current-page-number">0 / 1</span>
-      <div class="buttons-pagination-container">
-        <button class="next-page"><img src="../images/buttons-pagination/right-button.svg" alt="left-button" class="right-button"></button>
-        <button class="previous-page"><img src="../images/buttons-pagination/left-button.svg" alt="left-button" class="left-button"></button>
-      </div>
-    </div>
-    
-    <div class="search-results-name">
-      <h2>TOP TRENDING MOVIES</h2>
-    </div>
-    <div class="search-results-container">
-        <div class="buttons-pagination-container">
-          <button class="next-page"><img src="../images/buttons-pagination/right-button.svg" alt="left-button" class="right-button"></button>
-          <button class="previous-page"><img src="../images/buttons-pagination/left-button.svg" alt="left-button" class="left-button"></button>
-        </div>
-      </div>
-
-      <div class="popular-of-day-container-title"></div>
-    <div class="popular-of-day-container"></div>
-
-    <div class="popular-movies-of-week-container-title"></div>
-    <div class="popular-movies-of-week-container"></div>
-
-    <div class="fav-movies-container-title"></div>
-    <div class="fav-movies-container"></div>
     <!----------------------------------------------------------------------------------------------------------------- End Main content ----------------------------------------------------------------------------------------------------------------->
+  <div class="single-movie-card"></div>
   </main>
 
   <footer>
@@ -184,16 +101,8 @@
           <a href="../pages/index.html"><img src="../images/desktop-navbar/logo-desktop/logo-desktop.svg" alt="logo-icon" class="logo-icon"></a>
         </div>
 
-        <div class="top-navbar">
-          <a href="./index.html" class="top-navbar-desktop dropdown">Home</a>
-          <div class="dropdown-content">
-            <div class="popular-day-container">
-              <a href="./popular-day.html">Popular of the Day</a>
-            </div>
-            <div class="popular-week-container">
-              <a href="./popular-week.html">Popular of the Week</a>
-            </div>
-          </div>
+        <div class="link-container">
+          <a href="./index.html" class="top-navbar-desktop">Home</a>
         </div>
 
         <div class="link-container">

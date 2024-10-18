@@ -5,7 +5,7 @@ import {getData} from "../api-functions.js"
 
 const searchMovieById = (inputValue) => {
   getData(`https://api.themoviedb.org/3/movie/${inputValue}?api_key=${apiKey}`, (data) => {
-    if (!data) {
+    if (data === null || data === undefined || !data) {
       window.location.href = 'error404.html';
       return;
     }

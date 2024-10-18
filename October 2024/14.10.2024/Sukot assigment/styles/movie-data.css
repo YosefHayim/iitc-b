@@ -1,0 +1,128 @@
+.single-movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  }
+
+
+  @media screen and (min-width:1024px) {
+
+  footer {
+    position: fixed;
+    }
+
+    .navbar-desktop {
+      position: relative;
+    }
+
+    .title-single-movie {
+      font-size: 5em;
+      margin-bottom: 1em;
+      color: #ffffff;
+      justify-content: center;
+      align-items: center;
+      background: #ff0000bf;
+      text-align: center;
+      border-style: dashed;
+      width: 200vw;
+      padding: 0.2em;
+    }
+  
+    .single-movie-img {
+      width: 30em;
+      border-radius: 1em;
+    }
+  
+    .actor-img {
+      width: 15em;
+      border-radius: 1em;
+    }
+  
+    .img-name-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+  
+    .cast-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+    }
+  
+    .single-img-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: -10em;
+    }
+  
+    .rating-container {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+      width: 40vw;
+    }
+  
+    .rating-img {
+      height: 4.5em;
+    }
+  
+    .movie-details {
+      width: 20vw;
+      transform: translate(-33em, -49em);
+      line-height: 2em;
+  
+    }
+  
+    .rating-number-txt {
+      font-size: 4em;
+    }
+  
+    .actor-name {
+      font-size: 1.5em;
+      text-align: center;
+      width: max-content;
+    }
+  
+    .play-button-btn-single-movie {
+      height: 3em;
+      border-radius: 5em;
+      transform: translate(0em, -15em);
+    }
+
+    .movie-link {
+      transform: translate(0em, -14em);
+      border: none;
+      padding: 1.5em;
+      border-radius: 0.5em;
+      width: 19vw;
+    }
+
+    .movie-link {
+      background-color:red;
+      cursor: pointer;
+    }
+
+    .movie-link:hover {
+      background-color: white;
+    }
+
+    .website-link:hover {
+      color: black;
+    }
+
+    .website-link {
+      color: white;
+      font-size: 2em;
+      font-weight: 700;
+    }
+
+  }

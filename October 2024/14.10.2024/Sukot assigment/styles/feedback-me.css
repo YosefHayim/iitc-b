@@ -47,5 +47,19 @@ footer {
   color: white;
   gap: 1em;
   cursor: pointer;
+}
+
+@media screen and (min-width:1024px) {
+  .feedback-me-container-title {
+    margin-top: 11em;
+  }
+
+  #rating {
+    margin-bottom: 2em;
+  }
+  
+  #rating::placeholder {
+    text-align: center;
+  } 
 
 }

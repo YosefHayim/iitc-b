@@ -14,7 +14,7 @@ const upComingMovies = (pageNumber = 1) => {
         upComingMoviesContainer.appendChild(movieCard);
       });
       upComingMoviePage.style.display = `block`;
-      upComingMoviePage.textContent = `PAGES: ${pageNumber} / ${data.total_pages}`
+      upComingMoviePage.textContent = `Page: ${pageNumber} / ${data.total_pages}`
 
     } else {
       console.error("No data received from the API.");

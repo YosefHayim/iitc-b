@@ -91,11 +91,12 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   justify-content: center;
   align-items: baseline;
   gap: 1em;
+  font-size: 1.5em;
 }
 
 .top-navbar-mobile a:active {
   background: red;
-  padding: 1em;
+  padding: 0.3em;
   border-radius: 5em;
   color: white;
 }
@@ -103,8 +104,8 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
 .top-navbar-mobile a:hover {
   color: black;
   background: white;
-  padding: 1em;
   border-radius: 5em;
+  padding: 0.3em;
 }
 
 .overlay-container {
@@ -139,7 +140,13 @@ body > footer > div > div.group-input-btn-search-container {
   width: 2.5em;
   position: static;
   z-index: 99999;
+  cursor: pointer;
+}
 
+.white-burger-icon:hover,.white-burger-icon:active {
+  background-color: #ff0000bf;
+  border-radius: 3em;
+  padding: 0.4em;
 }
 
 .btn-serachbar-glass {
@@ -517,9 +524,9 @@ label {
 }
 
 .logo:active,.logo-icon:active {
-  background: #fefefe36;
-  border-radius: 0.5em;
-  width: -webkit-fill-available;
+  background: #ff0000bf;
+  border-radius: 1em;
+  padding: 0.3em;
 }
 
 .top-navbar-desktop:active {
@@ -607,7 +614,7 @@ body > main > div.navbar-mobile > form > div > button > img {
   font-size: 0.6em;
   border-style: dashed;
   margin-top: 1em;
-  font-size: 1em;
+  font-size: 1.5em;
   width: 200vw;
   display: none;
 }
@@ -639,7 +646,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 @media screen and (min-width:1024px) {
 
   .currently-movies-in-theatres-container-title {
-    margin-top: 5em;
+    margin-top: 3em;
   }
 
   .popular-of-day-container,.popular-movies-of-week-container {
@@ -743,7 +750,7 @@ body > main > div.navbar-mobile > form > div > button > img {
   }
 
   .logo-icon:hover {
-    background: #ffffff24;
+    background: #ff0000bf;
     border-radius: 3em;
   }
 
@@ -943,7 +950,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 
 footer {
   margin-top: 5em;
-  position: fixed;
+  position: relative;
   bottom: 0;
 }
 

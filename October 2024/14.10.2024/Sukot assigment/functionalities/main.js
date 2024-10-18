@@ -14,13 +14,14 @@ import { presentSingleMovieById } from "./get-api-calls/movie-page-dom.js";
 
 loader()
 burgerIconActivate()
+resetPlaceholder();
+
 
 if (window.location.pathname.endsWith("index.html")) {
   currentlyInTheaters(); 
   popularMovies();
   topRatedMovies();
   upComingMovies();
-  resetPlaceholder();
   redirectPages()
   isIdOrisName()
 }

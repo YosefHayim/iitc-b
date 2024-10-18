@@ -13,7 +13,7 @@ const topRatedMovies = (pageNumber = 1) => {
         topRatedMoviesContainer.appendChild(movieCard);
       });
       topTrendingPage.style.display = `block`;
-      topTrendingPage.textContent = `PAGES: ${pageNumber} / ${data.total_pages - pageNumber}`
+      topTrendingPage.textContent = `Page: ${pageNumber} / ${data.total_pages - pageNumber}`
 
       
     } else {

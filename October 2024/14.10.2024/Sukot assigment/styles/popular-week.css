@@ -24,7 +24,6 @@ footer {
   margin-bottom: 3em;
   border-radius: 3em;
   padding: 1em;
-  letter-spacing: 0.5em;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -34,13 +33,12 @@ footer {
   text-align: center;
   line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
-  font-size: 0.6em;
+  font-size: 1.2em;
   width: 1000vw;
   border-style: dashed;
   margin-top: 0.5em;
 }
 
-.movie-card {}
 @media screen and (min-width:1024px) {
 
 .navbar-desktop {

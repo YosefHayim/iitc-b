@@ -13,13 +13,9 @@ const popularMoviesOfWeek = (pageNumber = 1) => {
       });
 
       if (window.location.pathname.endsWith('popular-week.html')) {
-        templateTitle.style.fontSize = `1em`;
-        templateTitle.textContent = `POPULAR MOVIES OF THE WEEK`;
 
-        templateTitle.style.fontSize = `1em`;
       } else if (window.location.pathname.endsWith('index.html')) {
         popularOfTheWeekDiv.innerHTML = ``;
-        domTitleTxt.style.fontSize = `1em`;
       }
 
       movieCardsDivs.forEach(container => {

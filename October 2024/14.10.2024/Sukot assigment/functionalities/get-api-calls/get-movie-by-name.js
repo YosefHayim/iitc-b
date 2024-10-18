@@ -18,8 +18,8 @@ const searchMovieByName = (inputValue) => {
 
     movieCardsDivs.forEach((container) => container.remove());
 
-    searchResultTitle.style.display = `flex`
-    searchResultTitle.textContent = `Total movies found for "${inputValue.charAt(0).toUpperCase() + inputValue.slice(1)}" : ${data.total_results}`;
+    searchResultTitle.style.display = `block`
+    searchResultTitle.textContent = `Total movies found "${inputValue.charAt(0).toUpperCase() + inputValue.slice(1)}" : ${data.total_results}`;
     
     data.results.forEach((movie) => {
     const movieCard = createMovieCard(movie);

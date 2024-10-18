@@ -11,6 +11,10 @@ body {
   padding: 0em;
 }
 
+.about-us-container-title {
+  margin-top: 3em;
+}
+
 .hero-image-about-us {
   position: relative;
   animation: flowUpDown 5s ease-in-out infinite;
@@ -18,8 +22,6 @@ body {
 
 footer {
   position: relative;
-  padding: 2em;
-  margin-top: 5em;
 }
 
 .about-us-section {

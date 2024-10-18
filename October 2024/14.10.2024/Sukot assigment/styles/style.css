@@ -191,6 +191,10 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
   transform: translateY(0.4em);
 }
 
+body > footer > div > div.group-input-btn-search-container > form {
+  margin-top: 1em;
+}
+
 .title {
   text-align: center;
   font-size: 0.9em;
@@ -268,7 +272,7 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
 }
 
 .white-data-img:hover {
-  background-color: red;
+  background-color: #ff0000bf;
   transform: scale(1.3);
 }
 
@@ -280,8 +284,8 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
   transform: translate(5em, -7em);
 }
 
-.white-heart-img:hover {
-  background: red;
+.white-heart-img:hover,.white-heart-img:active {
+  background: #ff0000bf;
   transform: scale(1.3);
 }
 
@@ -289,18 +293,18 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
   transform: translate(-5em, -7em);
 }
 
-.white-share-img:hover {
-  background: red;
+.white-share-img:hover,.white-share-img:hover {
+  background: #ff0000bf;
   transform: scale(1.3);
 }
 
-.play-button-img:hover {
-  background: red;
+.play-button-img:hover,.play-button-img:hover {
+  background: #ff0000bf;
   transform: scale(1.3);
 }
 
 .play-button-img:active {
-  background: #ffffff63;
+  background: #ff0000bf;
   color: #ffffff00;
   box-shadow: 0em 0em 10em 1em;
 }
@@ -353,7 +357,6 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
 .copy-right-txt {
   text-align: center;
   position: relative;
-  margin-top: 1em;
   margin-bottom: 2em;
 }
 
@@ -369,7 +372,7 @@ footer {
   width: 1000vw;
   background: black;
   text-align: center;
-  z-index: 1001;
+  z-index: 1;
 }
 
 hr {
@@ -379,6 +382,7 @@ hr {
   transform: translate(100vw, -7em); 
   animation: slideIn 0.3s ease-out forwards; 
   animation-iteration-count: 1;
+  margin-bottom: -2em;
 }
 
 @keyframes slideIn {
@@ -529,12 +533,6 @@ label {
   padding: 0.3em;
 }
 
-.top-navbar-desktop:active {
-  padding: 0.5em;
-  background: #fefefe36;
-  border-radius: 0.5em;
-}
-
 .link-container {
   width: -webkit-fill-available;
 }
@@ -641,9 +639,113 @@ body > main > div.navbar-mobile > form > div > button > img {
   justify-content: center;
 }
 
+/* navbar design */
+.top-navbar .top-navbar-desktop {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.top-navbar {
+  color: white;
+  border-radius: 100em;
+}
+
+.top-navbar-desktop:hover {
+  color: white;
+  background: #ff0000bf;
+  border-radius: 100em;
+}
+
+.top-navbar-desktop:active {
+  color: black;
+  background-color: white;
+  border-radius: 100em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 0.6em 1.1em;
+  display: block;
+  background: black;
+  border-radius: 100em;
+  font-weight: bold;
+  width: 13vw;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff0000;
+  border-radius: 3em;
+  color: white;
+}
+
+.top-navbar:hover .dropdown-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 1em;
+  background: none;
+  position: absolute;
+  margin-bottom: -11em;
+  top: 2.5em;
+}
+
+.popular-week-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3em;
+  background: black;
+  width: max-content;
+}
+
+.top-navbar{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-content a:active {
+  background-color: white;
+  color: black;
+}
+
+.popular-day-container:hover,.popular-week-container:hover {
+  background: none;
+}
+
+body > footer > div > div.group-input-btn-search-container {
+  margin-top: 0em;
+}
+
 /* Desktop design 1024px */
 
 @media screen and (min-width:1024px) {
+
+  .top-navbar-desktop {
+    padding: 1em;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 1.1em;
+    color: snow;
+    width: max-content;
+  }
 
   .currently-movies-in-theatres-container-title {
     margin-top: 3em;
@@ -710,37 +812,12 @@ body > main > div.navbar-mobile > form > div > button > img {
     justify-content: center;
   }
 
-  .top-navbar-desktop {
-  text-decoration: none;
-  color: white;
-  border-radius: 3em;
-  padding: 0.5em;
-  position: relative;
-  display: inline-block;
-  width: max-content;
-  }
-
   .top-navbar-desktop:active {
-    color: #ff0000bf;
+    color: black;
     background: white;
     font-weight: bold;
   }
   
-  .top-navbar-desktop::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0.1em;
-    background-color: white; 
-    transition: width 0.5s ease;
-  }
-  
-  .top-navbar-desktop:hover::after {
-    width: 100%;
-  }
-
   .navbar-mobile {
     display: none;
   }
@@ -806,12 +883,6 @@ body > main > div.navbar-mobile > form > div > button > img {
     gap: 1em;
   }
 
-  hr {
-    border: 0.01em solid white;
-    width: -webkit-fill-available;
-    margin-bottom: -3em;
-  }
-
   .contact-links-footer {
     display: flex;
     flex-direction: row;
@@ -843,79 +914,10 @@ body > main > div.navbar-mobile > form > div > button > img {
     background: #ff0000bf;
   }
 
-
 .top-navbar {
   position: relative;
   display: inline-block;
 }
-
-.top-navbar .top-navbar-desktop {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  padding: 10px;
-}
-
-.top-navbar,.top-navbar-desktop:hover {
-  color: white;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  min-width: 160px;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  color: white;
-}
-
-.dropdown-content a:hover {
-  background-color: white;
-  border-radius: 3em;
-  color: black;
-}
-
-.top-navbar:hover .dropdown-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  gap: 1em;
-  background: none;
-  position: absolute;
-  margin-bottom: -11em;
-  top: 2.5em;
-}
-
-.popular-week-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3em;
-  background: black;
-  width: max-content;
-}
-
-.popular-day-container:hover,.popular-week-container:hover {
-  background: #000000;
-}
-
-  .top-navbar{
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
 .alert-message-container {
   display: none;

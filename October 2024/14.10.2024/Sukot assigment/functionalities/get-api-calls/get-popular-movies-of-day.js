@@ -13,12 +13,9 @@ const popularMoviesOfDay = (pageNumber = 1) => {
       });
 
       if (window.location.pathname.endsWith('popular-day.html')) {
-        templateTitle.style.fontSize = '1em';
-        templateTitle.textContent = `POPULAR MOVIES OF THE DAY`;
 
       } else if (window.location.pathname.endsWith('index.html')) {
         popularOfTheDayDiv.innerHTML = ``;
-        domTitleTxt.style.fontSize = `1em`;
 
         titlesContainers.forEach(title => title.remove());
 
@@ -28,7 +25,7 @@ const popularMoviesOfDay = (pageNumber = 1) => {
       }
 
       popDayMoviePage.style.display = `block`;
-      console.log(`popularMoviesOfDay: ${pageNumber} / ${data.total_pages}`);
+      console.log(`popularMoviesOfDay: ${pageNumber} / ${data.total_page}`);
 
     } else {
       console.error("No data received from the API.");

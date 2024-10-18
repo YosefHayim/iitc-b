@@ -16,7 +16,8 @@ const searchMovieById = (inputValue) => {
 
     searchResultContainer.innerHTML = '';
 
-    searchResultTitle.textContent = `NAME OF THE MOVIE IS: ${data.title}`;
+    searchResultTitle.style.display = `block`
+    searchResultTitle.textContent = `ID ${inputValue} movie name is: ${data.title}`;
 
     const movieCard = createMovieCard(data);
     searchResultContainer.appendChild(movieCard);

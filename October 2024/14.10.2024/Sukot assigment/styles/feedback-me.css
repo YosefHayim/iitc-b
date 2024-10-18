@@ -23,10 +23,79 @@
 .feedback-me-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
 }
 
 .form-container {
   width: 50vw;
+}
+
+.feedback-me-container-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.name,.email,.message,.submit-button {
+  background: var(--lighter-red-color);
+  border-radius: 0.2em;
+  padding: 0.2em;
+  width: 100%;
+  display: block;
+  text-align: revert;
+}
+
+#name,#email,#message {
+  background: white;
+  border-radius: 0.2em;
+  padding: 0.2em;
+  width: 100%;
+  display: block;
+  text-align: revert;
+  border: dashed;
+}
+
+.white-search-bar {
+  width: 1.5em;
+  display: flex;
+  position: relative;
+  left: -11em;
+}
+
+label {
+  margin-bottom: 0.5em;
+}
+
+#message {
+  width: 100%;
+}
+
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+  color: gray;
+}
+
+/* I tried to set the default font from the body but was unable due to 
+checks on internet found out this is needed to be more specific */
+
+input::placeholder,input,textarea {
+  font-family: "SignWood Reg";
+}
+
+#rating {
+  width: 100%;
 }
 
 

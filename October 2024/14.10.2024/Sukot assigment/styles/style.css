@@ -17,6 +17,7 @@
   --rating--color: #ffcd05;
   --lighter-red-color: #ff0000bf;
   --background-grey-color-btns: #ffffff24;
+  --font-bold: bold;
 }
 
 * {
@@ -24,11 +25,12 @@
   margin: 0;
 }
 
-body, html {
+  html {
   min-height: 100vh;
 }
 
 body {
+  flex-wrap: wrap;
   letter-spacing: 0.1em;
   font-family: "Signwood Reg", "Roboto";
   display: flex;
@@ -39,28 +41,35 @@ body {
   color: white;
 }
 
+main {
+  width: 100%;
+}
+
 .searchbar-container,.navbar-mobile {
   display: flex;
   gap: 1em;
+  width: 100%;
 }
 
 .navbar-mobile {
   background: black;
   justify-content: center;
   width: 100vw;
+  top: 0;
+  margin-top: 0em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .overlay {
   display: none;
   position: fixed;
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
   top: 0;
-  left: 5em;
+  left: 16em;
   right: 0;
   bottom: 0;
   z-index: 100;
-  background: #000000f2;
+  background: black;
 }
 
 main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container{
@@ -83,9 +92,11 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   display: none;
   flex-direction: column;
   justify-content: center;
-  align-items: baseline;
   gap: 1em;
   font-size: 1.5em;
+  left: 11em;
+  position: relative;
+  width: 100%;
 }
 
 .top-navbar-mobile a:active {
@@ -120,6 +131,16 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   transform: translateY(0.1em);
 }
 
+.logo-link-mobile:hover {
+  background: var(--rating--color);
+  border-radius: 2em;
+}
+
+.logo-icon:active {
+  background: var(--lighter-red-color);
+    border-radius: 2em;
+}
+
 .group-input-btn-search-container {
   display: flex;
   flex-direction: row;
@@ -133,6 +154,9 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   position: static;
   z-index: 99999;
   cursor: pointer;
+  background: var(--lighter-red-color);
+  border-radius: 5em;
+  padding: 0.3em;
 }
 
 .white-burger-icon:hover,.white-burger-icon:active {
@@ -157,6 +181,8 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   text-align: center;
   background: var(--background-grey-color-btns);
   cursor: pointer;
+  color: white;
+  font-weight: var(--font-bold);
 }
 
 input:active {
@@ -170,10 +196,9 @@ input:active {
 
 .white-search-bar {
   width: 1.5em;
-}
-
-body > footer > div > div.group-input-btn-search-container > form > button > img {
-  transform: translateY(0.4em);
+  display: flex;
+  position: relative;
+  left: -13em;
 }
 
 form {
@@ -208,6 +233,19 @@ form {
 .movie-img:hover {
   transform: scale(1.05);
   transition: transform 1s ease-in-out;
+}
+
+.movie-card {
+  animation: flowUpDown 2s ease-in-out infinite alternate;
+}
+
+@keyframes flowUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1vh); 
+  }
 }
 
 .rating-img {
@@ -340,22 +378,24 @@ form {
 }
 
 footer {
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background-color: black
+  width: 100%;
+  background: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: -5.5em;
+  padding-top: 2em;
 }
 
 hr {
-  border: 0.01em solid white;
-  width: 100%;
-  position: fixed;
-  transform: translate(100vw, -7em); 
-  animation: slideIn 0.3s ease-out forwards; 
-  animation-iteration-count: 1;
-  margin-bottom: -2em;
+    width: 100%;
+    position: fixed;
+    animation: slideIn 0.3s ease-out forwards;
+    animation-iteration-count: 1;
+    margin-bottom: -5.5em;
 }
 
 @keyframes slideIn {
@@ -379,7 +419,7 @@ hr {
   display: none;
   position: fixed;
   transform: translate(0em, -10em);
-  z-index: 1;
+  z-index: 1001;
   height: 24vh;
 }
 
@@ -407,62 +447,9 @@ a {
   100% { transform: rotate(360deg); }
 }
 
-.rating-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: -webkit-fill-available;
-}
-
-.name,.email,.message,.submit-button {
-  background: var(--lighter-red-color);
-  border-radius: 0.2em;
-  padding: 0.2em;
-  width: -webkit-fill-available;
-  display: block;
-  text-align: unset;
-  border: dashed;
-}
-
-#name,#email,#message {
-  background: white;
-  border-radius: 0.2em;
-  padding: 0.2em;
-  width: -webkit-fill-available;
-  display: block;
-  text-align: unset;
-  border: dashed;
-}
-
-label {
-  margin-bottom: 0.5em;
-}
-
-#message {
-  width: -webkit-fill-available;
-}
-
-.form-container input::placeholder,
-.form-container textarea::placeholder {
-  color: gray;
-}
-
-/* I tried to set the default font from the body but was unable due to 
-checks on internet found out this is needed to be more specific */
-
-input::placeholder,input,textarea {
-  font-family: "SignWood Reg";
-}
-
-#rating {
-  width: -webkit-fill-available;
-}
-
 .logo:active,.logo-icon:active {
   background: var(--lighter-red-color);
-  border-radius: 1em;
-  padding: 0.3em;
+  border-radius: 2em;
 }
 
 .link-container {
@@ -563,14 +550,6 @@ body > main > div.navbar-mobile > form > div > button > img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/* navbar design */
-.top-navbar .top-navbar-desktop {
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  padding: 10px;
 }
 
 .top-navbar {
@@ -686,9 +665,6 @@ body > main > div.navbar-mobile > form > div > button > img {
     gap: 3em;
   }
 
-  body > footer > div > div.group-input-btn-search-container > form > button > img {
-    transform: translateY(0.4em);
-  }
       
   .fav-movies-container {
     display: flex;
@@ -748,10 +724,6 @@ body > main > div.navbar-mobile > form > div > button > img {
     border-radius: 3em;
   }
 
-  .logo-icon:active {
-    background: var(--lighter-red-color);
-  }
-
   .navbar-desktop { 
     display: flex;
     background: black;
@@ -759,8 +731,7 @@ body > main > div.navbar-mobile > form > div > button > img {
     width: 100%;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
+    position: static;
   }
   .desktop-navbar-container {
   display: flex;
@@ -777,12 +748,6 @@ body > main > div.navbar-mobile > form > div > button > img {
     justify-content: center;
     align-items: center;
     gap: 2em;
-    margin-top: 1em;
-    background-color: black;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    flex-wrap: wrap;
   }
 
   .links-container-footer {
@@ -792,6 +757,15 @@ body > main > div.navbar-mobile > form > div > button > img {
     align-items: center;
     gap: 1em;
   }
+
+  .contact-links-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
   .error-container {
     margin-bottom: 3em;
     display: flex;
@@ -853,6 +827,28 @@ body > main > div.navbar-mobile > form > div > button > img {
   font-size: 2em;
   width: 100%;
   display: none;
+}
+
+.top-navbar-mobile {
+  display: none;
+}
+
+.searchbar-container,.navbar-mobile {
+  gap: 0.5em;
+  padding: 0.5em;
+  position: static;
+}
+
+body > footer {
+  width: 100%;
+  background: black;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+body > footer > div > div.group-input-btn-search-container > form {
+  flex-wrap: nowrap;
 }
 
 }

@@ -11,6 +11,7 @@ import { popularMoviesOfDay } from "./get-api-calls/get-popular-movies-of-day.js
 import { popularMoviesOfWeek } from "./get-api-calls/get-popular-movies-of-week.js";
 import { loader } from "./dom/loader-dom.js";
 import { presentSingleMovieById } from "./get-api-calls/movie-page-dom.js";
+import { formAnswer } from "./dom/form-data.js";
 
 loader()
 burgerIconActivate()
@@ -40,4 +41,8 @@ if(window.location.pathname.endsWith('popular-week.html')) {
 
 if(window.location.pathname.endsWith('movie-data.html')) {
   presentSingleMovieById()
+}
+
+if(window.location.pathname.endsWith('feedback-me.html')) {
+  formAnswer()
 }

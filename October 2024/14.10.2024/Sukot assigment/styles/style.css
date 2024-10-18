@@ -193,12 +193,8 @@ input:active {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
 .white-search-bar {
   width: 1.5em;
-  transform: translateY(0.1em);
 }
 
 body > footer > div > div.group-input-btn-search-container > form > button > img {
@@ -525,6 +521,12 @@ label {
 .form-container input::placeholder,
 .form-container textarea::placeholder {
   color: gray;
+}
+
+/* I tried to set the default font from the body but was unable due to 
+checks on internet found out this is needed to be more specific */
+
+input::placeholder,input,textarea {
   font-family: "SignWood Reg";
 }
 
@@ -709,7 +711,8 @@ body > main > div.navbar-mobile > form > div > button > img {
   background: none;
   position: absolute;
   margin-bottom: -11em;
-  top: 2.5em;
+  top: 2.1em;
+  left: -3em;
 }
 
 .popular-week-container {
@@ -746,6 +749,10 @@ body > footer > div > div.group-input-btn-search-container {
 /* Desktop design 1024px */
 
 @media screen and (min-width:1024px) {
+
+  .dropdown-content a {
+    width: 7vw;
+  }
 
   .top-navbar-desktop {
     padding: 1em;

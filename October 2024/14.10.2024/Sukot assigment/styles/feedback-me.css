@@ -31,10 +31,6 @@
 
 
 @media screen and (min-width:1024px) {
-  .feedback-me-container-title {
-    margin-top: 11em;
-  }
-
   #rating {
     margin-bottom: 2em;
   }

@@ -128,10 +128,6 @@ main,.popular-movies-container,.top-trending-movies-container,.movie-card-contai
   background: none;
 }
 
-body > footer > div > div.group-input-btn-search-container {
-  margin-top: 1em;
-}
-
 .white-burger-icon {
   width: 2.5em;
   position: static;
@@ -147,10 +143,7 @@ body > footer > div > div.group-input-btn-search-container {
 
 .btn-serachbar-glass {
   border: none;
-  transform: translateX(-15em);
   background: none;
-  color: white; 
-  position: relative;
 }
 
 .remove-btn-img {
@@ -161,11 +154,9 @@ body > footer > div > div.group-input-btn-search-container {
   border: none;
   border-radius: 2em;
   padding: 1em;
-  width: 25vh;
   text-align: center;
   background: var(--background-grey-color-btns);
   cursor: pointer;
-  color: white;
 }
 
 input:active {
@@ -183,6 +174,14 @@ input:active {
 
 body > footer > div > div.group-input-btn-search-container > form > button > img {
   transform: translateY(0.4em);
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .title {
@@ -209,19 +208,6 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
 .movie-img:hover {
   transform: scale(1.05);
   transition: transform 1s ease-in-out;
-}
-
-.movie-card {
-  animation: flowUpDown 2s ease-in-out infinite alternate;
-}
-
-@keyframes flowUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-1vh); 
-  }
 }
 
 .rating-img {
@@ -354,13 +340,12 @@ body > footer > div > div.group-input-btn-search-container > form > button > img
 }
 
 footer {
-  width: 100%;
-  background: black;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: black
 }
 
 hr {
@@ -472,13 +457,6 @@ input::placeholder,input,textarea {
 
 #rating {
   width: -webkit-fill-available;
-}
-
-.contact-links-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .logo:active,.logo-icon:active {
@@ -676,10 +654,6 @@ body > main > div.navbar-mobile > form > div > button > img {
   background: none;
 }
 
-body > footer > div > div.group-input-btn-search-container {
-  margin-top: 0em;
-}
-
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
 
@@ -794,6 +768,7 @@ body > footer > div > div.group-input-btn-search-container {
   justify-content: center;
   align-items: center;
   gap: 2em;
+  flex-wrap: wrap;
   }
 
   .desktop-navbar-container-footer {
@@ -803,14 +778,11 @@ body > footer > div > div.group-input-btn-search-container {
     align-items: center;
     gap: 2em;
     margin-top: 1em;
-    width: -webkit-fill-available;
-  }
-
-  .contact-footer-links {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
   }
 
   .links-container-footer {
@@ -820,13 +792,6 @@ body > footer > div > div.group-input-btn-search-container {
     align-items: center;
     gap: 1em;
   }
-
-  .contact-links-footer {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-  }
-
   .error-container {
     margin-bottom: 3em;
     display: flex;

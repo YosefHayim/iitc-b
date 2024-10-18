@@ -7,21 +7,8 @@ body {
   flex-direction: column;
 }
 
-.about-us-container-title {
-  position: absolute;
-    top: 1.6em;
-}
-
-.about-us-container-title {
-  z-index: 1;
-}
-
 .hero-image-about-us {
   animation: flowUpDown 5s ease-in-out infinite;
-}
-
-footer {
-  position: relative;
 }
 
 .about-us-section {

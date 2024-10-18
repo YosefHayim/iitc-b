@@ -33,6 +33,7 @@ const presentSingleMovieById = () => {
           <h2 class="rating-number-txt">${singleMovieD.vote_average.toFixed(1)}</h2>
         </div>
         <a class="play-button-btn-single-movie"><img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img"></a>
+        <h3 class="summary-title">Summary</h3>
         <p class="movie-details">${singleMovieD.overview}</p>
         <button class="movie-link"><a href="${singleMovieD.homepage}" target="_blank" class="website-link">Visit Homepage</a></button>
       </div>

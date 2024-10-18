@@ -1,4 +1,5 @@
 body {
+  background-color: black;
   background-image: url(../images/about-us-page/hero-image-about-us.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,10 +11,24 @@ body {
   padding: 0em;
 }
 
+.about-us-container-title {
+  margin-top: 4em;
+}
+
 .hero-image-about-us {
   position: relative;
   animation: flowUpDown 5s ease-in-out infinite;
 }
+
+footer {
+  position: relative;
+  padding: 2em;
+}
+
+.about-us-section {
+  height: auto;
+}
+
 
 @keyframes flowUpDown {
   0% {

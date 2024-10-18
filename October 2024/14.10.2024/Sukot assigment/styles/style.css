@@ -8,14 +8,6 @@
   src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
-:root {
-  --primary-button: #FF5C00;
-  --secondary-button: #5FDBA7;
-  --text-color: #1F1F1F; 
-  --input-background: #E5E5E5; 
-  --accent-color: #A3C9F1; 
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -185,6 +177,10 @@ input:active {
 
 .white-search-bar {
   width: 1.5em;
+  transform: translateY(0.1em);
+}
+
+body > footer > div > div.group-input-btn-search-container > form > button > img {
   transform: translateY(0.4em);
 }
 
@@ -367,8 +363,6 @@ footer {
   background: black;
   text-align: center;
   z-index: 1001;
-  position: fixed;
-  bottom: 0;
 }
 
 hr {
@@ -488,15 +482,6 @@ a {
   display: block;
   text-align: unset;
   border: dashed;
-}
-
-.submit-button {
-  border: none;
-  border-radius: 0.2em;
-  text-align: center;
-  font-size: large;
-  font-weight: 900;
-  color: white;
 }
 
 label {
@@ -903,7 +888,7 @@ body > main > div.navbar-mobile > form > div > button > img {
   top: 2.5em;
 }
 
-.popular-day-container,.popular-week-container {
+.popular-week-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -958,6 +943,8 @@ body > main > div.navbar-mobile > form > div > button > img {
 
 footer {
   margin-top: 5em;
+  position: fixed;
+  bottom: 0;
 }
 
 .search-results-name {

@@ -3,9 +3,10 @@
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  padding: 2em;
 }
+
 
 .feedback-me-container-title {
   top: 3em;
@@ -34,4 +35,17 @@ footer {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 3em;
+}
+
+.submit-button {
+  border: none;
+  border-radius: 0.2em;
+  text-align: center;
+  font-size: large;
+  font-weight: 900;
+  color: white;
+  gap: 1em;
+  cursor: pointer;
+
 }

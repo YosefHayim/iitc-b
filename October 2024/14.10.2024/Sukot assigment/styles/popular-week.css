@@ -1,4 +1,5 @@
-.popular-of-day-container{
+
+.popular-movies-of-week-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,6 +8,7 @@
 }
 
 footer {
+  position: relative;
   padding: 2em;
 }
 
@@ -17,10 +19,6 @@ footer {
   align-items: center;
   margin-bottom: 5em;
 }
-
-.navbar-mobile {
-  width: 1000vw;
-}  
 
 .template-title {
   margin-bottom: 3em;
@@ -37,17 +35,19 @@ footer {
   line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
   font-size: 0.6em;
-  width: 100vw;
+  width: 1000vw;
   border-style: dashed;
   margin-top: 0.5em;
 }
+
+.movie-card {}
 @media screen and (min-width:1024px) {
 
 .navbar-desktop {
   width: 1000vw;
 }
 
-.popular-of-week-container {
+.popular-of-day-container {
   flex-direction: row;
   margin-bottom: 10em;
 }

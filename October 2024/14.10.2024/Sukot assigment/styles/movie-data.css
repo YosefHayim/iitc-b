@@ -1,3 +1,4 @@
+
 .single-movie-card {
 display: flex;
 flex-direction: column;
@@ -96,7 +97,7 @@ text-align: center;
   height: 4em;
   margin-bottom: 2em;
   margin-top: 3em;
-
+  font-family: 'Signwood Reg';
 }
 
 .movie-link:hover {
@@ -181,7 +182,7 @@ text-align: center;
   }
 
   .actor-name {
-    width: 14vw;
+    width: 20vw;
     border-radius: 0.4em;
   }
   .cast-container {

@@ -1,11 +1,22 @@
 @font-face {
-  font-family: "Roboto";
-  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+  font-family: "Signwood Reg";
+  src: url(../fonts/Signwood/Signwood-Regular.ttf)
 }
 
 @font-face {
-  font-family: "Monteserrat";
-  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-family: "Signwood Italic";
+  src: url(../fonts/Signwood/Signwood-Italic.ttf);
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto/Roboto-Regular.ttf)
+}
+
+:root {
+  --rating--color: #ffcd05;
+  --lighter-red-color: #ff0000bf;
+  --background-grey-color-btns: #ffffff24;
 }
 
 * {
@@ -13,23 +24,25 @@
   margin: 0;
 }
 
-body,html {
+body, html {
   min-height: 100vh;
 }
 
 body {
-  font-family: "Roboto";
+  letter-spacing: 0.1em;
+  font-family: "Signwood Reg", "Roboto";
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image:url(../images/homepage-bg/background-img.svg);
+  background-image: url(../images/homepage-bg/background-img.svg);
   color: white;
 }
 
 main {
   position: relative;
 }
+
 
 .searchbar-container,.navbar-mobile {
   display: flex;
@@ -64,9 +77,8 @@ main {
   background: #000000f2;
 }
 
-
-
 h2 {
+  font-family: "SignWood Italic";
   font-size: 0.9em;
 }
 
@@ -144,7 +156,7 @@ body > footer > div > div.group-input-btn-search-container {
 }
 
 .white-burger-icon:hover,.white-burger-icon:active {
-  background-color: #ff0000bf;
+  background-color: var(--red);
   border-radius: 3em;
   padding: 0.4em;
 }
@@ -167,7 +179,7 @@ body > footer > div > div.group-input-btn-search-container {
   padding: 1em;
   width: 25vh;
   text-align: center;
-  background: #ffffff24;
+  background: var(--background-grey-color-btns);
   cursor: pointer;
   color: white;
 }
@@ -182,6 +194,8 @@ input:active {
 }
 
 
+
+
 .white-search-bar {
   width: 1.5em;
   transform: translateY(0.1em);
@@ -189,10 +203,6 @@ input:active {
 
 body > footer > div > div.group-input-btn-search-container > form > button > img {
   transform: translateY(0.4em);
-}
-
-body > footer > div > div.group-input-btn-search-container > form {
-  margin-top: 1em;
 }
 
 .title {
@@ -234,7 +244,6 @@ body > footer > div > div.group-input-btn-search-container > form {
   }
 }
 
-
 .rating-img {
   height: 2em;
 }
@@ -242,8 +251,7 @@ body > footer > div > div.group-input-btn-search-container > form {
 .rating-number-txt {
   font-size: 1.8em;
   transform: translateY(0.05em);
-  color: #ffcd05;
-  font-weight: bold;
+  color: var(--rating--color);
 }
 
 .overview-container {
@@ -291,7 +299,7 @@ body > footer > div > div.group-input-btn-search-container > form {
 }
 
 .white-data-img:hover {
-  background-color: #ff0000bf;
+  background-color: var(--lighter-red-color);
   transform: scale(1.3);
 }
 
@@ -304,7 +312,7 @@ body > footer > div > div.group-input-btn-search-container > form {
 }
 
 .white-heart-img:hover,.white-heart-img:active {
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   transform: scale(1.3);
 }
 
@@ -313,18 +321,18 @@ body > footer > div > div.group-input-btn-search-container > form {
 }
 
 .white-share-img:hover,.white-share-img:hover {
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   transform: scale(1.3);
 }
 
 .play-button-img:hover,.play-button-img:hover {
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   transform: scale(1.3);
 }
 
 .play-button-img:active {
-  background: #ff0000bf;
-  color: #ffffff00;
+  background: var(--lighter-red-color);
+  color: black;
   box-shadow: 0em 0em 10em 1em;
 }
 
@@ -340,12 +348,12 @@ body > footer > div > div.group-input-btn-search-container > form {
 .search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
   margin-bottom: 3em;
   border-radius: 3em;
-  color: #ffffff;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   text-align: center;
   line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
@@ -462,10 +470,10 @@ a {
 .loader {
   position: fixed;
   top: 25em;
-  border-top: 16px solid #000000;
-  border-right: 16px solid #ff0000;
-  border-bottom: 16px solid #000000;
-  border-left: 16px solid #ff0000;
+  border-top: 16px solid black;
+  border-right: 16px solid var(--lighter-red-color);
+  border-bottom: 16px solid black;
+  border-left: 16px solid var(--lighter-red-color);
   border-radius: 50%;
   width: 12em;
   height: 12em;
@@ -478,14 +486,6 @@ a {
   100% { transform: rotate(360deg); }
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: min-content;
-}
-
 .rating-container {
   display: flex;
   flex-direction: column;
@@ -495,7 +495,7 @@ a {
 }
 
 .name,.email,.message,.submit-button {
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   border-radius: 0.2em;
   padding: 0.2em;
   width: -webkit-fill-available;
@@ -525,18 +525,11 @@ label {
 .form-container input::placeholder,
 .form-container textarea::placeholder {
   color: gray;
+  font-family: "SignWood Reg";
 }
 
 #rating {
   width: -webkit-fill-available;
-}
-
-#grand-finalle {
-  box-shadow: 0em 0em 2em 0em #f4f4f4;
-  background: wheat;
-  color: black;
-  border-radius: 0.5em;
-  padding: 0.5em;
 }
 
 .contact-links-footer {
@@ -547,7 +540,7 @@ label {
 }
 
 .logo:active,.logo-icon:active {
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   border-radius: 1em;
   padding: 0.3em;
 }
@@ -564,7 +557,7 @@ label {
 }
 
 .github-full-logo-white:active,.discord-full-logo-white:active,.github-full-logo-white:hover,.discord-full-logo-white:hover,.linkedin-logo:hover,.linkedin-logo:active {
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   border-radius: 5em;
 }
 
@@ -596,7 +589,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 }
 
 .left-button:hover,.right-button:hover {
-  background: #ffcd05;
+  background: var(--lighter-red-color);
   border-radius: 10em;
 }
 
@@ -607,7 +600,6 @@ body > main > div.navbar-mobile > form > div > button > img {
   margin-top: 7em;
   background: #00000042;
   border-radius: 0.4em;
-  font-family: cursive;
   padding-left: 0.5em;
   padding-right: 0.5em;
   color: black;
@@ -621,12 +613,12 @@ body > main > div.navbar-mobile > form > div > button > img {
 .search-results-name {
   margin-bottom: 3em;
   border-radius: 3em;
-  color: #ffffff;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   text-align: center;
   line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;
@@ -643,7 +635,6 @@ body > main > div.navbar-mobile > form > div > button > img {
   padding: 1em;
   background: white;
   font-size: 1.5em;
-  font-weight: 700;
   border-radius: 5em;
 }
 
@@ -675,7 +666,7 @@ body > main > div.navbar-mobile > form > div > button > img {
 
 .top-navbar-desktop:hover {
   color: white;
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   border-radius: 100em;
 }
 
@@ -698,13 +689,12 @@ body > main > div.navbar-mobile > form > div > button > img {
   display: block;
   background: black;
   border-radius: 100em;
-  font-weight: bold;
   width: 13vw;
   text-align: center;
 }
 
 .dropdown-content a:hover {
-  background-color: #ff0000;
+  background-color: var(--rating--color);
   border-radius: 3em;
   color: white;
 }
@@ -785,10 +775,6 @@ body > footer > div > div.group-input-btn-search-container {
   body > footer > div > div.group-input-btn-search-container > form > button > img {
     transform: translateY(0.4em);
   }
-
-  .white-search-bar {
-    transform: translateY(-0.1em);
-  }
       
   .fav-movies-container {
     display: flex;
@@ -808,7 +794,7 @@ body > footer > div > div.group-input-btn-search-container {
   }
 
   .github-full-logo-white,.discord-full-logo-white,.linkedin-logo {
-    background: #ffffff24;
+    background: var(--background-grey-color-btns);
     border-radius: 3em;
   }
 
@@ -838,7 +824,6 @@ body > footer > div > div.group-input-btn-search-container {
   .top-navbar-desktop:active {
     color: black;
     background: white;
-    font-weight: bold;
   }
   
   .navbar-mobile {
@@ -850,12 +835,12 @@ body > footer > div > div.group-input-btn-search-container {
   }
 
   .logo-icon:hover {
-    background: #ff0000bf;
+    background: var(--lighter-red-color);
     border-radius: 3em;
   }
 
   .logo-icon:active {
-    background: #ff0000bf;
+    background: var(--lighter-red-color);
   }
 
   .navbar-desktop { 
@@ -929,12 +914,11 @@ body > footer > div > div.group-input-btn-search-container {
     width: 25vw;
     margin-bottom: 6em;
     font-size: 1em;
-    font-weight: 800;
     cursor: pointer;
   }
 
   .return-home-btn:active,.return-home-btn:hover {
-    background: #ff0000bf;
+    background: var(--lighter-red-color);
   }
 
 .top-navbar {
@@ -953,7 +937,6 @@ body > footer > div > div.group-input-btn-search-container {
   margin-top: 2em;
   width: 35vw;
   text-align: center;
-  font-weight: 900;
   position: fixed;
   z-index: 2;
 }
@@ -961,7 +944,6 @@ body > footer > div > div.group-input-btn-search-container {
 .closebtn {
   margin-left: 15px;
   color: white;
-  font-weight: bold;
   float: right;
   font-size: 22px;
   line-height: 20px;
@@ -982,12 +964,12 @@ footer {
 .search-results-name {
   margin-bottom: 3em;
   border-radius: 3em;
-  color: #ffffff;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ff0000bf;
+  background: var(--lighter-red-color);
   text-align: center;
   line-height: 3em;
   box-shadow: 0em 0em 2.5em -1em;

@@ -2,7 +2,7 @@ import { getData } from "../api-functions.js";
 import { accountId } from "../env.js";
 import { favMoviesContainer, alertMessageContainer } from "../global/domEls.js";
 import { removeFavMovie } from "../post-api-calls/post-remove-fav-movie.js";
-import { createFavMovieCard } from "../DOM/create-favorite-movie-card.js";
+import { createFavMovieCard } from "../DOM/favorite-movie-card-dom.js";
 
 const displayFavoriteMoviesList = () => {
   // Fetch the favorite movies for the account

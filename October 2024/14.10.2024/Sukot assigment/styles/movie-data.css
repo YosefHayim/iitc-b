@@ -1,43 +1,50 @@
+.rating-container,.single-img-container,.single-movie-card,.container-title-movie-data,.img-name-container,.single-movie-img {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 0.5em;
+}
 
-.single-movie-card {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin-bottom: 1em;
-text-align: center;
+.navbar-mobile {
+  width: 100%;
+  position: unset;
 }
 
 .cast-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 5em;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 1em;
 }
 
-.title-single-movie {
-  font-size: 2.5em;
-  margin-bottom: 1em;
-  color: #ffffff;
-  justify-content: center;
-  align-items: center;
-  background: #ff0000bf;
-  text-align: center;
-  border-style: dashed;
-  width: 1000vw;
-  padding: 0.2em;
+.movie-link {
+  background: none;
+  border: none;
+  margin-bottom: 2em;
 }
 
-
-.actor-name {
-  background: #ff0000bf;
-  color: white;
-  border-style: dashed;
+.movie-link a {
+  background: red;
+  font-size: 2em;
   padding: 0.5em;
-  width: 1000vw;
-  font-weight: 900;
-  font-size: 1.4em;
+  font-weight: bold;
+  font-family: 'Roboto';
+  border-radius: 0.1em;
+  width: 100vw;
+  display: block;
+}
+
+.movie-link a:hover,.button-trailer a:hover {
+  background-color: white;
+  color: black;
 }
 
 .movie-details {
@@ -45,146 +52,118 @@ text-align: center;
   color: black;
   border-style: dashed;
   padding: 1em;
-  width: 81vw;
-  margin-bottom: 3em;
-  margin-top: -5em;
-}
-
-.play-button-btn-single-movie {
-  position: relative;
-  top: -18em;
+  font-family: 'Roboto';
+  line-height: 1.5em;
+  margin-bottom: 2em;
+  width: 100%;
 }
 
 .rating-container {
-  display: flex;
+  margin-top: 1em;
   flex-direction: row;
-  margin-top: 0.5em;
-}
-
-.img-name-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-}
-.single-movie-img,.actor-img {
-  width: 50vw;
-  border-radius: 1em;
-}
-
-.single-img-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6em;
-}
-
-.play-button-img {
-  position: relative;
-  height: 5em;
-  border-radius: 5em;
-}
-
-.movie-link {
-  border: none;
-  padding: 0.2em;
-  border-radius: 0.5em;
-  background-color: #ff0000bf;
-  cursor: pointer;
-  width: 1000vw;
-  height: 4em;
+  width: 50%;
   margin-bottom: 2em;
-  margin-top: 3em;
-  font-family: 'Signwood Reg';
 }
 
-.movie-link:hover {
-  background-color: white;
+.single-movie-img,.actor-img {
+  width: 10em;
+  border-radius: 0.5em;
 }
 
-.website-link:hover {
+.actor-name {
   color: black;
+  background: white;
+  padding: 0.5em;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.1em;
 }
 
-.website-link {
+.title-single-movie {
   color: white;
-  font-size: 2.5em;
-  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--lighter-red-color);
+  text-align: center;
+  box-shadow: 0em 0em 2.5em -1em;
+  border-style: dashed;
+  font-size: 2em;
+  width: 100vw;
+  color: var(--rating--color);
+}
+
+.button-trailer {
+  border: none;
+  background: none;
+  border-radius: 0.1em;
+}
+
+.link-trailer {
+  text-decoration: none;
+  color: white;
+  width: auto;
+  background: red;
+  font-size: 2em;
+  padding: 0.5em;
+  font-weight: bold;
+  font-family: 'Roboto';
+  border-radius: 0.1em;
+  display: block;
+}
+
+.watch-trailer-movie {
+  background: red;
+  font-size: 2em;
+  padding: 0.5em;
+  font-weight: bold;
+  font-family: 'Roboto';
+  border-radius: 0.1em;
+  width: 100vw;
+  display: block;
 }
 
 .summary-title {
-  position: relative;
-  top: -5em;
-  background: #ff0000bf;
-  border-style: dashed;
-  width: 1000vw;
-  text-align: center;
-  padding: 1em;
+  margin-top: 2em;
+  font-family: 'Signwood Reg';
+  color: white;
+  background: red;
+  border-radius: 0.2em;
+  padding: 0.4em;
+  width: 100vw;
+  font-style: italic;
+  letter-spacing: 0.2em;
 }
 
-.actor-img {
-  box-shadow: 0em 0em 2em 0.05em;
+.play-button-btn-single-movie {
+  transform: translateY(-18em);
+  box-shadow: 0em 0em 3em 0.01em var(--rating--color);
+  border-radius: 3em;
 }
-
-.play-button-icon,.play-button-img {
-  cursor: pointer;
-}
-
-.actor-img {
-  animation: flowUpDown 2s ease-in-out infinite alternate;
-}
-
-@keyframes flowUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-1vh); 
-  }
-}
-
 
 .single-movie-img {
-  animation: trophyShadow 5s ease-in-out infinite alternate;
-  box-shadow: 0 0 15px gold; /* Initial shadow */
+  width: 15em;
+  box-shadow: 0 0 0.1em 0.1em var(--rating--color);
+  animation: glow 3s ease-in-out infinite;
 }
 
-@keyframes trophyShadow {
+
+@keyframes glow {
   0% {
-    box-shadow: 0 0 10px #cda434, 0 0 20px #f5d442, 0 0 30px #ffdf00;
+    box-shadow: 0em 0em 2em 0.01em var(--rating--color);
   }
   50% {
-    box-shadow: 0 0 20px #ffdd44, 0 0 30px #f2a400, 0 0 40px #ffd700;
+    box-shadow: 0em 0em 3em 0.5em var(--rating--color);
   }
   100% {
-    box-shadow: 0 0 10px #cda434, 0 0 20px #f5d442, 0 0 30px #ffdf00;
+    box-shadow: 0em 0em 2em 0.01em var(--rating--color);
   }
 }
 
 @media screen and (min-width:1024px) {
-  
-  .single-movie-img {
-    width: 15vw;
-  }
 
-  .actor-img {
-    width: 15vw;
-  }
-
-  .movie-details {
-    width: 100vw;
-  }
-
-  .movie-link {
-    width: 38vw;
-  }
-
-  .actor-name {
-    width: 20vw;
-    border-radius: 0.4em;
-  }
   .cast-container {
     flex-direction: row;
   }

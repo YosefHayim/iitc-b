@@ -1,4 +1,4 @@
-import {apiToken} from "./env.js"
+import { apiToken } from "./env.js";
 
 const getData = async (url, cb) => {
   const get = {
@@ -11,12 +11,20 @@ const getData = async (url, cb) => {
 
   try {
     const response = await fetch(url, get);
+    
+    if (!response.ok) {
+      cb(null, response);
+      return;
+    }
+    
     const data = await response.json();
-    cb(data);
+    cb(data, response);  
   } catch (err) {
     console.error(err);
+    cb(null);
   }
 };
+
 
 const postData = async (url, cb, favMovie) => {
   const post = {
@@ -31,14 +39,18 @@ const postData = async (url, cb, favMovie) => {
 
   try {
     const response = await fetch(url, post);
-    if (!response.ok) throw new Error(`Error: ${response.status} - ${response.statusText}`);
+
+    if (!response.ok) {
+      cb(null, response); 
+      return;
+    }
+
     const data = await response.json();
-    cb(data);
+    cb(data, response); 
   } catch (err) {
     console.error('Failed to post favorite movie:', err);
+    cb(null, null); 
   }
 };
 
-export {
-  getData,postData
-}
+export {getData,postData}

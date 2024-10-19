@@ -16,6 +16,7 @@ import { formAnswer } from "./dom/form-data.js";
 loaderManipulation()
 burgerIconActivate()
 resetPlaceholder();
+isIdOrisName()
 
 
 if (window.location.pathname.endsWith("index.html")) {
@@ -24,7 +25,6 @@ if (window.location.pathname.endsWith("index.html")) {
   topRatedMovies();
   upComingMovies();
   redirectPages()
-  isIdOrisName()
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {

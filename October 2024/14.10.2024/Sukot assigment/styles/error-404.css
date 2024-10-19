@@ -6,6 +6,7 @@
   margin-top: 1em;
   font-weight: bold;
   font-family: 'Roboto';
+  cursor: pointer;
 }
 
 .sorry-message {

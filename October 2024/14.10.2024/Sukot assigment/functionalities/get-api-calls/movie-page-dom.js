@@ -7,13 +7,10 @@ const presentSingleMovieById = () => {
   const urlParams = new URLSearchParams(window.location.search);
 
   const movieId = urlParams.get('movieId');
-  console.log(movieId);
 
-  const youtubeVideoId = urlParams.get('videoUrl')
-  console.log(youtubeVideoId);
+  const videoUrl = urlParams.get('videoUrl')
+  console.log(videoUrl);
   
-
-
 
   if (!movieId) {
     window.location.href = 'error404.html';
@@ -21,48 +18,44 @@ const presentSingleMovieById = () => {
   }
 
   // Fetch movie details
-  getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, (singleMovieD) => {
-    if (!singleMovieD) {
+  getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, (singleMovieData) => {
+
+    if (!singleMovieData) {
       window.location.href = 'error404.html';
       return;
     }
-    console.log(singleMovieD);
 
     // Display movie details
     singleMovieCard.innerHTML = `
     <div class="single-img-container">
     
-    <h1 class="title-single-movie">${singleMovieD.original_title}</h1>
-    <img src="https://image.tmdb.org/t/p/original/${singleMovieD.poster_path}" alt="movie-img" class="single-movie-img">
+    <h1 class="title-single-movie">${singleMovieData.original_title}</h1>
 
     <div class="rating-container">
-    <img src="${getStarRatingImage(singleMovieD.vote_average)}" alt="rating-img" class="rating-img">
-    <h2 class="rating-number-txt">${singleMovieD.vote_average.toFixed(1)}</h2>
+    <img src="${getStarRatingImage(singleMovieData.vote_average)}" alt="rating-img" class="rating-img">
+    <h2 class="rating-number-txt">${singleMovieData.vote_average.toFixed(1)}</h2>
     </div>
 
-    <a class="play-button-btn-single-movie">
-    <img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img">
-    </a>
-    
+    <img src="https://image.tmdb.org/t/p/original/${singleMovieData.poster_path}" alt="movie-img" class="single-movie-img">
+
     <h3 class="summary-title">Summary</h3>
-    <p class="movie-details">${singleMovieD.overview}</p>
-    <div class="video-container">
-  <iframe src="https://www.youtube.com/embed/${youtubeVideoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+    <p class="movie-details">${singleMovieData.overview}</p>
     <button class="movie-link">
-    <a href="${singleMovieD.homepage}" target="_blank" class="website-link">Visit Homepage</a>
+    <a href="${singleMovieData.homepage}" target="_blank" class="website-link">Visit Homepage</a>
     </button>
+    <div class="video-container">
+    <button class="button-trailer"><a href="https://www.youtube.com/watch?v=${videoUrl}" class="link-trailer">Watch Trailer</a></button>
+    </div>
       </div>
     `;
 
     getData(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`, (creditsData) => {
+
       if (!creditsData || !creditsData.cast) {
         window.location.href = 'error404.html';
         return;
       }
-      
-      console.log(creditsData);
-      
+            
       const castContainer = document.createElement('div');
       castContainer.classList.add('cast-container');
       singleMovieCard.appendChild(castContainer);
@@ -70,12 +63,15 @@ const presentSingleMovieById = () => {
       creditsData.cast.slice(0, 10).forEach(actor => {
         const actorDiv = document.createElement('div');
         actorDiv.classList.add('actor');
+        
         actorDiv.innerHTML = `
           <div class="img-name-container">
             <img src="https://image.tmdb.org/t/p/original/${actor.profile_path}" alt="${actor.name}" class="actor-img">
-            <p class="actor-name">${actor.name}</p>
+        
+            <p class="actor-name">${actor.name.split(' ').length >= 4 ? actor.name.split(' ').slice(0, 2).join(' ') : actor.name.split(' ').slice(0, 2).join(' ')}</p>
           </div>
         `;
+
         castContainer.appendChild(actorDiv);
       });
     });

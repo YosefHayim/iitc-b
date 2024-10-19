@@ -215,10 +215,11 @@
   }
 
   .title {
+    font-style: italic;
     text-align: center;
-    font-size: 0.9em;
-    color: snow;
-    width: max-content;
+    font-size: 1.1em;
+    color: white;
+    width: 100%;
   }
 
   .img-container {
@@ -350,8 +351,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: max-content;
     gap: 3em;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   .template-title-container,.search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-title-container,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
@@ -518,8 +520,7 @@
     display: none;
   }
   .search-results-name {
-    margin-bottom: 3em;
-    border-radius: 3em;
+    margin-bottom: 1em;
     color: white;
     display: flex;
     flex-direction: column;
@@ -532,8 +533,9 @@
     border-style: dashed;
     margin-top: 1em;
     font-size: 1.5em;
-    width: 100%;
+    width: 75vw;
     display: none;
+    flex-wrap: wrap;
   }
   
 
@@ -591,7 +593,7 @@
     background: none;
     left: -13em;
     top: 2.5em;
-    width: max-content;
+    width: 100%;
   }
 
   .popular-week-container {
@@ -629,7 +631,7 @@
 
     .top-navbar-desktop {
       padding: 1em;
-      width: max-content;
+      width: 100%;
       display: block;
     }
 
@@ -637,7 +639,7 @@
       text-align: center;
       font-size: 1.1em;
       color: snow;
-      width: max-content;
+      width: 100%;
     }
 
     .currently-movies-in-theatres-container-title {
@@ -782,23 +784,13 @@
   }
 
   .search-results-name {
-    margin-bottom: 3em;
-    border-radius: 3em;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
     background: var(--lighter-red-color);
-    text-align: center;
-    line-height: 3em;
     box-shadow: 0em 0em 2.5em -1em;
     font-size: 0.6em;
-    border-style: dashed;
-    margin-top: 1em;
     font-size: 2em;
-    width: 100%;
     display: none;
+    padding: 0.5em;
   }
 
   .top-navbar-mobile {

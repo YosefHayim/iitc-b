@@ -4,10 +4,6 @@ import {searchMovieByName} from "../get-api-calls/get-movie-by-name.js"
 
 
 const isIdOrisName = () => {
-  if (!window.location.href.includes('index.html')) {
-    window.location.href = 'index.html';
-    return;
-  }
 
   formData.forEach(form => {
     form.addEventListener('submit', (ev) => {
@@ -18,6 +14,7 @@ const isIdOrisName = () => {
       if (/^[a-zA-Z]+$/.test(inputValue)) {
         searchMovieByName(inputValue)
         return
+        
       } else if (/^[0-9]+$/.test(inputValue)) {
         searchMovieById(inputValue)
         return

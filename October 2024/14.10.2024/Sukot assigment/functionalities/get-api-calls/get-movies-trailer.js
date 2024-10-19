@@ -1,5 +1,5 @@
 import { getData } from "../api-functions.js";
-import { alertMessageContainer } from "../dom/domEls.js";
+import { alertMessageContainer } from "../global/domEls.js";
 import { apiKey } from "../env.js";
 
 const getMoviesTrailers = (movieId, movieCardDiv) => {

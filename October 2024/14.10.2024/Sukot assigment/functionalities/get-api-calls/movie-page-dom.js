@@ -1,7 +1,7 @@
 import { getData } from "../api-functions.js";
 import { apiKey } from "../env.js";
 import { getStarRatingImage } from "./get-rating-movie.js";
-import { singleMovieCard } from "../dom/domEls.js";
+import { singleMovieCard } from "../global/domEls.js";
 
 const presentSingleMovieById = () => {
   const urlParams = new URLSearchParams(window.location.search);

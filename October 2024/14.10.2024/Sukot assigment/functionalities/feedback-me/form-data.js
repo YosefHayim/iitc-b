@@ -1,4 +1,4 @@
-import { feedbackFormPage } from "../dom/domEls.js";
+import { feedbackFormPage } from "../global/domEls.js";
 
 const formAnswer = () => {
   feedbackFormPage.addEventListener('submit', (event) => {

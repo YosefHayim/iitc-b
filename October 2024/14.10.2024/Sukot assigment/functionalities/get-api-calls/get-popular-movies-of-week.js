@@ -1,6 +1,6 @@
 import { apiKey } from "../env.js";
 import { getData } from "../api-functions.js";
-import { popularOfTheWeekDiv,movieCardsDivs, popWeekMoviePage } from "../dom/domEls.js";
+import { popularOfTheWeekDiv,movieCardsDivs, popWeekMoviePage } from "../global/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 
 const popularMoviesOfWeek = () => {

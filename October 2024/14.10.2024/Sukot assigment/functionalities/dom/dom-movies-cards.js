@@ -8,7 +8,7 @@ import { getStarRatingImage } from "../get-api-calls/get-rating-movie.js";
 import { addfavoriteMovieToList } from "../post-api-calls/post-movies-to-favorite-list.js";
 
 // Alert the user if the action was successful
-import { alertMessageContainer } from "./domEls.js";
+import { alertMessageContainer } from "../global/domEls.js";
 
 // Create each movie card
 const createMovieCard = (movie) => {

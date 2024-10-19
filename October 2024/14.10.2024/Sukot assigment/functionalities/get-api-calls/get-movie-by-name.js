@@ -1,4 +1,4 @@
-import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSection, feedbackFormPage } from "../dom/domEls.js";
+import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSection, feedbackFormPage } from "../global/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 import { getData } from "../api-functions.js";
 

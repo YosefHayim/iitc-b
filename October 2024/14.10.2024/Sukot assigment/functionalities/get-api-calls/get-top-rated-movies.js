@@ -1,6 +1,6 @@
 import { getData } from "../api-functions.js";
 import { apiKey } from "../env.js";
-import { topRatedMoviesContainer, topTrendingPage } from "../dom/domEls.js";
+import { topRatedMoviesContainer, topTrendingPage } from "../global/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 
 const topRatedMovies = (pageNumber = 1) => {

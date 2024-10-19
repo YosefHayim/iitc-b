@@ -5,7 +5,7 @@ import {
   mainDiv, 
   aboutUsSection, 
   feedbackFormPage 
-} from "../dom/domEls.js";
+} from "../global/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 import { apiKey } from "../env.js";
 import { getData } from "../api-functions.js";

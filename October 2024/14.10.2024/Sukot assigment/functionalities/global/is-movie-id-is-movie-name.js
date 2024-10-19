@@ -1,4 +1,4 @@
-import { formData } from "../dom/domEls.js";
+import { formData } from "./domEls.js";
 import { searchMovieById } from "../get-api-calls/get-movie-by-id.js";
 import { searchMovieByName } from "../get-api-calls/get-movie-by-name.js";
 

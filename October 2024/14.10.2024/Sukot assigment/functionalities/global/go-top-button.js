@@ -1,4 +1,4 @@
-import { goBackTopBtn } from "../dom/domEls.js";
+import { goBackTopBtn } from "./domEls.js";
 
 const backTopClick = () => {
 

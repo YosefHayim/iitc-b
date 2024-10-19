@@ -1,6 +1,6 @@
 import { getData } from "../api-functions.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
-import { upComingMoviesContainer, upComingMoviePage } from "../dom/domEls.js";
+import { upComingMoviesContainer, upComingMoviePage } from "../global/domEls.js";
 
 const upComingMovies = (pageNumber = 1) => {
   upComingMoviesContainer.innerHTML = "";

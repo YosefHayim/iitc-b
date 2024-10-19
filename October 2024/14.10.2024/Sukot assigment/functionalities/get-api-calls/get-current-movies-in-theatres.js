@@ -1,5 +1,5 @@
 import { getData } from "../api-functions.js";
-import { theatresContainer, currentTheaterPage } from "../dom/domEls.js";
+import { theatresContainer, currentTheaterPage } from "../global/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 
 const currentlyInTheaters = (pageNumber = 1) => {

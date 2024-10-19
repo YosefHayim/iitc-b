@@ -7,6 +7,8 @@ const topRatedMovies = (pageNumber = 1) => {
   topRatedMoviesContainer.innerHTML = "";
 
   getData(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${pageNumber}&api_key=${apiKey}`, (data) => {
+
+    console.log(data);
     
     if (data && data.results) {
       data.results.forEach((movie) => {

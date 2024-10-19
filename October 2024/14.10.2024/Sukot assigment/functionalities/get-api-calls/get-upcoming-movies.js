@@ -5,7 +5,9 @@ import { upComingMoviesContainer, upComingMoviePage } from "../dom/domEls.js";
 const upComingMovies = (pageNumber = 1) => {
   upComingMoviesContainer.innerHTML = "";
 
-  getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`, (data,response) => {
+  getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`, (data) => {
+
+    console.log(data);
 
     if (data && data.results) {
       data.results.forEach((movie) => {

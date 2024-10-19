@@ -8,6 +8,8 @@ const popularMovies = (pageNumber = 1) => {
 
   getData(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${pageNumber}&api_key=${apiKey}`, (data) => {
 
+    console.log(data);
+
     if (data && data.results) {
       data.results.forEach((movie) => {
         const movieCard = createMovieCard(movie);

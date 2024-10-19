@@ -9,6 +9,8 @@ const displayFavoriteMoviesList = () => {
   getData(
     `https://api.themoviedb.org/3/account/${accountId}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`,(data) => {
       
+      console.log(data);
+    
       // Create and append a movie card for each favorite movie
       data.results.forEach((movie) => {
         const movieCard = createFavMovieCard(movie);

@@ -5,6 +5,8 @@ import { createMovieCard } from "../dom/dom-movies-cards.js";
 const currentlyInTheaters = (pageNumber = 1) => {
   // Fetch the data from the API for the current page
   getData(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${pageNumber}`,(data) => {
+
+    console.log(data);
     
       // Check if we have valid data and results
       if (data && data.results) {

@@ -10,7 +10,7 @@ import { redirectPages } from "./global/homepage-pagination-buttons.js";
 import { popularMoviesOfDay } from "./get-api-calls/get-popular-movies-of-day.js";
 import { popularMoviesOfWeek } from "./get-api-calls/get-popular-movies-of-week.js";
 import { loaderManipulation } from "./global/loader-dom.js";
-import { presentSingleMovieById } from "../functionalities/DOM/movie-page-dom.js";
+import { presentSingleMovieById } from "./get-api-calls/get-single-movie-details.js";
 import { formAnswer } from "./feedback-me/form-data.js";
 import { backTopClick } from "./global/go-top-button.js";
 

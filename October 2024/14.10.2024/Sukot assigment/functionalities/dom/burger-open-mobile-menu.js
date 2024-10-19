@@ -1,28 +1,23 @@
-// Importing from the dom folder these elements to control them.
-import {burgerIcon, overlayDiv , mobileMenu} from "./domEls.js";
+// Import elements to control from the DOM
+import { burgerIcon, overlayDiv, mobileMenu } from "./domEls.js";
 
 const burgerIconActivate = () => {
-  // If clicking change the burger icon to a X icon
+  // Toggle burger icon and menu on click
   burgerIcon.addEventListener('click', (ev) => {
-    // Preventing from re-rendering the current browser
-    ev.preventDefault();
-    
-    // if  we preform a click and the source img of burgerIcon has already X icon and we change it to white burger
+    ev.preventDefault();  // Prevent page refresh
+
+    // If the burger icon is currently an "X", change it back to the burger icon
     if (burgerIcon.src.includes("white-remove-icon.svg")) {
       burgerIcon.src = "../images/mobile-navbar/white-burger-icon.svg";
-      
-      // We make the overlay and the mobileMenu navbar unseen.
       overlayDiv.style.display = 'none';
       mobileMenu.style.display = 'none';
-
-      // Else the we preform a click that none of the conditions were met, we are changing it to a X icon and displaying the overlay and the mobileMenu
     } else {
+      // Otherwise, change it to the "X" icon and show the overlay and menu
       burgerIcon.src = "../images/user-activity/white-remove-icon.svg";
-      
       overlayDiv.style.display = 'block';
       mobileMenu.style.display = 'flex';
     }
   });
 }
 
-export {burgerIconActivate};
+export { burgerIconActivate };

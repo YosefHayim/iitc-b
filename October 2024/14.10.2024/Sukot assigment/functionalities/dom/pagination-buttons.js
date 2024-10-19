@@ -9,7 +9,7 @@ import { popularMovies } from "../get-api-calls/get-popular-movies.js";
 import { topRatedMovies } from "../get-api-calls/get-top-rated-movies.js";
 import { upComingMovies } from "../get-api-calls/get-upcoming-movies.js";
 
-// Mapping each container to its respective function
+// Map containers to their respective functions
 const functionMap = {
   'currently-movies-in-theatres-container-title': currentlyInTheaters,
   'upcoming-movies-container-title': upComingMovies,
@@ -18,10 +18,9 @@ const functionMap = {
   'popular-of-day-container-title': popularMoviesOfDay,
   'popular-movies-of-week-container-title': popularMoviesOfWeek,
   'favorite-movies-container-title': displayFavoriteMoviesList,
-  'search-results-container-title' : searchMovieByName ,
 };
 
-// Object to store page number for each category
+// Store page numbers for each category
 const pageNumbers = {
   'currently-movies-in-theatres-container-title': 1,
   'upcoming-movies-container-title': 1,
@@ -30,7 +29,7 @@ const pageNumbers = {
   'popular-of-day-container-title': 1,
   'popular-movies-of-week-container-title': 1,
   'favorite-movies-container-title': 1,
-  'search-results-container-title':1,
+  'search-results-container-title': 1,
 };
 
 const redirectPages = () => {
@@ -39,26 +38,19 @@ const redirectPages = () => {
       event.preventDefault();
 
       // Find which function to call based on the container's class
-      const containerClass = Array.from(container.classList).find(cls => functionMap[cls]);
+      const containerClass = Object.keys(functionMap).find(cls => container.classList.contains(cls));
       let targetFunction = functionMap[containerClass];
 
-      // Special case for search results
-      if (containerClass === 'search-results-container-title') {
-        const searchTerm = container.dataset.searchTerm;
-        targetFunction = isNaN(searchTerm) ? searchMovieByName : searchMovieById;
-      }
-
-      // Only proceed if a valid function was found
+      // Call the target function if it exists
       if (targetFunction) {
-        // Update page number based on button click
+        // Adjust page number based on button click
         if (event.target.closest('.right-button')) {
           pageNumbers[containerClass]++;
-          
         } else if (event.target.closest('.left-button')) {
-          pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1); // Prevents going below 1
+          pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1);
         }
 
-        // Call the target function with the updated page number
+        // Execute the function with the updated page number
         targetFunction(pageNumbers[containerClass]);
       } else {
         console.error("No matching function for this container.");

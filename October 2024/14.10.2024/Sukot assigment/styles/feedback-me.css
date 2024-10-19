@@ -73,7 +73,7 @@ body > footer {
   width: 1.5em;
   display: flex;
   position: relative;
-  left: -11em;
+  left: -12em;
 }
 
 label {
@@ -90,7 +90,7 @@ label {
 }
 
 input::placeholder,input,textarea {
-  font-family: "SignWood Reg";
+  font-family: "Roboto";
 }
 
 #rating {

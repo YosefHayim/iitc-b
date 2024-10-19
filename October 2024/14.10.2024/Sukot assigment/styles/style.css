@@ -670,6 +670,20 @@
     position: relative;
   }
 
+  .get-back-to-top-btn {
+    position: fixed;
+    bottom: 0.5em;
+    background-color: black;
+    z-index: 1;
+    padding: 1em;
+    font-size: 1em;
+    font-family: 'Signwood Reg';
+    color: white;
+    border-radius: 0.4em;
+    width: 33%;
+    left: 0.5em;
+  }
+
 
   /* Desktop design 1024px */
   @media screen and (min-width:1024px) {
@@ -783,6 +797,8 @@
       justify-content: center;
       align-items: center;
       gap: 2em;
+      width: 100%;
+      flex-wrap: wrap;
     }
 
     .links-container-footer {
@@ -798,7 +814,6 @@
       flex-direction: row;
       gap: 2em;
       flex-wrap: wrap;
-      width: 100%;
     }
 
     .error-container {

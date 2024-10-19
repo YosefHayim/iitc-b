@@ -42,9 +42,11 @@ const sorryMessage = document.querySelector('.sorry-message');
 const mainDiv = document.querySelector('main');
 const navbarDesktop = document.querySelector('.navbar-desktop');
 const aboutUsSection = document.querySelector('.about-us-section');
+const goBackTopBtn = document.querySelector('.get-back-to-top-btn')
 
 // Exported elements
 export {
+  goBackTopBtn,
   alertMessageContainer,
   popWeekMoviePage,
   templateTitle,

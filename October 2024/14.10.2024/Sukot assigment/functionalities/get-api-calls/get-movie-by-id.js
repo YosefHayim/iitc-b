@@ -69,6 +69,7 @@ const searchMovieById = (inputValue) => {
     }
 
     // Clear the movie cards container before appending new movie cards
+    searchResultTitle.style.display = `flex`
     searchResultContainer.innerHTML = '';
 
     // Append the movie card to the search result container

@@ -2,8 +2,6 @@ import { getData } from "../api-functions.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 import { upComingMoviesContainer, upComingMoviePage } from "../dom/domEls.js";
 
-let countPage = 1;
-
 const upComingMovies = (pageNumber = 1) => {
   upComingMoviesContainer.innerHTML = "";
 

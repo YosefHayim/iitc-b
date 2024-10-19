@@ -2,8 +2,6 @@ import { getData } from "../api-functions.js";
 import {theatresContainer,currentTheaterPage} from "../dom/domEls.js"
 import {createMovieCard} from "../dom/dom-movies-cards.js"
 
-let pageNumber;
-
 const currentlyInTheaters = (pageNumber = 1) => {
   theatresContainer.innerHTML = "";
 

@@ -164,8 +164,11 @@
 
 @media screen and (min-width:1024px) {
 
-  .cast-container {
-    flex-direction: row;
+  .single-movie-img,.actor-img {
+    width: 20em;
   }
-  
+
+  .actor-name {
+    font-size: 1.5em;
+  }
 }

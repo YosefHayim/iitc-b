@@ -68,7 +68,7 @@ const presentSingleMovieById = () => {
           <div class="img-name-container">
             <img src="https://image.tmdb.org/t/p/original/${actor.profile_path}" alt="${actor.name}" class="actor-img">
         
-            <p class="actor-name">${actor.name.split(' ').length >= 4 ? actor.name.split(' ').slice(0, 2).join(' ') : actor.name.split(' ').slice(0, 2).join(' ')}</p>
+            <p class="actor-name">${actor.name.split(' ').length > 3 ? actor.name.split(' ').slice(0, 2).join(' ') : actor.name.split(' ').slice(0, 2).join(' ')}</p>
           </div>
         `;
 

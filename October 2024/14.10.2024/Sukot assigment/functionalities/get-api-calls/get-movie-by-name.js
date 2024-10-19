@@ -1,4 +1,4 @@
-import { movieCardsDivs, titlesContainers,domTitleTxt,searchResultContainer,searchResultTitle,footer } from "../dom/domEls.js"
+import { movieCardsDivs, titlesContainers,searchResultContainer,searchResultTitle } from "../dom/domEls.js"
 import {createMovieCard} from "../dom/dom-movies-cards.js"
 import { getData } from "../api-functions.js";
 

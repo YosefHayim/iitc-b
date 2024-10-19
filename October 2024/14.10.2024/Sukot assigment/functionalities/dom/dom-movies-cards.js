@@ -45,23 +45,11 @@ const createMovieCard = (movie) => {
     const heartButton = movieCardDiv.querySelector('.white-heart-trailer-btn');
     heartButton.addEventListener('click', (ev) => {
       ev.preventDefault();
+
       const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
       addfavoriteMovieToList(movieCardId);
-    
-      const imgContainer = ev.target.closest('.img-container');
-      const favoriteImgGif = document.createElement('img');
-      favoriteImgGif.src = "../images/user-activity/favorite-reaction.gif";
-      favoriteImgGif.alt = "favorite-effect-img";
-      favoriteImgGif.classList.add('favorite-effect-img');
-      
-      imgContainer.appendChiald(favoriteImgGif);
-      favoriteImgGif.style.display = "block";
-    
-      setTimeout(() => {
-        favoriteImgGif.style.display = "none";
-        imgContainer.removeChild(favoriteImgGif); 
-      }, 1000);
     });
+    
     const dataButton = movieCardDiv.querySelector('.white-data-btn')
     dataButton.addEventListener('click', (ev) => {
       ev.preventDefault();

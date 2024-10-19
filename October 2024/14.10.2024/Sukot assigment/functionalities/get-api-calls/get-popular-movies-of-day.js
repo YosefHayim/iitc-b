@@ -1,6 +1,6 @@
 import { apiKey } from "../env.js";
 import { getData } from "../api-functions.js";
-import { popularOfTheDayDiv, titlesContainers, domTitleTxt, movieCardsDivs, popDayMoviePage, templateTitle } from "../dom/domEls.js";
+import { popularOfTheDayDiv, titlesContainers,movieCardsDivs } from "../dom/domEls.js";
 import { createMovieCard } from "../dom/dom-movies-cards.js";
 
 const popularMoviesOfDay = (pageNumber = 1) => {

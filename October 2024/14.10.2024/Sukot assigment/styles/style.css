@@ -212,6 +212,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    
   }
 
   .title {
@@ -285,6 +286,11 @@
     transform: translate(0em, -7em);
   }
 
+  .white-data-img:active {
+    background-color: red;
+    transform: scale(1.3);
+  }
+
   .white-share-trailer-btn,.white-heart-trailer-btn,.play-button-btn,.remove-btn-icon,.white-data-btn {
     background: none;
     border: none;
@@ -309,8 +315,7 @@
   }
 
   .white-data-img:hover {
-    background-color: var(--lighter-red-color);
-    transform: scale(1.3);
+    background-color: var(--rating--color);
   }
 
   .white-share-img {
@@ -321,8 +326,12 @@
     transform: translate(5em, -7em);
   }
 
-  .white-heart-img:hover,.white-heart-img:active {
-    background: var(--lighter-red-color);
+  .white-heart-img:hover {
+    background: var(--rating--color);
+  }
+
+  .white-heart-img:active {
+    background-color: red;
     transform: scale(1.3);
   }
 
@@ -330,20 +339,24 @@
     transform: translate(-5em, -7em);
   }
 
-  .white-share-img:hover,.white-share-img:hover {
-    background: var(--lighter-red-color);
+  .white-share-img:hover {
+    background: var(--rating--color);
+  }
+
+  .white-share-img:active {
     transform: scale(1.3);
+    background: red;
   }
 
   .play-button-img:hover,.play-button-img:hover {
-    background: var(--lighter-red-color);
-    transform: scale(1.3);
+    background: var(--rating--color);
   }
 
   .play-button-img:active {
-    background: var(--lighter-red-color);
+    background: red;
     color: black;
     box-shadow: 0em 0em 10em 1em;
+    transform: scale(1.3);
   }
 
   .search-results-container {
@@ -457,6 +470,8 @@
   .logo:active,.logo-icon:active {
     background: var(--lighter-red-color);
     border-radius: 2em;
+    transform: scale(1.3);
+
   }
 
   .link-container {
@@ -591,7 +606,6 @@
     color: white;
     gap: 3em;
     background: none;
-    left: -13em;
     top: 2.5em;
     width: 100%;
   }
@@ -630,7 +644,8 @@
   @media screen and (min-width:1024px) {
 
     .top-navbar-desktop {
-      padding: 1em;
+      text-align: center;
+      padding: 0.85em;
       width: 100%;
       display: block;
     }
@@ -680,6 +695,7 @@
     .remove-btn-img:active,.remove-btn-img:hover {
       background: red;
       position: relative;
+      transform: scale(1.3);
     }
     
     .overlay {
@@ -698,6 +714,7 @@
     .top-navbar-desktop:active {
       color: black;
       background: white;
+      transform: scale(1.3);
     }
     
     .navbar-mobile {

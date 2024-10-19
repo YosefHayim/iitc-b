@@ -11,7 +11,6 @@ const displayFavoriteMoviesList = () => {
       favMoviesContainer.appendChild(movieCard);
     });
 
-    // Move the click event listener outside the loop
     favMoviesContainer.addEventListener('click', (ev) => {
       const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
       removeFavMovie(movieCardId);
@@ -19,7 +18,7 @@ const displayFavoriteMoviesList = () => {
       setTimeout(() => {
         alertMessageContainer.style.display = 'none';
         location.reload();
-      }, 1000);
+      }, 200);
     });
   });
 };

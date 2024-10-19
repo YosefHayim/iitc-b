@@ -1,5 +1,5 @@
-import { postData } from "../api-functions.js";
-import {accountId} from "../env.js"
+import { postData } from "../get-api-calls/api-functions.js";
+import {accountId} from "../global/env.js"
 
 
 const addfavoriteMovieToList = (movieCardId) => {

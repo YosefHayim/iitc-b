@@ -1,6 +1,6 @@
-import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSection, feedbackFormPage } from "../global/domEls.js";
+import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSection, feedbackFormPage } from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/dom-movies-cards.js";
-import { getData } from "../api-functions.js";
+import { getData } from "./api-functions.js";
 
 const searchMovieByName = (inputValue) => {
   // Fetch movie data based on the input value
@@ -8,9 +8,8 @@ const searchMovieByName = (inputValue) => {
 
     console.log(data);
 
-    // Redirect to error page if no data is received
     if (!data) {
-      window.location.href = `error404.html`;
+      redirectToErrorPage()
       return;
     }
 

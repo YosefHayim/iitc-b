@@ -1,4 +1,4 @@
-import { dropDownMenu } from "./domEls.js";
+import { dropDownMenu } from "../DOM/storage-elements-dom.js";
 import { popularMoviesOfDay } from "../get-api-calls/get-popular-movies-of-day.js";
 import { popularMoviesOfWeek } from "../get-api-calls/get-popular-movies-of-week.js";
 

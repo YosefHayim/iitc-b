@@ -1,6 +1,6 @@
-import { getData } from "../api-functions.js";
-import { apiKey } from "../env.js";
-import { topRatedMoviesContainer, topTrendingPage } from "../global/domEls.js";
+import { getData } from "./api-functions.js";
+import { apiKey } from "../global/env.js";
+import { topRatedMoviesContainer, topTrendingPage } from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/dom-movies-cards.js";
 
 const topRatedMovies = (pageNumber = 1) => {
@@ -11,7 +11,10 @@ const topRatedMovies = (pageNumber = 1) => {
 
     console.log(data);
     
-    if (data && data.results) {
+    if (!data) {
+      redirectToErrorPage()
+      return;
+    }
       data.results.forEach((movie) => {
         const movieCard = createMovieCard(movie);
         topRatedMoviesContainer.appendChild(movieCard);
@@ -20,10 +23,9 @@ const topRatedMovies = (pageNumber = 1) => {
       topTrendingPage.style.display = `block`;
       topTrendingPage.textContent = `Page: ${pageNumber} / ${data.total_pages - pageNumber}`
 
-    } else {
-      console.error("No data received from the API.");
     }
-  });
-};
+  )
+}
+
 
 export { topRatedMovies };

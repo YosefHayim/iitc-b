@@ -1,7 +1,7 @@
 import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js";
 import { createDomEl } from "./create-div-dom.js";
-import { clickDataBtn } from "./data-button-el.js";
-import { heartBtnClick } from "./heart-button-el.js";
+import { clickDataBtn } from "../Event-listeners/data-button-el.js";
+import { heartBtnClick } from "../Event-listeners/heart-button-el.js";
 import { skeletonMovieCard } from "./movie-card-skeleton-dom.js";
 
   // Create each movie card

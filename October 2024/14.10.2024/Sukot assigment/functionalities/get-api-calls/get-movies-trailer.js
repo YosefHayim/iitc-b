@@ -1,6 +1,6 @@
-import { getData } from "../api-functions.js";
-import { copyToClipboard } from "../DOM/copy-to-clipboard-el.js";
-import { apiKey } from "../env.js";
+import { getData } from "./api-functions.js";
+import { copyToClipboard } from "../Event-listeners/copy-to-clipboard-el.js";
+import { apiKey } from "../global/env.js";
 
 const getMoviesTrailers = (movieId, movieCardDiv) => {
   // Select elements within the movie card
@@ -10,6 +10,11 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
   
   // Fetch movie details along with videos (trailers)
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`,(data) => {
+
+    if (!data) {
+      redirectToErrorPage()
+      return;
+    }
 
     // Find the first video (trailer) key from the results
     const video = data.videos?.results?.find(vid => vid.key);

@@ -1,4 +1,4 @@
-import { singleMovieCard } from "../global/domEls.js";
+import { singleMovieCard } from "./storage-elements-dom.js";
 import { isImageNull } from "./is-image-null-dom.js";
 import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";

@@ -1,5 +1,5 @@
-import { getData } from "../api-functions.js";
-import { apiKey } from "../env.js";
+import { getData } from "./api-functions.js";
+import { apiKey } from "../global/env.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { creatingSingleMovieDataView } from "../DOM/single-movie-page-dom.js";
 

@@ -1,4 +1,4 @@
-import { apiToken } from "./env.js";
+import { apiToken } from "../global/env.js";
 
 const getData = async (url, cb) => {
   const get = {
@@ -24,7 +24,6 @@ const getData = async (url, cb) => {
     cb(null);
   }
 };
-
 
 const postData = async (url, cb, favMovie) => {
   const post = {

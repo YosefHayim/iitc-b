@@ -1,5 +1,5 @@
 import { addfavoriteMovieToList } from "../post-api-calls/post-movies-to-favorite-list.js";
-import { alertMessage } from "./alert-message-dom.js";
+import { alertMessage } from "../DOM/alert-message-dom.js";
 
 const heartBtnClick = (movieCardDiv) => {
   // Handle "favorite" button click

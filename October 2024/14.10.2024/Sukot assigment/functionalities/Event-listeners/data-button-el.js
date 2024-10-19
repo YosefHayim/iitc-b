@@ -1,4 +1,4 @@
-import { alertMessage } from "./alert-message-dom.js";
+import { alertMessage } from "../DOM/alert-message-dom.js";
 
 const clickDataBtn = (movieCardDiv) => {
   // Handle "data" button click

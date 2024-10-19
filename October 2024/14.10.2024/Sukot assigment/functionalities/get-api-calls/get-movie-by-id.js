@@ -5,10 +5,10 @@ import {
   mainDiv, 
   aboutUsSection, 
   feedbackFormPage 
-} from "../global/domEls.js";
+} from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/dom-movies-cards.js";
-import { apiKey } from "../env.js";
-import { getData } from "../api-functions.js";
+import { apiKey } from "../global/env.js";
+import { getData } from "./api-functions.js";
 
 const searchMovieById = (inputValue) => {
   // Fetch movie data based on the movie ID
@@ -16,8 +16,8 @@ const searchMovieById = (inputValue) => {
     
     console.log(data);
 
-    if (!data || data === null) {
-      window.location.href = `error404.html`; // Redirect to error page if movie is not found
+    if (!data) {
+      redirectToErrorPage()
       return;
     }
 

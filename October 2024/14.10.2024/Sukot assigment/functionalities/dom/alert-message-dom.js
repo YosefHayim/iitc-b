@@ -1,4 +1,4 @@
-import { alertMessageContainer } from "../global/domEls.js";
+import { alertMessageContainer } from "./storage-elements-dom.js";
 
 // Alerting the user dynamic based on the callback.
 const alertMessage = (message) => {

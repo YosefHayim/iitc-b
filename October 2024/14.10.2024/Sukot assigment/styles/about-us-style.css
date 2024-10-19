@@ -2,10 +2,6 @@ body {
   background-color: black;
 }
 
-body > footer {
-  position: relative;
-}
-
 .about-us-section {
   display: flex;
   flex-direction: column;
@@ -70,7 +66,4 @@ body > footer {
     border-style:dotted;
   }
 
-  body > footer {
-    position: absolute;
-  }
 }

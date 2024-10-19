@@ -3,10 +3,13 @@ import { getStarRatingImage } from "../get-api-calls/get-rating-movie.js";
 
 // Create a favorite movie card using the movie object
 const createFavMovieCard = (movie) => {
+  console.log(movie);
   // Create a div for the movie card and set its class and ID
   const movieCardDiv = document.createElement('div');
   movieCardDiv.classList.add('movie-card');
   movieCardDiv.id = `favMovie-${movie.id}`;
+
+  console.log(movie.poster_path)
 
   // Render the movie details using template literals
   movieCardDiv.innerHTML = `
@@ -20,7 +23,9 @@ const createFavMovieCard = (movie) => {
       <h2 class="rating-number-txt">${movie.vote_average.toFixed(1)}</h2>
     </div>
   `;
+  console.log(movieCardDiv);
   return movieCardDiv;
+  
 };
 
 export { createFavMovieCard };

@@ -1,12 +1,14 @@
 import { apiKey } from "../env.js";
 import { getData } from "../api-functions.js";
 import { popularOfTheWeekDiv,movieCardsDivs, popWeekMoviePage } from "../global/domEls.js";
-import { createMovieCard } from "../dom/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/dom-movies-cards.js";
 
 const popularMoviesOfWeek = () => {
 
   getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=1&api_key=${apiKey}`, (data) => {
-
+    
+    console.log(data);
+    
     if (data && data.results) {
       data.results.forEach((movie) => {
         const movieCard = createMovieCard(movie);

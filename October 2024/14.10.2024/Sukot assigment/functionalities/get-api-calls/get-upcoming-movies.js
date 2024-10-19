@@ -1,8 +1,9 @@
 import { getData } from "../api-functions.js";
-import { createMovieCard } from "../dom/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/dom-movies-cards.js";
 import { upComingMoviesContainer, upComingMoviePage } from "../global/domEls.js";
 
 const upComingMovies = (pageNumber = 1) => {
+    // For manipulating the dom and showing teh next data
   upComingMoviesContainer.innerHTML = "";
 
   getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`, (data) => {

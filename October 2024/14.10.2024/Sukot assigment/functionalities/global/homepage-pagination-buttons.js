@@ -1,4 +1,4 @@
-import { titlesContainers } from "../global/domEls.js";
+import { titlesContainers } from "./domEls.js";
 import { currentlyInTheaters } from "../get-api-calls/get-current-movies-in-theatres.js";
 import { popularMovies } from "../get-api-calls/get-popular-movies.js";
 import { topRatedMovies } from "../get-api-calls/get-top-rated-movies.js";

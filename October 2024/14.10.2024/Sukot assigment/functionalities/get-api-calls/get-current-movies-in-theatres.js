@@ -1,8 +1,11 @@
 import { getData } from "../api-functions.js";
 import { theatresContainer, currentTheaterPage } from "../global/domEls.js";
-import { createMovieCard } from "../dom/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/dom-movies-cards.js";
 
 const currentlyInTheaters = (pageNumber = 1) => {
+  // For manipulating the dom and showing teh next data
+  theatresContainer.innerHTML = "";
+
   // Fetch the data from the API for the current page
   getData(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${pageNumber}`,(data) => {
 

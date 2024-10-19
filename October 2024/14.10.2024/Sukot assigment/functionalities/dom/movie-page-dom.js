@@ -1,7 +1,8 @@
 import { getData } from "../api-functions.js";
 import { apiKey } from "../env.js";
-import { getStarRatingImage } from "./get-rating-movie.js";
+import { getStarRatingImage } from "../get-api-calls/get-rating-movie.js";
 import { singleMovieCard } from "../global/domEls.js";
+import { isImageNull } from "./is-image-null.js";
 
 const presentSingleMovieById = () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -19,10 +20,15 @@ const presentSingleMovieById = () => {
   // Fetch movie details
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, (singleMovieData) => {
 
+    console.log(singleMovieData);
+    
     if (!singleMovieData) {
       window.location.href = 'error404.html';
       return;
     }
+
+    let image = isImageNull(singleMovieData.poster_path);
+
 
     // Display movie details
     singleMovieCard.innerHTML = `
@@ -34,7 +40,7 @@ const presentSingleMovieById = () => {
     <h2 class="rating-number-txt">${singleMovieData.vote_average.toFixed(1)}</h2>
     </div>
 
-    <img src="https://image.tmdb.org/t/p/original/${singleMovieData.poster_path}" alt="movie-img" class="single-movie-img">
+    <img src="https://image.tmdb.org/t/p/original/${image}" alt="movie-img" class="single-movie-img">
 
     <h3 class="summary-title">Summary</h3>
 

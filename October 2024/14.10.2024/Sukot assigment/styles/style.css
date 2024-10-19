@@ -502,7 +502,10 @@
     background: var(--lighter-red-color);
     border-radius: 2em;
     transform: scale(1.3);
+  }
 
+  .icon:active {
+    background: var(--rating--color);
   }
 
   .link-container {
@@ -672,21 +675,44 @@
 
   .get-back-to-top-btn {
     position: fixed;
-    bottom: 0.5em;
+    bottom: 24em;
     background-color: black;
     z-index: 1;
     padding: 1em;
     font-size: 1em;
     font-family: 'Signwood Reg';
     color: white;
-    border-radius: 0.4em;
-    width: 33%;
+    border-radius: 5em;
     left: 0.5em;
+    border: none;
+    cursor: pointer;
+  }
+
+  .get-back-to-top-img {
+    width: 3em;
+    border-radius: 5em;
+  }
+
+  .get-back-to-top-btn:hover {
+    background-color: red;
+  }
+
+  .get-back-to-top-btn:active {
+    background-color: var(--rating--color);
   }
 
 
   /* Desktop design 1024px */
   @media screen and (min-width:1024px) {
+
+    .get-back-to-top-btn {
+      bottom: 15em;
+      left: 1em;
+    }
+
+    .get-back-to-top-img {
+      width: 4em;
+    }
 
     .alert-message-container {
       font-size: 2em;

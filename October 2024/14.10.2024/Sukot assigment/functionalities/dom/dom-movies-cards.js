@@ -1,14 +1,17 @@
-// Get the trailer of a particular movie
+// Get the trailer of a particular movie.
 import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js";
 
-// Get the rating image based on movie rating
+// Get the rating image based on movie rating.
 import { getStarRatingImage } from "../get-api-calls/get-rating-movie.js";
 
 // Add a movie to the favorite list
 import { addfavoriteMovieToList } from "../post-api-calls/post-movies-to-favorite-list.js";
 
-// Alert the user if the action was successful
+// Alert the user if the action was successful.
 import { alertMessageContainer } from "../global/domEls.js";
+
+// Checking if the image is null if yes we provide a default image.
+import {isImageNull} from "../DOM/is-image-null.js"
 
 // Create each movie card
 const createMovieCard = (movie) => {
@@ -21,9 +24,11 @@ const createMovieCard = (movie) => {
     ? movie.original_title.split(' ').slice(0, 3).join(' ') 
     : movie.original_title.split(' ').slice(0, 2).join(' ');
 
+  let image = isImageNull(movie.poster_path);
+
   // Populate movie card HTML
   movieCardDiv.innerHTML = `
-    <a href="" class="img-trailer-link"><img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="movie-img" class="movie-img"></a>
+    <a href="" class="img-trailer-link"><img src="${image}" alt="movie-img" class="movie-img"></a>
     <h1 class="title">${isMovieTitleLong}</h1>
     <div class="img-container">
       <img src="${getStarRatingImage(movie.vote_average)}" alt="rating-img" class="rating-img">

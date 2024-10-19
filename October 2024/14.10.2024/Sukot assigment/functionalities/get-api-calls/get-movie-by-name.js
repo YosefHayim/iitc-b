@@ -1,5 +1,5 @@
 import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSection, feedbackFormPage } from "../global/domEls.js";
-import { createMovieCard } from "../dom/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/dom-movies-cards.js";
 import { getData } from "../api-functions.js";
 
 const searchMovieByName = (inputValue) => {

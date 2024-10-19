@@ -1,5 +1,4 @@
 Need to fix:
-1. handle when image is null so I can have a symentary look
 
 2. on popular day and popular week make the buttons listens and work as they work on homepage
 
@@ -21,7 +20,9 @@ Need to fix:
 
 13. do a drop down arrow that slights up and being sticky
 
+doing now:
 
+1. handle when image is null so I can have a symentary look
 
 
 DONE : 

@@ -14,6 +14,8 @@ import { presentSingleMovieById } from "../get-api-calls/get-single-movie-detail
 import { formAnswer } from "../feedback-me/form-data.js";
 import { backTopClick } from "../Event-listeners/go-top-button-el.js";
 import { clickFavDataBtn } from "../Event-listeners/fav-data-button-el.js";
+import { clickFavShareBtn } from "../Event-listeners/fav-share-btn-el.js";
+import { clickFavRemoveBtn } from "../Event-listeners/fav-remove-movie-el.js";
 
 loaderManipulation()
 burgerIconActivate()
@@ -35,6 +37,8 @@ if (window.location.pathname.endsWith('favorite.html')) {
   isIdOrisName()
   backTopClick()
   clickFavDataBtn()
+  clickFavShareBtn()
+  clickFavRemoveBtn()
 }
 
 if(window.location.pathname.endsWith('popular-day.html')) {

@@ -12,7 +12,7 @@ const removeFavMovie = (movieCardId) => {
   postData(`https://api.themoviedb.org/3/account/${accountId}/favorite`, (data,response) => {
     console.log(data);
 
-    if (!data || (response && response.status === 404)) {
+    if (!data) {
       window.location.href = 'error404.html';
       return;
     }

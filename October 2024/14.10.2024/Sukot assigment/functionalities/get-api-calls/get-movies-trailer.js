@@ -3,8 +3,6 @@ import { copyToClipboard } from "../Event-listeners/copy-to-clipboard-el.js";
 import { apiKey } from "../global/env.js";
 
 const getMoviesTrailers = (movieId, movieCardDiv) => {
-  console.log(movieId);
-  console.log(movieCardDiv);
 
   // Fetch movie details along with videos (trailers)
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`, (data) => {
@@ -31,7 +29,7 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
         shareButton.setAttribute('href', trailerUrl);
         imgTrailerLink.setAttribute('href', trailerUrl);
         copyToClipboard(shareButton, trailerUrl);
-        
+
       } else {
         const favPlayBtn = movieCardDiv.querySelector('.fav-play-button-img');
         const favShareBtn = movieCardDiv.querySelector('.fav-white-share-img');

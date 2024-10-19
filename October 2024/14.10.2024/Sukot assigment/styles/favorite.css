@@ -1,13 +1,52 @@
-body > footer {
-  position: absolute;
-}
-
 .fav-movies-container {
   display: flex;
   justify-content: center;
   gap: 3em;
   margin-top: 1em;
   flex-wrap: wrap;
+}
+
+.fav-play-button-btn,.fav-white-share-trailer-btn,.fav-white-data-btn,.fav-remove-btn-icon {
+  background: none;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+}
+.fav-play-button-btn {
+  transform: translate(0, -12.5em);
+}
+.fav-remove-btn-img {
+  transform: translate(5em, -7em);
+}
+
+.fav-white-data-btn {
+  transform: translate(0em, -7em);
+}
+
+.fav-white-share-trailer-btn {
+  transform: translate(-5em, -7em);
+}
+
+.fav-remove-btn-img:active,.fav-white-data-img:active,.fav-white-share-img:active,.fav-play-button-img:active {
+  background-color: red;
+}
+
+.fav-play-button-img:hover,.fav-white-share-img:hover,.fav-remove-btn-img:hover,.fav-white-share-img:hover,.fav-white-data-img:hover {
+  background-color: var(--rating--color);
+}
+
+
+.fav-play-button-img,.fav-white-share-img,.fav-remove-btn-img,.fav-white-data-img {
+  height: 2em;
+  border: 1px solid #00000063;
+  background: black;
+  border-radius: 2em;
+  padding: 0.5em;
+  position: relative;
+}
+
+.fav-play-button-img {
+  height: 3em;
 }
 
 @media screen and (min-width:1024px) {

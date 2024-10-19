@@ -18,20 +18,6 @@ const displayFavoriteMoviesList = () => {
       const movieCard = createFavMovieCard(movie);
       favMoviesContainer.appendChild(movieCard);
     });
-
-    // Event listener for removing a favorite movie
-    favMoviesContainer.addEventListener("click", (ev) => {
-      const movieCardId = ev.target.closest(".movie-card").getAttribute("id").replace(/\D/g, ""); 
-      removeFavMovie(movieCardId);
-
-      // Show alert for 3 seconds after removal
-      alertMessageContainer.style.display = "flex";
-      setTimeout(() => {
-        alertMessageContainer.style.display = "none";
-      }, 3000);
-
-      location.reload(); // Refresh the list after removal
-    });
   });
 };
 

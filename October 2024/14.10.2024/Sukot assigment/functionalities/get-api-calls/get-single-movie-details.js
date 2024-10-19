@@ -18,8 +18,12 @@ const presentSingleMovieById = () => {
   // Fetch movie actors details    
   getData(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`, (creditsData) => {
   if (!creditsData) return redirectToErrorPage();
-
-  creatingSingleMovieDataView(singleMovieData,creditsData,videoUrl)
+  
+  if (videoUrl) {
+    creatingSingleMovieDataView(singleMovieData,creditsData,videoUrl)
+  } else {
+    creatingSingleMovieDataView(singleMovieData,creditsData)
+  }
 
     });
   });

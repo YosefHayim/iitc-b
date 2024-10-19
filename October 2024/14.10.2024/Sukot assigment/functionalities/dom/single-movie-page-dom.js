@@ -2,9 +2,17 @@ import { singleMovieCard } from "./storage-elements-dom.js";
 import { isImageNull } from "./is-image-null-dom.js";
 import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
+import { createDomEl } from "./create-div-dom.js";
 
 
 const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
+  
+  if (videoUrl) {
+    console.log('Video URL is:',videoUrl);
+    
+  } else {
+    console.log("Still didn't fixed the video YT URL to favorite page.");
+  }
   
   const image = isImageNull(singleMovieData.poster_path);
   const movieName = isNameToLong(singleMovieData.original_title);
@@ -33,25 +41,30 @@ const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
   </div>
   `;
   
-  const castContainer = document.createElement('div');
+  const castContainer = createDomEl()
+
   castContainer.classList.add('cast-container');
   singleMovieCard.appendChild(castContainer);
 
   creditsData.cast.slice(0, 10).forEach(actor => {
-    const actorDiv = document.createElement('div');
+    const actorDiv = createDomEl()
+
     actorDiv.classList.add('actor');
     const actorName = isNameToLong(actor.name)
     const image = isImageNull(actor.profile_path)        
     
-    actorDiv.innerHTML = `
+    actorDiv.innerHTML = 
+    `
       <div class="img-name-container">
-        <img src="${image}" alt="${actorName}" class="actor-img">
-        <p class="actor-name">${actorName}</p>
+      <img src="${image}" alt="${actorName}" class="actor-img">
+      <p class="actor-name">${actorName}</p>
       </div>
     `;
 
     castContainer.appendChild(actorDiv);
-  }  )}
+  }  
+  )
+}
 
 
 export {creatingSingleMovieDataView}

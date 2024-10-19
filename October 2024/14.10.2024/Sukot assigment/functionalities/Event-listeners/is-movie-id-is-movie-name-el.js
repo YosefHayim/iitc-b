@@ -1,3 +1,4 @@
+import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { formData } from "../DOM/storage-elements-dom.js";
 import { searchMovieById } from "../get-api-calls/get-movie-by-id.js";
 import { searchMovieByName } from "../get-api-calls/get-movie-by-name.js";
@@ -10,7 +11,7 @@ const isIdOrisName = () => {
 
       // Redirect to error page if input is empty
       if (!inputValue) {
-        window.location.href = `error404.html`;
+        redirectToErrorPage()
         return;
       }
 
@@ -26,7 +27,7 @@ const isIdOrisName = () => {
 
       // Redirect to error page if input is invalid
       } else {
-        window.location.href = `error404.html`;
+        redirectToErrorPage()
         return;
       }
     });

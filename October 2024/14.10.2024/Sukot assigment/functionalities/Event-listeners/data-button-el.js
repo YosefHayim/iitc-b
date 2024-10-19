@@ -15,13 +15,13 @@ const clickDataBtn = (movieCardDiv) => {
       const videoId = videoUrl.split('v=')[1];
       const movieCardId = movieCardDiv.id.replace(/\D/g, '');
       
-      // Calling the alertMessage to avoid duplicated code areas
       let message = 'Redirecting...';
       alertMessage(message);
 
       window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;
     } else {
-      console.error("Play button not found!");
+      message = `We don't have that link, what a baba bummer...`
+      alertMessage(message)
     }
   });
 }

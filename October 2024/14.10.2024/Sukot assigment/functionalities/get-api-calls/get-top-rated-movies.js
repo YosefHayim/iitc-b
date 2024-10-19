@@ -16,7 +16,7 @@ const topRatedMovies = (pageNumber = 1) => {
 
       topTrendingPage.style.display = `block`;
       topTrendingPage.textContent = `Page: ${pageNumber} / ${data.total_pages - pageNumber}`
- 
+
     } else {
       console.error("No data received from the API.");
     }

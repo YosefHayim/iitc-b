@@ -19,6 +19,7 @@ const searchMovieById = (inputValue) => {
         title.remove();
       }
     });
+    movieCardsDivs.forEach(container => container.remove());
 
     if (aboutUsSection) {
       aboutUsSection.remove()
@@ -28,7 +29,6 @@ const searchMovieById = (inputValue) => {
       feedbackFormPage.remove()
     }
 
-    movieCardsDivs.forEach(container => container.remove());
 
     // Check if both searchResultTitle and searchResultContainer already exist
     let searchResultTitle = mainDiv.querySelector('.search-results-name');

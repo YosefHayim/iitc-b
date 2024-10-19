@@ -14,7 +14,6 @@ const resetPlaceholder = () => {
     });
 
     searchInput.addEventListener('blur', () => {
-      
       searchInput.placeholder = 'Search movies';
 
       if (whiteGlassSearch) {

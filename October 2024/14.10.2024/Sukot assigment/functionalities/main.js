@@ -12,12 +12,10 @@ import { popularMoviesOfWeek } from "./get-api-calls/get-popular-movies-of-week.
 import { loaderManipulation } from "./dom/loader-dom.js";
 import { presentSingleMovieById } from "./get-api-calls/movie-page-dom.js";
 import { formAnswer } from "./dom/form-data.js";
-
+isIdOrisName()
 loaderManipulation()
 burgerIconActivate()
 resetPlaceholder();
-isIdOrisName()
-
 
 if (window.location.pathname.endsWith("index.html")) {
   currentlyInTheaters(); 

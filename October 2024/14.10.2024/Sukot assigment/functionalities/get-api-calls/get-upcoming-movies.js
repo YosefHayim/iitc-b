@@ -5,12 +5,14 @@ import { upComingMoviesContainer, upComingMoviePage } from "../dom/domEls.js";
 const upComingMovies = (pageNumber = 1) => {
   upComingMoviesContainer.innerHTML = "";
 
-  getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`, (data) => {
+  getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`, (data,response) => {
+
     if (data && data.results) {
       data.results.forEach((movie) => {
         const movieCard = createMovieCard(movie);
         upComingMoviesContainer.appendChild(movieCard);
       });
+      
       upComingMoviePage.style.display = `block`;
       upComingMoviePage.textContent = `Page: ${pageNumber} / ${data.total_pages}`
 

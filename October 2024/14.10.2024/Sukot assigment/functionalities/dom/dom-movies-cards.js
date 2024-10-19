@@ -1,6 +1,7 @@
 import {getMoviesTrailers} from "../get-api-calls/get-movies-trailer.js"
 import {getStarRatingImage} from "../get-api-calls/get-rating-movie.js"
 import {addfavoriteMovieToList} from "../post-api-calls/post-movies-to-favorite-list.js"
+import { alertMessageContainer } from "./domEls.js";
 
 // Function to create movie card
 const createMovieCard = (movie) => {
@@ -13,7 +14,9 @@ const createMovieCard = (movie) => {
 
   // in the h1 I split the title for two words only since some movie titles has more and these specifically ones effecting the symmetrical
   movieCardDiv.innerHTML = `
-  <img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="movie-img" class="movie-img">
+
+  <a href="" class="img-trailer-link"><img src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="movie-img" class="movie-img"></a>
+
   <h1 class="title">${movie.original_title.split(' ').length >= 4 ? movie.original_title.split(' ').slice(0, 3).join(' ') : movie.original_title.split(' ').slice(0, 2).join(' ')}</h1>
   <div class="img-container">
 
@@ -46,18 +49,23 @@ const createMovieCard = (movie) => {
     heartButton.addEventListener('click', (ev) => {
       ev.preventDefault();
 
+      alertMessageContainer.innerHTML = `Movie added to favorite picks`
+      alertMessageContainer.style.display = 'flex';
+      setTimeout(() => {
+        alertMessageContainer.style.display = 'none';
+      }, 3000);
+      
       const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
       addfavoriteMovieToList(movieCardId);
     });
     
+    // direct to movie cast and data
     const dataButton = movieCardDiv.querySelector('.white-data-btn')
     dataButton.addEventListener('click', (ev) => {
       ev.preventDefault();
     
-      // Get the parent movie card div
       const movieCardDiv = ev.target.closest('.movie-card');
     
-      // Find the play button anchor element inside the movie card
       const playButton = movieCardDiv.querySelector('.play-button-btn');
       
       // Check if playButton exists to avoid the error
@@ -71,9 +79,17 @@ const createMovieCard = (movie) => {
         // Get the movie card id
         const movieCardId = movieCardDiv.getAttribute('id').replace(/\D/g, '');
         console.log(movieCardId);
+
+        alertMessageContainer.textContent = `Redirecting...`;
+        alertMessageContainer.style.display = 'flex';
+    
+        setTimeout(() => {
+          alertMessageContainer.style.display = 'none';
+        }, 3000);
         
         // Redirect to movie-data page with movieId and videoUrl in URL
         window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;
+        
       } else {
         console.error("Play button not found!");
       }

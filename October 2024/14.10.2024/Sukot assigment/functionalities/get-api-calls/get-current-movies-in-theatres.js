@@ -12,11 +12,10 @@ const currentlyInTheaters = (pageNumber = 1) => {
         const movieCard = createMovieCard(movie);
         theatresContainer.appendChild(movieCard);
       });
+
       currentTheaterPage.style.display = `block`
       currentTheaterPage.textContent = `Page: ${pageNumber} / ${data.total_pages}`
       
-
-
     } else {
       console.error("No data received from the API.");
     }

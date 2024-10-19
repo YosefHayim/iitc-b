@@ -6,6 +6,7 @@ import { createMovieCard } from "../dom/dom-movies-cards.js";
 const popularMoviesOfWeek = (pageNumber = 1) => {
 
   getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${pageNumber}&api_key=${apiKey}`, (data) => {
+
     if (data && data.results) {
       data.results.forEach((movie) => {
         const movieCard = createMovieCard(movie);

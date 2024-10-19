@@ -53,6 +53,7 @@ const redirectPages = () => {
         // Update page number based on button click
         if (event.target.closest('.right-button')) {
           pageNumbers[containerClass]++;
+          
         } else if (event.target.closest('.left-button')) {
           pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1); // Prevents going below 1
         }

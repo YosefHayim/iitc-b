@@ -6,6 +6,7 @@ import {createFavMovieCard} from "../dom/create-favorite-movie-card.js"
 
 const displayFavoriteMoviesList = () => {
   getData(`https://api.themoviedb.org/3/account/${accountId}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`, (data) => {
+
     data.results.forEach((movie) => {
       const movieCard = createFavMovieCard(movie);
       favMoviesContainer.appendChild(movieCard);
@@ -14,11 +15,13 @@ const displayFavoriteMoviesList = () => {
     favMoviesContainer.addEventListener('click', (ev) => {
       const movieCardId = ev.target.closest('.movie-card').getAttribute('id').replace(/\D/g, '');
       removeFavMovie(movieCardId);
-      alertMessageContainer.style.display = 'block';
+
+      alertMessageContainer.style.display = 'flex';
       setTimeout(() => {
         alertMessageContainer.style.display = 'none';
-        location.reload();
-      }, 200);
+      }, 3000);
+      
+      location.reload();
     });
   });
 };

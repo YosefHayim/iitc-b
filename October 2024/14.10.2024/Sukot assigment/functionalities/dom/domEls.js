@@ -30,9 +30,13 @@ const footer = document.querySelector('footer')
 const singleMovieCard = document.querySelector('.single-movie-card')
 const mobileMenu = document.querySelector('.top-navbar-mobile')
 const feedbackFormPage = document.querySelector('.feedback-me-form')
+const sorryMessage = document.querySelector('.sorry-message')
+const mainDiv = document.querySelector('main')
+const navbarDesktop = document.querySelector('.navbar-desktop')
+const aboutUsSection = document.querySelector('.about-us-section')
 
-export {alertMessageContainer,popWeekMoviePage,templateTitle,searchResultTitle,footer,singleMovieCard,mobileMenu,feedbackFormPage,
-  dropDownMenu,domTitleTxt,
+export {alertMessageContainer,popWeekMoviePage,templateTitle,searchResultTitle,footer,singleMovieCard,mobileMenu,feedbackFormPage,sorryMessage,mainDiv,
+  dropDownMenu,domTitleTxt,navbarDesktop,aboutUsSection,
   burgerIcon,favMoviesContainer,
   upComingMoviesContainer,
   popularMoviesContainer,

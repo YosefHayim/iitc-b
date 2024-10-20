@@ -609,6 +609,7 @@
     color: white;
     background: var(--lighter-red-color);
     border-radius: 100em;
+    padding: 0.7em;
   }
 
   .top-navbar-desktop:active {
@@ -710,6 +711,10 @@
   /* Desktop design 1024px */
   @media screen and (min-width:1024px) {
 
+    .input-search-bar {
+      padding: 0.5em;
+    }
+
     .get-back-to-top-btn {
       bottom: 15em;
       left: 1em;
@@ -725,9 +730,10 @@
 
     .top-navbar-desktop {
       text-align: center;
-      padding: 0.85em;
       width: 100%;
       display: block;
+      padding: 0.7em;
+      background: black;
     }
 
     .title {
@@ -766,6 +772,7 @@
     .github-full-logo-white,.discord-full-logo-white,.linkedin-logo {
       background: var(--background-grey-color-btns);
       border-radius: 3em;
+      width: 5.5em;
     }
 
     .remove-btn-img:active,.remove-btn-img:hover {
@@ -788,7 +795,6 @@
     .top-navbar-desktop:active {
       color: black;
       background: white;
-      transform: scale(1.3);
     }
     
     .navbar-mobile {

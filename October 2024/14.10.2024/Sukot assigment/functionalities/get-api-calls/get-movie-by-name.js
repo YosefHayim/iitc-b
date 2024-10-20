@@ -1,4 +1,4 @@
-import { homePageAllContainers, homepageTitlesContainers, navbarDesktopEl, mainContainer, aboutUsPageSection, feedbackFormPage } from "../DOM/storage-elements-dom.js";
+import { homePageAllContainers, homepageTitlesContainers, navbarDesktopEl, mainContainer , searchPaginationContainer } from "../DOM/storage-elements-dom.js";
 import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { getData } from "./api-functions.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
@@ -25,6 +25,8 @@ const searchMovieByName = (inputValue,count) => {
       return;
     }
 
+    searchPaginationContainer.style.display = `flex`
+
     // Clear existing titles and movie card containers
     // Ensure only titles that are not search results are removed
     homepageTitlesContainers.forEach(title => {
@@ -34,15 +36,6 @@ const searchMovieByName = (inputValue,count) => {
     homePageAllContainers.forEach(container => container.remove());
 
     });
-
-    // Remove sections like 'About Us' and 'Feedback Form' if they exist
-    if (aboutUsPageSection) {
-      aboutUsPageSection.remove();
-    }
-
-    if (feedbackFormPage) {
-      feedbackFormPage.remove();
-    }
 
     // Check if search results title and container already exist
     let searchResultTitle = mainContainer.querySelector('.search-results-name');
@@ -64,16 +57,10 @@ const searchMovieByName = (inputValue,count) => {
 
     // Update the search result title with the total results and movie name
     searchResultTitle.style.display = 'flex';
-
-    // Makes the first letter in the input value uppercase and than add the rest of it.
-    let result = inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
-
     searchResultTitle.innerHTML = `<h1>Total results: ${data.total_results}<br> page:<br>${data.page} / ${data.total_pages}</h1>`;
-
-    // Clear the container before appending new movie cards
-    searchResultContainer.innerHTML = '';
-
+    
     // Create and append movie cards for each result
+    searchResultContainer.innerHTML = '';
     data.results.forEach(movie => {
       const movieCard = buildHomeMovieCard(movie);
       searchResultContainer.appendChild(movieCard);

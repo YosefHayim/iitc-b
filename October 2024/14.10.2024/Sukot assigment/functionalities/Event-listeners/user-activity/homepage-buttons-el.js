@@ -50,7 +50,14 @@ const HomeMovieDataButtonClicks = () => {
       if (shareImg) {
         ev.preventDefault();
         const trailerUrl = shareImg.getAttribute('href');
-        handleCopyToClipboard(shareImg,trailerUrl)
+        if (!trailerUrl) {
+          let message = `This movie doesn't have a YT yet.`
+          let backgroundColor= `#ffcd05`
+          displayAlertMessage(message,backgroundColor)
+
+        } else {
+          handleCopyToClipboard(shareImg,trailerUrl)
+        }
       }
 
       if (heartBtn) {
@@ -58,7 +65,7 @@ const HomeMovieDataButtonClicks = () => {
         const movieCard = heartBtn.closest('.movie-card');
         const movieCardId = movieCard.id.replace(/\D/g, '');
         addfavoriteMovieToList(movieCardId)
-        let message = `Movie has been added to favorites.`;
+        let message = `Movie has been added to top picks.`;
         let backgroundColor = `green`;
         displayAlertMessage(message, backgroundColor);
       }

@@ -1,7 +1,7 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { creatingSingleMovieDataView } from "../DOM/single-movie-page-dom.js";
+import { renderSingleMoviePage } from "../DOM/single-movie-page-dom.js";
 
 
 const displaySingleMovieById = () => {
@@ -25,9 +25,9 @@ const displaySingleMovieById = () => {
   if (!creditsData) return redirectToErrorPage();
   
   if (videoUrl) {
-    creatingSingleMovieDataView(singleMovieData,creditsData,videoUrl)
+    renderSingleMoviePage(singleMovieData,creditsData,videoUrl)
   } else {
-    creatingSingleMovieDataView(singleMovieData,creditsData)
+    renderSingleMoviePage(singleMovieData,creditsData)
   }
 
     });

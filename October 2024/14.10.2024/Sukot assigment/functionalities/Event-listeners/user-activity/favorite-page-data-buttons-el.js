@@ -1,4 +1,4 @@
-import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 
 // Favorite data buttons clicks.
@@ -18,7 +18,7 @@ const handleFavoriteMovieClick = () => {
 
       // Show an alert message.
       let message = 'Redirecting...';
-      alertMessage(message);
+      displayAlertMessage(message);
 
       if (playButton) {
         // Get the video URL and extract the video ID.

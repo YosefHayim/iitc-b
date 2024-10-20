@@ -1,4 +1,4 @@
-import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { reloadThisPage } from "../../DOM/reload-current-page-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
@@ -17,7 +17,7 @@ const handleFavoriteRemoveButtonClick = () => {
         reloadThisPage()
       },500)
       let message = `Movie has been removed successfully.`
-      alertMessage(message)
+      displayAlertMessage(message)
     }
   });
 };

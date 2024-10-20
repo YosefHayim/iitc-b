@@ -1,4 +1,4 @@
-import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { homePageDivs } from "../../DOM/storage-elements-dom.js";
 
 const HomeMovieDataButtonClicks = () => {
@@ -32,7 +32,7 @@ const HomeMovieDataButtonClicks = () => {
         // Display an alert message and redirect to the movie-data page
         let message = `Redirecting...`;
         let backgroundColor = `green`;
-        alertMessage(message, backgroundColor);
+        displayAlertMessage(message, backgroundColor);
 
         // Redirect to the movie-data page with the movieCard ID and video URL
         window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;

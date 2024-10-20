@@ -1,4 +1,4 @@
-import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 
 const handlePlayButtonClick  = () => {
@@ -11,7 +11,7 @@ const handlePlayButtonClick  = () => {
       if (favPlayImg.src && favPlayImg.src.includes('no-trailer-available-img')) {
         let message = `This movie doesn't have a trailer yet.`;
         let backgroundColor = `#ffcd05`;
-        alertMessage(message, backgroundColor);
+        displayAlertMessage(message, backgroundColor);
       }
     }
   });

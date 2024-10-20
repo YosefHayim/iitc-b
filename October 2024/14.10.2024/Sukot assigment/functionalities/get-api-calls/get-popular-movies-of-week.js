@@ -1,8 +1,7 @@
 import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
 import { popularOfTheWeekContainer, homePageAllContainers } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
-import { getMoviesTrailers } from "./get-movies-trailer.js";
+import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 
 const popularMoviesOfWeek = () => {
   getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=1&api_key=${apiKey}`, (data) => {
@@ -14,7 +13,7 @@ const popularMoviesOfWeek = () => {
     
     data.results.forEach(movie => {
       // Creating in each loop a skeleton movie box
-      const movieCard = createMovieCard(movie);
+      const movieCard = buildHomeMovieCard(movie);
       // Appending it to the div of the weekly movies
       popularOfTheWeekContainer.appendChild(movieCard);
 

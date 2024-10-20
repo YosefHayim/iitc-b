@@ -1,8 +1,8 @@
 import { homePageAllContainers, homepageTitlesContainers, navbarDesktopEl, mainContainer, aboutUsPageSection, feedbackFormPage } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
+import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { getData } from "./api-functions.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { alertMessage } from "../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../DOM/alert-message-dom.js";
 
 
 const searchMovieByName = (inputValue,count) => {
@@ -11,7 +11,7 @@ const searchMovieByName = (inputValue,count) => {
   if (count < 1) {
     let message = `You can't go to page 0`
     let backgroundColor = `red`
-    alertMessage(message,backgroundColor)
+    displayAlertMessage(message,backgroundColor)
     return;
   }
 
@@ -75,7 +75,7 @@ const searchMovieByName = (inputValue,count) => {
 
     // Create and append movie cards for each result
     data.results.forEach(movie => {
-      const movieCard = createMovieCard(movie);
+      const movieCard = buildHomeMovieCard(movie);
       searchResultContainer.appendChild(movieCard);
     });
   });

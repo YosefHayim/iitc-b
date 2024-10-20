@@ -1,4 +1,4 @@
-import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { searchPaginationContainer } from "../../DOM/storage-elements-dom.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 import { decreasePage } from "../../global/decreasing-page.js";
@@ -23,7 +23,7 @@ const handleSearchPaginationClick  = () => {
       if (count === 1) {
         let message = `You can't go lower than 1.`
         let backgroundColor = `red`
-        alertMessage(message,backgroundColor)
+        displayAlertMessage(message,backgroundColor)
       }
       count = decreasePage(count)
       searchMovieByName(querySearch,count)      

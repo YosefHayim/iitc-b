@@ -1,4 +1,4 @@
-import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { popularOfTheDayContainer } from "../../DOM/storage-elements-dom.js"
 
 const todayMustWatchPlayButtons = () => {  
@@ -10,7 +10,7 @@ const todayMustWatchPlayButtons = () => {
     if (playBtn) {
       let backgroundColor = 'red'
       let message = `Sorry, this movie don't have a trailer yet.`
-      alertMessage(message,backgroundColor)
+      displayAlertMessage(message,backgroundColor)
     }
     
   })

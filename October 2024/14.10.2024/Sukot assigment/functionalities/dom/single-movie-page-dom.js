@@ -3,7 +3,7 @@ import { isImageNull } from "./is-image-null-dom.js";
 import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
 import { createDomEl } from "./create-div-dom.js";
-import { alertMessage } from "./alert-message-dom.js";
+import { displayAlertMessage } from "./alert-message-dom.js";
 
 
 const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
@@ -19,7 +19,7 @@ const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
   if (!videoUrl) {
     let message = `This movie don't have a trailer yet.`
     let backgroundColor = `red`
-    alertMessage(message,backgroundColor)
+    displayAlertMessage(message,backgroundColor)
     buttonText = 'trailer is Unavailable '
   }
 

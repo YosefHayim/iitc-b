@@ -1,5 +1,5 @@
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
-import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { homePageDivs } from "../../DOM/storage-elements-dom.js";
 
 const HomeHeartButtonClicks = () => {
@@ -19,7 +19,7 @@ const HomeHeartButtonClicks = () => {
 
       // Display alert and add to favorites
       let message = `Movie added to favorite picks`;
-      alertMessage(message);
+      displayAlertMessage(message);
       addfavoriteMovieToList(movieCardId);
     });
   });

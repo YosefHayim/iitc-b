@@ -1,15 +1,15 @@
 import { homepageTitlesContainers } from "../../DOM/storage-elements-dom.js";
-import { currentlyInTheaters } from "../../get-api-calls/get-total-current-movies-in-theatres.js";
-import { popularMovies } from "../../get-api-calls/get-total-popular-movies.js";
-import { topRatedMovies } from "../../get-api-calls/get-total-top-rated-movies.js";
-import { upComingMovies } from "../../get-api-calls/get-total-upcoming-movies.js";
+import { fetchCurrentlyInTheatersMovies } from "../../get-api-calls/get-total-current-movies-in-theatres.js";
+import { fetchPopularMovies } from "../../get-api-calls/get-total-popular-movies.js";
+import { fetchTopRatedMovies } from "../../get-api-calls/get-total-top-rated-movies.js";
+import { fetchUpcomingMovies } from "../../get-api-calls/get-total-upcoming-movies.js";
 
 // Map containers to their respective functions
 const functionMap = {
-  'currently-movies-in-theatres-container-title': currentlyInTheaters,
-  'upcoming-movies-container-title': upComingMovies,
-  'popular-movies-container-title': popularMovies,
-  'trending-movies-container-title': topRatedMovies,
+  'currently-movies-in-theatres-container-title': fetchCurrentlyInTheatersMovies,
+  'upcoming-movies-container-title': fetchUpcomingMovies,
+  'popular-movies-container-title': fetchPopularMovies,
+  'trending-movies-container-title': fetchTopRatedMovies,
 };
 
 // Store page numbers for each category

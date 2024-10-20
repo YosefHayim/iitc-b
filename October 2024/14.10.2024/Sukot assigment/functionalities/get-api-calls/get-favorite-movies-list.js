@@ -1,7 +1,7 @@
 import { getData } from "./api-functions.js";
 import { accountId } from "../global/env.js";
 import { favMoviesContainer } from "../DOM/storage-elements-dom.js";
-import { createFavMovieCard } from "../DOM/favorite-movie-card-dom.js";
+import { generateFavoriteMovieCard } from "../DOM/favorite-movie-card-dom.js";
 
 const displayFavoriteMoviesList = () => {
   // Fetch favorite movies for the account
@@ -14,7 +14,7 @@ const displayFavoriteMoviesList = () => {
 
     // Create and append movie cards for each favorite movie
     data.results.forEach(movie => {
-      const movieCard = createFavMovieCard(movie);
+      const movieCard = generateFavoriteMovieCard(movie);
       favMoviesContainer.appendChild(movieCard);
     });
   });

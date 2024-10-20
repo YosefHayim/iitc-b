@@ -1,6 +1,6 @@
 import { getData } from "./api-functions.js";
 import { theatresContainer, currentTheaterPage } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
+import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 
 const fetchCurrentlyInTheatersMovies = (pageNumber = 1) => {
@@ -17,7 +17,7 @@ const fetchCurrentlyInTheatersMovies = (pageNumber = 1) => {
 
     if (data.results) {
       data.results.forEach(movie => {
-        const movieCard = createMovieCard(movie);
+        const movieCard = buildHomeMovieCard(movie);
         theatresContainer.appendChild(movieCard);
       });
 

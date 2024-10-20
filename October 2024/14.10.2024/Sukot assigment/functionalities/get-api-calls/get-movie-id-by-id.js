@@ -1,12 +1,12 @@
 import { 
   homePageAllContainers, 
-  titlesContainers, 
+  homepageTitlesContainers, 
   navbarDesktopEl, 
   mainContainer, 
   aboutUsPageSection, 
   feedbackFormPage 
 } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
+import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
@@ -23,7 +23,7 @@ const searchMovieById = (inputValue) => {
     }
 
     // Remove any existing titles and movie card containers before rendering new results
-    titlesContainers.forEach(title => {
+    homepageTitlesContainers.forEach(title => {
       if (!title.classList.contains('search-results-name')) {
         title.remove();
       }
@@ -74,7 +74,7 @@ const searchMovieById = (inputValue) => {
     searchResultContainer.innerHTML = '';
 
     // Append the movie card to the search result container
-    const movieCard = createMovieCard(data);
+    const movieCard = buildHomeMovieCard(data);
     searchResultContainer.appendChild(movieCard);
   });
 };

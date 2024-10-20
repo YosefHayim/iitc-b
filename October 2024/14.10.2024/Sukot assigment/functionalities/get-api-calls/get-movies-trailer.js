@@ -1,5 +1,5 @@
 import { getData } from "./api-functions.js";
-import { copyToClipboard } from "../Event-listeners/user-activity/global-copy-to-clipboard-el.js";
+import { handleCopyToClipboard } from "../Event-listeners/user-activity/global-copy-to-clipboard-el.js";
 import { apiKey } from "../global/env.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js"
 import { noTrailerImg } from "../DOM/no-trailer-image-dom.js";
@@ -31,7 +31,7 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
         playButton.setAttribute('href', trailerUrl);
         shareButton.setAttribute('href', trailerUrl);
         imgTrailerLink.setAttribute('href', trailerUrl);
-        copyToClipboard(shareButton, trailerUrl);
+        handleCopyToClipboard(shareButton, trailerUrl);
         
       } else {
         // else those buttons dont exist we are on another page and we set the trailer Url to other page button elements.

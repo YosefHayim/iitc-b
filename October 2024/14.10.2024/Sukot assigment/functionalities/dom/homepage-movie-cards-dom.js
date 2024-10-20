@@ -1,6 +1,6 @@
 import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js";
 import { createDomEl } from "./create-div-dom.js";
-import { skeletonMovieCard } from "./homepage-movie-card-skeleton.js";
+import { buildSkeletonMovieCard } from "./homepage-movie-card-skeleton.js";
 
   // Create each movie card
   const buildHomeMovieCard  = (movie) => {
@@ -9,7 +9,7 @@ import { skeletonMovieCard } from "./homepage-movie-card-skeleton.js";
     movieCardDiv.id = `movieN-${movie.id}`;
 
     // Building the movieCard skeleton DOM
-    skeletonMovieCard(movie,movieCardDiv)
+    buildSkeletonMovieCard(movie,movieCardDiv)
 
     // Attaching to each movieCard the trailerURL
     getMoviesTrailers(movie.id, movieCardDiv);

@@ -1,5 +1,5 @@
 import { getData } from "./api-functions.js";
-import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
+import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { upComingMoviesContainer, upComingMoviePage } from "../DOM/storage-elements-dom.js";
 
 const fetchUpcomingMovies = (pageNumber = 1) => {
@@ -14,7 +14,7 @@ const fetchUpcomingMovies = (pageNumber = 1) => {
     }
 
     data.results.forEach(movie => {
-      const movieCard = createMovieCard(movie);
+      const movieCard = buildHomeMovieCard(movie);
       upComingMoviesContainer.appendChild(movieCard);
     });
 

@@ -41,9 +41,13 @@ const mainDiv = document.querySelector('main');
 const navbarDesktop = document.querySelector('.navbar-desktop');
 const aboutUsSection = document.querySelector('.about-us-section');
 const goBackTopBtn = document.querySelector('.get-back-to-top-btn')
+const goTBottomBtn = document.querySelector('.get-from-to-bottom-btn')
+const searchPaginationDiv = document.querySelector('.buttons-pagination-container-search-bar')
 
 // Exported elements
 export {
+  goTBottomBtn,
+  searchPaginationDiv,
   goBackTopBtn,
   alertMessageContainer,
   popWeekMoviePage,

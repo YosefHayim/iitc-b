@@ -552,8 +552,14 @@
     cursor: pointer;
   }
 
+  .buttons-pagination-container-search-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10em;
+  }
+
   .left-button,.right-button {
-    width: 2.5em;
+    width: 4em;
   }
 
   .left-button:hover,.right-button:hover {
@@ -679,9 +685,9 @@
     position: relative;
   }
 
-  .get-back-to-top-btn {
+  .get-back-to-top-btn,.get-from-to-bottom-btn {
     position: fixed;
-    bottom: 24em;
+    bottom: 21.5em;
     background-color: black;
     z-index: 1;
     padding: 1em;
@@ -694,16 +700,24 @@
     cursor: pointer;
   }
 
-  .get-back-to-top-img {
+  .get-from-to-bottom-btn {
+    bottom: 35em;
+  }
+
+  .get-back-to-top-img,.go-to-bottom-img {
     width: 3em;
     border-radius: 5em;
   }
 
-  .get-back-to-top-btn:hover {
+  .go-to-bottom-img {
+    border-radius: 0em;
+  }
+
+  .get-back-to-top-btn:hover,.get-from-to-bottom-btn:hover {
     background-color: red;
   }
 
-  .get-back-to-top-btn:active {
+  .get-back-to-top-btn:active,.get-from-to-bottom-btn:active {
     background-color: var(--rating--color);
   }
 
@@ -720,7 +734,7 @@
       left: 1em;
     }
 
-    .get-back-to-top-img {
+    .get-back-to-top-img,.go-to-bottom-img {
       width: 4em;
     }
 

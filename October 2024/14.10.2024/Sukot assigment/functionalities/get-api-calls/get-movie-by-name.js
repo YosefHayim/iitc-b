@@ -2,9 +2,12 @@ import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSectio
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { getData } from "./api-functions.js";
 
-const searchMovieByName = (inputValue) => {
+
+const searchMovieByName = (inputValue,pageNumber) => {
+  let defaultPage = 1
+  
+  getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=${pageNumber? ++pageNumber : defaultPage}`, (data) => {
   // Fetch movie data based on the input value
-  getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=1`, (data) => {
 
     console.log(data);
 
@@ -67,6 +70,7 @@ const searchMovieByName = (inputValue) => {
       searchResultContainer.appendChild(movieCard);
     });
   });
+  
 };
 
 export { searchMovieByName };

@@ -17,6 +17,8 @@ import { clickFavDataBtn } from "../Event-listeners/fav-data-button-el.js";
 import { clickFavShareBtn } from "../Event-listeners/fav-share-btn-el.js";
 import { clickFavRemoveBtn } from "../Event-listeners/fav-remove-movie-el.js";
 import { playBtnClick } from "../Event-listeners/play-button-el.js";
+import { clickSearchPageBtn } from "../Event-listeners/next-search-page-el.js";
+import { goBottomClick } from "../Event-listeners/go-bottom-button-el.js";
 
 loaderManipulation()
 burgerIconActivate()
@@ -30,7 +32,8 @@ if (window.location.pathname.endsWith("index.html")) {
   redirectPages()
   backTopClick()
   isIdOrisName()
-
+  clickSearchPageBtn()
+  goBottomClick()
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {

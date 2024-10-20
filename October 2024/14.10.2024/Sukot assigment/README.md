@@ -1,34 +1,11 @@
-Need to fix:
+Here’s a straightforward reminder:
 
-2. on popular day and popular week make the buttons listens and work as they work on homepage
+1. **Fix Today Must Watch & Weekly Hits**: Ensure users can:
+   - Click a movie to go to its single movie page.
+   - Like the movie.
+   - Copy the movie's URL.
 
-3. on favorite picks make the remove button do only remove and the info data to move to the data page
+2. **Fix Event Listeners**: Use **event delegation** to handle buttons:
+   - Attach one listener to the parent container (e.g., movie list) and handle clicks on the specific buttons (like, data, etc.) using `ev.target.matches('.btn-class')`.
 
-4. home page bug fix pagination buttons moving left or rigt without appending more new movies
-
-5. popular movies of today pagination left and right 
-
-6. popular movies of week pagination left and right
-
-7. search movie thorugh popular movie of today make the title none / removed 
-
-8. search movie thorugh popular movie of week  make the title none / removed 
-
-9. searching for a movie make the buttons work for the event listner so i can go to movie data and click like / copy url
-
-10. footer hovering on home remove the pop day and pop week dropdown
-
-13. do a drop down arrow that slights up and being sticky
-
-doing now:
-
-1. handle when image is null so I can have a symentary look
-
-
-DONE : 
-11. make all indexes have the same top and footer except main
-14. make sure all input on all indexes have the same font of roboto
-
-12. remove all required from inputs
-
-15. fix footer your favorite picks so it looks max width 
+This will streamline your process for future reference.

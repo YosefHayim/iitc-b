@@ -55,6 +55,10 @@ body {
 .contact-info {
   background: black;
   border-style: dashed;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  width: 60%;
+  text-align: center;
 }
 
 @media screen and (min-width:1024px) {

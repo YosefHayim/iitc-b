@@ -10,6 +10,7 @@ const presentSingleMovieById = () => {
 
   const movieId = urlParams.get('movieId');
   if (!movieId) return redirectToErrorPage();
+  
 
   // Fetch movie details
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, (singleMovieData) => {

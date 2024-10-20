@@ -9,6 +9,7 @@ import {
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
+import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 
 const searchMovieById = (inputValue) => {
   // Fetch movie data based on the movie ID

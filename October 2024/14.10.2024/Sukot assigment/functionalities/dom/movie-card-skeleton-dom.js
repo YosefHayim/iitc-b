@@ -12,7 +12,7 @@ const skeletonMovieCard = (movie,movieCardDiv) => {
 
   // Populate movie card HTML
   movieCardDiv.innerHTML = `
-  <div class="movie-card">
+  <div>
     <a href="" class="img-trailer-link">
       <img src="${image}" alt="movie-img" class="movie-img">
     </a>

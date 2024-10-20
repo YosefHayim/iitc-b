@@ -7,23 +7,28 @@ const clickDataBtn = (movieCardDiv) => {
   dataButton.addEventListener('click', (ev) => {
     ev.preventDefault();
 
-    const movieCardDiv = ev.target.closest('.movie-card');
+    // Get the closest movie-card element and its ID
+    const movieCardId = ev.target.closest('.movie-card').id.replace(/\D/g, '');
+    console.log(`That's the movie card ID:`, movieCardId);
+
+    // Query the play button within the movie card
     const playButton = movieCardDiv.querySelector('.play-button-btn');
 
     if (playButton) {
       const videoUrl = playButton.getAttribute('href');
       const videoId = videoUrl.split('v=')[1];
-      const movieCardId = movieCardDiv.id.replace(/\D/g, '');
-      
+      console.log(`That's the video ID:`, videoId);
+
       let message = 'Redirecting...';
       alertMessage(message);
 
+      // Redirect to the movie-data page with movieId and videoUrl as parameters
       window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;
     } else {
-      message = `We don't have that link, what a baba bummer...`
-      alertMessage(message)
+      let message = `We don't have that link, what a baba bummer...`;
+      alertMessage(message);
     }
   });
-}
+};
 
 export { clickDataBtn };

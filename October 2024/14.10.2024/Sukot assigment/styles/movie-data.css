@@ -149,6 +149,21 @@
   animation: glow 3s ease-in-out infinite;
 }
 
+.actors-title {
+  background: black;
+  padding: 0.5em;
+  width: 100vw;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0em 0em 1em 0.05em var(--rating--color);
+}
+
+.movie-name {
+  color: var(--rating--color);
+}
+
 
 @keyframes glow {
   0% {
@@ -164,11 +179,25 @@
 
 @media screen and (min-width:1024px) {
 
-  .single-movie-img,.actor-img {
-    width: 20em;
+  .single-movie-img {
+    width: 15em;
+  }
+
+  .actor-img {
+    width: 10em;
   }
 
   .actor-name {
-    font-size: 1.5em;
+    font-size: 1em;
+  }
+
+  .movie-link a {
+    width: auto;
+    display: flex;
+  }
+
+  .actors-title {
+    width: auto;
+    font-size: 1.8em;
   }
 }

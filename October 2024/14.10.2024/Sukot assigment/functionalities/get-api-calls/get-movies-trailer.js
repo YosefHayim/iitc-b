@@ -43,9 +43,8 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
         }
       }
     } else {
-      const playButton = movieCardDiv.querySelector('.play-button-btn');      
-      console.log(`No video available for this movie: ${movieId}`,playButton);
-      
+      const playButton = movieCardDiv.querySelector('.play-button-img');    
+      playButton.src = `/IITC-B/October 2024/14.10.2024/Sukot assigment/images/user-activity/no-trailer-available-img.svg`
     }
   });
 };

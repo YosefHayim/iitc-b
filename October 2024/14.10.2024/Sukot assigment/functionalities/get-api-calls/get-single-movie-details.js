@@ -14,10 +14,14 @@ const presentSingleMovieById = () => {
 
   // Fetch movie details
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, (singleMovieData) => {
+    console.log(singleMovieData);
+
   if (!singleMovieData) return redirectToErrorPage();
 
   // Fetch movie actors details    
   getData(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`, (creditsData) => {
+    console.log(creditsData);
+    
   if (!creditsData) return redirectToErrorPage();
   
   if (videoUrl) {

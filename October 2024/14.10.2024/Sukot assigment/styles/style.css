@@ -271,7 +271,7 @@
     height: 2em;
   }
 
-  .alert-message-container,.templateMessageContainer {
+  .alert-message-container,.template-message-container {
     color: white;
     display: flex;
     flex-direction: column;
@@ -283,6 +283,11 @@
     width: 100%;
     padding: 0.5em;
     display: none;
+  }
+
+  .template-message-container {
+    margin-bottom: 2em;
+    font-size: 2em;
   }
 
   .closebtn {

@@ -9,4 +9,4 @@
 
 3. inputs placeholder color to white
 
-4. create function that if no movie available we attach to it a a red color on the play button with un allowed sign.
+4. fixing if there is no trailer and someone presses on the data icon to get the movie details on the day movies and week movies

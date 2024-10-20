@@ -16,6 +16,7 @@ import { backTopClick } from "../Event-listeners/go-top-button-el.js";
 import { clickFavDataBtn } from "../Event-listeners/fav-data-button-el.js";
 import { clickFavShareBtn } from "../Event-listeners/fav-share-btn-el.js";
 import { clickFavRemoveBtn } from "../Event-listeners/fav-remove-movie-el.js";
+import { playBtnClick } from "../Event-listeners/play-button-el.js";
 
 loaderManipulation()
 burgerIconActivate()
@@ -45,6 +46,7 @@ if(window.location.pathname.endsWith('popular-day.html')) {
   popularMoviesOfDay()
   backTopClick()
   isIdOrisName()
+  playBtnClick()
 
 }
 

@@ -1,7 +1,5 @@
 import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js";
 import { createDomEl } from "./create-div-dom.js";
-import { clickDataBtn } from "../Event-listeners/user-activity/data-button-el.js";
-import { heartBtnClick } from "../Event-listeners/user-activity/heart-button-el.js";
 import { skeletonMovieCard } from "./movie-card-skeleton-dom.js";
 
   // Create each movie card
@@ -15,12 +13,6 @@ import { skeletonMovieCard } from "./movie-card-skeleton-dom.js";
 
     // Attaching to each movieCard the trailerURL
     getMoviesTrailers(movie.id, movieCardDiv);
-
-    //heart button listener event to add the movie to the favorite page.
-    heartBtnClick(movieCardDiv)
-
-    // data button listener event to add to the movie to the single movie page.
-    clickDataBtn(movieCardDiv)
 
   return movieCardDiv;
   };

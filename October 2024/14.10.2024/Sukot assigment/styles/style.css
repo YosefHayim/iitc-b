@@ -315,7 +315,6 @@
 
   .play-button-btn {
     transform: translate(0, -12.5em);
-    display: none;
   }
 
   .white-data-btn {
@@ -344,7 +343,6 @@
 
   .play-button-img {
     height: 3em;
-    display: none;
   }
 
   .white-data-img {
@@ -700,6 +698,7 @@
     left: 0.5em;
     border: none;
     cursor: pointer;
+    display: none;
   }
 
   .get-from-to-bottom-btn {

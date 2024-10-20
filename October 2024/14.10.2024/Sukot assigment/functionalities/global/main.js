@@ -19,6 +19,9 @@ import { clickFavRemoveBtn } from "../Event-listeners/user-activity/fav-remove-m
 import { playBtnClick } from "../Event-listeners/user-activity/play-button-el.js";
 import { clickSearchPageBtn } from "../Event-listeners/pagination-buttons/is-next-is-previous-search-page-el.js";
 import { goBottomClick } from "../Event-listeners/user-activity/go-bottom-button-el.js";
+import { favPlayBtnClick } from "../Event-listeners/user-activity/fav-play-button-el.js";
+import { heartBtnsClick } from "../Event-listeners/user-activity/heart-button-el.js";
+import { dataBtnsClicks } from "../Event-listeners/user-activity/data-button-el.js";
 
 loaderManipulation()
 burgerIconActivate()
@@ -34,6 +37,8 @@ if (window.location.pathname.endsWith("index.html")) {
   isIdOrisName()
   clickSearchPageBtn()
   goBottomClick()
+  heartBtnsClick()
+  dataBtnsClicks()
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {
@@ -44,7 +49,7 @@ if (window.location.pathname.endsWith('favorite.html')) {
   clickFavShareBtn()
   clickFavRemoveBtn()
   goBottomClick()
-
+  favPlayBtnClick()
 }
 
 if(window.location.pathname.endsWith('popular-day.html')) {

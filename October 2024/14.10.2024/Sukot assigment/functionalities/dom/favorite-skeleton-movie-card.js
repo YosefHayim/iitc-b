@@ -29,8 +29,6 @@ const createFavSkeletonCard = (movieCardDiv,movie) => {
     <h2 class="rating-number-txt">${roundMovieRating(movie.vote_average)}</h2>
   </div>
 `;
-
-
   return movieCardDiv
 }
 

@@ -1,5 +1,5 @@
 import { getData } from "./api-functions.js";
-import { copyToClipboard } from "../Event-listeners/user-activity/copy-to-clipboard-el.js";
+import { copyToClipboard } from "../Event-listeners/user-activity/global-copy-to-clipboard-el.js";
 import { apiKey } from "../global/env.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js"
 import { noTrailerImg } from "../DOM/no-trailer-image-dom.js";

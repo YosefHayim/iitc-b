@@ -8,7 +8,6 @@ import { alertMessage } from "./alert-message-dom.js";
 
 const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
   
-  
   const image = isImageNull(singleMovieData.poster_path);
   const movieName = singleMovieData.original_title
   const resultRatingImg = getStarRatingImage(singleMovieData.vote_average)
@@ -78,6 +77,5 @@ const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
   }
   )
 }
-
 
 export {creatingSingleMovieDataView}

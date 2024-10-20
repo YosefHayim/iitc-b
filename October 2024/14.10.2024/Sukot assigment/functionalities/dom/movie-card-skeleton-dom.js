@@ -10,7 +10,6 @@ const skeletonMovieCard = (movie,movieCardDiv) => {
   const movieName = isNameToLong(movie.original_title);
   const resultRatingImg = getStarRatingImage(movie.vote_average)
 
-  // Populate movie card HTML
   movieCardDiv.innerHTML = `
   <div>
     <a href="" class="img-trailer-link">
@@ -35,7 +34,6 @@ const skeletonMovieCard = (movie,movieCardDiv) => {
     </div>
   </div>
 `;
-
   return movieCardDiv
 }
 

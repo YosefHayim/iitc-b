@@ -18,6 +18,9 @@ const alertMessage = (message,backgroundColor) => {
     return templateMessageContainer
 
   } else {
+    if (backgroundColor) {
+      alertMessageContainer.style.background = backgroundColor
+    }
     alertMessageContainer.innerHTML = message;
     alertMessageContainer.style.display = 'flex';
   

@@ -11,7 +11,7 @@ const clickSearchPageBtn = () => {
     ev.preventDefault();
 
     let params = new URLSearchParams(window.location.search);
-    const querySearch = params.get('query')
+    const querySearch = params.get('query')    
 
     const button = ev.target.closest('button');
     if (button.classList.contains('next-page')) {

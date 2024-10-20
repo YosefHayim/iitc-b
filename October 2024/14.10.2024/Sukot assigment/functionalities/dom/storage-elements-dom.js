@@ -1,10 +1,11 @@
 // Selectors for different movie containers and elements
 const movieCardsDivs = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container');
-const formData = document.querySelectorAll('form');
+const homePageDivs = document.querySelectorAll('.currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container, .search-results-container')
 const whiteGlassSearches = document.querySelectorAll('.white-search-bar');
 const paginationBtns = document.querySelectorAll('.next-page, .previous-page');
 const titlesContainers = document.querySelectorAll('div[class*="container-title"]');
 const searchInputs = document.querySelectorAll('.input-search-bar');
+const formData = document.querySelectorAll('form');
 
 // Individual element selectors
 const alertMessageContainer = document.querySelector('.alert-message-container');
@@ -46,6 +47,7 @@ const searchPaginationDiv = document.querySelector('.buttons-pagination-containe
 
 // Exported elements
 export {
+  homePageDivs,
   goTBottomBtn,
   searchPaginationDiv,
   goBackTopBtn,

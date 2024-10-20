@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 .fav-play-button-btn {
-  transform: translate(0, -12.5em);
+  transform: translate(0, -13.5em);
 }
 .fav-remove-btn-img {
   transform: translate(5em, -7em);
@@ -24,7 +24,10 @@
 }
 
 .fav-white-share-trailer-btn {
-  transform: translate(-5em, -7em);
+  transform: translate(-5em, -6.5em);
+  text-decoration: none;
+  background: none;
+  font-size: 0.9em;
 }
 
 .fav-remove-btn-img:active,.fav-white-data-img:active,.fav-white-share-img:active,.fav-play-button-img:active {
@@ -34,7 +37,6 @@
 .fav-play-button-img:hover,.fav-white-share-img:hover,.fav-remove-btn-img:hover,.fav-white-share-img:hover,.fav-white-data-img:hover {
   background-color: var(--rating--color);
 }
-
 
 .fav-play-button-img,.fav-white-share-img,.fav-remove-btn-img,.fav-white-data-img {
   height: 2em;

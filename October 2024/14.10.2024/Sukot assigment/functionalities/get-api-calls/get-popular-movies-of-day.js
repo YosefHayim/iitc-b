@@ -1,7 +1,7 @@
 import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
 import { popularOfTheDayDiv, movieCardsDivs } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 
 const popularMoviesOfDay = () => {
   getData(`https://api.themoviedb.org/3/trending/movie/day?language=en-US&page=1&api_key=${apiKey}`, (data) => {

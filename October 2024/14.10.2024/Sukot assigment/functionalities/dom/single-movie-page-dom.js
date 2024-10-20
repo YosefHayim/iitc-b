@@ -7,13 +7,6 @@ import { createDomEl } from "./create-div-dom.js";
 
 const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
   
-  if (videoUrl) {
-    console.log('Video URL is:',videoUrl);
-    
-  } else {
-    console.log("Still didn't fixed the video YT URL to favorite page.");
-  }
-  
   const image = isImageNull(singleMovieData.poster_path);
   const movieName = isNameToLong(singleMovieData.original_title);
   const resultRatingImg = getStarRatingImage(singleMovieData.vote_average)

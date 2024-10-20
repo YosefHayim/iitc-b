@@ -1,6 +1,6 @@
 import { getData } from "./api-functions.js";
 import { theatresContainer, currentTheaterPage } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 
 const currentlyInTheaters = (pageNumber = 1) => {

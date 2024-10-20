@@ -29,14 +29,16 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
         shareButton.setAttribute('href', trailerUrl);
         imgTrailerLink.setAttribute('href', trailerUrl);
         copyToClipboard(shareButton, trailerUrl);
-
+        
       } else {
-        const favPlayBtn = movieCardDiv.querySelector('.fav-play-button-img');
-        const favShareBtn = movieCardDiv.querySelector('.fav-white-share-img');
+        const favImgBox = movieCardDiv.querySelector('.fav-movie-trailer-url') 
+        const favPlayBtn = movieCardDiv.querySelector('.fav-play-button-btn');
+        const favShareBtn = movieCardDiv.querySelector('.fav-white-share-trailer-btn');
 
         if (favPlayBtn && favShareBtn) {
           favPlayBtn.setAttribute('href', trailerUrl);
           favShareBtn.setAttribute('href', trailerUrl);
+          favImgBox.setAttribute('href',trailerUrl)
         }
       }
     }

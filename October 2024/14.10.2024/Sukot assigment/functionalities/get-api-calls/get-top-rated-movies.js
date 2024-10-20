@@ -1,7 +1,7 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
 import { topRatedMoviesContainer, topTrendingPage } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 
 const topRatedMovies = (pageNumber = 1) => {
     // For manipulating the dom and showing teh next data

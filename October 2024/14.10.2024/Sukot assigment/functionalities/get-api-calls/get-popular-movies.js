@@ -1,7 +1,7 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
 import { popularMoviesContainer, latestPopularPage } from "../DOM/storage-elements-dom.js";
-import { createMovieCard } from "../DOM/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 
 const popularMovies = (pageNumber = 1) => {
   // Clear container for new data

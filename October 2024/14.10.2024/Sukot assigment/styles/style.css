@@ -446,7 +446,7 @@
       position: fixed;
       animation: slideIn 0.3s ease-out forwards;
       animation-iteration-count: 1;
-      margin-bottom: -5.5em;
+      margin-bottom: -6.3em;
   }
 
   @keyframes slideIn {
@@ -895,8 +895,4 @@
     flex-wrap: nowrap;
   }
 
-  }
-
-  @media screen and (min-width:576px) {
-    
   }

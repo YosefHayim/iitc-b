@@ -59,7 +59,6 @@ if(window.location.pathname.endsWith('movie-data.html')) {
   presentSingleMovieById()
   backTopClick()
   isIdOrisName()
-
 }
 
 if(window.location.pathname.endsWith('feedback-me.html')) {

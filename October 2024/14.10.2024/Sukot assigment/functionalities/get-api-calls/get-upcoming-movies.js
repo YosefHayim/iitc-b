@@ -1,5 +1,5 @@
 import { getData } from "./api-functions.js";
-import { createMovieCard } from "../DOM/dom-movies-cards.js";
+import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { upComingMoviesContainer, upComingMoviePage } from "../DOM/storage-elements-dom.js";
 
 const upComingMovies = (pageNumber = 1) => {

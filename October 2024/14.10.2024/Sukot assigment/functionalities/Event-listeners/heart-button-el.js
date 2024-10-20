@@ -6,7 +6,7 @@ const heartBtnClick = (movieCardDiv) => {
       const heartButton = movieCardDiv.querySelector('.white-heart-trailer-btn');
       heartButton.addEventListener('click', (ev) => {
       ev.preventDefault();
-  
+          
     // Calling the alertMessage to avoid duplicated code areas
     let message = `Movie added to favorite picks`;
     alertMessage(message)

@@ -5,9 +5,10 @@ import { favMoviesContainer } from "../DOM/storage-elements-dom.js";
 const clickFavShareBtn = () => {
   favMoviesContainer.addEventListener('click', (ev) => {
     
-    const shareImg = ev.target.closest('.fav-white-share-img');
+    const shareImg = ev.target.closest('.fav-white-share-trailer-btn');
     if (shareImg) {
       ev.preventDefault();
+
       const trailerUrl = shareImg.getAttribute('href');
       console.log(`Trailer URL: ${trailerUrl}`);
 

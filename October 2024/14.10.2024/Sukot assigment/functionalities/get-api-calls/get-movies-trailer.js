@@ -1,6 +1,8 @@
 import { getData } from "./api-functions.js";
 import { copyToClipboard } from "../Event-listeners/copy-to-clipboard-el.js";
 import { apiKey } from "../global/env.js";
+import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js"
+import { noTrailerImg } from "../DOM/no-trailer-image-dom.js";
 
 const getMoviesTrailers = (movieId, movieCardDiv) => {
 
@@ -9,7 +11,7 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
 
     if (!data) {
       console.log(`Error fetching data`);
-      redirectToErrorPage();
+      // redirectToErrorPage();
       return;
     }
 
@@ -24,7 +26,7 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
       const shareButton = movieCardDiv.querySelector('.white-share-trailer-btn');
       const imgTrailerLink = movieCardDiv.querySelector('.img-trailer-link');
 
-      // Set trailer URLs for play, share, and image links if elements exist
+      // Set trailer URLs for play, share, and image links if elements exist for the regular buttons.
       if (playButton && imgTrailerLink && shareButton) {
         playButton.setAttribute('href', trailerUrl);
         shareButton.setAttribute('href', trailerUrl);
@@ -32,19 +34,30 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
         copyToClipboard(shareButton, trailerUrl);
         
       } else {
+        // else those buttons dont exist we are on another page and we set the trailer Url to other page button elements.
         const favImgBox = movieCardDiv.querySelector('.fav-movie-trailer-url') 
         const favPlayBtn = movieCardDiv.querySelector('.fav-play-button-btn');
         const favShareBtn = movieCardDiv.querySelector('.fav-white-share-trailer-btn');
 
-        if (favPlayBtn && favShareBtn) {
+        // if those 3 buttons exist we attach to them href with the trailer url.
+        if (favPlayBtn && favShareBtn && favImgBox) {
           favPlayBtn.setAttribute('href', trailerUrl);
           favShareBtn.setAttribute('href', trailerUrl);
           favImgBox.setAttribute('href',trailerUrl)
         }
       }
     } else {
-      const playButton = movieCardDiv.querySelector('.play-button-img');    
-      playButton.src = `/IITC-B/October 2024/14.10.2024/Sukot assigment/images/user-activity/no-trailer-available-img.svg`
+
+      const playButton = movieCardDiv.querySelector('.play-button-img');   
+      const favPlayBtn = movieCardDiv.querySelector('.fav-play-button-img');
+
+      if (playButton) {
+        noTrailerImg(playButton)
+
+      } else if (favPlayBtn) {
+        noTrailerImg(favPlayBtn)        
+      }
+
     }
   });
 };

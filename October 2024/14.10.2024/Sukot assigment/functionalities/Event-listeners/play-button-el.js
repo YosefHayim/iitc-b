@@ -1,9 +1,7 @@
 import { alertMessage } from "../DOM/alert-message-dom.js";
 import { popularOfTheDayDiv } from "../DOM/storage-elements-dom.js"
 
-const playBtnClick = () => {
-  console.log(popularOfTheDayDiv);
-  
+const playBtnClick = () => {  
   popularOfTheDayDiv.addEventListener('click',(ev) => {
     ev.preventDefault();
     

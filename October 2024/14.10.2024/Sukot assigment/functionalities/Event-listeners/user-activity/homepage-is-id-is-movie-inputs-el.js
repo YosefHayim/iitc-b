@@ -1,7 +1,7 @@
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { allInputsContainers } from "../DOM/storage-elements-dom.js";
-import { searchMovieById } from "../get-api-calls/get-movie-id-by-id.js";
-import { searchMovieByName } from "../get-api-calls/get-movie-by-name.js";
+import { redirectToErrorPage } from "../../DOM/redirect-to-404-dom.js";
+import { allInputsContainers } from "../../DOM/storage-elements-dom.js";
+import { searchMovieById } from "../../get-api-calls/get-movie-id-by-id.js";
+import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 
 const handleMovieSearchByIdOrName = () => {
   allInputsContainers.forEach(form => {

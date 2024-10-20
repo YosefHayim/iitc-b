@@ -1,6 +1,6 @@
-import { alertMessage } from "/IITC-B/October 2024/14.10.2024/Sukot assigment/functionalities/DOM/alert-message-dom.js";
+import { displayAlertMessage } from "/IITC-B/October 2024/14.10.2024/Sukot assigment/functionalities/DOM/alert-message-dom.js";
 
-const copyToClipboard = (shareButton, trailerUrl) => {
+const handleCopyToClipboard = (shareButton, trailerUrl) => {
 
   shareButton.addEventListener('click', async (ev) => {
     ev.preventDefault();
@@ -8,14 +8,14 @@ const copyToClipboard = (shareButton, trailerUrl) => {
     try {
       await navigator.clipboard.writeText(trailerUrl);
       let message = 'Trailer URL Copied';
-      alertMessage(message);
+      displayAlertMessage(message);
 
     } catch (err) {
       console.error('Failed to copy trailer URL', err);
       let message = 'Failed to copy URL';
-      alertMessage(message);
+      displayAlertMessage(message);
     }
   });
 }
 
-export { copyToClipboard };
+export { handleCopyToClipboard };

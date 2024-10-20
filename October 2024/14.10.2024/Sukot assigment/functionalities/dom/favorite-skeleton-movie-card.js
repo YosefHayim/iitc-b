@@ -1,10 +1,9 @@
-import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js";
 import { isImageNull } from "./is-image-null-dom.js";
 import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
 import { roundMovieRating } from "./round-rating-movie-dom.js";
 
-const createFavSkeletonCard = (movieCardDiv,movie) => {
+const buildFavoriteCardSkeleton = (movieCardDiv,movie) => {
   
   const image = isImageNull(movie.poster_path);
   const movieName = isNameToLong(movie.original_title);
@@ -32,4 +31,4 @@ const createFavSkeletonCard = (movieCardDiv,movie) => {
   return movieCardDiv
 }
 
-export {createFavSkeletonCard}
+export {buildFavoriteCardSkeleton}

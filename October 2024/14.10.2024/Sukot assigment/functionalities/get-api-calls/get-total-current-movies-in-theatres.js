@@ -3,7 +3,7 @@ import { theatresContainer, currentTheaterPage } from "../DOM/storage-elements-d
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 
-const currentlyInTheaters = (pageNumber = 1) => {
+const fetchCurrentlyInTheatersMovies = (pageNumber = 1) => {
   // Clear container for new data
   theatresContainer.innerHTML = "";
 
@@ -29,4 +29,4 @@ const currentlyInTheaters = (pageNumber = 1) => {
   });
 };
 
-export { currentlyInTheaters };
+export { fetchCurrentlyInTheatersMovies };

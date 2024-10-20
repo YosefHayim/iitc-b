@@ -1,9 +1,10 @@
 import { createFavSkeletonCard } from "./favorite-skeleton-movie-card.js";
-import { createDomEl } from "../DOM/create-div-dom.js";
-import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js";
+import { createDomEl } from "./create-div-dom.js";
+import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js"
 
 // Create a favorite movie card using the movie object
-const createFavMovieCard = (movie) => {
+const generateFavoriteMovieCard  = (movie) => {
+
   // Create a div for the movie card and set its class and ID
   const movieCardDiv = createDomEl();
   movieCardDiv.classList.add('movie-card');
@@ -17,4 +18,4 @@ const createFavMovieCard = (movie) => {
   return movieCardDiv;
 };
 
-export { createFavMovieCard };
+export { generateFavoriteMovieCard };

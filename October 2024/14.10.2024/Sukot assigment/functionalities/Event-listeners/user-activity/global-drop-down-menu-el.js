@@ -3,7 +3,7 @@ import { popularMoviesOfDay } from "../../get-api-calls/get-popular-movies-of-da
 import { popularMoviesOfWeek } from "../../get-api-calls/get-popular-movies-of-week.js";
 
 // Determines whether to fetch movies of the day or week based on user selection
-const isDayOrWeek = () => {
+const handlePopularMoviesSelection = () => {
   dropDownMenu.addEventListener('click', (ev) => {
     ev.preventDefault();
 
@@ -17,4 +17,4 @@ const isDayOrWeek = () => {
   });
 };
 
-export { isDayOrWeek };
+export { handlePopularMoviesSelection };

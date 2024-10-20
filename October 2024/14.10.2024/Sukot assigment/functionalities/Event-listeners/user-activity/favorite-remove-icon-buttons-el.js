@@ -1,11 +1,11 @@
 import { alertMessage } from "../../DOM/alert-message-dom.js";
 import { reloadThisPage } from "../../DOM/reload-current-page-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
-import { removeFavMovie } from "../../post-api-calls/post-remove-fav-movie.js";
+import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
 
 
 // Favorite data buttons clicks.
-const clickFavRemoveBtn = () => {
+const handleFavoriteRemoveButtonClick = () => {
   favMoviesContainer.addEventListener('click', (ev) => {
     
     const removeBtn = ev.target.closest('.fav-remove-btn-img');
@@ -22,4 +22,4 @@ const clickFavRemoveBtn = () => {
   });
 };
 
-export { clickFavRemoveBtn };
+export { handleFavoriteRemoveButtonClick };

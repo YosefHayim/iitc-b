@@ -1,9 +1,9 @@
 import { 
-  movieCardsDivs, 
+  homePageAllContainers, 
   titlesContainers, 
-  navbarDesktop, 
-  mainDiv, 
-  aboutUsSection, 
+  navbarDesktopEl, 
+  mainContainer, 
+  aboutUsPageSection, 
   feedbackFormPage 
 } from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
@@ -28,11 +28,11 @@ const searchMovieById = (inputValue) => {
         title.remove();
       }
     });
-    movieCardsDivs.forEach(container => container.remove());
+    homePageAllContainers.forEach(container => container.remove());
 
     // Remove specific sections if they exist
-    if (aboutUsSection) {
-      aboutUsSection.remove();
+    if (aboutUsPageSection) {
+      aboutUsPageSection.remove();
     }
 
     if (feedbackFormPage) {
@@ -40,8 +40,8 @@ const searchMovieById = (inputValue) => {
     }
 
     // Check if search result title and container already exist
-    let searchResultTitle = mainDiv.querySelector('.search-results-name');
-    let searchResultContainer = mainDiv.querySelector('.search-results-container');
+    let searchResultTitle = mainContainer.querySelector('.search-results-name');
+    let searchResultContainer = mainContainer.querySelector('.search-results-container');
 
     // Create new elements if they don't exist
     if (!searchResultTitle && !searchResultContainer) {
@@ -55,7 +55,7 @@ const searchMovieById = (inputValue) => {
       searchResultContainer.classList.add('search-results-container');
 
       // Insert the title after the .alert-message-container element
-      navbarDesktop.insertAdjacentElement('afterend', searchResultTitle);
+      navbarDesktopEl.insertAdjacentElement('afterend', searchResultTitle);
 
       // Insert the container after the search result title
       searchResultTitle.insertAdjacentElement('afterend', searchResultContainer);

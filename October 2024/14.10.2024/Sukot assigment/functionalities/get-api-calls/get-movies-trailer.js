@@ -11,7 +11,7 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
 
     if (!data) {
       console.log(`Error fetching data`);
-      // redirectToErrorPage();
+      redirectToErrorPage();
       return;
     }
 

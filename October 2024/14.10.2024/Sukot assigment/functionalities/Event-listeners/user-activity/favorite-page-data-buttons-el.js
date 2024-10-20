@@ -2,7 +2,7 @@ import { alertMessage } from "../../DOM/alert-message-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 
 // Favorite data buttons clicks.
-const clickFavDataBtn = () => {
+const handleFavoriteMovieClick = () => {
   favMoviesContainer.addEventListener('click', (ev) => {
     const favButton = ev.target.closest('.fav-white-data-btn');
     
@@ -32,4 +32,4 @@ const clickFavDataBtn = () => {
   });
 };
 
-export { clickFavDataBtn };
+export { handleFavoriteMovieClick };

@@ -3,7 +3,7 @@ import { apiKey } from "../global/env.js";
 import { topRatedMoviesContainer, topTrendingPage } from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 
-const topRatedMovies = (pageNumber = 1) => {
+const fetchTopRatedMovies = (pageNumber = 1) => {
     // For manipulating the dom and showing teh next data
   topRatedMoviesContainer.innerHTML = "";
 
@@ -26,4 +26,4 @@ const topRatedMovies = (pageNumber = 1) => {
 }
 
 
-export { topRatedMovies };
+export { fetchTopRatedMovies };

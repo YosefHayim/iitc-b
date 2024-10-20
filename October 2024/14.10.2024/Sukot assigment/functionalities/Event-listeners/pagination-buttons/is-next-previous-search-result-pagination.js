@@ -1,13 +1,13 @@
 import { alertMessage } from "../../DOM/alert-message-dom.js";
-import { searchPaginationDiv } from "../../DOM/storage-elements-dom.js";
+import { searchPaginationContainer } from "../../DOM/storage-elements-dom.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 import { decreasePage } from "../../global/decreasing-page.js";
 import { increasePage } from "../../global/increasing-page.js";
 
 let count = 1
 
-const clickSearchPageBtn = () => {
-  searchPaginationDiv.addEventListener('click', (ev) => {
+const handleSearchPaginationClick  = () => {
+  searchPaginationContainer.addEventListener('click', (ev) => {
     ev.preventDefault();
 
     let params = new URLSearchParams(window.location.search);
@@ -32,4 +32,4 @@ const clickSearchPageBtn = () => {
   });
 };
 
-export { clickSearchPageBtn };
+export { handleSearchPaginationClick  };

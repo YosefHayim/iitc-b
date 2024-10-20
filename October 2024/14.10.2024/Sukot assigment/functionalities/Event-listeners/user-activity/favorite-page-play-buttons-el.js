@@ -1,7 +1,7 @@
 import { alertMessage } from "../../DOM/alert-message-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 
-const favPlayBtnClick = () => {
+const handlePlayButtonClick  = () => {
   favMoviesContainer.addEventListener('click', (ev) => {
 
     const favPlayImg = ev.target.closest('.fav-play-button-img');
@@ -17,4 +17,4 @@ const favPlayBtnClick = () => {
   });
 }
 
-export {favPlayBtnClick}
+export {handlePlayButtonClick }

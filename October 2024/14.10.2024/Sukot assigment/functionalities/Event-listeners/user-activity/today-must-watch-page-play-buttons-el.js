@@ -1,8 +1,8 @@
 import { alertMessage } from "../../DOM/alert-message-dom.js";
-import { popularOfTheDayDiv } from "../../DOM/storage-elements-dom.js"
+import { popularOfTheDayContainer } from "../../DOM/storage-elements-dom.js"
 
-const playBtnClick = () => {  
-  popularOfTheDayDiv.addEventListener('click',(ev) => {
+const todayMustWatchPlayButtons = () => {  
+  popularOfTheDayContainer.addEventListener('click',(ev) => {
     ev.preventDefault();
     
     const playBtn = ev.target.closest('.play-button-btn')
@@ -16,4 +16,4 @@ const playBtnClick = () => {
   })
 }
 
-export {playBtnClick}
+export { todayMustWatchPlayButtons }

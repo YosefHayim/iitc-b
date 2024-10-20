@@ -1,8 +1,8 @@
-import { titlesContainers } from "../../DOM/storage-elements-dom.js";
-import { currentlyInTheaters } from "../../get-api-calls/get-current-movies-in-theatres.js";
-import { popularMovies } from "../../get-api-calls/get-popular-movies.js";
-import { topRatedMovies } from "../../get-api-calls/get-top-rated-movies.js";
-import { upComingMovies } from "../../get-api-calls/get-upcoming-movies.js";
+import { homepageTitlesContainers } from "../../DOM/storage-elements-dom.js";
+import { currentlyInTheaters } from "../../get-api-calls/get-total-current-movies-in-theatres.js";
+import { popularMovies } from "../../get-api-calls/get-total-popular-movies.js";
+import { topRatedMovies } from "../../get-api-calls/get-total-top-rated-movies.js";
+import { upComingMovies } from "../../get-api-calls/get-total-upcoming-movies.js";
 
 // Map containers to their respective functions
 const functionMap = {
@@ -20,8 +20,8 @@ const pageNumbers = {
   'trending-movies-container-title': 1,
 };
 
-const redirectPages = () => {
-  titlesContainers.forEach((container) => {
+const setupHomepagePagination = () => {
+  homepageTitlesContainers.forEach((container) => {
     container.addEventListener('click', (event) => {
       event.preventDefault();
 
@@ -47,4 +47,4 @@ const redirectPages = () => {
   });
 };
 
-export { redirectPages };
+export { setupHomepagePagination };

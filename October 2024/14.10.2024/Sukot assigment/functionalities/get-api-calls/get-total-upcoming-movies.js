@@ -2,7 +2,7 @@ import { getData } from "./api-functions.js";
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { upComingMoviesContainer, upComingMoviePage } from "../DOM/storage-elements-dom.js";
 
-const upComingMovies = (pageNumber = 1) => {
+const fetchUpcomingMovies = (pageNumber = 1) => {
   // Clear container for new data
   upComingMoviesContainer.innerHTML = "";
 
@@ -23,4 +23,4 @@ const upComingMovies = (pageNumber = 1) => {
   });
 };
 
-export { upComingMovies };
+export { fetchUpcomingMovies };

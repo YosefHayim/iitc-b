@@ -1,8 +1,8 @@
-import { addfavoriteMovieToList } from "../../post-api-calls/post-movies-to-favorite-list.js";
+import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { alertMessage } from "../../DOM/alert-message-dom.js";
 import { homePageDivs } from "../../DOM/storage-elements-dom.js";
 
-const heartBtnsClick = () => {
+const HomeHeartButtonClicks = () => {
   // Handle "favorite" button click
   homePageDivs.forEach((cardMoviesContainer) => {
     cardMoviesContainer.addEventListener('click', (ev) => {
@@ -25,4 +25,4 @@ const heartBtnsClick = () => {
   });
 }
 
-export { heartBtnsClick };
+export { HomeHeartButtonClicks };

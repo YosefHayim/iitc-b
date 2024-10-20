@@ -1,4 +1,4 @@
-import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSection, feedbackFormPage } from "../DOM/storage-elements-dom.js";
+import { homePageAllContainers, homepageTitlesContainers, navbarDesktopEl, mainContainer, aboutUsPageSection, feedbackFormPage } from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { getData } from "./api-functions.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
@@ -27,17 +27,17 @@ const searchMovieByName = (inputValue,count) => {
 
     // Clear existing titles and movie card containers
     // Ensure only titles that are not search results are removed
-    titlesContainers.forEach(title => {
+    homepageTitlesContainers.forEach(title => {
       if (!title.classList.contains('search-results-name')) {
         title.remove();
       }
-    movieCardsDivs.forEach(container => container.remove());
+    homePageAllContainers.forEach(container => container.remove());
 
     });
 
     // Remove sections like 'About Us' and 'Feedback Form' if they exist
-    if (aboutUsSection) {
-      aboutUsSection.remove();
+    if (aboutUsPageSection) {
+      aboutUsPageSection.remove();
     }
 
     if (feedbackFormPage) {
@@ -45,8 +45,8 @@ const searchMovieByName = (inputValue,count) => {
     }
 
     // Check if search results title and container already exist
-    let searchResultTitle = mainDiv.querySelector('.search-results-name');
-    let searchResultContainer = mainDiv.querySelector('.search-results-container');
+    let searchResultTitle = mainContainer.querySelector('.search-results-name');
+    let searchResultContainer = mainContainer.querySelector('.search-results-container');
 
     // Create search results title and container if they don't exist
     if (!searchResultTitle && !searchResultContainer) {
@@ -58,7 +58,7 @@ const searchMovieByName = (inputValue,count) => {
       searchResultContainer.classList.add('search-results-container');
 
       // Insert the title and container into the DOM
-      navbarDesktop.insertAdjacentElement('afterend', searchResultTitle);
+      navbarDesktopEl.insertAdjacentElement('afterend', searchResultTitle);
       searchResultTitle.insertAdjacentElement('afterend', searchResultContainer);
     }
 

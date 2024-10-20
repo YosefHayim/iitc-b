@@ -1,70 +1,70 @@
 // Selectors for different movie containers and elements
-const movieCardsDivs = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container');
-const homePageDivs = document.querySelectorAll('.currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container, .search-results-container')
-const whiteGlassSearches = document.querySelectorAll('.white-search-bar');
-const paginationBtns = document.querySelectorAll('.next-page, .previous-page');
-const titlesContainers = document.querySelectorAll('div[class*="container-title"]');
-const searchInputs = document.querySelectorAll('.input-search-bar');
-const formData = document.querySelectorAll('form');
+const homePageAllContainers = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container'); // Multiple movie card containers
+const homePageDivs = document.querySelectorAll('.currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container, .search-results-container'); // Containers for the homepage sections
+const whiteGlassSearches = document.querySelectorAll('.white-search-bar'); // Search bars
+const paginationBtns = document.querySelectorAll('.next-page, .previous-page'); // Pagination buttons
+const homepageTitlesContainers = document.querySelectorAll('div[class*="container-title"]'); // Containers for section titles
+const searchInputs = document.querySelectorAll('.input-search-bar'); // Input search fields
+const allInputsContainers = document.querySelectorAll('form'); // All form elements
 
 // Individual element selectors
-const alertMessageContainer = document.querySelector('.alert-message-container');
-const dropDownMenu = document.querySelector('.dropdown-content');
-const domTitleTxt = document.querySelector('.currently-movies-in-theatres-container-title');
-const burgerIcon = document.querySelector('.white-burger-icon');
-const favMoviesContainer = document.querySelector('.fav-movies-container');
-const upComingMoviesContainer = document.querySelector('.upcoming-movies-container');
-const popularMoviesContainer = document.querySelector('.popular-movies-container');
-const topRatedMoviesContainer = document.querySelector('.top-trending-movies-container');
-const searchResultContainer = document.querySelector('.search-results-container');
-const theatresContainer = document.querySelector('.currently-movies-in-theatres-container');
-const popularOfTheDayDiv = document.querySelector('.popular-of-day-container');
-const popularOfTheWeekDiv = document.querySelector('.popular-movies-of-week-container');
-const overlayDiv = document.querySelector('.overlay');
+const alertMessageContainerEl = document.querySelector('.alert-message-container'); // Alert message container
+const dropDownMenu = document.querySelector('.dropdown-content'); // Dropdown menu content
+const domTitleTxt = document.querySelector('.currently-movies-in-theatres-container-title'); // Title for the current movies in theatres section
+const burgerIcon = document.querySelector('.white-burger-icon'); // Burger menu icon for mobile
+const favMoviesContainer = document.querySelector('.fav-movies-container'); // Favorite movies section
+const upComingMoviesContainer = document.querySelector('.upcoming-movies-container'); // Upcoming movies section
+const popularMoviesContainer = document.querySelector('.popular-movies-container'); // Popular movies section
+const topRatedMoviesContainer = document.querySelector('.top-trending-movies-container'); // Top trending movies section
+const searchResultContainer = document.querySelector('.search-results-container'); // Search results section
+const theatresContainer = document.querySelector('.currently-movies-in-theatres-container'); // Movies currently in theatres
+const popularOfTheDayContainer = document.querySelector('.popular-of-day-container'); // Popular movies of the day section
+const popularOfTheWeekContainer = document.querySelector('.popular-movies-of-week-container'); // Popular movies of the week section
+const overlayContainer = document.querySelector('.overlay'); // Overlay element
 
 // Page number elements
-const currentTheaterPage = document.querySelector('.current-theaters-page');
-const upComingMoviePage = document.querySelector('.current-upcoming-movies-number');
-const latestPopularPage = document.querySelector('.current-popular-movies-number');
-const topTrendingPage = document.querySelector('.top-trending-movie-number');
-const popDayMoviePage = document.querySelector('.popular-day-number');
-const popWeekMoviePage = document.querySelector('.popular-week-number');
+const currentTheaterPage = document.querySelector('.current-theaters-page'); // Current page for theatres
+const upComingMoviePage = document.querySelector('.current-upcoming-movies-number'); // Current page for upcoming movies
+const latestPopularPage = document.querySelector('.current-popular-movies-number'); // Current page for popular movies
+const topTrendingPage = document.querySelector('.top-trending-movie-number'); // Current page for top trending movies
+const popDayMoviePage = document.querySelector('.popular-day-number'); // Current page for popular day movies
+const popWeekMoviePage = document.querySelector('.popular-week-number'); // Current page for popular week movies
 
 // Other DOM elements
-const templateTitle = document.querySelector('.template-title');
-const searchResultTitle = document.querySelector('.search-results-name');
-const footer = document.querySelector('footer');
-const singleMovieCard = document.querySelector('.single-movie-card');
-const mobileMenu = document.querySelector('.top-navbar-mobile');
-const feedbackFormPage = document.querySelector('.feedback-me-form');
-const sorryMessage = document.querySelector('.sorry-message');
-const mainDiv = document.querySelector('main');
-const navbarDesktop = document.querySelector('.navbar-desktop');
-const aboutUsSection = document.querySelector('.about-us-section');
-const goBackTopBtn = document.querySelector('.get-back-to-top-btn')
-const goTBottomBtn = document.querySelector('.get-from-to-bottom-btn')
-const searchPaginationDiv = document.querySelector('.buttons-pagination-container-search-bar')
+const templateTitle = document.querySelector('.template-title'); // Template title
+const searchResultTitle = document.querySelector('.search-results-name'); // Title for search results
+const footer = document.querySelector('footer'); // Footer section
+const singlePageMovieData = document.querySelector('.single-movie-card'); // Single movie card
+const topNavbarMobile = document.querySelector('.top-navbar-mobile'); // Mobile navigation bar
+const feedbackFormPage = document.querySelector('.feedback-me-form'); // Feedback form page
+const sorryMessage = document.querySelector('.sorry-message'); // Sorry message for errors or unavailable content
+const mainContainer = document.querySelector('main'); // Main content section
+const navbarDesktopEl = document.querySelector('.navbar-desktop'); // Desktop navigation bar
+const aboutUsPageSection = document.querySelector('.about-us-section'); // About Us section
+const goBackTopBtn = document.querySelector('.get-back-to-top-btn'); // Button to scroll back to the top
+const goTBottomBtn = document.querySelector('.get-from-to-bottom-btn'); // Button to scroll to the bottom
+const searchPaginationContainer = document.querySelector('.buttons-pagination-container-search-bar'); // Pagination buttons for search results
 
-// Exported elements
+// Exported elements for use in other files
 export {
   homePageDivs,
   goTBottomBtn,
-  searchPaginationDiv,
+  searchPaginationContainer,
   goBackTopBtn,
-  alertMessageContainer,
+  alertMessageContainerEl,
   popWeekMoviePage,
   templateTitle,
   searchResultTitle,
   footer,
-  singleMovieCard,
-  mobileMenu,
+  singlePageMovieData,
+  topNavbarMobile,
   feedbackFormPage,
   sorryMessage,
-  mainDiv,
+  mainContainer,
   dropDownMenu,
   domTitleTxt,
-  navbarDesktop,
-  aboutUsSection,
+  navbarDesktopEl,
+  aboutUsPageSection,
   burgerIcon,
   favMoviesContainer,
   upComingMoviesContainer,
@@ -74,13 +74,13 @@ export {
   topRatedMoviesContainer,
   searchResultContainer,
   whiteGlassSearches,
-  formData,
+  allInputsContainers,
   popDayMoviePage,
-  titlesContainers,
-  popularOfTheDayDiv,
-  popularOfTheWeekDiv,
-  overlayDiv,
-  movieCardsDivs,
+  homepageTitlesContainers,
+  popularOfTheDayContainer,
+  popularOfTheWeekContainer,
+  overlayContainer,
+  homePageAllContainers,
   paginationBtns,
   currentTheaterPage,
   upComingMoviePage,

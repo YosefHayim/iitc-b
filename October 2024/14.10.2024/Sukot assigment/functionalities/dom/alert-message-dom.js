@@ -1,33 +1,35 @@
 import { createDomEl } from "./create-div-dom.js";
-import { alertMessageContainer, navbarDesktop } from "./storage-elements-dom.js";
+import { alertMessageContainerEl, navbarDesktopEl } from "./storage-elements-dom.js";
 
 // Alerting the user dynamic based on the callback.
-const alertMessage = (message,backgroundColor) => {
+const displayAlertMessage  = (message,backgroundColor) => {
 
-  if (!alertMessageContainer) {
+  // If the alertMessageContainerEl doesn't exist in the current html page we are than we create it.
+  if (!alertMessageContainerEl) {
     const templateMessageContainer = createDomEl()
     templateMessageContainer.classList.add('template-message-container')
     templateMessageContainer.style.background = backgroundColor
     templateMessageContainer.innerHTML = message
     templateMessageContainer.style.display = `flex`
-    navbarDesktop.insertAdjacentElement('afterend',templateMessageContainer)
+    navbarDesktopEl.insertAdjacentElement('afterend',templateMessageContainer)
     setTimeout(() => {
       templateMessageContainer.style.display =`none`
     },3000)
 
     return templateMessageContainer
 
+    // Else it does exist we proceed.
   } else {
     if (backgroundColor) {
-      alertMessageContainer.style.background = backgroundColor
+      alertMessageContainerEl.style.background = backgroundColor
     }
-    alertMessageContainer.innerHTML = message;
-    alertMessageContainer.style.display = 'flex';
+    alertMessageContainerEl.innerHTML = message;
+    alertMessageContainerEl.style.display = 'flex';
   
     setTimeout(() => {
-      alertMessageContainer.style.display = 'none';
+      alertMessageContainerEl.style.display = 'none';
     }, 1500);
   }
 }
 
-export {alertMessage}
+export {displayAlertMessage }

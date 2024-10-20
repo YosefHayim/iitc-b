@@ -1,10 +1,10 @@
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { formData } from "../DOM/storage-elements-dom.js";
+import { allInputsContainers } from "../DOM/storage-elements-dom.js";
 import { searchMovieById } from "../get-api-calls/get-movie-id-by-id.js";
 import { searchMovieByName } from "../get-api-calls/get-movie-by-name.js";
 
-const isIdOrisName = () => {
-  formData.forEach(form => {
+const handleMovieSearchByIdOrName = () => {
+  allInputsContainers.forEach(form => {
 
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
@@ -39,4 +39,4 @@ const isIdOrisName = () => {
   });
 };
 
-export { isIdOrisName };
+export { handleMovieSearchByIdOrName };

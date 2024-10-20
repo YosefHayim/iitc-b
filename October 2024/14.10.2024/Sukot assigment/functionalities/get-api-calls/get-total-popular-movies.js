@@ -3,7 +3,7 @@ import { apiKey } from "../global/env.js";
 import { popularMoviesContainer, latestPopularPage } from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 
-const popularMovies = (pageNumber = 1) => {
+const fetchPopularMovies = (pageNumber = 1) => {
   // Clear container for new data
   popularMoviesContainer.innerHTML = "";
 
@@ -23,4 +23,4 @@ const popularMovies = (pageNumber = 1) => {
   });
 };
 
-export { popularMovies };
+export { fetchPopularMovies };

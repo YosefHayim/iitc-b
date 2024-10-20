@@ -4,7 +4,7 @@ import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
 import { roundMovieRating } from "./round-rating-movie-dom.js";
 
 
-const skeletonMovieCard = (movie,movieCardDiv) => {
+const buildSkeletonMovieCard = (movie,movieCardDiv) => {
 
   const image = isImageNull(movie.poster_path);
   const movieName = isNameToLong(movie.original_title);
@@ -37,4 +37,4 @@ const skeletonMovieCard = (movie,movieCardDiv) => {
   return movieCardDiv
 }
 
-export { skeletonMovieCard }
+export { buildSkeletonMovieCard }

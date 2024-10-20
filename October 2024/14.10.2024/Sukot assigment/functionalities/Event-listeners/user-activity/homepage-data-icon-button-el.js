@@ -1,7 +1,7 @@
 import { alertMessage } from "../../DOM/alert-message-dom.js";
 import { homePageDivs } from "../../DOM/storage-elements-dom.js";
 
-const dataBtnsClicks = () => {
+const HomeMovieDataButtonClicks = () => {
 
   // Handle data buttons clicks on each movie container
   homePageDivs.forEach((cardMoviesContainer) => {
@@ -41,4 +41,4 @@ const dataBtnsClicks = () => {
   });
 }
 
-export { dataBtnsClicks };
+export { HomeMovieDataButtonClicks };

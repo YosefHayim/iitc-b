@@ -1,4 +1,5 @@
-const loaderManipulation = () => {
+
+const screenLoadingAnimation = () => {
   window.addEventListener('load', () => {
     // Hide all elements except the loader on page load
     document.body.querySelectorAll('*:not(.loader)').forEach((element) => {
@@ -15,4 +16,4 @@ const loaderManipulation = () => {
   });
 }
 
-export { loaderManipulation };
+export { screenLoadingAnimation };

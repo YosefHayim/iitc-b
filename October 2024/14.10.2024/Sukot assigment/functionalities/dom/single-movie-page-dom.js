@@ -1,4 +1,4 @@
-import { singleMovieCard } from "./storage-elements-dom.js";
+import { singlePageMovieData } from "./storage-elements-dom.js";
 import { isImageNull } from "./is-image-null-dom.js";
 import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
@@ -6,7 +6,7 @@ import { createDomEl } from "./create-div-dom.js";
 import { alertMessage } from "./alert-message-dom.js";
 
 
-const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
+const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
   
   const image = isImageNull(singleMovieData.poster_path);
   const movieName = singleMovieData.original_title
@@ -23,7 +23,7 @@ const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
     buttonText = 'trailer is Unavailable '
   }
 
-  singleMovieCard.innerHTML = `
+  singlePageMovieData.innerHTML = `
   <div class="single-img-container">
   <h1 class="title-single-movie">${movieName}</h1>
   <div class="rating-container">
@@ -52,7 +52,7 @@ const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
   videoContainer.insertAdjacentElement('afterend',castContainerTitle)
 
   castContainer.classList.add('cast-container');
-  singleMovieCard.appendChild(castContainer);
+  singlePageMovieData.appendChild(castContainer);
 
   if (!creditsData.cast || creditsData.cast.length === 0) {
     castContainer.textContent = `This movie doesn't have actors yet, oh baba...`
@@ -78,4 +78,4 @@ const creatingSingleMovieDataView = (singleMovieData,creditsData,videoUrl) => {
   )
 }
 
-export {creatingSingleMovieDataView}
+export {renderSingleMoviePage}

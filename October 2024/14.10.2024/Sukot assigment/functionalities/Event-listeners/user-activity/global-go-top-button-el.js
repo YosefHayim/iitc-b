@@ -10,11 +10,11 @@ window.addEventListener('scroll', () => {
 });
 
 // Scroll to the top when the button is clicked
-const backTopClick = () => {
+const handleBackToTopButtonClick = () => {
   goBackTopBtn.addEventListener('click', (ev) => {
     ev.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 };
 
-export { backTopClick };
+export { handleBackToTopButtonClick };

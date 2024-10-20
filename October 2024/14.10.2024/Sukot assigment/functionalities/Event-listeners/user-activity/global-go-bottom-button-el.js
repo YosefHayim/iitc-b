@@ -20,7 +20,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-const goBottomClick = () => {
+const handleGoToBottomButtonClick = () => {
   goTBottomBtn.addEventListener('click', (ev) => {
     ev.preventDefault();
     window.scrollTo({ 
@@ -37,4 +37,4 @@ const goBottomClick = () => {
   });
 };
 
-export { goBottomClick };
+export { handleGoToBottomButtonClick };

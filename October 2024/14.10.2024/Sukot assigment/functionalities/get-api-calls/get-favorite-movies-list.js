@@ -1,7 +1,6 @@
 import { getData } from "./api-functions.js";
 import { accountId } from "../global/env.js";
-import { favMoviesContainer, alertMessageContainer } from "../DOM/storage-elements-dom.js";
-import { removeFavMovie } from "../post-api-calls/post-remove-fav-movie.js";
+import { favMoviesContainer } from "../DOM/storage-elements-dom.js";
 import { createFavMovieCard } from "../DOM/favorite-movie-card-dom.js";
 
 const displayFavoriteMoviesList = () => {

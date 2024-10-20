@@ -2,3 +2,4 @@
    - Attach one listener to the parent container (e.g., movie list) and handle clicks on the specific buttons (like, data, etc.) using `ev.target.matches('.btn-class')`.
 
 1. making pagination buttons next and previous on the popular today weekend hits
+2. improve the share button on the fav page to call the function of copy to clipboard

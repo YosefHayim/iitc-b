@@ -4,7 +4,7 @@ import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { creatingSingleMovieDataView } from "../DOM/single-movie-page-dom.js";
 
 
-const presentSingleMovieById = () => {
+const displaySingleMovieById = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const videoUrl = urlParams.get('videoUrl')
 
@@ -34,4 +34,4 @@ const presentSingleMovieById = () => {
   });
 }
 
-export { presentSingleMovieById }
+export { displaySingleMovieById }

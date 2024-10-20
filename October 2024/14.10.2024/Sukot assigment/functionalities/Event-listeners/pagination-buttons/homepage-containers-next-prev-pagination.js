@@ -22,8 +22,8 @@ const pageNumbers = {
 
 const setupHomepagePagination = () => {
   homepageTitlesContainers.forEach((container) => {
-    container.addEventListener('click', (event) => {
-      event.preventDefault();
+    container.addEventListener('click', (ev) => {
+      ev.preventDefault();
 
       // Find which function to call based on the container's class
       const containerClass = Object.keys(functionMap).find(cls => container.classList.contains(cls));
@@ -32,9 +32,9 @@ const setupHomepagePagination = () => {
       // Call the target function if it exists
       if (targetFunction) {
         // Adjust page number based on button click
-        if (event.target.closest('.right-button')) {
+        if (ev.target.closest('.right-button')) {
           pageNumbers[containerClass]++;
-        } else if (event.target.closest('.left-button')) {
+        } else if (ev.target.closest('.left-button')) {
           pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1);
         }
 

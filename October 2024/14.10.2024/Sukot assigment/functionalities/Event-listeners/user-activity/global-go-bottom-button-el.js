@@ -5,7 +5,8 @@ const isAtBottom = () => {
   return (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
 };
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', (ev) => {
+  ev.preventDefault()
   if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     if (!isAtBottom()) {
       goTBottomBtn.style.display = 'block';

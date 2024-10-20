@@ -4,7 +4,8 @@ import {
   navbarDesktopEl, 
   mainContainer, 
   aboutUsPageSection, 
-  feedbackFormPage 
+  feedbackFormPage,
+  searchPaginationContainer
 } from "../DOM/storage-elements-dom.js";
 import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { apiKey } from "../global/env.js";
@@ -31,13 +32,8 @@ const searchMovieById = (inputValue) => {
     homePageAllContainers.forEach(container => container.remove());
 
     // Remove specific sections if they exist
-    if (aboutUsPageSection) {
-      aboutUsPageSection.remove();
-    }
+    searchPaginationContainer.remove()
 
-    if (feedbackFormPage) {
-      feedbackFormPage.remove();
-    }
 
     // Check if search result title and container already exist
     let searchResultTitle = mainContainer.querySelector('.search-results-name');

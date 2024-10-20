@@ -69,7 +69,6 @@ body {
     color: black;
     border-style:dotted;
   }
-
 }
 
 @media screen and (max-width:5000px) {
@@ -80,6 +79,6 @@ body {
 
 @media screen and (max-width:3000px) {
   body > footer {
-    position: absolute;
+    position: unset;
   }
 }

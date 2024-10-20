@@ -16,20 +16,16 @@ import { popularMoviesOfWeek } from "../get-api-calls/get-popular-movies-of-week
 import { displaySingleMovieById } from "../get-api-calls/get-single-movie-details.js"; // Renamed from presentSingleMovieById
 
 // Event listeners for favorite page
-import { handleFavoriteMovieClick } from "../Event-listeners/user-activity/favorite-page-data-buttons-el.js"; // Renamed from clickFavDataBtn
-import { handleFavoriteShareButtonClick } from "../Event-listeners/user-activity/favorite-page-share-buttons-el.js"; // Renamed from clickFavShareBtn
-import { handleFavoriteRemoveButtonClick } from "../Event-listeners/user-activity/favorite-remove-icon-buttons-el.js"; // Renamed from clickFavRemoveBtn
-import { handlePlayButtonClick } from "../Event-listeners/user-activity/favorite-page-play-buttons-el.js"; // Renamed from favtodayMustWatchPlayButtons
+import { handleFavoriteMoviePage } from "../Event-listeners/user-activity/favorite-page-buttons-el.js";
 
 // Event listeners for today must watch
 import { todayMustWatchPlayButtons } from "../Event-listeners/user-activity/today-must-watch-page-play-buttons-el.js";
 
 // Event listeners for homepage
-import { HomeHeartButtonClicks } from "../Event-listeners/user-activity/homepage-heart-buttons-el.js";
-import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/homepage-data-icon-button-el.js"; // Renamed from dataBtnsClicks
 import { setupHomepagePagination } from "../Event-listeners/pagination-buttons/homepage-containers-next-prev-pagination.js";
 import { handleSearchPaginationClick } from "../Event-listeners/pagination-buttons/is-next-previous-search-result-pagination.js";
-import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/homepage-is-id-is-movie-inputs-el.js"; // Renamed from isIdOrisName
+import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/homepage-inputs-el.js"; 
+import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/homepage-buttons-el.js";
 
 // Event listener for feedback me page
 import { formAnswer } from "../feedback-me-page/form-data-el.js";
@@ -43,24 +39,17 @@ if (window.location.pathname.endsWith("index.html")) {
   fetchPopularMovies();
   fetchTopRatedMovies();
   fetchUpcomingMovies();
-  setupHomepagePagination();
-  handleBackToTopButtonClick();
   handleMovieSearchByIdOrName();
   handleSearchPaginationClick();
   handleGoToBottomButtonClick();
-  HomeHeartButtonClicks();
+  setupHomepagePagination();
   HomeMovieDataButtonClicks();
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {
   displayFavoriteMoviesList();
-  handleMovieSearchByIdOrName();
-  handleBackToTopButtonClick();
-  handleFavoriteMovieClick();
-  handleFavoriteShareButtonClick();
-  handleFavoriteRemoveButtonClick();
+  handleFavoriteMoviePage()
   handleGoToBottomButtonClick();
-  handlePlayButtonClick();
 }
 
 if (window.location.pathname.endsWith('popular-day.html')) {

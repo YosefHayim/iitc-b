@@ -8,12 +8,14 @@ const handleCopyToClipboard = (shareButton, trailerUrl) => {
     try {
       await navigator.clipboard.writeText(trailerUrl);
       let message = 'Trailer URL Copied';
-      displayAlertMessage(message);
+      let backgroundColor = `green`
+      displayAlertMessage(message,backgroundColor);
 
     } catch (err) {
       console.error('Failed to copy trailer URL', err);
       let message = 'Failed to copy URL';
-      displayAlertMessage(message);
+      let backgroundColor = `red`
+      displayAlertMessage(message,backgroundColor);
     }
   });
 }

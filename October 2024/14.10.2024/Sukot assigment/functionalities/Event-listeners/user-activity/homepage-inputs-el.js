@@ -7,8 +7,7 @@ const handleMovieSearchByIdOrName = () => {
   allInputsContainers.forEach(form => {
 
     form.addEventListener('submit', (ev) => {
-      ev.preventDefault();
-
+      ev.preventDefault()
       const inputValue = form.querySelector('input').value.trim();
       // Redirect to error page if input is empty
       if (!inputValue) {

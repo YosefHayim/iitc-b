@@ -1,7 +1,8 @@
 import { goBackTopBtn } from "../../DOM/storage-elements-dom.js";
 
 // Show/hide the button based on scroll position (200px)
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', (ev) => {
+  ev.preventDefault()
   if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
     goBackTopBtn.style.display = 'block';  // Show the button when scrolled over 200px
   } else {

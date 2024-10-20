@@ -28,7 +28,7 @@ const displayAlertMessage  = (message,backgroundColor) => {
   
     setTimeout(() => {
       alertMessageContainerEl.style.display = 'none';
-    }, 1500);
+    }, 3000);
   }
 }
 

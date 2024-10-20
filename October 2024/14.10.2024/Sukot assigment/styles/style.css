@@ -271,7 +271,7 @@
     height: 2em;
   }
 
-  .alert-message-container {
+  .alert-message-container,.templateMessageContainer {
     color: white;
     display: flex;
     flex-direction: column;

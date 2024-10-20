@@ -6,6 +6,7 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
 
   // Fetch movie details along with videos (trailers)
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`, (data) => {
+
     if (!data) {
       console.log(`Error fetching data`);
       redirectToErrorPage();
@@ -19,7 +20,7 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
       const trailerUrl = `https://www.youtube.com/watch?v=${video.key}`;
 
       // Select elements within the movie card of homepage
-      const playButton = movieCardDiv.querySelector('.play-button-btn');
+      const playButton = movieCardDiv.querySelector('.play-button-btn');      
       const shareButton = movieCardDiv.querySelector('.white-share-trailer-btn');
       const imgTrailerLink = movieCardDiv.querySelector('.img-trailer-link');
 
@@ -41,6 +42,10 @@ const getMoviesTrailers = (movieId, movieCardDiv) => {
           favImgBox.setAttribute('href',trailerUrl)
         }
       }
+    } else {
+      const playButton = movieCardDiv.querySelector('.play-button-btn');      
+      console.log(`No video available for this movie: ${movieId}`,playButton);
+      
     }
   });
 };

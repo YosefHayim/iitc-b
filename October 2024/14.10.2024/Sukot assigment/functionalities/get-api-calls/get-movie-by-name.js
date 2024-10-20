@@ -1,12 +1,21 @@
 import { movieCardsDivs, titlesContainers, navbarDesktop, mainDiv, aboutUsSection, feedbackFormPage } from "../DOM/storage-elements-dom.js";
 import { createMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import { getData } from "./api-functions.js";
+import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
+import { alertMessage } from "../DOM/alert-message-dom.js";
 
 
-const searchMovieByName = (inputValue,pageNumber) => {
+const searchMovieByName = (inputValue,count) => {
   let defaultPage = 1
-  
-  getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=${pageNumber? ++pageNumber : defaultPage}`, (data) => {
+
+  if (count < 1) {
+    let message = `You can't go to page 0`
+    let backgroundColor = `red`
+    alertMessage(message,backgroundColor)
+    return;
+  }
+
+  getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=${count ? count : defaultPage}`, (data) => {
   // Fetch movie data based on the input value
 
     console.log(data);
@@ -59,7 +68,7 @@ const searchMovieByName = (inputValue,pageNumber) => {
     // Makes the first letter in the input value uppercase and than add the rest of it.
     let result = inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
 
-    searchResultTitle.innerHTML = `<h1>Total movies for "${result}" : ${data.total_results}</h1>`;
+    searchResultTitle.innerHTML = `<h1>Total results: ${data.total_results}<br> page:<br>${data.page} / ${data.total_pages}</h1>`;
 
     // Clear the container before appending new movie cards
     searchResultContainer.innerHTML = '';

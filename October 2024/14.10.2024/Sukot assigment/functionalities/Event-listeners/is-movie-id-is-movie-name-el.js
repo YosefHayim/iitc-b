@@ -5,15 +5,20 @@ import { searchMovieByName } from "../get-api-calls/get-movie-by-name.js";
 
 const isIdOrisName = () => {
   formData.forEach(form => {
+
     form.addEventListener('submit', (ev) => {
       ev.preventDefault();
-      const inputValue = form.querySelector('input').value.trim();
 
+      const inputValue = form.querySelector('input').value.trim();
       // Redirect to error page if input is empty
       if (!inputValue) {
         redirectToErrorPage()
         return;
       }
+
+      let params = new URLSearchParams(window.location.search);
+      params.set('query', inputValue);
+      window.history.replaceState({}, '', `${window.location.pathname}?${params}`);
 
       // Check if input is a name (letters only)
       if (/^[a-zA-Z]+$/.test(inputValue)) {

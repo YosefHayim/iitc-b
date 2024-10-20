@@ -1,5 +1,5 @@
-import { alertMessage } from "../DOM/alert-message-dom.js";
-import { favMoviesContainer } from "../DOM/storage-elements-dom.js";
+import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 
 // Favorite data buttons clicks.
 const clickFavShareBtn = () => {

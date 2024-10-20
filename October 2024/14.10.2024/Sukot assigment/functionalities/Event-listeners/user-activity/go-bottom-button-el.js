@@ -1,4 +1,4 @@
-import { goTBottomBtn } from "../DOM/storage-elements-dom.js";
+import { goTBottomBtn } from "../../DOM/storage-elements-dom.js";
 
 window.addEventListener('scroll', () => {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {

@@ -1,7 +1,7 @@
-import { alertMessage } from "../DOM/alert-message-dom.js";
-import { reloadThisPage } from "../DOM/reload-current-page-dom.js";
-import { favMoviesContainer } from "../DOM/storage-elements-dom.js";
-import { removeFavMovie } from "../post-api-calls/post-remove-fav-movie.js";
+import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { reloadThisPage } from "../../DOM/reload-current-page-dom.js";
+import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
+import { removeFavMovie } from "../../post-api-calls/post-remove-fav-movie.js";
 
 
 // Favorite data buttons clicks.

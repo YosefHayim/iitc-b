@@ -1,4 +1,4 @@
-import { searchInputs, whiteGlassSearches } from "../DOM/storage-elements-dom.js";
+import { searchInputs, whiteGlassSearches } from "../../DOM/storage-elements-dom.js";
 
 // Function to reset placeholder text and manage the visibility of white glass search icon
 const resetPlaceholder = () => {

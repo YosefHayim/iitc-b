@@ -1,4 +1,4 @@
-import { alertMessage } from "../DOM/alert-message-dom.js";
+import { alertMessage } from "/IITC-B/October 2024/14.10.2024/Sukot assigment/functionalities/DOM/alert-message-dom.js";
 
 const copyToClipboard = (shareButton, trailerUrl) => {
 

@@ -1,5 +1,5 @@
-import { alertMessage } from "../DOM/alert-message-dom.js";
-import { popularOfTheDayDiv } from "../DOM/storage-elements-dom.js"
+import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { popularOfTheDayDiv } from "../../DOM/storage-elements-dom.js"
 
 const playBtnClick = () => {  
   popularOfTheDayDiv.addEventListener('click',(ev) => {

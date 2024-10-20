@@ -1,5 +1,5 @@
 // Import elements to control from the DOM
-import { burgerIcon, overlayDiv, mobileMenu } from "../DOM/storage-elements-dom.js";
+import { burgerIcon, overlayDiv, mobileMenu } from "../../DOM/storage-elements-dom.js";
 
 const burgerIconActivate = () => {
   // Toggle burger icon and menu on click

@@ -1,24 +1,24 @@
-import { burgerIconActivate } from "../Event-listeners/burger-open-mobile-menu-el.js";
+import { burgerIconActivate } from "../Event-listeners/user-activity/burger-open-mobile-menu-el.js";
 import { currentlyInTheaters } from "../get-api-calls/get-current-movies-in-theatres.js";
 import { displayFavoriteMoviesList } from "../get-api-calls/get-fav-movies-list.js";
 import { popularMovies } from "../get-api-calls/get-popular-movies.js";
 import { topRatedMovies } from "../get-api-calls/get-top-rated-movies.js";
 import { upComingMovies } from "../get-api-calls/get-upcoming-movies.js";
-import { resetPlaceholder } from "../Event-listeners/reset-placeholder-input-el.js";
+import { resetPlaceholder } from "../Event-listeners/user-activity/reset-placeholder-input-el.js";
 import { isIdOrisName } from "../Event-listeners/is-movie-id-is-movie-name-el.js";
-import { redirectPages } from "../Event-listeners/homepage-pagination-buttons-el.js";
+import { redirectPages } from "../Event-listeners/pagination-buttons/homepage-pagination-buttons-el.js";
 import { popularMoviesOfDay } from "../get-api-calls/get-popular-movies-of-day.js";
 import { popularMoviesOfWeek } from "../get-api-calls/get-popular-movies-of-week.js";
 import { loaderManipulation } from "../Event-listeners/loader-dom-el.js";
 import { presentSingleMovieById } from "../get-api-calls/get-single-movie-details.js";
 import { formAnswer } from "../feedback-me/form-data.js";
-import { backTopClick } from "../Event-listeners/go-top-button-el.js";
-import { clickFavDataBtn } from "../Event-listeners/fav-data-button-el.js";
-import { clickFavShareBtn } from "../Event-listeners/fav-share-btn-el.js";
-import { clickFavRemoveBtn } from "../Event-listeners/fav-remove-movie-el.js";
-import { playBtnClick } from "../Event-listeners/play-button-el.js";
-import { clickSearchPageBtn } from "../Event-listeners/is-next-is-previous-search-page-el.js";
-import { goBottomClick } from "../Event-listeners/go-bottom-button-el.js";
+import { backTopClick } from "../Event-listeners/user-activity/go-top-button-el.js";
+import { clickFavDataBtn } from "../Event-listeners/user-activity/fav-data-button-el.js";
+import { clickFavShareBtn } from "../Event-listeners/user-activity/fav-share-btn-el.js";
+import { clickFavRemoveBtn } from "../Event-listeners/user-activity/fav-remove-movie-el.js";
+import { playBtnClick } from "../Event-listeners/user-activity/play-button-el.js";
+import { clickSearchPageBtn } from "../Event-listeners/pagination-buttons/is-next-is-previous-search-page-el.js";
+import { goBottomClick } from "../Event-listeners/user-activity/go-bottom-button-el.js";
 
 loaderManipulation()
 burgerIconActivate()

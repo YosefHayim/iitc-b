@@ -1,8 +1,8 @@
-import { alertMessage } from "../DOM/alert-message-dom.js";
-import { searchPaginationDiv } from "../DOM/storage-elements-dom.js";
-import { searchMovieByName } from "../get-api-calls/get-movie-by-name.js";
-import { decreasePage } from "../global/decreasing-page.js";
-import { increasePage } from "../global/increasing-page.js";
+import { alertMessage } from "../../DOM/alert-message-dom.js";
+import { searchPaginationDiv } from "../../DOM/storage-elements-dom.js";
+import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
+import { decreasePage } from "../../global/decreasing-page.js";
+import { increasePage } from "../../global/increasing-page.js";
 
 let count = 1
 

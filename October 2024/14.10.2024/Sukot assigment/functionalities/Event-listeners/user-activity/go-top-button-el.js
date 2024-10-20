@@ -1,4 +1,4 @@
-import { goBackTopBtn } from "../DOM/storage-elements-dom.js";
+import { goBackTopBtn } from "../../DOM/storage-elements-dom.js";
 
 // Show/hide the button based on scroll position (200px)
 window.addEventListener('scroll', () => {

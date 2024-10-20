@@ -19,14 +19,14 @@ import { displaySingleMovieById } from "../get-api-calls/get-single-movie-detail
 import { handleFavoriteMoviePage } from "../Event-listeners/user-activity/favorite-page-buttons-el.js"; // Handles favorite page buttons
 
 // Event Listeners for the "Today Must Watch" Page
-import { todayMustWatchPlayButtons } from "../Event-listeners/user-activity/today-must-watch-page-play-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
+import { todayMustWatchPlayButtons } from "../Event-listeners/user-activity/today-must-watch-page-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
 
 // Event Listeners for the "Weekly Hits" Page
 import { weeklyHitsPageButtons } from "../Event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
 
 // Event Listeners for the Homepage
 import { setupHomepagePagination } from "../Event-listeners/pagination-buttons/homepage-containers-next-prev-pagination.js"; // Sets up homepage pagination
-import { handleSearchPaginationClick } from "../Event-listeners/pagination-buttons/is-next-previous-search-result-pagination.js"; // Handles search result pagination clicks
+import { dynamicPaginationSetup } from "../Event-listeners/pagination-buttons/dynamic-next-previous-page-pagination.js"; // Handles search result pagination clicks
 import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/homepage-inputs-el.js"; // Handles movie search by ID or name
 import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/homepage-buttons-el.js"; // Handles homepage movie data button clicks
 
@@ -37,6 +37,7 @@ import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles fee
 screenLoadingAnimation(); // Displays loading animation on the screen
 handleBurgerIconToggle(); // Toggles burger menu for mobile
 resetPlaceholder(); // Resets placeholder values
+dynamicPaginationSetup(); // Set up pagination
 
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("index.html")) {
@@ -46,7 +47,6 @@ if (window.location.pathname.endsWith("index.html")) {
   fetchTopRatedMovies(); // Fetch top-rated movies
   fetchUpcomingMovies(); // Fetch upcoming movies
   handleMovieSearchByIdOrName(); // Handle search functionality
-  handleSearchPaginationClick(); // Set up pagination on search results
   handleBackToTopButtonClick(); // Set up back to top button functionality
   handleGoToBottomButtonClick(); // Set up scroll to bottom button
   setupHomepagePagination(); // Set up homepage pagination controls

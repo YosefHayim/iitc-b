@@ -2,6 +2,8 @@ import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 import {removeFavMovie} from "../../post-api-calls/post-remove-movie-from-favorite-list.js"
 import {reloadThisPage} from "../../DOM/reload-current-page-dom.js"
+import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
+import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 
 const handleFavoriteMoviePage = () => {
   favMoviesContainer.addEventListener('click', (ev) => {
@@ -12,24 +14,18 @@ const handleFavoriteMoviePage = () => {
   
     if (dataIcon) {
       ev.preventDefault(); 
-      // Get the movie card's ID and extract the numeric part.
       const favMovieId = dataIcon.closest('.movie-card').id.replace(/\D/g, '');
 
-      // Select the play button within the movie card.
       const movieCardDiv = dataIcon.closest('.movie-card');
       const playButton = movieCardDiv.querySelector('.fav-play-button-btn');
 
-      // Show an alert message.
       let message = 'Redirecting...';
       displayAlertMessage(message);
 
-      if (playButton) {
-        // Get the video URL and extract the video ID.
+      if (playButton) {        
         const videoUrl = playButton.getAttribute('href');
         const videoId = videoUrl.split('v=')[1];
-
-        // Redirect to the movie data page with movieId and videoUrl as parameters.
-        window.location.href = `movie-data.html?movieId=${favMovieId}&videoUrl=${encodeURIComponent(videoId)}`;
+        navigateToMoviePage(favMovieId,videoId)
       }
     }
 
@@ -54,9 +50,8 @@ const handleFavoriteMoviePage = () => {
     }
     
     if (playButton) {
-      ev.preventDefault();
       if (playButton.src && playButton.src.includes('no-trailer-available-img')) {
-        let message = `This movie doesn't have a trailer yet.`;
+        let message = `No trailer available for this movie.`;
         let backgroundColor = `#ffcd05`;
         displayAlertMessage(message, backgroundColor);
       }

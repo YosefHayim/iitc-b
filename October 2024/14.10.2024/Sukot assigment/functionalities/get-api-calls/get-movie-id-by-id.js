@@ -2,9 +2,7 @@ import {
   homePageAllContainers, 
   homepageTitlesContainers, 
   navbarDesktopEl, 
-  mainContainer, 
-  aboutUsPageSection, 
-  feedbackFormPage,
+  mainContainer,
   searchPaginationContainer
 } from "../DOM/storage-elements-dom.js";
 import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
@@ -24,11 +22,7 @@ const searchMovieById = (inputValue) => {
     }
 
     // Remove any existing titles and movie card containers before rendering new results
-    homepageTitlesContainers.forEach(title => {
-      if (!title.classList.contains('search-results-name')) {
-        title.remove();
-      }
-    });
+    homepageTitlesContainers.forEach(title => title.remove());
     homePageAllContainers.forEach(container => container.remove());
 
     // Remove specific sections if they exist

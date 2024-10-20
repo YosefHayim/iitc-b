@@ -8,15 +8,7 @@ import { displayAlertMessage } from "../DOM/alert-message-dom.js";
 const searchMovieByName = (inputValue,count) => {
   let defaultPage = 1
 
-  if (count < 1) {
-    let message = `You can't go to page 0`
-    let backgroundColor = `red`
-    displayAlertMessage(message,backgroundColor)
-    return;
-  }
-
   getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=${count ? count : defaultPage}`, (data) => {
-  // Fetch movie data based on the input value
 
     console.log(data);
 
@@ -24,8 +16,6 @@ const searchMovieByName = (inputValue,count) => {
       redirectToErrorPage()
       return;
     }
-
-    searchPaginationContainer.style.display = `flex`
 
     // Clear existing titles and movie card containers
     // Ensure only titles that are not search results are removed
@@ -60,6 +50,7 @@ const searchMovieByName = (inputValue,count) => {
     searchResultTitle.innerHTML = `<h1>Total results: ${data.total_results}<br> page:<br>${data.page} / ${data.total_pages}</h1>`;
     
     // Create and append movie cards for each result
+    searchPaginationContainer.style.display = `flex`
     searchResultContainer.innerHTML = '';
     data.results.forEach(movie => {
       const movieCard = buildHomeMovieCard(movie);

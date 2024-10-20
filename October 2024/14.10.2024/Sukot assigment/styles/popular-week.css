@@ -13,6 +13,11 @@
   position: relative;
 }
 
+.buttons-pagination-container-search-bar {
+  display: flex;
+}
+
+
 @media screen and (min-width:1024px) {
   .popular-movies-of-week-container {
     flex-direction: row;

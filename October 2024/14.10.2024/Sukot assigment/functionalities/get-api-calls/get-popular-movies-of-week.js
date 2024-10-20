@@ -3,14 +3,19 @@ import { getData } from "./api-functions.js";
 import { popularOfTheWeekContainer, homePageAllContainers } from "../DOM/storage-elements-dom.js";
 import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 
-const popularMoviesOfWeek = () => {
-  getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=1&api_key=${apiKey}`, (data) => {
+const popularMoviesOfWeek = (count) => {
+  let defaultPage = 1
+
+  getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${count ? count : defaultPage}&api_key=${apiKey}`, (data) => {
+
+    console.log(data);
 
     if (!data) {
       redirectToErrorPage();
       return;
     }
     
+    popularOfTheWeekContainer.innerHTML = ""
     data.results.forEach(movie => {
       // Creating in each loop a skeleton movie box
       const movieCard = buildHomeMovieCard(movie);

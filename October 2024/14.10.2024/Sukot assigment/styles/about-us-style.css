@@ -57,8 +57,8 @@ body {
   border-style: dashed;
   padding: 0.5em;
   border-radius: 0.5em;
-  width: 60%;
-  text-align: center;
+  flex-wrap: wrap;
+  display: flex;
 }
 
 @media screen and (min-width:1024px) {

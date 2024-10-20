@@ -16,6 +16,10 @@
   flex-wrap: wrap;
 }
 
+.buttons-pagination-container-search-bar {
+  display: flex;
+}
+
 @media screen and (min-width:1024px) {
   
   .popular-of-day-container {

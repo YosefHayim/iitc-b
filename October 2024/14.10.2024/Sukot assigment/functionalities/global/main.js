@@ -43,6 +43,8 @@ if (window.location.pathname.endsWith('favorite.html')) {
   clickFavDataBtn()
   clickFavShareBtn()
   clickFavRemoveBtn()
+  goBottomClick()
+
 }
 
 if(window.location.pathname.endsWith('popular-day.html')) {
@@ -50,6 +52,7 @@ if(window.location.pathname.endsWith('popular-day.html')) {
   backTopClick()
   isIdOrisName()
   playBtnClick()
+  goBottomClick()
 
 }
 
@@ -57,13 +60,14 @@ if(window.location.pathname.endsWith('popular-week.html')) {
   popularMoviesOfWeek()
   backTopClick()
   isIdOrisName()
-
+  goBottomClick()
 }
 
 if(window.location.pathname.endsWith('movie-data.html')) {
   presentSingleMovieById()
   backTopClick()
   isIdOrisName()
+  goBottomClick()
 }
 
 if(window.location.pathname.endsWith('feedback-me.html')) {

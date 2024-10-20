@@ -315,6 +315,7 @@
 
   .play-button-btn {
     transform: translate(0, -12.5em);
+    display: none;
   }
 
   .white-data-btn {
@@ -343,6 +344,7 @@
 
   .play-button-img {
     height: 3em;
+    display: none;
   }
 
   .white-data-img {
@@ -725,6 +727,10 @@
   /* Desktop design 1024px */
   @media screen and (min-width:1024px) {
 
+    .left-button,.right-button {
+      width: 5em;
+    }
+
     .input-search-bar {
       padding: 0.5em;
     }
@@ -747,7 +753,6 @@
       width: 100%;
       display: block;
       padding: 0.7em;
-      background: black;
     }
 
     .title {

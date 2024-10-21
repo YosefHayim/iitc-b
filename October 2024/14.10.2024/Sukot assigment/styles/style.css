@@ -55,10 +55,7 @@
   .navbar-mobile {
     background: black;
     justify-content: center;
-    width: 100vw;
-    top: 0;
-    margin-top: 0em;
-    padding-top: 1em;
+    padding-top: 2em;
     padding-bottom: 1em;
   }
 
@@ -324,7 +321,6 @@
 
   .white-data-img:active {
     background-color: red;
-    transform: scale(1.3);
   }
 
   .white-share-trailer-btn,.white-heart-trailer-btn,.play-button-btn,.remove-btn-icon,.white-data-btn {
@@ -368,7 +364,6 @@
 
   .white-heart-img:active {
     background-color: red;
-    transform: scale(1.3);
   }
 
   .white-share-trailer-btn {
@@ -380,7 +375,6 @@
   }
 
   .white-share-img:active {
-    transform: scale(1.3);
     background: red;
   }
 
@@ -392,7 +386,6 @@
     background: red;
     color: black;
     box-shadow: 0em 0em 10em 1em;
-    transform: scale(1.3);
   }
 
   .search-results-container {
@@ -507,7 +500,6 @@
   .logo:active,.logo-icon:active {
     background: var(--lighter-red-color);
     border-radius: 2em;
-    transform: scale(1.3);
   }
 
   .icon:active {

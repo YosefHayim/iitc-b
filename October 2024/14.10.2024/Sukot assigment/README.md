@@ -1,7 +1,12 @@
 fav page fixes:
-4. fav page - if there is no url youtube when user clicks share icon than pop message no url 
-6. fix footer position on desktop
+1. fav page - if there is no url youtube when user clicks share icon than pop message no url 
 
+2. redirect to index.html and preform the search query from the search bar input.
 
-search page fixes:
-improve user clarifcation if no trailer and no data icon works then notify user
+3. make the alert message box more dynamic 
+
+4. making all the get api calls cleanly doing what they suppose to do without doing other things on 
+
+5. night mode for desktop
+
+6. fix the mobile navbar to be responsive with the widths for mobile.

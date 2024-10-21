@@ -14,7 +14,7 @@ const handleBurgerIconToggle = () => {
     } else {
       // Otherwise, change it to the "X" icon and show the overlay and menu
       burgerIcon.src = "../images/user-activity/white-remove-icon.svg";
-      overlayContainer.style.display = 'block';
+      overlayContainer.style.display = 'flex';
       topNavbarMobile.style.display = 'flex';
     }
   });

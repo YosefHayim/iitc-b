@@ -56,11 +56,17 @@
     flex-direction: row;
   }
 
+  body > footer {
+    position: fixed;
+    bottom: 0;
+  }
+
 }
 
 @media screen and (max-width: 1295px) {
   body > footer {
-    position: relative;
+    position: fixed;
+    bottom: 0;
   }
   
 }

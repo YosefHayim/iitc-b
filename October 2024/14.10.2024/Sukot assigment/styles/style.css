@@ -55,12 +55,11 @@
   .navbar-mobile {
     background: black;
     justify-content: center;
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 1em;
   }
 
   .overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 16em;
@@ -68,6 +67,11 @@
     bottom: 0;
     z-index: 100;
     background: black;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .hidden {
@@ -99,6 +103,7 @@
     left: 11em;
     position: relative;
     width: 100%;
+    flex-wrap: wrap;
   }
 
   .top-navbar-mobile a:active {
@@ -554,6 +559,7 @@
     flex-direction: row-reverse;
     gap: 10em;
     display: none;
+    margin-bottom: 5em;
   }
 
   .left-button,.right-button {
@@ -680,7 +686,7 @@
   }
 
   body > footer {
-    position: relative;
+    position: static;
   }
 
   .get-back-to-top-btn,.get-from-to-bottom-btn {
@@ -704,7 +710,7 @@
   }
 
   .get-back-to-top-img,.go-to-bottom-img {
-    width: 3em;
+    width: 2em;
     border-radius: 5em;
   }
 
@@ -738,7 +744,7 @@
     }
 
     .get-back-to-top-img,.go-to-bottom-img {
-      width: 4em;
+      width: 3em;
     }
 
     .alert-message-container {

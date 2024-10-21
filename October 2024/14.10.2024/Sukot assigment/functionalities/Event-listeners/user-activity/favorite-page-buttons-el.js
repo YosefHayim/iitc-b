@@ -55,13 +55,13 @@ const handleFavoriteMoviePage = () => {
       ev.preventDefault();
       const favMovieId = removeButton.closest('.movie-card').id.replace(/\D/g, '');
       const movieName = removeButton.closest('.movie-card').querySelector('.title').textContent;
-
+      const movieCard = removeButton.closest('.movie-card')
       removeFavMovie(favMovieId);
-
+      movieCard.style.display = `none`
       let backgroundColor = `green`;
       let message = `Movie: ${movieName} Successfully removed`;
       displayAlertMessage(message, backgroundColor);
-      reloadThisPage();
+      // reloadThisPage();
 
     // Handles play button click
     } else if (playButton) {

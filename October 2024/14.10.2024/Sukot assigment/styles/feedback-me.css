@@ -1,3 +1,4 @@
+
 .main-content-container-feedback {
   display: flex;
   flex-direction: column;
@@ -40,6 +41,7 @@ body > footer {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  font-size: 1.5em;
 }
 
 .rating-container {
@@ -95,6 +97,8 @@ input::placeholder,input,textarea {
 
 #rating {
   width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 
@@ -105,6 +109,7 @@ input::placeholder,input,textarea {
 
   body > footer {
     position: absolute;
+    bottom: 0;
   }
   
 }

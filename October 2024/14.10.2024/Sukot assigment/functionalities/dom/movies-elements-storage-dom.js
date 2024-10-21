@@ -3,7 +3,7 @@ import { favMoviesContainer,popularMoviesContainer, popularOfTheDayContainer, po
 const moviesStorage = (requestedContainer) => {
   const storage = [
     {
-    containerName : 'Favorite movies page',
+    containerName : 'Favorite movie page',
     containerEl : favMoviesContainer,
     },
 

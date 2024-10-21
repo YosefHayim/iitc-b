@@ -12,8 +12,7 @@ const displayMovies = (requestedContainer, data) => {
     data.results.forEach(movie => {
     let movieCard;
 
-      // Use a different card builder for favorite movies
-      if (requestedContainer === 'Favorite movies page') {
+      if (requestedContainer === 'Favorite movie page') {
         movieCard = generateFavoriteMovieCard(movie);
       } else {
         movieCard = buildHomeMovieCard(movie);

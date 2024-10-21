@@ -9,18 +9,14 @@ const handleMovieSearchByIdOrName = () => {
       ev.preventDefault();
       const inputValue = form.querySelector('input').value.trim();
       
-      // Redirect to error page if input is empty
       if (!inputValue) {
         displayAlertMessage('input-error', inputValue);
-        redirectToErrorPage();  // Redirect on empty input
+        redirectToErrorPage();
         return;
       }
 
-      // Prepare the query parameter
       let params = new URLSearchParams();
       params.set('query', inputValue);
-
-      // Redirect to homepage with query in URL
       redirectToHome(params)
     });
   });

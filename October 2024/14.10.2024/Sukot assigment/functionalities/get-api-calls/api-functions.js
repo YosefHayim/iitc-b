@@ -15,9 +15,9 @@ const getData = async (url) => {
     if (!response.ok) {
       throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
-
     const data = await response.json();
     return data;  // Return the data directly
+
   } catch (err) {
     console.error('Error in fetching data:', err);
     return null;  // Return null if there is an error

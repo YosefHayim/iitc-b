@@ -7,9 +7,7 @@ const displaySingleMovieById = async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const videoUrl = urlParams.get('videoUrl');
   const movieId = urlParams.get('movieId');
-  
-  console.log(movieId);
-  
+    
   if (!movieId) {
     return redirectToErrorPage();
   }

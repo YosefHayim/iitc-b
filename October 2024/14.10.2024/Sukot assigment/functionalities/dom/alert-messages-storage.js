@@ -98,7 +98,8 @@ const alertMessagesTypes = (messageType, word) => {
   ];
 
   // Find the message object by messageType
-  return messages.find(alert => alert.messageType === messageType);
+  const messageObject = messages.find(alert => alert.messageType === messageType);
+  return messageObject
 };
 
 export {alertMessagesTypes}

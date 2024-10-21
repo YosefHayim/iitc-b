@@ -7,7 +7,7 @@ import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 
 const HomeMovieDataButtonClicks = () => {
   homePageDivs.forEach((cardMoviesContainer) => {
-    cardMoviesContainer.addEventListener('click', async (ev) => {  // Added 'async' to the event handler
+    cardMoviesContainer.addEventListener('click', async (ev) => {
 
       const dataBtn = ev.target.closest('.white-data-btn');    
       const shareButton = ev.target.closest('.white-share-trailer-btn');

@@ -11,6 +11,7 @@ const homepageSearchListener = () => {
     if (query) {
       // Check if it's a valid movie name (letters and spaces only)
       if (/^[a-zA-Z\s]+$/.test(query)) {
+
         try {
           await searchMovieByName(query);  // Handle asynchronously
         } catch (error) {
@@ -20,6 +21,7 @@ const homepageSearchListener = () => {
   
       // Check if it's a valid movie ID (numbers only)
       } else if (/^[0-9]+$/.test(query)) {
+        
         try {
           await searchMovieById(query);  // Handle asynchronously
         } catch (error) {

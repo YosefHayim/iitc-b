@@ -1,12 +1,9 @@
 import { getData } from "./api-functions.js";
-import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
-import { upComingMoviesContainer, upComingMoviePage } from "../DOM/storage-elements-dom.js";
+import { upComingMoviePage } from "../DOM/storage-elements-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
+import { displayMovies } from "../DOM/display-movies-dom.js";
 
 const fetchUpcomingMovies = async (pageNumber = 1) => {
-  // Clear container for new data
-  upComingMoviesContainer.innerHTML = "";
-
   try {
     // Fetch upcoming movies for the current page
     const data = await getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${pageNumber}`);
@@ -17,10 +14,7 @@ const fetchUpcomingMovies = async (pageNumber = 1) => {
     }
 
     // Create and append movie cards to the container
-    data.results.forEach(movie => {
-      const movieCard = buildHomeMovieCard(movie);
-      upComingMoviesContainer.appendChild(movieCard);
-    });
+    displayMovies('Upcoming movies page',data)    
 
     // Update and display the current page number and total pages
     upComingMoviePage.style.display = "block";

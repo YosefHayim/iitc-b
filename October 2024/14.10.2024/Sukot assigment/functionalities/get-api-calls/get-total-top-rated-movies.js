@@ -1,13 +1,10 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
-import { topRatedMoviesContainer, topTrendingPage } from "../DOM/storage-elements-dom.js";
-import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
+import { topTrendingPage } from "../DOM/storage-elements-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
+import { displayMovies } from "../DOM/display-movies-dom.js";
 
 const fetchTopRatedMovies = async (pageNumber = 1) => {
-  // Clear container for new data
-  topRatedMoviesContainer.innerHTML = "";
-
   try {
     // Fetch top-rated movies for the current page
     const data = await getData(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${pageNumber}&api_key=${apiKey}`);
@@ -18,10 +15,7 @@ const fetchTopRatedMovies = async (pageNumber = 1) => {
     }
 
     // Create and append movie cards to the container
-    data.results.forEach((movie) => {
-      const movieCard = buildHomeMovieCard(movie);
-      topRatedMoviesContainer.appendChild(movieCard);
-    });
+    displayMovies('Top rated movies page',data)
 
     // Update and display the current page number and total pages
     topTrendingPage.style.display = "block";

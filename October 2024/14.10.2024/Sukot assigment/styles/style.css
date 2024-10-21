@@ -255,6 +255,7 @@
   }
 
   .movie-card {
+    margin-top: 2em;
     animation: flowUpDown 2s linear infinite alternate;
   }
 

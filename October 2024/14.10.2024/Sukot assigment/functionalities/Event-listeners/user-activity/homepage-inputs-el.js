@@ -31,6 +31,8 @@ const handleMovieSearchByIdOrName = () => {
 
       // Redirect to error page if input is invalid
       } else {
+        console.log(`input is invalid need to modify this function`,inputValue);
+        
         redirectToErrorPage()
         return;
       }

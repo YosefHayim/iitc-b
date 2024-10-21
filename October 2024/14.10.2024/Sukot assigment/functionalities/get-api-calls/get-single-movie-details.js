@@ -7,11 +7,11 @@ import { renderSingleMoviePage } from "../DOM/single-movie-page-dom.js";
 const displaySingleMovieById = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const videoUrl = urlParams.get('videoUrl')
+  if (!videoUrl) return redirectToErrorPage()
 
   const movieId = urlParams.get('movieId');
   if (!movieId) return redirectToErrorPage();
   
-
   // Fetch movie details
   getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`, (singleMovieData) => {
     console.log(singleMovieData);

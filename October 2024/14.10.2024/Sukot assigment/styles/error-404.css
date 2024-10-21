@@ -19,6 +19,11 @@
   color: white;
 }
 
+body > main > div.error-container > span {
+  margin-top:  1em;
+  font-family: "Roboto";
+}
+
 @media screen and(min-width:1024px) {
   
   .return-home-btn {

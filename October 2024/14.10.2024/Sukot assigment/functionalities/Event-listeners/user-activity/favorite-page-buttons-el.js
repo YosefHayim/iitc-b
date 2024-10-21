@@ -15,16 +15,17 @@ const handleFavoriteMoviePage = () => {
     if (dataIcon) {
       ev.preventDefault(); 
       const favMovieId = dataIcon.closest('.movie-card').id.replace(/\D/g, '');
-
       const movieCardDiv = dataIcon.closest('.movie-card');
       const playButton = movieCardDiv.querySelector('.fav-play-button-btn');
-
       let message = 'Redirecting...';
       displayAlertMessage(message);
 
       if (playButton) {        
         const videoUrl = playButton.getAttribute('href');
         const videoId = videoUrl.split('v=')[1];
+        let message = 'Navigating to movie page...'
+        let backgroundColor = `green`
+        displayAlertMessage(message,backgroundColor)
         navigateToMoviePage(favMovieId,videoId)
       }
     }
@@ -32,7 +33,9 @@ const handleFavoriteMoviePage = () => {
     if (shareButton) {
       ev.preventDefault();
       const trailerUrl = shareButton.getAttribute('href');
-      console.log(`Trailer URL: ${trailerUrl}`);
+      let message = `URL copy to clipboard`
+      let backgroundColor = `green`
+      displayAlertMessage(message,backgroundColor)
       handleCopyToClipboard(shareButton, trailerUrl);
     }
     
@@ -40,13 +43,12 @@ const handleFavoriteMoviePage = () => {
       ev.preventDefault();
       const favMovieId = ev.target.closest('.movie-card').id.replace(/\D/g, '');
       removeFavMovie(favMovieId);
-
       setTimeout(() => {
         reloadThisPage();
       }, 500);
-      
       let message = `Movie has been removed successfully.`;
-      displayAlertMessage(message);
+      let backgroundColor = 'green'
+      displayAlertMessage(message,backgroundColor);
     }
     
     if (playButton) {

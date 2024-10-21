@@ -38,6 +38,8 @@ screenLoadingAnimation(); // Displays loading animation on the screen
 handleBurgerIconToggle(); // Toggles burger menu for mobile
 resetPlaceholder(); // Resets placeholder values
 dynamicPaginationSetup(); // Set up pagination
+handleMovieSearchByIdOrName(); // Handle search functionality
+
 
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("index.html")) {
@@ -46,7 +48,6 @@ if (window.location.pathname.endsWith("index.html")) {
   fetchPopularMovies(); // Fetch popular movies
   fetchTopRatedMovies(); // Fetch top-rated movies
   fetchUpcomingMovies(); // Fetch upcoming movies
-  handleMovieSearchByIdOrName(); // Handle search functionality
   handleBackToTopButtonClick(); // Set up back to top button functionality
   handleGoToBottomButtonClick(); // Set up scroll to bottom button
   setupHomepagePagination(); // Set up homepage pagination controls
@@ -64,7 +65,6 @@ if (window.location.pathname.endsWith('popular-day.html')) {
   // Initialize "Popular Today" page data and interactions
   popularMoviesOfDay(); // Fetch and display movies popular today
   handleBackToTopButtonClick(); // Set up back to top button
-  handleMovieSearchByIdOrName(); // Handle search functionality
   todayMustWatchPlayButtons(); // Set up play buttons on 'Today Must Watch' page
   handleGoToBottomButtonClick(); // Set up scroll to bottom button
 }
@@ -73,7 +73,6 @@ if (window.location.pathname.endsWith('popular-week.html')) {
   // Initialize "Popular This Week" page data and interactions
   popularMoviesOfWeek(); // Fetch and display movies popular this week
   handleBackToTopButtonClick(); // Set up back to top button
-  handleMovieSearchByIdOrName(); // Handle search functionality
   handleGoToBottomButtonClick(); // Set up scroll to bottom button
   weeklyHitsPageButtons(); // Set up weekly hits page buttons
 }
@@ -82,7 +81,6 @@ if (window.location.pathname.endsWith('movie-data.html')) {
   // Initialize single movie details page
   displaySingleMovieById(); // Display single movie details by ID
   handleBackToTopButtonClick(); // Set up back to top button
-  handleMovieSearchByIdOrName(); // Handle search functionality
   handleGoToBottomButtonClick(); // Set up scroll to bottom button
 }
 

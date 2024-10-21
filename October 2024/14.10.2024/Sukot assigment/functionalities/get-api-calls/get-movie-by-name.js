@@ -23,7 +23,7 @@ const searchMovieByName = async (inputValue, count = 1) => {
     
     searchResultTitle.style.textAlign = 'left';
     searchResultTitle.style.display = 'flex';
-    searchResultTitle.innerHTML = `Total results for <span class="input-query">${inputValue}</span>${data.total_results} Page: ${data.page} / ${data.total_pages}`;
+    searchResultTitle.innerHTML = `Total results for <span class="input-query"> ${inputValue} </span> ${data.total_results} Page: ${data.page} / ${data.total_pages}`;
     searchPaginationContainer.style.display = 'flex';
     displayMovies('Search result page ID + name',data)
 

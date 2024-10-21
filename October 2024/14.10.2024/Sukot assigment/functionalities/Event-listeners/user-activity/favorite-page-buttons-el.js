@@ -6,7 +6,7 @@ import { handleCopyToClipboard } from "../user-activity/global-copy-to-clipboard
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 
-const handleFavoriteMoviePage = () => {  
+const handleFavoriteMoviePage = () => {
   favMoviesContainer.addEventListener('click', async (ev) => {
 
     const dataBtn = ev.target.closest('.fav-white-data-btn');
@@ -14,38 +14,42 @@ const handleFavoriteMoviePage = () => {
     const removeButton = ev.target.closest('.fav-remove-btn-icon');
     const playButton = ev.target.closest('.fav-play-button-btn');
     const movieCard = ev.target.closest('.movie-card');
-    const movieName = movieCard.querySelector('.title').textContent;
-    const favMovieId = movieCard.id.replace(/\D/g, '');
-    
+
     if (!movieCard) {
       displayAlertMessage('no-movie-card-found');
       return;
     }
 
-    // Handle movie data button click
+    const movieName = movieCard.querySelector('.title').textContent;
+    const favMovieId = movieCard.id.replace(/\D/g, '');
+
+    // Handle movie data button click: Navigate to movie page
     if (dataBtn) {
       displayAlertMessage('navigating-to-another-page', movieName);
       navigateToMoviePage(favMovieId);
       return;
     }
 
-    // Handle share button click
+    // Handle share button click: Copy the URL to clipboard
     if (shareButton) {
       ev.preventDefault();
       try {
-        const videoUrl = shareButton.getAttribute('href');
-        if (!videoUrl || videoUrl.trim().length <= 1) {
-          displayAlertMessage('no-url-to-copy', movieName);
+        const result = await getMovieTrailer(favMovieId);
+        const videoUrl = `https://www.youtube.com/watch?v=${result.key}`;
+
+        if (!result.key) {
+          displayAlertMessage('No trailer to watch', movieName);
         } else {
-          handleCopyToClipboard(videoUrl);
           displayAlertMessage('success-copy-movie-url', movieName);
+          handleCopyToClipboard(videoUrl);
         }
       } catch (error) {
-        console.error('Error copying movie URL:', error);
+        console.error('Error fetching movie trailer:', error);
       }
+      return;
     }
 
-    // Handle remove button click
+    // Handle remove button click: Remove movie from favorites
     if (removeButton) {
       ev.preventDefault();
       try {
@@ -55,9 +59,10 @@ const handleFavoriteMoviePage = () => {
       } catch (error) {
         console.error('Error removing movie:', error);
       }
+      return;
     }
 
-    // Handle play button click
+    // Handle play button click: Play movie trailer
     if (playButton) {
       try {
         const result = await getMovieTrailer(favMovieId);
@@ -72,6 +77,7 @@ const handleFavoriteMoviePage = () => {
       } catch (error) {
         console.error('Error fetching movie trailer:', error);
       }
+      return;
     }
   });
 };

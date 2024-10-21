@@ -1,4 +1,4 @@
-import { alertMessagesTypes } from "./alert-messages-storage.js";
+import { alertMessagesTypes } from "./storage-alert-messages.js";
 import { createDomEl } from "./create-div-dom.js";
 import { alertMessageContainerEl, navbarDesktopEl } from "./storage-elements-dom.js";
 

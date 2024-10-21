@@ -260,7 +260,7 @@
   .movie-img:hover {
     transform: scale(1.05);
     transition: transform 1s ease-in-out;
-    box-shadow: 0em 0em 3em 0.1em white;
+    box-shadow: 0em 0em 0.5em 0.1em var(--rating--color)
   }
 
   .movie-card {
@@ -547,7 +547,7 @@
     margin-bottom: 0em;
     gap: 7em;
     z-index: 1;
-    transform: translate(0em, 0.8em);
+    transform: translate(0em, 2.6em);
   }
 
   .next-page,.previous-page {
@@ -580,11 +580,13 @@
     color: black;
     background: white;
     margin-bottom: 0.1em;
+    transform: translateY(1.8em);
   }
 
   .search-results-container .buttons-pagination-container {
     display: none;
   }
+
   .search-results-name {
     margin-bottom: 1em;
     color: white;
@@ -914,7 +916,7 @@
     box-shadow: 0em 0em 2.5em -1em;
     font-size: 0.6em;
     font-size: 2em;
-    display: flex;
+    display: none;
     padding: 0.5em;
   }
 

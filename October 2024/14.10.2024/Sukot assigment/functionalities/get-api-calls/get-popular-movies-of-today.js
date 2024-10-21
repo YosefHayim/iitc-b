@@ -17,7 +17,6 @@ const popularMoviesOfDay = async (count) => {
 
     displayMovies('Todays must watch popular movies page',data)
     templateTitle.textContent = `${data.total_results} Movies Of Today's must watch: ${data.page}/${data.total_pages}`;
-    console.log(`popularMoviesOfDay - Total Pages: ${data.total_pages}`);
 
   } catch (error) {
     console.error('Error fetching popular movies of the day:', error);

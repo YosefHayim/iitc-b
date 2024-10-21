@@ -10,3 +10,5 @@ fav page fixes:
 5. night mode for desktop
 
 6. fix the mobile navbar to be responsive with the widths for mobile.
+
+7. make the web responsive better for desktop average screen sizes.

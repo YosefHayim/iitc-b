@@ -1,64 +1,85 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
-import {removeFavMovie} from "../../post-api-calls/post-remove-movie-from-favorite-list.js"
-import {reloadThisPage} from "../../DOM/reload-current-page-dom.js"
+import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
+import { reloadThisPage } from "../../DOM/reload-current-page-dom.js";
 
 const handleFavoriteMoviePage = () => {
   favMoviesContainer.addEventListener('click', (ev) => {
-    const dataIcon = ev.target.closest('.fav-white-data-btn');
+    
+    const dataBtn = ev.target.closest('.fav-white-data-btn');
     const shareButton = ev.target.closest('.fav-white-share-trailer-btn');
     const removeButton = ev.target.closest('.fav-remove-btn-icon');
     const playButton = ev.target.closest('.fav-play-button-btn');
-  
-    if (dataIcon) {
-      ev.preventDefault(); 
-      const favMovieId = dataIcon.closest('.movie-card').id.replace(/\D/g, '');
-      const movieCardDiv = dataIcon.closest('.movie-card');
+
+    // Handles movie data button click
+    if (dataBtn) {
+      ev.preventDefault();
+      const movieCardDiv = dataBtn.closest('.movie-card');
+      const favMovieId = movieCardDiv.id.replace(/\D/g, '');
       const playButton = movieCardDiv.querySelector('.fav-play-button-btn');
+      const videoUrl = playButton.getAttribute('href');
+      const videoId = videoUrl.split('v=')[1];
+
+      let backgroundColor = `green`;
       let message = 'Redirecting...';
-      displayAlertMessage(message);
 
-      if (playButton) {        
-        const videoUrl = playButton.getAttribute('href');
-        const videoId = videoUrl.split('v=')[1];
-        let message = 'Navigating to movie page...'
-        let backgroundColor = `green`
-        displayAlertMessage(message,backgroundColor)
-        navigateToMoviePage(favMovieId,videoId)
+      displayAlertMessage(message, backgroundColor);
+      navigateToMoviePage(favMovieId, videoId);
+
+    // Handles share button click
+    } else if (shareButton) {
+      ev.preventDefault();
+      if (shareButton.getAttribute('href').trim().length === 1) {
+        const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
+
+        let backgroundColor = `red`;
+        let message = `Movie "${movieName}" has no URL.`;
+        displayAlertMessage(message, backgroundColor);
+
+      } else if (shareButton.getAttribute('href').length > 33) {
+        const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
+        const videoUrl = shareButton.getAttribute('href');
+
+        handleCopyToClipboard(videoUrl);
+
+        let backgroundColor = `green`;
+        let message = `Movie "${movieName}" URL Copied`;
+        displayAlertMessage(message, backgroundColor);
       }
-    }
 
-    if (shareButton) {
+    // Handles remove button click
+    } else if (removeButton) {
       ev.preventDefault();
-      const trailerUrl = shareButton.getAttribute('href');
-      let message = `URL copy to clipboard`
-      let backgroundColor = `green`
-      displayAlertMessage(message,backgroundColor)
-      handleCopyToClipboard(shareButton, trailerUrl);
-    }
-    
-    if (removeButton) {
-      ev.preventDefault();
-      const favMovieId = ev.target.closest('.movie-card').id.replace(/\D/g, '');
+      const favMovieId = removeButton.closest('.movie-card').id.replace(/\D/g, '');
+      const movieName = removeButton.closest('.movie-card').querySelector('.title').textContent;
+
       removeFavMovie(favMovieId);
-      setTimeout(() => {
-        reloadThisPage();
-      }, 500);
-      let message = `Movie has been removed successfully.`;
-      let backgroundColor = 'green'
-      displayAlertMessage(message,backgroundColor);
-    }
-    
-    if (playButton) {
-      if (playButton.src && playButton.src.includes('no-trailer-available-img')) {
-        let message = `No trailer available for this movie.`;
+
+      let backgroundColor = `green`;
+      let message = `Movie: ${movieName} Successfully removed`;
+      displayAlertMessage(message, backgroundColor);
+      reloadThisPage();
+
+    // Handles play button click
+    } else if (playButton) {
+      if (playButton.getAttribute('href').trim().length === 1) {
+        const movieName = playButton.closest('.movie-card').querySelector('.title').textContent;
+
+        let textColor = `black`;
         let backgroundColor = `#ffcd05`;
+        let message = `The Movie "${movieName}" has no trailer`;
+        displayAlertMessage(message, backgroundColor, textColor);
+
+      } else if (playButton.getAttribute('href').length > 33) {
+
+        let backgroundColor = `green`;
+        let message = 'Redirecting...';
         displayAlertMessage(message, backgroundColor);
       }
     }
   });
 };
 
-export {handleFavoriteMoviePage}
+export { handleFavoriteMoviePage };

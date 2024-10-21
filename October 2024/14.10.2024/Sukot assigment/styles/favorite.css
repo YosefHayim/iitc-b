@@ -60,7 +60,7 @@
 
 @media screen and (max-width: 1295px) {
   body > footer {
-    position: absolute;
+    position: relative;
   }
   
 }

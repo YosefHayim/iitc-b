@@ -8,6 +8,7 @@ import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie
 const HomeMovieDataButtonClicks = () => {
   homePageDivs.forEach((cardMoviesContainer) => {
     cardMoviesContainer.addEventListener('click', (ev) => {
+
       const dataBtn = ev.target.closest('.white-data-btn');
       const shareImg = ev.target.closest('.white-share-img');
       const heartBtn = ev.target.closest('.white-heart-trailer-btn');
@@ -56,7 +57,7 @@ const HomeMovieDataButtonClicks = () => {
           displayAlertMessage(message,backgroundColor)
 
         } else {
-          handleCopyToClipboard(shareImg,trailerUrl)
+          handleCopyToClipboard(trailerUrl)
         }
       }
 

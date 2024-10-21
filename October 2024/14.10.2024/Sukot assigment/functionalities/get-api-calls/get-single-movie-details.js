@@ -2,14 +2,15 @@ import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { renderSingleMoviePage } from "../DOM/single-movie-page-dom.js";
+import { displayAlertMessage } from "../DOM/alert-message-dom.js";
 
 
 const displaySingleMovieById = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const videoUrl = urlParams.get('videoUrl')
-  if (!videoUrl) return redirectToErrorPage()
 
   const movieId = urlParams.get('movieId');
+  console.log(movieId);
   if (!movieId) return redirectToErrorPage();
   
   // Fetch movie details

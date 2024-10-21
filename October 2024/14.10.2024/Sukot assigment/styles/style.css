@@ -70,6 +70,10 @@
     background: black;
   }
 
+  .hidden {
+    display: none;
+  }
+
   main,.popular-movies-container,.top-trending-movies-container,.movie-card-container,.movie-card,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container{
     display: flex;
     flex-direction: column;

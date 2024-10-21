@@ -9,6 +9,11 @@ import { increasePage } from "../../global/increasing-page.js";
 let count = 1;
 
 const dynamicPaginationSetup = () => {
+
+  if (!searchPaginationContainer) {
+    return;
+  }
+  
   searchPaginationContainer.addEventListener('click', (ev) => {
     ev.preventDefault();
 
@@ -19,7 +24,7 @@ const dynamicPaginationSetup = () => {
     if (!button) return;
 
     // For 'index.html' pagination
-    if (window.location.pathname.endsWith('index.html')) {
+    if (window.location.pathname.endsWith('index.html') && querySearch) {
       if (button.classList.contains('next-page')) {
         count = increasePage(count);
         searchMovieByName(querySearch, count);

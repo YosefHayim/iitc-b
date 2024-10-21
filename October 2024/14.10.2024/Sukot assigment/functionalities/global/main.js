@@ -26,7 +26,7 @@ import { weeklyHitsPageButtons } from "../Event-listeners/user-activity/weekly-h
 
 // Event Listeners for the Homepage
 import { setupHomepagePagination } from "../Event-listeners/pagination-buttons/homepage-containers-next-prev-pagination.js"; // Sets up homepage pagination
-import { dynamicPaginationSetup } from "../Event-listeners/pagination-buttons/dynamic-next-previous-page-pagination.js"; // Handles search result pagination clicks
+import { dynamicPaginationSetup } from "../Event-listeners/user-activity/dynamic-next-previous-page-pagination.js"; // Handles search result pagination clicks
 import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/homepage-inputs-el.js"; // Handles movie search by ID or name
 import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/homepage-buttons-el.js"; // Handles homepage movie data button clicks
 

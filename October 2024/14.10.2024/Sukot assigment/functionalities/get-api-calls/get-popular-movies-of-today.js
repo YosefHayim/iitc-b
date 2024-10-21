@@ -1,6 +1,6 @@
 import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
-import { popularOfTheDayContainer, homePageAllContainers } from "../DOM/storage-elements-dom.js";
+import { popularOfTheDayContainer, homePageAllContainers, templateTitle } from "../DOM/storage-elements-dom.js";
 import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
 import {redirectToErrorPage} from "../DOM//redirect-to-404-dom.js"
 
@@ -27,7 +27,7 @@ const popularMoviesOfDay = (count) => {
     homePageAllContainers.forEach(container => {
       container.style.display = container.classList.contains('popular-of-day-container') ? 'flex' : 'none';
     });
-
+    templateTitle.textContent = `${data.total_results} Movies Of Today's must watch :${data.page}/${data.total_pages}`
     console.log(`popularMoviesOfDay - Total Pages: ${data.total_page}`);
   });
 };

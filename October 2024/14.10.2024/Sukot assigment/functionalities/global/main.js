@@ -32,6 +32,7 @@ import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/home
 
 // Event Listener for the Feedback Page
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
+import { setPlayBtnVideo } from "../DOM/set-play-button-href-to-video-dom.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen

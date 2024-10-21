@@ -2,6 +2,7 @@ import { allInputsContainers } from "../../DOM/storage-elements-dom.js";
 import { searchMovieById } from "../../get-api-calls/get-movie-id-by-id.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
+import { redirectToErrorPage } from "../../DOM/redirect-to-404-dom.js";
 
 const handleMovieSearchByIdOrName = () => {
   allInputsContainers.forEach(form => {
@@ -12,6 +13,7 @@ const handleMovieSearchByIdOrName = () => {
       // Redirect to error page if input is empty
       if (!inputValue) {
         displayAlertMessage('input-error',inputValue)
+        redirectToErrorPage()
         return;
       }
 

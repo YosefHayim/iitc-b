@@ -5,70 +5,69 @@ import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 
 const weeklyHitsPageButtons = () => {
-  popularOfTheWeekContainer.addEventListener('click', (ev) => {
-  const dataBtn = ev.target.closest('.white-data-btn');
-  const shareImg = ev.target.closest('.white-share-img');
-  const heartBtn = ev.target.closest('.white-heart-trailer-btn');
-  const playButton = ev.target.closest('.play-button-btn');
-
-  if (dataBtn) {
-    const movieCard = dataBtn.closest('.movie-card');
+  popularOfTheWeekContainer.addEventListener('click', async (ev) => {
+  
+    const dataBtn = ev.target.closest('.white-data-btn');
+    const shareImg = ev.target.closest('.white-share-img');
+    const heartBtn = ev.target.closest('.white-heart-trailer-btn');
+    const playButton = ev.target.closest('.play-button-btn');
+    const movieCard = ev.target.closest('.movie-card');
+    
     if (!movieCard) {
-      let message = `Error no movie ID`;
-      let backgroundColor = `red`;
-      displayAlertMessage(message, backgroundColor);
+      displayAlertMessage('no-movie-card-found');
       return;
     }
 
-    const playButton = movieCard.querySelector('.play-button-btn');
-    if (!playButton) {
-      let message = `No available Trailer`;
-      let backgroundColor = `#ffcd05`;
-      displayAlertMessage(message, backgroundColor);
-      return;
-    }
-
-    if (playButton.hasAttribute('href')) {
-      const videoUrl = playButton.getAttribute('href');
-      const videoId = videoUrl.split('v=')[1];
-      const movieCardId = movieCard.id.replace(/\D/g, '');
-
-      let message = `Redirecting...`;
-      let backgroundColor = `green`;
-      displayAlertMessage(message, backgroundColor);
-      navigateToMoviePage(movieCardId, videoId);
-
-    } else {
-      let message = `This movie doesn't have data.`;
-      let backgroundColor = `#ffcd05`;
-      displayAlertMessage(message, backgroundColor);
-    }
-  }
-
-  if (shareImg) {
-    ev.preventDefault();
-    const trailerUrl = shareImg.getAttribute('href');
-    handleCopyToClipboard(shareImg,trailerUrl)
-  }
-
-  if (heartBtn) {
-    ev.preventDefault();
-    const movieCard = heartBtn.closest('.movie-card');
+    const movieName = movieCard.querySelector('h1').textContent;      
     const movieCardId = movieCard.id.replace(/\D/g, '');
-    addfavoriteMovieToList(movieCardId)
-    let message = `Movie has been added to favorites.`;
-    let backgroundColor = `green`;
-    displayAlertMessage(message, backgroundColor);
-  }
+    console.log(movieCardId);
 
-  if (playButton) {
-    if (!playButton.hasAttribute('href')) {
-      let message = `No trailer available for this movie.`;
-      let backgroundColor = `#ffcd05`;
-      displayAlertMessage(message, backgroundColor);
+    if (dataBtn) {
+      displayAlertMessage('navigating-to-another-page', movieName);
+      navigateToMoviePage(movieCardId);
+      return;
     }
-  }
-});
+
+    if (shareImg) {
+      ev.preventDefault();
+      try {
+        const result = await getMovieTrailer(movieCardId);
+        const videoUrl = `https://www.youtube.com/watch?v=${result.key}`;
+
+        if (!result.key) {
+          displayAlertMessage('No trailer to watch', movieName);
+        } else {
+          displayAlertMessage('success-copy-movie-url', movieName);
+          handleCopyToClipboard(videoUrl);
+        }
+      } catch (error) {
+        console.error('Error fetching movie trailer:', error);
+      }
+    }
+
+    if (heartBtn) {
+      ev.preventDefault();
+      addfavoriteMovieToList(movieCardId);
+      displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
+    }
+
+    if (playButton) {
+      try {
+        const result = await getMovieTrailer(movieCardId);
+        const videoUrl = `https://www.youtube.com/watch?v=${result.key}`;
+
+        if (!result.key) {
+          displayAlertMessage('No trailer to watch', movieName);
+        } else {
+          setPlayBtnVideo(playButton, videoUrl);
+          window.location.href = videoUrl;
+        }
+      } catch (error) {
+        console.error('Error fetching movie trailer:', error);
+      }
+    }
+  });
 }
 
     export {weeklyHitsPageButtons}
+

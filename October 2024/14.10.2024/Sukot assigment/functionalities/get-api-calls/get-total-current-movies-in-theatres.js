@@ -5,7 +5,6 @@ import { displayMovies } from "../DOM/display-movies-dom.js";
 
 const fetchCurrentlyInTheatersMovies = async (pageNumber = 1) => {
   try {
-    // Fetch data for the current page
     const data = await getData(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${pageNumber}`);
 
     if (!data) {
@@ -14,10 +13,9 @@ const fetchCurrentlyInTheatersMovies = async (pageNumber = 1) => {
     }
 
     displayMovies('Currently movies in theatres page', data)
+    currentTheaterPage.style.display = "block";
+    currentTheaterPage.textContent = `Page: ${pageNumber} / ${data.total_pages}`;
 
-      // Display the current page number and total pages
-      currentTheaterPage.style.display = "block";
-      currentTheaterPage.textContent = `Page: ${pageNumber} / ${data.total_pages}`;
   } catch (error) {
     console.error('Error fetching currently in theaters movies:', error);
     redirectToErrorPage();

@@ -1,4 +1,3 @@
-// Import elements to control from the DOM
 import { burgerIcon, overlayContainer, topNavbarMobile } from "../../DOM/storage-elements-dom.js";
 
 const handleBurgerIconToggle = () => {

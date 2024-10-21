@@ -6,9 +6,7 @@ import { popularMoviesOfWeek } from "../../get-api-calls/get-popular-movies-of-w
 import { decreasePage } from "../../global/decreasing-page.js";
 import { increasePage } from "../../global/increasing-page.js";
 
-let count = 1;
-
-const dynamicPaginationSetup = () => {
+const dynamicPaginationSetup = (count = 1) => {
 
   if (!searchPaginationContainer) {
     return;

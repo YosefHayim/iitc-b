@@ -1,5 +1,4 @@
 const reloadThisPage = () => {
-  // reload current page location
 setTimeout(() => {
   window.location.reload() 
 

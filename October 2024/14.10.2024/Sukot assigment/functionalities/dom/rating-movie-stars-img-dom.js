@@ -1,5 +1,4 @@
 const getStarRatingImage = (voteFloatingNumber) => {
-
   if (voteFloatingNumber < 2) return "../images/user-activity/one-star-icon.svg";
 
   else if (voteFloatingNumber < 4) 

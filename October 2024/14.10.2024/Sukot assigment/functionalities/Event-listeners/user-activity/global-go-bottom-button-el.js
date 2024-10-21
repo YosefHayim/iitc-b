@@ -1,6 +1,5 @@
 import { goTBottomBtn } from "../../DOM/storage-elements-dom.js";
 
-// Check if the user is at the bottom of the page
 const isAtBottom = () => {
   return (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
 };
@@ -15,7 +14,6 @@ window.addEventListener('scroll', (ev) => {
     goTBottomBtn.style.display = 'none';
   }
 
-  // Hide the button if the user scrolls to the bottom
   if (isAtBottom()) {
     goTBottomBtn.style.display = 'none';
   }
@@ -29,7 +27,6 @@ const handleGoToBottomButtonClick = () => {
       behavior: 'smooth' 
     });
 
-    // After the scroll ends, check if at the bottom
     window.addEventListener('scroll', () => {
       if (isAtBottom()) {
         goTBottomBtn.style.display = 'none';

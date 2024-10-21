@@ -13,7 +13,6 @@ const displaySingleMovieById = async () => {
   }
 
   try {
-    // Fetch movie details
     const singleMovieData = await getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
     console.log(singleMovieData);
     
@@ -21,7 +20,6 @@ const displaySingleMovieById = async () => {
       return redirectToErrorPage();
     }
 
-    // Fetch movie actors details
     const creditsData = await getData(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`);
     console.log(creditsData);
 
@@ -29,7 +27,6 @@ const displaySingleMovieById = async () => {
       return redirectToErrorPage();
     }
 
-    // Render the single movie page
     if (videoUrl) {
       renderSingleMoviePage(singleMovieData, creditsData, videoUrl);
     } else {

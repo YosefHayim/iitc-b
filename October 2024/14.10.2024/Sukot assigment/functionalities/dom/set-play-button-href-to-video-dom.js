@@ -1,6 +1,6 @@
 const setPlayBtnVideo = (htmlTag, videoLink) => {
-  htmlTag.setAttribute('href', videoLink);
-  return;
+  const setVideoUrl = htmlTag.setAttribute('href', videoLink);
+  return setVideoUrl;
 };
 
 export {setPlayBtnVideo}

@@ -18,6 +18,7 @@ const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
   displayAlertMessage('success-received-movie-data',movieName)
 
   if (!videoUrl) {
+    buttonText = 'No trailer available.'
     displayAlertMessage('no-youtube-video-available',movieName)
   }
   

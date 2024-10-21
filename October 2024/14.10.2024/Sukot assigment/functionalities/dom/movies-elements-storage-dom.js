@@ -1,4 +1,10 @@
-import { favMoviesContainer,popularMoviesContainer, popularOfTheDayContainer, popularOfTheWeekContainer, searchResultContainer, theatresContainer, topRatedMoviesContainer, upComingMoviesContainer } from "./storage-elements-dom.js"
+import { favMoviesContainer,popularMoviesContainer, 
+  popularOfTheDayContainer, 
+  popularOfTheWeekContainer, 
+  searchResultContainer, 
+  theatresContainer, 
+  topRatedMoviesContainer, 
+  upComingMoviesContainer } from "./storage-elements-dom.js"
 
 const moviesStorage = (requestedContainer) => {
   const storage = [

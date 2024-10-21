@@ -9,7 +9,6 @@ const buildFavoriteCardSkeleton = (movieCardDiv,movie) => {
   const movieName = isNameToLong(movie.original_title);
   const resultRatingImg = getStarRatingImage(movie.vote_average)
 
-  // Render the movie details using template literals
   movieCardDiv.innerHTML = `
   <a href="#" class="fav-movie-trailer-url">
   <img src="${image}" alt="movie-img" class="movie-img">

@@ -16,11 +16,11 @@ const getData = async (url) => {
       throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
     const data = await response.json();
-    return data;  // Return the data directly
+    return data;  
 
   } catch (err) {
     console.error('Error in fetching data:', err);
-    return null;  // Return null if there is an error
+    return null;
   }
 };
 
@@ -43,10 +43,10 @@ const postData = async (url, favMovie) => {
     }
 
     const data = await response.json();
-    return data;  // Return the data directly
+    return data;  
   } catch (err) {
     console.error('Failed to post favorite movie:', err);
-    return null;  // Return null if there is an error
+    return null; 
   }
 };
 

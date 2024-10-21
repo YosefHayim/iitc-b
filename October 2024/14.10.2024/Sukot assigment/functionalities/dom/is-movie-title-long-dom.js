@@ -1,4 +1,3 @@
-// Checking if the name is too long to prevent it from affecting the layout symmetry on the web.
 const isNameToLong = (title) => {
   let movieName;
 

@@ -6,69 +6,54 @@ import { popularOfTheDayContainer } from "../../DOM/storage-elements-dom.js"
 
 const todayMustWatchPlayButtons = () => {  
     popularOfTheDayContainer.addEventListener('click', (ev) => {
+      
       const dataBtn = ev.target.closest('.white-data-btn');
       const shareImg = ev.target.closest('.white-share-img');
       const heartBtn = ev.target.closest('.white-heart-trailer-btn');
       const playButton = ev.target.closest('.play-button-btn');
+      const movieCard = ev.target.closest('.movie-card');
+
+      if (!movieCard) {
+        displayAlertMessage('no-movie-card-found');
+        return;
+      }
+
+      const movieName = movieCard.querySelector('.title');
+      const movieCardId = movieCard.id.replace(/\D/g, '');
 
       if (dataBtn) {
-        const movieCard = dataBtn.closest('.movie-card');
-        if (!movieCard) {
-          let message = `Error no movie ID`;
-          let backgroundColor = `red`;
-          displayAlertMessage(message, backgroundColor);
-          return;
-        }
-
-        const playButton = movieCard.querySelector('.play-button-btn');
         if (!playButton) {
-          let message = `No available Trailer`;
-          let backgroundColor = `#ffcd05`;
-          displayAlertMessage(message, backgroundColor);
+          displayAlertMessage('No trailer to watch', movieName);
           return;
         }
 
         if (playButton.hasAttribute('href')) {
           const videoUrl = playButton.getAttribute('href');
           const videoId = videoUrl.split('v=')[1];
-          const movieCardId = movieCard.id.replace(/\D/g, '');
-
-          let message = `Redirecting...`;
-          let backgroundColor = `green`;
-          displayAlertMessage(message, backgroundColor);
+          displayAlertMessage('navigating-to-another-page');
           navigateToMoviePage(movieCardId, videoId);
-
         } else {
-          let message = `This movie doesn't have data.`;
-          let backgroundColor = `#ffcd05`;
-          displayAlertMessage(message, backgroundColor);
+          displayAlertMessage('no-movie-data-exist', movieName);
         }
       }
 
       if (shareImg) {
         ev.preventDefault();
         const trailerUrl = shareImg.getAttribute('href');
-        handleCopyToClipboard(shareImg,trailerUrl)
+        handleCopyToClipboard(shareImg, trailerUrl);
+        displayAlertMessage('success-copy-movie-url', movieName);
       }
 
       if (heartBtn) {
         ev.preventDefault();
-        const movieCard = heartBtn.closest('.movie-card');
-        const movieCardId = movieCard.id.replace(/\D/g, '');
-        addfavoriteMovieToList(movieCardId)
-        let message = `Movie has been added to favorites.`;
-        let backgroundColor = `green`;
-        displayAlertMessage(message, backgroundColor);
+        addfavoriteMovieToList(movieCardId);
+        displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
       }
 
-      if (playButton) {
-        if (!playButton.hasAttribute('href')) {
-          let message = `No trailer available for this movie.`;
-          let backgroundColor = `#ffcd05`;
-          displayAlertMessage(message, backgroundColor);
-        }
+      if (playButton && !playButton.hasAttribute('href')) {
+        displayAlertMessage('No trailer to watch', movieName);
       }
     });
-  }
+}
 
-export { todayMustWatchPlayButtons }
+export { todayMustWatchPlayButtons };

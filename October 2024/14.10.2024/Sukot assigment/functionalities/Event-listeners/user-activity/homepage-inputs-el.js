@@ -1,7 +1,7 @@
-import { redirectToErrorPage } from "../../DOM/redirect-to-404-dom.js";
 import { allInputsContainers } from "../../DOM/storage-elements-dom.js";
 import { searchMovieById } from "../../get-api-calls/get-movie-id-by-id.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 
 const handleMovieSearchByIdOrName = () => {
   allInputsContainers.forEach(form => {
@@ -11,7 +11,7 @@ const handleMovieSearchByIdOrName = () => {
       const inputValue = form.querySelector('input').value.trim();
       // Redirect to error page if input is empty
       if (!inputValue) {
-        redirectToErrorPage()
+        displayAlertMessage('input-error',inputValue)
         return;
       }
 
@@ -31,9 +31,7 @@ const handleMovieSearchByIdOrName = () => {
 
       // Redirect to error page if input is invalid
       } else {
-        console.log(`input is invalid need to modify this function`,inputValue);
-        
-        redirectToErrorPage()
+        displayAlertMessage('input-error',inputValue)
         return;
       }
     });

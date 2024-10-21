@@ -17,19 +17,17 @@ const HomeMovieDataButtonClicks = () => {
       // Handles data icon button click
       if (dataBtn) {
         const movieCardDiv = dataBtn.closest('.movie-card');
+        const movieName = dataBtn.closest('.movie-card').querySelector('.title').textContent;
         const movieId = movieCardDiv.id.replace(/\D/g, '');
         const playButton = movieCardDiv.querySelector('.play-button-btn');
         const videoUrl = playButton.getAttribute('href');
 
         if (!videoUrl) {
-          let backgroundColor = `green`;
-          let message = 'Redirecting...';
-          displayAlertMessage(message, backgroundColor);
+          displayAlertMessage('navigating-to-another-page',movieName);
           navigateToMoviePage(movieId);
+
         } else {
-          let backgroundColor = `green`;
-          let message = 'Redirecting...';
-          displayAlertMessage(message, backgroundColor);
+          displayAlertMessage('no-youtube-video-available',movieName);
           navigateToMoviePage(movieId, videoUrl);
         }
 
@@ -38,17 +36,13 @@ const HomeMovieDataButtonClicks = () => {
         ev.preventDefault();
         if (!shareButton.getAttribute('href')) {
           const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
-          let textColor = `black`;
-          let backgroundColor = `red`;
-          let message = `Movie "${movieName}" has no URL.`;
-          displayAlertMessage(message, backgroundColor, textColor);
+          displayAlertMessage('no-url-to-copy',movieName)
+
         } else if (shareButton.getAttribute('href').length > 33) {
           const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
           const videoUrl = shareButton.getAttribute('href');
           handleCopyToClipboard(videoUrl);
-          let backgroundColor = `green`;
-          let message = `Movie "${movieName}" URL Copied`;
-          displayAlertMessage(message, backgroundColor);
+          displayAlertMessage('success-copy-movie-url',movieName)
         }
 
       // Handles heart button click
@@ -57,9 +51,7 @@ const HomeMovieDataButtonClicks = () => {
         const movieId = heartButton.closest('.movie-card').id.replace(/\D/g, '');
         const movieName = heartButton.closest('.movie-card').querySelector('.title').textContent;
         addfavoriteMovieToList(movieId);
-        let backgroundColor = `green`;
-        let message = `Movie: ${movieName} Added to favorite Picks`;
-        displayAlertMessage(message, backgroundColor);
+        displayAlertMessage('success-added-movie-to-favorite-picks',movieName)
 
       // Handles play button click
       } else if (playButton) {
@@ -73,18 +65,13 @@ const HomeMovieDataButtonClicks = () => {
             console.log(result);
 
             if (!result) {
-              let textColor = `black`;
-              let backgroundColor = `#ffcd05`;
-              let message = `The Movie "${movieName}" has no trailer`;
-              displayAlertMessage(message, backgroundColor, textColor);
+              displayAlertMessage('No trailer to watch',movieName)
             } else {
               playButton.setAttribute('href', `https://www.youtube.com/watch?v=${result.key}`);
-              let backgroundColor = `green`;
-              let message = `Trailer for "${movieName}" loaded successfully.`;
-              displayAlertMessage(message, backgroundColor);
+              displayAlertMessage('success-added-trailer',movieName)
             }
           } catch (error) {
-            console.error('Error while fetching trailer:', error);
+            displayAlertMessage('error-fetch-movie-trailer',movieName)
           }
         }
       }

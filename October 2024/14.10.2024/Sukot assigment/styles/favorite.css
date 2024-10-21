@@ -4,6 +4,7 @@
   gap: 3em;
   margin-top: 1em;
   flex-wrap: wrap;
+  margin-bottom: 2em;
 }
 
 .fav-play-button-btn,.fav-white-share-trailer-btn,.fav-white-data-btn,.fav-remove-btn-icon {
@@ -65,7 +66,7 @@
 
 @media screen and (max-width: 1295px) {
   body > footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
   }
   

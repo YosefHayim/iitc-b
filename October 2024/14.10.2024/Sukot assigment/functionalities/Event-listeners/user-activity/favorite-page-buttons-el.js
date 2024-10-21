@@ -3,7 +3,6 @@ import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { handleCopyToClipboard } from "../user-activity/global-copy-to-clipboard-el.js";
-import { reloadThisPage } from "../../DOM/reload-current-page-dom.js";
 
 const handleFavoriteMoviePage = () => {
   favMoviesContainer.addEventListener('click', (ev) => {
@@ -17,15 +16,12 @@ const handleFavoriteMoviePage = () => {
     if (dataBtn) {
       ev.preventDefault();
       const movieCardDiv = dataBtn.closest('.movie-card');
+      const movieName = dataBtn.closest('.movie-card').querySelector('.title').textContent;      
       const favMovieId = movieCardDiv.id.replace(/\D/g, '');
       const playButton = movieCardDiv.querySelector('.fav-play-button-btn');
       const videoUrl = playButton.getAttribute('href');
       const videoId = videoUrl.split('v=')[1];
-
-      let backgroundColor = `green`;
-      let message = 'Redirecting...';
-
-      displayAlertMessage(message, backgroundColor);
+      displayAlertMessage('navigating-to-another-page',movieName)
       navigateToMoviePage(favMovieId, videoId);
 
     // Handles share button click
@@ -33,21 +29,13 @@ const handleFavoriteMoviePage = () => {
       ev.preventDefault();
       if (shareButton.getAttribute('href').trim().length === 1) {
         const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
-
-        let textColor = `white`
-        let backgroundColor = `red`;
-        let message = `Movie "${movieName}" has no URL.`;
-        displayAlertMessage(message, backgroundColor,textColor);
+        displayAlertMessage('no-url-to-copy',movieName)
 
       } else if (shareButton.getAttribute('href').length > 33) {
         const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
         const videoUrl = shareButton.getAttribute('href');
-
         handleCopyToClipboard(videoUrl);
-
-        let backgroundColor = `green`;
-        let message = `Movie "${movieName}" URL Copied`;
-        displayAlertMessage(message, backgroundColor);
+        displayAlertMessage('success-copy-movie-url',movieName)
       }
 
     // Handles remove button click
@@ -58,26 +46,17 @@ const handleFavoriteMoviePage = () => {
       const movieCard = removeButton.closest('.movie-card')
       removeFavMovie(favMovieId);
       movieCard.style.display = `none`
-      let backgroundColor = `green`;
-      let message = `Movie: ${movieName} Successfully removed`;
-      displayAlertMessage(message, backgroundColor);
-      // reloadThisPage();
+      displayAlertMessage('success-removed-movie',movieName)
 
     // Handles play button click
     } else if (playButton) {
       if (playButton.getAttribute('href').trim().length === 1) {
         const movieName = playButton.closest('.movie-card').querySelector('.title').textContent;
-
-        let textColor = `black`;
-        let backgroundColor = `#ffcd05`;
-        let message = `The Movie "${movieName}" has no trailer`;
-        displayAlertMessage(message, backgroundColor, textColor);
+        displayAlertMessage('No trailer to watch',movieName)
 
       } else if (playButton.getAttribute('href').length > 33) {
+        displayAlertMessage('navigating-to-another-page',movieName)
 
-        let backgroundColor = `green`;
-        let message = 'Redirecting...';
-        displayAlertMessage(message, backgroundColor);
       }
     }
   });

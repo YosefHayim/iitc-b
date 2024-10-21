@@ -28,13 +28,16 @@ const dynamicPaginationSetup = () => {
       if (button.classList.contains('next-page')) {
         count = increasePage(count);
         searchMovieByName(querySearch, count);
+        displayAlertMessage('redirecting-next-page',count)
         return;
+
       } else if (button.classList.contains('previous-page')) {
         count = decreasePage(count);
         if (count <= 1) {
           count = 1;
-          displayAlertMessage("You can't go lower than 1.", "red");
+          displayAlertMessage('cant-go-lower-than-1',count)
         }
+
         searchMovieByName(querySearch, count);
         return;
       }
@@ -46,12 +49,14 @@ const dynamicPaginationSetup = () => {
         count = increasePage(count);
         popularMoviesOfDay(count);
         return;
+
       } else if (button.classList.contains('previous-page')) {
         count = decreasePage(count);
         if (count <= 1) {
           count = 1;
-          displayAlertMessage("You can't go lower than 1.", "red");
+          displayAlertMessage('cant-go-lower-than-1',count)
         }
+
         popularMoviesOfDay(count);
         return;
       }
@@ -62,7 +67,9 @@ const dynamicPaginationSetup = () => {
       if (button.classList.contains('next-page')) {
         count = increasePage(count);
         popularMoviesOfWeek(count);
+        displayAlertMessage('redirecting-next-page',count)
         return;
+
       } else if (button.classList.contains('previous-page')) {
         count = decreasePage(count);
         if (count <= 1) {

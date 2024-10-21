@@ -15,16 +15,10 @@ const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
   const urlWeb = singleMovieData.homepage
   const overviewMovie = singleMovieData.overview
   let buttonText = 'Watch trailer'
-  
-  let message = `Successfully received movie data`
-  let backgroundColor = `green`
-  displayAlertMessage(message,backgroundColor)
+  displayAlertMessage('success-received-movie-data',movieName)
 
   if (!videoUrl) {
-    let message = `This movie don't have a trailer yet.`
-    let backgroundColor = `red`
-    displayAlertMessage(message,backgroundColor)
-    buttonText = 'trailer is Unavailable '
+    displayAlertMessage('no-youtube-video-available',movieName)
   }
   
 

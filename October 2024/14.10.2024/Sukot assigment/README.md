@@ -1,5 +1,4 @@
 fav page fixes:
-1. fav page - if there is no url youtube when user clicks share icon than pop message no url 
 
 2. redirect to index.html and preform the search query from the search bar input.
 

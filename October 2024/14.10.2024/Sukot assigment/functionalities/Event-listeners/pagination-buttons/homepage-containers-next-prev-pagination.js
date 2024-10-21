@@ -1,3 +1,4 @@
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { homepageTitlesContainers } from "../../DOM/storage-elements-dom.js";
 import { fetchCurrentlyInTheatersMovies } from "../../get-api-calls/get-total-current-movies-in-theatres.js";
 import { fetchPopularMovies } from "../../get-api-calls/get-total-popular-movies.js";
@@ -33,9 +34,13 @@ const setupHomepagePagination = () => {
       if (targetFunction) {
         // Adjust page number based on button click
         if (ev.target.closest('.right-button')) {
-          pageNumbers[containerClass]++;
+          let currentPage = pageNumbers[containerClass]++;
+          displayAlertMessage('redirecting-next-page',currentPage)
+
         } else if (ev.target.closest('.left-button')) {
-          pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1);
+          let currentPage = pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1);
+          displayAlertMessage('redirecting-previous-page',currentPage)
+
         }
 
         // Execute the function with the updated page number

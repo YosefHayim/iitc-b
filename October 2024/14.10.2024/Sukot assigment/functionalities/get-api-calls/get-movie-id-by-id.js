@@ -10,14 +10,15 @@ import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 
-const searchMovieById = (inputValue) => {
-  // Fetch movie data based on the movie ID
-  getData(`https://api.themoviedb.org/3/movie/${inputValue}?api_key=${apiKey}`, (data) => {
-    
+const searchMovieById = async (inputValue) => {
+  try {
+    // Fetch movie data based on the movie ID
+    const data = await getData(`https://api.themoviedb.org/3/movie/${inputValue}?api_key=${apiKey}`);
+
     console.log(data);
 
     if (!data) {
-      redirectToErrorPage()
+      redirectToErrorPage();
       return;
     }
 
@@ -26,8 +27,7 @@ const searchMovieById = (inputValue) => {
     homePageAllContainers.forEach(container => container.remove());
 
     // Remove specific sections if they exist
-    searchPaginationContainer.remove()
-
+    searchPaginationContainer.remove();
 
     // Check if search result title and container already exist
     let searchResultTitle = mainContainer.querySelector('.search-results-name');
@@ -51,22 +51,23 @@ const searchMovieById = (inputValue) => {
       searchResultTitle.insertAdjacentElement('afterend', searchResultContainer);
     }
 
-    // if there is no title, than Update the title content based on the movie data
-    if (!data.original_title) {
-      searchResultTitle.innerHTML = `<h1>ID: ${inputValue}, movie name is undefined.</h1>`;
-
-    } else {
-      searchResultTitle.innerHTML = `<h1>ID: ${inputValue}, movie name: ${data.original_title}</h1>`;
-    }
+    // Update the title content based on the movie data
+    searchResultTitle.innerHTML = data.original_title 
+      ? `<h1>ID: ${inputValue}, movie name: ${data.original_title}</h1>` 
+      : `<h1>ID: ${inputValue}, movie name is undefined.</h1>`;
 
     // Clear the movie cards container before appending new movie cards
-    searchResultTitle.style.display = `flex`
+    searchResultTitle.style.display = 'flex';
     searchResultContainer.innerHTML = '';
 
     // Append the movie card to the search result container
     const movieCard = buildHomeMovieCard(data);
     searchResultContainer.appendChild(movieCard);
-  });
+
+  } catch (error) {
+    console.error('Error fetching movie by ID:', error);
+    redirectToErrorPage();
+  }
 };
 
 export { searchMovieById };

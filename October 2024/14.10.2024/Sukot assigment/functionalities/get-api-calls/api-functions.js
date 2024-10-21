@@ -1,6 +1,6 @@
 import { apiToken } from "../global/env.js";
 
-const getData = async (url, cb) => {
+const getData = async (url) => {
   const get = {
     method: 'GET',
     headers: {
@@ -11,21 +11,20 @@ const getData = async (url, cb) => {
 
   try {
     const response = await fetch(url, get);
-    
+
     if (!response.ok) {
-      cb(null, response);
-      return;
+      throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
-    
+
     const data = await response.json();
-    cb(data, response);  
+    return data;  // Return the data directly
   } catch (err) {
-    console.error(err);
-    cb(null);
+    console.error('Error in fetching data:', err);
+    return null;  // Return null if there is an error
   }
 };
 
-const postData = async (url, cb, favMovie) => {
+const postData = async (url, favMovie) => {
   const post = {
     method: 'POST',
     headers: {
@@ -40,15 +39,14 @@ const postData = async (url, cb, favMovie) => {
     const response = await fetch(url, post);
 
     if (!response.ok) {
-      cb(null, response); 
-      return;
+      throw new Error(`Failed to post data: ${response.statusText}`);
     }
 
     const data = await response.json();
-    cb(data, response); 
+    return data;  // Return the data directly
   } catch (err) {
     console.error('Failed to post favorite movie:', err);
-    cb(null, null); 
+    return null;  // Return null if there is an error
   }
 };
 

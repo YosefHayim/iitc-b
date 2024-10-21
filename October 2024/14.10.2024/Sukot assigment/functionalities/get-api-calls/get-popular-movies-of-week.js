@@ -1,35 +1,36 @@
 import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
-import { popularOfTheWeekContainer, homePageAllContainers,templateTitle } from "../DOM/storage-elements-dom.js";
+import { popularOfTheWeekContainer, homePageAllContainers, templateTitle } from "../DOM/storage-elements-dom.js";
 import { buildHomeMovieCard } from "../DOM/homepage-movie-cards-dom.js";
+import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 
-const popularMoviesOfWeek = (count) => {
-  let defaultPage = 1
+const popularMoviesOfWeek = async (count) => {
+  let defaultPage = 1;
 
-  getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${count ? count : defaultPage}&api_key=${apiKey}`, (data) => {
-
-    console.log(data);
+  try {
+    const data = await getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${count ? count : defaultPage}&api_key=${apiKey}`);
 
     if (!data) {
       redirectToErrorPage();
       return;
     }
-    
-    popularOfTheWeekContainer.innerHTML = ""
+
+    // Clear the container and append the movie cards
+    popularOfTheWeekContainer.innerHTML = "";
     data.results.forEach(movie => {
-      // Creating in each loop a skeleton movie box
+      // Create movie card and append it to the weekly movies container
       const movieCard = buildHomeMovieCard(movie);
-      // Appending it to the div of the weekly movies
       popularOfTheWeekContainer.appendChild(movieCard);
     });
+    
+    // Update the title with the total results and page number
+    templateTitle.textContent = `${data.total_results} Movies Of Weekly Hits: ${data.page}/${data.total_pages}`;
+    console.log(`popularMoviesOfWeek - Total Pages: ${data.total_pages}`);
 
-    homePageAllContainers.forEach(container => {
-      container.style.display = container.classList.contains('popular-movies-of-week-container') ? 'flex' : 'none';
-    });
-
-    templateTitle.textContent = `${data.total_results} Movies Of Weekly Hits :${data.page}/${data.total_pages}`
-    console.log(`popularOfTheWeekContainer - Total Pages: ${data.total_pages}`);
-  });
+  } catch (error) {
+    console.error('Error fetching popular movies of the week:', error);
+    redirectToErrorPage();
+  }
 };
 
 export { popularMoviesOfWeek };

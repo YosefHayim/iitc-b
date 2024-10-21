@@ -12,13 +12,13 @@ const buildSkeletonMovieCard = (movie,movieCardDiv) => {
 
   movieCardDiv.innerHTML = `
   <div>
-    <a href="" class="img-trailer-link">
+    <a href="#" class="img-trailer-link">
       <img src="${image}" alt="movie-img" class="movie-img">
     </a>
     <h1 class="title">${movieName}</h1>
     <div class="img-container">
       <img src="${resultRatingImg}" alt="rating-img" class="rating-img">
-      <a class="play-button-btn">
+      <a href="#" class="play-button-btn">
         <img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img">
       </a>
       <button class="white-share-trailer-btn">
@@ -34,6 +34,7 @@ const buildSkeletonMovieCard = (movie,movieCardDiv) => {
     </div>
   </div>
 `;
+
   return movieCardDiv
 }
 

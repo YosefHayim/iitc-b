@@ -40,7 +40,6 @@ resetPlaceholder(); // Resets placeholder values
 dynamicPaginationSetup(); // Set up pagination
 handleMovieSearchByIdOrName(); // Handle search functionality
 
-
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("index.html")) {
   // Initialize homepage data and interactions

@@ -2,7 +2,7 @@ import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
-import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
+import { handleCopyToClipboard } from "../user-activity/global-copy-to-clipboard-el.js";
 import { reloadThisPage } from "../../DOM/reload-current-page-dom.js";
 
 const handleFavoriteMoviePage = () => {
@@ -34,9 +34,10 @@ const handleFavoriteMoviePage = () => {
       if (shareButton.getAttribute('href').trim().length === 1) {
         const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
 
+        let textColor = `white`
         let backgroundColor = `red`;
         let message = `Movie "${movieName}" has no URL.`;
-        displayAlertMessage(message, backgroundColor);
+        displayAlertMessage(message, backgroundColor,textColor);
 
       } else if (shareButton.getAttribute('href').length > 33) {
         const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;

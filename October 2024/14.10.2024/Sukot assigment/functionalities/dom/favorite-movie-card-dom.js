@@ -1,6 +1,5 @@
 import { buildFavoriteCardSkeleton } from "./favorite-skeleton-movie-card.js";
 import { createDomEl } from "./create-div-dom.js";
-import { getMoviesTrailers } from "../get-api-calls/get-movies-trailer.js"
 
 // Create a favorite movie card using the movie object
 const generateFavoriteMovieCard  = (movie) => {
@@ -12,8 +11,6 @@ const generateFavoriteMovieCard  = (movie) => {
 
   // Calling the skeleton function to create the card div plus injecting the api data
   buildFavoriteCardSkeleton(movieCardDiv, movie);
-  
-  getMoviesTrailers(movie.id, movieCardDiv);
 
   return movieCardDiv;
 };

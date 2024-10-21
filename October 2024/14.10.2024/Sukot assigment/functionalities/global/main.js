@@ -27,12 +27,12 @@ import { weeklyHitsPageButtons } from "../Event-listeners/user-activity/weekly-h
 // Event Listeners for the Homepage
 import { setupHomepagePagination } from "../Event-listeners/pagination-buttons/homepage-containers-next-prev-pagination.js"; // Sets up homepage pagination
 import { dynamicPaginationSetup } from "../Event-listeners/user-activity/dynamic-next-previous-page-pagination.js"; // Handles search result pagination clicks
-import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/homepage-inputs-el.js"; // Handles movie search by ID or name
+import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/global-inputs-el.js"; // Handles movie search by ID or name
 import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/homepage-buttons-el.js"; // Handles homepage movie data button clicks
 
 // Event Listener for the Feedback Page
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
-import { setPlayBtnVideo } from "../DOM/set-play-button-href-to-video-dom.js";
+import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -40,6 +40,7 @@ handleBurgerIconToggle(); // Toggles burger menu for mobile
 resetPlaceholder(); // Resets placeholder values
 dynamicPaginationSetup(); // Set up pagination
 handleMovieSearchByIdOrName(); // Handle search functionality
+homepageSearchListener()
 
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("index.html")) {

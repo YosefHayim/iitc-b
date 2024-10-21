@@ -39,7 +39,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background: black;
     color: var(--color-text);
   }
 
@@ -306,7 +306,7 @@
   .rating-number-txt {
     font-size: 1.8em;
     transform: translateY(0.05em);
-    color: red;
+    color: var(--rating--color);
   }
 
   .overview-container {
@@ -551,7 +551,7 @@
 
   .next-page,.previous-page {
     border: none;
-    background: black;
+    background: gray;
     border-radius: 20em;
     cursor: pointer;
   }
@@ -560,8 +560,7 @@
     display: flex;
     flex-direction: row-reverse;
     gap: 10em;
-    display: none;
-    margin-bottom: 5em;
+    margin-top: 5em;
   }
 
   .left-button,.right-button {
@@ -600,7 +599,6 @@
     margin-top: 1em;
     font-size: 1.5em;
     width: 75vw;
-    display: none;
     flex-wrap: wrap;
   }
   
@@ -913,7 +911,7 @@
     box-shadow: 0em 0em 2.5em -1em;
     font-size: 0.6em;
     font-size: 2em;
-    display: none;
+    display: flex;
     padding: 0.5em;
   }
 

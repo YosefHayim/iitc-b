@@ -14,15 +14,14 @@ const todayMustWatchPlayButtons = () => {
       const heartBtn = ev.target.closest('.white-heart-trailer-btn');
       const playButton = ev.target.closest('.play-button-btn');
       const movieCard = ev.target.closest('.movie-card');
+      const movieName = movieCard.querySelector('h1').textContent;      
+      const movieCardId = movieCard.id.replace(/\D/g, '');
       
       if (!movieCard) {
         displayAlertMessage('no-movie-card-found');
         return;
       }
 
-      const movieName = movieCard.querySelector('h1').textContent;      
-      const movieCardId = movieCard.id.replace(/\D/g, '');
-      console.log(movieCardId);
 
       if (dataBtn) {
         displayAlertMessage('navigating-to-another-page', movieName);

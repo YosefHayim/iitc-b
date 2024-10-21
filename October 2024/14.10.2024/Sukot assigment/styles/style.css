@@ -558,7 +558,7 @@
   }
 
   .buttons-pagination-container-search-bar {
-    display: flex;
+    display: none;
     flex-direction: row-reverse;
     gap: 10em;
     margin-top: 5em;
@@ -588,7 +588,7 @@
   .search-results-name {
     margin-bottom: 1em;
     color: white;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;

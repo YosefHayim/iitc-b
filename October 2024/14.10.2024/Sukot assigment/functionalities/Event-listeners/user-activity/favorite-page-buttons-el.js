@@ -3,60 +3,74 @@ import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
 import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { handleCopyToClipboard } from "../user-activity/global-copy-to-clipboard-el.js";
+import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
+import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 
-const handleFavoriteMoviePage = () => {
-  favMoviesContainer.addEventListener('click', (ev) => {
-    
+const handleFavoriteMoviePage = () => {  
+  favMoviesContainer.addEventListener('click', async (ev) => {
+
     const dataBtn = ev.target.closest('.fav-white-data-btn');
     const shareButton = ev.target.closest('.fav-white-share-trailer-btn');
     const removeButton = ev.target.closest('.fav-remove-btn-icon');
     const playButton = ev.target.closest('.fav-play-button-btn');
+    const movieCard = ev.target.closest('.movie-card');
+    const movieName = movieCard.querySelector('.title').textContent;
+    const favMovieId = movieCard.id.replace(/\D/g, '');
+    
+    if (!movieCard) {
+      displayAlertMessage('no-movie-card-found');
+      return;
+    }
 
-    // Handles movie data button click
+    // Handle movie data button click
     if (dataBtn) {
-      ev.preventDefault();
-      const movieCardDiv = dataBtn.closest('.movie-card');
-      const movieName = dataBtn.closest('.movie-card').querySelector('.title').textContent;      
-      const favMovieId = movieCardDiv.id.replace(/\D/g, '');
-      const playButton = movieCardDiv.querySelector('.fav-play-button-btn');
-      const videoUrl = playButton.getAttribute('href');
-      const videoId = videoUrl.split('v=')[1];
-      displayAlertMessage('navigating-to-another-page',movieName)
-      navigateToMoviePage(favMovieId, videoId);
+      displayAlertMessage('navigating-to-another-page', movieName);
+      navigateToMoviePage(favMovieId);
+      return;
+    }
 
-    // Handles share button click
-    } else if (shareButton) {
+    // Handle share button click
+    if (shareButton) {
       ev.preventDefault();
-      if (shareButton.getAttribute('href').trim().length === 1) {
-        const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
-        displayAlertMessage('no-url-to-copy',movieName)
-
-      } else if (shareButton.getAttribute('href').length > 33) {
-        const movieName = shareButton.closest('.movie-card').querySelector('.title').textContent;
+      try {
         const videoUrl = shareButton.getAttribute('href');
-        handleCopyToClipboard(videoUrl);
-        displayAlertMessage('success-copy-movie-url',movieName)
+        if (!videoUrl || videoUrl.trim().length <= 1) {
+          displayAlertMessage('no-url-to-copy', movieName);
+        } else {
+          handleCopyToClipboard(videoUrl);
+          displayAlertMessage('success-copy-movie-url', movieName);
+        }
+      } catch (error) {
+        console.error('Error copying movie URL:', error);
       }
+    }
 
-    // Handles remove button click
-    } else if (removeButton) {
+    // Handle remove button click
+    if (removeButton) {
       ev.preventDefault();
-      const favMovieId = removeButton.closest('.movie-card').id.replace(/\D/g, '');
-      const movieName = removeButton.closest('.movie-card').querySelector('.title').textContent;
-      const movieCard = removeButton.closest('.movie-card')
-      removeFavMovie(favMovieId);
-      movieCard.style.display = `none`
-      displayAlertMessage('success-removed-movie',movieName)
+      try {
+        removeFavMovie(favMovieId);
+        movieCard.style.display = 'none';
+        displayAlertMessage('success-removed-movie', movieName);
+      } catch (error) {
+        console.error('Error removing movie:', error);
+      }
+    }
 
-    // Handles play button click
-    } else if (playButton) {
-      if (playButton.getAttribute('href').trim().length === 1) {
-        const movieName = playButton.closest('.movie-card').querySelector('.title').textContent;
-        displayAlertMessage('No trailer to watch',movieName)
+    // Handle play button click
+    if (playButton) {
+      try {
+        const result = await getMovieTrailer(favMovieId);
+        const videoUrl = `https://www.youtube.com/watch?v=${result.key}`;
 
-      } else if (playButton.getAttribute('href').length > 33) {
-        displayAlertMessage('navigating-to-another-page',movieName)
-
+        if (!result.key) {
+          displayAlertMessage('No trailer to watch', movieName);
+        } else {
+          setPlayBtnVideo(playButton, videoUrl);
+          window.location.href = videoUrl;
+        }
+      } catch (error) {
+        console.error('Error fetching movie trailer:', error);
       }
     }
   });

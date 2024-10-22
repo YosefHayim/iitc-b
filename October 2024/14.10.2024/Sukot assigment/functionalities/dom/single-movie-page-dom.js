@@ -4,17 +4,23 @@ import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
 import { createDomEl } from "./create-div-dom.js";
 import { displayAlertMessage } from "./alert-message-dom.js";
+import { getReleaseStatus } from "./is-release-date-dom.js";
+import { displayMovieGenres } from "./creating-movie-genres-dom.js";
+import { roundMovieRating } from "./round-rating-movie-dom.js";
 
 
 const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
   
   const image = isImageNull(singleMovieData.poster_path);
-  const movieName = singleMovieData.original_title
+  const isReleased = getReleaseStatus(singleMovieData.release_date)
   const resultRatingImg = getStarRatingImage(singleMovieData.vote_average)
-  const roundRatingFloat = singleMovieData.vote_average.toFixed(1)
+  const movieGenres = displayMovieGenres(singleMovieData.genres)
+  const roundRatingFloat = roundMovieRating(singleMovieData.vote_average)
+  const movieName = singleMovieData.original_title
   const urlWeb = singleMovieData.homepage
   const overviewMovie = singleMovieData.overview
-  let buttonText = 'Watch trailer'
+  
+  let buttonText = 'Watch the trailer'
   displayAlertMessage('success-received-movie-data',movieName)
 
   if (!videoUrl) {
@@ -31,10 +37,12 @@ const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
   <h2 class="rating-number-txt">${roundRatingFloat}</h2>
   </div>
   <img src="${image}" alt="movie-img" class="single-movie-img">
+  <h2 class="movie-release">Movie release: ${isReleased}</h2>
+  <h2 class"movie-genre">Movie genres: ${movieGenres}</h2>
   <h3 class="summary-title">Summary</h3>
   <p class="movie-details">${overviewMovie}</p>
   <button class="movie-link">
-  <a href="${urlWeb}" target="_blank" class="website-link">Visit Homepage</a>
+  <a href="${urlWeb}" target="_blank" class="website-link">Website Movie</a>
   </button>
   <div class="video-container">
   <button class="button-trailer">

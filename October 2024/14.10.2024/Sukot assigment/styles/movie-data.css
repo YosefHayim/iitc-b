@@ -25,6 +25,11 @@
   margin-bottom: 5em;
 }
 
+.movie-release {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .movie-link {
   background: none;
   border: none;
@@ -38,8 +43,8 @@
   font-weight: bold;
   font-family: 'Roboto';
   border-radius: 0.1em;
-  width: 100vw;
   display: block;
+  border-radius: 5em;
 }
 
 .movie-link a:hover,.button-trailer a:hover {
@@ -112,6 +117,7 @@
   font-family: 'Roboto';
   border-radius: 0.1em;
   display: block;
+  border-radius: 5em;
 }
 
 .watch-trailer-movie {
@@ -203,5 +209,6 @@ body > footer {
   .actors-title {
     width: auto;
     font-size: 1.8em;
+    border-radius: 5em;
   }
 }

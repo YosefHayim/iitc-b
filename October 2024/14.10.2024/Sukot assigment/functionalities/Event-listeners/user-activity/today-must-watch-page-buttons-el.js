@@ -24,9 +24,22 @@ const todayMustWatchPlayButtons = () => {
 
 
       if (dataBtn) {
-        displayAlertMessage('navigating-to-another-page', movieName);
-        navigateToMoviePage(movieCardId);
-        return;
+        try {
+          const result = await getMovieTrailer(movieCardId);
+          console.log(result);
+          
+          if (!result.key) {
+            displayAlertMessage('error-fetch-movie-trailer',movieName)
+            console.error('Error getting the movie id',movieCardId);
+          } else {
+            const videoId = result.key
+            displayAlertMessage('navigating-to-another-page', movieName);
+            navigateToMoviePage(movieCardId,videoId);
+          }
+        } catch (error) {
+          console.error('Error navigating to single movie page',error)
+        }
+        return
       }
 
       if (shareImg) {

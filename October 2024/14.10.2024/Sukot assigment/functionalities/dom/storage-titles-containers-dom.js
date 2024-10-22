@@ -40,9 +40,7 @@ const titlesStorage = (requestedTContainer) => {
     },
   ];
   // Find the first matched title
-  const matchedTitle = storage.find(title => title.containerTitleName === requestedTContainer);
-  console.log(matchedTitle);
-  
+  const matchedTitle = storage.find(title => title.containerTitleName === requestedTContainer);  
   return matchedTitle;
 };
 

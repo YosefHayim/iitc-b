@@ -47,14 +47,9 @@ const searchPaginationContainer = document.querySelector('.buttons-pagination-co
 const toggleIconImage = document.querySelector('.toggle-mode-img')
 
 // for turning white mode
-const whiteModeEls = document.querySelectorAll('.template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title');
-const userButtonsEl = document.querySelectorAll('.white-share-img, .white-heart-img, .play-button-img, .remove-btn-img, .white-data-img');
-
 
 // Exported elements for use in other files
 export {
-  userButtonsEl,
-  whiteModeEls,
   toggleIconImage,
   homePageDivs,
   goTBottomBtn,

@@ -1,23 +1,29 @@
-import { toggleIconImage } from "../../DOM/storage-elements-dom.js";
-import { turnWhiteWeb, turnDarkWeb } from "../../DOM/white-mode-toggle-dom.js";
+import { applyDarkModeStyles, removeDarkModeStyles } from "../../DOM/dark-mode-white-mode-dom.js";
+import { toggleIconImage} from "../../DOM/storage-elements-dom.js";
 
 const toggleDarkMode = () => {
+  const isDarkModeActive = localStorage.getItem('darkMode') === 'true';
+
   document.addEventListener('DOMContentLoaded', () => {
+    if (isDarkModeActive) {
+      applyDarkModeStyles();
+      toggleIconImage.classList.add('active'); // Ensure button is in active state
+    }
+
     toggleIconImage.addEventListener('click', (ev) => {
       ev.preventDefault();
-      console.log('clicked');
-      
       toggleIconImage.classList.toggle('active');
-    
+
       if (toggleIconImage.classList.contains('active')) {
-        toggleIconImage.src = '../images/user-activity/white-circle.svg';
-        turnWhiteWeb();  // Enable white mode
+        applyDarkModeStyles();
+        localStorage.setItem('darkMode', 'true'); // Save dark mode state
+        
       } else {
-        toggleIconImage.src = '../images/user-activity/red-circle.svg';
-        turnDarkWeb();  // Revert to dark mode
+        removeDarkModeStyles();
+        localStorage.setItem('darkMode', 'false'); // Reset dark mode state
       }
     });
   });
 };
 
-export { toggleDarkMode };
+export {toggleDarkMode}

@@ -8,7 +8,9 @@ const searchMovieByName = async (inputValue, count = 1) => {
   try {
     const data = await getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=${count}`);
 
-    if (!data) {
+    console.log(data);
+    
+    if (data.results.length === 0) {
       redirectToErrorPage();
       return;
     }

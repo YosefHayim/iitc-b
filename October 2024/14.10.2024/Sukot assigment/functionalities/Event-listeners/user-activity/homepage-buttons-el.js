@@ -26,9 +26,22 @@ const HomeMovieDataButtonClicks = () => {
 
       // Data button clicked: Navigate to the movie page
       if (dataBtn) {
-        displayAlertMessage('navigating-to-another-page', movieName);
-        navigateToMoviePage(movieId);
-        return;
+        try {
+          const result = await getMovieTrailer(movieId);
+          console.log(result);
+          
+          if (!result.key) {
+            displayAlertMessage('error-fetch-movie-trailer',movieName)
+            console.error('Error getting the movie id',movieId);
+          } else {
+            const videoId = result.key
+            displayAlertMessage('navigating-to-another-page', movieName);
+            navigateToMoviePage(movieId,videoId);
+          }
+        } catch (error) {
+          console.error('Error navigating to single movie page',error)
+        }
+        return
       }
 
       // Share button clicked: Handle copying trailer URL to clipboard

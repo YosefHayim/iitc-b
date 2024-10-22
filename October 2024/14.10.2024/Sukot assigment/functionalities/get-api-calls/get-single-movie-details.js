@@ -6,8 +6,10 @@ import { renderSingleMoviePage } from "../DOM/single-movie-page-dom.js";
 const displaySingleMovieById = async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const videoUrl = urlParams.get('videoUrl');
+  console.log(videoUrl);
   const movieId = urlParams.get('movieId');
-    
+  console.log(movieId);
+  
   if (!movieId) {
     return redirectToErrorPage();
   }

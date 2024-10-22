@@ -1,6 +1,5 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js"
 
 const getMovieTrailer = async (movieId) => {
   try {

@@ -1,7 +1,7 @@
 import { getData } from "./api-functions.js";
-import { currentTheaterPage } from "../DOM/storage-elements-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { displayMovies } from "../DOM/display-movies-dom.js";
+import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
 
 const fetchCurrentlyInTheatersMovies = async (pageNumber = 1) => {
   try {
@@ -13,9 +13,9 @@ const fetchCurrentlyInTheatersMovies = async (pageNumber = 1) => {
     }
 
     displayMovies('Currently movies in theatres page', data)
-    currentTheaterPage.style.display = "block";
-    currentTheaterPage.textContent = `Page: ${pageNumber} / ${data.total_pages}`;
-
+    let textTitle = `Page: ${pageNumber} / ${data.total_pages}`;
+    dynamicTitlesDisplay('Currently In Theatres title',textTitle)
+    
   } catch (error) {
     console.error('Error fetching currently in theaters movies:', error);
     redirectToErrorPage();

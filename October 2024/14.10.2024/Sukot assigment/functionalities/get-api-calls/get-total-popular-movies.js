@@ -1,8 +1,8 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
-import { latestPopularPage } from "../DOM/storage-elements-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { displayMovies } from "../DOM/display-movies-dom.js";
+import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
 
 const fetchPopularMovies = async (pageNumber = 1) => {
   try {
@@ -14,8 +14,8 @@ const fetchPopularMovies = async (pageNumber = 1) => {
     }
 
     displayMovies('popular movies page',data)
-    latestPopularPage.style.display = "block";
-    latestPopularPage.textContent = `Page: ${pageNumber} / ${data.total_pages}`;
+    let textTitle = `Page: ${pageNumber} / ${data.total_pages}`;
+    dynamicTitlesDisplay('Popular movies title',textTitle)
 
   } catch (error) {
     console.error('Error fetching popular movies:', error);

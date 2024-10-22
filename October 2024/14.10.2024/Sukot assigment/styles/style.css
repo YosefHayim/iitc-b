@@ -590,7 +590,7 @@
   .search-results-name {
     margin-bottom: 1em;
     color: white;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -911,12 +911,12 @@
   }
 
   .search-results-name {
+    display: flex;
     flex-direction: row;
     background: var(--lighter-red-color);
     box-shadow: 0em 0em 2.5em -1em;
     font-size: 0.6em;
     font-size: 2em;
-    display: none;
     padding: 0.5em;
   }
 

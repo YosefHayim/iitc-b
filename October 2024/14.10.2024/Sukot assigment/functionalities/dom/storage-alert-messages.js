@@ -48,7 +48,6 @@ const alertMessagesTypes = (messageType, word) => {
       message: 'Something went wrong!',
       backgroundColor: 'red'
     },
-
     {
       messageType: 'no-movie-id-found',
       message: `The movie ${word} doesn't have a valid movie card.`,

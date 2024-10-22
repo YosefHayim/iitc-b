@@ -1,9 +1,5 @@
 import { currentTheaterPage, latestPopularPage, searchResultTitle, templateTitle, topTrendingPage, upComingMoviePage } from "./storage-elements-dom.js"
 
-const titlesContainerStorage = () => {
-
-}
-
 const titlesStorage = (requestedTContainer) => {
   const storage = [
     {
@@ -44,6 +40,8 @@ const titlesStorage = (requestedTContainer) => {
     },
   ]
   // Find the first matched title
-  const matchedTitle = storage.find(title => title.containerTitleName === requestedTContainer.containerTitleName) 
+  const matchedTitle = storage.find(title => title.containerTitleName === requestedTContainer);  
   return matchedTitle
 }
+
+export {titlesStorage}

@@ -15,8 +15,9 @@
 }
 
 .return-home-btn:active,.return-home-btn:hover {
-  background-color: black;
+  background-color: var(--lighter-red-color);
   color: white;
+  border: none;
 }
 
 body > main > div.error-container > span {

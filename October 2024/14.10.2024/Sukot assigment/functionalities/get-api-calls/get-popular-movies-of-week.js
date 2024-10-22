@@ -1,8 +1,8 @@
 import { apiKey } from "../global/env.js";
 import { getData } from "./api-functions.js";
-import { popularOfTheWeekContainer,templateTitle } from "../DOM/storage-elements-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { displayMovies } from "../DOM/display-movies-dom.js";
+import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
 
 const popularMoviesOfWeek = async (count) => {
   let defaultPage = 1;
@@ -15,7 +15,8 @@ const popularMoviesOfWeek = async (count) => {
     }
 
     displayMovies('Weekly hits popular movies page',data)
-    templateTitle.textContent = `${data.total_results} Movies Of Weekly Hits: ${data.page}/${data.total_pages}`;
+    let textTitle = `${data.total_results} Weekly hits movies: ${data.page}/${data.total_pages}`;
+    dynamicTitlesDisplay('Weekly hits page title',textTitle)
 
   } catch (error) {
     console.error('Error fetching popular movies of the week:', error);

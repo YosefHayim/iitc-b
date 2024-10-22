@@ -1,13 +1,8 @@
-import { 
-  homePageAllContainers, 
-  homepageTitlesContainers, 
-  searchPaginationContainer, 
-  searchResultTitle, 
-} from "../DOM/storage-elements-dom.js";
-
+import { homePageAllContainers, homepageTitlesContainers, } from "../DOM/storage-elements-dom.js";
 import { getData } from "./api-functions.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { displayMovies } from "../DOM/display-movies-dom.js";
+import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
 
 const searchMovieByName = async (inputValue, count = 1) => {
   try {
@@ -17,14 +12,12 @@ const searchMovieByName = async (inputValue, count = 1) => {
       redirectToErrorPage();
       return;
     }
-
     homepageTitlesContainers.forEach(title => {if (!title.classList.contains('search-results-name')) title.remove();});
     homePageAllContainers.forEach(container => container.remove());
-    
-    searchResultTitle.style.textAlign = 'left';
-    searchResultTitle.style.display = 'flex';
-    searchResultTitle.innerHTML = `Total results for <span class="input-query"> ${inputValue} </span> ${data.total_results} Page: ${data.page} / ${data.total_pages}`;
-    searchPaginationContainer.style.display = 'flex';
+
+    let textTitle = `Total results for ${inputValue}: ${data.total_results} Pages: ${data.page}/${data.total_pages}`
+    dynamicTitlesDisplay('Search result title page by Name',textTitle)
+
     displayMovies('Search result page ID + name',data)
 
   } catch (error) {

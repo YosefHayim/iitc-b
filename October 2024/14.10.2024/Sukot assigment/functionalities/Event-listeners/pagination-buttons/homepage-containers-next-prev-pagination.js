@@ -34,10 +34,14 @@ const setupHomepagePagination = () => {
 
         } else if (ev.target.closest('.left-button')) {
           let currentPage = pageNumbers[containerClass] = Math.max(1, pageNumbers[containerClass] - 1);
-          displayAlertMessage('redirecting-previous-page',currentPage)
+          if (currentPage === 1) {
+            displayAlertMessage('cant-go-lower-than-1',currentPage)
+            return
 
+          } else {
+            displayAlertMessage('redirecting-previous-page',currentPage)
+          }
         }
-
         targetFunction(pageNumbers[containerClass]);
       } else {
         console.error("No matching function for this container.");

@@ -1,13 +1,11 @@
-import { favMoviesContainer,popularMoviesContainer, 
-  popularOfTheDayContainer, 
-  popularOfTheWeekContainer, 
-  searchResultContainer, 
-  theatresContainer, 
-  topRatedMoviesContainer, 
-  upComingMoviesContainer } from "./storage-elements-dom.js"
+import { favMoviesContainer,popularMoviesContainer, popularOfTheDayContainer, popularOfTheWeekContainer, searchResultContainer, theatresContainer, topRatedMoviesContainer, upComingMoviesContainer } from "./storage-elements-dom.js"
 
 const moviesStorage = (requestedContainer) => {
   const storage = [
+    {
+      containerName : 'Search result page id and name',
+      containerEl : searchResultContainer,
+    },
     {
     containerName : 'Favorite movie page',
     containerEl : favMoviesContainer,
@@ -41,15 +39,9 @@ const moviesStorage = (requestedContainer) => {
     {
       containerName : 'Upcoming movies page',
       containerEl : upComingMoviesContainer,
-    },
-
-    {
-      containerName : 'Search result page ID + name',
-      containerEl : searchResultContainer,
     }
   ]
-
-  const movieContainer = storage.find(relevantContainer => relevantContainer.containerName === requestedContainer)
+  const movieContainer = storage.find(relevantContainer => relevantContainer.containerName === requestedContainer)  
   return movieContainer
 }
 

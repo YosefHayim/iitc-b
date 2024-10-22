@@ -73,6 +73,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    opacity: 0.9;
   }
 
  .input-query {
@@ -100,17 +101,25 @@
     display: none;
     flex-direction: column;
     justify-content: center;
-    gap: 1em;
+    gap: 2em;
     font-size: 1.5em;
-    left: 4.5em;
+    left: 1.5em;
+    top: 1em;
     position: relative;
-    width: 100%;
     flex-wrap: wrap;
+  }
+
+  .top-navbar-mobile a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 5em;
+    display: block;
   }
 
   .top-navbar-mobile a:active {
     background: red;
-    padding: 0.3em;
+    padding: 0.5em;
     border-radius: 5em;
     color: white;
   }
@@ -119,7 +128,9 @@
     color: black;
     background: white;
     border-radius: 5em;
-    padding: 0.3em;
+    padding: 0.5em;
+    width: fit-content;
+    display: block;
   }
 
   .overlay-container {
@@ -138,11 +149,14 @@
 
   .logo-link-mobile {
     transform: translateY(0.1em);
+    padding: 0.5em;
+    background: none;
   }
 
   .logo-link-mobile:hover {
-    background: red;
-    border-radius: 2em;
+    background: var(--rating--color);
+    border-radius: 5em;
+    padding: 0.5em;
   }
 
   .logo-icon:active {
@@ -163,15 +177,15 @@
     position: static;
     z-index: 99999;
     cursor: pointer;
-    background: var(--lighter-red-color);
+    background: red;
     border-radius: 5em;
-    padding: 0.3em;
+    padding: 0.5em;
   }
 
   .white-burger-icon:hover,.white-burger-icon:active {
-    background-color: var(--red);
     border-radius: 3em;
-    padding: 0.4em;
+    padding: 0.5em;
+    background: var(--rating--color);
   }
 
   .btn-serachbar-glass {
@@ -461,7 +475,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 2em;
+    padding-top: 0.5em;
   }
 
   hr {
@@ -469,7 +483,7 @@
     position: fixed;
     animation: slideIn 0.3s ease-out forwards;
     animation-iteration-count: 1;
-    margin-bottom: -6.3em;
+    margin-bottom: 10.7em;
   }
 
   @keyframes slideIn {
@@ -626,11 +640,6 @@
     justify-content: center;
   }
 
-  .top-navbar {
-    color: white;
-    border-radius: 100em;
-  }
-
   .top-navbar-desktop:hover {
     color: white;
     background: var(--lighter-red-color);
@@ -645,24 +654,25 @@
   }
 
   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
+    display: flex;
+    position: relative;
+    background: none;
     z-index: 1;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: column;
+    gap: 2em;
   }
 
   .dropdown-content a {
-    padding: 0.6em 1.1em;
     display: block;
     background: black;
     border-radius: 100em;
     width: 100%;
-    text-align: center;
   }
 
   .dropdown-content a:hover {
     background-color: white;
-    border-radius: 3em;
     color: black;
   }
 
@@ -694,7 +704,7 @@
 
   .dropdown-content a:active {
     background-color: red;
-    color: black;
+    color: white;
   }
 
   .popular-day-container:hover,.popular-week-container:hover {
@@ -747,6 +757,34 @@
   /* Desktop design 1024px */
   @media screen and (min-width:1024px) {
 
+    .top-navbar:hover .dropdown-content {
+      width: auto;
+      gap: 1em;
+      transform: translate(-4em, 0.5em);
+    }
+    
+    .popular-of-day-container,.popular-week-container {
+      background: black;
+      border-radius: 100em;  
+    }
+
+    .dropdown-content a {
+      padding: 0.5em;
+    }
+
+    .dropdown-content {
+      align-items: normal;
+      gap: 1em;
+      text-align: center;
+      position: fixed;
+      transform: translate(-4em, 0em);
+      display: none;
+    }
+
+    .overlay-container {
+      display: none;
+    }
+
     .left-button,.right-button {
       width: 5em;
     }
@@ -770,9 +808,9 @@
 
     .top-navbar-desktop {
       text-align: center;
-      width: 100%;
       display: block;
       padding: 0.7em;
+      width: max-content;
     }
 
     .title {
@@ -872,23 +910,19 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 2em;
+      gap: 1em;
       width: 100%;
       flex-wrap: wrap;
     }
 
     .links-container-footer {
-      display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 1em;
     }
 
     .contact-links-footer {
       display: flex;
       flex-direction: row;
-      gap: 2em;
+      gap: 1.1em;
       flex-wrap: wrap;
     }
 

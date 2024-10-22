@@ -9,7 +9,8 @@
 }
 
 body > footer {
-  position: relative;
+  position: fixed;
+  bottom: 0;
 }
 
 .submit-button {
@@ -29,10 +30,15 @@ body > footer {
   justify-content: center;
   align-items: center;
   margin-top: 1em;
+  width: 40%;
 }
 
 .form-container {
-  width: 50vw;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
 }
 
 .feedback-me-container-title {
@@ -101,8 +107,18 @@ input::placeholder,input,textarea {
   margin-bottom: 1em;
 }
 
+.popcorn-icon-thinking {
+  display: none;
+}
 
 @media screen and (min-width:1024px) {
+
+  .popcorn-icon-thinking {
+    display: block;
+    height: auto;
+    width: auto;
+  }
+  
   #rating {
     margin-bottom: 2em;
   }

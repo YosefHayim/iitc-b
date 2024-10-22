@@ -5,6 +5,7 @@
 
 .hero-image-about-us {
   animation: flowUpDown 5s ease-in-out infinite;
+  width: 20em;
 }
 
 .about-us-section {
@@ -32,8 +33,13 @@
   box-shadow: 0em 0em 0.1em 0.0001em black;
 }
 
-.content {
+.about-us-section-container {
   padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 @keyframes flowUpDown {
@@ -58,22 +64,26 @@
 }
 
 @media screen and (min-width:1024px) {
+
+  .about-us-section-container {
+    flex-wrap: unset;
+  }
+
+  .hero-image-about-us {
+    height: auto;
+    width: auto;
+  }
+
   .about-us-section {
     margin-top: 1em;
     font-size: 1.5em;
     background-color: var(--trans-white-bg);
     border-style:dotted;
   }
-}
 
-@media screen and (max-width:5000px) {
   body > footer {
-    position: relative;
+    position: unset;
+    bottom: 0;
   }
-}
 
-@media screen and (max-width:3000px) {
-  body > footer {
-    position: relative;
-  }
 }

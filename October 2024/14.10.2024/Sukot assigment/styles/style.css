@@ -456,7 +456,7 @@ display: none;
 
 footer {
 width: 100%;
-background: black;
+background: var(--background-grey-color-btns);
 text-align: center;
 display: flex;
 flex-direction: column;
@@ -577,7 +577,7 @@ flex-direction: row-reverse;
 gap: 10em;
 margin-top: 5em;
 padding-bottom: 5em;
-display: none;
+display: flex;
 }
 
 .left-button,.right-button {
@@ -611,7 +611,8 @@ border-style: dashed;
 font-size: 1.5em;
 flex-wrap: wrap;
 border-radius: 5em;
-display: none;
+width: 50%;
+display: flex;
 }
 
 
@@ -694,11 +695,6 @@ color: white;
 
 .popular-day-container:hover,.popular-week-container:hover {
 background: none;
-}
-
-body > footer {
-position: relative;
-background-color: var(--background-grey-color-btns);
 }
 
 .get-back-to-top-btn,.get-from-to-bottom-btn {

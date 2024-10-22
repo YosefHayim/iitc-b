@@ -33,6 +33,7 @@ import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/home
 // Event Listener for the Feedback Page
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
 import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js";
+import { toggleDarkMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -41,6 +42,7 @@ resetPlaceholder(); // Resets placeholder values
 dynamicPaginationSetup(); // Set up pagination
 handleMovieSearchByIdOrName(); // Handle search functionality
 homepageSearchListener()
+toggleDarkMode()
 
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("index.html")) {

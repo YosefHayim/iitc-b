@@ -19,11 +19,11 @@ const dynamicPaginationSetup = (count = 1) => {
     const querySearch = params.get('query');
     const button = ev.target.closest('button');
 
-    if (!button) return;
-
     // For 'index.html' pagination
     if (window.location.pathname.endsWith('index.html') && querySearch) {
+
       if (button.classList.contains('next-page')) {
+
         count = increasePage(count);
         searchMovieByName(querySearch, count);
         displayAlertMessage('redirecting-next-page',count)
@@ -31,6 +31,7 @@ const dynamicPaginationSetup = (count = 1) => {
 
       } else if (button.classList.contains('previous-page')) {
         count = decreasePage(count);
+
         if (count <= 1) {
           count = 1;
           displayAlertMessage('cant-go-lower-than-1',count)

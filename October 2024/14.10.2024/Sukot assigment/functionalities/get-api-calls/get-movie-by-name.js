@@ -17,8 +17,8 @@ const searchMovieByName = async (inputValue, count = 1) => {
 
     let textTitle = `Total results for ${inputValue}: ${data.total_results} Pages: ${data.page}/${data.total_pages}`
     dynamicTitlesDisplay('Search result title page by Name',textTitle)
-
-    displayMovies('Search result page ID + name',data)
+    
+    displayMovies('Search result page id and name',data)
 
   } catch (error) {
     console.error('Error fetching search results:', error); 

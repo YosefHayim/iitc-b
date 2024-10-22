@@ -6,30 +6,28 @@ const displayAlertMessage = (messageType, word) => {
   const { message, backgroundColor } = alertMessagesTypes(messageType, word) || {};
 
   if (message && backgroundColor) {
+    const currentScrollY = window.scrollY;
+    const messageContainer = alertMessageContainerEl || createDomEl();
+    
+    messageContainer.classList.add('template-message-container');
+    messageContainer.style.cssText = `
+      background: ${backgroundColor};
+      display: flex;
+      position: absolute;
+      top: ${currentScrollY}px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    `;
+    messageContainer.textContent = message;
+
     if (!alertMessageContainerEl) {
-      const templateMessageContainer = createDomEl();
-      templateMessageContainer.classList.add('template-message-container');
-      templateMessageContainer.style.background = backgroundColor;
-      templateMessageContainer.style.display = 'flex';
-      templateMessageContainer.textContent = message;
-
-      navbarDesktopEl.insertAdjacentElement('afterend', templateMessageContainer);
-
-      setTimeout(() => {
-        templateMessageContainer.style.display = 'none';
-      }, 3000);
-
-      return templateMessageContainer;
-    } 
-    else {
-      alertMessageContainerEl.style.background = backgroundColor;
-      alertMessageContainerEl.textContent = message;
-      alertMessageContainerEl.style.display = 'flex';
-
-      setTimeout(() => {
-        alertMessageContainerEl.style.display = 'none';
-      }, 3000);
+      navbarDesktopEl.insertAdjacentElement('afterend', messageContainer);
     }
+
+    setTimeout(() => {
+      messageContainer.style.display = 'none';
+    }, 3000);
   } else {
     console.error('Message type not found!');
   }

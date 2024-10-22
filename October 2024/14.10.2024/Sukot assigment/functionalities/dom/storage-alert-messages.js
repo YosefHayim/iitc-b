@@ -3,32 +3,32 @@ const alertMessagesTypes = (messageType, word) => {
     // Green background color
     {
       messageType: 'success-removed-movie',
-      message: `Successfully removed the movie "${word}".`,
+      message: `Removed "${word}".`,
       backgroundColor: 'green'
     },
     {
       messageType: 'redirecting-next-page',
-      message: `Redirecting next page ${word}.`,
+      message: `Next page: ${word}.`,
       backgroundColor: 'green'
     },
     {
       messageType: 'success-added-trailer',
-      message: `Trailer for "${word}" loaded successfully.`,
+      message: `Trailer for "${word}" added.`,
       backgroundColor: 'green'
     },
     {
       messageType: 'success-received-movie-data',
-      message: `data for ${word} has loaded successfully`,
+      message: `Data for "${word}" loaded.`,
       backgroundColor: 'green'
     },
     {
       messageType: 'success-added-movie-to-favorite-picks',
-      message: `Successfully added movie "${word}" to favorite picks.`,
+      message: `"${word}" added to favorites.`,
       backgroundColor: 'green'
     },
     {
       messageType: 'success-copy-movie-url',
-      message: `Successfully copied movie "${word}" URL.`,
+      message: `Copied URL for "${word}".`,
       backgroundColor: 'green'
     },
     {
@@ -38,67 +38,63 @@ const alertMessagesTypes = (messageType, word) => {
     },
     {
       messageType: 'redirecting-previous-page',
-      message: `Redirecting previous page ${word}`,
+      message: `Back to ${word}.`,
       backgroundColor: 'green'
     },
 
     // Red background color
     {
       messageType: 'Error',
-      message: 'Something went wrong!',
+      message: 'Error occurred!',
       backgroundColor: 'red'
     },
     {
       messageType: 'no-movie-id-found',
-      message: `The movie ${word} doesn't have a valid movie card.`,
+      message: `No movie card for "${word}".`,
       backgroundColor: 'red'
     },
-
     {
       messageType: 'cant-go-lower-than-1',
-      message: `You can't go lower than current ${word}.`,
+      message: `Can't go lower than ${word}.`,
       backgroundColor: 'red'
     },
-
     {
       messageType: 'error-fetch-movie-trailer',
-      message: `Can't fetch the trailer for movie "${word}"`,
+      message: `No trailer for "${word}".`,
       backgroundColor: 'red'
     },
-
     {
       messageType: 'input-error',
-      message: `Input value is ${word}.`,
+      message: `Invalid: ${word}.`,
       backgroundColor: 'red'
     },
-
     {
       messageType: 'no-movie-data-exist',
-      message: `The movie ${word} has no available data`,
+      message: `No data for "${word}".`,
       backgroundColor: 'red'
     },
 
     // Yellow background color
     {
       messageType: 'no-url-to-copy',
-      message: `The movie ${word} has no URL to copy.`,
+      message: `No URL for "${word}".`,
       backgroundColor: '#ffcd05'
     },
     {
-      messageType: `no-youtube-video-available`,
-      message: `The movie ${word} doesn't have a trailer out yet.`,
+      messageType: 'no-youtube-video-available',
+      message: `No trailer for "${word}".`,
       backgroundColor: '#ffcd05'
     },
     {
       messageType: 'No trailer to watch',
-      message: `The movie ${word} has no trailer to watch.`,
+      message: `No trailer for "${word}".`,
       backgroundColor: '#ffcd05'
     }
   ];
 
   // Find the message object by messageType
   const messageObject = messages.find(alert => alert.messageType === messageType);
-  return messageObject
+  return messageObject;
 };
 
-export {alertMessagesTypes}
+export {alertMessagesTypes};

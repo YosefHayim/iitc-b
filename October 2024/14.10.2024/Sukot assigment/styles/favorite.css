@@ -31,6 +31,10 @@
   font-size: 0.9em;
 }
 
+.favorite-movies-container-title {
+  padding: 0.5em;
+}
+
 .fav-remove-btn-img:active,.fav-white-data-img:active,.fav-white-share-img:active,.fav-play-button-img:active {
   background-color: red;
 }

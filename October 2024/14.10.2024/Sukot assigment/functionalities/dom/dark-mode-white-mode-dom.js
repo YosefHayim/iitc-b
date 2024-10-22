@@ -1,20 +1,15 @@
-import { toggleIconImage, mainContainer } from "../DOM/storage-elements-dom.js";
+import { toggleIconImage, mainContainer, footer } from "../DOM/storage-elements-dom.js";
 
 const applyDarkModeStyles = () => {
-  const logos = document.querySelectorAll('.logo-icon');
   const movieImgs = document.querySelectorAll('.movie-img');
   const whiteModeEls = document.querySelectorAll('.template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title');
   const userButtonsEl = document.querySelectorAll('.white-share-img, .white-heart-img, .play-button-img, .remove-btn-img, .white-data-img');
   const allH1Titles = document.querySelectorAll('h1');
+  const footerBg = document.querySelector('footer')
   
   toggleIconImage.src = '../images/user-activity/white-circle.svg';
 
-  logos.forEach((logo) => {
-    logo.style.cssText = `
-      background: black;
-      border-radius: 5em;
-    `;
-  });
+  footerBg.style.background = `gray`
 
   movieImgs.forEach((img) => {
     img.style.cssText = `
@@ -50,8 +45,12 @@ const removeDarkModeStyles = () => {
   const whiteModeEls = document.querySelectorAll('.template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title');
   const userButtonsEl = document.querySelectorAll('.white-share-img, .white-heart-img, .play-button-img, .remove-btn-img, .white-data-img');
   const allH1Titles = document.querySelectorAll('h1');
-  
+  const footerBg = document.querySelector('footer')
+
   toggleIconImage.src = '../images/user-activity/red-circle.svg';
+
+  footerBg.style.background = ``
+
 
   logos.forEach((logo) => {
     logo.style.background = '';

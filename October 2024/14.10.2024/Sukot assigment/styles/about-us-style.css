@@ -63,6 +63,10 @@
   display: flex;
 }
 
+.about-us-container-title {
+  padding: 0.5em;
+}
+
 @media screen and (min-width:1024px) {
 
   .about-us-section-container {

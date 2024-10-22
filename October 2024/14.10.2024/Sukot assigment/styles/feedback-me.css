@@ -111,6 +111,10 @@ input::placeholder,input,textarea {
   display: none;
 }
 
+.feedback-me-container-title {
+  padding: 0.5em;
+}
+
 @media screen and (min-width:1024px) {
 
   .popcorn-icon-thinking {
@@ -124,7 +128,7 @@ input::placeholder,input,textarea {
   }
 
   body > footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
   }
   

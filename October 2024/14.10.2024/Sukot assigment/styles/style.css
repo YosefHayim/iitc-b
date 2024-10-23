@@ -189,7 +189,7 @@ background: none;
 }
 
 .remove-btn-img {
-transform: translate(5em, -7em);
+transform: translate(5em, -8em);
 }
 
 .input-search-bar {
@@ -249,7 +249,6 @@ flex-wrap: wrap;
 .title {
 text-align: center;
 font-size: 1.5em;
-color: white;
 width: 100%;
 }
 
@@ -361,7 +360,7 @@ transform: translate(0, -15.5em);
 }
 
 .white-data-btn {
-transform: translate(0em, -7em);
+transform: translate(0em, -8em);
 }
 
 .white-data-img:active {
@@ -388,7 +387,7 @@ background-color: red;
 }
 
 .white-heart-trailer-btn {
-transform: translate(5em, -7em);
+transform: translate(5em, -8em);
 }
 
 .white-heart-img:hover {
@@ -400,7 +399,7 @@ background-color: var(--rating--color);
 }
 
 .white-share-trailer-btn {
-transform: translate(-5em, -7em);
+transform: translate(-5em, -8em);
 }
 
 .white-share-img:hover {

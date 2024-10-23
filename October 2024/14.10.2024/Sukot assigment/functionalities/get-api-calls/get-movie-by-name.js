@@ -34,7 +34,7 @@ const searchMovieByName = async (inputValue, count = 1) => {
     });
 
     // Update the title container with the search results information.
-    const textTitle = `${inputValue} Movies: ${data.total_results} Page: ${data.page}/${data.total_pages}`;
+    const textTitle = `${data.total_results} ${inputValue} Movies - Page: ${data.page}/${data.total_pages}`;
     dynamicTitlesDisplay('Search result title page by Name', textTitle);
 
     // Display the movies in the relevant search container.

@@ -11,6 +11,9 @@ const fetchTopRatedMovies = async (count = 1) => {
     // Fetch top-rated movies data from the API.
     const data = await getData(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${count}&api_key=${apiKey}`);
 
+    console.log(data);
+    
+
     // If the data is falsy, redirect to the error page.
     if (!data) {
       console.error('Something is wrong with the data:', data);

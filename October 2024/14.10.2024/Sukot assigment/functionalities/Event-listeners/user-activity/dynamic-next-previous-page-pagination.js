@@ -21,7 +21,7 @@ const dynamicPaginationSetup = (count = 1) => {
 
     const params = new URLSearchParams(window.location.search);
     const querySearch = params.get('query'); // Get search query from URL
-    const isIndexPage = window.location.pathname.endsWith('index.html'); // Check if on index page
+    const isIndexPage = window.location.pathname.endsWith('movies-categories.html'); // Check if on index page
     const isPopularDayPage = window.location.pathname.endsWith('popular-day.html'); // Check if on popular-day page
     const isPopularWeekPage = window.location.pathname.endsWith('popular-week.html'); // Check if on popular-week page
 

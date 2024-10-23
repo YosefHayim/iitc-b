@@ -26,6 +26,7 @@ margin-bottom: 5em;
 }
 
 .movie-release {
+width: 50%;
 margin-top: 1em;
 margin-bottom: 1em;
 }
@@ -53,14 +54,14 @@ color: black;
 }
 
 .movie-details {
-  background: white;
-  color: black;
-  border-style: dashed;
-  padding: 1em;
-  font-family: 'Roboto';
-  line-height: 1.5em;
-  margin-bottom: 2em;
-  font-weight: 900;
+background: white;
+color: black;
+border-style: dashed;
+padding: 1em;
+font-family: 'Roboto';
+line-height: 1.5em;
+margin-bottom: 2em;
+font-weight: 900;
 }
 
 .rating-container {

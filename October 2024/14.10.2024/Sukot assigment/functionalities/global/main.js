@@ -45,7 +45,7 @@ homepageSearchListener(); // Listens for homepage search input events
 toggleThemeMode(); // Initialize dark mode toggle functionality
 
 // Page-specific logic based on URL
-if (window.location.pathname.endsWith("index.html")) {
+if (window.location.pathname.endsWith("movies-categories.html")) {
   // Initialize homepage data and interactions
   fetchCurrentlyInTheatersMovies(); // Fetch movies currently in theaters
   fetchPopularMovies(); // Fetch popular movies
@@ -81,6 +81,8 @@ if (window.location.pathname.endsWith('popular-week.html')) {
 
 if (window.location.pathname.endsWith('movie-data.html')) {
   // Initialize single movie details page
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   displaySingleMovieById(); // Fetch and display single movie details by ID
 }
 

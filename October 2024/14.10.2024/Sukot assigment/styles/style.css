@@ -477,8 +477,8 @@ padding-top: 0.5em;
 }
 
 hr {
-width: 100%;
-position: fixed;
+width: 100em;
+position: absolute;
 animation: slideIn 0.3s ease-out forwards;
 animation-iteration-count: 1;
 margin-bottom: 15.5em;
@@ -800,7 +800,7 @@ list-style-type: none;
 }
 
 .hero-image-two > .text-container > ul > li {
-  text-align: center;
+text-align: center;
 }
 
 .explore-button {
@@ -834,27 +834,31 @@ text-align: center;
 }
 
 .special {
-  color: red;
+color: red;
 }
 
 .movie-popcorn-welcome-wide {
-  border-radius: 1em;
-  width: 25em;
+border-radius: 1em;
+width: 25em;
+}
+
+.first-p {
+font-size: 1.3em;
 }
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
 
-  .movie-popcorn-welcome-wide {
-    width: auto;
-  }
+.movie-popcorn-welcome-wide {
+  width: auto;
+}
 
-  body > main > div.welcome-message-container > div > p {
-  font-size: 1.5em;
+body > main > div.welcome-message-container > div > p {
+font-size: 1.5em;
 }
 
 .text-container{
-  align-items: baseline;
+align-items: baseline;
 }
 
 .popcorn-action-scene,.popcorn-matrix-character,.popcorn-riding-motorcycle {
@@ -886,7 +890,7 @@ width: 50%;
 
 .buttons-pagination-container {
 transform: translate(0em, 0em);
-gap: 15em;
+gap: 13em;
 }
 
 .top-navbar:hover .dropdown-content {
@@ -894,11 +898,6 @@ width: auto;
 gap: 1em;
 transform: translate(-5.5em, -0.1em);
 padding: 2em;
-}
-
-.popular-of-day-container,.popular-week-container {
-background: black;
-border-radius: 100em;  
 }
 
 .dropdown-content a {

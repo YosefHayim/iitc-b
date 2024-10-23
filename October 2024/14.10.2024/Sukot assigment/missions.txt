@@ -1,1 +1,2 @@
-oscar movies check
+1.if we reach max page we cant go further. add it to all type of gets.
+2. see how i can remove the dynamic next prev page pagination file since each relevent page already has an el of its own.

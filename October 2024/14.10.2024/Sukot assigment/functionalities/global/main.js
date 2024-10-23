@@ -34,6 +34,7 @@ import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/home
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
 import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
 import { toggleThemeMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
+import { searchPageButtonsEl } from "../Event-listeners/user-activity/search-page-buttons-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -89,4 +90,10 @@ if (window.location.pathname.endsWith('movie-data.html')) {
 if (window.location.pathname.endsWith('feedback-me.html')) {
   // Initialize feedback form interactions
   formAnswer(); // Handle feedback form submission
+}
+
+if (window.location.pathname.endsWith('search.html')) {
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+  searchPageButtonsEl()
 }

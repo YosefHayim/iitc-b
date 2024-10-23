@@ -9,7 +9,6 @@ import { increasePage } from "../../global/increasing-page.js";
 const dynamicPaginationSetup = (count = 1) => {
   // Check if pagination container exists, log error if not
   if (!searchPaginationContainer) {
-    console.error('Pagination container not found.');
     return;
   }
 
@@ -17,13 +16,15 @@ const dynamicPaginationSetup = (count = 1) => {
   searchPaginationContainer.addEventListener('click', (ev) => {
     ev.preventDefault();
     const button = ev.target.closest('button');
+
     if (!button) return; // Ignore clicks outside buttons
 
     const params = new URLSearchParams(window.location.search);
     const querySearch = params.get('query'); // Get search query from URL
-    const isIndexPage = window.location.pathname.endsWith('movies-categories.html'); // Check if on index page
+    const isIndexPage = window.location.pathname.endsWith('movies-categories.html'); // Check if on movies-categories page
     const isPopularDayPage = window.location.pathname.endsWith('popular-day.html'); // Check if on popular-day page
     const isPopularWeekPage = window.location.pathname.endsWith('popular-week.html'); // Check if on popular-week page
+    const searchQueryPage = window.location.pathname.endsWith('search.html') // Checks if on search page
 
     // Reusable pagination logic
     const handlePagination = (directionFunc, fetchFunc, pageType) => {
@@ -34,7 +35,7 @@ const dynamicPaginationSetup = (count = 1) => {
 
     // Handle next-page button click
     if (button.classList.contains('next-page')) {
-      if (isIndexPage && querySearch) {
+      if (searchQueryPage && querySearch) {
         handlePagination(increasePage, () => searchMovieByName(querySearch, count), 'next-page');
 
       } else if (isPopularDayPage) {
@@ -53,7 +54,7 @@ const dynamicPaginationSetup = (count = 1) => {
         displayAlertMessage("cant-go-lower-than-1", count); // Alert if page count is too low
 
       } else {
-        if (isIndexPage && querySearch) {
+        if (searchQueryPage && querySearch) {
           handlePagination(() => count, () => searchMovieByName(querySearch, count), 'previous-page');
 
         } else if (isPopularDayPage) {

@@ -5,13 +5,13 @@ font-size: 1.5em;
 border-radius: 5em;
 margin-top: 1em;
 font-weight: bold;
-font-family: 'Roboto';
+font-family: "Bebas Neue", "Roboto";
 cursor: pointer;
 }
 
 .sorry-message {
 color: red;
-font-family: 'Roboto';
+font-family: "Bebas Neue", "Roboto";
 }
 
 .return-home-btn:active,.return-home-btn:hover {
@@ -22,7 +22,7 @@ border: none;
 
 body > main > div.error-container > span {
 margin-top:  1em;
-font-family: "Roboto";
+font-family: "Bebas Neue", "Roboto";
 }
 
 @media screen and(min-width:1024px) {

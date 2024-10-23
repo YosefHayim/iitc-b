@@ -69,7 +69,7 @@ padding: 0.5em;
 }
 
 @media screen and (min-width:1024px) {
-  
+
 .about-us-section-container {
 flex-wrap: unset;
 }

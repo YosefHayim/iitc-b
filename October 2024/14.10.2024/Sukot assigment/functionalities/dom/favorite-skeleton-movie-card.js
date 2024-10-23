@@ -2,11 +2,13 @@ import { isImageNull } from "./is-image-null-dom.js";
 import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
 import { roundMovieRating } from "./round-rating-movie-dom.js";
-
+// This function is creating the look of the movie card on the dom, it receives two parameters the movie div and the movie object from the API
 const buildFavoriteCardSkeleton = (movieCardDiv,movie) => {
-  
+  // Calling the isImageNull function to check if there is available image in the data if not we set a default image.
   const image = isImageNull(movie.poster_path);
+  // Calling the isNameToLong function to check if the length of the movie is more than 3 words if so we use only two to maintain the symmetric of spaces between the cards
   const movieName = isNameToLong(movie.original_title);
+  // Calling the getStarRatingImage to display the amount of stars based on the vote of the movie. e.g. movie is 2 we provide 1 star, e.g. its 4 stars we provide 8, tops is 5.
   const resultRatingImg = getStarRatingImage(movie.vote_average)
 
   movieCardDiv.innerHTML = `

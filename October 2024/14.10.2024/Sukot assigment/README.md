@@ -1,1 +1,1 @@
-2. fix the pagination display when on search query name
+1. make the el js files less repeatable code. make the clicks activity being called from other function that operates everything.

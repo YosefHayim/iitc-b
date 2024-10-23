@@ -1,3 +1,4 @@
+// This function receives the vote float number from the API call and checks if it is above 2,4,6,8 and return the relevant star image based on that.
 const getStarRatingImage = (voteFloatingNumber) => {
   if (voteFloatingNumber < 2) return "../images/user-activity/one-star-icon.svg";
 

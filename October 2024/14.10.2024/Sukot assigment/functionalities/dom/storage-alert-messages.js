@@ -1,4 +1,7 @@
+// This is the alert message storage function to allow a dynamic use and write less repeated texts for the user notification.
 const alertMessagesTypes = (messageType, word) => {
+  // Thats the storage which is an array that has objects with 3 type of keys: messageType which is the subject
+  //the message itself to display the user and the background color to be used for the alert message container itself
   const messages = [
     // Green background color
     {
@@ -92,7 +95,7 @@ const alertMessagesTypes = (messageType, word) => {
     }
   ];
 
-  // Find the message object by messageType
+  // We are using the find method to locate the first messageType that is true based on our call.
   const messageObject = messages.find(alert => alert.messageType === messageType);
   return messageObject;
 };

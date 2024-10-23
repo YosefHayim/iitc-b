@@ -1,4 +1,5 @@
-import { applyDarkModeStyles, removeDarkModeStyles } from "../../DOM/dark-mode-white-mode-dom.js";
+import { applyDarkModeStyles } from "../../DOM/dark-mode-dom.js";
+import { removeDarkModeStyles } from "../../DOM/white-mode-dom.js";
 import { toggleIconImage} from "../../DOM/storage-elements-dom.js";
 
 const toggleDarkMode = () => {

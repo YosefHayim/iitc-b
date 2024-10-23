@@ -1,3 +1,5 @@
+// This is the storageDom where I store all the elements either of the dom or of the already exist on the browser and etc.
+
 // Selectors for different movie containers and elements
 const homePageAllContainers = document.querySelectorAll('.popular-of-day-container, .popular-movies-of-week-container, .fav-movies-container, .currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container'); // Multiple movie card containers
 const homePageDivs = document.querySelectorAll('.currently-movies-in-theatres-container, .upcoming-movies-container, .popular-movies-container, .top-trending-movies-container, .search-results-container'); // Containers for the homepage sections

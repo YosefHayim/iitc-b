@@ -1,5 +1,7 @@
 import { currentTheaterPage, latestPopularPage, searchResultTitle, templateTitle, topTrendingPage, upComingMoviePage } from "./storage-elements-dom.js";
-
+// This function stores the requestedTContainer which stands for title to do a DOM on it as well.
+// The requestedTContainer it being located by the containerTitleName and than we receive back the relevant container to do on it DOM
+// E.g. searchResultTitle is being used for either movie name query or ID query so we manipulate these two in different h1 text. 
 const titlesStorage = (requestedTContainer) => {
   const storage = [
     {

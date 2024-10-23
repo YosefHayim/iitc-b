@@ -799,45 +799,63 @@ text-align: justify;
 list-style-type: none;
 }
 
+.hero-image-two > .text-container > ul > li {
+  text-align: center;
+}
+
 .explore-button {
-  opacity: 0.5;
-  padding: 1em;
-  background-color: red;
-  color: white;
-  text-decoration: none;
-  border-radius: 5em;
-  font-size: 1.3em;
-  width: 10em;
+opacity: 0.5;
+padding: 1em;
+background-color: red;
+color: white;
+text-decoration: none;
+border-radius: 5em;
+font-size: 1.3em;
+width: 10em;
+text-align: center;
 }
 
 .explore-button:hover {
-  opacity: 1;
-  background-color: white;
-  color: black;
+opacity: 1;
+background-color: white;
+color: black;
 }
 
 .welcome-message-container,.welcome-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 1em;
-  gap: 1em;
-  margin-bottom: 2em;
-  text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+margin-top: 1em;
+gap: 1em;
+margin-bottom: 2em;
+text-align: center;
+}
+
+.special {
+  color: red;
+}
+
+.movie-popcorn-welcome-wide {
+  border-radius: 1em;
+  width: 25em;
 }
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
 
-  body > main > div.welcome-message-container > div > p {
-    font-size: 1.5em;
+  .movie-popcorn-welcome-wide {
+    width: auto;
   }
 
-  .text-container{
-    align-items: baseline;
-  }
+  body > main > div.welcome-message-container > div > p {
+  font-size: 1.5em;
+}
+
+.text-container{
+  align-items: baseline;
+}
 
 .popcorn-action-scene,.popcorn-matrix-character,.popcorn-riding-motorcycle {
 width: 15em;

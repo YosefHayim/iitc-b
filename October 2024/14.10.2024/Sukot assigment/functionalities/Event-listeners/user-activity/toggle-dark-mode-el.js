@@ -1,36 +1,31 @@
 import { applyWhiteMode } from "../../DOM/apply-white-mode.js";
-import { returnDarkMode } from "../../DOM/return-dark-mode.js";
+import { applyDarkMode } from "../../DOM/apply-dark-mode.js"; // Renamed from returnDarkMode
 import { toggleIconImage } from "../../DOM/storage-elements-dom.js";
 
-// This function handles toggling between dark mode and light mode (white mode).
-const toggleDarkMode = () => {
-  // Check if dark mode is active based on local storage.
-  const isDarkModeActive = localStorage.getItem('darkMode') === 'true';
+const toggleThemeMode = () => {
+  // Check if white mode is active from localStorage and apply the mode accordingly.
+  const isWhiteModeActive = localStorage.getItem('whiteMode') === 'true'; // Renamed variable
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // Apply white mode if dark mode was previously active.
-    if (isDarkModeActive) {
+  if (isWhiteModeActive) {
+    applyWhiteMode();
+    toggleIconImage.classList.add('active'); // Ensure the toggle button reflects the state
+  } else {
+    applyDarkMode(); // Renamed from returnDarkMode
+  }
+
+  // Add click event listener to the toggle button.
+  toggleIconImage.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    toggleIconImage.classList.toggle('active'); // Toggle the active state of the button
+
+    if (toggleIconImage.classList.contains('active')) {
       applyWhiteMode();
-      toggleIconImage.classList.add('active'); // Set the toggle button to active state
+      localStorage.setItem('whiteMode', 'true'); // Save white mode state in local storage
+    } else {
+      applyDarkMode(); // Apply dark mode
+      localStorage.setItem('whiteMode', 'false'); // Reset white mode state in local storage
     }
-
-    // Add click event listener to the toggle button.
-    toggleIconImage.addEventListener('click', (ev) => {
-      ev.preventDefault();
-      toggleIconImage.classList.toggle('active'); // Toggle the active state of the button
-
-      // If the button is now in active state, apply white mode and save the state.
-      if (toggleIconImage.classList.contains('active')) {
-        applyWhiteMode();
-        localStorage.setItem('darkMode', 'true'); // Save dark mode state in local storage
-        
-      } else {
-        // If the button is not active, revert to dark mode and reset the state.
-        returnDarkMode();
-        localStorage.setItem('darkMode', 'false'); // Reset dark mode state in local storage
-      }
-    });
   });
 };
 
-export { toggleDarkMode };
+export { toggleThemeMode };

@@ -1,7 +1,7 @@
 import { toggleIconImage, mainContainer } from "./storage-elements-dom.js";
 
 // Reverts the website's view to the default (dark mode) by resetting the styles changed by the toggle icon.
-const returnDarkMode = () => {
+const applyDarkMode = () => {
   const movieImgs = document.querySelectorAll('.movie-img');
   const whiteModeEls = document.querySelectorAll('.template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title');
   const allH1Titles = document.querySelectorAll('h1');
@@ -48,4 +48,4 @@ const returnDarkMode = () => {
   });
 };
 
-export { returnDarkMode };
+export { applyDarkMode };

@@ -27,7 +27,7 @@ const applyWhiteMode = () => {
   // Update styles for all movie images.
   movieImgs.forEach((img) => {
     img.style.cssText = `
-    opacity: 1;
+    opacity: 1 !important;
     box-shadow: 0em 0em 0.5em 0.1em black;
     `;
   });

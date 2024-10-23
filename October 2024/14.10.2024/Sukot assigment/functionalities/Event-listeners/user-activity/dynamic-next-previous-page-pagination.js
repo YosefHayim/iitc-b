@@ -6,85 +6,62 @@ import { popularMoviesOfWeek } from "../../get-api-calls/get-popular-movies-of-w
 import { decreasePage } from "../../global/decreasing-page.js";
 import { increasePage } from "../../global/increasing-page.js";
 
-// Handles pagination for the movie search and popular movie pages (day and week).
-// Allows users to navigate between pages for movie searches and popular movies.
 const dynamicPaginationSetup = (count = 1) => {
-  // If the search pagination container isn't found, log an error and stop the process.
+  // Check if pagination container exists, log error if not
   if (!searchPaginationContainer) {
-    console.error('Search container for next and prev buttons not found.');
+    console.error('Pagination container not found.');
     return;
   }
 
-  // Add event listener for pagination buttons (next and previous).
+  // Add event listener for pagination button clicks
   searchPaginationContainer.addEventListener('click', (ev) => {
     ev.preventDefault();
-    const button = ev.target.closest('button'); // Identify the clicked button
+    const button = ev.target.closest('button');
+    if (!button) return; // Ignore clicks outside buttons
 
-    // Retrieve the query from the URL (e.g., the movie name the user searched for).
-    let params = new URLSearchParams(window.location.search);
-    const querySearch = params.get('query');
+    const params = new URLSearchParams(window.location.search);
+    const querySearch = params.get('query'); // Get search query from URL
+    const isIndexPage = window.location.pathname.endsWith('index.html'); // Check if on index page
+    const isPopularDayPage = window.location.pathname.endsWith('popular-day.html'); // Check if on popular-day page
+    const isPopularWeekPage = window.location.pathname.endsWith('popular-week.html'); // Check if on popular-week page
 
-    // If on the 'index.html' page and performing a query search
-    if (window.location.pathname.endsWith('index.html') && querySearch) {
-      // Handle next page click
-      if (button.classList.contains('next-page')) {
-        count = increasePage(count);  // Increment the page count
-        searchMovieByName(querySearch, count);  // Fetch the next page of movie results
-        displayAlertMessage('redirecting-next-page', count);
-        return;
+    // Reusable pagination logic
+    const handlePagination = (directionFunc, fetchFunc, pageType) => {
+      count = directionFunc(count); // Update page count
+      displayAlertMessage(`redirecting-${pageType}`, count); // Show alert for page change
+      fetchFunc(count); // Fetch data for new page
+    };
 
-      // Handle previous page click
-      } else if (button.classList.contains('previous-page')) {
-        count = decreasePage(count);  // Decrement the page count
+    // Handle next-page button click
+    if (button.classList.contains('next-page')) {
+      if (isIndexPage && querySearch) {
+        handlePagination(increasePage, () => searchMovieByName(querySearch, count), 'next-page');
 
-        // If the page is already at 1, show an alert and prevent further decrement
-        if (count === 1) {
-          count = 1;
-          displayAlertMessage('cant-go-lower-than-1', count);
-        }
-        searchMovieByName(querySearch, count);
-        return;
+      } else if (isPopularDayPage) {
+        handlePagination(increasePage, popularMoviesOfDay, 'next-page');
+
+      } else if (isPopularWeekPage) {
+        handlePagination(increasePage, popularMoviesOfWeek, 'next-page');
       }
-    }
 
-    // Handle pagination for 'popular-day.html'
-    if (window.location.pathname.endsWith('popular-day.html')) {
-      if (button.classList.contains('next-page')) {
-        count = increasePage(count);  // Increment the page count
-        popularMoviesOfDay(count);  // Fetch the next page of popular movies of the day
-        return;
+    // Handle previous-page button click
+    } else if (button.classList.contains('previous-page')) {
+      count = decreasePage(count); // Decrease page count
 
-      } else if (button.classList.contains('previous-page')) {
-        count = decreasePage(count);  // Decrement the page count
+      if (count < 1) {
+        count = 1; // Ensure count doesn't go below 1
+        displayAlertMessage("cant-go-lower-than-1", count); // Alert if page count is too low
 
-        // If the page is already at 1, show an alert and prevent further decrement
-        if (count <= 1) {
-          count = 1;
-          displayAlertMessage('cant-go-lower-than-1', count);
+      } else {
+        if (isIndexPage && querySearch) {
+          handlePagination(() => count, () => searchMovieByName(querySearch, count), 'previous-page');
+
+        } else if (isPopularDayPage) {
+          handlePagination(() => count, popularMoviesOfDay, 'previous-page');
+          
+        } else if (isPopularWeekPage) {
+          handlePagination(() => count, popularMoviesOfWeek, 'previous-page');
         }
-        popularMoviesOfDay(count);
-        return;
-      }
-    }
-
-    // Handle pagination for 'popular-week.html'
-    if (window.location.pathname.endsWith('popular-week.html')) {
-      if (button.classList.contains('next-page')) {
-        count = increasePage(count);  // Increment the page count
-        popularMoviesOfWeek(count);  // Fetch the next page of popular movies of the week
-        displayAlertMessage('redirecting-next-page', count);
-        return;
-
-      } else if (button.classList.contains('previous-page')) {
-        count = decreasePage(count);  // Decrement the page count
-
-        // If the page is already at 1, show an alert and prevent further decrement
-        if (count <= 1) {
-          count = 1;
-          displayAlertMessage("You can't go lower than 1.", "red");
-        }
-        popularMoviesOfWeek(count);
-        return;
       }
     }
   });

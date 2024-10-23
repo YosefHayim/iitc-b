@@ -22,7 +22,7 @@ const popularMoviesOfDay = async (count = 1) => {
     displayMovies('Todays must watch popular movies page', data);
     
     // Update the title with the total number of results and current page information.
-    let textTitle = `${data.total_results} Movies Of Today's must watch: ${data.page}/${data.total_pages}`;
+    let textTitle = `Todays must watch movies: Page ${data.page}/${data.total_pages}`;
     dynamicTitlesDisplay('Todays must watch page title', textTitle);
 
   } catch (error) {

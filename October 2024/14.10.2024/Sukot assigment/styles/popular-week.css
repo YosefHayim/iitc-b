@@ -17,6 +17,10 @@ position: relative;
 display: flex;
 }
 
+.template-title-container {
+  width: 90%;
+}
+
 
 @media screen and (min-width:1024px) {
 .popular-movies-of-week-container {

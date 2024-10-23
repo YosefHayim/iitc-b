@@ -21,7 +21,7 @@ const popularMoviesOfWeek = async (count = 1) => {
     displayMovies('Weekly hits popular movies page', data);
 
     // Update the title with the total number of results and current page information.
-    let textTitle = `${data.total_results} Weekly hits movies: ${data.page}/${data.total_pages}`;
+    let textTitle = `Weekly hits movies: Page ${data.page}/${data.total_pages}`;
     dynamicTitlesDisplay('Weekly hits page title', textTitle);
 
   } catch (error) {

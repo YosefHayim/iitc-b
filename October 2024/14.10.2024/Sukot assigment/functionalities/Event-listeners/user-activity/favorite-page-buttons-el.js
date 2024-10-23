@@ -9,6 +9,7 @@ import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js"
 const handleFavoriteMoviePage = () => {
   favMoviesContainer.addEventListener('click', async (ev) => {
     
+    const trailerImg = ev.target.closest('.fav-movie-trailer-url')    
     const dataBtn = ev.target.closest('.fav-white-data-btn');
     const shareButton = ev.target.closest('.fav-white-share-trailer-btn');
     const removeButton = ev.target.closest('.fav-remove-btn-icon');

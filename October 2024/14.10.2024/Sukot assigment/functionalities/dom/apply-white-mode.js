@@ -1,6 +1,6 @@
 import { toggleIconImage, mainContainer } from "./storage-elements-dom.js";
 // This function is applying dark mode styles to the browser.
-const applyDarkModeStyles = () => {
+const applyWhiteMode = () => {
   // The reason I am holding the elements here and not calling them from the storage-El is because 
   //they are DOM and It need to be waited for the dom to load which will might cause an 
   //overload on the browser and effect the performance so I choose this way.
@@ -37,4 +37,4 @@ const applyDarkModeStyles = () => {
   });
 };
 
-export { applyDarkModeStyles };
+export { applyWhiteMode };

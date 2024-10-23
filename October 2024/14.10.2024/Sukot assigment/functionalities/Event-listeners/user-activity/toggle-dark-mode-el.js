@@ -1,5 +1,5 @@
-import { applyDarkModeStyles } from "../../DOM/dark-mode-dom.js";
-import { removeDarkModeStyles } from "../../DOM/white-mode-dom.js";
+import { applyWhiteMode } from "../../DOM/apply-white-mode.js";
+import { returnDarkMode } from "../../DOM/return-dark-mode.js";
 import { toggleIconImage} from "../../DOM/storage-elements-dom.js";
 
 const toggleDarkMode = () => {
@@ -7,7 +7,7 @@ const toggleDarkMode = () => {
 
   document.addEventListener('DOMContentLoaded', () => {
     if (isDarkModeActive) {
-      applyDarkModeStyles();
+      applyWhiteMode();
       toggleIconImage.classList.add('active'); // Ensure button is in active state
     }
 
@@ -16,11 +16,11 @@ const toggleDarkMode = () => {
       toggleIconImage.classList.toggle('active');
 
       if (toggleIconImage.classList.contains('active')) {
-        applyDarkModeStyles();
+        applyWhiteMode();
         localStorage.setItem('darkMode', 'true'); // Save dark mode state
         
       } else {
-        removeDarkModeStyles();
+        returnDarkMode();
         localStorage.setItem('darkMode', 'false'); // Reset dark mode state
       }
     });

@@ -272,6 +272,9 @@ border-radius: 5em;
 display: flex;
 justify-content: center;
 align-items: center;
+background: black;
+padding: 0.2em;
+border-radius:100em;
 }
 
 .movie-img,.overview {
@@ -280,12 +283,11 @@ width: 25vh;
 
 .movie-img {
 opacity: 0.5;
-border-radius: 3em;
+border-radius: 1em;
 box-shadow: 0em 0em 0.5em 0.1em white;
 }
 
 .movie-img:hover {
-border: 0.1em solid white;
 opacity: 1;
 transition: transform 1s ease-in-out;
 box-shadow: 0em 0em 2em 0.1em red;
@@ -335,7 +337,8 @@ font-size: 2em;
 .rating-number-txt {
 font-size: 1.8em;
 transform: translateY(0.05em);
-color: var(--rating--color);
+color: red;
+margin-left: 0.5em;
 }
 
 .overview-container {

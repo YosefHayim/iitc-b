@@ -1,5 +1,5 @@
 import { applyWhiteMode } from "../../DOM/apply-white-mode.js";
-import { applyDarkMode } from "../../DOM/apply-dark-mode.js"; // Renamed from returnDarkMode
+import { applyDarkMode } from "../../DOM/apply-dark-mode.js"; 
 import { toggleIconImage } from "../../DOM/storage-elements-dom.js";
 
 const toggleThemeMode = () => {
@@ -10,7 +10,7 @@ const toggleThemeMode = () => {
     applyWhiteMode();
     toggleIconImage.classList.add('active'); // Ensure the toggle button reflects the state
   } else {
-    applyDarkMode(); // Renamed from returnDarkMode
+    applyDarkMode();
   }
 
   // Add click event listener to the toggle button.

@@ -180,7 +180,7 @@ padding: 0.5em;
 .white-burger-icon:hover,.white-burger-icon:active {
 border-radius: 3em;
 padding: 0.5em;
-background: var(--rating--color);
+background: red;
 }
 
 .btn-serachbar-glass {
@@ -441,7 +441,6 @@ font-size: 2em;
 border-radius: 5em;
 margin-top: 1em;
 padding: 0.5em;
-width: 100%;
 text-align: center;
 }
 
@@ -458,7 +457,7 @@ opacity: 0.5;
 }
 
 .copy-right-txt:hover {
-  opacity: 1;
+opacity: 1;
 }
 
 .navbar-desktop {
@@ -572,18 +571,18 @@ align-items: center;
 position: absolute;
 margin-bottom: 0em;
 gap: 8.5em;
-transform: translate(0em, 0em)
+transform: translate(0em, 1em)
 }
 
 .next-page,.previous-page {
 border: none;
-background: var(--lighter-red-color);
+background: red;
 border-radius: 20em;
 cursor: pointer;
 }
 
 .next-page:hover,.previous-page:hover {
-  background: black;
+background: black;
 }
 
 .buttons-pagination-container-search-bar {
@@ -756,13 +755,14 @@ text-align: center;
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
 
-  .template-title-container {
-    width: 50%;
-  }
+.template-title-container,.search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-container-title,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
+width: 50%;
+}
 
-  .buttons-pagination-container {
-    gap: 15em;
-  }
+.buttons-pagination-container {
+transform: translate(0em, 0em);
+gap: 15em;
+}
 
 .top-navbar:hover .dropdown-content {
 width: auto;

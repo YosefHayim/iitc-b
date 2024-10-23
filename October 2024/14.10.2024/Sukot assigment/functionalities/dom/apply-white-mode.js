@@ -5,7 +5,6 @@ const applyWhiteMode = () => {
   // Query elements directly here for better performance and to avoid unnecessary delays.
   const movieImgs = document.querySelectorAll('.movie-img');
   const whiteModeEls = document.querySelectorAll('.template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title');
-  const allH1Titles = document.querySelectorAll('h1');
   const mobileNavTop = document.querySelector('.navbar-mobile');
   const titles = document.querySelectorAll('.title')
   const footer = document.querySelector('footer');
@@ -48,10 +47,6 @@ const applyWhiteMode = () => {
   opacity: 1;
   `;
 
-  // Set text color for all H1 elements.
-  allH1Titles.forEach(title => {
-    title.style.cssText = `color: black;`;
-  });
 };
 
 export { applyWhiteMode };

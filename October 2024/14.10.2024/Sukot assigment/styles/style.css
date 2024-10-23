@@ -309,6 +309,9 @@ transform: translateY(-1vh);
 
 .rating-img {
 height: 2em;
+background: black;
+border-radius: 100em;
+padding: 0.5em;
 }
 
 .alert-message-container,.template-message-container {

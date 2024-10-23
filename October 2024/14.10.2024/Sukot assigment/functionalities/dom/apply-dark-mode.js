@@ -39,6 +39,13 @@ const applyDarkMode = () => {
   color: '';
   opacity: '';
   `;
+
+  // Reset the color of all H1 elements.
+  allH1Titles.forEach(title => {
+    title.style.cssText = `
+      color: '';
+    `;
+  });
 };
 
 export { applyDarkMode };

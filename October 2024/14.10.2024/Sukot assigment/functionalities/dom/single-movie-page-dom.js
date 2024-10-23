@@ -41,7 +41,7 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
       <img src="${image}" alt="movie-img" class="single-movie-img">
       <h2 class="movie-release">Movie release: ${isReleased}</h2>
       <h2 class="movie-genre">Movie genres: ${movieGenres}</h2>
-      <h3 class="summary-title">Summary</h3>
+      <h2 class="summary-title">Summary</h2>
       <p class="movie-details">${overviewMovie}</p>
       <button class="movie-link">
         <a href="${urlWeb}" target="_blank" class="website-link">Website Movie</a>
@@ -60,7 +60,7 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
   const castContainerTitle = createDomEl();
   
   castContainerTitle.innerHTML = `
-    <h1 class="actors-title">Actors of the movie: ${movieName}</h1>
+    <h2 class="actors-title">Actors of the movie: ${movieName}</h2>
   `;
   videoContainer.insertAdjacentElement('afterend', castContainerTitle);
 

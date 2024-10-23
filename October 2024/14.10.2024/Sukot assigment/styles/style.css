@@ -85,10 +85,10 @@ flex-wrap: wrap;
 }
 
 .top-trending-movies-container,.popular-movies-container,.upcoming-movies-container,.currently-movies-in-theatres-container,.navbar-footer-container,.policy-pages-container {
-  flex-direction: row;
-  gap: 2em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+flex-direction: row;
+gap: 2em;
+margin-top: 1em;
+margin-bottom: 1em;
 }
 
 .top-navbar-mobile {
@@ -285,6 +285,7 @@ box-shadow: 0em 0em 0.5em 0.1em white;
 }
 
 .movie-img:hover {
+border: 0.1em solid white;
 opacity: 1;
 transition: transform 1s ease-in-out;
 box-shadow: 0em 0em 2em 0.1em red;
@@ -448,7 +449,12 @@ display: none;
 font-family: "Roboto";
 text-align: center;
 position: relative;
-margin-bottom: 1em;
+margin-bottom: 3.5em;
+opacity: 0.5;
+}
+
+.copy-right-txt:hover {
+  opacity: 1;
 }
 
 .navbar-desktop {
@@ -628,8 +634,14 @@ justify-content: center;
 color: white;
 background: var(--lighter-red-color);
 border-radius: 100em;
-padding: 0.7em;
+padding: 0.5em;
 opacity: 1;
+}
+
+.top-navbar-desktop {
+padding: 0.5em;
+opacity: 0.5;
+border-radius: 100em;
 }
 
 .top-navbar-desktop:active {
@@ -651,11 +663,10 @@ gap: 2em;
 
 .dropdown-content a {
 display: block;
-background: red;
 border-radius: 100em;
 width: 100%;
-color: black;
 box-shadow: 0em 0em 1em 0.1em black;
+
 }
 
 .dropdown-content a:hover {
@@ -736,6 +747,13 @@ background-color: var(--lighter-red-color);
 background-color: var(--background-grey-color-btns);
 }
 
+.desktop-navbar-container-footer {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
@@ -794,7 +812,7 @@ font-size: 2em;
 .top-navbar-desktop {
 text-align: center;
 display: block;
-padding: 0.7em;
+padding: 0.5em;
 width: max-content;
 opacity: 0.5;
 }

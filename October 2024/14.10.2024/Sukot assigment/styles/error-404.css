@@ -1,46 +1,46 @@
 .return-home-btn {
-  padding: 1em;
-  background: white;
-  font-size: 1.5em;
-  border-radius: 5em;
-  margin-top: 1em;
-  font-weight: bold;
-  font-family: 'Roboto';
-  cursor: pointer;
+padding: 1em;
+background: white;
+font-size: 1.5em;
+border-radius: 5em;
+margin-top: 1em;
+font-weight: bold;
+font-family: 'Roboto';
+cursor: pointer;
 }
 
 .sorry-message {
-  color: red;
-  font-family: 'Roboto';
+color: red;
+font-family: 'Roboto';
 }
 
 .return-home-btn:active,.return-home-btn:hover {
-  background-color: var(--lighter-red-color);
-  color: white;
-  border: none;
+background-color: var(--lighter-red-color);
+color: white;
+border: none;
 }
 
 body > main > div.error-container > span {
-  margin-top:  1em;
-  font-family: "Roboto";
+margin-top:  1em;
+font-family: "Roboto";
 }
 
 @media screen and(min-width:1024px) {
-  
-  .return-home-btn {
-    border: none;
-    background: black;
-    border-radius: 2em;
-    color: white;
-    padding: 1em;
-    width: 100%;
-    margin-bottom: 6em;
-    font-size: 1em;
-    cursor: pointer;
-  }
 
-  .return-home-btn:active,.return-home-btn:hover {
-    background: var(--lighter-red-color);
-  }
-  
+.return-home-btn {
+border: none;
+background: black;
+border-radius: 2em;
+color: white;
+padding: 1em;
+width: 100%;
+margin-bottom: 6em;
+font-size: 1em;
+cursor: pointer;
+}
+
+.return-home-btn:active,.return-home-btn:hover {
+background: var(--lighter-red-color);
+}
+
 }

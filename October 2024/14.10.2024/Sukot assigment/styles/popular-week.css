@@ -1,34 +1,34 @@
 .popular-movies-of-week-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+flex-wrap: wrap;
 }
 
 .template-title {
-  width: 100vw;
-  text-align: center;
-  position: relative;
+width: 100vw;
+text-align: center;
+position: relative;
 }
 
 .buttons-pagination-container-search-bar {
-  display: flex;
+display: flex;
 }
 
 
 @media screen and (min-width:1024px) {
-  .popular-movies-of-week-container {
-    flex-direction: row;
-    margin-top: 1em;
-  }
+.popular-movies-of-week-container {
+flex-direction: row;
+margin-top: 1em;
+}
 
-  .navbar-desktop {
-    display: flex;
-    background: black;
-    flex-wrap: wrap;
-    width: 100%;
-    position: relative;
-  }
+.navbar-desktop {
+display: flex;
+background: black;
+flex-wrap: wrap;
+width: 100%;
+position: relative;
+}
 }

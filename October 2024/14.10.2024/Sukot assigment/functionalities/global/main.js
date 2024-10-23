@@ -60,6 +60,7 @@ if (window.location.pathname.endsWith("index.html")) {
 if (window.location.pathname.endsWith('favorite.html')) {
   // Initialize favorite page data and interactions
   displayFavoriteMoviesList(); // Display favorite movies list
+  handleFavoriteMoviePage()
 }
 
 if (window.location.pathname.endsWith('popular-day.html')) {

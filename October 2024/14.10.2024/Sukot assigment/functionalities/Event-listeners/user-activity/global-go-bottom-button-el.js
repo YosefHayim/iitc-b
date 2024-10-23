@@ -6,7 +6,6 @@ const isAtBottom = () => {
 
 window.addEventListener('scroll', (ev) => {
   if (!goTBottomBtn) {
-    console.log('Bottom button not relevant for this page.');
     return
   }
   
@@ -26,6 +25,7 @@ window.addEventListener('scroll', (ev) => {
 
 const handleGoToBottomButtonClick = () => {
   if (goTBottomBtn) {
+    
     goTBottomBtn.addEventListener('click', (ev) => {
       ev.preventDefault();
       window.scrollTo({ 
@@ -39,11 +39,7 @@ const handleGoToBottomButtonClick = () => {
         }
       });
     });
-
-  } else {
-    console.log(`Bottom button not relevant for this page.`); 
   }
-
 }
 
 export { handleGoToBottomButtonClick };

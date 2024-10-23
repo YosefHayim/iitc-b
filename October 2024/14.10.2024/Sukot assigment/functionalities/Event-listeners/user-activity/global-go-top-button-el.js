@@ -1,8 +1,8 @@
 import { goBackTopBtn } from "../../DOM/storage-elements-dom.js";
 
 window.addEventListener('scroll', (ev) => {
+  
   if (!goBackTopBtn) {
-    console.log(`Top button not relevant for this page.`);
     return
   }
   ev.preventDefault()
@@ -19,9 +19,6 @@ const handleBackToTopButtonClick = () => {
       ev.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  } else {
-    console.log(`Top button not relevant for this page.`);
-    
   }
 }
 

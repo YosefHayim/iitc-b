@@ -8,7 +8,7 @@ import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js"
 
 const handleFavoriteMoviePage = () => {
   favMoviesContainer.addEventListener('click', async (ev) => {
-
+    
     const dataBtn = ev.target.closest('.fav-white-data-btn');
     const shareButton = ev.target.closest('.fav-white-share-trailer-btn');
     const removeButton = ev.target.closest('.fav-remove-btn-icon');
@@ -25,9 +25,22 @@ const handleFavoriteMoviePage = () => {
 
     // Handle movie data button click: Navigate to movie page
     if (dataBtn) {
-      displayAlertMessage('navigating-to-another-page', movieName);
-      navigateToMoviePage(favMovieId);
-      return;
+      try {
+        const result = await getMovieTrailer(favMovieId);
+        console.log(result);
+        
+        if (!result.key) {
+          displayAlertMessage('error-fetch-movie-trailer',movieName)
+          console.error('Error getting the movie id',favMovieId);
+        } else {
+          const videoId = result.key
+          displayAlertMessage('navigating-to-another-page', movieName);
+          navigateToMoviePage(favMovieId,videoId);
+        }
+      } catch (error) {
+        console.error('Error navigating to single movie page',error)
+      }
+      return
     }
 
     // Handle share button click: Copy the URL to clipboard

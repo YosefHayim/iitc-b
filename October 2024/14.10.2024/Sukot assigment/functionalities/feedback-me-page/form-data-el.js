@@ -1,5 +1,5 @@
 import { feedbackFormPage } from "../DOM/storage-elements-dom.js";
-
+// This function is responsible for getting the form details on share your thoughts page. when the user clicks or press enter we receive the following data.
 const formAnswer = () => {
   feedbackFormPage.addEventListener('submit', (event) => {
     event.preventDefault();

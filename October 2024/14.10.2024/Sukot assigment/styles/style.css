@@ -324,6 +324,7 @@ box-shadow: 0em 0em 2.5em -1em;
 width: 100%;
 padding: 0.5em;
 display: none;
+z-index: 100;
 }
 
 .template-message-container {
@@ -571,7 +572,7 @@ justify-content: center;
 align-items: center;
 position: absolute;
 margin-bottom: 0em;
-gap: 15em;
+gap: 8.5em;
 transform: translate(0em, 0em)
 }
 
@@ -580,6 +581,10 @@ border: none;
 background: var(--lighter-red-color);
 border-radius: 20em;
 cursor: pointer;
+}
+
+.next-page:hover,.previous-page:hover {
+  background: black;
 }
 
 .buttons-pagination-container-search-bar {
@@ -593,11 +598,6 @@ display: flex;
 
 .left-button,.right-button {
 width: 4em;
-}
-
-.left-button:hover,.right-button:hover {
-background: var(--lighter-red-color);
-border-radius: 10em;
 }
 
 .current-theaters-page,.current-upcoming-movies-number,.current-popular-movies-number,.top-trending-movie-number {
@@ -713,7 +713,6 @@ background: none;
 position: fixed;
 bottom: 24.5em;
 background-color: red;
-z-index: 1;
 padding: 1em;
 font-size: 1em;
 font-family: 'Signwood Reg';
@@ -757,6 +756,10 @@ text-align: center;
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
+
+  .buttons-pagination-container {
+    gap: 15em;
+  }
 
 .top-navbar:hover .dropdown-content {
 width: auto;

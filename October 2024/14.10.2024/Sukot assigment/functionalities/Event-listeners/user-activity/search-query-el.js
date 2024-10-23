@@ -3,8 +3,11 @@ import { redirectToErrorPage } from "../../DOM/redirect-to-404-dom.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 import { searchMovieById } from "../../get-api-calls/get-movie-id-by-id.js";
 
+// This function is the homepage listener for the search query.
 const homepageSearchListener = () => {
+  // We attach event listener to the entire DOM.
   window.addEventListener('DOMContentLoaded', async () => {
+    // Set teh query of the search input to the URL
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
   

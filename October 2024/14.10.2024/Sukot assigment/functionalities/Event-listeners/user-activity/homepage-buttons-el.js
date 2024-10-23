@@ -6,23 +6,27 @@ import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 
+// This function is responsible for the homepage interactive with the user.
 const HomeMovieDataButtonClicks = () => {
+  // For each container in the homepage ewe attach an event listener
   homePageDivs.forEach((cardMoviesContainer) => {
     cardMoviesContainer.addEventListener('click', async (ev) => {
-
+      // When the user preforms a click we get the nearest interactive buttons of that movie card which are the data,share,heart,movie ID,img and movie name.
       const dataBtn = ev.target.closest('.white-data-btn');
       const shareButton = ev.target.closest('.white-share-trailer-btn');
       const heartButton = ev.target.closest('.white-heart-trailer-btn');
       const playButton = ev.target.closest('.play-button-btn');
       const movieCard = ev.target.closest('.movie-card');
+      const trailerImg = ev.target.closest('.img-trailer-link')      
+      const movieName = movieCard.querySelector('.title').textContent;
+      const movieId = movieCard.id.replace(/\D/g, '');
 
+      // If the movie card doesn't exist we alert the user about it and stopping the function from continue.
       if (!movieCard) {
         displayAlertMessage('no-movie-card-found');
         return;
       }
 
-      const movieName = movieCard.querySelector('.title').textContent;
-      const movieId = movieCard.id.replace(/\D/g, '');
 
       // Data button clicked: Navigate to the movie page
       if (dataBtn) {
@@ -87,6 +91,24 @@ const HomeMovieDataButtonClicks = () => {
           console.error('Error fetching movie trailer:', error);
         }
         return;
+      }
+
+      // If the trailerImg was clicked which is the trailer image card.
+      if (trailerImg) {
+        try {
+          const result = await getMovieTrailer(movieId)
+          const videoUrl = `https://www.youtube.com/watch?v=${result.key}`
+
+          if (!result.key) {
+            displayAlertMessage('No trailer to watch', movieName);
+          } else {
+            setPlayBtnVideo(trailerImg,videoUrl)
+            window.location.href = videoUrl
+          }
+        } catch (error) {
+          console.error ('Error fetching movie trailer:',error)
+        }
+        return
       }
     });
   });

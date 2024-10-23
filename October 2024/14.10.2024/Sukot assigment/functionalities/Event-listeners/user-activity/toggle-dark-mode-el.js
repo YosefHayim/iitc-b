@@ -1,7 +1,7 @@
 import { applyWhiteMode } from "../../DOM/apply-white-mode.js";
 import { returnDarkMode } from "../../DOM/return-dark-mode.js";
 import { toggleIconImage} from "../../DOM/storage-elements-dom.js";
-
+// This function is responsible for the bright mode toggle.
 const toggleDarkMode = () => {
   const isDarkModeActive = localStorage.getItem('darkMode') === 'true';
 

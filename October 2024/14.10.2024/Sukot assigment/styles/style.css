@@ -752,8 +752,108 @@ align-items: center;
 text-align: center;
 }
 
+.hero-image-one,.hero-image-two,.hero-image-three,.text-container,.image-container,.hero-container-homepage,.hero-section-one,.hero-section-two,.hero-section-three {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+width: 100%;
+margin-top: 1em;
+margin-bottom: 1em;
+}
+
+.popcorn-action-scene,.popcorn-matrix-character,.popcorn-riding-motorcycle {
+width: 20em;
+border-radius: 1em;
+}
+
+.popcorn-matrix-character {
+animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+0% {
+box-shadow: 0em 0em 1em 0.01em red;
+}
+50% {
+box-shadow: 0em 0em 2em 0.02em red;
+}
+100% {
+box-shadow: 0em 0em 3em 0.03em red;
+}
+}
+
+.text-container {
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+line-height: 2em;
+font-size: 1.2em;
+}
+
+li {
+text-align: justify;
+list-style-type: none;
+}
+
+.explore-button {
+  opacity: 0.5;
+  padding: 1em;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 5em;
+  font-size: 1.3em;
+}
+
+.explore-button:hover {
+  opacity: 1;
+  background-color: white;
+  color: black;
+}
+
+.welcome-message-container,.welcome-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1em;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
+
+  .text-container{
+    align-items: baseline;
+  }
+
+.popcorn-action-scene,.popcorn-matrix-character,.popcorn-riding-motorcycle {
+width: 15em;
+}
+
+.hero-image-one, .hero-image-two, .hero-image-three, .text-container, .image-container, .hero-container-homepage, .hero-section-one, .hero-section-two, .hero-section-three{
+width: auto;
+}
+
+.hero-container-homepage {
+flex-direction: row;
+justify-content: space-around;
+}
+
+.hero-image-one, .hero-image-two, .hero-image-three {
+flex-direction: row;
+width: auto;
+justify-content: center;
+align-items: center;
+gap: 2em;
+padding: 1em;
+}
 
 .template-title-container,.search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-container-title,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {
 width: 50%;
@@ -987,3 +1087,4 @@ flex-wrap: nowrap;
 }
 
 }
+

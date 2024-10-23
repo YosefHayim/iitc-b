@@ -60,8 +60,6 @@ if (window.location.pathname.endsWith("index.html")) {
 if (window.location.pathname.endsWith('favorite.html')) {
   // Initialize favorite page data and interactions
   displayFavoriteMoviesList(); // Display favorite movies list
-  handleFavoriteMoviePage(); // Handle favorite page buttons
-  handleGoToBottomButtonClick(); // Set up scroll to bottom button
 }
 
 if (window.location.pathname.endsWith('popular-day.html')) {
@@ -83,8 +81,6 @@ if (window.location.pathname.endsWith('popular-week.html')) {
 if (window.location.pathname.endsWith('movie-data.html')) {
   // Initialize single movie details page
   displaySingleMovieById(); // Display single movie details by ID
-  handleBackToTopButtonClick(); // Set up back to top button
-  handleGoToBottomButtonClick(); // Set up scroll to bottom button
 }
 
 if (window.location.pathname.endsWith('feedback-me.html')) {

@@ -70,6 +70,10 @@
 
 @media screen and (min-width:1024px) {
 
+  .hero-image-container {
+    transform: translate(25em, -19em);
+  }
+
   .about-us-section-container {
     flex-wrap: unset;
   }

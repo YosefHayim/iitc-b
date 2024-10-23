@@ -1,21 +1,21 @@
 import { redirectToErrorPage } from "./redirect-to-404-dom.js";
 
-// This function receiving the movieCardId which is essential the movie ID and the video ID from the event listeners.
-const navigateToMoviePage = (movieCardId,videoId) => {
-  // Checking if we the card ID is not falsy (null or undefined) if so we redirecting to 404 error page.
+// Navigates to the movie data page, using the movie ID and video ID (if available).
+const navigateToMoviePage = (movieCardId, videoId) => {
+  // If the movie card ID is falsy (null or undefined), redirect to the 404 error page.
   if (!movieCardId) {
-    redirectToErrorPage()
+    redirectToErrorPage();
   }
-  // Checking if the video exist if not we pass just the movie ID and proceed to the movie data page.
+
+  // If the video ID is missing, navigate to the movie data page with just the movie ID.
   if (!videoId) {
-  window.location.href = `movie-data.html?movieId=${movieCardId}`;
-  return
+    window.location.href = `movie-data.html?movieId=${movieCardId}`;
+    return;
+  } 
+  
+  // If both movie ID and video ID exist, navigate to the movie data page with both, allowing trailer access.
+  window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;
+  return;
+};
 
-  // Else we have both parameters we are passing them to the movie-data page which will allow the trailer button to have the url to allow the user to be redirect to YT
-  } else {
-    window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;
-    return
-  }
-  }
-
-  export {navigateToMoviePage}
+export { navigateToMoviePage };

@@ -1,8 +1,9 @@
 import { currentTheaterPage, latestPopularPage, searchResultTitle, templateTitle, topTrendingPage, upComingMoviePage } from "./storage-elements-dom.js";
-// This function stores the requestedTContainer which stands for title to do a DOM on it as well.
-// The requestedTContainer it being located by the containerTitleName and than we receive back the relevant container to do on it DOM
-// E.g. searchResultTitle is being used for either movie name query or ID query so we manipulate these two in different h1 text. 
+
+// This function dynamically selects the appropriate title container based on the requested title container name (requestedTContainer).
+// It finds the matching title container to allow DOM manipulation for various sections like search results, weekly hits, etc.
 const titlesStorage = (requestedTContainer) => {
+  // Storage array containing title containers with their names and corresponding DOM elements.
   const storage = [
     {
       containerTitleName: 'Todays must watch page title',
@@ -10,7 +11,7 @@ const titlesStorage = (requestedTContainer) => {
     },
     {
       containerTitleName: 'Weekly hits page title',
-      containerTitleEl: templateTitle
+      containerTitleEl: templateTitle,
     },
     {
       containerTitleName: 'Search result title page by ID',
@@ -19,10 +20,6 @@ const titlesStorage = (requestedTContainer) => {
     {
       containerTitleName: 'Search result title page by Name',
       containerTitleEl: searchResultTitle,
-    },
-    {
-      containerTitleName: 'Weekly hits page title',
-      containerTitleEl: templateTitle
     },
     {
       containerTitleName: 'Currently In Theatres title',
@@ -39,10 +36,11 @@ const titlesStorage = (requestedTContainer) => {
     {
       containerTitleName: 'Popular movies title',
       containerTitleEl: latestPopularPage,
-    },
+    }
   ];
-  // Find the first matched title
-  const matchedTitle = storage.find(title => title.containerTitleName === requestedTContainer);  
+
+  // Find and return the relevant title container based on the requested title container name.
+  const matchedTitle = storage.find(title => title.containerTitleName === requestedTContainer);
   return matchedTitle;
 };
 

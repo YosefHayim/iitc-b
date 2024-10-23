@@ -68,7 +68,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
-opacity: 0.9;
 }
 
 .input-query {
@@ -442,7 +441,7 @@ font-size: 2em;
 border-radius: 5em;
 margin-top: 1em;
 padding: 0.5em;
-width: 50%;
+width: 100%;
 text-align: center;
 }
 
@@ -483,7 +482,7 @@ width: 100%;
 position: fixed;
 animation: slideIn 0.3s ease-out forwards;
 animation-iteration-count: 1;
-margin-bottom: 10.7em;
+margin-bottom: 11.5em;
 }
 
 @keyframes slideIn {
@@ -756,6 +755,10 @@ text-align: center;
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
+
+  .template-title-container {
+    width: 50%;
+  }
 
   .buttons-pagination-container {
     gap: 15em;

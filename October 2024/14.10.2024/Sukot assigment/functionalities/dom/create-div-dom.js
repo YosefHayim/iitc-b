@@ -1,7 +1,7 @@
-// A simple function to create a div each time it is being called and return the div back to where it was called to.
+// Creates and returns a new div element.
 const createDomEl = () => {
-  const divEl = document.createElement('div')
-  return divEl
-}
+  const divEl = document.createElement('div');
+  return divEl;
+};
 
-export {createDomEl}
+export { createDomEl };

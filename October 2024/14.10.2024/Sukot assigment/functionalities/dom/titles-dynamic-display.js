@@ -1,17 +1,18 @@
-import { titlesStorage } from "./storage-titles-containers-dom.js"
-// This function is taking two parameters the container name which is 
-//being passed to the titlesStorage and returns it if it finds and the text that we want to display.
+import { titlesStorage } from "./storage-titles-containers-dom.js";
+
+// This function updates the text of a title container dynamically.
+// It takes two parameters: the containerTitleName (passed to titlesStorage to find the container) and the textTitle (the text to display).
 const dynamicTitlesDisplay = (containerTitleName, textTitle) => {
   const chosenContainer = titlesStorage(containerTitleName);
-  // If we received falsy we return a console error.
+  
+  // If the container is not found, log an error and stop.
   if (!chosenContainer) {
     console.error("Container not found for:", containerTitleName);
     return;
   }
-  // Else we preform the manipulation on the container element.
+  
+  // Otherwise, update the title container with the provided text.
   chosenContainer.containerTitleEl.textContent = textTitle;
+};
 
-}
-
-
-export {dynamicTitlesDisplay}
+export { dynamicTitlesDisplay };

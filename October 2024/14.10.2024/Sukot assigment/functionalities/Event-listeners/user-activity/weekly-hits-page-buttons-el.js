@@ -6,52 +6,53 @@ import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-f
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 
-// This function is responsible for the todayMustWatch page interactive with the user.
+// Handles user interactions on the "Weekly Hits" page.
 const weeklyHitsPageButtons = () => {
   popularOfTheWeekContainer.addEventListener('click', async (ev) => {
-  // When the user preforms a click we get the nearest interactive buttons of that movie card which are the data,share,heart,movie ID,img and movie name.
+    // Identify the clicked interactive elements within a movie card.
     const dataBtn = ev.target.closest('.white-data-btn');
     const shareImg = ev.target.closest('.white-share-img');
     const heartBtn = ev.target.closest('.white-heart-trailer-btn');
     const playButton = ev.target.closest('.play-button-btn');
     const movieCard = ev.target.closest('.movie-card');
-    const trailerImg = ev.target.closest('.img-trailer-link')      
-    const movieName = movieCard.querySelector('h1').textContent;      
+    const trailerImg = ev.target.closest('.img-trailer-link');
+    const movieName = movieCard.querySelector('h1').textContent;
     const movieCardId = movieCard.id.replace(/\D/g, '');
 
+    // If no movie card is found, display an error message and stop execution.
     if (!movieCard) {
       displayAlertMessage('no-movie-card-found');
       return;
     }
 
-
-    // Data button clicked: Navigate to the movie page
+    // Handle "Data" button click: Navigate to the movie page.
     if (dataBtn) {
       try {
         const result = await getMovieTrailer(movieCardId);
-        console.log(result);
         
+        // If no trailer is available, display an error message.
         if (!result.key) {
-          displayAlertMessage('error-fetch-movie-trailer',movieName)
-          console.error('Error getting the movie id',movieCardId);
+          displayAlertMessage('error-fetch-movie-trailer', movieName);
+          console.error('Error getting the movie ID', movieCardId);
         } else {
-          const videoId = result.key
+          const videoId = result.key;
           displayAlertMessage('navigating-to-another-page', movieName);
-          navigateToMoviePage(movieCardId,videoId);
+          navigateToMoviePage(movieCardId, videoId);
         }
       } catch (error) {
-        console.error('Error navigating to single movie page',error)
+        console.error('Error navigating to single movie page', error);
       }
-      return
+      return;
     }
 
-    // Share button clicked: Handle copying trailer URL to clipboard
+    // Handle "Share" button click: Copy the trailer URL to clipboard.
     if (shareImg) {
       ev.preventDefault();
       try {
         const result = await getMovieTrailer(movieCardId);
         const videoUrl = `https://www.youtube.com/watch?v=${result.key}`;
 
+        // If no trailer is available, display an error message.
         if (!result.key) {
           displayAlertMessage('No trailer to watch', movieName);
         } else {
@@ -63,19 +64,20 @@ const weeklyHitsPageButtons = () => {
       }
     }
 
-    // Heart button clicked: Add movie to favorite list
+    // Handle "Heart" button click: Add the movie to the favorites list.
     if (heartBtn) {
       ev.preventDefault();
       addfavoriteMovieToList(movieCardId);
       displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
     }
 
-    // Play button clicked: Open the movie trailer
+    // Handle "Play" button click: Open the movie trailer.
     if (playButton) {
       try {
         const result = await getMovieTrailer(movieCardId);
         const videoUrl = `https://www.youtube.com/watch?v=${result.key}`;
 
+        // If no trailer is available, display an error message.
         if (!result.key) {
           displayAlertMessage('No trailer to watch', movieName);
         } else {
@@ -87,26 +89,25 @@ const weeklyHitsPageButtons = () => {
       }
     }
     
-    // If the trailerImg was clicked which is the trailer image card.
+    // Handle trailer image click: Redirect to the YouTube trailer.
     if (trailerImg) {
       try {
-        const result = await getMovieTrailer(movieCardId)
-        const videoUrl = `https://www.youtube.com/watch?v=${result.key}`
+        const result = await getMovieTrailer(movieCardId);
+        const videoUrl = `https://www.youtube.com/watch?v=${result.key}`;
 
+        // If no trailer is available, display an error message.
         if (!result.key) {
           displayAlertMessage('No trailer to watch', movieName);
         } else {
-          setPlayBtnVideo(trailerImg,videoUrl)
-          window.location.href = videoUrl
+          setPlayBtnVideo(trailerImg, videoUrl);
+          window.location.href = videoUrl;
         }
       } catch (error) {
-        console.error ('Error fetching movie trailer:',error)
+        console.error('Error fetching movie trailer:', error);
       }
-      return
+      return;
     }
-
   });
-}
+};
 
-    export {weeklyHitsPageButtons}
-
+export { weeklyHitsPageButtons };

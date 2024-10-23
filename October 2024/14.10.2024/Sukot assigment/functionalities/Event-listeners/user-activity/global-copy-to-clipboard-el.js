@@ -1,15 +1,19 @@
-import {displayAlertMessage} from "../../DOM/alert-message-dom.js"
-// This function is receiving the trailerUrl as parameter and allowing copying it for the user allowing him to either send it to someone or just paste it when he likes.
+import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
+
+// Copies the provided trailer URL to the clipboard, allowing the user to share or use it later.
 const handleCopyToClipboard = async (trailerUrl) => {
+  // Check if the document is focused before attempting to copy.
   if (document.hasFocus()) {
     try {
+      // Copy the trailer URL to the clipboard.
       await navigator.clipboard.writeText(trailerUrl);
     } catch (err) {
-      displayAlertMessage('Something went wrong!')
+      // Display an error message if the copy operation fails.
+      displayAlertMessage('Something went wrong!');
     }
   } else {
     console.warn("Document not focused, skipping clipboard copy.");
   }
 };
 
-export {handleCopyToClipboard}
+export { handleCopyToClipboard };

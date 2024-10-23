@@ -3,15 +3,18 @@ import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
 import { roundMovieRating } from "./round-rating-movie-dom.js";
 
-// Building the homepage movie cards, this function recieves two inputs the movie object from the API and the div element of the movie card
-const buildSkeletonMovieCard = (movie,movieCardDiv) => {
-  // Calling the isNameToLong function to check if the length of the movie is more than 3 words if so we use only two to maintain the symmetric of spaces between the cards
+// Builds the movie card for the homepage, receiving the movie object and its corresponding div element.
+const buildSkeletonMovieCard = (movie, movieCardDiv) => {
+  // Check if the movie has a valid poster image, otherwise set a default image.
   const image = isImageNull(movie.poster_path);
-  // Calling the isNameToLong function to check if the length of the movie is more than 3 words if so we use only two to maintain the symmetric of spaces between the cards
+  
+  // Check if the movie title is too long; shorten it if necessary.
   const movieName = isNameToLong(movie.original_title);
-  // Calling the getStarRatingImage to display the amount of stars based on the vote of the movie. e.g. movie is 2 we provide 1 star, e.g. its 4 stars we provide 8, tops is 5.
-  const resultRatingImg = getStarRatingImage(movie.vote_average)
+  
+  // Get the appropriate star rating image based on the movie's average rating.
+  const resultRatingImg = getStarRatingImage(movie.vote_average);
 
+  // Set the inner HTML for the movie card, including image, title, rating, and action buttons.
   movieCardDiv.innerHTML = `
   <div>
     <a href="#" class="img-trailer-link">
@@ -35,8 +38,8 @@ const buildSkeletonMovieCard = (movie,movieCardDiv) => {
       <h2 class="rating-number-txt">${roundMovieRating(movie.vote_average)}</h2>
     </div>
   </div>
-`;
-  return movieCardDiv
+  `;
+  return movieCardDiv;
 }
 
-export { buildSkeletonMovieCard }
+export { buildSkeletonMovieCard };

@@ -2,20 +2,19 @@ import { alertMessagesTypes } from "./storage-alert-messages.js";
 import { createDomEl } from "./create-div-dom.js";
 import { alertMessageContainerEl, navbarDesktopEl } from "./storage-elements-dom.js";
 
-// Displays an alert with a message and background color, based on user interaction.
+// Shows alert with custom message and style based on user interaction.
 const displayAlertMessage = (messageType, word) => {
-  // Get message and background color based on messageType and word.
+  // Get message and background color for alert.
   const { message, backgroundColor } = alertMessagesTypes(messageType, word) || {};
 
-  // Proceed if both message and background color are available.
+  // If both message and background color exist.
   if (message && backgroundColor) {
-    // Get the user's current scroll position (Y-axis).
-    const currentScrollY = window.scrollY;
+    const currentScrollY = window.scrollY; // Get current Y-axis scroll.
 
-    // Check if alert message container exists, otherwise create it.
+    // Check or create alert container.
     const messageContainer = alertMessageContainerEl || createDomEl();
 
-    // Apply the necessary styles and position to the alert container.
+    // Style and position the alert.
     messageContainer.classList.add('template-message-container');
     messageContainer.style.cssText = `
       background: ${backgroundColor};
@@ -27,15 +26,14 @@ const displayAlertMessage = (messageType, word) => {
       z-index: 1;
     `;
 
-    // Set the message text in the alert container.
-    messageContainer.textContent = message;
+    messageContainer.textContent = message; // Set message text.
 
-    // If the container doesn't exist, append it after the navbar.
+    // Insert alert after navbar if missing.
     if (!alertMessageContainerEl) {
       navbarDesktopEl.insertAdjacentElement('afterend', messageContainer);
     }
 
-    // Display the alert for 1 second, then hide it.
+    // Display alert for 1 second, then hide.
     setTimeout(() => {
       messageContainer.style.display = 'none';
     }, 1000);

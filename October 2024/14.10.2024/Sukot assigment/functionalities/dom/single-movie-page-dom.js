@@ -8,89 +8,87 @@ import { getReleaseStatus } from "./is-release-date-dom.js";
 import { displayMovieGenres } from "./creating-movie-genres-dom.js";
 import { roundMovieRating } from "./round-rating-movie-dom.js";
 
-// This function is rendering and manipulating the dom of the movie-data.html
-const renderSingleMoviePage = (singleMovieData,creditsData,videoUrl) => {
-  // Calling the isImageNull function to check if there is available image in the data if not we set a default image.
+// Renders and manipulates the DOM for the movie-data.html page.
+const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
+  // Get the movie poster, release status, star rating, genres, and rounded rating.
   const image = isImageNull(singleMovieData.poster_path);
-  // Calling getReleaseStatus function to provide the user info about if the movie has been already released or not and how many days has been or has to be released.
-  const isReleased = getReleaseStatus(singleMovieData.release_date)
-  // Calling the getStarRatingImage to display the amount of stars based on the vote of the movie. e.g. movie is 2 we provide 1 star, e.g. its 4 stars we provide 8, tops is 5.
-  const resultRatingImg = getStarRatingImage(singleMovieData.vote_average)
-  // A function to receive an array from the API object response accessing the genres array and creating new array for each genre that the movie has.
-  const movieGenres = displayMovieGenres(singleMovieData.genres)
-  // This function is simply rounding the movie rating to have 2 digits only. e.g. instead of 7.542 as we get from the API call converted to 7.5
-  const roundRatingFloat = roundMovieRating(singleMovieData.vote_average)
-  const movieName = singleMovieData.original_title
-  const urlWeb = singleMovieData.homepage
-  const overviewMovie = singleMovieData.overview
+  const isReleased = getReleaseStatus(singleMovieData.release_date);
+  const resultRatingImg = getStarRatingImage(singleMovieData.vote_average);
+  const movieGenres = displayMovieGenres(singleMovieData.genres);
+  const roundRatingFloat = roundMovieRating(singleMovieData.vote_average);
   
-  // If we received a URL we set the button text to watch trailer else we set it to no trailer available
+  const movieName = singleMovieData.original_title;
+  const urlWeb = singleMovieData.homepage;
+  const overviewMovie = singleMovieData.overview;
+
+  // If no trailer is available, set the button text accordingly and display an alert message.
+  let buttonText = 'Watch the trailer';
   if (!videoUrl) {
-    buttonText = 'No trailer available.'
-    displayAlertMessage('no-youtube-video-available',movieName)
+    buttonText = 'No trailer available.';
+    displayAlertMessage('no-youtube-video-available', movieName);
+  } else {
+    displayAlertMessage('success-received-movie-data', movieName);
   }
 
-  let buttonText = 'Watch the trailer'
-  displayAlertMessage('success-received-movie-data',movieName)
-
-  
-
+  // Populate the single movie data page with movie details.
   singlePageMovieData.innerHTML = `
-  <div class="single-img-container">
-  <h1 class="title-single-movie">${movieName}</h1>
-  <div class="rating-container">
-  <img src="${resultRatingImg}" alt="rating-img" class="rating-img">
-  <h2 class="rating-number-txt">${roundRatingFloat}</h2>
-  </div>
-  <img src="${image}" alt="movie-img" class="single-movie-img">
-  <h2 class="movie-release">Movie release: ${isReleased}</h2>
-  <h2 class"movie-genre">Movie genres: ${movieGenres}</h2>
-  <h3 class="summary-title">Summary</h3>
-  <p class="movie-details">${overviewMovie}</p>
-  <button class="movie-link">
-  <a href="${urlWeb}" target="_blank" class="website-link">Website Movie</a>
-  </button>
-  <div class="video-container">
-  <button class="button-trailer">
-  <a href="https://www.youtube.com/watch?v=${videoUrl}" class="link-trailer">${buttonText}</a></button>
-  </div>
-  </div>
+    <div class="single-img-container">
+      <h1 class="title-single-movie">${movieName}</h1>
+      <div class="rating-container">
+        <img src="${resultRatingImg}" alt="rating-img" class="rating-img">
+        <h2 class="rating-number-txt">${roundRatingFloat}</h2>
+      </div>
+      <img src="${image}" alt="movie-img" class="single-movie-img">
+      <h2 class="movie-release">Movie release: ${isReleased}</h2>
+      <h2 class="movie-genre">Movie genres: ${movieGenres}</h2>
+      <h3 class="summary-title">Summary</h3>
+      <p class="movie-details">${overviewMovie}</p>
+      <button class="movie-link">
+        <a href="${urlWeb}" target="_blank" class="website-link">Website Movie</a>
+      </button>
+      <div class="video-container">
+        <button class="button-trailer">
+          <a href="https://www.youtube.com/watch?v=${videoUrl}" class="link-trailer">${buttonText}</a>
+        </button>
+      </div>
+    </div>
   `;
+
+  // Create and append the cast container.
+  const videoContainer = document.querySelector('.video-container');
+  const castContainer = createDomEl();
+  const castContainerTitle = createDomEl();
   
-  // Selecting the video container because we are in the DOM
-  const videoContainer = document.querySelector('.video-container')
-  // Creating two div elements one for the cast (actors) and one for the actor title container.
-  const castContainer = createDomEl()
-  const castContainerTitle = createDomEl()
   castContainerTitle.innerHTML = `
-  <h1 class="actors-title">Actors of the <span class="movie-name">movie</span>: ${movieName}</h1>`
-  videoContainer.insertAdjacentElement('afterend',castContainerTitle)
+    <h1 class="actors-title">Actors of the movie: ${movieName}</h1>
+  `;
+  videoContainer.insertAdjacentElement('afterend', castContainerTitle);
 
   castContainer.classList.add('cast-container');
   singlePageMovieData.appendChild(castContainer);
-// In case there is falsy cast API response
+
+  // If no cast data is available, display a message.
   if (!creditsData.cast) {
-    castContainer.textContent = `This movie doesn't have actors yet, oh baba...`
-    castContainer.style.fontSize = `3em`
+    castContainer.textContent = `This movie doesn't have actors yet, oh baba...`;
+    castContainer.style.fontSize = `3em`;
   }
-// We present only 10 actors from the array 
+
+  // Display up to 10 actors from the cast data.
   creditsData.cast.slice(0, 10).forEach(actor => {
-    const actorDiv = createDomEl()
-  
+    const actorDiv = createDomEl();
     actorDiv.classList.add('actor');
-    const actorName = isNameToLong(actor.name)
-    const image = isImageNull(actor.profile_path)        
+    
+    const actorName = isNameToLong(actor.name);
+    const image = isImageNull(actor.profile_path);
     
     actorDiv.innerHTML = `
       <div class="img-name-container">
-      <img src="${image}" alt="${actorName}" class="actor-img">
-      <p class="actor-name">${actorName}</p>
+        <img src="${image}" alt="${actorName}" class="actor-img">
+        <p class="actor-name">${actorName}</p>
       </div>
     `;
-
     castContainer.appendChild(actorDiv);
-  }
-  )
-}
+  });
+};
 
-export {renderSingleMoviePage}
+export { renderSingleMoviePage };

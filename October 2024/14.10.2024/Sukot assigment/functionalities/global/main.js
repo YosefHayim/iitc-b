@@ -32,17 +32,17 @@ import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/home
 
 // Event Listener for the Feedback Page
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
-import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js";
-import { toggleDarkMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js";
+import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
+import { toggleDarkMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
 handleBurgerIconToggle(); // Toggles burger menu for mobile
 resetPlaceholder(); // Resets placeholder values
-dynamicPaginationSetup(); // Set up pagination
-handleMovieSearchByIdOrName(); // Handle search functionality
-homepageSearchListener()
-toggleDarkMode()
+dynamicPaginationSetup(); // Set up pagination for dynamic results
+handleMovieSearchByIdOrName(); // Set up search functionality for movie IDs or names
+homepageSearchListener(); // Listens for homepage search input events
+toggleDarkMode(); // Initialize dark mode toggle functionality
 
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("index.html")) {
@@ -51,37 +51,37 @@ if (window.location.pathname.endsWith("index.html")) {
   fetchPopularMovies(); // Fetch popular movies
   fetchTopRatedMovies(); // Fetch top-rated movies
   fetchUpcomingMovies(); // Fetch upcoming movies
-  handleBackToTopButtonClick(); // Set up back to top button functionality
-  handleGoToBottomButtonClick(); // Set up scroll to bottom button
-  setupHomepagePagination(); // Set up homepage pagination controls
-  HomeMovieDataButtonClicks(); // Handle homepage movie button clicks
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+  setupHomepagePagination(); // Set up pagination controls for the homepage
+  HomeMovieDataButtonClicks(); // Handle button clicks for movies on the homepage
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {
   // Initialize favorite page data and interactions
-  displayFavoriteMoviesList(); // Display favorite movies list
-  handleFavoriteMoviePage()
+  displayFavoriteMoviesList(); // Fetch and display favorite movies list
+  handleFavoriteMoviePage(); // Handle interactions on the favorite movies page
 }
 
 if (window.location.pathname.endsWith('popular-day.html')) {
   // Initialize "Popular Today" page data and interactions
   popularMoviesOfDay(); // Fetch and display movies popular today
-  handleBackToTopButtonClick(); // Set up back to top button
-  todayMustWatchPlayButtons(); // Set up play buttons on 'Today Must Watch' page
-  handleGoToBottomButtonClick(); // Set up scroll to bottom button
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  todayMustWatchPlayButtons(); // Handle play button interactions on 'Today Must Watch' page
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }
 
 if (window.location.pathname.endsWith('popular-week.html')) {
   // Initialize "Popular This Week" page data and interactions
   popularMoviesOfWeek(); // Fetch and display movies popular this week
-  handleBackToTopButtonClick(); // Set up back to top button
-  handleGoToBottomButtonClick(); // Set up scroll to bottom button
-  weeklyHitsPageButtons(); // Set up weekly hits page buttons
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+  weeklyHitsPageButtons(); // Handle weekly hits page button interactions
 }
 
 if (window.location.pathname.endsWith('movie-data.html')) {
   // Initialize single movie details page
-  displaySingleMovieById(); // Display single movie details by ID
+  displaySingleMovieById(); // Fetch and display single movie details by ID
 }
 
 if (window.location.pathname.endsWith('feedback-me.html')) {

@@ -1,4 +1,4 @@
-// This function is used to navigate user to the error 404 page and than we use asynchronous setTimeout to redirect the user back to the homepage.
+// Navigates the user to the 404 error page, then redirects them to the homepage after 4 seconds.
 const redirectToErrorPage = () => {
   window.location.href = 'error404.html';
   setTimeout(() => {
@@ -6,4 +6,4 @@ const redirectToErrorPage = () => {
   }, 4000);
 };
 
-export { redirectToErrorPage }
+export { redirectToErrorPage };

@@ -1,48 +1,52 @@
 import { generateFavoriteMovieCard } from "./favorite-movie-card-dom.js";
 import { buildHomeMovieCard } from "./homepage-movie-cards-dom.js";
 import { moviesStorage } from "./storage-movies-elements-dom.js";
-// This function is displaying movies based on the chosen container.
+
+// Displays movies in the specified container.
 const displayMovies = (requestedContainer, data) => {
-  // We get the chosen container from the movieStorage with the requested container and proceed.
+  // Get the container from moviesStorage based on the requested container.
   const chosenContainer = moviesStorage(requestedContainer);
-// If they are both exist we are resetting the html of them to avoid appending and duplicated movies to the dom.
+
+  // If both the container and its element exist, reset the container's HTML to avoid duplicates.
   if (chosenContainer && chosenContainer.containerEl) {
     chosenContainer.containerEl.innerHTML = '';
 
-    // Check if data has a 'results' array or is a single object
+    // Check if data contains a 'results' array (multiple movies) or is a single object.
     if (Array.isArray(data.results)) {
-      // If results is an array, loop through each movie
+      // Loop through each movie in the results array.
       data.results.forEach(movie => {
         let movieCard;
 
-        // a nested if the requested is favorite movie page, we preform another creation since we have a different element names for the favorite movie page.
+        // If it's the favorite movie page, generate a favorite movie card.
         if (requestedContainer === 'Favorite movie page') {
           movieCard = generateFavoriteMovieCard(movie);
-          // if its not we preform a regular creation of the movie card.
         } else {
+          // Otherwise, generate a regular movie card.
           movieCard = buildHomeMovieCard(movie);
         }
-        // Appending each movie to the chosen container that is relevant for that movie category. e.g. Weekly hits movies is appended to the weekly hit container.
+        // Append the movie card to the corresponding container.
         chosenContainer.containerEl.appendChild(movieCard);
       });
-      // Else if the data we received is falsy which means either we received null api response or we received a response which is not an array e.g. search query by name or by id for a specific movie
     } else if (!data.results) {
-      // Handle the case where data is a single movie object
+      // If data is a single movie object, handle it accordingly.
       let movieCard;
-      // Again we separate the favorite movie page because there could be only 1 movie that we added to our favorite list of movies though the API
+
+      // Generate a favorite movie card if it's the favorite movie page.
       if (requestedContainer === 'Favorite movie page') {
-        movieCard = generateFavoriteMovieCard(data); // Directly pass the movie object
+        movieCard = generateFavoriteMovieCard(data);
       } else {
-        movieCard = buildHomeMovieCard(data); // Directly pass the movie object
+        // Otherwise, generate a regular movie card.
+        movieCard = buildHomeMovieCard(data);
       }
 
+      // Append the single movie card to the container.
       chosenContainer.containerEl.appendChild(movieCard);
-      // In case its really null
     } else {
+      // Log an error if no valid movies are found.
       console.error("No movies found in data.");
     }
-    // In case there is no container by the container we are looked in our container movies storage.
   } else {
+    // Log an error if the requested container isn't found in moviesStorage.
     console.error("Container not found for:", requestedContainer);
   }
 };

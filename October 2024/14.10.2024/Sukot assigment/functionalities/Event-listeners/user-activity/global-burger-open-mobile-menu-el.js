@@ -1,25 +1,25 @@
 import { burgerIcon, overlayContainer, topNavbarMobile } from "../../DOM/storage-elements-dom.js";
-// This function handles the burger mobile Icon, we attach event listener to it
+
+// Handles the burger icon toggle for the mobile menu by attaching an event listener to it.
 const handleBurgerIconToggle = () => {
   burgerIcon.addEventListener('click', (ev) => {
-    ev.preventDefault(); 
+    ev.preventDefault();
     
-    // Add to the burgerIcon a class list of active with a toggle.
+    // Toggle the 'active' class on the burger icon.
     burgerIcon.classList.toggle('active');
     
-    // If we clicked on the icon and it contains the class active we change the src to X icon. and apply the overlay effect and display the navbar for the mobile 
+    // If the burger icon is active (menu is open), switch to the "X" icon, show the overlay, and display the mobile navbar.
     if (burgerIcon.classList.contains('active')) {
       burgerIcon.src = "../images/user-activity/white-remove-icon.svg";
       overlayContainer.style.display = 'flex';
       topNavbarMobile.style.display = 'flex';
     
-    // Else we clicked and the icon doesn't have the class active we change back to the burger Icon. and setting the overlay and navbar mobile to none.
+    // If the burger icon is not active (menu is closed), switch back to the burger icon and hide the overlay and mobile navbar.
     } else {
       burgerIcon.src = "../images/mobile-navbar/white-burger-icon.svg";
       overlayContainer.style.display = 'none';
       topNavbarMobile.style.display = 'none';
     }
-    
   });
 }
 

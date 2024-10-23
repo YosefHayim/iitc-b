@@ -1,44 +1,48 @@
 import { goTBottomBtn } from "../../DOM/storage-elements-dom.js";
 
-// Checking if the user is at the bottom of the page and if he does we return the parameter to the event listener.
+// Checks if the user has scrolled to the bottom of the page.
 const isAtBottom = () => {
   return (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
 };
 
 window.addEventListener('scroll', (ev) => {
-  // check if the button exist in the html before preform an action.
+  // Check if the "Go to Bottom" button exists before performing any actions.
   if (!goTBottomBtn) {
-    return
+    return;
   }
-  ev.preventDefault()
-  // If the user scrolled more than 400 px on the body browser than we display him the go to bottom button.
-  if (document.body.scrollTop > 400) {
+  
+  ev.preventDefault();
+
+  // If the user has scrolled more than 400px, show the "Go to Bottom" button (if not already at the bottom).
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     if (!isAtBottom()) {
       goTBottomBtn.style.display = 'block';
     }
-  // Else the user didn't we don't display it.
   } else {
+    // Hide the button if the user is not past the 400px scroll mark.
     goTBottomBtn.style.display = 'none';
   }
-// if the user is at the bottom we don't display it also.
+
+  // Hide the button if the user has reached the bottom of the page.
   if (isAtBottom()) {
     goTBottomBtn.style.display = 'none';
   }
 });
 
-// This function is moving the user screen position to the bottom.
+// Handles the click event for the "Go to Bottom" button, smoothly scrolling the user to the bottom of the page.
 const handleGoToBottomButtonClick = () => {
-  // If the button element was found we preform the next activity.
+  // If the button element exists, add an event listener to it.
   if (goTBottomBtn) {
-    // We attach to the button event listener
     goTBottomBtn.addEventListener('click', (ev) => {
       ev.preventDefault();
-      // And if the user clicked on the button we send him to the bottom of the browser. with a smooth behavior
+      
+      // Smoothly scroll the user to the bottom of the page.
       window.scrollTo({ 
         top: document.documentElement.scrollHeight,
         behavior: 'smooth' 
       });
-      // We attach another event listener and if he is at the bottom we turn the go to bottom button to none.
+
+      // Add an event listener to hide the button when the user reaches the bottom.
       window.addEventListener('scroll', () => {
         if (isAtBottom()) {
           goTBottomBtn.style.display = 'none';
@@ -46,6 +50,6 @@ const handleGoToBottomButtonClick = () => {
       });
     });
   }
-}
+};
 
 export { handleGoToBottomButtonClick };

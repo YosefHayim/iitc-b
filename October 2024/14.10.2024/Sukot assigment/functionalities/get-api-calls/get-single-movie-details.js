@@ -3,40 +3,44 @@ import { apiKey } from "../global/env.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { renderSingleMoviePage } from "../DOM/single-movie-page-dom.js";
 
+// This function fetches data about a specific movie using its ID and retrieves actor information for that movie.
 const displaySingleMovieById = async () => {
+  // Create a new URL object to parse the query parameters.
   const urlParams = new URLSearchParams(window.location.search);
-  const videoUrl = urlParams.get('videoUrl');
-  console.log(videoUrl);
-  const movieId = urlParams.get('movieId');
-  console.log(movieId);
   
+  // Get the video URL and movie ID from the URL parameters.
+  const videoUrl = urlParams.get('videoUrl');
+  console.log(videoUrl);  // Log the video URL for debugging.
+  
+  const movieId = urlParams.get('movieId');
+  console.log(movieId);  // Log the movie ID for debugging.
+  
+  // If the movie ID is not provided, redirect the user to the error page.
   if (!movieId) {
+    console.error('Something is wrong with the movie ID:', movieId);
     return redirectToErrorPage();
   }
 
   try {
+    // Fetch the movie details using the movie ID.
     const singleMovieData = await getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
-    console.log(singleMovieData);
-    
-    if (!singleMovieData) {
-      return redirectToErrorPage();
-    }
+    console.log(singleMovieData);  // Log the movie data for debugging.
 
+    // Fetch the credits (actors) for the specific movie.
     const creditsData = await getData(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`);
-    console.log(creditsData);
+    console.log(creditsData);  // Log the credits data for debugging.
 
-    if (!creditsData) {
-      return redirectToErrorPage();
-    }
-
+    // If a video URL is provided, pass it along with the movie and credits data to render the movie page.
     if (videoUrl) {
       renderSingleMoviePage(singleMovieData, creditsData, videoUrl);
     } else {
+      // If no video URL is provided, only pass the movie and credits data.
       renderSingleMoviePage(singleMovieData, creditsData);
     }
   } catch (error) {
+    // Log any errors that occur during the fetching of movie details or credits.
     console.error('Error fetching movie details or credits:', error);
-    redirectToErrorPage();
+    redirectToErrorPage();  // Redirect to the error page in case of an error.
   }
 }
 

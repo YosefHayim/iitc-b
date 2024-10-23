@@ -1,9 +1,11 @@
-// This is the alert message storage function to allow a dynamic use and write less repeated texts for the user notification.
+// This function stores and returns alert messages dynamically, reducing repeated text for user notifications.
 const alertMessagesTypes = (messageType, word) => {
-  // Thats the storage which is an array that has objects with 3 type of keys: messageType which is the subject
-  //the message itself to display the user and the background color to be used for the alert message container itself
+  // Storage array containing objects with the following keys:
+  // messageType: the type of alert,
+  // message: the message to display to the user,
+  // backgroundColor: the background color for the alert container.
   const messages = [
-    // Green background color
+    // Success messages (green background)
     {
       messageType: 'success-removed-movie',
       message: `Removed "${word}".`,
@@ -45,7 +47,7 @@ const alertMessagesTypes = (messageType, word) => {
       backgroundColor: 'green'
     },
 
-    // Red background color
+    // Error messages (red background)
     {
       messageType: 'Error',
       message: 'Error occurred!',
@@ -77,7 +79,7 @@ const alertMessagesTypes = (messageType, word) => {
       backgroundColor: 'red'
     },
 
-    // Yellow background color
+    // Warning messages (yellow background)
     {
       messageType: 'no-url-to-copy',
       message: `No URL for "${word}".`,
@@ -95,9 +97,9 @@ const alertMessagesTypes = (messageType, word) => {
     }
   ];
 
-  // We are using the find method to locate the first messageType that is true based on our call.
+  // Find and return the message object that matches the provided messageType.
   const messageObject = messages.find(alert => alert.messageType === messageType);
   return messageObject;
 };
 
-export {alertMessagesTypes};
+export { alertMessagesTypes };

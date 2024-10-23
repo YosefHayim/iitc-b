@@ -3,41 +3,40 @@ import { redirectToErrorPage } from "../../DOM/redirect-to-404-dom.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 import { searchMovieById } from "../../get-api-calls/get-movie-id-by-id.js";
 
-// This function is the homepage listener for the search query.
+// This function sets up the homepage listener for processing search queries.
 const homepageSearchListener = () => {
-  // We attach event listener to the entire DOM.
+  // Attach an event listener to the window for when the DOM content is fully loaded.
   window.addEventListener('DOMContentLoaded', async () => {
-    // Set teh query of the search input to the URL
+    // Extract the query parameter from the URL.
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
   
     if (query) {
-      // Check if it's a valid movie name (letters and spaces only)
+      // Check if the query is a valid movie name (letters and spaces only).
       if (/^[a-zA-Z\s]+$/.test(query)) {
+        try {
+          await searchMovieByName(query);  // Perform the asynchronous search by movie name.
+        } catch (error) {
+          displayAlertMessage('search-error', query);  // Display an error message if the search fails.
+          redirectToErrorPage();  // Redirect to the error page.
+        }
 
-        try {
-          await searchMovieByName(query);  // Handle asynchronously
-        } catch (error) {
-          displayAlertMessage('search-error', query);
-          redirectToErrorPage();  // Redirect if search fails
-        }
-  
-      // Check if it's a valid movie ID (numbers only)
+      // Check if the query is a valid movie ID (numbers only).
       } else if (/^[0-9]+$/.test(query)) {
-        
         try {
-          await searchMovieById(query);  // Handle asynchronously
+          await searchMovieById(query);  // Perform the asynchronous search by movie ID.
         } catch (error) {
-          displayAlertMessage('search-error', query);
-          redirectToErrorPage();  // Redirect if search fails
+          displayAlertMessage('search-error', query);  // Display an error message if the search fails.
+          redirectToErrorPage();  // Redirect to the error page.
         }
-  
-      // Invalid input
+
+      // Handle invalid input that is neither a valid movie name nor ID.
       } else {
-        displayAlertMessage('input-error', query);
-        redirectToErrorPage();  // Redirect on invalid input
+        displayAlertMessage('input-error', query);  // Display an input error message.
+        redirectToErrorPage();  // Redirect on invalid input.
       }
     }
   });
 }
-export {homepageSearchListener}
+
+export { homepageSearchListener };

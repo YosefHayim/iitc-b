@@ -1,12 +1,13 @@
-// Receiving the image source from the API call and if its falsy we set our own image to maintain the symmetric of the website
+// Receives the image source from the API call; sets a default image if the source is falsy.
 const isImageNull = (imageSource) => {
   if (!imageSource) {
+    // Set a default image if the source is null or undefined to maintain layout symmetry.
     imageSource = `/IITC-B/October 2024/14.10.2024/Sukot assigment/images/user-activity/template-null-img.svg`;
-    // Else it does exist we set the image url to display it on the DOM
   } else {
+    // If the image source exists, set the URL to the actual image from the API.
     imageSource = `https://image.tmdb.org/t/p/original/${imageSource}`;
   }
-  return imageSource
-}
+  return imageSource;
+};
 
 export { isImageNull };

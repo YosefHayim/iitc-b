@@ -2,15 +2,19 @@ import { isImageNull } from "./is-image-null-dom.js";
 import { isNameToLong } from "./is-movie-title-long-dom.js";
 import { getStarRatingImage } from "./rating-movie-stars-img-dom.js";
 import { roundMovieRating } from "./round-rating-movie-dom.js";
-// This function is creating the look of the movie card on the dom, it receives two parameters the movie div and the movie object from the API
-const buildFavoriteCardSkeleton = (movieCardDiv,movie) => {
-  // Calling the isImageNull function to check if there is available image in the data if not we set a default image.
-  const image = isImageNull(movie.poster_path);
-  // Calling the isNameToLong function to check if the length of the movie is more than 3 words if so we use only two to maintain the symmetric of spaces between the cards
-  const movieName = isNameToLong(movie.original_title);
-  // Calling the getStarRatingImage to display the amount of stars based on the vote of the movie. e.g. movie is 2 we provide 1 star, e.g. its 4 stars we provide 8, tops is 5.
-  const resultRatingImg = getStarRatingImage(movie.vote_average)
 
+// Builds the structure and content of a favorite movie card in the DOM using the provided movie div and movie object.
+const buildFavoriteCardSkeleton = (movieCardDiv, movie) => {
+  // Check if the movie has a valid poster image; set a default image if not.
+  const image = isImageNull(movie.poster_path);
+  
+  // Check if the movie title is longer than 3 words; shorten if necessary for better layout.
+  const movieName = isNameToLong(movie.original_title);
+  
+  // Get the appropriate star rating image based on the movie's average rating (e.g., 2 = 1 star, 4 = 2 stars).
+  const resultRatingImg = getStarRatingImage(movie.vote_average);
+
+  // Set the inner HTML of the movie card, including image, title, rating, and action buttons.
   movieCardDiv.innerHTML = `
   <a href="#" class="fav-movie-trailer-url">
   <img src="${image}" alt="movie-img" class="movie-img">
@@ -28,8 +32,8 @@ const buildFavoriteCardSkeleton = (movieCardDiv,movie) => {
     <button class="fav-white-data-btn"><img src="../images/user-activity/white-data-icon.svg" alt="white-data-img" class="fav-white-data-img"></button>
     <h2 class="rating-number-txt">${roundMovieRating(movie.vote_average)}</h2>
   </div>
-`;
-  return movieCardDiv
-}
+  `;
+  return movieCardDiv;
+};
 
-export {buildFavoriteCardSkeleton}
+export { buildFavoriteCardSkeleton };

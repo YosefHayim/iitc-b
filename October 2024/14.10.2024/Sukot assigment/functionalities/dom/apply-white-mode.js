@@ -7,8 +7,18 @@ const applyWhiteMode = () => {
   const movieImgs = document.querySelectorAll('.movie-img');
   const whiteModeEls = document.querySelectorAll('.template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title');
   const allH1Titles = document.querySelectorAll('h1');
-  
+  const mobileNavTop = document.querySelector('.navbar-mobile')
+  const footer = document.querySelector('footer')
+
   toggleIconImage.src = '../images/user-activity/white-circle.svg';
+
+  footer.style.cssText = `
+  background: black;
+  `
+
+  mobileNavTop.style.cssText = `
+  background: black;
+  `
 
   movieImgs.forEach((img) => {
     img.style.cssText = `

@@ -117,6 +117,7 @@ background: red;
 padding: 0.5em;
 border-radius: 5em;
 color: white;
+opacity: 1;
 }
 
 .top-navbar-mobile a:hover {
@@ -668,8 +669,6 @@ gap: 2em;
 display: block;
 border-radius: 100em;
 width: 100%;
-box-shadow: 0em 0em 1em 0.1em black;
-
 }
 
 .dropdown-content a:hover {
@@ -691,8 +690,6 @@ width: 100%;
 align-items: center;
 justify-content: center;
 border-radius: 3em;
-background: black;
-
 }
 
 .top-navbar{
@@ -775,6 +772,7 @@ border-radius: 100em;
 
 .dropdown-content a {
 padding: 0.5em;
+background-color: black;
 }
 
 .dropdown-content {

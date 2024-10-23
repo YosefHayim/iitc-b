@@ -768,7 +768,7 @@ width: 20em;
 border-radius: 1em;
 }
 
-.popcorn-matrix-character {
+.popcorn-matrix-character,.popcorn-action-scene,.popcorn-riding-motorcycle {
 animation: glow 3s ease-in-out infinite;
 }
 
@@ -807,6 +807,7 @@ list-style-type: none;
   text-decoration: none;
   border-radius: 5em;
   font-size: 1.3em;
+  width: 20%;
 }
 
 .explore-button:hover {
@@ -824,10 +825,15 @@ list-style-type: none;
   margin-top: 1em;
   gap: 1em;
   margin-bottom: 2em;
+  text-align: center;
 }
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
+
+  body > main > div.welcome-message-container > div > p {
+    font-size: 1.5em;
+  }
 
   .text-container{
     align-items: baseline;
@@ -844,10 +850,11 @@ width: auto;
 .hero-container-homepage {
 flex-direction: row;
 justify-content: space-around;
+gap: 5em;
 }
 
 .hero-image-one, .hero-image-two, .hero-image-three {
-flex-direction: row;
+flex-direction: column;
 width: auto;
 justify-content: center;
 align-items: center;

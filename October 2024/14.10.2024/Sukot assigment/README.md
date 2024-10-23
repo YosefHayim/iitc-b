@@ -70,3 +70,6 @@ Styles are organized by component and page types, ensuring a cohesive design acr
 
 - **post-add-movie-to-favorite-list.js**: Adds movies to favorites via API.
 - **post-remove-movie-from-favorite-list.js**: Removes movies from favorites via API.
+
+### Prompt design character
+- A 2D flat design of a cartoonish popcorn character, inspired by the Matrix, standing in an action pose. The character is wearing a black coat and sunglasses, with a friendly smile and brown eyes. It has white gloves and black footwear, and mixing hands together, confident look. The popcorn is the focus, depicted with a striped pattern. The background is neon red, with retro virtual reality and explosive effects, creating a vibrant, dynamic scene. The character has a solo, heroic vibe with a fun, retro look in a 2D cartoon style.

@@ -1,16 +1,20 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { topRatedMoviesContainer } from "../../DOM/storage-elements-dom.js";
+import { regPaginationContainer, topRatedMoviesContainer } from "../../DOM/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
+import { increasePage } from "../../global/increasing-page.js";
+import { decreasePage } from "../../global/decreasing-page.js";
+import { fetchTopRatedMovies } from "../../get-api-calls/get-total-top-rated-movies.js";
 
 // Handles user interactions on the homepage for movie cards.
 const hotPicksButtonsPage = () => {
   // Attach an event listener to each movie card container on the homepage.
   topRatedMoviesContainer.addEventListener('click', async (ev) => {
+    
       // Identify the nearest interactive elements in the movie card.
       const dataBtn = ev.target.closest('.white-data-btn');
       const shareButton = ev.target.closest('.white-share-trailer-btn');
@@ -124,5 +128,36 @@ const hotPicksButtonsPage = () => {
       }
     });
   }
+
+  const hotPicksPagination = () => {
+    let count = 1
+  
+    regPaginationContainer.addEventListener('click', (ev) => {
+      ev.preventDefault()
+      const nextBtn = ev.target.closest('.next-page')
+      const prevBtn = ev.target.closest('.previous-page')
+      
+      if (nextBtn) {
+        count = increasePage(count)
+        if (count === 0) {
+          displayAlertMessage('cant-go-lower-than-1', count)
+          return
+        }     
+        fetchTopRatedMovies(count)
+        
+      } else if (prevBtn) {
+        if (count === 1) {
+          displayAlertMessage('cant-go-lower-than-1', count)
+          return
+        }
+  
+        count = decreasePage(count)
+        fetchTopRatedMovies(count)
+      }
+    })
+  }
+
+hotPicksPagination()
+
 
 export { hotPicksButtonsPage };

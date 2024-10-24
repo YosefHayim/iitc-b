@@ -12,6 +12,9 @@ const fetchPopularMovies = async (count = 1) => {
     // Fetch popular movies data from the API.
     const data = await getData(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${count}&api_key=${apiKey}`);
 
+    console.log(data);
+
+
     // If the data is falsy, log an error and redirect to the error page.
     if (!data) {
       console.error('Something is wrong with the data:', data);

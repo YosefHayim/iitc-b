@@ -34,6 +34,10 @@ import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles fee
 import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
 import { toggleThemeMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
 import { isNextPagePrevPageSearchPage, searchPageButtonsEl } from "../Event-listeners/user-activity/search-page-buttons-el.js";
+import { isNextPagePrevPageTrendingNow, trendingNowPageButtons } from "../Event-listeners/user-activity/trending-now-page-buttons-el.js";
+import { hotOnThebigScreenPageButtons, isNextPagePrevPageHotOnBigScreenPagination } from "../Event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
+import { hotPicksButtonsPage } from "../Event-listeners/user-activity/hot-picks-buttons-el.js";
+import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../Event-listeners/user-activity/next-big-hits-buttons-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -101,16 +105,31 @@ if (window.location.pathname.endsWith('search.html')) {
 
 if(window.location.pathname.endsWith('hot-on-the-big-screen.html')) {
   fetchCurrentlyInTheatersMovies(); // Fetch movies currently in theaters
+  hotOnThebigScreenPageButtons()
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+  isNextPagePrevPageHotOnBigScreenPagination()
 }
 
 if(window.location.pathname.endsWith('next-big-hits.html')) {
   fetchUpcomingMovies(); // Fetch upcoming movies
+  nextBigHitsPageButtons()
+  isNextPagePrevPageNBigHits()
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }
 
 if(window.location.pathname.endsWith('trending-now.html')) {
   fetchPopularMovies(); // Fetch popular movies
+  trendingNowPageButtons()
+  isNextPagePrevPageTrendingNow()
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }
 
-if(window.location.pathname.endsWith('hot-picks')) {
+if(window.location.pathname.endsWith('hot-picks.html')) {
   fetchTopRatedMovies(); // Fetch top-rated movies
+  hotPicksButtonsPage()
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }

@@ -66,5 +66,6 @@ Styles are organized by component and page types, ensuring a cohesive design acr
 - **post-remove-movie-from-favorite-list.js**: Removes movies from favorites via API.
 
 ## Popcorn Character Design
-- **Prompt**: A 2D flat design of a cartoonish popcorn character, inspired by the Matrix, standing in an action pose. The character is wearing a black coat and sunglasses, with a friendly smile and brown eyes. It has white gloves and black footwear, confidently mixing its hands. The popcorn features a striped pattern, set against a neon red background with retro virtual reality effects.
+- **Prompt**: A 2D flat design of a cartoonish popcorn character, inspired by the Matrix, standing in an action pose. The character is wearing a black coat and sunglasses, with a friendly smile and black eyes. It has white gloves and black footwear, waving hi. The popcorn features a striped pattern, set against a neon red background with retro virtual reality effects.
 - **Custom GPT Used**: [Consistent Character GPT](https://chatgpt.com/g/g-a9JivI0y2-consistent-character-gpt-fast-high-quality)
+- Seed number for the design at this prompt is: 1899358209

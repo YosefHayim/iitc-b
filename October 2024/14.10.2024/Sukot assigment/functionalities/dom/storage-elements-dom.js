@@ -27,6 +27,7 @@ const topTrendingPage = document.querySelector('.top-trending-movie-number');
 const popDayMoviePage = document.querySelector('.popular-day-number');
 const popWeekMoviePage = document.querySelector('.popular-week-number');
 const searchPaginationContainer = document.querySelector('.buttons-pagination-container-search-bar');
+const regPaginationContainer = document.querySelector('.buttons-pagination-container')
 
 // Input Fields and Forms
 const whiteGlassSearches = document.querySelectorAll('.white-search-bar');
@@ -58,6 +59,7 @@ const footer = document.querySelector('footer');
 
 // Exported elements for use in other files
 export {
+  regPaginationContainer,
   toggleIconImage,
   homePageDivs,
   goTBottomBtn,

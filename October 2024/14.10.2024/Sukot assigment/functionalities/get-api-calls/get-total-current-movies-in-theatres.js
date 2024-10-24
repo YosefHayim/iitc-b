@@ -11,6 +11,9 @@ const fetchCurrentlyInTheatersMovies = async (count = 1) => {
     // Fetch data for currently playing movies from the API.
     const data = await getData(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${count}`);
 
+    console.log(data);
+
+
     // If the data is falsy, log an error and redirect to the error page.
     if (!data) {
       console.error('Something is wrong with the data:', data);

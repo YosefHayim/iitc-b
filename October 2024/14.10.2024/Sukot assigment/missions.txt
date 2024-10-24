@@ -1,2 +1,1 @@
 2. see how i can remove the dynamic next prev page pagination file since each relevent page already has an el of its own.
-4. creating 4 more html pages

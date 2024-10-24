@@ -1,17 +1,19 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { homePageDivs } from "../../DOM/storage-elements-dom.js";
+import { regPaginationContainer, theatresContainer } from "../../DOM/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
+import { fetchCurrentlyInTheatersMovies } from "../../get-api-calls/get-total-current-movies-in-theatres.js";
+import { decreasePage } from "../../global/decreasing-page.js";
+import { increasePage } from "../../global/increasing-page.js";
 
 // Handles user interactions on the homepage for movie cards.
-const moviesCategoriesButtons = () => {
+const hotOnThebigScreenPageButtons = () => {
   // Attach an event listener to each movie card container on the homepage.
-  homePageDivs.forEach((cardMoviesContainer) => {
-    cardMoviesContainer.addEventListener('click', async (ev) => {
+  theatresContainer.addEventListener('click', async (ev) => {
       // Identify the nearest interactive elements in the movie card.
       const dataBtn = ev.target.closest('.white-data-btn');
       const shareButton = ev.target.closest('.white-share-trailer-btn');
@@ -124,7 +126,34 @@ const moviesCategoriesButtons = () => {
         return;
       }
     });
-  });
-};
+  }
 
-export { moviesCategoriesButtons };
+  const isNextPagePrevPageHotOnBigScreenPagination = () => {
+    let count = 1
+  
+    regPaginationContainer.addEventListener('click', (ev) => {
+      ev.preventDefault()
+      const nextBtn = ev.target.closest('.next-page')
+      const prevBtn = ev.target.closest('.previous-page')
+      
+      if (nextBtn) {
+        count = increasePage(count)
+        if (count === 0) {
+          displayAlertMessage('cant-go-lower-than-1', count)
+          return
+        }     
+        fetchCurrentlyInTheatersMovies(count)
+  
+      } else if (prevBtn) {
+        if (count === 1) {
+          displayAlertMessage('cant-go-lower-than-1', count)
+          return
+        }
+  
+        count = decreasePage(count)
+        fetchCurrentlyInTheatersMovies(count)
+      }
+    })
+  }
+
+export { hotOnThebigScreenPageButtons,isNextPagePrevPageHotOnBigScreenPagination };

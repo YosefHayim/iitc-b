@@ -1,5 +1,5 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { homePageDivs } from "../../DOM/storage-elements-dom.js";
+import { topRatedMoviesContainer } from "../../DOM/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
@@ -8,10 +8,9 @@ import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js"
 import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
 
 // Handles user interactions on the homepage for movie cards.
-const moviesCategoriesButtons = () => {
+const hotPicksButtonsPage = () => {
   // Attach an event listener to each movie card container on the homepage.
-  homePageDivs.forEach((cardMoviesContainer) => {
-    cardMoviesContainer.addEventListener('click', async (ev) => {
+  topRatedMoviesContainer.addEventListener('click', async (ev) => {
       // Identify the nearest interactive elements in the movie card.
       const dataBtn = ev.target.closest('.white-data-btn');
       const shareButton = ev.target.closest('.white-share-trailer-btn');
@@ -124,7 +123,6 @@ const moviesCategoriesButtons = () => {
         return;
       }
     });
-  });
-};
+  }
 
-export { moviesCategoriesButtons };
+export { hotPicksButtonsPage };

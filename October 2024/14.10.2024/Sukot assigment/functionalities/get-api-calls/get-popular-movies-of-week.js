@@ -12,6 +12,9 @@ const popularMoviesOfWeek = async (count = 1) => {
     // Fetch popular movies data from the API for the specified page.
     const data = await getData(`https://api.themoviedb.org/3/trending/movie/week?language=en-US&page=${count}&api_key=${apiKey}`);
 
+    console.log(data);
+
+
     // If the data is falsy, redirect the user to the error page.
     if (!data) {
       redirectToErrorPage();

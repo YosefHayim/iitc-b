@@ -96,5 +96,6 @@ These files handle post-API interactions:
 24. **Checklists Help**: Create a checklist of needed features before starting to code to avoid confusion.
 25. **Functionality First, Then Design**: Prioritize getting the app working correctly before focusing on the design.
 26. **Mobile-First Design**: Always start by designing for mobile before scaling to desktop.
+27. **Console log as much as possible**: no need to remove console log until I finish everything completely.
 
 **Total hours to complete the project**: 106 hours and 50 minutes (tracked via Google Calendar).

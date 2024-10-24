@@ -46,9 +46,9 @@ toggleThemeMode(); // Initialize dark mode toggle functionality
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("movies-categories.html")) {
   // Initialize homepage data and interactions
-  fetchCurrentlyInTheatersMovies(); // Fetch movies currently in theaters
   fetchPopularMovies(); // Fetch popular movies
   fetchTopRatedMovies(); // Fetch top-rated movies
+  fetchCurrentlyInTheatersMovies(); // Fetch movies currently in theaters
   fetchUpcomingMovies(); // Fetch upcoming movies
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
@@ -97,4 +97,20 @@ if (window.location.pathname.endsWith('search.html')) {
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   searchPageButtonsEl()
   isNextPagePrevPageSearchPage()
+}
+
+if(window.location.pathname.endsWith('hot-on-the-big-screen.html')) {
+  fetchCurrentlyInTheatersMovies(); // Fetch movies currently in theaters
+}
+
+if(window.location.pathname.endsWith('next-big-hits.html')) {
+  fetchUpcomingMovies(); // Fetch upcoming movies
+}
+
+if(window.location.pathname.endsWith('trending-now.html')) {
+  fetchPopularMovies(); // Fetch popular movies
+}
+
+if(window.location.pathname.endsWith('hot-picks')) {
+  fetchTopRatedMovies(); // Fetch top-rated movies
 }

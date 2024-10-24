@@ -63,4 +63,4 @@ Styles are organized by component and page types for cohesive design across desk
 ## Popcorn Character Design
 - **Prompt**: A 2D flat design of a cartoonish popcorn character, inspired by the Matrix. It stands in an action pose wearing a black coat and sunglasses, with a friendly smile. It features a striped pattern against a neon red background with retro virtual reality effects.
 - **Custom GPT Used**: [Consistent Character GPT](https://chatgpt.com/g/g-a9JivI0y2-consistent-character-gpt-fast-high-quality)
-- **Seed Numbers for Design**: 773258406, 2812509453, 773258406, 1971093150
+- **Seed Numbers for Design**: 773258406, 2812509453, 773258406, 1971093150 , 3636573044

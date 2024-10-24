@@ -19,9 +19,9 @@ font-family: 'Roboto';
 }
 
 #grand-finalle {
-box-shadow: 0em 0em 2em 0em var(--rating--color);
-background: var(--rating--color);
-color: black;
+box-shadow: 0em 0em 0.5em 0em white;
+background: var(--lighter-red-color);
+color: white;
 border-radius: 0.5em;
 padding: 0.5em;
 text-align: center;

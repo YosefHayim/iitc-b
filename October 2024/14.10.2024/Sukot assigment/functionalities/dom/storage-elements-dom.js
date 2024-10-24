@@ -56,9 +56,11 @@ const sorryMessage = document.querySelector('.sorry-message');
 const aboutUsPageSection = document.querySelector('.about-us-section');
 const mainContainer = document.querySelector('main');
 const footer = document.querySelector('footer');
+const homepageMainDiv = document.querySelector('main')
 
 // Exported elements for use in other files
 export {
+  homepageMainDiv,
   regPaginationContainer,
   toggleIconImage,
   homePageDivs,

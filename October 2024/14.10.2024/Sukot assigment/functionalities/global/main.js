@@ -38,6 +38,7 @@ import { isNextPagePrevPageTrendingNow, trendingNowPageButtons } from "../Event-
 import { hotOnThebigScreenPageButtons, isNextPagePrevPageHotOnBigScreenPagination } from "../Event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
 import { hotPicksButtonsPage } from "../Event-listeners/user-activity/hot-picks-buttons-el.js";
 import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../Event-listeners/user-activity/next-big-hits-buttons-el.js";
+import { homepageContainerButtons } from "../DOM/homepage-dom.js"
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -46,6 +47,10 @@ resetPlaceholder(); // Resets placeholder values
 handleMovieSearchByIdOrName(); // Set up search functionality for movie IDs or names
 homepageSearchListener(); // Listens for homepage search input events
 toggleThemeMode(); // Initialize dark mode toggle functionality
+
+if(window.location.pathname.endsWith('index.html')) {
+  homepageContainerButtons()
+}
 
 // Page-specific logic based on URL
 if (window.location.pathname.endsWith("movies-categories.html")) {

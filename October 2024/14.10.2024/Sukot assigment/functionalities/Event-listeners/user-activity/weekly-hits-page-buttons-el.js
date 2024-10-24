@@ -1,10 +1,13 @@
-import { popularOfTheWeekContainer } from "../../DOM/storage-elements-dom.js";
+import { popularOfTheWeekContainer, searchPaginationContainer } from "../../DOM/storage-elements-dom.js";
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
+import { popularMoviesOfDay } from "../../get-api-calls/get-popular-movies-of-today.js";
+import { increasePage } from "../../global/increasing-page.js";
+import { decreasePage } from "../../global/decreasing-page.js";
 
 // Handles user interactions on the "Weekly Hits" page.
 const weeklyHitsPageButtons = () => {
@@ -110,4 +113,34 @@ const weeklyHitsPageButtons = () => {
   });
 };
 
-export { weeklyHitsPageButtons };
+const isNextPagePrevPageWeeklyHits = () => {
+  let count = 1
+
+  searchPaginationContainer.addEventListener('click', (ev) => {
+    ev.preventDefault()
+    const nextBtn = ev.target.closest('.next-page')
+    const prevBtn = ev.target.closest('.previous-page')
+    
+    if (nextBtn) {
+      count = increasePage(count)
+      if (count === 0) {
+        displayAlertMessage('cant-go-lower-than-1', count)
+        return
+      }
+      popularMoviesOfDay(count)
+      displayAlertMessage(`redirecting-next-page`, count)
+
+    } else if (prevBtn) {
+      if (count === 1) {
+        displayAlertMessage('cant-go-lower-than-1', count)
+        return
+      }
+      count = decreasePage(count)
+      popularMoviesOfDay(count)
+      displayAlertMessage(`redirecting-previous-page`, count)
+    }
+
+  })
+}
+
+export { weeklyHitsPageButtons,isNextPagePrevPageWeeklyHits };

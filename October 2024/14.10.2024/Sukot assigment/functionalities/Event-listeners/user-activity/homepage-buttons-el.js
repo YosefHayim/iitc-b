@@ -1,5 +1,5 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { homePageDivs } from "../../DOM/storage-elements-dom.js";
+import { homePageDivs, searchPaginationContainer } from "../../DOM/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";

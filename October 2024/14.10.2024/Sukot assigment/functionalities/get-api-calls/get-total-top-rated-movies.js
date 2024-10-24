@@ -9,10 +9,7 @@ import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
 const fetchTopRatedMovies = async (count = 1) => {
   try {
     // Fetch top-rated movies data from the API.
-    const data = await getData(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${count}&api_key=${apiKey}`);
-
-    console.log(data);
-    
+    const data = await getData(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${count}&api_key=${apiKey}`);    
 
     // If the data is falsy, redirect to the error page.
     if (!data) {

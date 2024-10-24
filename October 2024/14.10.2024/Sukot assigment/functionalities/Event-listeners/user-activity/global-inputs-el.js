@@ -1,7 +1,7 @@
 import { allInputsContainers } from "../../DOM/storage-elements-dom.js";
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
 import { redirectToErrorPage } from "../../DOM/redirect-to-404-dom.js";
-import { redirectToSearchPage } from "../../DOM/redirect-to-homepage-dom.js";
+import { redirectToSearchPage } from "../../DOM/redirect-to-serach-page-dom.js";
 
 // Handles movie search by ID or name from input fields.
 // Validates the input, and if valid, updates the URL with a query parameter and redirects to the homepage.

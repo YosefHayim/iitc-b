@@ -1,10 +1,13 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { searchResultContainer } from "../../DOM/storage-elements-dom.js";
+import { searchPaginationContainer, searchResultContainer } from "../../DOM/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
+import { decreasePage } from "../../global/decreasing-page.js";
+import { increasePage } from "../../global/increasing-page.js";
+import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 
 // Handles user interactions on the homepage for movie cards.
 const searchPageButtonsEl = () => {
@@ -117,4 +120,38 @@ const searchPageButtonsEl = () => {
     });
   }
 
-export { searchPageButtonsEl };
+  const isNextPagePrevPageSearchPage = () => {
+    let count = 1
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('query');
+
+    searchPaginationContainer.addEventListener('click', (ev) => {
+      ev.preventDefault()
+      const nextBtn = ev.target.closest('.next-page')
+      const prevBtn = ev.target.closest('.previous-page')
+      
+      if (nextBtn) {
+        count = increasePage(count)
+        if (count === 0) {
+          displayAlertMessage('cant-go-lower-than-1', count)
+          return
+        }
+        
+        searchMovieByName(query,count)
+        displayAlertMessage(`redirecting-next-page`, count)
+  
+      } else if (prevBtn) {
+        if (count === 1) {
+          displayAlertMessage('cant-go-lower-than-1', count)
+          return
+        }
+
+        count = decreasePage(count)
+        searchMovieByName(query,count)
+        displayAlertMessage(`redirecting-previous-page`, count)
+      }
+    })
+  }
+  
+
+export { searchPageButtonsEl, isNextPagePrevPageSearchPage };

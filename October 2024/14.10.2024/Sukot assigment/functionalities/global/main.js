@@ -19,14 +19,13 @@ import { displaySingleMovieById } from "../get-api-calls/get-single-movie-detail
 import { handleFavoriteMoviePage } from "../Event-listeners/user-activity/favorite-page-buttons-el.js"; // Handles favorite page buttons
 
 // Event Listeners for the "Today Must Watch" Page
-import { todayMustWatchPlayButtons } from "../Event-listeners/user-activity/today-must-watch-page-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
+import { isNextPagePrevPageTodayMustWatch, todayMustWatchPlayButtons } from "../Event-listeners/user-activity/today-must-watch-page-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
 
 // Event Listeners for the "Weekly Hits" Page
-import { weeklyHitsPageButtons } from "../Event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
+import { isNextPagePrevPageWeeklyHits, weeklyHitsPageButtons } from "../Event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
 
 // Event Listeners for the Homepage
 import { setupHomepagePagination } from "../Event-listeners/pagination-buttons/homepage-containers-next-prev-pagination.js"; // Sets up homepage pagination
-import { dynamicPaginationSetup } from "../Event-listeners/user-activity/dynamic-next-previous-page-pagination.js"; // Handles search result pagination clicks
 import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/global-inputs-el.js"; // Handles movie search by ID or name
 import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/homepage-buttons-el.js"; // Handles homepage movie data button clicks
 
@@ -34,13 +33,12 @@ import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/home
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
 import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
 import { toggleThemeMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
-import { searchPageButtonsEl } from "../Event-listeners/user-activity/search-page-buttons-el.js";
+import { isNextPagePrevPageSearchPage, searchPageButtonsEl } from "../Event-listeners/user-activity/search-page-buttons-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
 handleBurgerIconToggle(); // Toggles burger menu for mobile
 resetPlaceholder(); // Resets placeholder values
-dynamicPaginationSetup(); // Set up pagination for dynamic results
 handleMovieSearchByIdOrName(); // Set up search functionality for movie IDs or names
 homepageSearchListener(); // Listens for homepage search input events
 toggleThemeMode(); // Initialize dark mode toggle functionality
@@ -70,6 +68,7 @@ if (window.location.pathname.endsWith('popular-day.html')) {
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   todayMustWatchPlayButtons(); // Handle play button interactions on 'Today Must Watch' page
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+  isNextPagePrevPageTodayMustWatch()
 }
 
 if (window.location.pathname.endsWith('popular-week.html')) {
@@ -78,6 +77,7 @@ if (window.location.pathname.endsWith('popular-week.html')) {
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   weeklyHitsPageButtons(); // Handle weekly hits page button interactions
+  isNextPagePrevPageWeeklyHits()
 }
 
 if (window.location.pathname.endsWith('movie-data.html')) {
@@ -96,4 +96,5 @@ if (window.location.pathname.endsWith('search.html')) {
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   searchPageButtonsEl()
+  isNextPagePrevPageSearchPage()
 }

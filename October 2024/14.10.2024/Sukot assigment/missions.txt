@@ -1,2 +1,4 @@
 1.if we reach max page we cant go further. add it to all type of gets.
 2. see how i can remove the dynamic next prev page pagination file since each relevent page already has an el of its own.
+3. if a movie already been added to fav list cannot add again and display a message alert. using sets will work.
+4. creating 4 more html pages

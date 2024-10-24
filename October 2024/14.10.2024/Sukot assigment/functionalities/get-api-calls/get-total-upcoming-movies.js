@@ -10,10 +10,7 @@ const fetchUpcomingMovies = async (count = 1) => {
   try {
     // Fetch upcoming movies data from the API.
     const data = await getData(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${count}`);
-
-    console.log(data);
     
-
     // If the data is falsy, redirect to the error page.
     if (!data) {
       redirectToErrorPage();

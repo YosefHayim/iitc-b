@@ -12,8 +12,6 @@ const searchMovieByName = async (inputValue, count = 1) => {
     // Fetch movie data from the API based on the input value and page number.
     const data = await getData(`https://api.themoviedb.org/3/search/movie?query=${inputValue}&include_adult=false&language=en-US&page=${count}`);
 
-    console.log(data);
-
     // If the data is falsy, redirect the user to the error page.
     if (!data) {
       redirectToErrorPage();

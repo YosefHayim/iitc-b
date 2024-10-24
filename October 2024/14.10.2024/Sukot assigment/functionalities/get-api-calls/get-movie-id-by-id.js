@@ -11,7 +11,6 @@ const searchMovieById = async (inputValue) => {
   try {
     // Fetch movie data from the API based on the provided movie ID.
     const data = await getData(`https://api.themoviedb.org/3/movie/${inputValue}?api_key=${apiKey}`);
-    console.log(data);
 
     // If the data is falsy (e.g., movie not found), redirect the user to the error page.
     if (!data) {

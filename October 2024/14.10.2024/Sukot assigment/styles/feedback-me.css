@@ -133,7 +133,7 @@ margin-bottom: 2em;
 }
 
 body > footer {
-position: fixed;
+position: absolute;
 bottom: 0;
 }
 

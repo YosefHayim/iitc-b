@@ -15,7 +15,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
-font-family: 'Roboto';
+font-family: "Bebas Neue";
+text-align: center;
 }
 
 #grand-finalle {

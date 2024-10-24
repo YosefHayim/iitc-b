@@ -95,13 +95,7 @@ flex-direction: row;
 }
 
 body > footer {
-position: unset;
+position: relative;
 }
 }
 
-@media screen and (max-width: 1295px) {
-body > footer {
-position: relative;
-bottom: 0;
-}
-}

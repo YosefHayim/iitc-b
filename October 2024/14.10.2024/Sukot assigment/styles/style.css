@@ -758,7 +758,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
-width: 100%;
 margin-top: 1em;
 margin-bottom: 1em;
 }
@@ -795,12 +794,8 @@ font-size: 1.2em;
 }
 
 li {
-text-align: justify;
-list-style-type: none;
-}
-
-.hero-image-two > .text-container > ul > li {
 text-align: center;
+list-style-type: none;
 }
 
 .explore-button {
@@ -811,8 +806,9 @@ color: white;
 text-decoration: none;
 border-radius: 5em;
 font-size: 1.3em;
-width: 10em;
+width: 15em;
 text-align: center;
+margin-top: 1em;
 }
 
 .explore-button:hover {
@@ -823,14 +819,12 @@ color: black;
 
 .welcome-message-container,.welcome-text-container {
 display: flex;
-flex-direction: column;
+flex-direction: column-reverse;
 justify-content: center;
 align-items: center;
-width: 100%;
 margin-top: 1em;
-gap: 1em;
-margin-bottom: 2em;
 text-align: center;
+padding: 1em;
 }
 
 .special {
@@ -839,18 +833,245 @@ color: red;
 
 .movie-popcorn-welcome-wide {
 border-radius: 1em;
-width: 25em;
+width: 16em;
+box-shadow: 0em 0em 2em white;
 }
 
 .first-p {
-font-size: 1.3em;
+font-size: 1.8em;
+width: 95%;
+margin-top: 1em;
+margin-bottom: 0.5em;
 }
+
+.header-txt {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.header-txt > h1 {
+font-size: 2.7em;
+}
+
+
+.hero-image-one,.hero-image-two,.hero-image-three,.text-container,.image-container,.hero-container-homepage,.hero-section-one,.hero-section-two,.hero-section-three {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  }
+  
+  .popcorn-action-scene,.popcorn-matrix-character,.popcorn-riding-motorcycle {
+  width: 20em;
+  border-radius: 1em;
+  }
+  
+  .popcorn-matrix-character,.popcorn-action-scene,.popcorn-riding-motorcycle {
+  animation: glow 3s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+  0% {
+  box-shadow: 0em 0em 1em 0.01em red;
+  }
+  50% {
+  box-shadow: 0em 0em 2em 0.02em red;
+  }
+  100% {
+  box-shadow: 0em 0em 3em 0.03em red;
+  }
+  }
+  
+  .text-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 2em;
+  font-size: 1.2em;
+  }
+  
+  li {
+  text-align: center;
+  list-style-type: none;
+  }
+  
+  .explore-button {
+  opacity: 0.5;
+  padding: 1em;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 5em;
+  font-size: 1.3em;
+  width: 15em;
+  text-align: center;
+  margin-top: 1em;
+  }
+  
+  .explore-button:hover {
+  opacity: 1;
+  background-color: white;
+  color: black;
+  }
+  
+  .welcome-message-container,.welcome-text-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  text-align: center;
+  padding: 1em;
+  }
+  
+  .special {
+  color: var(--lighter-red-color);;
+  }
+  
+  .movie-popcorn-welcome-wide {
+  border-radius: 1em;
+  width: 16em;
+  box-shadow: 0em 0em 2em white;
+  }
+  
+  .first-p {
+  font-size: 1.8em;
+  width: 95%;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  }
+  
+  .header-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .header-txt > h1 {
+  font-size: 2.7em;
+  }
+  
+  .text-container > h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  }
+  
+  .sign-up-newsletter-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 1em;
+    padding: 1.5em;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    background-color: #1b1b1be3;
+  }
+
+  .news-letter-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    text-align: center;
+    gap: 0.5em;
+  }
+
+  .sign-up-newsletter-container > h2 {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+
+  .email-input {
+    border: none;
+    background: white;
+    border-radius: 100em;
+    height: 1.6em;
+  }
+
+  .email-input::placeholder {
+    color: rgb(128, 128, 128);
+    text-align: left;
+    font-family: "Bebas Neue";
+    padding-left: 1em;
+    font-size: 0.7em;
+  }
+
+  .submit-button {
+    border: none;
+    background: red;
+    font-family: 'Bebas Neue';
+    padding: 0.3em;
+    font-size: 1em;
+    border-radius: 100em;
+    width: 11em;
+    color: white;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background: black;
+    color: white;
+  }
+
+  .email-input:focus {
+    font-family: "Bebas Neue";
+    color: black;
+    text-align: left;
+    padding-left: 1em;
+  }
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
 
+  .email-input,.email-input:focus {
+    font-size: 1em;
+    padding-left: 1em;
+  }
+
+  .sign-up-newsletter-container > h2 {
+    letter-spacing: 0.2em;
+  }
+
+  .sign-up-newsletter-container {
+    padding: 3em;
+    width: 30em;
+  }
+
+  .email-input {
+    width: 29em;
+  }
+
+  .submit-button {
+    width: 30em;
+  }
+
+.first-p {
+  font-size: 2em;
+  width: 75%;
+}
+
+.header-txt > h1 {
+  font-size: 5em;
+  width: 75%;
+}
+
+.welcome-message-container,.welcome-text-container {
+  flex-direction: row-reverse;
+}
+
 .movie-popcorn-welcome-wide {
-  width: auto;
+width: auto;
 }
 
 body > main > div.welcome-message-container > div > p {
@@ -858,7 +1079,7 @@ font-size: 1.5em;
 }
 
 .text-container{
-align-items: baseline;
+align-items: center;
 }
 
 .popcorn-action-scene,.popcorn-matrix-character,.popcorn-riding-motorcycle {
@@ -870,9 +1091,10 @@ width: auto;
 }
 
 .hero-container-homepage {
-flex-direction: row;
-justify-content: space-around;
-gap: 5em;
+flex-direction: row-reverse;
+justify-content: space-evenly;
+gap: 6em;
+align-items: self-end;
 }
 
 .hero-image-one, .hero-image-two, .hero-image-three {
@@ -880,8 +1102,6 @@ flex-direction: column;
 width: auto;
 justify-content: center;
 align-items: center;
-gap: 2em;
-padding: 1em;
 }
 
 .template-title-container,.search-results-container-title,.feedback-me-container-title,.about-us-container-title,.favorite-movies-container-title,.popular-movies-container-title,.trending-movies-container-title,.upcoming-movies-container-title,.currently-movies-in-theatres-container-title {

@@ -1,1 +1,3 @@
-2. see how i can remove the dynamic next prev page pagination file since each relevent page already has an el of its own.
+1. see how i can remove the dynamic next prev page pagination file since each relevent page already has an el of its own.
+2. fix the pagination buttons once and for all the position of them on each html page.
+3. add the html pages to the drop down from the home hover on all html pages.

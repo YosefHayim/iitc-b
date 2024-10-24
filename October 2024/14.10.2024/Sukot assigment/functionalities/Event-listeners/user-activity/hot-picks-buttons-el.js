@@ -128,6 +128,7 @@ const hotPicksButtonsPage = () => {
       }
     });
   }
+// A function to preform the next page fetch of the specific API with attaching an event listener
 
   const hotPicksPagination = () => {
     let count = 1

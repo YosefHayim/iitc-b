@@ -120,6 +120,7 @@ const todayMustWatchPlayButtons = () => {
     }
   });
 };
+// A function to preform the next page fetch of the specific API with attaching an event listener
 
 const isNextPagePrevPageTodayMustWatch = () => {
   let count = 1

@@ -124,6 +124,7 @@ const weeklyHitsPageButtons = () => {
     }
   });
 };
+// A function to preform the next page fetch of the specific API with attaching an event listener
 
 const isNextPagePrevPageWeeklyHits = () => {
   let count = 1

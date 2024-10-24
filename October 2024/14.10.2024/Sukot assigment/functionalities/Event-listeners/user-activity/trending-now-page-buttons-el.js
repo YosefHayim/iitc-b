@@ -128,6 +128,7 @@ const trendingNowPageButtons = () => {
       }
     });
   }
+// A function to preform the next page fetch of the specific API with attaching an event listener
 
 const isNextPagePrevPageTrendingNow = () => {
   let count = 1

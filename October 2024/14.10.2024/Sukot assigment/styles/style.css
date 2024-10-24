@@ -996,7 +996,9 @@ font-size: 2.7em;
     border: none;
     background: white;
     border-radius: 100em;
-    height: 1.6em;
+    height: 2.6em;
+    width: 20em;
+    padding-left: 1em;
   }
 
   .email-input::placeholder {
@@ -1014,14 +1016,16 @@ font-size: 2.7em;
     padding: 0.3em;
     font-size: 1em;
     border-radius: 100em;
-    width: 11em;
+    width:11.8em;
     color: white;
     cursor: pointer;
+    opacity: 0.5;
   }
 
   .submit-button:hover {
     background: black;
     color: white;
+    opacity: 1;
   }
 
   .email-input:focus {
@@ -1050,6 +1054,7 @@ font-size: 2.7em;
 
   .email-input {
     width: 29em;
+    height: 1.6em;
   }
 
   .submit-button {

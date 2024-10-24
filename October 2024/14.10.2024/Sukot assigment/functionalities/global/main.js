@@ -25,9 +25,9 @@ import { isNextPagePrevPageTodayMustWatch, todayMustWatchPlayButtons } from "../
 import { isNextPagePrevPageWeeklyHits, weeklyHitsPageButtons } from "../Event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
 
 // Event Listeners for the Homepage
-import { setupHomepagePagination } from "../Event-listeners/pagination-buttons/homepage-containers-next-prev-pagination.js"; // Sets up homepage pagination
+import { setupHomepagePagination } from "../Event-listeners/user-activity/movies-categories-pagination.js"; // Sets up homepage pagination
 import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/global-inputs-el.js"; // Handles movie search by ID or name
-import { HomeMovieDataButtonClicks } from "../Event-listeners/user-activity/homepage-buttons-el.js"; // Handles homepage movie data button clicks
+import { moviesCategoriesButtons } from "../Event-listeners/user-activity/movies-categories-buttons-el.js"; // Handles homepage movie data button clicks
 
 // Event Listener for the Feedback Page
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
@@ -53,7 +53,7 @@ if (window.location.pathname.endsWith("movies-categories.html")) {
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   setupHomepagePagination(); // Set up pagination controls for the homepage
-  HomeMovieDataButtonClicks(); // Handle button clicks for movies on the homepage
+  moviesCategoriesButtons(); // Handle button clicks for movies on the homepage
 }
 
 if (window.location.pathname.endsWith('favorite.html')) {

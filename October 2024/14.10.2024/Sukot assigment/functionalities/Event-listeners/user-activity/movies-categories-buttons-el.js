@@ -7,7 +7,7 @@ import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 
 // Handles user interactions on the homepage for movie cards.
-const HomeMovieDataButtonClicks = () => {
+const moviesCategoriesButtons = () => {
   // Attach an event listener to each movie card container on the homepage.
   homePageDivs.forEach((cardMoviesContainer) => {
     cardMoviesContainer.addEventListener('click', async (ev) => {
@@ -116,4 +116,4 @@ const HomeMovieDataButtonClicks = () => {
   });
 };
 
-export { HomeMovieDataButtonClicks };
+export { moviesCategoriesButtons };

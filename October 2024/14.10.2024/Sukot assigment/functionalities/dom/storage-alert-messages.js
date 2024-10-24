@@ -94,6 +94,16 @@ const alertMessagesTypes = (messageType, word) => {
       messageType: 'No trailer to watch',
       message: `No trailer for "${word}".`,
       backgroundColor: '#ffcd05'
+    },
+    {
+      messageType: 'No-trailer-found',
+      message: `No trailer found for: "${word}".`,
+      backgroundColor: '#ffcd05'
+    },
+    {
+      messageType: 'reached-last-page',
+      message: `You have reached the last page ${word}.`,
+      backgroundColor: '#ffcd05'
     }
   ];
 

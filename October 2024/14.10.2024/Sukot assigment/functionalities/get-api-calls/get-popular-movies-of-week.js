@@ -3,6 +3,7 @@ import { getData } from "./api-functions.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 import { displayMovies } from "../DOM/display-movies-dom.js";
 import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
+import { isMaxPageReached } from "../DOM/is-max-page-reached-dom.js";
 
 // This function retrieves popular movies of the week for the "Weekly Hits" page.
 // It accepts a page count parameter for pagination, defaulting to 1 if not provided.
@@ -23,6 +24,9 @@ const popularMoviesOfWeek = async (count = 1) => {
     // Update the title with the total number of results and current page information.
     let textTitle = `Weekly hits movies: Page ${data.page}/${data.total_pages}`;
     dynamicTitlesDisplay('Weekly hits page title', textTitle);
+
+    // Checking if we reached maxed page and if so we return a user notification and stop for further calls by removing the pagination buttons.
+    isMaxPageReached(count,data.total_pages)
 
   } catch (error) {
     // Log any errors that occur during the fetch operation and redirect to the error page.

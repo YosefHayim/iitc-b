@@ -28,7 +28,7 @@ const alertMessagesTypes = (messageType, word) => {
     },
     {
       messageType: 'success-added-movie-to-favorite-picks',
-      message: `"${word}" added to favorites.`,
+      message: `"${word}" added to favorite picks.`,
       backgroundColor: 'green'
     },
     {
@@ -51,6 +51,11 @@ const alertMessagesTypes = (messageType, word) => {
     {
       messageType: 'Error',
       message: 'Error occurred!',
+      backgroundColor: 'red'
+    },
+    {
+      messageType: 'already-in-favorite-list',
+      message: `${word} Already added to favorite.`,
       backgroundColor: 'red'
     },
     {

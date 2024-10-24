@@ -8,6 +8,7 @@ import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js"
 import { popularMoviesOfDay } from "../../get-api-calls/get-popular-movies-of-today.js";
 import { increasePage } from "../../global/increasing-page.js";
 import { decreasePage } from "../../global/decreasing-page.js";
+import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
 
 // Handles user interactions on the "Weekly Hits" page.
 const weeklyHitsPageButtons = () => {
@@ -67,12 +68,23 @@ const weeklyHitsPageButtons = () => {
       }
     }
 
-    // Handle "Heart" button click: Add the movie to the favorites list.
-    if (heartBtn) {
-      ev.preventDefault();
-      addfavoriteMovieToList(movieCardId);
-      displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
-    }
+      // Handle the heart button click: Add the movie to the favorites list.
+      if (heartBtn) {
+        ev.preventDefault();
+        const isAdded = isMovieAddedFav(movieCardId,movieName);
+
+        // If the movie was successfully added to the favorites (not already in the list)
+        if (isAdded) {
+          // Now we add the movie to the list and display the success message
+          addfavoriteMovieToList(movieCardId);
+          displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
+          return;
+          
+        } else {
+          // Do nothing if the movie was already in the favorites
+          return;
+        }
+      }
 
     // Handle "Play" button click: Open the movie trailer.
     if (playButton) {

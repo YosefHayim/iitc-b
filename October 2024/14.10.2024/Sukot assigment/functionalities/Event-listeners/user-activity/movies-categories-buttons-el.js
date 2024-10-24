@@ -1,10 +1,11 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { homePageDivs, searchPaginationContainer } from "../../DOM/storage-elements-dom.js";
+import { homePageDivs } from "../../DOM/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
+import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
 
 // Handles user interactions on the homepage for movie cards.
 const moviesCategoriesButtons = () => {
@@ -70,9 +71,19 @@ const moviesCategoriesButtons = () => {
       // Handle the heart button click: Add the movie to the favorites list.
       if (heartButton) {
         ev.preventDefault();
-        addfavoriteMovieToList(movieId);
-        displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
-        return;
+        const isAdded = isMovieAddedFav(movieId,movieName);
+
+        // If the movie was successfully added to the favorites (not already in the list)
+        if (isAdded) {
+          // Now we add the movie to the list and display the success message
+          addfavoriteMovieToList(movieId);
+          displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
+          return;
+          
+        } else {
+          // Do nothing if the movie was already in the favorites
+          return;
+        }
       }
 
       // Handle the play button click: Open the movie trailer.

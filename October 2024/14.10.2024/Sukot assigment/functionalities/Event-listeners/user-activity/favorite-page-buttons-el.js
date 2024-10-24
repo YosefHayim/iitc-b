@@ -5,6 +5,8 @@ import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie
 import { handleCopyToClipboard } from "../user-activity/global-copy-to-clipboard-el.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
+import { movieIdList } from "../../DOM/favorite-ids-storage.js";
+import { saveMoviesToLocalStorage } from "../../DOM/save-movies-to-ls-dom.js";
 
 // Handles all user interactions on the favorite movies page using event delegation.
 const handleFavoriteMoviePage = () => {
@@ -70,6 +72,11 @@ const handleFavoriteMoviePage = () => {
     if (removeButton) {
       ev.preventDefault();
       try {
+        movieIdList.delete(favMovieId)
+        
+        // Save the updated Set to localStorage
+        saveMoviesToLocalStorage(movieIdList);
+        
         removeFavMovie(favMovieId);  // Remove the movie from the favorites list.
         movieCard.style.display = 'none';  // Hide the movie card from the UI.
         displayAlertMessage('success-removed-movie', movieName);

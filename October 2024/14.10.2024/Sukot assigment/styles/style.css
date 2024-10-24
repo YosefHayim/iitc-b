@@ -149,8 +149,8 @@ background: none;
 }
 
 .logo-link-mobile:hover {
-background: var(--rating--color);
-border-radius: 5em;
+background: var(--background-grey-color-btns);
+border-radius: 100em;
 padding: 0.5em;
 }
 
@@ -534,8 +534,9 @@ z-index: 9999;
 }
 
 .logo:active,.logo-icon:active {
-background: var(--lighter-red-color);
+background: var(--trans-white-bg);
 border-radius: 2em;
+padding: 0.5em;
 }
 
 .icon:active {
@@ -757,12 +758,20 @@ margin-bottom: 1em;
 width: 20em;
 border-radius: 1em;
 animation: glow 3s ease-in-out infinite;
-filter: grayscale(100%);
 cursor: pointer;
 }
 
+.tim-watching-tv,.tim-waving {
+filter: grayscale(100%);
+}
+
+.now-word {
+opacity: 1;
+color: black;
+}
+
 .grayscale {
-  filter: grayscale(0%);
+filter: grayscale(0%);
 }
 
 @keyframes glow {
@@ -832,12 +841,21 @@ box-shadow: 0em 0em 2em white;
 cursor: pointer;
 }
 
+@keyframes flash {
+0%, 100% { opacity: 1; }
+50% { opacity: 0; }
+}
+
+.sign-up-newsletter-container {
+animation: flash 5s infinite;
+}
+
 .movies-categories {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2em;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 0.2em;
 }
 
 .first-p {
@@ -845,7 +863,22 @@ font-size: 1.8em;
 width: 95%;
 margin-top: 1em;
 margin-bottom: 0.5em;
+animation: slideUp 1s ease-out;
+
 }
+
+@keyframes slideUp {
+0% {
+transform: translateY(100%);
+opacity: 0;
+}
+100% {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+
 
 .header-txt {
 display: flex;
@@ -854,8 +887,24 @@ justify-content: center;
 align-items: center;
 }
 
+@keyframes zoomInDown {
+0% {
+opacity: 0;
+transform: scale(0.1) translateY(-100%);
+}
+60% {
+opacity: 1;
+transform: scale(0.475) translateY(20px);
+}
+100% {
+transform: scale(1) translateY(0);
+}
+}
+
 .header-txt > h1 {
 font-size: 2.7em;
+animation: zoomInDown 1s ease-in-out;
+
 }
 
 .text-container > h2 {
@@ -864,106 +913,106 @@ margin-bottom: 0.3em;
 }
 
 .sign-up-newsletter-container {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  border-radius: 1em;
-  padding: 1.5em;
-  font-size: 1.5em;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2em;
-  background-color: #1b1b1be3;
+display: flex;
+flex-direction: column;
+color: white;
+border-radius: 1em;
+padding: 1.5em;
+font-size: 1.5em;
+justify-content: center;
+align-items: center;
+margin-bottom: 2em;
+background-color: #1b1b1be3;
 }
 
 .news-letter-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
-  text-align: center;
-  gap: 0.5em;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: baseline;
+text-align: center;
+gap: 0.5em;
 }
 
 .sign-up-newsletter-container > h2 {
-  font-size: 1.3em;
-  margin-bottom: 0.5em;
-  text-align: center;
+font-size: 1.3em;
+margin-bottom: 0.5em;
+text-align: center;
 }
 
 .email-input {
-  border: none;
-  background: white;
-  border-radius: 100em;
-  height: 2.6em;
-  width: 20em;
-  padding-left: 1em;
+border: none;
+background: white;
+border-radius: 100em;
+height: 2.6em;
+width: 20em;
+padding-left: 1em;
 }
 
 .email-input::placeholder {
-  color: rgb(128, 128, 128);
-  text-align: left;
-  font-family: "Bebas Neue";
-  padding-left: 1em;
-  font-size: 0.7em;
+color: rgb(128, 128, 128);
+text-align: left;
+font-family: "Bebas Neue";
+padding-left: 1em;
+font-size: 0.7em;
 }
 
 .submit-button {
-  border: none;
-  background: red;
-  font-family: 'Bebas Neue';
-  padding: 0.3em;
-  font-size: 1em;
-  border-radius: 100em;
-  width:11.8em;
-  color: white;
-  cursor: pointer;
-  opacity: 0.5;
+border: none;
+background: red;
+font-family: 'Bebas Neue';
+padding: 0.3em;
+font-size: 1em;
+border-radius: 100em;
+width:11.8em;
+color: white;
+cursor: pointer;
+opacity: 0.5;
 }
 
 .submit-button:hover {
-  background: black;
-  color: white;
-  opacity: 1;
+background: black;
+color: white;
+opacity: 1;
 }
 
 .email-input:focus {
-  font-family: "Bebas Neue";
-  color: black;
-  text-align: left;
-  padding-left: 1em;
+font-family: "Bebas Neue";
+color: black;
+text-align: left;
+padding-left: 1em;
 }
 
 .news-letter-p {
-  text-align: center;
-  font-size: 0.7em;
-  margin-bottom: 1em;
+text-align: center;
+font-size: 0.7em;
+margin-bottom: 1em;
 }
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
 
 .email-input,.email-input:focus {
-  font-size: 1em;
-  padding-left: 1em;
+font-size: 1em;
+padding-left: 1em;
 }
 
 .sign-up-newsletter-container > h2 {
-  letter-spacing: 0.2em;
+letter-spacing: 0.2em;
 }
 
 .sign-up-newsletter-container {
-  padding: 3em;
-  width: 30em;
+padding: 3em;
+width: 30em;
 }
 
 .email-input {
-  width: 29em;
-  height: 1.6em;
+width: 29em;
+height: 1.6em;
 }
 
 .submit-button {
-  width: 30em;
+width: 30em;
 }
 
 .first-p {
@@ -1024,10 +1073,10 @@ gap: 13em;
 }
 
 .top-navbar:hover .dropdown-content {
-  width: auto;
-  gap: 1em;
-  transform: translate(-3.5em, -2.1em);
-  padding: 2em;
+width: auto;
+gap: 1em;
+transform: translate(-3.5em, -2.1em);
+padding: 2em;
 }
 
 .dropdown-content a {
@@ -1148,8 +1197,13 @@ display: none;
 }
 
 .logo-icon:hover {
-background: var(--lighter-red-color);
+background: var(--background-grey-color-btns);
 border-radius: 3em;
+padding: 0.5em;
+}
+
+.logo-icon {
+padding: 0.5em;
 }
 
 .navbar-desktop { 

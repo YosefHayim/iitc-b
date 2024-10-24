@@ -35,8 +35,8 @@ import { homepageSearchListener } from "../Event-listeners/user-activity/search-
 import { toggleThemeMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
 import { isNextPagePrevPageSearchPage, searchPageButtonsEl } from "../Event-listeners/user-activity/search-page-buttons-el.js";
 import { isNextPagePrevPageTrendingNow, trendingNowPageButtons } from "../Event-listeners/user-activity/trending-now-page-buttons-el.js";
-import { hotOnThebigScreenPageButtons } from "../Event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
-import { hotPicksButtonsPage } from "../Event-listeners/user-activity/hot-picks-buttons-el.js";
+import { hotOnThebigScreenPageButtons, isNextPagePrevPageHotOnBigScreenPagination } from "../Event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
+import { hotPicksButtonsPage, hotPicksPagination } from "../Event-listeners/user-activity/hot-picks-buttons-el.js";
 import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../Event-listeners/user-activity/next-big-hits-buttons-el.js";
 import { homepageContainerButtons } from "../DOM/homepage-dom.js"
 
@@ -113,6 +113,8 @@ if(window.location.pathname.endsWith('hot-on-the-big-screen.html')) {
   hotOnThebigScreenPageButtons()
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+  isNextPagePrevPageHotOnBigScreenPagination()
+
 }
 
 if(window.location.pathname.endsWith('next-big-hits.html')) {
@@ -134,6 +136,7 @@ if(window.location.pathname.endsWith('trending-now.html')) {
 if(window.location.pathname.endsWith('hot-picks.html')) {
   fetchTopRatedMovies(); // Fetch top-rated movies
   hotPicksButtonsPage()
+  hotPicksPagination()
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }

@@ -130,6 +130,7 @@ const hotOnThebigScreenPageButtons = () => {
 
   const isNextPagePrevPageHotOnBigScreenPagination = () => {
     let count = 1
+  console.log(regPaginationContainer);
   
     regPaginationContainer.addEventListener('click', (ev) => {
       
@@ -157,6 +158,5 @@ const hotOnThebigScreenPageButtons = () => {
     })
   }
 
-isNextPagePrevPageHotOnBigScreenPagination()
 
-export { hotOnThebigScreenPageButtons };
+export { hotOnThebigScreenPageButtons, isNextPagePrevPageHotOnBigScreenPagination }

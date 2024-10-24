@@ -157,7 +157,4 @@ const hotPicksButtonsPage = () => {
     })
   }
 
-hotPicksPagination()
-
-
-export { hotPicksButtonsPage };
+export { hotPicksButtonsPage,hotPicksPagination };

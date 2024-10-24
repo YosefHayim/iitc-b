@@ -15,52 +15,86 @@ Welcome to the **Movie Database Application**! This app allows users to search f
 - **Roboto**: Fallback font for enhanced readability.
 
 ## Image Structure
-Organized image folders for various sections:
-- **About Us Page**: About Us section images.
-- **Buttons Pagination**: UI button images.
-- **Desktop Navbar**: Desktop navigation images.
-- **Error 404 Page**: 404 error images.
-- **Favicon**: Site favicon.
-- **Favorite Page**: Favorite movie images.
-- **Homepage Background**: Background images for the homepage.
-- **Mobile Navbar**: Mobile navigation images.
-- **Feedback Page**: User feedback images.
-- **User Activity**: User interaction images.
+The image assets are organized into folders by purpose for easier management:
+- **About Us Page**: Images used for the About Us section.
+- **Buttons Pagination**: UI button images for pagination.
+- **Desktop Navbar**: Images for the desktop version of the navigation bar.
+- **Error 404 Page**: Images used on the 404 error page.
+- **Favicon**: Icon for the website tab (favicon).
+- **Favorite Page**: Images for displaying favorite movies.
+- **Homepage Background**: Background images used on the homepage.
+- **Mobile Navbar**: Navigation images for the mobile layout.
+- **Feedback Page**: Images for user feedback.
+- **User Activity**: Images related to user interaction or activities.
 
 ## Styles
-Styles are organized by component and page types for cohesive design across desktop and mobile views.
+The stylesheets are structured by page and component for consistency and ease of maintenance. This ensures cohesive design across both desktop and mobile devices.
 
 ## Functionalities
 
 ### DOM Manipulation
-- **alert-message-dom.js**: Manages alert messages.
-- **apply-white-mode.js**: Toggles light mode.
-- **display-movies-dom.js**: Displays movie listings.
-- **favorite-movie-card-dom.js**: Manages favorite movie display.
-- *(and more!)*
+The following files manage different parts of the DOM:
+- **alert-message-dom.js**: Handles displaying alert messages across the app.
+- **apply-white-mode.js**: Toggles the white (light) mode for the website.
+- **display-movies-dom.js**: Dynamically displays movie listings fetched from the API.
+- **favorite-movie-card-dom.js**: Manages the display of favorite movie cards.
+- *(and more)*
 
 ### Event Listeners
-- **homepage-containers-next-prev-pagination.js**: Handles pagination navigation.
-- **global-burger-open-mobile-menu-el.js**: Opens mobile menu.
-- **search-query.js**: Processes search queries.
-- *(and more!)*
+- **homepage-containers-next-prev-pagination.js**: Manages next/previous pagination on the homepage.
+- **global-burger-open-mobile-menu-el.js**: Controls opening and closing the mobile menu.
+- **search-query.js**: Handles search queries and directs users to the appropriate movie listings.
+- *(and more)*
 
 ### API Calls
-- **api-functions.js**: Manages API interactions.
-- **get-favorite-movies-list.js**: Fetches user's favorite movies.
-- **get-popular-movies-of-week.js**: Retrieves popular movies of the week.
-- *(and more!)*
+API interaction is handled through the following files:
+- **api-functions.js**: Manages all API calls to fetch and manipulate data.
+- **get-favorite-movies-list.js**: Retrieves the user's list of favorite movies.
+- **get-popular-movies-of-week.js**: Fetches the most popular movies for the current week.
+- *(and more)*
 
 ### Global Files
-- **env.js**: Contains environment variables.
-- **main.js**: Main entry point of the application.
-- *(and more!)*
+Global files used across the app include:
+- **env.js**: Contains the environment variables like API keys and tokens.
+- **main.js**: The central script for initializing and running the app.
+- *(and more)*
 
 ### Post-API Calls
-- **post-add-movie-to-favorite-list.js**: Adds movies to favorites via API.
-- **post-remove-movie-from-favorite-list.js**: Removes movies from favorites via API.
+These files handle post-API interactions:
+- **post-add-movie-to-favorite-list.js**: Adds a selected movie to the user's favorite list.
+- **post-remove-movie-from-favorite-list.js**: Removes a movie from the user's favorite list.
 
 ## Popcorn Character Design
-- **Prompt**: A 2D flat design of a cartoonish popcorn character, inspired by the Matrix. It stands in an action pose wearing a black coat and sunglasses, with a friendly smile. It features a striped pattern against a neon red background with retro virtual reality effects.
-- **Custom GPT Used**: [Consistent Character GPT](https://chatgpt.com/g/g-a9JivI0y2-consistent-character-gpt-fast-high-quality)
-- **Seed Numbers for Design**: 773258406, 2812509453, 773258406, 1971093150 , 3636573044
+- **Design Description**: A 2D, flat, cartoon-style popcorn character inspired by the Matrix. It stands in an action pose, wearing a black coat and sunglasses, with a friendly smile. The background features a striped pattern with neon red highlights and retro virtual reality effects.
+- **Custom GPT Used for the character design**: [Consistent Character GPT](https://chatgpt.com/g/g-a9JivI0y2-consistent-character-gpt-fast-high-quality)
+- **Seed Numbers for Design**: 773258406, 2812509453, 773258406, 1971093150, 3636573044
+
+## Conclusions from Completing the Project
+1. **Research First**: Before jumping into coding, research how a typical frontend vanilla project should be structured.
+2. **Plan Your Design**: Instead of constantly modifying and refactoring, settle on a prototype and make changes from there.
+3. **Balance Design and Functionality**: A beautiful website with poor functionality is not effective. Strive for balance.
+4. **Focus on One Page**: Rather than copying and pasting sections across multiple HTML files, finish one page completely before moving on.
+5. **Learn Through Doing**: Hands-on learning is key to understanding code and improving skills.
+6. **Improvement Over Time**: Although messy at the start, the code became more structured and cleaner over the course of the project.
+7. **Work in Short Intervals**: Stick to short work sessions, like the 30-minute Pomodoro technique, to avoid burnout.
+8. **Comment Your Code**: Adding comments makes it easier for others (and your future self) to understand the code’s purpose.
+9. **Use Short, Descriptive Function Names**: Keep function names simple and reflective of their purpose.
+10. **Consistent Naming**: Name your files and functions similarly to avoid confusion.
+11. **Use Proper HTML Tags**: Stick to semantic HTML tags such as `<main>`, `<section>`, `<span>`, and `<strong>`.
+12. **Leverage Local Storage**: It's powerful for saving user preferences like toggling between dark and light modes.
+13. **Don't Panic**: If things go wrong, take your time to fix issues gradually rather than rushing.
+14. **Stay Focused**: Work on one task at a time without getting distracted by other related areas.
+15. **Maintain Clean Code**: Ensure the HTML, JavaScript, and CSS are properly structured, with adequate spacing between lines.
+16. **Button Placement**: Avoid placing button tags inside an image; it's better to do the reverse.
+17. **Minimize CSS Transforms**: Avoid excessive use of the CSS `transform` property for smoother performance.
+18. **Design Matters**: A well-designed website is just as important as functionality.
+19. **Keep Functions Short**: If a function exceeds 20–30 lines, break it down into smaller, modular pieces.
+20. **Get Proper Rest**: Don’t stay up all night—better sleep leads to better performance.
+21. **New Concepts Learned**: Throughout the project, I picked up new techniques such as sets, localStorage, `window.navigate`, `window.href`, passing queries in URLs, toggling between dark and light modes, organizing files, creating modular code, and using event delegation.
+22. **Modular Code**: Storing reusable functions and other elements helped in creating additional pages without duplicating code.
+23. **Reduce Repetition**: Look for ways to minimize repeated code, especially in event listeners.
+24. **Checklists Help**: Create a checklist of needed features before starting to code to avoid confusion.
+25. **Functionality First, Then Design**: Prioritize getting the app working correctly before focusing on the design.
+26. **Mobile-First Design**: Always start by designing for mobile before scaling to desktop.
+
+**Total hours to complete the project**: 106 hours and 50 minutes (tracked via Google Calendar).

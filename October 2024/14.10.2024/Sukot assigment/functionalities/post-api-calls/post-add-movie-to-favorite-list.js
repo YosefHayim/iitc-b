@@ -20,9 +20,6 @@ const addfavoriteMovieToList = async (movieCardId) => {
       redirectToErrorPage();
       return;
     }
-
-    // Log the response data for debugging purposes.
-    console.log(data);
     
   } catch (error) {
     // Log any errors that occur during the API call and redirect to the error page.

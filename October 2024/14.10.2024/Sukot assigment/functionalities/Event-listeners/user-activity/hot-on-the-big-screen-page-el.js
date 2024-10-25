@@ -130,7 +130,6 @@ const hotOnThebigScreenPageButtons = () => {
 // A function to preform the next page fetch of the specific API with attaching an event listener
   const isNextPagePrevPageHotOnBigScreenPagination = () => {
     let count = 1
-  console.log(regPaginationContainer);
   
     regPaginationContainer.addEventListener('click', (ev) => {
       

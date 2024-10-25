@@ -1,7 +1,7 @@
-import { homepageMainDiv } from "./storage-elements-dom.js";
+import { mainContainer } from "./storage-elements-dom.js";
 // Homepage images effect for toggle.
 const homepageContainerButtons = () => {
-  homepageMainDiv.addEventListener('click', (ev) => {
+  mainContainer.addEventListener('click', (ev) => {
     const img = ev.target.closest('img');
 
     if (img) {

@@ -12,6 +12,11 @@ const alertMessagesTypes = (messageType, word) => {
       backgroundColor: 'green'
     },
     {
+      messageType: 'success-removed-all-movies',
+      message: `All movies has been removed`,
+      backgroundColor: 'green'
+    },
+    {
       messageType: 'redirecting-next-page',
       message: `Next page: ${word}.`,
       backgroundColor: 'green'
@@ -82,6 +87,11 @@ const alertMessagesTypes = (messageType, word) => {
       messageType: 'no-movie-data-exist',
       message: `No data for "${word}".`,
       backgroundColor: 'red'
+    },
+    {
+      messageType: 'cannot-remove-empty-favorites',
+      message: `Dear ${word}, there are no favorite movies to remove.`,
+      backgroundColor: 'red'      
     },
 
     // Warning messages (yellow background)

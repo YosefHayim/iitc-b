@@ -29,7 +29,7 @@ const getReleaseStatus = (dateString) => {
 
   // If the movie has already been released (daysDifference is negative), return a message about when it was released.
   if (daysDifference < 0) {
-    return `Released ${timePassed.join(", ")} ago`;
+    return `Released: ${timePassed.join(", ")} ago`;
   // Otherwise, return a message about how long is left until the release.
   } else {
     return `${timePassed.join(", ")} left until release`;

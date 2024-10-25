@@ -21,9 +21,6 @@ const removeFavMovie = async (movieCardId) => {
       return;
     }
 
-    // Log the response data for debugging purposes.
-    console.log(data);
-
   } catch (error) {
     // Log any errors that occur during the API call and redirect to the error page.
     console.error('Error removing movie from favorite list:', error);

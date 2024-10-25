@@ -40,6 +40,7 @@ import { hotPicksButtonsPage, hotPicksPagination } from "../Event-listeners/user
 import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../Event-listeners/user-activity/next-big-hits-buttons-el.js";
 import { homepageContainerButtons } from "../DOM/homepage-dom.js"
 import { randomMessageDisplay } from "../DOM/display-random-fact-message-dom.js";
+import { removeAllFavMovies } from "../Event-listeners/user-activity/favorite-page-remove-all-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen

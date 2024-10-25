@@ -36,9 +36,7 @@ const displayAlertMessage = (messageType, word) => {
     // Display alert for 1 second, then hide.
     setTimeout(() => {
       messageContainer.style.display = 'none';
-    }, 1000);
-  } else {
-    console.error('Message type not found!');
+    }, 3000);
   }
 };
 

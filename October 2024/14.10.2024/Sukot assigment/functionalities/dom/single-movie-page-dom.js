@@ -39,7 +39,7 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
         <h2 class="rating-number-txt">${roundRatingFloat}</h2>
       </div>
       <img src="${image}" alt="movie-img" class="single-movie-img">
-      <h2 class="movie-release">Movie release: ${isReleased}</h2>
+      <h2 class="movie-release">${isReleased}</h2>
       <h2 class="movie-genre">Movie genres: ${movieGenres}</h2>
       <h2 class="summary-title">Summary</h2>
       <p class="movie-details">${overviewMovie}</p>

@@ -1,5 +1,5 @@
 import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { favMoviesContainer } from "../../DOM/storage-elements-dom.js";
+import { mainContainer } from "../../DOM/storage-elements-dom.js";
 import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
 import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
 import { handleCopyToClipboard } from "../user-activity/global-copy-to-clipboard-el.js";
@@ -7,10 +7,11 @@ import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
 import { movieIdList } from "../../DOM/favorite-ids-storage.js";
 import { saveMoviesToLocalStorage } from "../../DOM/save-movies-to-ls-dom.js";
+import { removeAllFavMovies } from "./favorite-page-remove-all-el.js";
 
 // Handles all user interactions on the favorite movies page using event delegation.
 const handleFavoriteMoviePage = () => {
-  favMoviesContainer.addEventListener('click', async (ev) => {
+  mainContainer.addEventListener('click', async (ev) => {
     // Identify the clicked element or button by its class.
     const trailerImg = ev.target.closest('.fav-movie-trailer-url');    
     const dataBtn = ev.target.closest('.fav-white-data-btn');
@@ -18,15 +19,27 @@ const handleFavoriteMoviePage = () => {
     const removeButton = ev.target.closest('.fav-remove-btn-icon');
     const playButton = ev.target.closest('.fav-play-button-btn');
     const movieCard = ev.target.closest('.movie-card');
-    const movieName = movieCard.querySelector('.title').textContent;
-    const favMovieId = movieCard.id.replace(/\D/g, '');
+    const removeAllBtn = ev.target.closest('.remove-all-fav')
+    
+    if (removeAllBtn) {
+      removeAllFavMovies()
+    }
 
+    if (!trailerImg && !dataBtn && !shareButton && !removeButton && !playButton && !movieCard && !removeAllBtn) {
+      return
+    }
+    
+    
     // If no movie card is found, display an error message.
     if (!movieCard) {
       displayAlertMessage('no-movie-card-found');
       return;
     }
 
+    const movieName = movieCard.querySelector('.title').textContent;
+    const favMovieId = movieCard.id.replace(/\D/g, '');
+
+    
     // Handle the "data" button click: Navigate to the movie page.
     if (dataBtn) {
       try {
@@ -123,6 +136,7 @@ const handleFavoriteMoviePage = () => {
       }
       return;
     }
+
   });
 };
 

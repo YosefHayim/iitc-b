@@ -7,13 +7,11 @@ const movieIdList = loadMoviesFromLocalStorage();
 
 // Function to add a movie ID to the favorites list and prevent duplicates.
 const isMovieAddedFav = (movieId, movieName) => {
-  console.log(movieIdList);
 
   // Check if the movie is already in the favorites list.
   if (movieIdList.has(movieId)) {
     // Alert the user that the movie is already in their favorites.
     displayAlertMessage('already-in-favorite-list', movieName);
-    console.log(`Movie ID is already in the set, cannot add:`, movieName);
     return false;
     
   } else {
@@ -23,7 +21,6 @@ const isMovieAddedFav = (movieId, movieName) => {
 
     // Alert the user that the movie was successfully added.
     displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
-    console.log('Movie ID successfully added to favorites:', movieName);
     return true;
   }
 };

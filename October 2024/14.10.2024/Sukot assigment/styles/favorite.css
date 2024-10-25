@@ -35,9 +35,11 @@ text-align: center;
 }
 
 .cupid-popcorn {
-width: 35vw;
-animation: flowUpDown 3s ease-in-out infinite;
-
+  width: 40vw;
+  animation: flowUpDown 3s ease-in-out infinite;
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-bottom: 1em;
 }
 
 @keyframes flowUpDown {

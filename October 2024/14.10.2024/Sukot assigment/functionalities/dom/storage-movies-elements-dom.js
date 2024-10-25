@@ -1,4 +1,4 @@
-import { favMoviesContainer, popularMoviesContainer, popularOfTheDayContainer, popularOfTheWeekContainer, searchResultContainer, theatresContainer, topRatedMoviesContainer, upComingMoviesContainer } from "./storage-elements-dom.js";
+import { favMoviesContainer, genreResultContainer, popularMoviesContainer, popularOfTheDayContainer, popularOfTheWeekContainer, searchResultContainer, theatresContainer, topRatedMoviesContainer, upComingMoviesContainer } from "./storage-elements-dom.js";
 
 // This function dynamically selects the appropriate movie container based on the requested container name.
 const moviesStorage = (requestedContainer) => {
@@ -7,6 +7,10 @@ const moviesStorage = (requestedContainer) => {
     {
       containerName: 'Search result page id and name',
       containerEl: searchResultContainer,
+    },
+    {
+      containerName: 'search movies by genre',
+      containerEl : genreResultContainer,
     },
     {
       containerName: 'Favorite movie page',

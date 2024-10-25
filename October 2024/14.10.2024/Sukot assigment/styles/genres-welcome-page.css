@@ -1,0 +1,38 @@
+.genre-image img {
+  max-width: 150px; 
+  display: block;
+  margin: 0 auto;
+  border-radius: 1em;
+  opacity: 0.5;
+}
+
+.genre-image:hover,.genre-image:active {
+  opacity: 1;
+}
+
+.genres-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.genre-title,.shortphrase-genre {
+  text-align: center;
+}
+
+.genre-card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.genre-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

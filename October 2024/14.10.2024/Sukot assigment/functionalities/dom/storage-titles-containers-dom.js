@@ -1,4 +1,4 @@
-import { currentTheaterPage, latestPopularPage, searchResultTitle, templateTitle, topTrendingPage, upComingMoviePage } from "./storage-elements-dom.js";
+import { genreResultContainerTitle, currentTheaterPage, latestPopularPage, searchResultTitle, templateTitle, topTrendingPage, upComingMoviePage } from "./storage-elements-dom.js";
 
 // This function dynamically selects the appropriate title container based on the requested title container name (requestedTContainer).
 // It finds the matching title container to allow DOM manipulation for various sections like search results, weekly hits, etc.
@@ -8,6 +8,10 @@ const titlesStorage = (requestedTContainer) => {
     {
       containerTitleName: 'Todays must watch page title',
       containerTitleEl: templateTitle,
+    },
+    {
+      containerName: 'search-movies-by-genre-title',
+      containerEl : genreResultContainerTitle,
     },
     {
       containerTitleName: 'Weekly hits page title',

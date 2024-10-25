@@ -40,7 +40,7 @@ import { hotPicksButtonsPage, hotPicksPagination } from "../Event-listeners/user
 import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../Event-listeners/user-activity/next-big-hits-buttons-el.js";
 import { homepageContainerButtons } from "../DOM/homepage-dom.js"
 import { randomMessageDisplay } from "../DOM/display-random-fact-message-dom.js";
-import { removeAllFavMovies } from "../Event-listeners/user-activity/favorite-page-remove-all-el.js";
+import { getMovieGenresById } from "../get-api-calls/get-movie-genre-by-id.js"
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -140,6 +140,12 @@ if(window.location.pathname.endsWith('hot-picks.html')) {
   fetchTopRatedMovies(); // Fetch top-rated movies
   hotPicksButtonsPage()
   hotPicksPagination()
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+}
+
+if (window.location.pathname.endsWith('genres-page.html')) {
+  getMovieGenresById()
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }

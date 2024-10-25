@@ -59,6 +59,11 @@ const alertMessagesTypes = (messageType, word) => {
       backgroundColor: 'red'
     },
     {
+      messageType: 'no-genre-movies-found',
+      message: `Didn't find any genre movie ID exist ${word}`,
+      backgroundColor: 'red'
+    },
+    {
       messageType: 'already-in-favorite-list',
       message: `${word} Already added to favorite.`,
       backgroundColor: 'red'

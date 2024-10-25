@@ -64,17 +64,6 @@ These files handle post-API interactions:
 - **post-add-movie-to-favorite-list.js**: Adds a selected movie to the user's favorite list.
 - **post-remove-movie-from-favorite-list.js**: Removes a movie from the user's favorite list.
 
-## Popcorn Character Design
-- **Design Description**: A 2D, flat, cartoon-style popcorn character inspired by the Matrix. The character has a tall body, stands in an action pose wearing a black coat, black skinny jeans, black shoes with white laces, white gloves, and sunglasses, along with a friendly smile. The background features a striped pattern with neon red highlights and retro virtual reality effects. Negative prompt: no 3D design, no 3D dimensions.
---**Beta Character Design**: Generate a cartoon-style character that is a tall popcorn bucket with red and white vertical stripes. The character should have fluffy, natural popcorn at the top of the bucket and a friendly smile. The character wears dark sunglasses, and the black Matrix-style trench coat should be visibly snug and fitted around the lower body, conforming exactly to the popcorn bucket without exceeding, covering, or intersecting any parts of the popcorn container. The coat should have a clean edge that sits precisely aligned with the popcorn bucket, appearing as a perfect garment without any spatial distortion. The coat must appear open in the front and should be naturally flowing but must not cover or extend beyond the boundaries of the popcorn box's sides or top.
-
-Additionally, the trench coat must only extend downward naturally, with realistic physics, ensuring it does not exceed or intersect the lower part of Tim's shape. The arms of the trench coat must be well-separated from the body, with visible details of the cuffs and buttons. Tim should wear black high-top sneakers with white laces and soles. The character must also have white gloves, maintaining a consistent cartoonish look.
-
-The overall design must be 2D cartoon-style with bright colors: red, white, black, and beige/yellow for the popcorn. Minimal shading should be used, focusing instead on bold outlines for clarity. The background must be simple or plain to emphasize Tim. The coat should always look as if it's correctly fitted on a popcorn bucket, with no overlap, collision, or spatial confusion with the body
-
-- **Custom GPT Used for the character design**: [Consistent Character GPT](https://chatgpt.com/g/g-a9JivI0y2-consistent-character-gpt-fast-high-quality)
-- **Seed Numbers for Design**: 773258406, 2812509453, 1971093150, 3636573044,3145708440, 3145708440
-
 ## Conclusions from Completing the Project
 1. **Research First**: Before jumping into coding, research how a typical frontend vanilla project should be structured.
 2. **Plan Your Design**: Instead of constantly modifying and refactoring, settle on a prototype and make changes from there.

@@ -59,8 +59,14 @@ const aboutUsPageSection = document.querySelector('.about-us-section');
 const mainContainer = document.querySelector('main');
 const footer = document.querySelector('footer');
 
+//Genre page el
+const genreResultContainer = document.querySelector('.genres-results-container')
+const genreResultContainerTitle = document.querySelector('.genres-results-name')
+
 // Exported elements for use in other files
 export {
+  genreResultContainerTitle,
+  genreResultContainer,
   FavRemoveAllBtn,
   announcementBar,
   regPaginationContainer,

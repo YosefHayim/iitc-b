@@ -11,6 +11,7 @@ const popularMoviesContainer = document.querySelector('.popular-movies-container
 const topRatedMoviesContainer = document.querySelector('.top-trending-movies-container');
 const theatresContainer = document.querySelector('.currently-movies-in-theatres-container');
 const searchResultContainer = document.querySelector('.search-results-container');
+const announcementBar = document.querySelector('.fun-facts-p')
 
 // Titles and Section Containers
 const homepageTitlesContainers = document.querySelectorAll('div[class*="container-title"]');
@@ -60,6 +61,7 @@ const homepageMainDiv = document.querySelector('main')
 
 // Exported elements for use in other files
 export {
+  announcementBar,
   homepageMainDiv,
   regPaginationContainer,
   toggleIconImage,

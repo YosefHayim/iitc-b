@@ -71,7 +71,7 @@ background-color: red;
 }
 
 .fav-play-button-img:hover,.fav-white-share-img:hover,.fav-remove-btn-img:hover,.fav-white-share-img:hover,.fav-white-data-img:hover {
-background-color: var(--rating--color);
+background-color: red;
 }
 
 .fav-play-button-img,.fav-white-share-img,.fav-remove-btn-img,.fav-white-data-img {

@@ -1,12 +1,11 @@
 .rating-container,.single-img-container,.single-movie-card,.container-title-movie-data,.img-name-container,.single-movie-img {
-display: flex;
-text-align: center;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-width: 100%;
-margin-top: 0.5em;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
 }
 
 .navbar-mobile {
@@ -18,57 +17,61 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-gap: 5em;
 width: 100%;
 flex-wrap: wrap;
-margin-top: 1em;
-margin-bottom: 5em;
+gap: 1.5em;
+margin-bottom: 10em;
 }
 
-.movie-release {
-width: 50%;
-margin-top: 1em;
-margin-bottom: 1em;
+.movie-release,.movie-genre {
+  background: black;
+  color: white;
+  border-radius: 100em;
+  padding: 0.5em;
 }
 
 .movie-link {
 background: none;
 border: none;
-margin-bottom: 2em;
+}
+
+.website-link {
+  font-family: "Bebas Neue";
 }
 
 .movie-link a {
-background: red;
+background: black;
 font-size: 2em;
 padding: 0.5em;
 font-weight: bold;
-font-family: 'Roboto';
-border-radius: 0.1em;
 display: block;
 border-radius: 5em;
 }
 
 .movie-link a:hover,.button-trailer a:hover {
-background-color: white;
-color: black;
+background: var(--lighter-red-color);
+color: white;
 }
 
 .movie-details {
-background: white;
-color: black;
-border-style: dashed;
+background: black;
+color: white;
 padding: 1em;
-font-family: 'Roboto';
 line-height: 1.5em;
-margin-bottom: 2em;
 font-weight: 900;
+border-radius: 100em;
 }
 
 .rating-container {
-margin-top: 1em;
 flex-direction: row;
-width: 50%;
-margin-bottom: 2em;
+}
+
+.rating-number-txt {
+  font-size: 2.5em;
+}
+
+.rating-img {
+  height: 3em;
 }
 
 .single-movie-img,.actor-img {
@@ -77,13 +80,11 @@ border-radius: 0.5em;
 }
 
 .actor-name {
-color: black;
-background: white;
+color: white;
+background: black;
 padding: 0.5em;
 width: 100%;
-margin-top: 1em;
-margin-bottom: 1em;
-border-radius: 0.1em;
+border-radius: 100em;
 }
 
 .title-single-movie {
@@ -95,10 +96,7 @@ align-items: center;
 background: var(--lighter-red-color);
 text-align: center;
 box-shadow: 0em 0em 2.5em -1em;
-border-style: dashed;
-font-size: 2em;
-width: 100vw;
-color: var(--rating--color);
+font-size: 4em;
 }
 
 .button-trailer {
@@ -111,35 +109,30 @@ border-radius: 0.1em;
 text-decoration: none;
 color: white;
 width: auto;
-background: red;
+background: black;
 font-size: 2em;
 padding: 0.5em;
 font-weight: bold;
-font-family: 'Roboto';
 border-radius: 0.1em;
 display: block;
 border-radius: 5em;
+font-family: "Bebas Neue";
 }
 
 .watch-trailer-movie {
-background: red;
+background: black;
 font-size: 2em;
 padding: 0.5em;
 font-weight: bold;
-font-family: 'Roboto';
 border-radius: 0.1em;
-width: 100vw;
 display: block;
 }
 
 .summary-title {
-margin-top: 2em;
-font-family:'Roboto';
 color: white;
-background: red;
-border-radius: 0.2em;
+background: black;
+border-radius: 100em;
 padding: 0.4em;
-width: 100vw;
 font-style: italic;
 letter-spacing: 0.2em;
 }
@@ -152,20 +145,18 @@ border-radius: 3em;
 
 .single-movie-img {
 width: 15em;
-box-shadow: 0 0 0.1em 0.1em var(--rating--color);
+box-shadow: 0 0 0.1em 0.1em white;
 animation: glow 3s ease-in-out infinite;
 }
 
 .actors-title {
 background: black;
 padding: 0.5em;
-width: 100vw;
 text-align: center;
 font-size: 1.5em;
-margin-top: 1em;
-margin-bottom: 1em;
 box-shadow: 0em 0em 1em 0.05em var(--rating--color);
 color: white;
+border-radius: 100em;
 }
 
 .movie-name {
@@ -179,13 +170,13 @@ bottom: 0;
 
 @keyframes glow {
 0% {
-box-shadow: 0em 0em 2em 0.01em var(--rating--color);
+box-shadow: 0em 0em 2em 0.01em var(--lighter-red-color);
 }
 50% {
-box-shadow: 0em 0em 3em 0.5em var(--rating--color);
+box-shadow: 0em 0em 3em 0.5em var(--lighter-red-color);
 }
 100% {
-box-shadow: 0em 0em 2em 0.01em var(--rating--color);
+box-shadow: 0em 0em 2em 0.01em var(--lighter-red-color);
 }
 }
 

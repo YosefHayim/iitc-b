@@ -58,7 +58,6 @@ transform: translateY(0);
 
 .contact-info {
 background: black;
-border-style: dashed;
 padding: 0.5em;
 border-radius: 0.5em;
 flex-wrap: wrap;
@@ -83,8 +82,6 @@ width: auto;
 .about-us-section {
 margin-top: 1em;
 font-size: 1.5em;
-background-color: var(--trans-white-bg);
-border-style:dotted;
 }
 
 body > footer {

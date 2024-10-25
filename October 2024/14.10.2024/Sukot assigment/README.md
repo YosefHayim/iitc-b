@@ -65,9 +65,10 @@ These files handle post-API interactions:
 - **post-remove-movie-from-favorite-list.js**: Removes a movie from the user's favorite list.
 
 ## Popcorn Character Design
-- **Design Description**: A 2D, flat, cartoon-style popcorn character inspired by the Matrix. It stands in an action pose, wearing a black coat and sunglasses, with a friendly smile. The background features a striped pattern with neon red highlights and retro virtual reality effects.
+- **Design Description**:A 2D, flat, cartoon-style popcorn character inspired by the Matrix. The character has a tall body, stands in an action pose wearing a black coat, black skinny jeans, black shoes with white laces, white gloves, and sunglasses, along with a friendly smile. The background features a striped pattern with neon red highlights and retro virtual reality effects. Negative prompt: no 3D design, no 3D dimensions.
+
 - **Custom GPT Used for the character design**: [Consistent Character GPT](https://chatgpt.com/g/g-a9JivI0y2-consistent-character-gpt-fast-high-quality)
-- **Seed Numbers for Design**: 773258406, 2812509453, 773258406, 1971093150, 3636573044
+- **Seed Numbers for Design**: 773258406, 2812509453, 1971093150, 3636573044,3145708440, 3145708440
 
 ## Conclusions from Completing the Project
 1. **Research First**: Before jumping into coding, research how a typical frontend vanilla project should be structured.

@@ -616,13 +616,11 @@ align-items: center;
 background: var(--lighter-red-color);
 text-align: center;
 box-shadow: 0em 0em 2.5em -1em;
-font-size: 0.6em;
-border-style: dashed;
-font-size: 1.5em;
+font-size: 2em;
 flex-wrap: wrap;
 border-radius: 5em;
-width: 50%;
 display: flex;
+padding: 0.3em;
 }
 
 
@@ -752,6 +750,7 @@ align-items: center;
 flex-wrap: wrap;
 margin-top: 1em;
 margin-bottom: 1em;
+padding: 1em;
 }
 
 .tim-watching-tv,.tim-winning,.tim-waving {
@@ -852,7 +851,6 @@ gap: 0.2em;
 
 .first-p {
 font-size: 1.8em;
-width: 95%;
 margin-top: 1em;
 margin-bottom: 0.5em;
 animation: slideUp 1s ease-out;
@@ -997,6 +995,21 @@ margin-bottom: 1em;
   animation: bounce 2s infinite;
 }
 
+.caution-p {
+  color: var(--rating--color);
+  font-size: 0.9em;
+  margin-top: 1em;
+  animation: flash 2s infinite;
+}
+
+.caution-p:hover {
+  color: white;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
@@ -1026,7 +1039,6 @@ width: 30em;
 
 .first-p {
 font-size: 2em;
-width: 75%;
 }
 
 .header-txt > h1 {

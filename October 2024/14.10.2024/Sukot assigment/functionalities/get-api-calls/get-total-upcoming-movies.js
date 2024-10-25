@@ -21,7 +21,7 @@ const fetchUpcomingMovies = async (count = 1) => {
     displayMovies('Upcoming movies page', data);
 
     // Create a dynamic title to inform the user about the current page and total pages.
-    const textTitle = `Page: ${count} / ${data.total_pages}`;
+    const textTitle = ` ${data.page}/${data.total_pages} Pages`;
     dynamicTitlesDisplay('Upcoming movies title', textTitle);
 
     // Checking if we reached maxed page and if so we return a user notification and stop for further calls by removing the pagination buttons.

@@ -22,7 +22,7 @@ const popularMoviesOfWeek = async (count = 1) => {
     displayMovies('Weekly hits popular movies page', data);
 
     // Update the title with the total number of results and current page information.
-    let textTitle = `Weekly hits movies: Page ${data.page}/${data.total_pages}`;
+    let textTitle = `Weekly hits movies: ${data.page}/${data.total_pages} Pages`;
     dynamicTitlesDisplay('Weekly hits page title', textTitle);
 
     // Checking if we reached maxed page and if so we return a user notification and stop for further calls by removing the pagination buttons.

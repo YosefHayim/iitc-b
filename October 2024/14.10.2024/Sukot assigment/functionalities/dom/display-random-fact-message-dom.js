@@ -4,7 +4,7 @@ import { announcementBar } from "./storage-elements-dom.js"
 const randomMessageDisplay = () => {
   if (announcementBar) {
   const randomMessage = randomMessages()
-  announcementBar.innerHTML = `${randomMessage.message}`
+  announcementBar.innerHTML = `${randomMessage.message} `
   }
 }
 

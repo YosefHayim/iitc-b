@@ -20,7 +20,7 @@ const searchMovieByName = async (inputValue, count = 1) => {
 
     
     // Update the title container with the search results information.
-    const textTitle = `${data.total_results} ${inputValue} Movies - Page: ${data.page}/${data.total_pages}`;
+    const textTitle = `${data.total_results} ${inputValue} Movies: ${data.page}/${data.total_pages} Pages`;
     dynamicTitlesDisplay('Search result title page by Name', textTitle);
     
     // Checking if we reached maxed page and if so we return a user notification and stop for further calls by removing the pagination buttons.

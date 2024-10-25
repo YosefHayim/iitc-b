@@ -1,12 +1,12 @@
 .genre-image img {
-  max-width: 150px; 
+  max-width: 13em; 
   display: block;
   margin: 0 auto;
   border-radius: 1em;
   opacity: 0.5;
 }
 
-.genre-image:hover,.genre-image:active {
+.genre-image img:hover,.genre-image img :active {
   opacity: 1;
 }
 
@@ -15,8 +15,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   flex-wrap: wrap;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .genre-title,.shortphrase-genre {
@@ -35,4 +36,32 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.genre-title:hover {
+  color: var(--lighter-red-color);
+}
+
+.genre-direct-btn {
+  cursor: pointer;
+  background: var(--lighter-red-color);
+  color: white;
+  padding: 0.5em;
+  border-radius: 100em;
+  font-size: 1em;
+  margin-top: 1em;
+  border: none;
+  font-family: 'Bebas Neue';
+  font-size: 1.4em;
+  opacity: 0.5;
+}
+
+.genre-direct-btn:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width:1024px) {
+  .genres-container {
+    flex-direction: row;
+  }
 }

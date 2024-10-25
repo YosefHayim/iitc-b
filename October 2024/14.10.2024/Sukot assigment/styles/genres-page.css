@@ -12,3 +12,19 @@
   padding: 0.5em;
   text-align: center;
 }
+
+.white-heart-trailer-btn {
+  transform: translate(4em, -6em);
+}
+
+.white-data-btn {
+  transform: translate(0em, -6em);
+}
+
+.white-share-trailer-btn {
+  transform: translate(-5em, -6em);
+}
+
+.play-button-btn {
+  transform: translate(0, -13.5em);
+}

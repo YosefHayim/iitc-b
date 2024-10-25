@@ -156,4 +156,6 @@ if (window.location.pathname.endsWith('genres-page.html')) {
 
 if (window.location.pathname.endsWith('genres-welcome-page.html')) {
   genresButtonsRedirect()
+  handleBackToTopButtonClick(); // Set up back-to-top button functionality
+  handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }

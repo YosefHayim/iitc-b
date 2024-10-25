@@ -8,13 +8,11 @@ const genresButtonsRedirect = () => {
     ev.preventDefault();
 
     const genreCard = ev.target.closest('.genre-card')
+    const genreButtonNavigate = ev.target.closest('.genre-direct-btn')
+    const imageGenre = ev.target.closest('img')
     
-    if (genreCard) {
+    if (genreButtonNavigate || imageGenre) {
       redirectToGenreMoviesPage(genreCard.id)
-
-    } else {
-      displayAlertMessage('genre-card-id-not-found',genreCard.id)
-      redirectToErrorPage()
     }
   });
 }

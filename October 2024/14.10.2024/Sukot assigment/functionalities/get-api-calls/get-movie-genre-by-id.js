@@ -23,7 +23,7 @@ const getMoviesGenresById = async (genreId = 14, count = 1) => {
 
     const genreName = genresIdsStorage(genreUrlId).name;
 
-    const textTitle = `Genre Movies: ${genreName} Page: ${count} / ${data.total_pages}`;
+    const textTitle = `${genreName} Movies: ${count}/${data.total_pages} Pages`;
     dynamicTitlesDisplay('genres movies title display', textTitle);
 
     isMaxPageReached(count, data.total_pages);

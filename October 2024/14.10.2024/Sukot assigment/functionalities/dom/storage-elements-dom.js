@@ -63,8 +63,12 @@ const footer = document.querySelector('footer');
 const genreResultContainer = document.querySelector('.genres-results-container')
 const genreResultContainerTitle = document.querySelector('.genres-results-name')
 
+// genres-welcome-page el 
+const genresContainer = document.querySelector('.genres-container')
+
 // Exported elements for use in other files
 export {
+  genresContainer,
   genreResultContainerTitle,
   genreResultContainer,
   FavRemoveAllBtn,

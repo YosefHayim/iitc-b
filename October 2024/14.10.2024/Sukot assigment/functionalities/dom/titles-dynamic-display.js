@@ -4,8 +4,6 @@ import { titlesStorage } from "./storage-titles-containers-dom.js";
 // It takes two parameters: the containerTitleName (passed to titlesStorage to find the container) and the textTitle (the text to display).
 const dynamicTitlesDisplay = (containerTitleName, textTitle) => {
   const chosenContainer = titlesStorage(containerTitleName);
-  console.log(chosenContainer);
-  
   
   // If the container is not found, log an error and stop.
   if (!chosenContainer) {

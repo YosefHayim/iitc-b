@@ -4,7 +4,7 @@ import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 import { searchMovieById } from "../../get-api-calls/get-movie-id-by-id.js";
 
 // This function sets up the homepage listener for processing search queries.
-const homepageSearchListener = () => {
+const inputSearchListener = () => {
   // Attach an event listener to the window for when the DOM content is fully loaded.
   window.addEventListener('DOMContentLoaded', async () => {
     // Extract the query parameter from the URL.
@@ -39,4 +39,4 @@ const homepageSearchListener = () => {
   });
 }
 
-export { homepageSearchListener };
+export { inputSearchListener };

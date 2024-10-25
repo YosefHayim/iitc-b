@@ -31,7 +31,7 @@ import { moviesCategoriesButtons } from "../Event-listeners/user-activity/movies
 
 // Event Listener for the Feedback Page
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
-import { homepageSearchListener } from "../Event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
+import { inputSearchListener } from "../Event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
 import { toggleThemeMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
 import { isNextPagePrevPageSearchPage, searchPageButtonsEl } from "../Event-listeners/user-activity/search-page-buttons-el.js";
 import { isNextPagePrevPageTrendingNow, trendingNowPageButtons } from "../Event-listeners/user-activity/trending-now-page-buttons-el.js";
@@ -40,14 +40,16 @@ import { hotPicksButtonsPage, hotPicksPagination } from "../Event-listeners/user
 import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../Event-listeners/user-activity/next-big-hits-buttons-el.js";
 import { homepageContainerButtons } from "../DOM/homepage-dom.js"
 import { randomMessageDisplay } from "../DOM/display-random-fact-message-dom.js";
-import { getMovieGenresById } from "../get-api-calls/get-movie-genre-by-id.js"
+import { getMoviesGenresById } from "../get-api-calls/get-movie-genre-by-id.js"
+import { genresButtonsRedirect } from "../Event-listeners/user-activity/genres-welcome-page-el.js";
+import { genresButtonsListeners, genresPaginationButtons } from "../Event-listeners/user-activity/genres-pages-buttons-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
 handleBurgerIconToggle(); // Toggles burger menu for mobile
 resetPlaceholder(); // Resets placeholder values
 handleMovieSearchByIdOrName(); // Set up search functionality for movie IDs or names
-homepageSearchListener(); // Listens for homepage search input events
+inputSearchListener(); // Listens for search input events
 toggleThemeMode(); // Initialize dark mode toggle functionality
 randomMessageDisplay() //Display random jokes on entire pages.
 
@@ -145,7 +147,13 @@ if(window.location.pathname.endsWith('hot-picks.html')) {
 }
 
 if (window.location.pathname.endsWith('genres-page.html')) {
-  getMovieGenresById()
+  getMoviesGenresById()
+  genresButtonsListeners()
+  genresPaginationButtons()
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
+}
+
+if (window.location.pathname.endsWith('genres-welcome-page.html')) {
+  genresButtonsRedirect()
 }

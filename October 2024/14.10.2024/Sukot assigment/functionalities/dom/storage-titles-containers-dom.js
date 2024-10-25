@@ -10,7 +10,7 @@ const titlesStorage = (requestedTContainer) => {
       containerTitleEl: templateTitle,
     },
     {
-      containerName: 'search-movies-by-genre-title',
+      containerName: 'movies-genres-title',
       containerEl : genreResultContainerTitle,
     },
     {

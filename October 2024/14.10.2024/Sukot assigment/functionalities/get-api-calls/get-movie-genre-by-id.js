@@ -2,8 +2,11 @@ import { displayAlertMessage } from "../DOM/alert-message-dom.js";
 import { displayMovies } from "../DOM/display-movies-dom.js";
 import { isMaxPageReached } from "../DOM/is-max-page-reached-dom.js";
 import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
+import { genreResultContainerTitle } from "../DOM/storage-elements-dom.js";
 import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
 import { getData } from "./api-functions.js";
+console.log(genreResultContainerTitle);
+
 
 const getMovieGenresById = async (genreId = 28,count = 1) => {
   try {
@@ -20,7 +23,7 @@ const getMovieGenresById = async (genreId = 28,count = 1) => {
     displayMovies('search movies by genre',data)
 
     const textTitle = `Page: ${count} / ${data.total_pages}`;
-    dynamicTitlesDisplay('search-movies-by-genre-title', textTitle);
+    dynamicTitlesDisplay('movies-genres-title', textTitle);
 
     isMaxPageReached(count,data.total_pages)
 

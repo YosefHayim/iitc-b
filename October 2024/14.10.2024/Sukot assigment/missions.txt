@@ -1,2 +1,0 @@
-make a storage object of each genre id and use it as a dynamic get id with a find if that id wasent find so we make this website dynamic.
-organizing files to sub folders in the folders

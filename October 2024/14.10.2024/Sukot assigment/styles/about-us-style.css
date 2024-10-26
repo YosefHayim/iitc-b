@@ -9,14 +9,14 @@ width: 20em;
 }
 
 .about-us-section {
-padding: 2em;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-font-family: "Bebas Neue";
-text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .sub-header {
@@ -56,13 +56,14 @@ color: black;
 }
 
 .about-us-section-container {
-padding: 2em;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-padding-top: 0em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 1em;
+  line-height: 2.5em;
 }
 
 @keyframes flowUpDown {
@@ -86,7 +87,8 @@ display: flex;
 }
 
 .about-us-container-title {
-padding: 0.5em;
+padding: 1em;
+font-size: 2.5em;
 }
 
 h2 {
@@ -107,7 +109,49 @@ blockquote {
   box-shadow: 0em 0em 2em 0.2em snow;
 }
 
+.t-king-og-legends {
+  color: var(--lighter-red-color);
+  font-size: 1.3em;
+}
+
 @media screen and (min-width:1024px) {
+
+  .p-two-container:hover h2, .p-two-container:hover p, .p-two-container:hover img,
+  .p-three-container:hover h2, .p-three-container:hover p, .p-three-container:hover img,
+  .p-four-container:hover h2, .p-four-container:hover p, .p-four-container:hover img,
+  .p-five-container:hover h2, .p-five-container:hover p, .p-five-container:hover img,
+  .p-six-container:hover h2, .p-six-container:hover p, .p-six-container:hover img,
+  .p-seven-container:hover h2, .p-seven-container:hover p, .p-seven-container:hover img,.p-seven-container:hover #grand-finalle {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+  
+img {
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  h2 {
+    opacity: 0;
+  }
+
+  h2:hover {
+    color: var(--lighter-red-color);
+  }
+
+  #grand-finalle {
+    opacity: 0;
+  }
+
+  #about-us > div.p-five-container > div > h2:hover {
+    color: var(--rating--color);
+  }
+
+  p {
+    opacity: 0;
+  }
+
+
 
 .p-two,
 .p-three,

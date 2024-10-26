@@ -9,8 +9,44 @@ const applyWhiteMode = () => {
   const mobileNavTop = document.querySelector('.navbar-mobile')
   const footer = document.querySelector('footer')
   const mainEl = document.querySelector('main')
+  const genreTitles = document.querySelectorAll('.genre-title')
+  const genresButtons = document.querySelectorAll('.genre-direct-btn')
+  const shortphraseGenres = document.querySelectorAll('.shortphrase-genre')
+  const redirectGenresButtons = document.querySelectorAll('.button-t')
+  const genresImgs = document.querySelectorAll('img')
 
   toggleIconImage.src = '../images/user-activity/white-circle.svg';
+
+  genresImgs.forEach((img) => {
+    img.style.cssText = `
+    opacity: 1;
+    `
+  })
+
+  redirectGenresButtons.forEach((redirectBtn) => {
+    redirectBtn.style.cssText = `
+    color: black;
+    `
+  })
+
+  shortphraseGenres.forEach((phrase) => {
+    phrase.style.cssText = `
+    color:black;
+    `
+  })
+
+  genresButtons.forEach((button) => {
+    button.style.cssText = `
+    opacity: 1;
+    color: black;
+    `
+  })
+
+  genreTitles.forEach((title) => {
+    title.style.cssText = `
+    color:black;
+    `
+  })
 
   mainEl.style.cssText = `
   background: #f4f4f4;

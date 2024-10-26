@@ -17,8 +17,13 @@
   margin-bottom: 1em;
 }
 
+.button-t {
+  color: white;
+}
+
 .genre-title,.shortphrase-genre {
   text-align: center;
+  opacity: 0.5;
 }
 
 .genre-title {
@@ -28,28 +33,22 @@
 .shortphrase-genre {
   padding: 0.5em;
   font-size: 1.5em;
-  color: white;
   opacity: 0; 
   transition: opacity 1s;
   position: relative;
   width: 100%;
-}
-
-.genre-card {
-  position: relative;
+  color: white;
 }
 
 .genre-card:hover .shortphrase-genre {
   opacity: 1;
-  background: black;
   border-radius: 0.5em;
   padding: 0.5em;
-  color: white;
 }
 
 .genre-card:hover .genre-title {
-  color: var(--lighter-red-color); 
-  background: black;
+  color: var(--lighter-red-color);
+  opacity: 1;
 }
 
 .genre-card:hover .genre-direct-btn {
@@ -84,13 +83,13 @@
 }
 
 .genre-card {
+  position: relative;
   display: flex;
   align-items: center;
   text-align: center;
   padding: 0.5em;
   margin-bottom: 3em;
   color: white;
-  background: black;
   border-radius: 1em;
 }
 
@@ -101,14 +100,12 @@
   text-align: center;
   justify-content: center;
   width: 14em;
-  background: black;
   border-radius: 0.5em ;
 }
 
 .genre-direct-btn {
   cursor: pointer;
   background: var(--lighter-red-color);
-  color: white;
   padding: 0.5em;
   border-radius: 100em;
   border: none;

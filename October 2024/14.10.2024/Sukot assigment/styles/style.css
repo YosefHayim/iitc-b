@@ -816,7 +816,7 @@ color: white;
 text-decoration: none;
 border-radius: 5em;
 font-size: 1.3em;
-width: 85%;
+width: 100%;
 text-align: center;
 margin-top: 1em;
 }
@@ -825,14 +825,14 @@ margin-top: 1em;
 display: flex;
 flex-direction: column-reverse;
 justify-content: center;
-align-items: center;
+align-items: stretch;
 margin-top: 1em;
 text-align: center;
 padding: 1em;
 }
 
 .special {
-color: var(--lighter-red-color);;
+color: var(--lighter-red-color);
 }
 
 .movie-popcorn-welcome-wide {
@@ -876,6 +876,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-left: 3em;
 }
 
 @keyframes zoomInDown {
@@ -895,7 +896,6 @@ transform: scale(1) translateY(0);
 .header-txt > h1 {
 font-size: 2.7em;
 animation: zoomInDown 1s ease-in-out;
-
 }
 
 .text-container > h2 {
@@ -1073,8 +1073,12 @@ font-size: 2em;
 }
 
 .header-txt > h1 {
-font-size: 5em;
-width: 75%;
+font-size: 7em;
+width: 100%;
+}
+
+.header-txt > h2 {
+  font-size: 3em;
 }
 
 .welcome-message-container,.welcome-text-container {

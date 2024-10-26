@@ -13,6 +13,15 @@
   text-align: center;
 }
 
+.genres-results-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
 .white-heart-trailer-btn {
   transform: translate(4em, -6em);
 }

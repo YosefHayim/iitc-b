@@ -4,6 +4,7 @@
   margin: 0 auto;
   border-radius: 1em;
   opacity: 0.5;
+  margin: 1em;
 }
 
 .genres-container {
@@ -27,10 +28,11 @@
 .shortphrase-genre {
   padding: 0.5em;
   font-size: 1.5em;
-  color: black;
+  color: white;
   opacity: 0; 
   transition: opacity 1s;
-  position: relative; 
+  position: relative;
+  width: 100%;
 }
 
 .genre-card {
@@ -71,6 +73,9 @@
   text-align: center;
   padding: 0.5em;
   margin-bottom: 3em;
+  color: white;
+  background: black;
+  border-radius: 1em;
 }
 
 .genre-info {
@@ -104,7 +109,7 @@
   align-items: center;
   background: var(--lighter-red-color);
   box-shadow: 0em 0em 2.5em -1em;
-  font-size: 2em;
+  font-size: 1.5em;
   border-radius: 5em;
   margin-top: 1em;
   padding: 0.5em;

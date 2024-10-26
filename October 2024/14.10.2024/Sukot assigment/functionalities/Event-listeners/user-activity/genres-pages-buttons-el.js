@@ -144,8 +144,9 @@ const genresPaginationButtons = () => {
       if (count === 0) {
         displayAlertMessage('cant-go-lower-than-1', count)
         return
-      }     
+      }
       getMoviesGenresById(genreUrlId,count)
+      displayAlertMessage('redirecting-next-page',count)
 
     } else if (prevBtn) {
       if (count === 1) {
@@ -155,6 +156,7 @@ const genresPaginationButtons = () => {
 
       count = decreasePage(count)
       getMoviesGenresById(genreUrlId,count)
+      displayAlertMessage('redirecting-previous-page',count)
     }
   })
 }

@@ -624,14 +624,6 @@ display: flex;
 padding: 0.3em;
 }
 
-
-.error-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
-
 .top-navbar-desktop:hover {
 color: white;
 background: var(--lighter-red-color);
@@ -743,7 +735,7 @@ align-items: center;
 text-align: center;
 }
 
-.hero-image-one,.hero-image-two,.hero-image-three,.text-container,.image-container,.hero-container-homepage,.hero-section-one,.hero-section-two,.hero-section-three {
+.hero-image-four,.hero-image-one,.hero-image-two,.hero-image-three,.text-container,.image-container,.hero-container-homepage,.hero-section-one,.hero-section-two,.hero-section-three {
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -754,7 +746,12 @@ margin-bottom: 1em;
 padding: 1em;
 }
 
-.tim-img-2,.tim-img-3,.tim-img-1 {
+.image-container {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.tim-img-2,.tim-img-3,.tim-img-1,.tim-img-4 {
 width: 20em;
 border-radius: 1em;
 cursor: pointer;
@@ -804,36 +801,45 @@ color: white;
 text-decoration: none;
 border-radius: 5em;
 font-size: 1.3em;
-width: 100%;
 text-align: center;
 margin-top: 1em;
+}
+
+.homepage-container-father {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .welcome-message-container,.welcome-text-container {
 display: flex;
 flex-direction: column-reverse;
 justify-content: center;
-align-items: stretch;
+align-items: center;
 margin-top: 1em;
 text-align: center;
-padding: 1em;
+width: 100%;
 }
 
 .special {
 color: var(--lighter-red-color);
 }
 
-
 .t-jump-effect {
   position: absolute;
-  font-size: 2em;
+  font-size: 0.5em;
   color: var(--lighter-red-color);
   animation: jump 1s ease-in-out infinite;
 }
 
+.t-jump-effect:hover {
+  color: white;
+}
+
 @keyframes jump {
-  0%, 100% { transform: translateY(-0.44em); }
-  50% { transform: translateY(-0.8em); }
+  0%, 100% { transform: translate(0.3em, 1.1em); }
+  50% { transform: translate(0.3em,-0.8em); }
 }
 
 .movie-popcorn-welcome-wide {
@@ -875,7 +881,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-left: 3em;
 }
 
 @keyframes zoomInDown {
@@ -900,6 +905,7 @@ animation: zoomInDown 1s ease-in-out;
 .text-container > h2 {
 font-size: 2.5em;
 margin-bottom: 0.3em;
+line-height: 1em;
 }
 
 .sign-up-newsletter-container {
@@ -1002,12 +1008,12 @@ color: white;
 position: relative;
 top: 0;
 left: 0;
-background: var(--lighter-red-color);
+background: black;
 color: white;
 padding: 0.7em;
 white-space: nowrap;
 border-radius: 0.3em;
-font-size: 1em;
+font-size: 1.5em;
 margin-top: 1em;
 text-align: center;
 animation: blink 1s infinite;
@@ -1054,11 +1060,6 @@ animation: blink 1s infinite;
     .header-txt .special:hover {
       color: white;
     }
-    
-    .text-container h2:hover ,.header-txt h1:hover {
-      color: var(--lighter-red-color); 
-    }
-    
 
   .announcement-bar {
     font-size: 1.5em;
@@ -1102,6 +1103,7 @@ width: 100%;
 
 .welcome-message-container,.welcome-text-container {
 flex-direction: row-reverse;
+align-items: stretch;
 }
 
 .movie-popcorn-welcome-wide {
@@ -1348,6 +1350,14 @@ background-color: var(--background-grey-color-btns);
 
 body > footer > div > div.group-input-btn-search-container > form {
 flex-wrap: nowrap;
+}
+
+.from-white-to-red:hover {
+  color: red;
+}
+
+.from-white-to-black:hover {
+  color: black;
 }
 
 }

@@ -19,12 +19,16 @@ width: 20em;
   font-size: 1.5em;
 }
 
+br {
+  display: none;
+}
+
 .sub-header {
   text-align: center;
 }
 
 #grand-finalle {
-  background: var(--lighter-red-color);
+  background: black;
   color: white;
   border-radius: 0.5em;
   padding: 0.5em;
@@ -97,7 +101,7 @@ h2 {
 }
 
 blockquote {
-  margin-top: 1em;
+  margin-top: 0.3em;
   font-size: 1.4em;
 }
 
@@ -115,6 +119,10 @@ blockquote {
 }
 
 @media screen and (min-width:1024px) {
+
+  br {
+    display: block;
+  }
 
   .p-two-container:hover h2, .p-two-container:hover p, .p-two-container:hover img,
   .p-three-container:hover h2, .p-three-container:hover p, .p-three-container:hover img,

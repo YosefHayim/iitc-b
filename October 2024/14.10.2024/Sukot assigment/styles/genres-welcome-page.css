@@ -66,6 +66,22 @@
   animation: blink 1s infinite;
 }
 
+.special {
+  color: white;
+}
+
+.special:hover {
+  color:black;
+}
+
+.genre-card:hover img:hover {
+  animation: blink 3s infinite;
+}
+
+.genre-card:hover .button-t:hover {
+  animation: none;
+  color: black;
+}
 
 .genre-card {
   display: flex;

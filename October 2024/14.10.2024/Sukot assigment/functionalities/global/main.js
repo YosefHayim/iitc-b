@@ -53,11 +53,12 @@ inputSearchListener(); // Listens for search input events
 toggleThemeMode(); // Initialize dark mode toggle functionality
 randomMessageDisplay() //Display random jokes on entire pages.
 
+
+// Page-specific logic based on URLs
 if(window.location.pathname.endsWith('index.html')) {
   homepageContainerButtons()
 }
 
-// Page-specific logic based on URL
 if (window.location.pathname.endsWith("movies-categories.html")) {
   // Initialize homepage data and interactions
   fetchPopularMovies(); // Fetch popular movies

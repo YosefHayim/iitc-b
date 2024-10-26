@@ -1,5 +1,5 @@
 const randomMessages = () => {
-  // random messages to display on the announcement bar on every page
+  // random messages to display on the announcement bar on every page about Tim the fiction character.
   const storage = [
     { "id": 1, "message": "Tim loves popcorn too much." },
     { "id": 2, "message": "Tim’s sunglasses hide his secrets." },

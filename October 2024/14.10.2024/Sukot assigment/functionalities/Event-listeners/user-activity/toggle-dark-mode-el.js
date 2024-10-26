@@ -21,6 +21,7 @@ const toggleThemeMode = () => {
     if (toggleIconImage.classList.contains('active')) {
       applyWhiteMode();
       localStorage.setItem('whiteMode', 'true'); // Save white mode state in local storage
+
     } else {
       applyDarkMode(); // Apply dark mode
       localStorage.setItem('whiteMode', 'false'); // Reset white mode state in local storage

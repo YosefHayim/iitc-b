@@ -135,6 +135,8 @@ blockquote {
   }
   
 img {
+  margin-right: 3em;
+    margin-left: 3em;
     opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
   }

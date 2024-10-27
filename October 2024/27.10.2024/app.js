@@ -1,10 +1,10 @@
-const fs = require('fs');
+const express = require('express');
+const app = express()
 
-fs.readFile('input.txt', 'utf8', (err, data) => {
-  if (err) {
-    console.log('Not valid', err);
-  } else {
-    console.log(data);
-    
-  }
-});
+app.get('/', (req,res) => {
+  res.send('Hello World')
+})
+
+app.listen(3000, () => {
+  console.log('Server is running on port 3000')
+})

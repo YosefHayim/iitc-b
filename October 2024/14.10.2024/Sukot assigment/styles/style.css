@@ -1367,19 +1367,3 @@ flex-wrap: nowrap;
 }
 
 }
-
-@media screen and (min-width:1280px) {
-
-  body {
-    font-size: 1em;
-  }
-  
-}
-
-@media screen and (min-width:1440px) {
-  
-  body {
-    font-size: 1.1em;
-  }
-  
-}

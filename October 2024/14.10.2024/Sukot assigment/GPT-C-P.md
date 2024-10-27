@@ -3,7 +3,7 @@
 This README provides a guide on how to request prompts for creating scenes featuring Tim, the iconic popcorn bucket character. Use this document whenever you want to request a new illustration of Tim in different scenarios, ensuring consistency and the inclusion of all the key details that make Tim instantly recognizable.
 
 ### Tim's Signature Look
-- **Body**: Tim is a red and white striped popcorn bucket with a tall, rectangular shape.
+- **Body**: Tim is a red and white striped popcorn with a tall, rectangular shape.
 - **Clothing**: Tim always wears a black trench coat, which adds a touch of coolness to his character.
 - **Accessories**: Tim's iconic dark sunglasses are an essential part of his look.
 - **Footwear**: Tim always has high-top sneakers with bright white laces.
@@ -56,17 +56,12 @@ Around Tim, sparkling light trails follow his path, as if he’s flying with mag
 
 The entire scene is a beautiful blend of soft pinks, golds, and gentle blues, with bright colors and clean lines capturing the romance and magic of the moment. Tim’s confident expression, the sparkling love arrow, and the whimsical setting make this scene truly enchanting, emphasizing the charm, beauty, and playful romance of Tim’s adventure as he takes on the role of a popcorn cupid.
 
-3. **Celebrating Sukut victory (Best Version)**
-Prompt: A flat 2D cartoon illustration of Tim, the tall, rectangular popcorn bucket with iconic red and white stripes, celebrating a huge ‘Sukut’ victory. Tim is front and center, wearing his signature black trench coat open to show his rectangular shape, dark sunglasses gleaming with excitement, and a wide, victorious grin that shows his bright white teeth. His high-top sneakers with bright white laces stand confidently on a stage surrounded by vibrant confetti raining down.
-
-Tim holds a golden trophy labeled ‘Sukut Star,’ lifting it high in one hand while giving a celebratory thumbs-up with the other. The background is set up like an award ceremony, with a spotlight beaming down on Tim, enhancing his triumphant pose. Fans of mini popcorn characters, each wearing mini sunglasses, surround the stage, cheering with signs that say ‘Congrats, Tim!’ and ‘Sukut Hero!’ Streamers and balloons in the colors of gold and red fill the scene, creating an atmosphere of joy and celebration.
-
-This lively and colorful setup captures Tim as the ultimate Sukut champion, with a sense of fun and festivity.
-
 ### Question Formula to Request a Scene
 If you need to request a similar scene of Tim, use the following formula:
 
-**"Best awesome cool scene of Tim [specific activity or context]. Include detailed elements such as [clothing, accessories, or action]. Make sure to maintain Tim’s iconic features like his black trench coat, sunglasses, white gloves, and sneakers with white laces. The scene should convey [specific emotion or mood, e.g., curiosity, excitement] and have relevant items or lighting in the setting."**
+**"A flat 2D cartoon illustration of Tim, the red and white striped popcorn bucket character with a tall, rectangular shape, wearing his signature black trench coat that flares slightly. Tim’s iconic dark sunglasses are either fully covering his eyes or tilted to reveal a confident, playful expression. He wears high-top sneakers with bright white laces and white gloves, giving him a cool, animated style. Tim’s expression is [describe emotion, e.g., smiling confidently, looking curious].
+
+The scene takes place in [SCENE ELEMENTS], capturing an atmosphere of [EMOTION/MOOD, e.g., excitement, mystery, romance]. Specific background features include [BACKGROUND DETAILS, e.g., sparkling trails, softly lit garden, cityscape, spotlight on stage]. The colors and clean lines emphasize Tim’s character and the environment, bringing a lively, animated feel to the scene."**
 
 This formula will ensure that each illustration request is detailed, consistent, and captures Tim's unique charm in different scenarios.
 
@@ -80,7 +75,5 @@ This formula will ensure that each illustration request is detailed, consistent,
 - After a prompt provided, ask GPT if "that's the best scene of that version", so he provide the most detailed.
 
 - If a prompt wasn't successful than just regenerate the same response again until you are satisfied.
-
-- I used a lot of "best awesome cool scene of [`expression/place/etc.`] scene make sure to maintain his shape of popcorn rectangle tall body ,black sunglass, sneakers with white laces "
 
 - If after 3-4 prompts not providing the optimized image, fix the prompt.

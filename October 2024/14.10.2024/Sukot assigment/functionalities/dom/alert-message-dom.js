@@ -36,7 +36,7 @@ const displayAlertMessage = (messageType, word) => {
     // Display alert for 1 second, then hide.
     setTimeout(() => {
       messageContainer.style.display = 'none';
-    }, 2000);
+    }, 700);
   }
 };
 

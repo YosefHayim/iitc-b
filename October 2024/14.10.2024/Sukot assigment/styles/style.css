@@ -734,12 +734,11 @@ align-items: center;
 text-align: center;
 }
 
-.hero-image-five,.hero-image-four,.hero-image-one,.hero-image-two,.hero-image-three,.text-container,.image-container,.hero-container-homepage,.hero-section-one,.hero-section-two,.hero-section-three {
+.hero-image-five,.hero-image-four,.hero-image-one,.hero-image-two,.hero-image-three,.text-container,.image-container,.hero-section-one,.hero-section-two,.hero-section-three {
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-flex-wrap: wrap;
 margin-top: 1em;
 margin-bottom: 1em;
 padding: 1em;
@@ -775,12 +774,6 @@ animation: bounce 2s infinite;
   text-align: center;
   }
   
-.hero-image-one, .hero-image-two, .hero-image-three {
-  flex-direction: column;
-  width: auto;
-  justify-content: center;
-  align-items: center;
-  }
   
 .text-container > ul {
   width: 80%;
@@ -1029,6 +1022,10 @@ animation: blink 1s infinite;
 /* Desktop design 1024px */
 @media screen and (min-width:1024px) {
 
+  .explore-button {
+    width: 60%;
+  }
+
   .text-container {
     opacity: 0;
   }
@@ -1040,7 +1037,26 @@ animation: blink 1s infinite;
   .hero-image-one, .hero-image-two, .hero-image-three,.hero-image-four,.welcome-text-container,.hero-image-five {
     opacity: 0.5;
     transition: opacity 0.5s ease-in-out;
+    width: 100%;
     }
+
+    /* Direction from lowest to highest number */
+.hero-image-one {
+  flex-direction: row;
+}
+.hero-image-two {
+  flex-direction: row-reverse;
+}
+.hero-image-three {
+  flex-direction: row;
+}
+.hero-image-four {
+  flex-direction: row-reverse;
+}
+.hero-image-five {
+  flex-direction: row-reverse;
+}
+
   
     .hero-image-one:hover ,.hero-image-two:hover ,.hero-image-three:hover,.hero-image-four:hover ,.welcome-text-container:hover,.hero-image-five:hover{
       opacity: 1;
@@ -1113,13 +1129,6 @@ font-size: 1.5em;
 
 .tim-img-2,.tim-img-3,.tim-img-1,.tim-img-5 {
 width: 25em;
-}
-
-.hero-container-homepage {
-flex-direction: row-reverse;
-justify-content: space-evenly;
-gap: 6em;
-align-items: self-end;
 }
 
 .buttons-pagination-container {

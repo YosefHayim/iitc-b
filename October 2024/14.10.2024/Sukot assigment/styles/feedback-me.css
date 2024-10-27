@@ -23,6 +23,14 @@ gap: 1em;
 cursor: pointer;
 }
 
+.t-jump-effect {
+  color: white;
+}
+
+.t-jump-effect:hover {
+  color: black;
+}
+
 h1 {
   color: white;
   display: flex;

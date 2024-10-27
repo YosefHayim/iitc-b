@@ -32,6 +32,7 @@ align-items: center;
 width: 100%;
 flex-wrap: wrap;
 text-align: center;
+gap: 1.5em;
 }
 
 .tim-favorites {
@@ -41,6 +42,7 @@ text-align: center;
   border-radius: 100em;
   width: 15em;
 }
+
 
 .go-grab-movie {
   color: white;

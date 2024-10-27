@@ -1,7 +1,3 @@
-body {
-  font-size: 0.79em;
-}
-
 .fav-movies-container {
 display: flex;
 justify-content: center;
@@ -100,7 +96,7 @@ font-size: 0.9em;
   background: black;
   border-radius: 100em;
   padding: 0.5em;
-  height: 2.7em;
+  height: 1.8em;
   transform: translate(-6em, -7.1em);
 }
 
@@ -158,7 +154,7 @@ height: 3em;
 @media screen and (min-width:1024px) {
 
   .fav-white-share-img {
-    transform: translate(-6em, -9em);
+    transform: translate(-5em, -6.95em);
   }
 
   .fav-white-data-btn {

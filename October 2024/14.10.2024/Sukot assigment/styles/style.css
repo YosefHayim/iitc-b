@@ -36,7 +36,6 @@ justify-content: center;
 align-items: center;
 background: black;
 color: var(--color-text);
-font-size: 0.79em;
 }
 
 main {
@@ -1274,7 +1273,7 @@ padding: 0.5em;
 display: flex;
 background: black;
 flex-wrap: wrap;
-width: 100%;
+  width: 100%;
 justify-content: center;
 align-items: center;
 z-index: 1;

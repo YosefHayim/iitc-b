@@ -135,6 +135,18 @@ blockquote {
 
 @media screen and (min-width:1024px) {
 
+  form {
+    flex-wrap: nowrap;
+  }
+
+  .desktop-navbar-container {
+    flex-wrap: nowrap;
+  }
+
+  .searchbar-container {
+    width: 100%;
+  }
+
   br {
     display: block;
   }
@@ -175,8 +187,6 @@ img {
   p {
     opacity: 0;
   }
-
-
 
 .p-two,
 .p-three,

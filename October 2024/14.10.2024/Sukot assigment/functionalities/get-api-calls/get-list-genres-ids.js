@@ -22,4 +22,4 @@ const getGenresIds = async () => {
   }
 }
 
-export { getGenresIds }; // Exports the getGenresIds function
+export { getGenresIds };

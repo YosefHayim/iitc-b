@@ -1,0 +1,6 @@
+
+  [
+    { "id": 1, "name": "Wireless Earbuds", "price": 29.99, "category": "Electronics" },
+    { "id": 2, "name": "Yoga Mat", "price": 19.99, "category": "Sports" },
+    { "id": 3, "name": "Stainless Steel Water Bottle", "price": 15.99, "category": "Accessories" }
+  ]

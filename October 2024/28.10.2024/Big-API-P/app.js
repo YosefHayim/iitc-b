@@ -1,5 +1,8 @@
 import { randomJoke,randomProducts,randomUsername,jokesArray,usernamesArray,productsArray } from "./random-data.js";
 import express from "express"
+import jokes from "./db/jokes.json" assert {type: "json"}
+import users from "./db/jokes.json" assert {type: "json"}
+import product from "./db/jokes.json" assert {type: "json"}
 
 const app = express()
 const PORT = process.env.port || 3000;
@@ -13,6 +16,7 @@ app.get('/',(req,res) => {
   })
 })
 
+// Random jokes
 app.get('/api/random/jokes', (req,res) => {
   res.send({
     status: "Success",
@@ -28,6 +32,7 @@ app.post('/api/random/jokes', (req,res) => {
   })
 })
 
+//Random products
 app.get('/api/random/products', (req,res) => {
   res.send({
     status: "Success",
@@ -43,6 +48,7 @@ app.post('/api/random/products', (req,res) => {
   })
 })
 
+//Random products
 app.get('/api/random/usernames', (req,res) => {
   res.send({
     status: "Success",

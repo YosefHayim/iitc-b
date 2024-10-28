@@ -5,8 +5,8 @@ Welcome to my IITC Bootcamp repository. This bootcamp is part of the “Combat S
 ## Projects
 The `Projects` folder contains all the projects completed during the IITC bootcamp. Each project represents practical applications of the technologies covered in the program, including Full Stack development and automation tasks.
 
-## Sukot Assignment
-### [Sukot assignment](https://yosefhayim.github.io/IITC-B/October2024/14.10.2024/Sukot%20assigment/)
+## Sukot Assignmenthttps:
+### [Sukot assignment](https://yosefhayim.github.io/IITC-B/October%202024/14.10.2024/Sukot%20assigment)
 
 ## Course Overview
 

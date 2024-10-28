@@ -43,7 +43,6 @@ import { randomMessageDisplay } from "../DOM/display-random-fact-message-dom.js"
 import { getMoviesGenresById } from "../get-api-calls/get-movie-genre-by-id.js"
 import { genresButtonsRedirect } from "../Event-listeners/user-activity/genres-welcome-page-el.js";
 import { genresButtonsListeners, genresPaginationButtons } from "../Event-listeners/user-activity/genres-pages-buttons-el.js";
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen

@@ -3,8 +3,6 @@ import { randomJoke,randomProducts,randomUsername } from "./random-data.js";
 const app = express()
 const PORT = process.env.port || 3000;
 
-// Create collection called "MyBigApi" and preform a tests on postman on every end point
-
 app.get('/',(req,res) => {
   res.send({
     status: "Server is running",

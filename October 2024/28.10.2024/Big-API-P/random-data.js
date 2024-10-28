@@ -16,6 +16,7 @@ const usernames = [
   { id: 3, username: "tech_guru21", email: "guru21@example.com" }
 ];
 
+// Random joke provided from each array object.
 const randomJoke = jokes[Math.floor(Math.random()) * jokes.length].text
 const randomProducts = products[Math.floor(Math.random()) * products.length].name
 const randomUsername = usernames[Math.floor(Math.random()) * usernames.length].username

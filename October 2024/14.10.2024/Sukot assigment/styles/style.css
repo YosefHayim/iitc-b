@@ -753,6 +753,14 @@ width: 20em;
 border-radius: 1em;
 }
 
+.tim-img-6 {
+  animation: flowUpDown 2s linear infinite alternate;
+  width: 15em;
+  margin-bottom: 1.5em;
+  border-radius: 10em;
+  box-shadow: 0em 0em 2em 0.1em;
+}
+
 .now-word {
 opacity: 1;
 color: black;

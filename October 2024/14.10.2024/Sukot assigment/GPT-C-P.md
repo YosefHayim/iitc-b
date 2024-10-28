@@ -72,7 +72,7 @@ This formula will ensure that each illustration request is detailed, consistent,
 
 - **Tim's iconic elements** (trench coat, sunglasses, white gloves, high-top sneakers) must be mentioned to ensure his look remains consistent.
 
-- After a prompt provided, ask GPT if "that's the best scene of that version", so he provide the most detailed.
+- After a prompt provided, ask GPT if "best scene of tim [`anything you like`]", so he provide the most detailed and dynamic scene based of it.
 
 - If a prompt wasn't successful than just regenerate the same response again until you are satisfied.
 

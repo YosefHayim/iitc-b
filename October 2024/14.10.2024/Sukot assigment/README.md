@@ -94,3 +94,9 @@ These files handle post-API interactions:
 27. **Console log as much as possible**: no need to remove console log until I finish everything completely.
 
 **Total hours to complete the project**: 106 hours and 50 minutes (tracked via Google Calendar).
+
+**Features to add from other people project Ideas** : 
+similar movies on single movie page, 
+mouse hover to show total people vote.
+if html page not exist redirect to error 404 page
+actors real name and acting name one below another

@@ -147,7 +147,8 @@ const searchPageButtonsEl = () => {
         if (count === 0) {
           displayAlertMessage('cant-go-lower-than-1', count)
           return
-        }     
+        }
+        displayAlertMessage('redirecting-next-page', count)
         searchMovieByName(query,count)
   
       } else if (prevBtn) {
@@ -155,7 +156,8 @@ const searchPageButtonsEl = () => {
           displayAlertMessage('cant-go-lower-than-1', count)
           return
         }
-
+        
+        displayAlertMessage('redirecting-previous-page', count);
         count = decreasePage(count)
         searchMovieByName(query,count)
       }

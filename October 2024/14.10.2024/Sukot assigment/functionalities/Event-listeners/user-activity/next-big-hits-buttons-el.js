@@ -142,7 +142,8 @@ const nextBigHitsPageButtons = () => {
         if (count === 0) {
           displayAlertMessage('cant-go-lower-than-1', count)
           return
-        }     
+        }
+        displayAlertMessage('redirecting-next-page', count);
         fetchUpcomingMovies(count)
   
       } else if (prevBtn) {
@@ -150,7 +151,8 @@ const nextBigHitsPageButtons = () => {
           displayAlertMessage('cant-go-lower-than-1', count)
           return
         }
-  
+
+        displayAlertMessage('redirecting-previous-page', count);
         count = decreasePage(count)
         fetchUpcomingMovies(count)
       }

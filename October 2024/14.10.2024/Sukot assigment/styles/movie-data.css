@@ -63,7 +63,7 @@ color: white;
 }
 
 .rating-container {
-flex-direction: row;
+flex-direction: column-reverse;
 }
 
 .rating-number-txt {

@@ -23,6 +23,10 @@ br {
 display: none;
 }
 
+.special-title {
+  color: var(--rating--color);
+}
+
 .sub-header {
 text-align: center;
 }

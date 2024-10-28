@@ -13,6 +13,7 @@ const theatresContainer = document.querySelector('.currently-movies-in-theatres-
 const searchResultContainer = document.querySelector('.search-results-container');
 const announcementBar = document.querySelector('.fun-facts-p')
 const FavRemoveAllBtn = document.querySelector('.remove-all-fav')
+const announcementBarDiv = document.querySelector('.announcement-bar')
 
 // Titles and Section Containers
 const homepageTitlesContainers = document.querySelectorAll('div[class*="container-title"]');
@@ -68,6 +69,7 @@ const genresContainer = document.querySelector('.genres-container')
 
 // Exported elements for use in other files
 export {
+  announcementBarDiv,
   genresContainer,
   genreResultContainerTitle,
   genreResultContainer,

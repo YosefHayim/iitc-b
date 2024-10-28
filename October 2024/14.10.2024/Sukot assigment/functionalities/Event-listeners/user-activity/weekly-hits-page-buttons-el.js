@@ -5,10 +5,10 @@ import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
 import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
-import { popularMoviesOfDay } from "../../get-api-calls/get-popular-movies-of-today.js";
 import { increasePage } from "../../global/increasing-page.js";
 import { decreasePage } from "../../global/decreasing-page.js";
 import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
+import { popularMoviesOfWeek } from "../../get-api-calls/get-popular-movies-of-week.js";
 
 // Handles user interactions on the "Weekly Hits" page.
 const weeklyHitsPageButtons = () => {
@@ -140,7 +140,7 @@ const isNextPagePrevPageWeeklyHits = () => {
         displayAlertMessage('cant-go-lower-than-1', count)
         return
       }
-      popularMoviesOfDay(count)
+      popularMoviesOfWeek(count)
       displayAlertMessage(`redirecting-next-page`, count)
 
     } else if (prevBtn) {
@@ -149,7 +149,7 @@ const isNextPagePrevPageWeeklyHits = () => {
         return
       }
       count = decreasePage(count)
-      popularMoviesOfDay(count)
+      popularMoviesOfWeek(count)
       displayAlertMessage(`redirecting-previous-page`, count)
     }
 

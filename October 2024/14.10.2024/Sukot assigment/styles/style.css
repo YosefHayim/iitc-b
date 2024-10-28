@@ -477,8 +477,8 @@ padding-top: 0.5em;
 }
 
 hr {
-width: 100%;
-position: fixed;
+width: 270%;
+position: absolute;
 animation: slideIn 0.3s ease-out forwards;
 animation-iteration-count: 1;
 margin-bottom: 19.5em;
@@ -754,12 +754,22 @@ border-radius: 1em;
 }
 
 .tim-img-6 {
-  animation: flowUpDown 2s linear infinite alternate;
+  animation: zoomInOut 2s infinite ease-in-out; /* Adjust duration as needed */
   width: 15em;
   margin-bottom: 1.5em;
   border-radius: 10em;
-  box-shadow: 0em 0em 2em 0.1em;
+  box-shadow: 0em 0em 2em 0.1em var(--lighter-red-color);
 }
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
 
 .now-word {
 opacity: 1;

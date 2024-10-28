@@ -30,13 +30,18 @@ const displayAlertMessage = (messageType, word) => {
 
     // Insert alert after navbar if missing.
     if (!alertMessageContainerEl) {
-      navbarDesktopEl.insertAdjacentElement('afterend', messageContainer);
+      if (navbarDesktopEl) {
+        
+        navbarDesktopEl.insertAdjacentElement('afterend', messageContainer);
+      } else if (announcementBarDiv) {
+        announcementBarDiv.insertAdjacentElement('afterend', messageContainer);
+      }
     }
 
     // Display alert for 1 second, then hide.
     setTimeout(() => {
       messageContainer.style.display = 'none';
-    }, 700);
+    }, 1000);
   }
 };
 

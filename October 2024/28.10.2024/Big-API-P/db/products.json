@@ -1,6 +1,1 @@
-
-  [
-    { "id": 1, "name": "Wireless Earbuds", "price": 29.99, "category": "Electronics" },
-    { "id": 2, "name": "Yoga Mat", "price": 19.99, "category": "Sports" },
-    { "id": 3, "name": "Stainless Steel Water Bottle", "price": 15.99, "category": "Accessories" }
-  ]
+[{"id":5,"text":"Why did the coffee file a police report? It got mugged."},{"id":3,"text":"Parallel lines have so much in common… it’s a shame they’ll never meet."}]

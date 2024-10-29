@@ -102,3 +102,4 @@ if html page not exist redirect to error 404 page.
 actors real name and acting name one below another.
 Add option to order a movie ticket.
 if user reached max page allow me to get previous page.
+if user go next or prev page he is returning to the same position he was on the browser height

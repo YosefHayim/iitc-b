@@ -19,7 +19,7 @@ const applyWhiteMode = () => {
 
   // Change toggle icon image if it exists
   if (toggleIconImage) {
-    toggleIconImage.src = '/October 2024/14.10.2024/Sukot assigment/images/user-activity/white-circle.svg';
+    toggleIconImage.src = '/Sukot assigment/images/user-activity/white-circle.svg';
   }
 
   // Style single movie data

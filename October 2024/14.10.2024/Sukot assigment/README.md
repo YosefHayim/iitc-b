@@ -96,7 +96,9 @@ These files handle post-API interactions:
 **Total hours to complete the project**: 106 hours and 50 minutes (tracked via Google Calendar).
 
 **Features to add from other people project Ideas** : 
-similar movies on single movie page, 
+similar movies on single movie page.
 mouse hover to show total people vote.
-if html page not exist redirect to error 404 page
-actors real name and acting name one below another
+if html page not exist redirect to error 404 page.
+actors real name and acting name one below another.
+Add option to order a movie ticket.
+if user reached max page allow me to get previous page.

@@ -2,10 +2,8 @@ import jokes from "./db/jokes.json" with {type: "json"}
 import users from "./db/users.json" with {type: "json"}
 import products from "./db/products.json" with {type: "json"}
 
-import express, { request } from "express"
 import morgan from "morgan"
 import fs from "fs"
-import { parse } from "path"
 
 const app = express()
 const PORT = process.env.port || 3000;

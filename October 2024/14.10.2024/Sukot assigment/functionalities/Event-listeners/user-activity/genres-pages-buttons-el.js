@@ -78,7 +78,7 @@ const genresButtonsListeners = () => {
 
         // If the movie was successfully added to the favorites (not already in the list)
         if (isAdded) {
-          // Now we add the movie to the list and display the success message
+          // Now we add the movie to the list by sending the API request and display the success message
           addfavoriteMovieToList(movieId);
           displayAlertMessage('success-added-movie-to-favorite-picks', movieName);
           return;

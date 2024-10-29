@@ -4,8 +4,6 @@ import users from "../db/users.json" with { type: "json" }
 
 const router = express.Router()
 
-// router is /api/users
-
 router.get('/', (req,res) => {
   res.json(users)
 })

@@ -4,8 +4,6 @@ import fs from "fs"
 
 const router = express.Router()
 
-// router is /api/jokes
-
 router.get('/', (req,res) => {
   res.json(jokes)
 })

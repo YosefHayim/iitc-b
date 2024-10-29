@@ -4,8 +4,6 @@ import products from "../db/products.json" with { type: "json" }
 
 const router = express.Router()
 
-// router is /api/products
-
 router.get('/', (req,res) => {
   res.json(products)
 })

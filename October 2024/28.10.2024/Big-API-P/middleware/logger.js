@@ -1,19 +1,20 @@
-import fs from "fs"
+import fs from "fs";
 
-const  logRequest = (req,res,next) => {
+const logRequest = (req, res, next) => {
   const log = `
   Activity received at: ${new Date().toLocaleString()}
+  Path parameters received: ${JSON.stringify(req.params)}
   Query parameters received: ${JSON.stringify(req.query)}
-  Status Code: ${res.statusCode}\n`
+  Body parameters received: ${JSON.stringify(req.body)}
+  Status Code: ${res.statusCode} \n`;
 
-  fs.appendFile('./logs.txt',log,(err) => {
+  fs.appendFile('./logs.txt', log, (err) => {
     if (err) {
-      console.error('There was an error appending the data to logs.txt',err);
-      
+      console.error('There was an error appending the data to logs.txt', err);
     }
-  })
+  });
 
-  next()
-}
+  next();
+};
 
-export { logRequest }
+export { logRequest };

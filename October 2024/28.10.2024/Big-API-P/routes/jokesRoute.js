@@ -19,57 +19,57 @@ router.get('/random', (req,res) => {
 
 // Get Joke by ID
 router.get("/:id", (req, res) => {
-  const id = +req.params['id'] 
-  const data = jokes.find((joke) => joke.id === id)
-  
+  const id = +req.params['id'];
+  const data = jokes.find((joke) => joke.id === id);
+
   if (data) {
-      res.send(data)
+    res.send(data);
+    return;
   }
+
   res.send({
-      error: `Error this id:${id} is not valid, please provide valid ID.`
-  })
-})
+    error: `Error: ID ${id} is not valid, please provide a valid ID.`
+  });
+  return;
+});
 
 // Add new joke to the jokes.json file
 router.post('/add/joke', (req, res) => {
-  const {id, text} = req.body;
+  const { id, text } = req.body;
 
-  const newJoke = {
-    id,
-    text,
-  }
-    console.log(newJoke);
-    
+  const newJoke = { id, text };
+  console.log(newJoke);
 
-  fs.readFile('../db/jokes.json', 'utf8', (err, data) => {
+  fs.readFile('db/jokes.json', 'utf8', (err, data) => {
     if (err) {
       res.send({ Error: `Something went wrong while reading: ${err}` });
-      return
+      return;
     }
-
+  
     const jokesArray = JSON.parse(data);
-    console.log(jokesArray);
-    jokesArray.push(newJoke);    
-
-    fs.writeFile('../db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
+    jokesArray.push(newJoke);
+  
+    fs.writeFile('db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
       if (err) {
         res.send({ Error: `Something went wrong while writing: ${err}` });
-        return
+        return;
       }
       res.send({ Added: newJoke });
+      return;
     });
   });
+  
 });
 
 // modify (patch) existing joke ID
-router.patch('update/joke/:id', (req, res) => {
+router.patch('/update/joke/:id', (req, res) => {
   // Get the required Id from the URL
   const requestedId = +req.params['id'];
 
   // Get the updated patch ID number.
   const updatedId = req.body.id;
 
-  fs.readFile('./db/jokes.json', 'utf8', (err, data) => {
+  fs.readFile('db/jokes.json', 'utf8', (err, data) => {
     if (err) {
       return res.send('Unable to read the current jokes.json file', err);
     }
@@ -81,20 +81,20 @@ router.patch('update/joke/:id', (req, res) => {
       }
     });
 
-    fs.writeFile('./db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
+    fs.writeFile('db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
       if (err) {
         return res.send('Unable to modify the current jokes.json file', err);
       }
-      res.send(`Successfully modified the requested Id ${requestedId}, updatedId is ${updatedId}`);
+      return res.send(`Successfully modified the requested Id ${requestedId}, updatedId is ${updatedId}`);
     });
   });
 });
 
 // delete an item joke
-router.delete('delete/joke/:id', (req, res) => {
+router.delete('/delete/joke/:id', (req, res) => {
   const requestedId = +req.params['id'];
 
-  fs.readFile('./db/jokes.json', 'utf8', (err, data) => {
+  fs.readFile('db/jokes.json', 'utf8', (err, data) => {
     if (err) {
       return res.send('Unable to read the file', err);
     }
@@ -108,7 +108,7 @@ router.delete('delete/joke/:id', (req, res) => {
 
     jokesArray.splice(foundIndex, 1);
 
-    fs.writeFile('./db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
+    fs.writeFile('db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
       if (err) {
         return res.send('Error writing to file', err);
       }

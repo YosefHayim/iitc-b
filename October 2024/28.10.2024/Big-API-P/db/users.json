@@ -1,1 +1,7 @@
-[{"id":5,"username":"cool_cat42","email":"cat42@example.com"},{"id":2,"username":"jane_doe91","email":"jane91@example.com"},{"id":3,"username":"tech_guru21","email":"guru21@example.com"}]
+[
+  { "id": 1, "username": "cool_cat42", "email": "cat42@example.com" },
+  { "id": 2, "username": "jane_doe91", "email": "jane91@example.com" },
+  { "id": 3, "username": "tech_guru21", "email": "guru21@example.com" },
+  { "id": 4, "username": "yosef5009", "email": "TrailerTim@gmail.com" },
+  { "id": 5, "username": "yosef5009", "email": "TrailerTim@gmail.com" }
+]

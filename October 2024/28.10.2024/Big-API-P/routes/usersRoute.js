@@ -11,9 +11,22 @@ router.get('/', (req,res) => {
 //get a Random user
 router.get('/random', (req,res) => {
   const randomUser = users[Math.floor(Math.random() * users.length)];
-  res.send({
+  return res.send({
     status: "Success",
     message: randomUser,
+  })
+})
+
+// Get user by ID
+router.get("/:id", (req, res) => {
+  const id = +req.params['id'] 
+  const data = users.find((user) => user.id === id)
+
+  if (data) {
+      return res.send(data)
+  }
+  return res.send({
+    error: `Error this id:${id} is not valid, please provide valid ID.`
   })
 })
 
@@ -40,22 +53,8 @@ router.post('/add/user', (req,res) => {
   res.send({ Added: newUser });
 })
 
-// Get user by ID
-router.get("/search/user/:id", (req, res) => {
-  const id = +req.params['id'] 
-  const data = users.find((user) => user.id === id)
-
-  if (data) {
-      res.send(data)
-  }
-  res.send({
-    error: `Error this id:${id} is not valid, please provide valid ID.`
-  })
-})
-
-
 // modify (patch) existing user ID
-router.patch('update/user/:id', (req, res) => {
+router.patch('/update/user/:id', (req, res) => {
   // Get the required Id from the URL
   const requestedId = +req.params['id'];
   
@@ -68,11 +67,17 @@ router.patch('update/user/:id', (req, res) => {
     }
 
     const usersArray = JSON.parse(data);
+    const isFound = false
     usersArray.forEach((userLine) => {
       if (userLine.id === requestedId) {
         userLine.id = updatedId;
+        isFound = true
       }
     });
+
+    if (!isFound) {
+      return res.status(404).send({ error: `No user found with ID ${requestedId}` });
+    }
 
     fs.writeFile('./db/users.json', JSON.stringify(usersArray), 'utf8', (err) => {
       if (err) {

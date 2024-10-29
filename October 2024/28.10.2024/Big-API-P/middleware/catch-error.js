@@ -1,15 +1,10 @@
-// Define the error-handling function
 const errorHandle = (err, req, res, next) => {
-  if (!req) {
-    res.status(400).send(`Your request is not valid, please check requirements.`)
-  }
-
   console.error("Error:", err.message || err);
 
-  res.status(err.status).send({
+  res.status(err.status || 500).send({
     status: "Error",
     message: err.message || "An unexpected error occurred",
   });
-}
+};
 
-export { errorHandle }
+export { errorHandle };

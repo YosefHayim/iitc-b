@@ -1,0 +1,6 @@
+const apiKey = 'c56ec0f4ef17388e91759a8a0d02c9a5'
+const apiToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNzI1N2U1ZjRmMDAxMmU2YjA5MWViNGU2NjU0ZjM3OSIsIm5iZiI6MTcyODkzNzc5OC41ODY2ODksInN1YiI6IjY3MGNhZTI1NDExMWJlNGYwMjc0ZmUxYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YwqFHVuV2O39rI_L-pYEwpLxEaXmX0vbfwGagcdUNPo"
+const accountId = '21570222'
+const sessionId = 'a6a43f6cf97e11a7d07bae8326cf84c2d901e25b'
+
+export {apiKey, apiToken, accountId,sessionId}

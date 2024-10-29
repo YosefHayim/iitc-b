@@ -18,7 +18,7 @@ const applyDarkMode = () => {
 
   // Change the toggle icon image back to red circle for dark mode.
   if (toggleIconImage) {
-    toggleIconImage.src = '../images/user-activity/red-circle.svg';
+    toggleIconImage.src = '/October 2024/14.10.2024/Sukot assigment/images/user-activity/red-circle.svg';
   }
 
   // Reset styles for single movie data

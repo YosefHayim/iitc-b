@@ -20,6 +20,8 @@ router.get('/random', (req,res) => {
 // Get user by ID
 router.get("/:id", (req, res) => {
   const id = +req.params['id'] 
+  console.log(id);
+  
   const data = users.find((user) => user.id === id)
 
   if (data) {

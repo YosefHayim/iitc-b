@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
 router.post('/add/products', (req,res) => {
   const newProduct = req.body
 
-  fs.readFile('db/products.json', 'utf8', (err, data) => {
+  fs.readFile('./db/products.json', 'utf8', (err, data) => {
     if (err) {
       res.send({ Error: `Something went wrong while reading: ${err}` });
       return
@@ -43,7 +43,7 @@ router.post('/add/products', (req,res) => {
     const productsArray = JSON.parse(data);
     productsArray.push(newProduct);
 
-    fs.writeFile('db/products.json', JSON.stringify(productsArray), 'utf8', (err) => {
+    fs.writeFile('./db/products.json', JSON.stringify(productsArray), 'utf8', (err) => {
       if (err) {
         res.send({ Error: `Something went wrong while writing: ${err}` });
         return
@@ -61,7 +61,7 @@ router.patch('/update/product/:id', (req, res) => {
   // Get the updated patch ID number.
   const updatedId = req.body.id;
 
-  fs.readFile('db/products.json', 'utf8', (err, data) => {
+  fs.readFile('./db/products.json', 'utf8', (err, data) => {
     if (err) {
       return res.send('Unable to read the current users.json file', err);
     }
@@ -72,7 +72,7 @@ router.patch('/update/product/:id', (req, res) => {
       productLine.id = updatedId;
     }
     
-    fs.writeFile('db/products.json', JSON.stringify(productsArray), 'utf8', (err) => {
+    fs.writeFile('./db/products.json', JSON.stringify(productsArray), 'utf8', (err) => {
       if (err) {
         return res.send('Unable to modify the current users.json file', err);
       }
@@ -85,7 +85,7 @@ router.patch('/update/product/:id', (req, res) => {
 router.delete('/delete/product/:id', (req, res) => {
   const requestedId = +req.params['id'];
 
-  fs.readFile('db/products.json', 'utf8', (err, data) => {
+  fs.readFile('./db/products.json', 'utf8', (err, data) => {
     if (err) {
       return res.send('Unable to read the file', err);
     }
@@ -99,7 +99,7 @@ router.delete('/delete/product/:id', (req, res) => {
 
     productsArray.splice(foundIndex, 1);
 
-    fs.writeFile('db/products.json', JSON.stringify(productsArray), 'utf8', (err) => {
+    fs.writeFile('./db/products.json', JSON.stringify(productsArray), 'utf8', (err) => {
       if (err) {
         return res.send('Error writing to file', err);
       }

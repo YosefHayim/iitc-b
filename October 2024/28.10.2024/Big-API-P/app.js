@@ -29,9 +29,9 @@ app.get("/api/status", (req, res) => {
   });
 });
 
-app.use("/api/jokes/", jokesRoute);
-app.use("/api/products/", productsRoute);
-app.use("/api/users/", usersRoute);
+app.use("/api/jokes", jokesRoute);
+app.use("/api/products", productsRoute);
+app.use("/api/users", usersRoute);
 
 app.use(errorHandle);
 

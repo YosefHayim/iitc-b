@@ -1,6 +1,7 @@
 import express from "express"
 import jokes from "../db/jokes.json" with { type: "json" }
 import fs from "fs"
+import { type } from "os"
 
 const router = express.Router()
 
@@ -19,7 +20,14 @@ router.get('/random', (req,res) => {
 
 // Get Joke by ID
 router.get("/:id", (req, res) => {
+  // The + converts the id params to number.
   const id = +req.params['id'];
+
+  if (typeof id !== 'number' || !id) {
+    res.send(`You must provide a valid number, not a string: ${id}`);
+    return
+  }  
+
   const data = jokes.find((joke) => joke.id === id);
 
   if (data) {
@@ -27,38 +35,49 @@ router.get("/:id", (req, res) => {
     return;
   }
 
-  res.send({
-    error: `Error: ID ${id} is not valid, please provide a valid ID.`
-  });
-  return;
+  if (!data) {
+    res.send({
+      error: `Error: ID ${id} is not valid, please provide a valid ID.`
+    });
+    return;
+  }
 });
 
 // Add new joke to the jokes.json file
 router.post('/add/joke', (req, res) => {
   const { id, text } = req.body;
 
-  const newJoke = { id, text };
-  console.log(newJoke);
+  // Validate data types
+  if (typeof id !== 'number') {
+    return res.send(`ID must be a number. Received: ${id}`);
+  }
 
-  fs.readFile('db/jokes.json', 'utf8', (err, data) => {
+  if (typeof text !== 'string') {
+    return res.send(`Text must be a string. Received: ${text}`);
+  }
+
+  // Ensure values are not missing
+  if (!id || !text) {
+    return res.send(`ID or text is undefined.`);
+  }
+
+  const newJoke = { id, text };
+
+  fs.readFile('./db/jokes.json', 'utf8', (err, data) => {
     if (err) {
-      res.send({ Error: `Something went wrong while reading: ${err}` });
-      return;
+      return res.send({ Error: `Something went wrong while reading: ${err}` });
     }
-  
+
     const jokesArray = JSON.parse(data);
     jokesArray.push(newJoke);
-  
-    fs.writeFile('db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
+
+    fs.writeFile('./db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
       if (err) {
-        res.send({ Error: `Something went wrong while writing: ${err}` });
-        return;
+        return res.send({ Error: `Something went wrong while writing: ${err}` });
       }
       res.send({ Added: newJoke });
-      return;
     });
   });
-  
 });
 
 // modify (patch) existing joke ID
@@ -69,7 +88,7 @@ router.patch('/update/joke/:id', (req, res) => {
   // Get the updated patch ID number.
   const updatedId = req.body.id;
 
-  fs.readFile('db/jokes.json', 'utf8', (err, data) => {
+  fs.readFile('./db/jokes.json', 'utf8', (err, data) => {
     if (err) {
       return res.send('Unable to read the current jokes.json file', err);
     }
@@ -81,7 +100,7 @@ router.patch('/update/joke/:id', (req, res) => {
       }
     });
 
-    fs.writeFile('db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
+    fs.writeFile('./db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
       if (err) {
         return res.send('Unable to modify the current jokes.json file', err);
       }
@@ -94,7 +113,7 @@ router.patch('/update/joke/:id', (req, res) => {
 router.delete('/delete/joke/:id', (req, res) => {
   const requestedId = +req.params['id'];
 
-  fs.readFile('db/jokes.json', 'utf8', (err, data) => {
+  fs.readFile('./db/jokes.json', 'utf8', (err, data) => {
     if (err) {
       return res.send('Unable to read the file', err);
     }
@@ -108,7 +127,7 @@ router.delete('/delete/joke/:id', (req, res) => {
 
     jokesArray.splice(foundIndex, 1);
 
-    fs.writeFile('db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
+    fs.writeFile('./db/jokes.json', JSON.stringify(jokesArray), 'utf8', (err) => {
       if (err) {
         return res.send('Error writing to file', err);
       }

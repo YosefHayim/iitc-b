@@ -1,11 +1,11 @@
-import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { regPaginationContainer, topRatedMoviesContainer } from "../../DOM/storage-elements-dom.js";
+import { displayAlertMessage } from "../../dom/alert-message-dom.js";
+import { regPaginationContainer, topRatedMoviesContainer } from "../../dom/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
-import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
+import { navigateToMoviePage } from "../../dom/homepage-navigate-to-single-movie-page-dom.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
-import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
-import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
+import { setPlayBtnVideo } from "../../dom/set-play-button-href-to-video-dom.js";
+import { isMovieAddedFav } from "../../dom/favorite-ids-storage.js";
 import { increasePage } from "../../global/increasing-page.js";
 import { decreasePage } from "../../global/decreasing-page.js";
 import { fetchTopRatedMovies } from "../../get-api-calls/get-total-top-rated-movies.js";

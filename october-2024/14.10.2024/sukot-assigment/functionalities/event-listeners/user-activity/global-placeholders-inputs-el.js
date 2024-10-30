@@ -1,4 +1,4 @@
-import { searchInputs, whiteGlassSearches } from "../../DOM/storage-elements-dom.js";
+import { searchInputs, whiteGlassSearches } from "../../dom/storage-elements-dom.js";
 
 // Resets the input placeholder text when the user focuses on the input field.
 // If the input field loses focus, the placeholder text is restored.

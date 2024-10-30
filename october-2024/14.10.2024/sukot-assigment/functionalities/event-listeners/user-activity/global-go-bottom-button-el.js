@@ -1,4 +1,4 @@
-import { goTBottomBtn } from "../../DOM/storage-elements-dom.js";
+import { goTBottomBtn } from "../../dom/storage-elements-dom.js";
 
 // Checks if the user has scrolled to the bottom of the page.
 const isAtBottom = () => {

@@ -1,5 +1,5 @@
-import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { homepageTitlesContainers } from "../../DOM/storage-elements-dom.js";
+import { displayAlertMessage } from "../../dom/alert-message-dom.js";
+import { homepageTitlesContainers } from "../../dom/storage-elements-dom.js";
 import { fetchCurrentlyInTheatersMovies } from "../../get-api-calls/get-total-current-movies-in-theatres.js";
 import { fetchPopularMovies } from "../../get-api-calls/get-total-popular-movies.js";
 import { fetchTopRatedMovies } from "../../get-api-calls/get-total-top-rated-movies.js";

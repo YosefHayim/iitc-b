@@ -1,17 +1,17 @@
-import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../dom/alert-message-dom.js";
 import {
   searchPaginationContainer,
   searchResultContainer,
-} from "../../DOM/storage-elements-dom.js";
+} from "../../dom/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 import { handleCopyToClipboard } from "./global-copy-to-clipboard-el.js";
-import { navigateToMoviePage } from "../../DOM/homepage-navigate-to-single-movie-page-dom.js";
+import { navigateToMoviePage } from "../../dom/homepage-navigate-to-single-movie-page-dom.js";
 import { getMovieTrailer } from "../../get-api-calls/get-movie-trailer.js";
-import { setPlayBtnVideo } from "../../DOM/set-play-button-href-to-video-dom.js";
+import { setPlayBtnVideo } from "../../dom/set-play-button-href-to-video-dom.js";
 import { decreasePage } from "../../global/decreasing-page.js";
 import { increasePage } from "../../global/increasing-page.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
-import { isMovieAddedFav } from "../../DOM/favorite-ids-storage.js";
+import { isMovieAddedFav } from "../../dom/favorite-ids-storage.js";
 
 // Handles user interactions on the homepage for movie cards.
 const searchPageButtonsEl = () => {

@@ -1,6 +1,6 @@
-import { applyWhiteMode } from "../../DOM/apply-white-mode.js";
-import { applyDarkMode } from "../../DOM/apply-dark-mode.js"; 
-import { toggleIconImage } from "../../DOM/storage-elements-dom.js";
+import { applyWhiteMode } from "../../dom/apply-white-mode.js";
+import { applyDarkMode } from "../../dom/apply-dark-mode.js"; 
+import { toggleIconImage } from "../../dom/storage-elements-dom.js";
 
 const toggleThemeMode = () => {
   // Check if white mode is active from localStorage and apply the mode accordingly.

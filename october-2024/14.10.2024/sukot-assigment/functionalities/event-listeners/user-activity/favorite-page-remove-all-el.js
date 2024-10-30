@@ -1,6 +1,6 @@
-import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../dom/alert-message-dom.js";
 import { removeFavMovie } from "../../post-api-calls/post-remove-movie-from-favorite-list.js";
-import { reloadThisPage } from "../../DOM/reload-current-page-dom.js";
+import { reloadThisPage } from "../../dom/reload-current-page-dom.js";
 
 // This function is responsible to delete all the movies on the favorite movie page.
 const removeAllFavMovies = () => {

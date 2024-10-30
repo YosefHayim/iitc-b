@@ -1,4 +1,4 @@
-import { burgerIcon, overlayContainer, topNavbarMobile } from "../../DOM/storage-elements-dom.js";
+import { burgerIcon, overlayContainer, topNavbarMobile } from "../../dom/storage-elements-dom.js";
 
 // Handles the burger icon toggle for the mobile menu by attaching an event listener to it.
 const handleBurgerIconToggle = () => {

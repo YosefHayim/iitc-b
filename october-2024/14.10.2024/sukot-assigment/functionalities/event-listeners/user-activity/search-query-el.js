@@ -1,5 +1,5 @@
-import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
-import { redirectToErrorPage } from "../../DOM/redirect-to-404-dom.js";
+import { displayAlertMessage } from "../../dom/alert-message-dom.js";
+import { redirectToErrorPage } from "../../dom/redirect-to-404-dom.js";
 import { searchMovieByName } from "../../get-api-calls/get-movie-by-name.js";
 import { searchMovieById } from "../../get-api-calls/get-movie-id-by-id.js";
 

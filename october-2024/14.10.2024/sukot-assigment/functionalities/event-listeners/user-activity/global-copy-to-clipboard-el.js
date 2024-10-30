@@ -1,4 +1,4 @@
-import { displayAlertMessage } from "../../DOM/alert-message-dom.js";
+import { displayAlertMessage } from "../../dom/alert-message-dom.js";
 
 // Copies the provided trailer URL to the clipboard, allowing the user to share or use it later.
 const handleCopyToClipboard = async (trailerUrl) => {

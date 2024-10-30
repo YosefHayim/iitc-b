@@ -1,4 +1,4 @@
-import { goBackTopBtn } from "../../DOM/storage-elements-dom.js";
+import { goBackTopBtn } from "../../dom/storage-elements-dom.js";
 
 // This function displays the "Back to Top" button when the user scrolls down 1000px and hides it otherwise.
 window.addEventListener('scroll', (ev) => {

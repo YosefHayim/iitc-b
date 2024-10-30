@@ -1,8 +1,8 @@
 import { getData } from "./api-functions.js";
 import { accountId } from "../global/env.js";
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { displayAlertMessage } from "../DOM/alert-message-dom.js";
-import { displayMovies } from "../DOM/display-movies-dom.js";
+import { redirectToErrorPage } from "../dom/redirect-to-404-dom.js";
+import { displayAlertMessage } from "../dom/alert-message-dom.js";
+import { displayMovies } from "../dom/display-movies-dom.js";
 
 // This function asynchronously fetches and displays the user's favorite movies from the API.
 const displayFavoriteMoviesList = async () => {

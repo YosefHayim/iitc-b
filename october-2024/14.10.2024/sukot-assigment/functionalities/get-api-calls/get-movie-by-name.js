@@ -1,8 +1,8 @@
 import { getData } from "./api-functions.js";
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { displayMovies } from "../DOM/display-movies-dom.js";
-import { dynamicTitlesDisplay } from "../DOM/titles-dynamic-display.js";
-import { isMaxPageReached } from "../DOM/is-max-page-reached-dom.js";
+import { redirectToErrorPage } from "../dom/redirect-to-404-dom.js";
+import { displayMovies } from "../dom/display-movies-dom.js";
+import { dynamicTitlesDisplay } from "../dom/titles-dynamic-display.js";
+import { isMaxPageReached } from "../dom/is-max-page-reached-dom.js";
 
 // This function searches for movies based on the input value and displays the results.
 // If a page number is provided, it uses that; otherwise, it defaults to page 1.

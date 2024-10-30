@@ -1,7 +1,7 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { renderSingleMoviePage } from "../DOM/single-movie-page-dom.js";
+import { redirectToErrorPage } from "../dom/redirect-to-404-dom.js";
+import { renderSingleMoviePage } from "../dom/single-movie-page-dom.js";
 
 // This function fetches data about a specific movie using its ID and retrieves actor information for that movie.
 const displaySingleMovieById = async () => {

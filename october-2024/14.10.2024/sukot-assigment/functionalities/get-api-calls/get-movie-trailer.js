@@ -1,7 +1,7 @@
 import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js";
-import { displayAlertMessage } from "../DOM/alert-message-dom.js";
+import { redirectToErrorPage } from "../dom/redirect-to-404-dom.js";
+import { displayAlertMessage } from "../dom/alert-message-dom.js";
 
 // This function retrieves the relevant movie trailer using the provided movie ID.
 const getMovieTrailer = async (movieId) => {

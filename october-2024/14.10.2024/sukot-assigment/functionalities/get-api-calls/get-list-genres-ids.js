@@ -1,5 +1,5 @@
-import { displayAlertMessage } from "../DOM/alert-message-dom.js"; 
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js"; 
+import { displayAlertMessage } from "../dom/alert-message-dom.js"; 
+import { redirectToErrorPage } from "../dom/redirect-to-404-dom.js"; 
 import { getData } from "./api-functions.js";
 
 const getGenresIds = async () => {

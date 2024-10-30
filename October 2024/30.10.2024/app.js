@@ -1,5 +1,4 @@
 import express from "express"
-import { MongoClient, ServerApiVersion } from "mongodb"
 import mongoose from "mongoose"
 
 const app = express()

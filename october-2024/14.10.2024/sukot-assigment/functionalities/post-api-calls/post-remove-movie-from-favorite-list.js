@@ -1,4 +1,4 @@
-import { redirectToErrorPage } from "../DOM/redirect-to-404-dom.js"; // Redirects to the error page if needed
+import { redirectToErrorPage } from "../dom/redirect-to-404-dom.js"; // Redirects to the error page if needed
 import { postData } from "../get-api-calls/api-functions.js"; // Function to handle API POST requests
 import { accountId } from "../global/env.js"; // The account ID for user-specific actions
 

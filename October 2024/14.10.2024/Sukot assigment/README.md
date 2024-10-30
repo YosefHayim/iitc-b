@@ -105,7 +105,11 @@ Add option to order a movie ticket.
 if user reached max page allow me to get previous page.
 if user go next or prev page he is returning to the same position he was on the browser height
 instead of presentation do a commercial video of the website with ai voice and cool editing to make it funny.
-login system
+login system for user e.g. with local storage or with database
+sign up page
+do iframe src to prevent from user to be directed to another page.
+dynamic search result show up without pressing enter or submit.
+html tag dialog pros and cons how to do whats special about this html tag dialog.
 create instagram and facebook page
 Use star emoji that is built in instead of svg's maybe.
 propagation of div.

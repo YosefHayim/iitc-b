@@ -1,7 +1,6 @@
 import express from "express"
 import jokes from "../db/jokes.json" with { type: "json" }
 import fs from "fs"
-import { type } from "os"
 
 const router = express.Router()
 

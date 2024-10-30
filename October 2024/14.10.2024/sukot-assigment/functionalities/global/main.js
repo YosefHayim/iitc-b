@@ -1,9 +1,9 @@
 // Global Event Listeners and Functions
-import { handleBurgerIconToggle } from "../Event-listeners/user-activity/global-burger-open-mobile-menu-el.js"; // Handles mobile menu toggle
-import { resetPlaceholder } from "../Event-listeners/user-activity/global-placeholders-inputs-el.js"; // Resets input placeholders
+import { handleBurgerIconToggle } from "../event-listeners/user-activity/global-burger-open-mobile-menu-el.js"; // Handles mobile menu toggle
+import { resetPlaceholder } from "../event-listeners/user-activity/global-placeholders-inputs-el.js"; // Resets input placeholders
 import { screenLoadingAnimation } from "../dom/global-loader-dom.js"; // Controls screen loading animations
-import { handleBackToTopButtonClick } from "../Event-listeners/user-activity/global-go-top-button-el.js"; // Handles back-to-top button click
-import { handleGoToBottomButtonClick } from "../Event-listeners/user-activity/global-go-bottom-button-el.js"; // Handles go-to-bottom button click
+import { handleBackToTopButtonClick } from "../event-listeners/user-activity/global-go-top-button-el.js"; // Handles back-to-top button click
+import { handleGoToBottomButtonClick } from "../event-listeners/user-activity/global-go-bottom-button-el.js"; // Handles go-to-bottom button click
 
 // API Calls for fetching movie data
 import { fetchCurrentlyInTheatersMovies } from "../get-api-calls/get-total-current-movies-in-theatres.js"; // Fetches movies currently in theaters
@@ -16,33 +16,33 @@ import { popularMoviesOfWeek } from "../get-api-calls/get-popular-movies-of-week
 import { displaySingleMovieById } from "../get-api-calls/get-single-movie-details.js"; // Displays single movie details by ID
 
 // Event Listeners for the Favorite Page
-import { handleFavoriteMoviePage } from "../Event-listeners/user-activity/favorite-page-buttons-el.js"; // Handles favorite page buttons
+import { handleFavoriteMoviePage } from "../event-listeners/user-activity/favorite-page-buttons-el.js"; // Handles favorite page buttons
 
 // Event Listeners for the "Today Must Watch" Page
-import { isNextPagePrevPageTodayMustWatch, todayMustWatchPlayButtons } from "../Event-listeners/user-activity/today-must-watch-page-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
+import { isNextPagePrevPageTodayMustWatch, todayMustWatchPlayButtons } from "../event-listeners/user-activity/today-must-watch-page-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
 
 // Event Listeners for the "Weekly Hits" Page
-import { isNextPagePrevPageWeeklyHits, weeklyHitsPageButtons } from "../Event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
+import { isNextPagePrevPageWeeklyHits, weeklyHitsPageButtons } from "../event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
 
 // Event Listeners for the Homepage
-import { setupHomepagePagination } from "../Event-listeners/user-activity/movies-categories-pagination.js"; // Sets up homepage pagination
-import { handleMovieSearchByIdOrName } from "../Event-listeners/user-activity/global-inputs-el.js"; // Handles movie search by ID or name
-import { moviesCategoriesButtons } from "../Event-listeners/user-activity/movies-categories-buttons-el.js"; // Handles homepage movie data button clicks
+import { setupHomepagePagination } from "../event-listeners/user-activity/movies-categories-pagination.js"; // Sets up homepage pagination
+import { handleMovieSearchByIdOrName } from "../event-listeners/user-activity/global-inputs-el.js"; // Handles movie search by ID or name
+import { moviesCategoriesButtons } from "../event-listeners/user-activity/movies-categories-buttons-el.js"; // Handles homepage movie data button clicks
 
 // Event Listener for the Feedback Page
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
-import { inputSearchListener } from "../Event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
-import { toggleThemeMode } from "../Event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
-import { isNextPagePrevPageSearchPage, searchPageButtonsEl } from "../Event-listeners/user-activity/search-page-buttons-el.js";
-import { isNextPagePrevPageTrendingNow, trendingNowPageButtons } from "../Event-listeners/user-activity/trending-now-page-buttons-el.js";
-import { hotOnThebigScreenPageButtons, isNextPagePrevPageHotOnBigScreenPagination } from "../Event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
-import { hotPicksButtonsPage, hotPicksPagination } from "../Event-listeners/user-activity/hot-picks-buttons-el.js";
-import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../Event-listeners/user-activity/next-big-hits-buttons-el.js";
-import { homepageContainerButtons } from "../DOM/homepage-dom.js"
-import { randomMessageDisplay } from "../DOM/display-random-fact-message-dom.js";
+import { inputSearchListener } from "../event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
+import { toggleThemeMode } from "../event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
+import { isNextPagePrevPageSearchPage, searchPageButtonsEl } from "../event-listeners/user-activity/search-page-buttons-el.js";
+import { isNextPagePrevPageTrendingNow, trendingNowPageButtons } from "../event-listeners/user-activity/trending-now-page-buttons-el.js";
+import { hotOnThebigScreenPageButtons, isNextPagePrevPageHotOnBigScreenPagination } from "../event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
+import { hotPicksButtonsPage, hotPicksPagination } from "../event-listeners/user-activity/hot-picks-buttons-el.js";
+import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../event-listeners/user-activity/next-big-hits-buttons-el.js";
+import { homepageContainerButtons } from "../dom/homepage-dom.js"
+import { randomMessageDisplay } from "../dom/display-random-fact-message-dom.js";
 import { getMoviesGenresById } from "../get-api-calls/get-movie-genre-by-id.js"
-import { genresButtonsRedirect } from "../Event-listeners/user-activity/genres-welcome-page-el.js";
-import { genresButtonsListeners, genresPaginationButtons } from "../Event-listeners/user-activity/genres-pages-buttons-el.js";
+import { genresButtonsRedirect } from "../event-listeners/user-activity/genres-welcome-page-el.js";
+import { genresButtonsListeners, genresPaginationButtons } from "../event-listeners/user-activity/genres-pages-buttons-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen

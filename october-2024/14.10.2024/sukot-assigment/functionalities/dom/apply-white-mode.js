@@ -3,23 +3,27 @@ import { toggleIconImage } from "./storage-elements-dom.js";
 // Apply dark mode styles to the browser.
 const applyWhiteMode = () => {
   // Get all elements for styling
-  const movieImgs = document.querySelectorAll('.movie-img');
-  const whiteModeEls = document.querySelectorAll('.template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title');
-  const mobileNavTop = document.querySelector('.navbar-mobile');
-  const footer = document.querySelector('footer');
-  const mainEl = document.querySelector('main');
-  const genreTitles = document.querySelectorAll('.genre-title');
-  const genresButtons = document.querySelectorAll('.genre-direct-btn');
-  const shortphraseGenres = document.querySelectorAll('.shortphrase-genre');
-  const redirectGenresButtons = document.querySelectorAll('.button-t');
-  const allImgs = document.querySelectorAll('img');
-  const announcementFactsFirstP = document.querySelector('.fun-facts-p');
-  const announcementFactsSecondtP = document.querySelector('body > main > div.announcement-bar > p:nth-child(1)');
-  const singleMovieData = document.querySelector('.single-movie-card');
+  const movieImgs = document.querySelectorAll(".movie-img");
+  const whiteModeEls = document.querySelectorAll(
+    ".template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title"
+  );
+  const mobileNavTop = document.querySelector(".navbar-mobile");
+  const footer = document.querySelector("footer");
+  const mainEl = document.querySelector("main");
+  const genreTitles = document.querySelectorAll(".genre-title");
+  const genresButtons = document.querySelectorAll(".genre-direct-btn");
+  const shortphraseGenres = document.querySelectorAll(".shortphrase-genre");
+  const redirectGenresButtons = document.querySelectorAll(".button-t");
+  const allImgs = document.querySelectorAll("img");
+  const announcementFactsFirstP = document.querySelector(".fun-facts-p");
+  const announcementFactsSecondtP = document.querySelector(
+    "body > main > div.announcement-bar > p:nth-child(1)"
+  );
+  const singleMovieData = document.querySelector(".single-movie-card");
 
   // Change toggle icon image if it exists
   if (toggleIconImage) {
-    toggleIconImage.src = '/images/user-activity/red-circle.svg';
+    toggleIconImage.src = "/images/user-activity/white-circle.svg";
   }
 
   // Style single movie data

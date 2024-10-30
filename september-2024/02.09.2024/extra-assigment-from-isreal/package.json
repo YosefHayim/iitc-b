@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  },
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "name": "extra-assignment-from-israel",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

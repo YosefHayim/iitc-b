@@ -9,16 +9,16 @@ const displayMovies = (requestedContainer, data) => {
 
   // If both the container and its element exist, reset the container's HTML to avoid duplicates.
   if (chosenContainer && chosenContainer.containerEl) {
-    chosenContainer.containerEl.innerHTML = '';
+    chosenContainer.containerEl.innerHTML = "";
 
     // Check if data contains a 'results' array (multiple movies) or is a single object.
     if (Array.isArray(data.results)) {
       // Loop through each movie in the results array.
-      data.results.forEach(movie => {
+      data.results.forEach((movie) => {
         let movieCard;
 
         // If it's the favorite movie page, generate a favorite movie card.
-        if (requestedContainer === 'Favorite movie page') {
+        if (requestedContainer === "Favorite movie page") {
           movieCard = generateFavoriteMovieCard(movie);
         } else {
           // Otherwise, generate a regular movie card.
@@ -32,7 +32,7 @@ const displayMovies = (requestedContainer, data) => {
       let movieCard;
 
       // Generate a favorite movie card if it's the favorite movie page.
-      if (requestedContainer === 'Favorite movie page') {
+      if (requestedContainer === "Favorite movie page") {
         movieCard = generateFavoriteMovieCard(data);
       } else {
         // Otherwise, generate a regular movie card.
@@ -51,4 +51,4 @@ const displayMovies = (requestedContainer, data) => {
   }
 };
 
-export { displayMovies }
+export { displayMovies };

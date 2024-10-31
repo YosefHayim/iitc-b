@@ -27,8 +27,17 @@ const searchPageButtonsEl = () => {
     const movieName = movieCard.querySelector(".title").textContent;
     const movieId = movieCard.id.replace(/\D/g, "");
 
-    if (!dataBtn && !shareButton && !heartButton && !playButton && !movieCard && !trailerImg && !movieName && !movieId ) {
-      return null
+    if (
+      !dataBtn &&
+      !shareButton &&
+      !heartButton &&
+      !playButton &&
+      !movieCard &&
+      !trailerImg &&
+      !movieName &&
+      !movieId
+    ) {
+      return null;
     }
 
     if (!movieCard) {

@@ -10,28 +10,29 @@ import { isMaxPageReached } from "../dom/is-max-page-reached-dom.js";
 const fetchTopRatedMovies = async (count = 1) => {
   try {
     // Fetch top-rated movies data from the API.
-    const data = await getData(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${count}&api_key=${apiKey}`);    
+    const data = await getData(
+      `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${count}&api_key=${apiKey}`
+    );
 
     // If the data is falsy, redirect to the error page.
     if (!data) {
-      console.error('Something is wrong with the data:', data);
+      console.error("Something is wrong with the data:", data);
       redirectToErrorPage();
       return;
     }
 
     // If valid data is received, display the movies in the appropriate container.
-    displayMovies('Top rated movies page', data);
+    displayMovies("Top rated movies page", data);
 
     // Create a dynamic title to inform the user about the current page and total pages.
     const textTitle = ` ${data.page}/${data.total_pages} Pages`;
-    dynamicTitlesDisplay('Top rated movies title', textTitle);
+    dynamicTitlesDisplay("Top rated movies title", textTitle);
 
     // Checking if we reached maxed page and if so we return a user notification and stop for further calls by removing the pagination buttons.
-    isMaxPageReached(count,data.total_pages)
-
+    isMaxPageReached(count, data.total_pages);
   } catch (error) {
     // Log any errors that occur during the API call and redirect to the error page.
-    console.error('Error fetching top-rated movies:', error);
+    console.error("Error fetching top-rated movies:", error);
     redirectToErrorPage();
   }
 };

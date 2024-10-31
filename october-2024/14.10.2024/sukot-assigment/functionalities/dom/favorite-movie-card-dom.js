@@ -5,16 +5,16 @@ import { createDomEl } from "./create-div-dom.js";
 const generateFavoriteMovieCard = (movie) => {
   // Create a div for each movie card.
   const movieCardDiv = createDomEl();
-  
+
   // Add the class .movie-card to the div.
-  movieCardDiv.classList.add('movie-card');
-  
+  movieCardDiv.classList.add("movie-card");
+
   // Assign an ID to identify the movie as a favorite.
   movieCardDiv.id = `favMovie-${movie.id}`;
-  
+
   // Set the inner HTML by calling the skeleton function with the div and movie object.
   buildFavoriteCardSkeleton(movieCardDiv, movie);
-  
+
   return movieCardDiv;
 };
 

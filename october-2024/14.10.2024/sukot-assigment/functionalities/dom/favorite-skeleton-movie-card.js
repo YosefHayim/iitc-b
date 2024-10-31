@@ -7,10 +7,10 @@ import { roundMovieRating } from "./round-rating-movie-dom.js";
 const buildFavoriteCardSkeleton = (movieCardDiv, movie) => {
   // Check if the movie has a valid poster image; set a default image if not.
   const image = isImageNull(movie.poster_path);
-  
+
   // Check if the movie title is longer than 3 words; shorten if necessary for better layout.
   const movieName = isNameToLong(movie.original_title);
-  
+
   // Get the appropriate star rating image based on the movie's average rating (e.g., 2 = 1 star, 4 = 2 stars).
   const resultRatingImg = getStarRatingImage(movie.vote_average);
 

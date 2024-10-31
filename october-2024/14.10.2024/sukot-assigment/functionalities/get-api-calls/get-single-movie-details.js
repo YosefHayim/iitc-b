@@ -7,24 +7,28 @@ import { renderSingleMoviePage } from "../dom/single-movie-page-dom.js";
 const displaySingleMovieById = async () => {
   // Create a new URL object to parse the query parameters.
   const urlParams = new URLSearchParams(window.location.search);
-  
+
   // Get the video URL and movie ID from the URL parameters.
-  const videoUrl = urlParams.get('videoUrl');
-  
-  const movieId = urlParams.get('movieId');
-  
+  const videoUrl = urlParams.get("videoUrl");
+
+  const movieId = urlParams.get("movieId");
+
   // If the movie ID is not provided, redirect the user to the error page.
   if (!movieId) {
-    console.error('Something is wrong with the movie ID:', movieId);
+    console.error("Something is wrong with the movie ID:", movieId);
     return redirectToErrorPage();
   }
 
   try {
     // Fetch the movie details using the movie ID.
-    const singleMovieData = await getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
+    const singleMovieData = await getData(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+    );
 
     // Fetch the credits (actors) for the specific movie.
-    const creditsData = await getData(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`);
+    const creditsData = await getData(
+      `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`
+    );
 
     // If a video URL is provided, pass it along with the movie and credits data to render the movie page.
     if (videoUrl) {
@@ -35,9 +39,9 @@ const displaySingleMovieById = async () => {
     }
   } catch (error) {
     // Log any errors that occur during the fetching of movie details or credits.
-    console.error('Error fetching movie details or credits:', error);
-    redirectToErrorPage();  // Redirect to the error page in case of an error.
+    console.error("Error fetching movie details or credits:", error);
+    redirectToErrorPage(); // Redirect to the error page in case of an error.
   }
-}
+};
 
 export { displaySingleMovieById };

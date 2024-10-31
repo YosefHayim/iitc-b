@@ -1,4 +1,12 @@
-import { currentTheaterPage, genreResultContainerTitle, latestPopularPage, searchResultTitle, templateTitle, topTrendingPage, upComingMoviePage } from "./storage-elements-dom.js";
+import {
+  currentTheaterPage,
+  genreResultContainerTitle,
+  latestPopularPage,
+  searchResultTitle,
+  templateTitle,
+  topTrendingPage,
+  upComingMoviePage,
+} from "./storage-elements-dom.js";
 
 // This function dynamically selects the appropriate title container based on the requested title container name (requestedTContainer).
 // It finds the matching title container to allow DOM manipulation for various sections like search results, weekly hits, etc.
@@ -6,46 +14,48 @@ const titlesStorage = (requestedTContainer) => {
   // Storage array containing title containers with their names and corresponding DOM elements.
   const storage = [
     {
-      containerTitleName: 'Todays must watch page title',
+      containerTitleName: "Todays must watch page title",
       containerTitleEl: templateTitle,
     },
     {
-      containerTitleName: 'Weekly hits page title',
+      containerTitleName: "Weekly hits page title",
       containerTitleEl: templateTitle,
     },
     {
-      containerTitleName: 'Search result title page by ID',
+      containerTitleName: "Search result title page by ID",
       containerTitleEl: searchResultTitle,
     },
     {
-      containerTitleName: 'Search result title page by Name',
+      containerTitleName: "Search result title page by Name",
       containerTitleEl: searchResultTitle,
     },
     {
-      containerTitleName: 'Currently In Theatres title',
+      containerTitleName: "Currently In Theatres title",
       containerTitleEl: currentTheaterPage,
     },
     {
-      containerTitleName: 'Upcoming movies title',
+      containerTitleName: "Upcoming movies title",
       containerTitleEl: upComingMoviePage,
     },
     {
-      containerTitleName: 'Top rated movies title',
+      containerTitleName: "Top rated movies title",
       containerTitleEl: topTrendingPage,
     },
     {
-      containerTitleName: 'Popular movies title',
+      containerTitleName: "Popular movies title",
       containerTitleEl: latestPopularPage,
     },
     {
-      containerTitleName: 'genres movies title display',
+      containerTitleName: "genres movies title display",
       containerTitleEl: genreResultContainerTitle,
     },
   ];
 
   // Find and return the relevant title container based on the requested title container name.
-  const matchedTitle = storage.find(title => title.containerTitleName === requestedTContainer);
-  
+  const matchedTitle = storage.find(
+    (title) => title.containerTitleName === requestedTContainer
+  );
+
   return matchedTitle;
 };
 

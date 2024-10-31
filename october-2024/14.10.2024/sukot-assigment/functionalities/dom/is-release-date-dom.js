@@ -8,7 +8,7 @@ const getReleaseStatus = (dateString) => {
 
   // Convert the difference into days.
   const daysDifference = Math.floor(difference / (1000 * 60 * 60 * 24));
-  
+
   // Calculate the absolute number of years, months, weeks, and days from the total days difference.
   const years = Math.floor(Math.abs(daysDifference) / 365);
   const months = Math.floor((Math.abs(daysDifference) % 365) / 30);
@@ -17,7 +17,7 @@ const getReleaseStatus = (dateString) => {
 
   // Prepare a list to store the time differences (years, months, weeks, days).
   const timePassed = [];
-  
+
   // Add the appropriate year string if the difference includes years.
   if (years > 1) timePassed.push(`${years} years`);
   else if (years === 1) timePassed.push(`1 year`);
@@ -30,7 +30,7 @@ const getReleaseStatus = (dateString) => {
   // If the movie has already been released (daysDifference is negative), return a message about when it was released.
   if (daysDifference < 0) {
     return `Released: ${timePassed.join(", ")} ago`;
-  // Otherwise, return a message about how long is left until the release.
+    // Otherwise, return a message about how long is left until the release.
   } else {
     return `${timePassed.join(", ")} left until release`;
   }

@@ -1,5 +1,5 @@
 .genre-image img {
-  max-width: 13em; 
+  max-width: 13em;
   display: block;
   margin: 0 auto;
   border-radius: 1em;
@@ -21,7 +21,8 @@
   color: white;
 }
 
-.genre-title,.shortphrase-genre {
+.genre-title,
+.shortphrase-genre {
   text-align: center;
   opacity: 0.5;
 }
@@ -33,7 +34,7 @@
 .shortphrase-genre {
   padding: 0.5em;
   font-size: 1.5em;
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 1s;
   position: relative;
   width: 100%;
@@ -70,7 +71,7 @@
 }
 
 .special:hover {
-  color:black;
+  color: black;
 }
 
 .genre-card:hover img:hover {
@@ -100,7 +101,7 @@
   text-align: center;
   justify-content: center;
   width: 14em;
-  border-radius: 0.5em ;
+  border-radius: 0.5em;
 }
 
 .genre-direct-btn {
@@ -109,7 +110,7 @@
   padding: 0.5em;
   border-radius: 100em;
   border: none;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-size: 1.4em;
   opacity: 0.5;
 }
@@ -130,8 +131,7 @@
   margin-bottom: 1em;
 }
 
-@media screen and (min-width:1024px) {
-
+@media screen and (min-width: 1024px) {
   .genre-title {
     font-size: 3em;
     letter-spacing: 0.09em;
@@ -153,5 +153,4 @@
   .genre-card {
     flex-direction: column;
   }
-  
 }

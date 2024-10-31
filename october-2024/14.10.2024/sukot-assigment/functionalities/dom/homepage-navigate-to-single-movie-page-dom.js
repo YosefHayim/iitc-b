@@ -11,10 +11,12 @@ const navigateToMoviePage = (movieCardId, videoId) => {
   if (!videoId) {
     window.location.href = `movie-data.html?movieId=${movieCardId}`;
     return;
-  } 
-  
+  }
+
   // If both movie ID and video ID exist, navigate to the movie data page with both, allowing trailer access.
-  window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(videoId)}`;
+  window.location.href = `movie-data.html?movieId=${movieCardId}&videoUrl=${encodeURIComponent(
+    videoId
+  )}`;
   return;
 };
 

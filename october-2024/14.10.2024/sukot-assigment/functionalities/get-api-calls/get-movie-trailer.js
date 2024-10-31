@@ -7,23 +7,26 @@ import { displayAlertMessage } from "../dom/alert-message-dom.js";
 const getMovieTrailer = async (movieId) => {
   try {
     // Fetch movie data along with videos from the API.
-    const data = await getData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`);
+    const data = await getData(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`
+    );
 
     // If the data received is falsy, log the error and redirect to the error page.
     if (!data) {
       console.error(`Error fetching data`);
-      displayAlertMessage('No-trailer-found',movieId)
+      displayAlertMessage("No-trailer-found", movieId);
       redirectToErrorPage();
       return;
     }
 
     // If valid data is received, search for the first valid trailer.
-    const video = data.videos?.results?.find(vid => vid.type === "Trailer" && vid.key);
-    return video;  // Return the trailer object if found.
-
+    const video = data.videos?.results?.find(
+      (vid) => vid.type === "Trailer" && vid.key
+    );
+    return video; // Return the trailer object if found.
   } catch (error) {
     // Log any errors that occur during the API call.
-    console.error('Error fetching trailer:', error);
+    console.error("Error fetching trailer:", error);
   }
 };
 

@@ -1,11 +1,15 @@
 import { alertMessagesTypes } from "./storage-alert-messages.js";
 import { createDomEl } from "./create-div-dom.js";
-import { alertMessageContainerEl, navbarDesktopEl } from "./storage-elements-dom.js";
+import {
+  alertMessageContainerEl,
+  navbarDesktopEl,
+} from "./storage-elements-dom.js";
 
 // Shows alert with custom message and style based on user interaction.
 const displayAlertMessage = (messageType, word) => {
   // Get message and background color for alert.
-  const { message, backgroundColor } = alertMessagesTypes(messageType, word) || {};
+  const { message, backgroundColor } =
+    alertMessagesTypes(messageType, word) || {};
 
   // If both message and background color exist.
   if (message && backgroundColor) {
@@ -15,7 +19,7 @@ const displayAlertMessage = (messageType, word) => {
     const messageContainer = alertMessageContainerEl || createDomEl();
 
     // Style and position the alert.
-    messageContainer.classList.add('template-message-container');
+    messageContainer.classList.add("template-message-container");
     messageContainer.style.cssText = `
       background: ${backgroundColor};
       display: flex;
@@ -31,16 +35,15 @@ const displayAlertMessage = (messageType, word) => {
     // Insert alert after navbar if missing.
     if (!alertMessageContainerEl) {
       if (navbarDesktopEl) {
-        
-        navbarDesktopEl.insertAdjacentElement('afterend', messageContainer);
+        navbarDesktopEl.insertAdjacentElement("afterend", messageContainer);
       } else if (announcementBarDiv) {
-        announcementBarDiv.insertAdjacentElement('afterend', messageContainer);
+        announcementBarDiv.insertAdjacentElement("afterend", messageContainer);
       }
     }
 
     // Display alert for 1 second, then hide.
     setTimeout(() => {
-      messageContainer.style.display = 'none';
+      messageContainer.style.display = "none";
     }, 1000);
   }
 };

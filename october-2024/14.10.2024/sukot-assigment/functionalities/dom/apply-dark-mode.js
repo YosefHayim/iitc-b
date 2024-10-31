@@ -2,8 +2,12 @@ import { toggleIconImage } from "./storage-elements-dom.js";
 
 // Reverts the website's view to dark mode by resetting all styles changed by white mode.
 const applyDarkMode = () => {
-  const whiteModeEls = document.querySelectorAll(".template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title");
-  const announcementFactsSecondtP = document.querySelector("body > main > div.announcement-bar > p:nth-child(1)");
+  const whiteModeEls = document.querySelectorAll(
+    ".template-title-container, .search-results-container-title, .feedback-me-container-title, .about-us-container-title, .favorite-movies-container-title, .popular-movies-container-title, .trending-movies-container-title, .upcoming-movies-container-title, .currently-movies-in-theatres-container-title"
+  );
+  const announcementFactsSecondtP = document.querySelector(
+    "body > main > div.announcement-bar > p:nth-child(1)"
+  );
   const movieImgs = document.querySelectorAll(".movie-img");
   const mobileNavTop = document.querySelector(".navbar-mobile");
   const footer = document.querySelector("footer");

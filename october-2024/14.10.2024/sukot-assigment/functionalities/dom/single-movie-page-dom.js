@@ -16,18 +16,19 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
   const resultRatingImg = getStarRatingImage(singleMovieData.vote_average);
   const movieGenres = displayMovieGenres(singleMovieData.genres);
   const roundRatingFloat = roundMovieRating(singleMovieData.vote_average);
-  
+
   const movieName = singleMovieData.original_title;
   const urlWeb = singleMovieData.homepage;
   const overviewMovie = singleMovieData.overview;
 
   // If no trailer is available, set the button text accordingly and display an alert message.
-  let buttonText = 'Watch the trailer';
+  let buttonText = "Watch the trailer";
   if (!videoUrl) {
-    buttonText = 'No trailer available.';
-    displayAlertMessage('no-youtube-video-available', movieName);
+    buttonText = "No trailer available.";
+
+    displayAlertMessage("no-youtube-video-available", movieName);
   } else {
-    displayAlertMessage('success-received-movie-data', movieName);
+    displayAlertMessage("success-received-movie-data", movieName);
   }
 
   // Populate the single movie data page with movie details.
@@ -39,6 +40,7 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
         <h2 class="rating-number-txt">${roundRatingFloat}</h2>
       </div>
       <img src="${image}" alt="movie-img" class="single-movie-img">
+      <button class="fav-button-movie-single-page">Add to top picks </button>
       <h2 class="movie-release">${isReleased}</h2>
       <h2 class="movie-genre">Movie genres: ${movieGenres}</h2>
       <h2 class="summary-title">Summary</h2>
@@ -55,16 +57,16 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
   `;
 
   // Create and append the cast container.
-  const videoContainer = document.querySelector('.video-container');
+  const videoContainer = document.querySelector(".video-container");
   const castContainer = createDomEl();
   const castContainerTitle = createDomEl();
-  
+
   castContainerTitle.innerHTML = `
     <h2 class="actors-title">Actors of the movie: ${movieName}</h2>
   `;
-  videoContainer.insertAdjacentElement('afterend', castContainerTitle);
+  videoContainer.insertAdjacentElement("afterend", castContainerTitle);
 
-  castContainer.classList.add('cast-container');
+  castContainer.classList.add("cast-container");
   singlePageMovieData.appendChild(castContainer);
 
   // If no cast data is available, display a message.
@@ -74,13 +76,13 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
   }
 
   // Display up to 10 actors from the cast data.
-  creditsData.cast.slice(0, 10).forEach(actor => {
+  creditsData.cast.slice(0, 10).forEach((actor) => {
     const actorDiv = createDomEl();
-    actorDiv.classList.add('actor');
-    
+    actorDiv.classList.add("actor");
+
     const actorName = isNameToLong(actor.name);
     const image = isImageNull(actor.profile_path);
-    
+
     actorDiv.innerHTML = `
       <div class="img-name-container">
         <img src="${image}" alt="${actorName}" class="actor-img">

@@ -9,7 +9,7 @@ const handleCopyToClipboard = async (trailerUrl) => {
       await navigator.clipboard.writeText(trailerUrl);
     } catch (err) {
       // Display an error message if the copy operation fails.
-      displayAlertMessage('Something went wrong!');
+      displayAlertMessage("Something went wrong!");
     }
   } else {
     console.warn("Document not focused, skipping clipboard copy.");

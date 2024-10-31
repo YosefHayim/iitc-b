@@ -19,10 +19,16 @@ import { displaySingleMovieById } from "../get-api-calls/get-single-movie-detail
 import { handleFavoriteMoviePage } from "../event-listeners/user-activity/favorite-page-buttons-el.js"; // Handles favorite page buttons
 
 // Event Listeners for the "Today Must Watch" Page
-import { isNextPagePrevPageTodayMustWatch, todayMustWatchPlayButtons } from "../event-listeners/user-activity/today-must-watch-page-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
+import {
+  isNextPagePrevPageTodayMustWatch,
+  todayMustWatchPlayButtons,
+} from "../event-listeners/user-activity/today-must-watch-page-buttons-el.js"; // Handles play buttons on 'Today Must Watch' page
 
 // Event Listeners for the "Weekly Hits" Page
-import { isNextPagePrevPageWeeklyHits, weeklyHitsPageButtons } from "../event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
+import {
+  isNextPagePrevPageWeeklyHits,
+  weeklyHitsPageButtons,
+} from "../event-listeners/user-activity/weekly-hits-page-buttons-el.js"; // Handles weekly hits page buttons
 
 // Event Listeners for the Homepage
 import { setupHomepagePagination } from "../event-listeners/user-activity/movies-categories-pagination.js"; // Sets up homepage pagination
@@ -33,16 +39,35 @@ import { moviesCategoriesButtons } from "../event-listeners/user-activity/movies
 import { formAnswer } from "../feedback-me-page/form-data-el.js"; // Handles feedback form submission
 import { inputSearchListener } from "../event-listeners/user-activity/search-query-el.js"; // Handles homepage search queries
 import { toggleThemeMode } from "../event-listeners/user-activity/toggle-dark-mode-el.js"; // Handles dark mode toggle
-import { isNextPagePrevPageSearchPage, searchPageButtonsEl } from "../event-listeners/user-activity/search-page-buttons-el.js";
-import { isNextPagePrevPageTrendingNow, trendingNowPageButtons } from "../event-listeners/user-activity/trending-now-page-buttons-el.js";
-import { hotOnThebigScreenPageButtons, isNextPagePrevPageHotOnBigScreenPagination } from "../event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
-import { hotPicksButtonsPage, hotPicksPagination } from "../event-listeners/user-activity/hot-picks-buttons-el.js";
-import { isNextPagePrevPageNBigHits, nextBigHitsPageButtons } from "../event-listeners/user-activity/next-big-hits-buttons-el.js";
-import { homepageContainerButtons } from "../dom/homepage-dom.js"
+import {
+  isNextPagePrevPageSearchPage,
+  searchPageButtonsEl,
+} from "../event-listeners/user-activity/search-page-buttons-el.js";
+import {
+  isNextPagePrevPageTrendingNow,
+  trendingNowPageButtons,
+} from "../event-listeners/user-activity/trending-now-page-buttons-el.js";
+import {
+  hotOnThebigScreenPageButtons,
+  isNextPagePrevPageHotOnBigScreenPagination,
+} from "../event-listeners/user-activity/hot-on-the-big-screen-page-el.js";
+import {
+  hotPicksButtonsPage,
+  hotPicksPagination,
+} from "../event-listeners/user-activity/hot-picks-buttons-el.js";
+import {
+  isNextPagePrevPageNBigHits,
+  nextBigHitsPageButtons,
+} from "../event-listeners/user-activity/next-big-hits-buttons-el.js";
+import { homepageContainerButtons } from "../dom/homepage-dom.js";
 import { randomMessageDisplay } from "../dom/display-random-fact-message-dom.js";
-import { getMoviesGenresById } from "../get-api-calls/get-movie-genre-by-id.js"
+import { getMoviesGenresById } from "../get-api-calls/get-movie-genre-by-id.js";
 import { genresButtonsRedirect } from "../event-listeners/user-activity/genres-welcome-page-el.js";
-import { genresButtonsListeners, genresPaginationButtons } from "../event-listeners/user-activity/genres-pages-buttons-el.js";
+import {
+  genresButtonsListeners,
+  genresPaginationButtons,
+} from "../event-listeners/user-activity/genres-pages-buttons-el.js";
+import { singleMoviePageListener } from "../event-listeners/user-activity/single-movie-paage-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -51,12 +76,11 @@ resetPlaceholder(); // Resets placeholder values
 handleMovieSearchByIdOrName(); // Set up search functionality for movie IDs or names
 inputSearchListener(); // Listens for search input events
 toggleThemeMode(); // Initialize dark mode toggle functionality
-randomMessageDisplay() //Display random jokes on entire pages.
-
+randomMessageDisplay(); //Display random jokes on entire pages.
 
 // Page-specific logic based on URLs
-if(window.location.pathname.endsWith('index.html')) {
-  homepageContainerButtons()
+if (window.location.pathname.endsWith("index.html")) {
+  homepageContainerButtons();
 }
 
 if (window.location.pathname.endsWith("movies-categories.html")) {
@@ -71,92 +95,92 @@ if (window.location.pathname.endsWith("movies-categories.html")) {
   moviesCategoriesButtons(); // Handle button clicks for movies on the homepage
 }
 
-if (window.location.pathname.endsWith('favorite.html')) {
+if (window.location.pathname.endsWith("favorite.html")) {
   // Initialize favorite page data and interactions
   displayFavoriteMoviesList(); // Fetch and display favorite movies list
   handleFavoriteMoviePage(); // Handle interactions on the favorite movies page
 }
 
-if (window.location.pathname.endsWith('popular-day.html')) {
+if (window.location.pathname.endsWith("popular-day.html")) {
   // Initialize "Popular Today" page data and interactions
   popularMoviesOfDay(); // Fetch and display movies popular today
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   todayMustWatchPlayButtons(); // Handle play button interactions on 'Today Must Watch' page
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
-  isNextPagePrevPageTodayMustWatch()
+  isNextPagePrevPageTodayMustWatch();
 }
 
-if (window.location.pathname.endsWith('popular-week.html')) {
+if (window.location.pathname.endsWith("popular-week.html")) {
   // Initialize "Popular This Week" page data and interactions
   popularMoviesOfWeek(); // Fetch and display movies popular this week
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   weeklyHitsPageButtons(); // Handle weekly hits page button interactions
-  isNextPagePrevPageWeeklyHits()
+  isNextPagePrevPageWeeklyHits();
 }
 
-if (window.location.pathname.endsWith('movie-data.html')) {
+if (window.location.pathname.endsWith("movie-data.html")) {
   // Initialize single movie details page
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   displaySingleMovieById(); // Fetch and display single movie details by ID
+  singleMoviePageListener();
 }
 
-if (window.location.pathname.endsWith('feedback-me.html')) {
+if (window.location.pathname.endsWith("feedback-me.html")) {
   // Initialize feedback form interactions
   formAnswer(); // Handle feedback form submission
 }
 
-if (window.location.pathname.endsWith('search.html')) {
+if (window.location.pathname.endsWith("search.html")) {
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
-  searchPageButtonsEl()
-  isNextPagePrevPageSearchPage()
+  searchPageButtonsEl();
+  isNextPagePrevPageSearchPage();
 }
 
-if(window.location.pathname.endsWith('hot-on-the-big-screen.html')) {
+if (window.location.pathname.endsWith("hot-on-the-big-screen.html")) {
   fetchCurrentlyInTheatersMovies(); // Fetch movies currently in theaters
-  hotOnThebigScreenPageButtons()
+  hotOnThebigScreenPageButtons();
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
-  isNextPagePrevPageHotOnBigScreenPagination()
-
+  isNextPagePrevPageHotOnBigScreenPagination();
 }
 
-if(window.location.pathname.endsWith('next-big-hits.html')) {
+if (window.location.pathname.endsWith("next-big-hits.html")) {
   fetchUpcomingMovies(); // Fetch upcoming movies
-  nextBigHitsPageButtons()
-  isNextPagePrevPageNBigHits()
+  nextBigHitsPageButtons();
+  isNextPagePrevPageNBigHits();
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }
 
-if(window.location.pathname.endsWith('trending-now.html')) {
+if (window.location.pathname.endsWith("trending-now.html")) {
   fetchPopularMovies(); // Fetch popular movies
-  trendingNowPageButtons()
-  isNextPagePrevPageTrendingNow()
+  trendingNowPageButtons();
+  isNextPagePrevPageTrendingNow();
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }
 
-if(window.location.pathname.endsWith('hot-picks.html')) {
+if (window.location.pathname.endsWith("hot-picks.html")) {
   fetchTopRatedMovies(); // Fetch top-rated movies
-  hotPicksButtonsPage()
-  hotPicksPagination()
+  hotPicksButtonsPage();
+  hotPicksPagination();
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }
 
-if (window.location.pathname.endsWith('genres-page.html')) {
-  getMoviesGenresById()
-  genresButtonsListeners()
-  genresPaginationButtons()
+if (window.location.pathname.endsWith("genres-page.html")) {
+  getMoviesGenresById();
+  genresButtonsListeners();
+  genresPaginationButtons();
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }
 
-if (window.location.pathname.endsWith('genres-welcome-page.html')) {
-  genresButtonsRedirect()
+if (window.location.pathname.endsWith("genres-welcome-page.html")) {
+  genresButtonsRedirect();
   handleBackToTopButtonClick(); // Set up back-to-top button functionality
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
 }

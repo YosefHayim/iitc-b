@@ -2,6 +2,6 @@
 const noTrailerImg = (buttonImage) => {
   buttonImage.src = `/images/user-activity/no-trailer-available-img.svg`;
   return buttonImage;
-}
+};
 
 export { noTrailerImg };

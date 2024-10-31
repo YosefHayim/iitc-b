@@ -1,4 +1,9 @@
-.rating-container,.single-img-container,.single-movie-card,.container-title-movie-data,.img-name-container,.single-movie-img {
+.rating-container,
+.single-img-container,
+.single-movie-card,
+.container-title-movie-data,
+.img-name-container,
+.single-movie-img {
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -8,22 +13,38 @@
   gap: 1.5em;
 }
 
+.fav-button-movie-single-page {
+  border: none;
+  background: var(--lighter-red-color);
+  border-radius: 0.3em;
+  padding: 0.5em;
+  font-size: 1.5em;
+  font-family: "Bebas Neue";
+  color: white;
+}
+
+.fav-button-movie-single-page:hover {
+  background-color: white;
+  color: black;
+}
+
 .navbar-mobile {
-position: unset;
+  position: unset;
 }
 
 .cast-container {
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
-align-items: center;
-width: 100%;
-flex-wrap: wrap;
-gap: 1.5em;
-margin-bottom: 10em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin-bottom: 10em;
 }
 
-.movie-release,.movie-genre {
+.movie-release,
+.movie-genre {
   background: black;
   color: white;
   padding: 0.5em;
@@ -31,8 +52,8 @@ margin-bottom: 10em;
 }
 
 .movie-link {
-background: none;
-border: none;
+  background: none;
+  border: none;
 }
 
 .website-link {
@@ -40,17 +61,18 @@ border: none;
 }
 
 .movie-link a {
-background: black;
-font-size: 2em;
-padding: 0.5em;
-font-weight: bold;
-display: block;
-border-radius: 0.2em;
+  background: black;
+  font-size: 2em;
+  padding: 0.5em;
+  font-weight: bold;
+  display: block;
+  border-radius: 0.2em;
 }
 
-.movie-link a:hover,.button-trailer a:hover {
-background: var(--lighter-red-color);
-color: white;
+.movie-link a:hover,
+.button-trailer a:hover {
+  background: var(--lighter-red-color);
+  color: white;
 }
 
 .movie-details {
@@ -63,7 +85,7 @@ color: white;
 }
 
 .rating-container {
-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .rating-number-txt {
@@ -74,17 +96,18 @@ flex-direction: column-reverse;
   height: 3em;
 }
 
-.single-movie-img,.actor-img {
-width: 10em;
-border-radius: 0.5em;
+.single-movie-img,
+.actor-img {
+  width: 10em;
+  border-radius: 0.5em;
 }
 
 .actor-name {
-color: white;
-background: black;
-padding: 0.5em;
-border-radius: 0.2em;
-font-size: 1.4em;
+  color: white;
+  background: black;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  font-size: 1.4em;
 }
 
 .title-single-movie {
@@ -103,107 +126,106 @@ font-size: 1.4em;
 }
 
 .button-trailer {
-border: none;
-background: none;
-border-radius: 0.1em;
+  border: none;
+  background: none;
+  border-radius: 0.1em;
 }
 
 .link-trailer {
-text-decoration: none;
-color: white;
-width: auto;
-background: black;
-font-size: 2em;
-padding: 0.5em;
-font-weight: bold;
-display: block;
-border-radius: 0.2em;
-font-family: "Bebas Neue";
+  text-decoration: none;
+  color: white;
+  width: auto;
+  background: black;
+  font-size: 2em;
+  padding: 0.5em;
+  font-weight: bold;
+  display: block;
+  border-radius: 0.2em;
+  font-family: "Bebas Neue";
 }
 
 .watch-trailer-movie {
-background: black;
-font-size: 2em;
-padding: 0.5em;
-font-weight: bold;
-border-radius: 0.1em;
-display: block;
+  background: black;
+  font-size: 2em;
+  padding: 0.5em;
+  font-weight: bold;
+  border-radius: 0.1em;
+  display: block;
 }
 
 .summary-title {
-color: white;
-background: black;
-border-radius: 0.2em;
-padding: 0.4em;
-font-style: italic;
-letter-spacing: 0.2em;
+  color: white;
+  background: black;
+  border-radius: 0.2em;
+  padding: 0.4em;
+  font-style: italic;
+  letter-spacing: 0.2em;
 }
 
 .play-button-btn-single-movie {
-transform: translateY(-18em);
-box-shadow: 0em 0em 3em 0.01em var(--rating--color);
-border-radius: 3em;
+  transform: translateY(-18em);
+  box-shadow: 0em 0em 3em 0.01em var(--rating--color);
+  border-radius: 3em;
 }
 
 .single-movie-img {
-width: 15em;
-box-shadow: 0 0 0.1em 0.1em white;
-animation: glow 3s ease-in-out infinite;
+  width: 15em;
+  box-shadow: 0 0 0.1em 0.1em white;
+  animation: glow 3s ease-in-out infinite;
 }
 
 .actors-title {
-background: black;
-padding: 0.5em;
-text-align: center;
-font-size: 1.5em;
-box-shadow: 0em 0em 1em 0.05em var(--rating--color);
-color: white;
-border-radius: 0.2em;
+  background: black;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 1.5em;
+  box-shadow: 0em 0em 1em 0.05em var(--rating--color);
+  color: white;
+  border-radius: 0.2em;
 }
 
 .movie-name {
-color: var(--rating--color);
+  color: var(--rating--color);
 }
 
 body > footer {
-position: relative;
-bottom: 0;
+  position: relative;
+  bottom: 0;
 }
 
 @keyframes glow {
-0% {
-box-shadow: 0em 0em 2em 0.01em var(--lighter-red-color);
-}
-50% {
-box-shadow: 0em 0em 3em 0.5em var(--lighter-red-color);
-}
-100% {
-box-shadow: 0em 0em 2em 0.01em var(--lighter-red-color);
-}
-}
-
-@media screen and (min-width:1024px) {
-
-.single-movie-img {
-width: 15em;
+  0% {
+    box-shadow: 0em 0em 2em 0.01em var(--lighter-red-color);
+  }
+  50% {
+    box-shadow: 0em 0em 3em 0.5em var(--lighter-red-color);
+  }
+  100% {
+    box-shadow: 0em 0em 2em 0.01em var(--lighter-red-color);
+  }
 }
 
-.actor-img {
-width: 10em;
-}
+@media screen and (min-width: 1024px) {
+  .single-movie-img {
+    width: 15em;
+  }
 
-.actor-name {
-font-size: 1em;
-}
+  .actor-img {
+    width: 10em;
+  }
 
-.movie-link a {
-width: auto;
-display: flex;
-}
+  .actor-name {
+    font-size: 1em;
+  }
 
-.actors-title {
-width: auto;
-font-size: 1.8em;
-border-radius: 0.2em;
-}
+  .movie-link a {
+    width: auto;
+    display: flex;
+  }
+
+  .actors-title {
+    width: auto;
+    font-size: 1.8em;
+    border-radius: 0.2em;
+  }
 }

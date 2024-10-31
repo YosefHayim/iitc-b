@@ -72,7 +72,9 @@ const updateProductById = async (req, res) => {
       { new: true }
     );
 
-    res.status(201).send(`Success, updated schema ID: ${productId}, ${updatedSchema}`);
+    res
+      .status(201)
+      .send(`Success, updated schema ID: ${productId}, ${updatedSchema}`);
   } catch (error) {
     res.status(400).send(`The Id: ${productId}, you provided isn't valid.`);
   }
@@ -82,11 +84,15 @@ const deleteProductById = async (req, res) => {
   const productId = req.params.id;
 
   try {
-    const updatedSchema = await productsProjectSchema.findByIdAndDelete(productId);
+    const updatedSchema = await productsProjectSchema.findByIdAndDelete(
+      productId
+    );
 
     res
       .status(200)
-      .send(`Success the ID ${productId}, Schema: ${updatedSchema} has been successfully deleted.`);
+      .send(
+        `Success the ID ${productId}, Schema: ${updatedSchema} has been successfully deleted.`
+      );
   } catch (error) {
     res
       .status(400)
@@ -94,6 +100,11 @@ const deleteProductById = async (req, res) => {
         `The Id: ${productId}, you provided isn't valid to delete the Schema.`
       );
   }
-}
+};
 
-export { fetchProducts, createNewProduct,deleteProductById , updateProductById};
+export {
+  fetchProducts,
+  createNewProduct,
+  deleteProductById,
+  updateProductById,
+};

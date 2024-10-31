@@ -124,3 +124,57 @@
   Query parameters received: {}
   Body parameters received: {}
   Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:14:04 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:15:30 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:18:56 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"fName":"John","lName":"Doe","age":30,"gender":"Male","birthDate":"1993-05-15","location":"New York, USA","email":"johndoe@example.com","agreeToTerms":true}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:19:42 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"fName":"John","lName":"Doe","age":30,"gender":"Male","birthDate":"1993-05-15","location":"New York, USA","email":"johndoe@example.com","agreeToTerms":true}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:20:05 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"fName":"John","lName":"Doe","age":30,"gender":"Male","birthDate":"1993-05-15","location":"New York, USA","email":"johndoe@example.com","agreeToTerms":true}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:20:18 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"fName":"John","lName":"Doe","age":30,"gender":"Male","birthDate":"1993-05-15","location":"New York, USA","email":"johndoe@example.com","agreeToTerms":true}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:23:14 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"email":"testitesti@hotmail.com"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:24:41 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 9:24:48 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {}
+  Status Code: 200 

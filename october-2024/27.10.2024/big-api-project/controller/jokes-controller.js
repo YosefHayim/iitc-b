@@ -78,6 +78,6 @@ const deleteJokeById = async (req, res) => {
         `The Id: ${jokeId}, you provided isn't valid to delete the Schema.`
       );
   }
-}
+};
 
 export { getAllJokes, createNewJoke, updateJokeById, deleteJokeById };

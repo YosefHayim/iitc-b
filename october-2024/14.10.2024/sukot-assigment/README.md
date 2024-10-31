@@ -97,7 +97,6 @@ These files handle post-API interactions:
 **Total hours to complete the project**: 114 hours and 50 minutes (tracked via Google Calendar).
 
 **Features to add from other people project Ideas** :
-add movie to favorite from single movie page
 add to single movie page the reviews that is being added by the guest users.
 similar movies on single movie page.
 mouse hover to show total people vote.

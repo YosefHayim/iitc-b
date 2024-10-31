@@ -67,7 +67,7 @@ import {
   genresButtonsListeners,
   genresPaginationButtons,
 } from "../event-listeners/user-activity/genres-pages-buttons-el.js";
-import { singleMoviePageListener } from "../event-listeners/user-activity/single-movie-paage-el.js";
+import { singleMoviePageListener } from "../event-listeners/user-activity/single-movie-page-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen

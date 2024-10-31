@@ -21,7 +21,7 @@ const singleMoviePageListener = () => {
         addfavoriteMovieToList(movieId);
         return;
       } else {
-        favoriteBtn.textContext = `Movie already in favorite list.`;
+        favoriteBtn.textContent = `Movie already in favorite list.`;
       }
     }
   });

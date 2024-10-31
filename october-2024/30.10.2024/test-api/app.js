@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import dotenv from "dotenv";
+import { logRequest } from "./middleware/logger.js";
 import jokesRoute from "./routes/jokes-route.js";
 import productsRoute from "./routes/products-route.js";
 import usersRoute from "./routes/users-route.js";
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(morgan("tiny"));
+app.use(logRequest)
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/test-api?retryWrites=true&w=majority&appName=IITC`;
 

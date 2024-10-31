@@ -69,15 +69,15 @@ router.patch('/update/user/:id', (req, res) => {
     }
 
     const usersArray = JSON.parse(data);
-    const isFound = false
+    let isFound = false
     usersArray.forEach((userLine) => {
       if (userLine.id === requestedId) {
         userLine.id = updatedId;
-        isFound = true
+        let isFound = true
       }
     });
 
-    if (!isFound) {
+    if (isFound === false) {
       return res.status(404).send({ error: `No user found with ID ${requestedId}` });
     }
 

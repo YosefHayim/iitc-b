@@ -14,13 +14,6 @@
     "inStock": true
   },
   {
-    "id": 3,
-    "name": "Office Chair",
-    "category": "Furniture",
-    "price": 199.99,
-    "inStock": false
-  },
-  {
     "id": 4,
     "name": "Bluetooth Speaker",
     "category": "Electronics",
@@ -61,5 +54,6 @@
     "category": "Stationery",
     "price": 4.99,
     "inStock": true
-  }
+  },
+  { "id": 4, "product": "macbook pro m1." }
 ]

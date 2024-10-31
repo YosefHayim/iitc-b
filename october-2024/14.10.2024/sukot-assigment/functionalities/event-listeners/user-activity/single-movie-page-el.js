@@ -12,16 +12,16 @@ const singleMoviePageListener = () => {
   singlePageMovieData.addEventListener("click", (ev) => {
     ev.preventDefault();
 
-    const favBtnSingleMoviePag = ev.target.closest(
-      ".fav-button-movie-single-page"
-    );
+    const favoriteBtn = ev.target.closest(".fav-button-movie-single-page");
 
-    if (favBtnSingleMoviePag) {
+    if (favoriteBtn) {
       const isAdded = isMovieAddedFav(movieId);
       if (isAdded) {
         displayAlertMessage("success-added-single-movie-to-fav-list");
         addfavoriteMovieToList(movieId);
         return;
+      } else {
+        favoriteBtn.textContext = `Movie already in favorite list.`;
       }
     }
   });

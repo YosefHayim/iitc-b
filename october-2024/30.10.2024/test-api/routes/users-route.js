@@ -14,7 +14,7 @@ const fetchJokeP = async () => {
 };
 
 // Fetch all jokes
-router.get("/all", async (req, res) => {
+router.get("/all/Jokes", async (req, res) => {
   try {
     const data = await fetchJokeP();
     res.status(200).json(data);
@@ -24,7 +24,7 @@ router.get("/all", async (req, res) => {
 });
 
 // Create a new joke
-router.post("/create", async (req, res) => {
+router.post("/create/joke", async (req, res) => {
   // Shortcut to get all the body keys.
   const { name, text, providerName, favoritePizzaToppings } = req.body;
 

@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(morgan("tiny"));
-app.use(logRequest)
+app.use(logRequest);
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/test-api?retryWrites=true&w=majority&appName=IITC`;
 

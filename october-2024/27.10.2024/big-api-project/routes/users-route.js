@@ -1,5 +1,5 @@
 import express from "express";
-import { userProjectSchema } from "../modules/users-project-schema.js";
+import { userProjectSchema } from "../models/users-project-schema.js";
 
 const router = express.Router();
 
@@ -42,7 +42,12 @@ router.post("/create", async (req, res) => {
   // If for each key and his own value it doesn't have a value.
   for (const [key, value] of Object.entries(req.body)) {
     if (!key || !value) {
-      res.status(404).send(`Sorry but one of your keys or values are missing in the body request: `,req.body)
+      res
+        .status(404)
+        .send(
+          `Sorry but one of your keys or values are missing in the body request: `,
+          req.body
+        );
     }
   }
 

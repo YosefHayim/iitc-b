@@ -28,8 +28,11 @@ router.post("/create", async (req, res) => {
   // Shortcut to get all the body keys.
   const { name, text, providerName, favoritePizzaToppings } = req.body;
 
-  if (!name || !text || !providerName || !favoritePizzaToppings) {
-    return res.status(400).send("Please provide all required parameters: ");
+  // for each key and his own value if it doesn't have a value.
+  for (const [key, value] of Object.entries(req.body)) {
+    if (!key || !value) {
+      res.status(404).send(`Sorry but one of your keys or values are missing in the body request: `,req.body)
+    }
   }
 
   try {

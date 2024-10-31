@@ -4,8 +4,9 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import jokesRoute from "./routes/jokes-route.js";
 import productsRoute from "./routes/products-route.js";
+import usersRoute from "./routes/users-route.js";
 
-dotenv.config(); // Moved dotenv config to load env variables
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,12 +32,7 @@ connectDB();
 
 app.use("/api/jokes", jokesRoute);
 app.use("/api/products", productsRoute);
-
-// Error handling middleware (optional)
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something went wrong!");
-});
+app.use("/api/users", usersRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

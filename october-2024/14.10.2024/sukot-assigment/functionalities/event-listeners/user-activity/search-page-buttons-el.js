@@ -57,7 +57,7 @@ const searchPageButtonsEl = () => {
 
         // If the trailer is not available, show an error message.
         if (!result) {
-          displayAlertMessage("error-fetch-movie-trailer", movieName);
+          displayAlertMessage("no-movie-data-exist", movieName);
           console.error("Error getting the movie ID", movieId);
         } else {
           const videoId = result.key;

@@ -53,7 +53,7 @@ const handleFavoriteMoviePage = () => {
 
         // If no trailer is available, display an error message.
         if (!result.key) {
-          displayAlertMessage("error-fetch-movie-trailer", movieName);
+          displayAlertMessage("no-movie-data-exist", movieName);
           console.error("Error getting the movie ID", favMovieId);
         } else {
           // Navigate to the movie page if a trailer is available.

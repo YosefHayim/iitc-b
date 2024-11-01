@@ -36,7 +36,7 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
     <div class="single-img-container">
       <h1 class="title-single-movie">${movieName}</h1>
       <div class="rating-container">
-        <img src="${resultRatingImg}" alt="rating-img" class="rating-img">
+      <p class="rating-stars">${resultRatingImg}</p>
         <h2 class="rating-number-txt">${roundRatingFloat}</h2>
         <div class="hover-element">Hover on me</div>
       </div>
@@ -83,16 +83,17 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
 
     const actorName = isNameToLong(actor.name);
     const image = isImageNull(actor.profile_path);
+    const actorActingNameText =
+      actor.character.length > 1
+        ? `Act as` + actor.character.split("/")[0].trim()
+        : `Act as Unknown` + actor.character;
 
     actorDiv.innerHTML = `
     <span class="actor-star">★</span>
       <div class="img-name-container">
         <img src="${image}" alt="${actorName}" class="actor-img">
         <p class="actor-name">${actorName}</p>
-        <p class="actor-role-name"> Act as ${actor.character
-          .split("/")[0]
-          .trim()}
-      </div>
+        <p class="actor-role-name">${actorActingNameText}</div>
     `;
     castContainer.appendChild(actorDiv);
   });

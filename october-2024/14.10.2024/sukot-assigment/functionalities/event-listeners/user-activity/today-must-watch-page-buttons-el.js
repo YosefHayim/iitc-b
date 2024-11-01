@@ -38,7 +38,7 @@ const todayMustWatchPlayButtons = () => {
         const result = await getMovieTrailer(movieCardId);
 
         if (!result.key) {
-          displayAlertMessage("error-fetch-movie-trailer", movieName);
+          displayAlertMessage("no-movie-data-exist", movieName);
           console.error("Error getting the movie ID", movieCardId);
         } else {
           const videoId = result.key;

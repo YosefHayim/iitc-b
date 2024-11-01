@@ -27,6 +27,11 @@
   color: white;
   cursor: pointer;
   margin-top: 1em;
+  margin-bottom: 0.4em;
+}
+
+hr {
+  margin-bottom: 15.5em;
 }
 
 .hover-element {
@@ -91,6 +96,11 @@
   position: unset;
 }
 
+.rating-stars {
+  font-size: 2.4em;
+  margin-bottom: 1em;
+}
+
 .cast-container {
   display: flex;
   flex-direction: row;
@@ -102,6 +112,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .actor-star {
@@ -155,6 +166,7 @@
 
 .rating-number-txt {
   font-size: 2.5em;
+  transform: translateY(-0.4em);
 }
 
 .rating-img {
@@ -189,6 +201,7 @@
   padding: 0.4em;
   border-radius: 0.2em;
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .button-trailer {

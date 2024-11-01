@@ -263,8 +263,9 @@ form {
 
 .title {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2.5em;
   width: 100%;
+  padding-top: 1em;
 }
 
 .dark-mode-button {
@@ -323,7 +324,7 @@ form {
 }
 
 .rating-stars {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .alert-message-container,
@@ -351,8 +352,8 @@ form {
 }
 
 .rating-number-txt {
-  font-size: 1.8em;
-  transform: translateY(0.1em);
+  font-size: 2.5em;
+  transform: translateY(0.07em);
   color: red;
   margin-left: 0.4em;
 }

@@ -68,6 +68,8 @@ import {
   genresPaginationButtons,
 } from "../event-listeners/user-activity/genres-pages-buttons-el.js";
 import { singleMoviePageListener } from "../event-listeners/user-activity/single-movie-page-el.js";
+import { getSimilarMoviesByMovieId } from "../get-api-calls/get-similar-movies.js";
+import { similarMoviesContainerEl } from "../event-listeners/user-activity/similar-movies-page-el.js";
 
 // Initialize global animations and interactions
 screenLoadingAnimation(); // Displays loading animation on the screen
@@ -125,6 +127,8 @@ if (window.location.pathname.endsWith("movie-data.html")) {
   handleGoToBottomButtonClick(); // Set up scroll-to-bottom button functionality
   displaySingleMovieById(); // Fetch and display single movie details by ID
   singleMoviePageListener();
+  getSimilarMoviesByMovieId();
+  similarMoviesContainerEl();
 }
 
 if (window.location.pathname.endsWith("feedback-me.html")) {

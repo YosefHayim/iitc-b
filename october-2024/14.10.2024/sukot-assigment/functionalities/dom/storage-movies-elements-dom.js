@@ -5,6 +5,7 @@ import {
   popularOfTheDayContainer,
   popularOfTheWeekContainer,
   searchResultContainer,
+  similarMoviesContainer,
   theatresContainer,
   topRatedMoviesContainer,
   upComingMoviesContainer,
@@ -50,6 +51,10 @@ const moviesStorage = (requestedContainer) => {
       containerName: "Upcoming movies page",
       containerEl: upComingMoviesContainer,
     },
+    {
+      containerName: "similar movies container",
+      containerEl: similarMoviesContainer,
+    },
   ];
 
   // Find and return the relevant movie container based on the requested container name.
@@ -57,6 +62,11 @@ const moviesStorage = (requestedContainer) => {
     (relevantContainer) =>
       relevantContainer.containerName === requestedContainer
   );
+
+  if (!movieContainer) {
+    console.error(`Couldn't find the relevant container you requested.`);
+  }
+
   return movieContainer;
 };
 

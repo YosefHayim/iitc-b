@@ -74,6 +74,12 @@ const navbarDesktopEl = document.querySelector(".navbar-desktop");
 
 // Single Movie Page
 const singlePageMovieData = document.querySelector(".single-movie-card");
+const similarMoviesTitleContainer = document.querySelector(
+  ".similar-movies-title"
+);
+const similarMoviesContainer = document.querySelector(
+  ".similar-movies-container"
+);
 
 // Buttons and Icons
 const goBackTopBtn = document.querySelector(".get-back-to-top-btn");
@@ -105,6 +111,8 @@ const genresContainer = document.querySelector(".genres-container");
 
 // Exported elements for use in other files
 export {
+  similarMoviesTitleContainer,
+  similarMoviesContainer,
   announcementBarDiv,
   genresContainer,
   genreResultContainerTitle,

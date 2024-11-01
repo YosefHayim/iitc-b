@@ -98,8 +98,6 @@ These files handle post-API interactions:
 
 **Features to add from other people project Ideas** :
 add to single movie page the reviews that is being added by the guest users.
-similar movies on single movie page.
-mouse hover to show total people vote.
 if html page not exist redirect to error 404 page.
 actors real name and acting name one below another.
 Add option to order a movie ticket.

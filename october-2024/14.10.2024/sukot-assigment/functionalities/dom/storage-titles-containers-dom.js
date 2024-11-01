@@ -3,6 +3,7 @@ import {
   genreResultContainerTitle,
   latestPopularPage,
   searchResultTitle,
+  similarMoviesTitleContainer,
   templateTitle,
   topTrendingPage,
   upComingMoviePage,
@@ -49,12 +50,20 @@ const titlesStorage = (requestedTContainer) => {
       containerTitleName: "genres movies title display",
       containerTitleEl: genreResultContainerTitle,
     },
+    {
+      containerTitleName: "Single movie page - similar movies container title",
+      containerTitleEl: similarMoviesTitleContainer,
+    },
   ];
 
   // Find and return the relevant title container based on the requested title container name.
   const matchedTitle = storage.find(
     (title) => title.containerTitleName === requestedTContainer
   );
+
+  if (!matchedTitle) {
+    console.error(`Error occurred while finding the container: ${title}.`);
+  }
 
   return matchedTitle;
 };

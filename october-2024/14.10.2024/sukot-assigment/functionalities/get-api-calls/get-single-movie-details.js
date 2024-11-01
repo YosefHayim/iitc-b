@@ -2,6 +2,7 @@ import { getData } from "./api-functions.js";
 import { apiKey } from "../global/env.js";
 import { redirectToErrorPage } from "../dom/redirect-to-404-dom.js";
 import { renderSingleMoviePage } from "../dom/single-movie-page-dom.js";
+import { singleMoviePageListener } from "../event-listeners/user-activity/single-movie-page-el.js";
 
 // This function fetches data about a specific movie using its ID and retrieves actor information for that movie.
 const displaySingleMovieById = async () => {
@@ -23,6 +24,11 @@ const displaySingleMovieById = async () => {
     // Fetch the movie details using the movie ID.
     const singleMovieData = await getData(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+    );
+
+    singleMoviePageListener(
+      singleMovieData.vote_count,
+      singleMovieData.vote_average
     );
 
     // Fetch the credits (actors) for the specific movie.

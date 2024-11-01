@@ -8,8 +8,6 @@ const getGenresIds = async () => {
       `https://api.themoviedb.org/3/genre/movie/list?language=en`
     );
 
-    console.log(data); // Logs data for debugging
-
     if (!data) {
       // If no data is returned, displays an alert message and redirects to error page
       displayAlertMessage("no-genre-movies-found", genreId);

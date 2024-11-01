@@ -38,6 +38,7 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
       <div class="rating-container">
         <img src="${resultRatingImg}" alt="rating-img" class="rating-img">
         <h2 class="rating-number-txt">${roundRatingFloat}</h2>
+        <div class="hover-element">Hover on me</div>
       </div>
       <img src="${image}" alt="movie-img" class="single-movie-img">
       <button class="fav-button-movie-single-page">Add to top picks </button>

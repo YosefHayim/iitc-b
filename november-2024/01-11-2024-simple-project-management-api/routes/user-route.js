@@ -1,4 +1,6 @@
 import express from "express";
+import mongoose from "mongoose";
+import { userModelSchema } from "../models/user-schema-creation.js";
 
 const router = express.Router();
 
@@ -8,29 +10,25 @@ router.get("/users", (req, res) => {
     .send("You have successfully arrived to the GET METHOD of users path.");
 });
 
-router.post("/users", (req, res) => {
-  const {
-    fName,
-    lName,
-    age,
-    birthDate,
-    location: { city, state, country },
-    email,
-    role,
-  } = req.body;
+router.post("/users", async (req, res) => {
+  const users = req.body;
 
-  Object.entries(req.body).forEach(([key, value]) => {
-    if (!value) {
-      return res.status(404).json({
-        message: `You have forgotten to add some data to the body.`,
-        keysMissing: `Forgot to provide: ${key}.`,
-      });
+  const data = await users.forEach((user) => {
+    const { fName, lName, age, birthDate, location: { city, state, country }, email, role } = user;
+
+    try {
+      
+    } catch (error) {
+      res.status(404).json({
+        message: `Something happened while adding to the database: ${error}.`
+      })
     }
+
   });
 
   res.status(200).json({
-    message: `You have successfully added the user: "${fName}" to the database.`,
-    dataReceived: req.body,
+    message: 'Successfully added',
+    dataAdded: users
   });
 });
 

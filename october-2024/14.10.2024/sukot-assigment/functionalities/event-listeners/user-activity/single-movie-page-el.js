@@ -14,7 +14,7 @@ const singleMoviePageListener = (totalPeopleVote, ratingScore) => {
       const favoriteBtn = ev.target.closest(".fav-button-movie-single-page");
       const ratingNumber = ev.target.closest(".rating-number-txt");
 
-      if (favoriteBtn) {
+      if (favoriteBtn && event === "click") {
         const isAdded = isMovieAddedFav(movieId);
         if (!isAdded) {
           displayAlertMessage("success-added-single-movie-to-fav-list");

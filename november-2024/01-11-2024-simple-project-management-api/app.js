@@ -1,22 +1,22 @@
 import express from "express";
 import mongoose from "mongoose";
-import morgan from "morgan";
 import dotenv from "dotenv";
+import morgan from "morgan";
 import { logRequest } from "./middleware/logger.js";
-import jokesRoute from "./routes/jokes-route.js";
-import productsRoute from "./routes/products-route.js";
-import usersRoute from "./routes/users-route.js";
+import usersRoute from "./routes/user-route.js";
+import projectsRoute from "./routes/project-route.js";
+import tasksRoute from "./routes/task-route.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(logRequest);
 app.use(express.json());
 app.use(morgan("tiny"));
-app.use(logRequest);
 
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/big-api-project-27-10-2024?retryWrites=true&w=majority&appName=IITC`;
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/simple-project-management-api-01-11-2024?retryWrites=true&w=majority&appName=IITC`;
 
 const connectDB = async () => {
   try {
@@ -32,10 +32,14 @@ const connectDB = async () => {
 
 connectDB();
 
-app.use("/api/jokes", jokesRoute);
-app.use("/api/products", productsRoute);
 app.use("/api/users", usersRoute);
+app.use("/api/projects", projectsRoute);
+app.use("/api/tasks", tasksRoute);
 
-app.listen(PORT, () => {
+app.get("/", (req, res) => {
+  res.status(200).send("Welcome to Simple Project Management API.");
+});
+
+app.listen(`${PORT}`, () => {
   console.log(`Server is running on port ${PORT}`);
 });

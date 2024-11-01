@@ -322,11 +322,8 @@ form {
   }
 }
 
-.rating-img {
-  height: 2em;
-  background: black;
-  border-radius: 100em;
-  padding: 0.5em;
+.rating-stars {
+  font-size: 2em;
 }
 
 .alert-message-container,
@@ -355,8 +352,9 @@ form {
 
 .rating-number-txt {
   font-size: 1.8em;
-  transform: translateY(0.05em);
+  transform: translateY(0.1em);
   color: red;
+  margin-left: 0.4em;
 }
 
 .overview-container {

@@ -93,23 +93,7 @@ These files handle post-API interactions:
 26. **Mobile-First Design**: Always start by designing for mobile before scaling to desktop.
 27. **Console log as much as possible**: no need to remove console log until I finish everything completely.
 28. **Work on the project from the first path**: Not work the paths of files from the IITC but from the first folder it has all the root.
+29. **Attach event listener with multiple type of events to single container**: Can do a for each on a array of events listeners types and additionally event delegation on it.
 
-**Total hours to complete the project**: 114 hours and 50 minutes (tracked via Google Calendar).
-
-**Features to add from other people project Ideas** :
-add to single movie page the reviews that is being added by the guest users.
-if html page not exist redirect to error 404 page.
-actors real name and acting name one below another.
-Add option to order a movie ticket.
-if user reached max page allow me to get previous page.
-if user go next or prev page he is returning to the same position he was on the browser height
-instead of presentation do a commercial video of the website with ai voice and cool editing to make it funny.
-login system for user e.g. with local storage or with database
-sign up page
-do iframe src to prevent from user to be directed to another page.
-dynamic search result show up without pressing enter or submit.
-html tag dialog pros and cons how to do whats special about this html tag dialog.
-create instagram and facebook page
-Use star emoji that is built in instead of svg's maybe.
-propagation of div.
+**Total hours to complete the project**: 120 hours and 50 minutes (tracked via Google Calendar).
 

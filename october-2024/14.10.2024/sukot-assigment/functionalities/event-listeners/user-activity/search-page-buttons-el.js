@@ -37,7 +37,11 @@ const searchPageButtonsEl = () => {
       !movieName &&
       !movieId
     ) {
-      return null;
+      return;
+    }
+
+    if (!movieName) {
+      return;
     }
 
     if (!movieCard) {

@@ -1,5 +1,6 @@
 import { displayAlertMessage } from "../../dom/alert-message-dom.js";
 import { isMovieAddedFav } from "../../dom/favorite-ids-storage.js";
+import { roundMovieRating } from "../../dom/round-rating-movie-dom.js";
 import { singlePageMovieData } from "../../dom/storage-elements-dom.js";
 import { addfavoriteMovieToList } from "../../post-api-calls/post-add-movie-to-favorite-list.js";
 
@@ -27,7 +28,9 @@ const singleMoviePageListener = (totalPeopleVote, ratingScore) => {
       if (ratingNumber && event === "mouseover") {
         ratingNumber.textContent = `Total people vote: ${totalPeopleVote}`;
       } else {
-        ratingNumber.textContent = `${ratingScore}`;
+        if (ratingNumber) {
+          ratingNumber.textContent = `${roundMovieRating(ratingScore)}`;
+        }
       }
     });
   });

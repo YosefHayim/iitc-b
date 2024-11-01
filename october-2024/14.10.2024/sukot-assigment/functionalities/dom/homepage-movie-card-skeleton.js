@@ -22,7 +22,7 @@ const buildSkeletonMovieCard = (movie, movieCardDiv) => {
     </a>
     <h1 class="title">${movieName}</h1>
     <div class="img-container">
-      <img src="${resultRatingImg}" alt="rating-img" class="rating-img">
+    <p class="rating-stars">${resultRatingImg}</p>
       <a href="#" class="play-button-btn">
         <img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="play-button-img">
       </a>

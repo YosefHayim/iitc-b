@@ -57,6 +57,8 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
     </div>
   `;
 
+  console.log(creditsData);
+
   // Create and append the cast container.
   const videoContainer = document.querySelector(".video-container");
   const castContainer = createDomEl();
@@ -85,9 +87,13 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
     const image = isImageNull(actor.profile_path);
 
     actorDiv.innerHTML = `
+    <span class="actor-star">★</span>
       <div class="img-name-container">
         <img src="${image}" alt="${actorName}" class="actor-img">
         <p class="actor-name">${actorName}</p>
+        <p class="actor-role-name"> Act as ${actor.character
+          .split("/")[0]
+          .trim()}
       </div>
     `;
     castContainer.appendChild(actorDiv);

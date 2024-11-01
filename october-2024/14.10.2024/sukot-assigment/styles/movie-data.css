@@ -10,7 +10,11 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.5em;
+}
+
+.img-name-container {
+  width: 200px;
+  overflow: hidden;
 }
 
 .fav-button-movie-single-page {
@@ -94,7 +98,13 @@
   width: 100%;
   flex-wrap: wrap;
   gap: 1.5em;
-  margin-bottom: 10em;
+  position: relative;
+  overflow: hidden;
+  margin-top: 3em;
+}
+
+.actor-star {
+  font-size: 3em;
 }
 
 .movie-release,
@@ -156,7 +166,8 @@
   border-radius: 0.5em;
 }
 
-.actor-name {
+.actor-name,
+.actor-role-name {
   color: white;
   background: black;
   padding: 0.5em;

@@ -15,14 +15,15 @@ const buildFavoriteCardSkeleton = (movieCardDiv, movie) => {
   const resultRatingImg = getStarRatingImage(movie.vote_average);
 
   // Set the inner HTML of the movie card, including image, title, rating, and action buttons.
+
   movieCardDiv.innerHTML = `
   <a href="#" class="fav-movie-trailer-url">
   <img src="${image}" alt="movie-img" class="movie-img">
   </a>
   <h1 class="title">${movieName}</h1>
   <div class="img-container">
-    <img src="${resultRatingImg}" alt="rating-img" class="rating-img">
-    <a class="fav-play-button-btn" href="#">
+  <p class="rating-stars">${resultRatingImg}</p>
+  <a class="fav-play-button-btn" href="#">
       <img src="../images/user-activity/play-button-icon.svg" alt="play-button-icon" class="fav-play-button-img">
     </a>
     <a class="fav-white-share-trailer-btn" href="#">

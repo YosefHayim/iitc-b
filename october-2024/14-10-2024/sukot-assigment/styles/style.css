@@ -294,7 +294,7 @@ form {
 
 .movie-img,
 .overview {
-  width: 25vh;
+  width: 20em;
 }
 
 .movie-img {
@@ -1475,7 +1475,7 @@ li {
   }
 }
 
-@media (max-width: 450px) {
+@media screen and (max-width: 450px) {
   main {
     font-size: 0.7em;
   }

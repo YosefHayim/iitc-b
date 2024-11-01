@@ -23,7 +23,7 @@
 }
 
 .white-heart-trailer-btn {
-  transform: translate(4em, -8em);
+  transform: translate(6em, -8em);
 }
 
 .white-data-btn {
@@ -31,9 +31,9 @@
 }
 
 .white-share-trailer-btn {
-  transform: translate(-5em, -8em);
+  transform: translate(-6em, -8em);
 }
 
 .play-button-btn {
-  transform: translate(0, -14.5em);
+  transform: translate(0, -22.5em);
 }

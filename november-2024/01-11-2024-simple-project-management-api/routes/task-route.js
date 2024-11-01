@@ -1,21 +1,19 @@
-import express from "express"
+import express from "express";
+import {
+  getAllTasks,
+  createNewTask,
+  updateSpecificTaskById,
+  deleteSpecificTaskById,
+} from "../controllers/tasks-controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/tasks', (req,res) => {
-  res.status(200).send('You have successfully arrived to the GET METHOD of tasks path.')
-})
+router.get("/tasks", getAllTasks);
 
-router.post('/tasks', (req,res) => {
-  res.status(200).send('You have successfully arrived to the POST METHOD of tasks path.')
-})
+router.post("/tasks", createNewTask);
 
-router.patch('/tasks/:id', (req,res) => {
-  res.status(200).send('You have successfully arrived to the patch METHOD of tasks path.')
-})
+router.patch("/tasks/:id", updateSpecificTaskById);
 
-router.delete('/tasks/:id', (req,res) => {
-  res.status(200).send('You have successfully arrived to the delete METHOD of tasks path.')
-})
+router.delete("/tasks/:id", deleteSpecificTaskById);
 
-export default router
+export default router;

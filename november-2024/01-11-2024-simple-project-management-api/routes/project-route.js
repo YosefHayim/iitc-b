@@ -1,21 +1,19 @@
-import express from "express"
+import express from "express";
+import {
+  createNewProject,
+  deleteSpecificProjectById,
+  getAllProjects,
+  updateSpecificProjectById,
+} from "../controllers/projects-controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/projects', (req,res) => {
-  res.status(200).send('You have successfully arrived to the GET METHOD of projects path.')
-})
+router.get("/projects", getAllProjects);
 
-router.post('/projects', (req,res) => {
-  res.status(200).send('You have successfully arrived to the POST METHOD of projects path.')
-})
+router.post("/projects", createNewProject);
 
-router.patch('/projects/:id', (req,res) => {
-  res.status(200).send('You have successfully arrived to the patch METHOD of projects path.')
-})
+router.patch("/projects/:id", updateSpecificProjectById);
 
-router.delete('/projects/:id', (req,res) => {
-  res.status(200).send('You have successfully arrived to the delete METHOD of projects path.')
-})
+router.delete("/projects/:id", deleteSpecificProjectById);
 
-export default router
+export default router;

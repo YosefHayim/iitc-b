@@ -57,8 +57,6 @@ const renderSingleMoviePage = (singleMovieData, creditsData, videoUrl) => {
     </div>
   `;
 
-  console.log(creditsData);
-
   // Create and append the cast container.
   const videoContainer = document.querySelector(".video-container");
   const castContainer = createDomEl();

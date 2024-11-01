@@ -16,7 +16,7 @@ app.use(logRequest);
 app.use(express.json());
 app.use(morgan("tiny"));
 
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/simple-project-management-api-01-11-2024?retryWrites=true&w=majority&appName=IITC`;
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/api-project-01-11-2024?retryWrites=true&w=majority&appName=IITC`;
 
 const connectDB = async () => {
   try {

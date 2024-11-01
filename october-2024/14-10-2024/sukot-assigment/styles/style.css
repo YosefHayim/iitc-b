@@ -205,7 +205,7 @@ main,
 }
 
 .remove-btn-img {
-  transform: translate(5em, -9em);
+  transform: translate(5em, -10em);
 }
 
 .input-search-bar {
@@ -374,11 +374,11 @@ form {
 }
 
 .play-button-btn {
-  transform: translate(0, -15.5em);
+  transform: translate(0, -22.5em);
 }
 
 .white-data-btn {
-  transform: translate(0em, -9em);
+  transform: translate(0em, -10em);
 }
 
 .white-data-img:active {
@@ -410,7 +410,7 @@ form {
 }
 
 .white-heart-trailer-btn {
-  transform: translate(5em, -9em);
+  transform: translate(5em, -10em);
 }
 
 .white-heart-img:hover {
@@ -422,7 +422,7 @@ form {
 }
 
 .white-share-trailer-btn {
-  transform: translate(-5em, -9em);
+  transform: translate(-5em, -10em);
 }
 
 .white-share-img:hover {

@@ -236,7 +236,7 @@ input::placeholder {
   width: 1.5em;
   display: flex;
   position: relative;
-  left: -13em;
+  left: -14em;
   cursor: pointer;
   padding: 0.2em;
 }

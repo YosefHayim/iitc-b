@@ -3,10 +3,11 @@ import fs from "fs";
 const logRequest = (req, res, next) => {
   const log = `
   Activity received at: ${new Date().toLocaleString()}
-  Path parameters received: ${JSON.stringify(req.params.id)}
-  Query parameters received: ${JSON.stringify(req.query)}
-  Body parameters received: ${JSON.stringify(req.body)}
-  Status Code: ${res.statusCode} \n`;
+  Method : ${req.method}
+  Path received at: ${req.originalUrl}
+  Status Code: ${res.statusCode}
+  Body: ${JSON.stringify(req.body)} \n
+  `;
 
   console.log(log);
 

@@ -1,7 +1,7 @@
 import { projectModelSchema } from "../models/project-schema-creation.js";
 import mongoose from "mongoose";
 
-const createNewProject = async (req, res) => {
+const createNewProject = async (req, res, next) => {
   let projects = req.body;
 
   try {
@@ -40,31 +40,41 @@ const createNewProject = async (req, res) => {
       data: savedProjects,
     });
   } catch (error) {
-    res.status(500).json({
-      message: `Error adding users: ${error}`,
-    });
+    console.error(
+      `Something happened while inserting data ${
+        savedProject || savedProjects
+      } => ${error}`
+    );
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const getAllProjects = async (req, res) => {
+const getAllProjects = async (req, res, next) => {
   try {
     const allProjects = await projectModelSchema.find();
     if (allProjects) {
       res.status(200).json(allProjects);
     } else {
-      res.status(404).send(`The requested schema not found.`);
+      console.error(`Could't find ${allProjects} => ${error}`);
+      error.type = `NOT_FOUND`;
+      next(error);
     }
   } catch (error) {
-    console.error(`Something happened while fetching the data: ${error}`);
+    console.error(
+      `Something went wrong while fetching ${projectModelSchema} => ${error}`
+    );
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const updateSpecificProjectById = async (req, res) => {
+const updateSpecificProjectById = async (req, res, next) => {
+  const projectId = req.params.id;
+
+  const { name, description, status } = req.body;
+
   try {
-    const projectId = req.params.id;
-
-    const { name, description, status } = req.body;
-
     // Build the update object only with fields provided in the request body
     const updateFields = {};
     if (name) updateFields.name = name;
@@ -81,18 +91,21 @@ const updateSpecificProjectById = async (req, res) => {
 
     res.send(updatedTask);
   } catch (error) {
-    res.status(500).send("Error updating user data");
+    console.error(
+      `Something went while updating schema ID ${projectId} => ${error}`
+    );
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const deleteSpecificProjectById = async (req, res) => {
+const deleteSpecificProjectById = async (req, res, next) => {
   const projectId = req.params.id;
 
   if (!mongoose.Types.ObjectId.isValid(projectId)) {
-    return res.status(400).json({
-      message:
-        "Invalid ID format. Please provide a valid 24 letters length ID.",
-    });
+    console.error(`Could't find the projectID ${projectId} => ${error}`);
+    error.type = `NOT_FOUND`;
+    next(error);
   }
 
   const isProjectExist = await projectModelSchema.exists({ _id: projectId });
@@ -101,20 +114,21 @@ const deleteSpecificProjectById = async (req, res) => {
     try {
       const deleted = await projectModelSchema.findByIdAndDelete(projectId);
       if (deleted) {
-        return res.status(200).json({
+        return res.status(201).json({
           message: `user ID: ${projectId} has been successfully deleted from the database.`,
         });
       }
     } catch (error) {
-      console.error(`Something went wrong while performing the delete.`, error);
-      return res.status(500).json({
-        message: "An error occurred while deleting the user.",
-      });
+      console.error(
+        `Something went wrong while locating / delete project ${projectId} => ${error}`
+      );
+      error.type = `SERVER_ERROR`;
+      next(error);
     }
   } else {
-    res.status(404).json({
-      message: `We were unable to find the user with ID: ${projectId}.`,
-    });
+    console.error(`Something went wrong: ${error}`);
+    error.type = `NOT_FOUND`;
+    next(error);
   }
 };
 

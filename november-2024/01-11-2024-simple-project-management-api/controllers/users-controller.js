@@ -1,7 +1,7 @@
 import { userModelSchema } from "../models/user-schema-creation.js";
 import mongoose from "mongoose";
 
-const createNewUsers = async (req, res) => {
+const createNewUsers = async (req, res, next) => {
   let users = req.body;
 
   try {
@@ -47,29 +47,30 @@ const createNewUsers = async (req, res) => {
       data: savedUsers,
     });
   } catch (error) {
-    res.status(500).json({
-      message: `Error adding users: ${error}`,
-    });
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const getAllUsers = async (req, res) => {
+const getAllUsers = async (req, res, next) => {
   try {
     const allUsers = await userModelSchema.find();
     if (allUsers) {
       res.status(200).json(allUsers);
     } else {
-      res.status(404).send(`The requested schema not found.`);
+      error.type = `NOT_FOUND`;
+      next(error);
     }
   } catch (error) {
-    console.error(`Something happened while fetching the data: ${error}`);
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const updateSpecificUserById = async (req, res) => {
-  try {
-    const userId = req.params.id;
+const updateSpecificUserById = async (req, res, next) => {
+  const userId = req.params.id;
 
+  try {
     const {
       fName,
       lName,
@@ -103,20 +104,22 @@ const updateSpecificUserById = async (req, res) => {
       { new: true } // to return the updated document
     );
 
-    res.send(updatedUser);
+    res.json({
+      message: `Successfully updated user ${userId}:`,
+      updatedData: updatedUser,
+    });
   } catch (error) {
-    res.status(500).send("Error updating user data");
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const deleteSpecificUserById = async (req, res) => {
+const deleteSpecificUserById = async (req, res, next) => {
   const userId = req.params.id;
 
   if (!mongoose.Types.ObjectId.isValid(userId)) {
-    return res.status(400).json({
-      message:
-        "Invalid ID format. Please provide a valid 24 letters length ID.",
-    });
+    error.type = `NOT_FOUND`;
+    next(error);
   }
 
   const isUserExist = await userModelSchema.exists({ _id: userId });
@@ -131,14 +134,12 @@ const deleteSpecificUserById = async (req, res) => {
       }
     } catch (error) {
       console.error(`Something went wrong while performing the delete.`, error);
-      return res.status(500).json({
-        message: "An error occurred while deleting the user.",
-      });
+      error.type = `SERVER_ERROR`;
+      next(error);
     }
   } else {
-    res.status(404).json({
-      message: `We were unable to find the user with ID: ${userId}.`,
-    });
+    error.type = `NOT_FOUND`;
+    next(error);
   }
 };
 

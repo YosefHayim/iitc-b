@@ -1,7 +1,7 @@
 import { taskModelSchema } from "../models/task-schema-creation.js";
 import mongoose from "mongoose";
 
-const createNewTask = async (req, res) => {
+const createNewTask = async (req, res, next) => {
   let tasks = req.body;
 
   try {
@@ -38,35 +38,50 @@ const createNewTask = async (req, res) => {
 
     const savedTasks = await taskModelSchema.insertMany(tasksDocs);
 
-    res.status(201).json({
-      message: "All tasks added successfully",
-      data: savedTasks,
-    });
+    if (savedTasks) {
+      res.status(201).json({
+        message: "All tasks added successfully",
+        data: savedTasks,
+      });
+    } else {
+      error.type = `NOT_ACCEPTABLE`;
+      next(error);
+    }
   } catch (error) {
-    res.status(500).json({
-      message: `Error adding tasks: ${error}`,
-    });
+    console.error(
+      `Something went wrong while saving ${savedTask || savedTasks} => ${error}`
+    );
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const getAllTasks = async (req, res) => {
+const getAllTasks = async (req, res, next) => {
+  let allTasks;
+
   try {
-    const allTasks = await taskModelSchema.find();
+    allTasks = await taskModelSchema.find();
 
     if (allTasks) {
       res.status(200).json(allTasks);
     } else {
-      res.status(404).send(`The requested schema not found.`);
+      console.error(`Couldn't find ${allTasks} => ${error}`);
+      error.type = `NOT_FOUND`;
+      next(error);
     }
   } catch (error) {
-    console.error(`Something happened while fetching the data: ${error}`);
+    console.error(
+      `Something went wrong while fetching tasks: ${allTasks} => ${error}`
+    );
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const updateSpecificTaskById = async (req, res) => {
-  try {
-    const taskId = req.params.id;
+const updateSpecificTaskById = async (req, res, next) => {
+  const taskId = req.params.id;
 
+  try {
     const { title, description, status, dueDate } = req.body;
 
     // Build the update object only with fields provided in the request body
@@ -86,18 +101,21 @@ const updateSpecificTaskById = async (req, res) => {
 
     res.send(updatedTask);
   } catch (error) {
-    res.status(500).send("Error updating user data");
+    console.error(
+      `Something went wrong file fetching ${updatedTask}: ${error}`
+    );
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 
-const deleteSpecificTaskById = async (req, res) => {
+const deleteSpecificTaskById = async (req, res, next) => {
   const taskId = req.params.id;
 
   if (!mongoose.Types.ObjectId.isValid(taskId)) {
-    return res.status(400).json({
-      message:
-        "Invalid ID format. Please provide a valid 24 letters length ID.",
-    });
+    console.error(`The provided Id ${taskId} wasn't found => ${error}`);
+    error.type = `NOT_FOUND`;
+    next(error);
   }
 
   const isTaskExist = await taskModelSchema.exists({ _id: taskId });
@@ -111,15 +129,18 @@ const deleteSpecificTaskById = async (req, res) => {
         });
       }
     } catch (error) {
-      console.error(`Something went wrong while performing the delete.`, error);
-      return res.status(500).json({
-        message: "An error occurred while deleting the user.",
-      });
+      console.error(
+        `Something went wrong while trying to delete the schema with Id ${isTaskExist} => ${error}`
+      );
+      error.type = `SERVER_ERROR`;
+      next(error);
     }
   } else {
-    res.status(404).json({
-      message: `We were unable to find the user with ID: ${userId}.`,
-    });
+    console.error(
+      `The Id provided isn't in the database ${taskId} => ${error}`
+    );
+    error.type = `NOT_FOUND`;
+    next(error);
   }
 };
 

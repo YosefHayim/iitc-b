@@ -18,7 +18,6 @@ const singleMoviePageListener = (totalPeopleVote, ratingScore) => {
       if (favoriteBtn && event === "click") {
         const isAdded = isMovieAddedFav(movieId);
         if (!isAdded) {
-          displayAlertMessage("success-added-single-movie-to-fav-list");
           addfavoriteMovieToList(movieId);
         } else {
           favoriteBtn.textContent = `Movie already in favorite list.`;

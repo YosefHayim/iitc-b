@@ -17,14 +17,14 @@
   cursor: pointer;
 }
 .fav-play-button-btn {
-  transform: translate(0, -15.5em);
+  transform: translate(0, -22.5em);
 }
 .fav-remove-btn-img {
-  transform: translate(5em, -6em);
+  transform: translate(5em, -9em);
 }
 
 .fav-white-data-btn {
-  transform: translate(0em, -6em);
+  transform: translate(0em, -9em);
 }
 
 .title-img-container-fav {
@@ -98,8 +98,8 @@
   background: black;
   border-radius: 100em;
   padding: 0.5em;
-  height: 1.8em;
-  transform: translate(-6em, -5.55em);
+  height: 3em;
+  transform: translate(-7em, -12em);
 }
 
 .favorite-movies-container-title {

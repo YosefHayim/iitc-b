@@ -11,21 +11,22 @@ const similarMoviesContainerEl = () => {
   similarMoviesContainer.addEventListener("click", async (ev) => {
     ev.preventDefault();
 
+    // If the click was not on a movie card we avoid continue the event listener logic.
+    const movieCard = ev.target.closest(".movie-card");
+
+    if (!movieCard) {
+      return;
+    }
+
+    const movieName = movieCard.querySelector(".title").textContent;
+
     // Identify the nearest interactive elements in the movie card.
     const dataBtn = ev.target.closest(".white-data-btn");
     const shareButton = ev.target.closest(".white-share-trailer-btn");
     const heartButton = ev.target.closest(".white-heart-trailer-btn");
     const playButton = ev.target.closest(".play-button-btn");
-    const movieCard = ev.target.closest(".movie-card");
     const trailerImg = ev.target.closest(".img-trailer-link");
-    const movieName = movieCard.querySelector(".title").textContent;
     const movieId = movieCard.id.replace(/\D/g, "");
-
-    // If the movie card doesn't exist, alert the user and stop execution.
-    if (!movieCard) {
-      displayAlertMessage("no-movie-card-found");
-      return;
-    }
 
     // Handle the data button click: Navigate to the movie page.
     if (dataBtn) {
@@ -42,6 +43,7 @@ const similarMoviesContainerEl = () => {
           navigateToMoviePage(movieId, videoId);
         }
       } catch (error) {
+        displayAlertMessage("no-movie-data-exist", movieName);
         console.error("Error navigating to single movie page", error);
       }
       return;
@@ -62,6 +64,7 @@ const similarMoviesContainerEl = () => {
           handleCopyToClipboard(videoUrl);
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
       return;
@@ -98,6 +101,7 @@ const similarMoviesContainerEl = () => {
           window.location.href = videoUrl;
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
       return;
@@ -117,6 +121,7 @@ const similarMoviesContainerEl = () => {
           window.location.href = videoUrl;
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
       return;

@@ -9,7 +9,7 @@ const alertMessagesTypes = (messageType, word) => {
     {
       messageType: "success-added-single-movie-to-fav-list",
       message: "Movie has been successfully added to favorite list",
-      backgroundColor: "green"
+      backgroundColor: "green",
     },
     {
       messageType: "success-removed-all-movies",
@@ -53,6 +53,11 @@ const alertMessagesTypes = (messageType, word) => {
     },
 
     // Error messages
+    {
+      messageType: "This-movie-has-no-youtube-url",
+      message: "This movie has no trailer available",
+      backgroundColor: "red",
+    },
     {
       messageType: "Error",
       message: "Error occurred!",

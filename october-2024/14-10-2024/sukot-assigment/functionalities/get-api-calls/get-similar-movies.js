@@ -13,8 +13,6 @@ const getSimilarMoviesByMovieId = async (count = 1) => {
       `https://api.themoviedb.org/3/movie/${movieId}/similar?language=en-US&page=${count}`
     );
 
-    console.log(data);
-
     if (!data) {
       redirectToErrorPage();
       return;

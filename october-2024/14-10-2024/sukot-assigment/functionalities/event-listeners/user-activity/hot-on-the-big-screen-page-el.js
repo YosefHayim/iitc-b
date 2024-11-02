@@ -48,6 +48,7 @@ const hotOnThebigScreenPageButtons = () => {
           navigateToMoviePage(movieId, videoId);
         }
       } catch (error) {
+        displayAlertMessage("no-movie-data-exist", movieName);
         console.error("Error navigating to single movie page", error);
       }
       return;
@@ -68,6 +69,7 @@ const hotOnThebigScreenPageButtons = () => {
           handleCopyToClipboard(videoUrl);
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
       return;
@@ -104,6 +106,7 @@ const hotOnThebigScreenPageButtons = () => {
           window.location.href = videoUrl;
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
       return;
@@ -123,6 +126,7 @@ const hotOnThebigScreenPageButtons = () => {
           window.location.href = videoUrl;
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
       return;

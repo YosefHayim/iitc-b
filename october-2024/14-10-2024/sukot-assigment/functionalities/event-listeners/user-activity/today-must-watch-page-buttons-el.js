@@ -46,6 +46,7 @@ const todayMustWatchPlayButtons = () => {
           navigateToMoviePage(movieCardId, videoId);
         }
       } catch (error) {
+        displayAlertMessage("no-movie-data-exist", movieName);
         console.error("Error navigating to single movie page", error);
       }
       return;
@@ -65,6 +66,7 @@ const todayMustWatchPlayButtons = () => {
           handleCopyToClipboard(videoUrl);
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
     }
@@ -99,6 +101,7 @@ const todayMustWatchPlayButtons = () => {
           window.location.href = videoUrl;
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
     }
@@ -116,6 +119,7 @@ const todayMustWatchPlayButtons = () => {
           window.location.href = videoUrl;
         }
       } catch (error) {
+        displayAlertMessage("This-movie-has-no-youtube-url", movieName);
         console.error("Error fetching movie trailer:", error);
       }
       return;

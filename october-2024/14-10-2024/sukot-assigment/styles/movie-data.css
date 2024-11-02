@@ -14,7 +14,6 @@
 
 .img-name-container {
   width: 200px;
-  overflow: hidden;
 }
 
 .fav-button-movie-single-page {
@@ -36,26 +35,6 @@ hr {
 
 .hover-element {
   display: none;
-}
-
-.movie-img {
-  width: 15em;
-}
-
-.white-data-btn {
-  transform: translate(0em, -6em);
-}
-
-.white-share-trailer-btn {
-  transform: translate(-5em, -6em);
-}
-
-.white-heart-trailer-btn {
-  transform: translate(5em, -6em);
-}
-
-.play-button-btn {
-  transform: translate(0, -14.5em);
 }
 
 .similar-movies-container {
@@ -108,7 +87,7 @@ hr {
   align-items: center;
   width: 100%;
   flex-wrap: wrap;
-  gap: 1.5em;
+  gap: 4em;
   position: relative;
   overflow: hidden;
   margin-top: 3em;
@@ -175,7 +154,7 @@ hr {
 
 .single-movie-img,
 .actor-img {
-  width: 10em;
+  width: 15em;
   border-radius: 0.5em;
 }
 
@@ -248,7 +227,8 @@ hr {
 }
 
 .single-movie-img {
-  width: 15em;
+  width: 20em;
+  border-radius: 1em;
   box-shadow: 0 0 0.1em 0.1em white;
   animation: glow 3s ease-in-out infinite;
 }
@@ -286,19 +266,19 @@ body > footer {
 
 @media screen and (min-width: 1024px) {
   .white-data-btn {
-    transform: translate(0em, -9em);
+    transform: translate(0em, -13em);
   }
 
   .white-share-trailer-btn {
-    transform: translate(-5em, -9em);
+    transform: translate(-8em, -13em);
   }
 
   .white-heart-trailer-btn {
-    transform: translate(5em, -9em);
+    transform: translate(8em, -13em);
   }
 
   .play-button-btn {
-    transform: translate(0, -16.5em);
+    transform: translate(0, -22.5em);
   }
 
   .single-movie-img {

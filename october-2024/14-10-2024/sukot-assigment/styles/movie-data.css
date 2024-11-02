@@ -264,6 +264,18 @@ body > footer {
   }
 }
 
+.white-heart-trailer-btn {
+  transform: translate(5em, -12em);
+}
+
+.white-share-trailer-btn {
+  transform: translate(-5em, -12em);
+}
+
+.white-data-btn {
+  transform: translate(0em, -12em);
+}
+
 @media screen and (min-width: 1024px) {
   .white-data-btn {
     transform: translate(0em, -13em);

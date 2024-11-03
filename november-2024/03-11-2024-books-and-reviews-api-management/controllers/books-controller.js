@@ -101,29 +101,13 @@ const partialUpdate = async (req, res) => {
   }
 };
 
-const getBookPage = async (req, res) => {
-  const { page = 1, limit = 1 } = req.query;
-
-  console.log(req.query);
-
-  try {
-    const books = await bookModel.find();
-
-    res.status(200).json({
-      requestedData: books,
-    });
-
-    console.log(books);
-  } catch (error) {
-    res.status(500).json({
-      message: "Error occurred getting next page.",
-      error: error.message,
-    });
-  }
-};
+// const getBookPage = async (req, res) => {
+//   const { page = 1, limit = 1 } = req.query;
+//   const books = await bookModel.find().limit(limit * 1);
+//   res.json({ books });
+// };
 
 export {
-  getBookPage,
   getAllBooks,
   getBookById,
   getTotalBooksReviewsCount,

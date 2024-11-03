@@ -11,6 +11,9 @@ const bookSchema = new mongoose.Schema(
       ref: "Author",
       required: true,
     },
+    genre: {
+      type: String,
+    },
     publishedDate: {
       type: Date,
       validate: {
@@ -19,9 +22,6 @@ const bookSchema = new mongoose.Schema(
         },
         message: (props) => `The date ${props.value} can't be in the future.`,
       },
-    },
-    genre: {
-      type: String,
     },
     averageRating: {
       type: Number,

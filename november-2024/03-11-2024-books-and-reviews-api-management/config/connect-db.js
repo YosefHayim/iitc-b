@@ -13,7 +13,7 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
     // Preform the matching between books and there authors.
-    // insertData();
+    insertData();
 
     console.log("Connected to MongoDB");
   } catch (error) {

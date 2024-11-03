@@ -19,7 +19,7 @@ const reviewSchema = new mongoose.Schema(
     comment: {
       type: String,
       minlength: [1, "Comment must be at least 1 character long."],
-      maxlength: [50, "Comment cannot exceed 50 characters."],
+      maxlength: [250, "Comment cannot exceed 250 characters."],
     },
     book: {
       type: mongoose.Schema.Types.ObjectId,

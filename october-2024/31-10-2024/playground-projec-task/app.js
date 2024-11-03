@@ -6,6 +6,7 @@ import jokesRoute from "./routes/jokes-route.js";
 import productsRoute from "./routes/products-route.js";
 import usersRoute from "./routes/users-route.js";
 import { connectDB } from "./config/connect-db.js";
+import { errorHandle } from "./middleware/error-handling.js";
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ app.use("/api/users", usersRoute);
 app.use("*", (req, res) => {
   res.status(404).json({ message: "This is nota valid server path." });
 });
+
+app.use(errorHandle);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

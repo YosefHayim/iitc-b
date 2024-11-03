@@ -321,3 +321,276 @@
   Body: {} 
 
   
+  Activity received at: 11/3/2024, 3:41:47 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:05:37 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:05:55 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:06:00 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:07:17 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:07:24 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:07:37 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:02 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:30 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:47 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:52 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:12:10 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:14:49 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:17:36 PM
+  Method : GET
+  Path received at: /api/products/6727492c76ee09ec141e0632
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:17:43 PM
+  Method : GET
+  Path received at: /api/products
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:17:49 PM
+  Method : GET
+  Path received at: /api/products/6727495676ee09ec141e0634
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:18:07 PM
+  Method : GET
+  Path received at: /api/products/6727495676ee09ec141e0634
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:18:41 PM
+  Method : GET
+  Path received at: /api/products
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:22:35 PM
+  Method : GET
+  Path received at: /api/users/67274bd776ee09ec141e063e
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:22:37 PM
+  Method : GET
+  Path received at: /api/users
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:22:42 PM
+  Method : GET
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:33:26 PM
+  Method : GET
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:34:04 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01","location":"Israel, Tel Aviv","email":"Michelleos.sabagos@example.com","agreeToTerms":true} 
+
+  
+  Activity received at: 11/3/2024, 4:36:44 PM
+  Method : POST
+  Path received at: /api/users/432432
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:36:50 PM
+  Method : POST
+  Path received at: /api/users/43243254654
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:38:47 PM
+  Method : POST
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:40:18 PM
+  Method : POST
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:40:27 PM
+  Method : POST
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:41:10 PM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Giggles Galore","text":"Parallel lines have so much in common. It’s a shame they’ll never meet."} 
+
+  
+  Activity received at: 11/3/2024, 4:41:15 PM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Funny Joke","text":"This is hilarious!","providerName":""} 
+
+  
+  Activity received at: 11/3/2024, 4:44:25 PM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Funny Joke","text":"This is hilarious!","providerName":""} 
+
+  
+  Activity received at: 11/3/2024, 4:50:19 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:50:21 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd29
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:50:24 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:51:43 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:51:56 PM
+  Method : GET
+  Path received at: /api/jokes/
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:52:05 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:52:08 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd29792
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:52:10 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  

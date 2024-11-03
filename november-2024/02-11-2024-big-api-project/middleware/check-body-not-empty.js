@@ -1,10 +1,13 @@
 const isBodyEmpty = (bodyReq, next) => {
-  if (Object.keys(bodyReq).length === 0) {
-    const error = new Error();
-    error.message = `You must provide data in the body request.`;
-    error.type = `BAD_REQUEST`;
-    next(error);
-    return;
+  for (const [key, value] of Object.entries(bodyReq)) {
+    if (!key || !value) {
+      const error = new Error(
+        `Invalid request: missing or empty value for key "${key}"`
+      );
+      error.type = `BAD_REQUEST`;
+      next(error);
+      return;
+    }
   }
 };
 

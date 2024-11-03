@@ -7,7 +7,7 @@ const errorHandle = (err, req, res, next) => {
   };
 
   res.status(chosenError.statusCode).json({
-    message: chosenError.message,
+    message: err.message || chosenError.message,
   });
 };
 

@@ -24,6 +24,7 @@ app.use("/api/users", usersRoute);
 app.use("/api/projects", projectsRoute);
 app.use("/api/tasks", tasksRoute);
 app.use("*", handleUndefinedRoutes);
+
 app.use(errorHandle);
 
 app.get("/", (req, res) => {

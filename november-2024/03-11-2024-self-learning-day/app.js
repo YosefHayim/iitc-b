@@ -5,6 +5,8 @@ import { handleUndefinedRoutes } from "./middlewares/handle-undefined-routes.js"
 import { logRequest } from "./middlewares/logger.js";
 import { errorHandle } from "./middlewares/error-handling.js";
 import { connectDB } from "./config/connect-db.js";
+import booksRouter from "./routers/books-route.js";
+import authorsRouter from "./routers/authors-route.js";
 
 dotenvFlow.config();
 
@@ -18,8 +20,15 @@ const PORT = process.env.PORT || 3000;
 
 connectDB();
 
-// room for the routes.
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome to books server",
+  });
+});
 
+// room for the routes.
+app.use("/api/books", booksRouter);
+app.use("/api/authors", authorsRouter);
 app.use("*", handleUndefinedRoutes);
 app.use(errorHandle);
 

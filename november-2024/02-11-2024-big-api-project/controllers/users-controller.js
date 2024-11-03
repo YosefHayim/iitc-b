@@ -1,15 +1,17 @@
 import { userModelSchema } from "../models/user-schema-creation.js";
-import mongoose from "mongoose";
 import { isFalsy } from "../middleware/is-falsy.js";
 import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
 
 const getUserById = async (req, res, next) => {
   const userId = req.params.id;
 
-  isFalsy(userId);
+  isFalsy(userId, next);
 
   try {
     const foundUser = await userModelSchema.findById(userId);
+
+    isFalsy(foundUser, next);
+
     res.status(200).json({
       message: "Success found your user Id",
       dataFound: foundUser,
@@ -24,11 +26,10 @@ const getUserById = async (req, res, next) => {
 const getAllUsers = async (req, res, next) => {
   try {
     const allUsers = await userModelSchema.find();
-    if (allUsers) {
-      res.status(200).json(allUsers);
-    } else {
-      throw new Error("NOT_FOUND");
-    }
+
+    isFalsy(allUsers, next);
+
+    res.status(200).json(allUsers);
   } catch (error) {
     error.type = `SERVER_ERROR`;
     next(error);
@@ -38,7 +39,7 @@ const getAllUsers = async (req, res, next) => {
 const createNewUsers = async (req, res, next) => {
   let users = req.body;
 
-  isBodyEmpty(users);
+  isBodyEmpty(users, next);
 
   try {
     if (!Array.isArray(users)) {
@@ -66,6 +67,9 @@ const createNewUsers = async (req, res, next) => {
     });
 
     const savedUsers = await userModelSchema.insertMany(userDocs);
+
+    isFalsy(savedUsers, next);
+
     res.status(201).json({
       message: "All users added successfully",
       data: savedUsers,
@@ -78,6 +82,10 @@ const createNewUsers = async (req, res, next) => {
 
 const updateSpecificUserById = async (req, res, next) => {
   const userId = req.params.id;
+
+  isFalsy(userId, next);
+
+  isBodyEmpty(req.body, next);
 
   try {
     const {
@@ -110,6 +118,8 @@ const updateSpecificUserById = async (req, res, next) => {
       { new: true }
     );
 
+    isFalsy(updatedUser, next);
+
     res.json({
       message: `Successfully updated user ${userId}:`,
       updatedData: updatedUser,
@@ -123,27 +133,23 @@ const updateSpecificUserById = async (req, res, next) => {
 const deleteSpecificUserById = async (req, res, next) => {
   const userId = req.params.id;
 
-  if (!mongoose.Types.ObjectId.isValid(userId)) {
-    throw new Error("NOT_FOUND");
-  }
+  isFalsy(userId, next);
 
   const isUserExist = await userModelSchema.exists({ _id: userId });
 
-  if (isUserExist) {
-    try {
-      const deleted = await userModelSchema.findByIdAndDelete(userId);
-      if (deleted) {
-        return res.status(200).json({
-          message: `User ID: ${userId} has been successfully deleted from the database.`,
-        });
-      }
-    } catch (error) {
-      console.error(`Something went wrong while performing the delete.`, error);
-      error.type = `SERVER_ERROR`;
-      next(error);
-    }
-  } else {
-    throw new Error("NOT_FOUND");
+  isFalsy(isUserExist, next);
+  try {
+    const deleted = await userModelSchema.findByIdAndDelete(userId);
+
+    isFalsy(deleted, next);
+
+    res.status(200).json({
+      message: `User ID: ${userId} has been successfully deleted from the database.`,
+    });
+  } catch (error) {
+    console.error(`Something went wrong while performing the delete.`, error);
+    error.type = `SERVER_ERROR`;
+    next(error);
   }
 };
 

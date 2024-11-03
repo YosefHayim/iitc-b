@@ -5,9 +5,9 @@ const isFalsy = (value, next) => {
   }
   const error = new Error();
   error.type = `NOT_FOUND`;
-  next(error);
   console.error(`${value} is not valid, stopping request...`);
-  return null;
+  next(error);
+  return null; 
 };
 
 export { isFalsy };

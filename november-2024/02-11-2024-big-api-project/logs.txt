@@ -223,3 +223,31 @@
   Body: undefined 
 
   
+  Activity received at: 11/3/2024, 5:05:06 PM
+  Method : GET
+  Path received at: /api/projects/project/67252660e25dca71c6479b8
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 5:05:08 PM
+  Method : GET
+  Path received at: /api/projects/project/67252660e25dca71c6479b8d
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 5:05:14 PM
+  Method : GET
+  Path received at: /api/projects/project/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 5:05:18 PM
+  Method : GET
+  Path received at: /api/projects/project/67252660e25dca71c6479b8d
+  Status Code: 200
+  Body: undefined 
+
+  

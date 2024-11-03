@@ -1,15 +1,17 @@
 import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
 import { isFalsy } from "../middleware/is-falsy.js";
 import { projectModelSchema } from "../models/project-schema-creation.js";
-import mongoose from "mongoose";
 
 const getProjectById = async (req, res, next) => {
   const projectId = req.params.id;
 
-  isFalsy(projectId);
+  isFalsy(projectId, next);
 
   try {
     const foundProject = await projectModelSchema.findById(projectId);
+
+    isFalsy(foundProject, next);
+
     res.status(200).json({
       message: "Success found your project Id",
       dataFound: foundProject,
@@ -24,13 +26,10 @@ const getProjectById = async (req, res, next) => {
 const getAllProjects = async (req, res, next) => {
   try {
     const allProjects = await projectModelSchema.find();
-    if (allProjects) {
-      res.status(200).json(allProjects);
-    } else {
-      const error = new Error(`Couldn't find projects`);
-      error.type = `NOT_FOUND`;
-      next(error);
-    }
+
+    isFalsy(allProjects, next);
+
+    res.status(200).json(allProjects);
   } catch (error) {
     console.error(`Something went wrong while fetching projects => ${error}`);
     error.type = `SERVER_ERROR`;
@@ -41,7 +40,7 @@ const getAllProjects = async (req, res, next) => {
 const createNewProject = async (req, res, next) => {
   const projects = req.body;
 
-  isBodyEmpty(projects);
+  isBodyEmpty(projects, next);
 
   try {
     if (!Array.isArray(projects)) {
@@ -66,6 +65,9 @@ const createNewProject = async (req, res, next) => {
     });
 
     const savedProjects = await projectModelSchema.insertMany(projectsDocs);
+
+    isFalsy(savedProjects, next);
+
     res.status(201).json({
       message: "All projects added successfully",
       data: savedProjects,
@@ -80,9 +82,11 @@ const createNewProject = async (req, res, next) => {
 const updateSpecificProjectById = async (req, res, next) => {
   const projectId = req.params.id;
 
-  isFalsy(projectId);
+  isFalsy(projectId, next);
 
   const { name, description, status } = req.body;
+
+  isBodyEmpty(req.body, next);
 
   try {
     const updateFields = {};
@@ -90,13 +94,15 @@ const updateSpecificProjectById = async (req, res, next) => {
     if (description) updateFields.description = description;
     if (status) updateFields.status = status;
 
-    const updatedTask = await projectModelSchema.findByIdAndUpdate(
+    const updatedProject = await projectModelSchema.findByIdAndUpdate(
       projectId,
       { $set: updateFields },
       { new: true }
     );
 
-    res.send(updatedTask);
+    isFalsy(updatedProject, next);
+
+    res.status(200).json(updatedProject);
   } catch (error) {
     console.error(
       `Something went while updating schema ID ${projectId} => ${error}`
@@ -109,26 +115,19 @@ const updateSpecificProjectById = async (req, res, next) => {
 const deleteSpecificProjectById = async (req, res, next) => {
   const projectId = req.params.id;
 
-  if (!mongoose.Types.ObjectId.isValid(projectId)) {
-    const error = new Error(`Invalid project ID: ${projectId}`);
-    error.type = `NOT_FOUND`;
-    return next(error);
-  }
+  isFalsy(projectId, next);
 
   const isProjectExist = await projectModelSchema.exists({ _id: projectId });
-  if (!isProjectExist) {
-    const error = new Error(`Project not found`);
-    error.type = `NOT_FOUND`;
-    return next(error);
-  }
+  isFalsy(isProjectExist, next);
 
   try {
     const deleted = await projectModelSchema.findByIdAndDelete(projectId);
-    if (deleted) {
-      return res.status(200).json({
-        message: `Project ID: ${projectId} has been successfully deleted from the database.`,
-      });
-    }
+
+    isFalsy(deleted, next);
+
+    res.status(200).json({
+      message: `Project ID: ${projectId} has been successfully deleted from the database.`,
+    });
   } catch (error) {
     console.error(`Error deleting project ${projectId} => ${error}`);
     error.type = `SERVER_ERROR`;

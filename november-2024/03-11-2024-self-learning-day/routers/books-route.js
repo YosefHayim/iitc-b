@@ -40,4 +40,23 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+router.get("/rating/:id", async (req, res, next) => {
+  const bookId = req.params.id;
+
+  try {
+    const getBookReviewById = await bookModel
+      .findById(bookId)
+      .populate("reviewCount");
+
+    res.status(200).json({
+      message: "Success",
+      bookReview: getBookReviewById.reviewCount,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error retrieving review" });
+    next(error);
+  }
+});
+
+
 export default router;

@@ -7,6 +7,7 @@ import { errorHandle } from "./middlewares/error-handling.js";
 import { connectDB } from "./config/connect-db.js";
 import booksRouter from "./routers/books-route.js";
 import authorsRouter from "./routers/authors-route.js";
+import reviewsRoute from "./routers/reviews-route.js";
 
 dotenvFlow.config();
 
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 // room for the routes.
 app.use("/api/books", booksRouter);
 app.use("/api/authors", authorsRouter);
+app.use("/api/reviews", reviewsRoute);
 app.use("*", handleUndefinedRoutes);
 app.use(errorHandle);
 

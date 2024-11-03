@@ -167,3 +167,185 @@
   Body: undefined 
 
   
+  Activity received at: 11/3/2024, 6:49:55 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 6:50:02 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 6:50:28 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 6:50:49 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 6:52:05 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 6:52:14 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 6:52:27 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f8745049
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:00:35 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f8745049
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:01:56 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f8745049
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:07:20 PM
+  Method : GET
+  Path received at: /api/reviews
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:11:59 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:13:22 PM
+  Method : POST
+  Path received at: /api/reviews/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:13:35 PM
+  Method : GET
+  Path received at: /api/reviews
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:13:49 PM
+  Method : GET
+  Path received at: /api/reviews
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:15:13 PM
+  Method : GET
+  Path received at: /api/reviews
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:15:23 PM
+  Method : GET
+  Path received at: /api/reviews
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:15:34 PM
+  Method : POST
+  Path received at: /api/reviews/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:15:40 PM
+  Method : POST
+  Path received at: /api/reviews/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:15:44 PM
+  Method : GET
+  Path received at: /api/reviews
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:16:40 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f8745049
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:21:42 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:21:48 PM
+  Method : GET
+  Path received at: /api/books/rating/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:45:58 PM
+  Method : GET
+  Path received at: /api/books/last-review/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:46:46 PM
+  Method : GET
+  Path received at: /api/books/last-review/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 7:47:50 PM
+  Method : GET
+  Path received at: /api/reviews/last-review/67279fb6ad05c6c2f874504a
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 8:50:03 PM
+  Method : GET
+  Path received at: /api/reviews/last-review
+  Status Code: 200
+  Body: undefined 
+
+  

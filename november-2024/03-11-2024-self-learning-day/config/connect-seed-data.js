@@ -1,6 +1,7 @@
-import { authors, books } from "./seedData.js";
+import { authors, books, reviews } from "./inject-data.js";
 import bookModel from "../models/book-schema.js";
 import authorModel from "../models/author-schema.js";
+import reviewModel from "../models/review-schema.js";
 
 const insertData = async () => {
   try {
@@ -9,10 +10,19 @@ const insertData = async () => {
 
     books.forEach((book) => {
       const author = authorDocs.find((a) => a.name === book.author);
-      book.author = author._id;
+      if (author) book.author = author._id;
     });
 
     await bookModel.insertMany(books);
+    const bookDocs = await bookModel.find();
+
+    reviews.forEach((review) => {
+      const book = bookDocs.find((b) => b.title === review.bookName);
+      if (book) review.book = book._id;
+    });
+
+    await reviewModel.insertMany(reviews);
+
     console.log(`Data seeded successfully!`);
   } catch (error) {
     console.error(`Something didn't work: ${error}`);

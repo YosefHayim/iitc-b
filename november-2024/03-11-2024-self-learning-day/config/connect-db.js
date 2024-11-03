@@ -12,7 +12,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    // Prform the matching between books and there authors.
+    // Preform the matching between books and there authors.
     // insertData();
 
     console.log("Connected to MongoDB");

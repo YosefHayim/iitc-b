@@ -1,8 +1,9 @@
 import express from "express";
 import dotenvFlow from "dotenv-flow";
-import { handleUndefinedRoutes } from "./middleware/handle-undefined-routes.js";
-import { logRequest } from "./middleware/logger.js";
-import { errorHandle } from "./middleware/error-handling.js";
+import morgan from "morgan";
+import { handleUndefinedRoutes } from "./middlewares/handle-undefined-routes.js";
+import { logRequest } from "./middlewares/logger.js";
+import { errorHandle } from "./middlewares/error-handling.js";
 import { connectDB } from "./config/connect-db.js";
 
 dotenvFlow.config();

@@ -31,13 +31,14 @@ router.get("/last-review", async (req, res, next) => {
 });
 
 router.post("/", async (req, res, next) => {
-  const { rating, comment, book } = req.body;
+  const { rating, comment, book, bookName } = req.body;
 
   try {
     const postedReview = await new reviewModel({
       rating,
       comment,
       book,
+      bookName,
     }).save();
 
     res.status(200).json({

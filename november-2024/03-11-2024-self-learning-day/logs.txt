@@ -349,3 +349,87 @@
   Body: undefined 
 
   
+  Activity received at: 11/3/2024, 9:07:22 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:07:40 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:08:04 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:08:32 PM
+  Method : POST
+  Path received at: /api/reviews/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:08:36 PM
+  Method : POST
+  Path received at: /api/reviews/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:09:09 PM
+  Method : POST
+  Path received at: /api/reviews/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:10:27 PM
+  Method : POST
+  Path received at: /api/reviews/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:10:40 PM
+  Method : GET
+  Path received at: /api/books/rating/6727c56f24a43bb21dfaff02
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:20:28 PM
+  Method : POST
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:22:49 PM
+  Method : POST
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:23:03 PM
+  Method : POST
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 9:25:14 PM
+  Method : POST
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  

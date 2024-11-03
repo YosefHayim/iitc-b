@@ -38,7 +38,7 @@ const getAllUsers = async (req, res, next) => {
 const createNewUsers = async (req, res, next) => {
   let users = req.body;
 
-  isBodyEmpty(projects);
+  isBodyEmpty(users);
 
   try {
     if (!Array.isArray(users)) {

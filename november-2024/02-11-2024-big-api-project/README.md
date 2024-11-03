@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the API documentation for managing users, projects, and tasks. This API allows you to create, read, update, and delete users, projects, and tasks. Below you will find detailed information on each endpoint, including required parameters, request examples, expected responses, error handling, and FAQs.
+Welcome to the API documentation for managing **Users**, **Projects**, and **Tasks**. This API allows you to create, read, update, and delete users, projects, and tasks. Below you will find detailed information on each endpoint, including required parameters, request examples, expected responses, error handling, and FAQs.
 
 ## Base URL
 
@@ -14,16 +14,30 @@ http://localhost:3000
 
 ---
 
+## Routes
+
+The API uses the following base routes for different resources:
+
+- **Users Route:** `/api/users`
+- **Projects Route:** `/api/projects`
+- **Tasks Route:** `/api/tasks`
+
+Each endpoint is built upon these routes. For example, to get all users, the full endpoint is `http://localhost:3000/api/users/users`.
+
+---
+
 ## Endpoints
 
 ### Users API
+
+**Route:** `/api/users`
 
 ---
 
 #### Get All Users
 
 - **Method:** `GET`
-- **Endpoint:** `/users/users`
+- **Endpoint:** `/api/users/users`
 - **Description:** Retrieves a list of all users.
 
 **Request:**
@@ -77,7 +91,7 @@ GET http://localhost:3000/api/users/users
 #### Get User by ID
 
 - **Method:** `GET`
-- **Endpoint:** `/users/user/:id`
+- **Endpoint:** `/api/users/user/:id`
 - **Description:** Retrieves a user by their unique ID.
 - **Parameters:**
   - `id` (string, required): The user's unique identifier.
@@ -131,7 +145,7 @@ GET http://localhost:3000/api/users/user/6725139ce5bece56b7bd3045
 #### Create New User(s)
 
 - **Method:** `POST`
-- **Endpoint:** `/users/users`
+- **Endpoint:** `/api/users/users`
 - **Description:** Creates a new user or multiple users.
 - **Headers:**
   - `Content-Type: application/json`
@@ -201,7 +215,7 @@ Content-Type: application/json
 #### Partial Update User
 
 - **Method:** `PATCH`
-- **Endpoint:** `/users/users/:id`
+- **Endpoint:** `/api/users/users/:id`
 - **Description:** Partially updates a user's information.
 - **Parameters:**
   - `id` (string, required): The user's unique identifier.
@@ -253,7 +267,7 @@ Content-Type: application/json
 #### Delete User by ID
 
 - **Method:** `DELETE`
-- **Endpoint:** `/users/users/:id`
+- **Endpoint:** `/api/users/users/:id`
 - **Description:** Deletes a user by their unique ID.
 - **Parameters:**
   - `id` (string, required): The user's unique identifier.
@@ -295,12 +309,14 @@ DELETE http://localhost:3000/api/users/users/6725139ce5bece56b7bd3045
 
 ### Projects API
 
+**Route:** `/api/projects`
+
 ---
 
 #### Get All Projects
 
 - **Method:** `GET`
-- **Endpoint:** `/projects/projects`
+- **Endpoint:** `/api/projects/projects`
 - **Description:** Retrieves a list of all projects.
 
 **Request:**
@@ -334,7 +350,7 @@ GET http://localhost:3000/api/projects/projects
 #### Get Project by ID
 
 - **Method:** `GET`
-- **Endpoint:** `/projects/project/:id`
+- **Endpoint:** `/api/projects/project/:id`
 - **Description:** Retrieves a project by its unique ID.
 - **Parameters:**
   - `id` (string, required): The project's unique identifier.
@@ -371,7 +387,7 @@ GET http://localhost:3000/api/projects/project/67252660e25dca71c6479b8d
 #### Create New Project(s)
 
 - **Method:** `POST`
-- **Endpoint:** `/projects/projects`
+- **Endpoint:** `/api/projects/projects`
 - **Description:** Creates a new project or multiple projects.
 - **Headers:**
   - `Content-Type: application/json`
@@ -426,7 +442,7 @@ Content-Type: application/json
 #### Partial Update Project
 
 - **Method:** `PATCH`
-- **Endpoint:** `/projects/projects/:id`
+- **Endpoint:** `/api/projects/projects/:id`
 - **Description:** Partially updates a project's information.
 - **Parameters:**
   - `id` (string, required): The project's unique identifier.
@@ -478,7 +494,7 @@ Content-Type: application/json
 #### Delete Project by ID
 
 - **Method:** `DELETE`
-- **Endpoint:** `/projects/projects/:id`
+- **Endpoint:** `/api/projects/projects/:id`
 - **Description:** Deletes a project by its unique ID.
 - **Parameters:**
   - `id` (string, required): The project's unique identifier.
@@ -520,12 +536,14 @@ DELETE http://localhost:3000/api/projects/projects/67252660e25dca71c6479b8e
 
 ### Tasks API
 
+**Route:** `/api/tasks`
+
 ---
 
 #### Get All Tasks
 
 - **Method:** `GET`
-- **Endpoint:** `/tasks/tasks`
+- **Endpoint:** `/api/tasks/tasks`
 - **Description:** Retrieves a list of all tasks.
 
 **Request:**
@@ -559,7 +577,7 @@ GET http://localhost:3000/api/tasks/tasks
 #### Get Task by ID
 
 - **Method:** `GET`
-- **Endpoint:** `/tasks/task/:id`
+- **Endpoint:** `/api/tasks/task/:id`
 - **Description:** Retrieves a task by its unique ID.
 - **Parameters:**
   - `id` (string, required): The task's unique identifier.
@@ -596,7 +614,7 @@ GET http://localhost:3000/api/tasks/task/67252197a93f1285b915fb40
 #### Create New Task(s)
 
 - **Method:** `POST`
-- **Endpoint:** `/tasks/tasks`
+- **Endpoint:** `/api/tasks/tasks`
 - **Description:** Creates a new task or multiple tasks.
 - **Headers:**
   - `Content-Type: application/json`
@@ -653,7 +671,7 @@ Content-Type: application/json
 #### Partial Update Task
 
 - **Method:** `PATCH`
-- **Endpoint:** `/tasks/tasks/:id`
+- **Endpoint:** `/api/tasks/tasks/:id`
 - **Description:** Partially updates a task's information.
 - **Parameters:**
   - `id` (string, required): The task's unique identifier.
@@ -705,7 +723,7 @@ Content-Type: application/json
 #### Delete Task by ID
 
 - **Method:** `DELETE`
-- **Endpoint:** `/tasks/tasks/:id`
+- **Endpoint:** `/api/tasks/tasks/:id`
 - **Description:** Deletes a task by its unique ID.
 - **Parameters:**
   - `id` (string, required): The task's unique identifier.

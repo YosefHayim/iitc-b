@@ -314,3 +314,10 @@
   Body: {} 
 
   
+  Activity received at: 11/3/2024, 1:28:33 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  

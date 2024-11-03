@@ -1,11 +1,11 @@
 import express from "express";
-import mongoose from "mongoose";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import { logRequest } from "./middleware/logger.js";
 import jokesRoute from "./routes/jokes-route.js";
 import productsRoute from "./routes/products-route.js";
 import usersRoute from "./routes/users-route.js";
+import { connectDB } from "./config/connect-db.js";
 
 dotenv.config();
 
@@ -15,20 +15,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(logRequest);
-
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/31-10-2024-playground-project-task?retryWrites=true&w=majority&appName=IITC`;
-
-const connectDB = async () => {
-  try {
-    await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("Connected to MongoDB");
-  } catch (error) {
-    console.error("Connection error:", error);
-  }
-};
 
 connectDB();
 

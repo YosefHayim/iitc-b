@@ -1,7 +1,34 @@
 import express from "express";
-import { productsProjectSchema } from "../modules/products-project-schema.js";
+import { productsProjectSchema } from "../models/products-project-schema.js";
 
 const router = express.Router();
+
+// Get product by Id
+router.get("/:id", async (req, res) => {
+  const productId = req.params.id;
+
+  if (!productId) {
+    next({ type: `The product ID you provided is unknown: ${productId}` });
+    return;
+  }
+
+  try {
+    const findProductById = await productsProjectSchema.findById(productId);
+
+    if (findProductById) {
+      res.status(200).json({
+        message: "Success Found your product!",
+        dataFound: findProductById,
+      });
+    } else {
+      res.status(404).json({
+        message: `Failed to find your product: ${productId}`,
+      });
+    }
+  } catch (error) {
+    next({ type: `The Id provided has not been found: ${productId}` });
+  }
+});
 
 // Fetch all products
 router.get("", async (req, res, next) => {

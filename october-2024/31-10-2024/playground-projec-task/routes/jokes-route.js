@@ -1,7 +1,34 @@
 import express from "express";
-import { jokesProjectSchema } from "../modules/jokes-project-schema.js";
+import { jokesProjectSchema } from "../models/jokes-project-schema.js";
 
 const router = express.Router();
+
+// Get joke by Id
+router.get("/:id", async (req, res) => {
+  const jokeId = req.params.id;
+
+  if (!jokeId) {
+    next({ type: `The jokeId you provided is unknown: ${jokeId}` });
+    return;
+  }
+
+  try {
+    const findJokeById = await jokesProjectSchema.findById(jokeId);
+
+    if (findJokeById) {
+      res.status(200).json({
+        message: "Success Found your joke!",
+        dataFound: findJokeById,
+      });
+    } else {
+      res.status(404).json({
+        message: `Failed to find your joke: ${jokeId}`,
+      });
+    }
+  } catch (error) {
+    next({ type: `The Id provided has not been found: ${jokeId}` });
+  }
+});
 
 // Fetch all jokes
 router.get("", async (req, res, next) => {
@@ -31,7 +58,10 @@ router.post("", async (req, res, next) => {
       favoritePizzaToppings,
     });
     const savedJoke = await newJoke.save();
-    res.status(201).json(savedJoke);
+    res.status(201).json({
+      message: "Success joke has been added",
+      dataReceived: savedJoke,
+    });
   } catch (error) {
     next({ type: "SERVER_ERROR" });
   }

@@ -1,7 +1,34 @@
 import express from "express";
-import { userProjectSchema } from "../modules/users-project-schema.js";
+import { userProjectSchema } from "../models/users-project-schema.js";
 
 const router = express.Router();
+
+// Get user by Id
+router.get("/:id", async (req, res) => {
+  const userId = req.params.id;
+
+  if (!userId) {
+    next({ type: `The user ID you provided is unknown: ${userId}` });
+    return;
+  }
+
+  try {
+    const findUserById = await userProjectSchema.findById(userId);
+
+    if (findUserById) {
+      res.status(200).json({
+        message: "Success Found your user!",
+        dataFound: findUserById,
+      });
+    } else {
+      res.status(404).json({
+        message: `Failed to find your user: ${userId}`,
+      });
+    }
+  } catch (error) {
+    next({ type: `The Id provided has not been found: ${userId}` });
+  }
+});
 
 // Fetch all users
 router.get("", async (req, res, next) => {

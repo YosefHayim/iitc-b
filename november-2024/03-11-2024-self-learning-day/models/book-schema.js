@@ -21,6 +21,10 @@ const bookSchema = new mongoose.Schema({
   },
 });
 
-const book = mongoose.model("Book", bookSchema);
+const bookModel = mongoose.model("Book", bookSchema);
 
-export default book;
+bookSchema.virtual("fullTitle").get(() => {
+  `${this.title} by ${this.author}`;
+});
+
+export default bookModel;

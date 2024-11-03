@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import dotenvFlow from "dotenv-flow";
+import { insertData } from "./connect-seed-data.js";
 
 dotenvFlow.config();
 
@@ -11,6 +12,9 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+    // Perform the matching between books and there authors.
+    insertData();
+
     console.log("Connected to MongoDB");
   } catch (error) {
     console.error("Connection error:", error);

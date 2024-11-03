@@ -433,3 +433,38 @@
   Body: undefined 
 
   
+  Activity received at: 11/3/2024, 10:15:44 PM
+  Method : POST
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 10:22:15 PM
+  Method : PATCH
+  Path received at: /api/books/6727c56f24a43bb21dfafefd
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 10:22:31 PM
+  Method : PATCH
+  Path received at: /api/books/6727c56f24a43bb21dfafefd
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 10:22:42 PM
+  Method : PATCH
+  Path received at: /api/books/6727c56f24a43bb21dfafefd
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 10:23:03 PM
+  Method : GET
+  Path received at: /api/books
+  Status Code: 200
+  Body: undefined 
+
+  

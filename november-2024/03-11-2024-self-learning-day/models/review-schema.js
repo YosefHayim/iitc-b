@@ -26,11 +26,30 @@ const reviewSchema = new mongoose.Schema(
       ref: "Book",
       required: true,
     },
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+    },
+    updatedAt: {
+      type: Date,
+    },
   },
   {
     toJSON: { virtuals: true },
   }
 );
+
+reviewSchema.pre("save", function (next) {
+  if (this.isNew) {
+    this.createdAt = Date.now();
+  }
+  this.updatedAt = Date.now();
+  next();
+});
+
+reviewSchema.pre("findOneAndUpdate", function (next) {
+  this.set({ updatedAt: Date.now() });
+});
 
 const reviewModel = mongoose.model("Review", reviewSchema);
 

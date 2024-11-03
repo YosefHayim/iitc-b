@@ -71,18 +71,39 @@ const createBook = async (req, res, next) => {
 
     res.status(201).json({
       message: "Success",
-      // Avoid from automatically applying the virtual method. 
+      // Avoid from automatically applying the virtual method.
       bookCreated: createdBook.toJSON({ virtuals: false }),
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: "Error creating a new book in database.",
-        error: error.message,
-      });
+    res.status(500).json({
+      message: "Error occurred creating a new book in database.",
+      error: error.message,
+    });
     next(error);
   }
 };
 
-export { getAllBooks, getBookById, getTotalBooksReviewsCount, createBook };
+const partialUpdate = async (req, res, next) => {
+  const bookId = req.params.id;
+
+  try {
+    const updateBookData = await bookModel.findByIdAndUpdate(
+      bookId,
+      { $set: req.body },
+      { new: true, runValidators: true }
+    );
+
+    res.status(200).json({
+      message: "Success",
+      updatedDataOfBook: updateBookData,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error occurred updating a new book in database.",
+      error: error.message,
+    });
+    next(error);
+  }
+};
+
+export { getAllBooks, getBookById, getTotalBooksReviewsCount, createBook, partialUpdate };

@@ -26,6 +26,10 @@ const bookSchema = new mongoose.Schema(
     averageRating: {
       type: Number,
     },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
   },
   {
     toJSON: { virtuals: true },

@@ -1,13 +1,47 @@
 import { userModelSchema } from "../models/user-schema-creation.js";
 import mongoose from "mongoose";
+import { isFalsy } from "../middleware/is-falsy.js";
+import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
+
+const getUserById = async (req, res, next) => {
+  const userId = req.params.id;
+
+  isFalsy(userId);
+
+  try {
+    const foundUser = await userModelSchema.findById(userId);
+    res.status(200).json({
+      message: "Success found your user Id",
+      dataFound: foundUser,
+    });
+  } catch (error) {
+    console.error(`Database doesn't have the user ID ${userId}.`);
+    error.type = `NOT_FOUND`;
+    next(error);
+  }
+};
+
+const getAllUsers = async (req, res, next) => {
+  try {
+    const allUsers = await userModelSchema.find();
+    if (allUsers) {
+      res.status(200).json(allUsers);
+    } else {
+      throw new Error("NOT_FOUND");
+    }
+  } catch (error) {
+    error.type = `SERVER_ERROR`;
+    next(error);
+  }
+};
 
 const createNewUsers = async (req, res, next) => {
   let users = req.body;
 
+  isBodyEmpty(projects);
+
   try {
-    // Check if `users` is not an array
     if (!Array.isArray(users)) {
-      // If `users` is a single object, perform a single insertion
       const { fName, lName, age, birthDate, location, email, role } = users;
       const newUser = new userModelSchema({
         fName,
@@ -26,19 +60,9 @@ const createNewUsers = async (req, res, next) => {
       });
     }
 
-    // If `users` is an array, perform a batch insertion
     const userDocs = users.map((user) => {
       const { fName, lName, age, birthDate, location, email, role } = user;
-
-      return {
-        fName,
-        lName,
-        age,
-        birthDate,
-        location,
-        email,
-        role,
-      };
+      return { fName, lName, age, birthDate, location, email, role };
     });
 
     const savedUsers = await userModelSchema.insertMany(userDocs);
@@ -46,21 +70,6 @@ const createNewUsers = async (req, res, next) => {
       message: "All users added successfully",
       data: savedUsers,
     });
-  } catch (error) {
-    error.type = `SERVER_ERROR`;
-    next(error);
-  }
-};
-
-const getAllUsers = async (req, res, next) => {
-  try {
-    const allUsers = await userModelSchema.find();
-    if (allUsers) {
-      res.status(200).json(allUsers);
-    } else {
-      error.type = `NOT_FOUND`;
-      next(error);
-    }
   } catch (error) {
     error.type = `SERVER_ERROR`;
     next(error);
@@ -81,7 +90,6 @@ const updateSpecificUserById = async (req, res, next) => {
       role,
     } = req.body;
 
-    // Build the update object only with fields provided in the request body
     const updateFields = {};
     if (fName) updateFields.fName = fName;
     if (lName) updateFields.lName = lName;
@@ -96,12 +104,10 @@ const updateSpecificUserById = async (req, res, next) => {
       if (country) updateFields.location.country = country;
     }
 
-    // Update the user in the database
     const updatedUser = await userModelSchema.findByIdAndUpdate(
       userId,
-      // Set is a built-in method of mongoose to only modify provided data so other data wont be deleted.
       { $set: updateFields },
-      { new: true } // to return the updated document
+      { new: true }
     );
 
     res.json({
@@ -118,8 +124,7 @@ const deleteSpecificUserById = async (req, res, next) => {
   const userId = req.params.id;
 
   if (!mongoose.Types.ObjectId.isValid(userId)) {
-    error.type = `NOT_FOUND`;
-    next(error);
+    throw new Error("NOT_FOUND");
   }
 
   const isUserExist = await userModelSchema.exists({ _id: userId });
@@ -129,7 +134,7 @@ const deleteSpecificUserById = async (req, res, next) => {
       const deleted = await userModelSchema.findByIdAndDelete(userId);
       if (deleted) {
         return res.status(200).json({
-          message: `user ID: ${userId} has been successfully deleted from the database.`,
+          message: `User ID: ${userId} has been successfully deleted from the database.`,
         });
       }
     } catch (error) {
@@ -138,8 +143,7 @@ const deleteSpecificUserById = async (req, res, next) => {
       next(error);
     }
   } else {
-    error.type = `NOT_FOUND`;
-    next(error);
+    throw new Error("NOT_FOUND");
   }
 };
 
@@ -148,4 +152,5 @@ export {
   getAllUsers,
   updateSpecificUserById,
   deleteSpecificUserById,
+  getUserById,
 };

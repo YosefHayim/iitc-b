@@ -3,10 +3,13 @@ import {
   createNewProject,
   deleteSpecificProjectById,
   getAllProjects,
+  getProjectById,
   updateSpecificProjectById,
 } from "../controllers/projects-controller.js";
 
 const router = express.Router();
+
+router.get("/project/:id", getProjectById);
 
 router.get("/projects", getAllProjects);
 

@@ -1,13 +1,49 @@
 import { taskModelSchema } from "../models/task-schema-creation.js";
 import mongoose from "mongoose";
+import { isFalsy } from "../middleware/is-falsy.js";
+import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
+
+const getTaskById = async (req, res, next) => {
+  const taskId = req.params.id;
+
+  isFalsy(taskId);
+
+  try {
+    const foundTask = await taskModelSchema.findById(taskId);
+    res.status(200).json({
+      message: "Success found your task Id",
+      dataFound: foundTask,
+    });
+  } catch (error) {
+    console.error(`Database doesn't have the task ID ${taskId}.`);
+    error.type = `NOT_FOUND`;
+    next(error);
+  }
+};
+
+const getAllTasks = async (req, res, next) => {
+  try {
+    const allTasks = await taskModelSchema.find();
+
+    if (allTasks) {
+      res.status(200).json(allTasks);
+    } else {
+      throw new Error(`NOT_FOUND`);
+    }
+  } catch (error) {
+    console.error(`Something went wrong while fetching tasks => ${error}`);
+    error.type = `SERVER_ERROR`;
+    next(error);
+  }
+};
 
 const createNewTask = async (req, res, next) => {
   let tasks = req.body;
 
+  isBodyEmpty(tasks);
+
   try {
-    // Check if `users` is not an array
     if (!Array.isArray(tasks)) {
-      // If `tasks` is a single object, perform a single insertion
       const { title, description, status, dueDate } = tasks;
 
       const newTask = new taskModelSchema({
@@ -24,16 +60,9 @@ const createNewTask = async (req, res, next) => {
       });
     }
 
-    // If `users` is an array, perform a batch insertion
     const tasksDocs = tasks.map((task) => {
       const { title, description, status, dueDate } = task;
-
-      return {
-        title,
-        description,
-        status,
-        dueDate,
-      };
+      return { title, description, status, dueDate };
     });
 
     const savedTasks = await taskModelSchema.insertMany(tasksDocs);
@@ -44,35 +73,10 @@ const createNewTask = async (req, res, next) => {
         data: savedTasks,
       });
     } else {
-      error.type = `NOT_ACCEPTABLE`;
-      next(error);
+      throw new Error(`NOT_ACCEPTABLE`);
     }
   } catch (error) {
-    console.error(
-      `Something went wrong while saving ${savedTask || savedTasks} => ${error}`
-    );
-    error.type = `SERVER_ERROR`;
-    next(error);
-  }
-};
-
-const getAllTasks = async (req, res, next) => {
-  let allTasks;
-
-  try {
-    allTasks = await taskModelSchema.find();
-
-    if (allTasks) {
-      res.status(200).json(allTasks);
-    } else {
-      console.error(`Couldn't find ${allTasks} => ${error}`);
-      error.type = `NOT_FOUND`;
-      next(error);
-    }
-  } catch (error) {
-    console.error(
-      `Something went wrong while fetching tasks: ${allTasks} => ${error}`
-    );
+    console.error(`Something went wrong while saving => ${error}`);
     error.type = `SERVER_ERROR`;
     next(error);
   }
@@ -84,26 +88,21 @@ const updateSpecificTaskById = async (req, res, next) => {
   try {
     const { title, description, status, dueDate } = req.body;
 
-    // Build the update object only with fields provided in the request body
     const updateFields = {};
     if (title) updateFields.title = title;
     if (description) updateFields.description = description;
     if (status) updateFields.status = status;
     if (dueDate) updateFields.dueDate = dueDate;
 
-    // Update the user in the database
     const updatedTask = await taskModelSchema.findByIdAndUpdate(
       taskId,
-      // Set is a built-in method of mongoose to only modify provided data so other data wont be deleted.
       { $set: updateFields },
-      { new: true } // to return the updated document
+      { new: true }
     );
 
     res.send(updatedTask);
   } catch (error) {
-    console.error(
-      `Something went wrong file fetching ${updatedTask}: ${error}`
-    );
+    console.error(`Something went wrong while updating task => ${error}`);
     error.type = `SERVER_ERROR`;
     next(error);
   }
@@ -113,9 +112,9 @@ const deleteSpecificTaskById = async (req, res, next) => {
   const taskId = req.params.id;
 
   if (!mongoose.Types.ObjectId.isValid(taskId)) {
-    console.error(`The provided Id ${taskId} wasn't found => ${error}`);
+    const error = new Error(`Invalid Task ID`);
     error.type = `NOT_FOUND`;
-    next(error);
+    return next(error);
   }
 
   const isTaskExist = await taskModelSchema.exists({ _id: taskId });
@@ -125,22 +124,16 @@ const deleteSpecificTaskById = async (req, res, next) => {
       const deleted = await taskModelSchema.findByIdAndDelete(taskId);
       if (deleted) {
         return res.status(200).json({
-          message: `user ID: ${taskId} has been successfully deleted from the database.`,
+          message: `Task ID: ${taskId} has been successfully deleted from the database.`,
         });
       }
     } catch (error) {
-      console.error(
-        `Something went wrong while trying to delete the schema with Id ${isTaskExist} => ${error}`
-      );
+      console.error(`Error deleting task ID ${taskId} => ${error}`);
       error.type = `SERVER_ERROR`;
       next(error);
     }
   } else {
-    console.error(
-      `The Id provided isn't in the database ${taskId} => ${error}`
-    );
-    error.type = `NOT_FOUND`;
-    next(error);
+    throw new Error(`NOT_FOUND`);
   }
 };
 
@@ -149,4 +142,5 @@ export {
   createNewTask,
   updateSpecificTaskById,
   deleteSpecificTaskById,
+  getTaskById,
 };

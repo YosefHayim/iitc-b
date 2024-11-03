@@ -4,9 +4,12 @@ import {
   createNewTask,
   updateSpecificTaskById,
   deleteSpecificTaskById,
+  getTaskById,
 } from "../controllers/tasks-controller.js";
 
 const router = express.Router();
+
+router.get("/task/:id", getTaskById);
 
 router.get("/tasks", getAllTasks);
 

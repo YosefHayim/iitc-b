@@ -1,0 +1,225 @@
+
+  Activity received at: 11/3/2024, 12:24:26 PM
+  Method : GET
+  Path received at: /
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:25:33 PM
+  Method : GET
+  Path received at: /43324
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:34:07 PM
+  Method : GET
+  Path received at: /api/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:34:15 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:34:51 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:49:07 PM
+  Method : GET
+  Path received at: /api/projects/project/67252660e25dca71c6479b8d
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:49:13 PM
+  Method : GET
+  Path received at: /api/projects/project/67252660e25dca71c6479b8
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:49:18 PM
+  Method : GET
+  Path received at: /api/projects/project/67252660e25dca71c6479b8
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:49:23 PM
+  Method : GET
+  Path received at: /api/projects/project/67252660e25dca71c6479b8d
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:49:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:49:59 PM
+  Method : POST
+  Path received at: /api/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:50:09 PM
+  Method : POST
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:50:49 PM
+  Method : POST
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:51:15 PM
+  Method : PATCH
+  Path received at: /api/projects/67252660e25dca71c6479b8c
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:51:24 PM
+  Method : PATCH
+  Path received at: /api/projects/projects/67252660e25dca71c6479b8c
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:51:39 PM
+  Method : DELETE
+  Path received at: /api/projects/projects/67252660e25dca71c6479b8c
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:53:18 PM
+  Method : DELETE
+  Path received at: /api/projects/projects/67252660e25dca71c6479b8e
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:54:08 PM
+  Method : GET
+  Path received at: /api/tasks/tasks
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:55:22 PM
+  Method : GET
+  Path received at: /api/tasks/tasks/67252197a93f1285b915fb40
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:55:29 PM
+  Method : GET
+  Path received at: /api/tasks/task/67252197a93f1285b915fb40
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:55:54 PM
+  Method : POST
+  Path received at: /api/tasks
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:56:02 PM
+  Method : POST
+  Path received at: /api/tasks/tasks
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:56:41 PM
+  Method : PATCH
+  Path received at: /api/tasks/tasks/67252197a93f1285b915fb40
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:56:49 PM
+  Method : DELETE
+  Path received at: /api/tasks/tasks/67252197a93f1285b915fb40
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:57:18 PM
+  Method : GET
+  Path received at: /api/users/users
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:57:48 PM
+  Method : GET
+  Path received at: /api/users/user/6725139ce5bece56b7bd3045
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:58:23 PM
+  Method : POST
+  Path received at: /api/users/users/
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:59:00 PM
+  Method : PATCH
+  Path received at: /api/users/6725139ce5bece56b7bd3045
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:59:05 PM
+  Method : PATCH
+  Path received at: /api/users/tasks/6725139ce5bece56b7bd3045
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:59:11 PM
+  Method : PATCH
+  Path received at: /api/users/users/6725139ce5bece56b7bd3045
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:59:18 PM
+  Method : DELETE
+  Path received at: /api/users/6725139ce5bece56b7bd3045
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/3/2024, 12:59:26 PM
+  Method : DELETE
+  Path received at: /api/users/users/6725139ce5bece56b7bd3045
+  Status Code: 200
+  Body: undefined 
+
+  

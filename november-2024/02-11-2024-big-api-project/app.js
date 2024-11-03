@@ -7,6 +7,7 @@ import tasksRoute from "./routes/task-route.js";
 import { logRequest } from "./middleware/logger.js";
 import { errorHandle } from "./middleware/error-handling.js";
 import { connectDB } from "./config/mongo-db-connection.js";
+import { handleUndefinedRoutes } from "./middleware/handle-undefined-routes.js";
 
 dotenvFlow.config();
 
@@ -22,6 +23,7 @@ app.use(morgan("tiny"));
 app.use("/api/users", usersRoute);
 app.use("/api/projects", projectsRoute);
 app.use("/api/tasks", tasksRoute);
+app.use("*", handleUndefinedRoutes);
 app.use(errorHandle);
 
 app.get("/", (req, res) => {

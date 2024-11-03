@@ -3,7 +3,7 @@ import dotenvFlow from "dotenv-flow";
 
 dotenvFlow.config();
 
-const uri = `${process.env.DB_PART_ONE}${process.env.DB_USER}:${process.env.DB_PASSWORD}${process.env.DB_PART_TWO}${process.env.DB_PART_THREE}`;
+const uri = `${process.env.uri}`;
 
 const connectDB = async () => {
   try {

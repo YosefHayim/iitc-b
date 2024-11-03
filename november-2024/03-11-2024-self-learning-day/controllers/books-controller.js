@@ -1,6 +1,6 @@
 import bookModel from "../models/book-schema.js";
 
-const getAllBooks = async (req, res, next) => {
+const getAllBooks = async (req, res) => {
   try {
     const getAllBooks = await bookModel.find();
 
@@ -10,11 +10,10 @@ const getAllBooks = async (req, res, next) => {
     });
   } catch (error) {
     console.error(`Could not get books schemas: ${error}`);
-    next(error);
   }
 };
 
-const getBookById = async (req, res, next) => {
+const getBookById = async (req, res) => {
   const bookId = req.params.id;
 
   try {
@@ -33,11 +32,10 @@ const getBookById = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500).json({ message: "Error retrieving book" });
-    next(error);
   }
 };
 
-const getTotalBooksReviewsCount = async (req, res, next) => {
+const getTotalBooksReviewsCount = async (req, res) => {
   const bookId = req.params.id;
 
   try {
@@ -51,11 +49,10 @@ const getTotalBooksReviewsCount = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500).json({ message: "Error retrieving review" });
-    next(error);
   }
 };
 
-const createBook = async (req, res, next) => {
+const createBook = async (req, res) => {
   const { title, author, publishedDate, genre, averageRating } = req.body;
 
   try {
@@ -79,11 +76,10 @@ const createBook = async (req, res, next) => {
       message: "Error occurred creating a new book in database.",
       error: error.message,
     });
-    next(error);
   }
 };
 
-const partialUpdate = async (req, res, next) => {
+const partialUpdate = async (req, res) => {
   const bookId = req.params.id;
 
   try {
@@ -102,8 +98,35 @@ const partialUpdate = async (req, res, next) => {
       message: "Error occurred updating a new book in database.",
       error: error.message,
     });
-    next(error);
   }
 };
 
-export { getAllBooks, getBookById, getTotalBooksReviewsCount, createBook, partialUpdate };
+const getBookPage = async (req, res) => {
+  const { page = 1, limit = 1 } = req.query;
+
+  console.log(req.query);
+
+  try {
+    const books = await bookModel.find();
+
+    res.status(200).json({
+      requestedData: books,
+    });
+
+    console.log(books);
+  } catch (error) {
+    res.status(500).json({
+      message: "Error occurred getting next page.",
+      error: error.message,
+    });
+  }
+};
+
+export {
+  getBookPage,
+  getAllBooks,
+  getBookById,
+  getTotalBooksReviewsCount,
+  createBook,
+  partialUpdate,
+};

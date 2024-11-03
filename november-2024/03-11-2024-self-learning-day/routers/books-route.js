@@ -5,6 +5,7 @@ import {
   getTotalBooksReviewsCount,
   createBook,
   partialUpdate,
+  getBookPage,
 } from "../controllers/books-controller.js";
 
 const router = express.Router();
@@ -14,6 +15,8 @@ router.get("", getAllBooks);
 router.get("/:id", getBookById);
 
 router.get("/reviews/count/:id", getTotalBooksReviewsCount);
+
+router.get("/books", getBookPage);
 
 router.post("", createBook);
 

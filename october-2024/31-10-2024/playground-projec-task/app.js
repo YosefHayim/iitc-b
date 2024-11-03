@@ -39,6 +39,9 @@ app.get("/", (req, res) => {
 app.use("/api/jokes", jokesRoute);
 app.use("/api/products", productsRoute);
 app.use("/api/users", usersRoute);
+app.use("*", (req, res) => {
+  res.status(404).json({ message: "This is nota valid server path." });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

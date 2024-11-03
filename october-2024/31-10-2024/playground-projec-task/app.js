@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(morgan("tiny"));
 app.use(logRequest);
 
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/big-api-project-27-10-2024?retryWrites=true&w=majority&appName=IITC`;
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@iitc.tqkjc.mongodb.net/31-10-2024-playground-project-task?retryWrites=true&w=majority&appName=IITC`;
 
 const connectDB = async () => {
   try {
@@ -31,6 +31,10 @@ const connectDB = async () => {
 };
 
 connectDB();
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the server.");
+});
 
 app.use("/api/jokes", jokesRoute);
 app.use("/api/products", productsRoute);

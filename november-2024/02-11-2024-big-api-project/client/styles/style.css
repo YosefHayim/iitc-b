@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "";
+  src: url();
+}
+
+:root {
+  --font-size: 1em;
+  --hover-button-color: ;
+  --active-button-color: ;
+  --background-color: ;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  min-height: 100vh;
+}
+
+body,
+nav,
+.search-input-container,
+.ul-mobile-top-navbar,
+.welcome-hero-section,
+.feature-section,
+.trending-jokes-section,
+.join-community-section,
+.policy-pages-container,
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input-container {
+  margin-bottom: 1em;
+}
+
+.ul-mobile-top-navbar {
+  position: absolute;
+  top: 0;
+  margin-top: 4em;
+}
+
+li {
+  list-style-type: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1em;
+}
+
+.policy-pages-container {
+  flex-direction: row;
+  margin-top: 1em;
+  gap: 1em;
+  margin-bottom: 1em;
+}

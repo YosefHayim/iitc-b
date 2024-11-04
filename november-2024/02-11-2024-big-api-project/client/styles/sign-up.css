@@ -1,0 +1,28 @@
+main,
+.first-name-container,
+.last-name-container,
+.email-container,
+.password-container,
+.terms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.terms-container {
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.terms-label {
+  width: 7em;
+  margin-left: 1em;
+}
+
+.sign-up-button {
+  margin-top: 1em;
+  width: 12em;
+}

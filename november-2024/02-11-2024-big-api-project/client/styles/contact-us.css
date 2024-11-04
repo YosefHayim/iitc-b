@@ -1,0 +1,23 @@
+.name-container,
+.email-container,
+.phone-container,
+.subject-container,
+.message-container,
+.terms-container,
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms-container {
+  flex-direction: row;
+  width: 7em;
+  margin-left: 2em;
+}
+
+.send-message-button {
+  margin-top: 1em;
+  width: 12em;
+}

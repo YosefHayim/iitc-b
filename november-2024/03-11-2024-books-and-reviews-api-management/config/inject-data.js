@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-
 const books = [
   {
     title: "1984",

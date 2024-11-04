@@ -44,12 +44,14 @@ const createNewTask = async (req, res, next) => {
 
   try {
     if (!Array.isArray(tasks)) {
-      const { title, description, status, dueDate } = tasks;
+      const { title, description, status, project, user, dueDate } = tasks;
 
       const newTask = new taskModelSchema({
         title,
         description,
         status,
+        project,
+        user,
         dueDate,
       });
 
@@ -84,7 +86,7 @@ const updateSpecificTaskById = async (req, res, next) => {
   const taskId = req.params.id;
 
   try {
-    const { title, description, status, dueDate } = req.body;
+    const { title, description, status, project, user, dueDate } = req.body;
 
     isBodyEmpty(req.body);
 
@@ -92,6 +94,8 @@ const updateSpecificTaskById = async (req, res, next) => {
     updateFields.title = title;
     updateFields.description = description;
     updateFields.status = status;
+    updateFields.project = project
+    updateFields.user = user
     updateFields.dueDate = dueDate;
 
     const updatedTask = await taskModelSchema.findByIdAndUpdate(

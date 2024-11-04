@@ -44,12 +44,13 @@ const createNewProject = async (req, res, next) => {
 
   try {
     if (!Array.isArray(projects)) {
-      const { name, description, status } = projects;
+      const { name, description, status, user } = projects;
 
       const newProject = new projectModelSchema({
         name,
         description,
         status,
+        user,
       });
 
       const savedProject = await newProject.save();
@@ -60,8 +61,8 @@ const createNewProject = async (req, res, next) => {
     }
 
     const projectsDocs = projects.map((project) => {
-      const { name, description, status } = project;
-      return { name, description, status };
+      const { name, description, status, user } = project;
+      return { name, description, status, user };
     });
 
     const savedProjects = await projectModelSchema.insertMany(projectsDocs);
@@ -84,7 +85,7 @@ const updateSpecificProjectById = async (req, res, next) => {
 
   isFalsy(projectId, next);
 
-  const { name, description, status } = req.body;
+  const { name, description, status, user } = req.body;
 
   isBodyEmpty(req.body, next);
 
@@ -93,6 +94,7 @@ const updateSpecificProjectById = async (req, res, next) => {
     if (name) updateFields.name = name;
     if (description) updateFields.description = description;
     if (status) updateFields.status = status;
+    if (user) updateFields.user = user;
 
     const updatedProject = await projectModelSchema.findByIdAndUpdate(
       projectId,

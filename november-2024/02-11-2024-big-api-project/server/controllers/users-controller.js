@@ -146,16 +146,21 @@ const deleteSpecificUserById = async (req, res, next) => {
   }
 };
 
-const checkUserAuth = async (req, res, next) => {
+const checkUserAuth = async (req, res) => {
   const { password, email } = req.body;
 
   isFalsy(password && email);
 
   try {
-    const findUser = userModelSchema.find(email);
+    const findUser = await userModelSchema.findOne({ email });
     isFalsy(findUser);
 
-    isPasswordValid(findUser.password, hashedPw);
+    isPasswordValid(password, findUser.password);
+
+    res.status(200).json({
+      message: "Success",
+      result: `User is valid and found in our db proceed to homepage.`,
+    });
   } catch (error) {
     console.error(`Error occurred while calling to compare function: ${error}`);
   }

@@ -1,4 +1,5 @@
 const baseUrl = `http://localhost:3000`;
-const signUpForm = document.querySelector(`form`);
+const signUpFormContainer = document.querySelector(`.sign-up`);
+const loginFormContainer = document.querySelector(".login");
 
-export { baseUrl, signUpForm };
+export { baseUrl, signUpFormContainer, loginFormContainer };

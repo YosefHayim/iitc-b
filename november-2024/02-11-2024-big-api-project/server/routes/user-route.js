@@ -14,7 +14,7 @@ router.get("/user/:id", getUserById);
 
 router.get("/users", getAllUsers);
 
-router.get("/login", checkUserAuth);
+router.post("/login", checkUserAuth);
 
 router.post("/users", createNewUsers);
 

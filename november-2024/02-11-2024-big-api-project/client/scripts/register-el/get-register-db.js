@@ -1,12 +1,12 @@
-import { signUpForm } from "../global-dom-variables.js";
+import { signUpFormContainer } from "../global-dom-variables.js";
 import { addUserDb } from "./register-user-db.js";
 
 const getRegisterData = () => {
-  if (signUpForm) {
-    signUpForm.addEventListener("submit", (ev) => {
+  if (signUpFormContainer) {
+    signUpFormContainer.addEventListener("submit", (ev) => {
       ev.preventDefault();
 
-      const formData = new FormData(signUpForm);
+      const formData = new FormData(signUpFormContainer);
 
       const fName = formData.get("fname");
       const lName = formData.get("lname");

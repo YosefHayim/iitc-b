@@ -2,20 +2,28 @@ import { faker } from "@faker-js/faker";
 import { userModelSchema } from "../models/user-schema-creation.js";
 import { projectModelSchema } from "../models/project-schema-creation.js";
 import { taskModelSchema } from "../models/task-schema-creation.js";
+import { encryptedPw } from "../utils/encrypt-pw.js";
 
 const injectData = async () => {
   const users = await userModelSchema.insertMany(
-    Array.from({ length: 5 }).map(() => ({
-      fName: faker.person.firstName(),
-      lName: faker.person.lastName(),
-      email: faker.internet.email(),
-      password: faker.internet.password(6),
-      role: faker.helpers.arrayElement(["Member"]),
-    }))
+    await Promise.all(
+      Array.from({ length: 10 }).map(async () => ({
+        profileImg: faker.image.avatar(),
+        fName: faker.person.firstName(),
+        lName: faker.person.lastName(),
+        email: faker.internet.email(),
+        password: await encryptedPw(
+          faker.internet.password(6),
+          process.env.SECRET_KEY
+        ),
+        role: faker.helpers.arrayElement(["Member"]),
+      }))
+    )
   );
+  console.log(users);
 
   const projects = await projectModelSchema.insertMany(
-    Array.from({ length: 5 }).map(() => ({
+    Array.from({ length: 10 }).map(() => ({
       name: faker.commerce.productName(),
       description: faker.lorem.sentences(2),
       status: faker.helpers.arrayElement([
@@ -28,7 +36,7 @@ const injectData = async () => {
   );
 
   await taskModelSchema.insertMany(
-    Array.from({ length: 5 }).map(() => ({
+    Array.from({ length: 10 }).map(() => ({
       title: faker.lorem.words(3),
       description: faker.lorem.sentences(2),
       status: faker.helpers.arrayElement(["To Do", "In progress", "Done"]),

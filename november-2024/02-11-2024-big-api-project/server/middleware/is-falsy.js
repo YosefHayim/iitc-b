@@ -1,6 +1,5 @@
 const isFalsy = (value, next) => {
   if (value) {
-    console.log(`${value} is valid, processing request...`);
     return value;
   }
 

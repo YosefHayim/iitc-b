@@ -3247,3 +3247,1501 @@
   Body: undefined 
 
   
+  Activity received at: 11/5/2024, 9:20:23 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:23:01 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:23:11 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:24:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:26:15 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:26:41 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:27:03 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:27:06 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:27:22 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:27:25 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:27:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:27:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:28:26 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:30:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:31:53 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:01 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:03 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:09 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:12 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:22 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:24 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:26 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:42 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:32:49 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:33:08 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:33:16 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:33:22 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:33:50 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:34:52 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:34:54 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:04 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:05 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:33 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:36 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:37 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:35:39 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:39:12 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:43:15 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:44:13 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:44:39 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:44:41 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:44:45 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:44:49 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:45:05 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:45:08 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:45:10 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:45:37 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:45:39 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:45:44 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:21 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:21 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:21 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:30 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:47 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:46:57 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:48:46 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:48:48 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:48:50 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:49:14 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:49:35 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:49:36 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:49:40 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:33 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:34 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:36 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:54 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:54 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:55 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:56 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:56 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:57 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:50:58 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:51:00 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:51:01 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:51:02 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:51:05 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:51:06 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:11 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:21 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:25 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:26 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:31 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:40 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:46 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:52:51 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:03 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:05 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:11 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:16 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:20 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:25 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:34 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:45 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:53:46 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:00 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:01 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:08 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:09 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:16 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:25 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:32 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:41 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:45 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:46 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:46 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:54:47 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:01 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:02 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:02 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:03 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:03 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:04 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:04 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:04 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:06 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:06 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:07 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:07 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:08 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:09 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:09 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:10 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:12 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:55:33 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:56:38 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:56:52 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:57:07 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:58:38 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:58:42 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:59:28 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:59:29 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 9:59:33 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:00:04 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:38:00 PM
+  Method : POST
+  Path received at: /api/users/login
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:39:23 PM
+  Method : POST
+  Path received at: /api/users/login
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:39:42 PM
+  Method : POST
+  Path received at: /api/users/login
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:39:49 PM
+  Method : POST
+  Path received at: /api/users/login
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:40:45 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:41:10 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:41:12 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:41:14 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:42:52 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:06 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:08 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:09 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:13 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:17 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:21 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:22 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:24 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:43:40 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:44:01 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:44:04 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:44:08 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:44:12 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:44:48 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:45:13 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:45:14 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:49:53 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:50:07 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:50:08 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:57:18 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 10:58:44 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 11:01:22 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 11:04:36 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 11:04:45 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 11:04:57 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 11:04:58 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 11:05:11 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  
+  Activity received at: 11/5/2024, 11:05:16 PM
+  Method : GET
+  Path received at: /api/projects/projects
+  Status Code: 200
+  Body: undefined 
+
+  

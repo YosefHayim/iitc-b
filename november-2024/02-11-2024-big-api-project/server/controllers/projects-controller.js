@@ -25,7 +25,9 @@ const getProjectById = async (req, res, next) => {
 
 const getAllProjects = async (req, res, next) => {
   try {
-    const allProjects = await projectModelSchema.find();
+    const allProjects = await projectModelSchema
+      .find()
+      .populate("userSchema", "fName lName");
 
     isFalsy(allProjects, next);
 
@@ -38,40 +40,24 @@ const getAllProjects = async (req, res, next) => {
 };
 
 const createNewProject = async (req, res, next) => {
-  const projects = req.body;
+  const project = req.body;
 
-  isBodyEmpty(projects, next);
+  isBodyEmpty(project, next);
 
   try {
-    if (!Array.isArray(projects)) {
-      const { name, description, status, user } = projects;
+    const { name, description, status, user } = project;
 
-      const newProject = new projectModelSchema({
-        name,
-        description,
-        status,
-        user,
-      });
-
-      const savedProject = await newProject.save();
-      return res.status(201).json({
-        message: "Project added successfully",
-        data: savedProject,
-      });
-    }
-
-    const projectsDocs = projects.map((project) => {
-      const { name, description, status, user } = project;
-      return { name, description, status, user };
+    const newProject = new projectModelSchema({
+      name,
+      description,
+      status,
+      user,
     });
 
-    const savedProjects = await projectModelSchema.insertMany(projectsDocs);
-
-    isFalsy(savedProjects, next);
-
-    res.status(201).json({
-      message: "All projects added successfully",
-      data: savedProjects,
+    const savedProject = await newProject.save();
+    return res.status(201).json({
+      message: "Project added successfully",
+      data: savedProject,
     });
   } catch (error) {
     console.error(`Something happened while inserting data => ${error}`);

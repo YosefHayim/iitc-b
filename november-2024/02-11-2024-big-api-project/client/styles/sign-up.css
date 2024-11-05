@@ -26,3 +26,15 @@ main,
   margin-top: 1em;
   width: 12em;
 }
+
+footer {
+  position: absolute;
+  margin-bottom: 1em;
+  bottom: 0;
+}
+
+.ul-mobile-top-navbar {
+  position: absolute;
+  margin-top: 4em;
+  top: 0;
+}

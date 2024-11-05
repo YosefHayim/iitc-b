@@ -1,0 +1,24 @@
+footer {
+  position: static;
+  margin-bottom: 1em;
+}
+
+.ul-mobile-top-navbar {
+  position: static;
+  margin-top: 4em;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  gap: 0.2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+p {
+  text-align: center;
+}

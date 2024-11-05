@@ -1,5 +1,5 @@
 import { signUpFormContainer } from "../global/global-dom-variables.js";
-import { addUserDb } from "./register-user-db.js";
+import { addUserDb } from "./post-user-db.js";
 
 const getRegisterData = () => {
   if (signUpFormContainer) {

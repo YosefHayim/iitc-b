@@ -15,7 +15,7 @@ const isUserValid = async (email, password) => {
       body: JSON.stringify(data),
     });
 
-    if (res) {
+    if (res.ok === 200) {
       const result = await res.json();
       console.log(result);
     } else {

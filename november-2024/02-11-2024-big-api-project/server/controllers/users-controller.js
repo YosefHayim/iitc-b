@@ -48,7 +48,7 @@ const createNewUsers = async (req, res, next) => {
   isFalsy(isPwSecure);
 
   try {
-    const { fName, lName, email, password } = user;
+    const { fName, lName, email, isPwSecure } = user;
 
     const newUser = new userModelSchema({
       fName,
@@ -162,7 +162,9 @@ const checkUserAuth = async (req, res) => {
       result: `User is valid and found in our db proceed to homepage.`,
     });
   } catch (error) {
-    console.error(`Error occurred while calling to compare function: ${error}`);
+    res.status(500).json({
+      message: "Not authorized access.",
+    });
   }
 };
 

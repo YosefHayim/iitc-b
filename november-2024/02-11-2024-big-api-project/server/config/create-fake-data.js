@@ -5,17 +5,17 @@ import { taskModelSchema } from "../models/task-schema-creation.js";
 
 const injectData = async () => {
   const users = await userModelSchema.insertMany(
-    Array.from({ length: 3 }).map(() => ({
+    Array.from({ length: 1 }).map(() => ({
       fName: faker.person.firstName(),
       lName: faker.person.lastName(),
       email: faker.internet.email(),
       password: faker.internet.password(6),
-      role: faker.helpers.arrayElement(["Admin", "Member"]),
+      role: faker.helpers.arrayElement(["Member"]),
     }))
   );
 
   const projects = await projectModelSchema.insertMany(
-    Array.from({ length: 3 }).map(() => ({
+    Array.from({ length: 1 }).map(() => ({
       name: faker.commerce.productName(),
       description: faker.lorem.sentences(2),
       status: faker.helpers.arrayElement([
@@ -28,7 +28,7 @@ const injectData = async () => {
   );
 
   await taskModelSchema.insertMany(
-    Array.from({ length: 20 }).map(() => ({
+    Array.from({ length: 1 }).map(() => ({
       title: faker.lorem.words(3),
       description: faker.lorem.sentences(2),
       status: faker.helpers.arrayElement(["To Do", "In progress", "Done"]),

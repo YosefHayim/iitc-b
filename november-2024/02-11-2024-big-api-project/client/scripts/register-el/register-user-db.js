@@ -1,4 +1,4 @@
-import { baseUrl } from "../global-dom-variables.js";
+import { baseUrl } from "../global/global-dom-variables.js";
 
 const addUserDb = async (fName, lName, password, email) => {
   const data = { fName, lName, password, email };

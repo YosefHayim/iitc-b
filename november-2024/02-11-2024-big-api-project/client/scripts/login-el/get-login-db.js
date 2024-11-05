@@ -1,5 +1,5 @@
-import { loginFormContainer } from "../global-dom-variables.js";
-import { isUserValid } from "./validate-login-db.js";
+import { loginFormContainer } from "../global/global-dom-variables.js";
+import { isUserValid } from "../login-el/validate-login-db.js";
 
 const getLoginData = async () => {
   if (loginFormContainer) {

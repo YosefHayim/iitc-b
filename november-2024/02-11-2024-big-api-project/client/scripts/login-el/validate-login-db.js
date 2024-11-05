@@ -1,4 +1,4 @@
-import { baseUrl } from "../global-dom-variables.js";
+import { baseUrl } from "../global/global-dom-variables.js";
 
 const isUserValid = async (email, password) => {
   const data = {

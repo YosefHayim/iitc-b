@@ -1,4 +1,4 @@
-import { signUpFormContainer } from "../global-dom-variables.js";
+import { signUpFormContainer } from "../global/global-dom-variables.js";
 import { addUserDb } from "./register-user-db.js";
 
 const getRegisterData = () => {

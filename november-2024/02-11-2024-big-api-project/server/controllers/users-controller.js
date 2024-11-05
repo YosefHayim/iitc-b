@@ -1,6 +1,8 @@
 import { userModelSchema } from "../models/user-schema-creation.js";
 import { isFalsy } from "../middleware/is-falsy.js";
 import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
+import { encryptedPw } from "../utils/encrypt-pw.js";
+import { isPasswordValid } from "../utils/auth-user.js";
 
 const getUserById = async (req, res, next) => {
   const userId = req.params.id;
@@ -41,6 +43,10 @@ const createNewUsers = async (req, res, next) => {
 
   isBodyEmpty(user, next);
 
+  const isPwSecure = await encryptedPw(req.body.password);
+
+  isFalsy(isPwSecure);
+
   try {
     const { fName, lName, email, password } = user;
 
@@ -48,14 +54,16 @@ const createNewUsers = async (req, res, next) => {
       fName,
       lName,
       email,
-      password,
+      password: isPwSecure,
     });
 
     const saveUser = await newUser.save();
+    if (saveUser) {
+      console.log(`The user ${fName} has been added to the database`);
+    }
 
     return res.status(201).json({
-      message: "User added successfully",
-      data: saveUser,
+      message: "Successfully Register",
     });
   } catch (error) {
     error.type = `SERVER_ERROR`;
@@ -138,7 +146,23 @@ const deleteSpecificUserById = async (req, res, next) => {
   }
 };
 
+const checkUserAuth = async (req, res, next) => {
+  const { password, email } = req.body;
+
+  isFalsy(password && email);
+
+  try {
+    const findUser = userModelSchema.find(email);
+    isFalsy(findUser);
+
+    isPasswordValid(findUser.password, hashedPw);
+  } catch (error) {
+    console.error(`Error occurred while calling to compare function: ${error}`);
+  }
+};
+
 export {
+  checkUserAuth,
   createNewUsers,
   getAllUsers,
   updateSpecificUserById,

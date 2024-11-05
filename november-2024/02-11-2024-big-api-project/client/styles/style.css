@@ -43,8 +43,7 @@ footer {
 }
 
 .ul-mobile-top-navbar {
-  position: absolute;
-  top: 0;
+  position: relative;
   margin-top: 4em;
 }
 
@@ -53,8 +52,7 @@ li {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
+  position: relative;
   margin-bottom: 1em;
 }
 

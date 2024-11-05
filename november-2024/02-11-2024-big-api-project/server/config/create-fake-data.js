@@ -8,6 +8,8 @@ const injectData = async () => {
     Array.from({ length: 3 }).map(() => ({
       fName: faker.person.firstName(),
       lName: faker.person.lastName(),
+      email: faker.internet.email(),
+      password: faker.internet.password(12, false, /[A-Za-z0-9]/, "user_"),
       age: faker.number.int({ min: 1, max: 65 }),
       birthDate: faker.date.past(30, new Date("2003-01-01")),
       location: {
@@ -15,7 +17,6 @@ const injectData = async () => {
         state: faker.location.state(),
         country: faker.location.country(),
       },
-      email: faker.internet.email(),
       role: faker.helpers.arrayElement(["Admin", "Member"]),
     }))
   );
@@ -29,7 +30,7 @@ const injectData = async () => {
         "In Progress",
         "Completed",
       ]), // Updated line
-      user: faker.helpers.arrayElement(users)._id, 
+      user: faker.helpers.arrayElement(users)._id,
     }))
   );
 
@@ -39,7 +40,7 @@ const injectData = async () => {
       description: faker.lorem.sentences(2),
       status: faker.helpers.arrayElement(["To Do", "In progress", "Done"]),
       dueDate: faker.date.future(),
-      user: faker.helpers.arrayElement(users)._id, 
+      user: faker.helpers.arrayElement(users)._id,
       project: faker.helpers.arrayElement(projects)._id,
     }))
   );

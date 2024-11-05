@@ -38,12 +38,14 @@ const getAllUsers = async (req, res, next) => {
 
 const createNewUsers = async (req, res, next) => {
   let users = req.body;
+  console.log(users);
 
   isBodyEmpty(users, next);
 
   try {
     if (!Array.isArray(users)) {
-      const { fName, lName, age, birthDate, location, email, role } = users;
+      const { fName, lName, age, birthDate, location, email, role, password } =
+        users;
       const newUser = new userModelSchema({
         fName,
         lName,
@@ -52,6 +54,7 @@ const createNewUsers = async (req, res, next) => {
         location,
         email,
         role,
+        password,
       });
 
       const savedUser = await newUser.save();
@@ -96,14 +99,16 @@ const updateSpecificUserById = async (req, res, next) => {
       location: { city, state, country } = {},
       email,
       role,
+      password,
     } = req.body;
 
     const updateFields = {};
     if (fName) updateFields.fName = fName;
     if (lName) updateFields.lName = lName;
     if (age) updateFields.age = age;
-    if (birthDate) updateFields.birthDate = birthDate;
     if (email) updateFields.email = email;
+    if (password) updateFields.password = password;
+    if (birthDate) updateFields.birthDate = birthDate;
     if (role) updateFields.role = role;
     if (city || state || country) {
       updateFields.location = {};

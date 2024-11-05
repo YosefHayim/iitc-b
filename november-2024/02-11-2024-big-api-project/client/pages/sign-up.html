@@ -30,34 +30,42 @@
 
     <main>
       <h1>Sign up</h1>
+      <form>
+        <div class="first-name-container">
+          <label for="fname" class="fname">First Name</label>
+          <input id="fname" type="text" class="fname-input" name="fname" />
+        </div>
 
-      <div class="first-name-container">
-        <label for="fname" class="fname">First Name</label>
-        <input type="text" class="fname-input" />
-      </div>
+        <div class="last-name-container">
+          <label for="lname" class="lname">Last Name</label>
+          <input id="lname" type="text" class="fname-input" name="lname" />
+        </div>
 
-      <div class="last-name-container">
-        <label for="lname" class="lname">Last Name</label>
-        <input type="text" class="fname-input" />
-      </div>
+        <div class="email-container">
+          <label for="email" class="email-e2label">Email</label>
+          <input id="email" type="email" class="email-input" name="email" />
+        </div>
 
-      <div class="email-container">
-        <label for="email" class="email-label">Email</label>
-        <input type="email" class="email-input" />
-      </div>
+        <div class="password-container">
+          <label for="password" class="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="password-input"
+            name="password"
+          />
+        </div>
 
-      <div class="password-container">
-        <label for="password" class="password">Password</label>
-        <input type="text" class="password-input" />
-      </div>
+        <div class="terms-container">
+          <input type="checkbox" id="terms" class="terms-checkbox" />
+          <label for="terms" class="terms-label" name="terms">
+            I agree to the
+            <a href="./terms-of-service.html">Terms of Service</a>
+          </label>
 
-      <div class="terms-container">
-        <input type="checkbox" id="terms" class="terms-checkbox" required />
-        <label for="terms" class="terms-label">
-          I agree to the <a href="./terms-of-service.html">Terms of Service</a>
-        </label>
-      </div>
-      <button class="sign-up-button">Sign up</button>
+          <button type="submit" class="sign-up-button">Sign up</button>
+        </div>
+      </form>
     </main>
 
     <footer>

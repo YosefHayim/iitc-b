@@ -13,7 +13,6 @@ const userSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-    required: true,
     min: [1, "Age must be at least 1."],
   },
   birthDate: {
@@ -27,9 +26,9 @@ const userSchema = new mongoose.Schema({
     },
   },
   location: {
-    city: { type: String, required: true },
-    state: { type: String, required: true },
-    country: { type: String, required: true },
+    city: { type: String },
+    state: { type: String },
+    country: { type: String },
   },
   email: {
     type: String,
@@ -39,6 +38,17 @@ const userSchema = new mongoose.Schema({
       /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
       "Please enter a valid email address.",
     ],
+  },
+  password: {
+    type: String,
+    required: [true, "Password is required"],
+    minlength: [6, "Password must be at least 6 characters"],
+    validate: {
+      validator: function (v) {
+        return /\d/.test(v);
+      },
+      message: (props) => `${props.value} must contain at least one number`,
+    },
   },
   role: {
     type: String,

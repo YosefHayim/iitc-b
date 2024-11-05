@@ -37,45 +37,25 @@ const getAllUsers = async (req, res, next) => {
 };
 
 const createNewUsers = async (req, res, next) => {
-  let users = req.body;
-  console.log(users);
+  let user = req.body;
 
-  isBodyEmpty(users, next);
+  isBodyEmpty(user, next);
 
   try {
-    if (!Array.isArray(users)) {
-      const { fName, lName, age, birthDate, location, email, role, password } =
-        users;
-      const newUser = new userModelSchema({
-        fName,
-        lName,
-        age,
-        birthDate,
-        location,
-        email,
-        role,
-        password,
-      });
+    const { fName, lName, email, password } = user;
 
-      const savedUser = await newUser.save();
-      return res.status(201).json({
-        message: "User added successfully",
-        data: savedUser,
-      });
-    }
-
-    const userDocs = users.map((user) => {
-      const { fName, lName, age, birthDate, location, email, role } = user;
-      return { fName, lName, age, birthDate, location, email, role };
+    const newUser = new userModelSchema({
+      fName,
+      lName,
+      email,
+      password,
     });
 
-    const savedUsers = await userModelSchema.insertMany(userDocs);
+    const saveUser = await newUser.save();
 
-    isFalsy(savedUsers, next);
-
-    res.status(201).json({
-      message: "All users added successfully",
-      data: savedUsers,
+    return res.status(201).json({
+      message: "User added successfully",
+      data: saveUser,
     });
   } catch (error) {
     error.type = `SERVER_ERROR`;

@@ -42,13 +42,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Password is required"],
-    minlength: [6, "Password must be at least 6 characters"],
-    validate: {
-      validator: function (v) {
-        return /\d/.test(v);
-      },
-      message: (props) => `${props.value} must contain at least one number`,
-    },
   },
   role: {
     type: String,

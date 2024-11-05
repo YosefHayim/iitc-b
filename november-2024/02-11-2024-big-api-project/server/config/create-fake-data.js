@@ -9,14 +9,7 @@ const injectData = async () => {
       fName: faker.person.firstName(),
       lName: faker.person.lastName(),
       email: faker.internet.email(),
-      password: faker.internet.password(12, false, /[A-Za-z0-9]/, "user_"),
-      age: faker.number.int({ min: 1, max: 65 }),
-      birthDate: faker.date.past(30, new Date("2003-01-01")),
-      location: {
-        city: faker.location.city(),
-        state: faker.location.state(),
-        country: faker.location.country(),
-      },
+      password: faker.internet.password(6),
       role: faker.helpers.arrayElement(["Admin", "Member"]),
     }))
   );

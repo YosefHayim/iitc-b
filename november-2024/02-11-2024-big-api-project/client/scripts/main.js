@@ -18,16 +18,15 @@ const registerPageEl = () => {
     const password = formData.get("password");
     const email = formData.get("email");
 
-    console.log(fName, lName, password, email);
-
     registerUserBackend(fName, lName, password, email);
   });
 };
 
-const registerUserBackend = async (fName, lName, pw, email) => {
-  console.log(fName, lName, pw, email);
+const registerUserBackend = async (fName, lName, password, email) => {
+  console.log(fName, lName, password, email);
 
-  const data = { fName, lName, pw, email };
+  const data = { fName, lName, password, email };
+  console.log(data);
 
   try {
     const res = await fetch(`${baseUrl}/api/users/users`, {
@@ -39,12 +38,9 @@ const registerUserBackend = async (fName, lName, pw, email) => {
     });
 
     if (res) {
-      const result = res.json();
+      const result = await res.json();
       console.log(result);
-      console.log(`User has been registered successfully.`);
     }
-
-    console.log(`Failed to register user.`);
   } catch (error) {
     console.error(`Had error durning registration: ${error}`);
   }

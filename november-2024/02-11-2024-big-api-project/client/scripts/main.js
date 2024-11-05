@@ -29,7 +29,8 @@ const registerUserBackend = async (fName, lName, password, email) => {
   console.log(data);
 
   try {
-    const res = await fetch(`${baseUrl}/api/users/users`, {
+    const res = await fetch(`${baseUrl}/api/users/users`, 
+      {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

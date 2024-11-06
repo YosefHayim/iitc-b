@@ -1,15 +1,13 @@
 const isBodyEmpty = (bodyReq, next) => {
   for (const [key, value] of Object.entries(bodyReq)) {
     if (!key || !value) {
-      const error = new Error(
-        `Invalid request: missing or empty value for key "${key}"`
-      );
-      error.type = `BAD_REQUEST`;
-      next(error);
-      return;
+      return res.status(404).json({
+        msg: "Failed",
+        reason: `You have forgotten to provide a key :${key} or value :${value}`,
+      });
     }
-    
   }
+  next();
 };
 
 export { isBodyEmpty };

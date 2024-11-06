@@ -46,9 +46,13 @@ const injectData = async () => {
     }))
   );
 
-  // const comments = await commentModelSchema.insertMany(
-  //   Array.from({ length: })
-  // )
+  const comments = await commentModelSchema.insertMany(
+    Array.from({ length: 10 }).map(() => ({
+      commentDescription: faker.lorem.sentences(3),
+      projectId: faker.helpers.arrayElement(projects)._id,
+      userId: faker.helpers.arrayElement(users)._id,
+    }))
+  );
 };
 
 export { injectData };

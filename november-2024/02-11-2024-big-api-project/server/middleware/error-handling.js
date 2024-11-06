@@ -9,6 +9,8 @@ const errorHandle = (err, req, res, next) => {
   res.status(chosenError.statusCode).json({
     message: err.message || chosenError.message,
   });
+  
+  next();
 };
 
 export { errorHandle };

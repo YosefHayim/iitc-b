@@ -46,10 +46,9 @@ const injectData = async () => {
     }))
   );
 
-  const comments = await commentModelSchema.insertMany(
-    Array.from({ length: })
-  )
-
+  // const comments = await commentModelSchema.insertMany(
+  //   Array.from({ length: })
+  // )
 };
 
 export { injectData };

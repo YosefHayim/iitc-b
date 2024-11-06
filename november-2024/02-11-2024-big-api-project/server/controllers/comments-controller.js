@@ -14,56 +14,58 @@ const getCommentById = async (req, res, next) => {
 
     res.status(200).json({
       message: `Success`,
-      dataFound: foundComment,
+      response: foundComment,
     });
   } catch (error) {
     res.status(404).json({
       msg: "Failed",
-      reason: `Failed to find the comment :${commentId}`,
+      response: `Failed to find the comment :${commentId}`,
     });
   }
 };
 
 const getAllComments = async (req, res, next) => {
   try {
-    const allProjects = await commentModelSchema
-      .find()
-      .populate("userSchema", "fName lName profileImg");
+    const allComments = await commentModelSchema.find();
 
-    isFalsy(allProjects, next);
+    isFalsy(allComments, next);
 
-    res.status(200).json(allProjects);
+    res.status(200).json({
+      msg: "Success",
+      response: allComments,
+    });
   } catch (error) {
-    console.error(`Something went wrong while fetching projects => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    res.status(404).json({
+      msg: "Failed",
+      response: `Failed to find all comments`,
+    });
   }
 };
 
 const createNewComment = async (req, res, next) => {
-  const project = req.body;
+  const comment = req.body;
 
-  isBodyEmpty(project, next);
+  isBodyEmpty(comment, next);
 
   try {
-    const { name, description, status, user } = project;
+    const { commentDescription, projectId, userId } = comment;
 
-    const newProject = new commentModelSchema({
-      name,
-      description,
-      status,
-      user,
+    const newComment = new commentModelSchema({
+      commentDescription,
+      projectId,
+      userId,
     });
 
-    const savedProject = await newProject.save();
+    const savedComment = await newComment.save();
     return res.status(201).json({
-      message: "Project added successfully",
-      data: savedProject,
+      message: "comment added successfully",
+      response: savedComment,
     });
   } catch (error) {
-    console.error(`Something happened while inserting data => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    res.status(404).json({
+      msg: "Failed",
+      response: `Failed to add a new comment`,
+    });
   }
 };
 
@@ -83,15 +85,15 @@ const updateSpecificCommentById = async (req, res, next) => {
     if (status) updateFields.status = status;
     if (user) updateFields.user = user;
 
-    const updatedProject = await commentModelSchema.findByIdAndUpdate(
+    const updatedcomment = await commentModelSchema.findByIdAndUpdate(
       commentId,
       { $set: updateFields },
       { new: true }
     );
 
-    isFalsy(updatedProject, next);
+    isFalsy(updatedcomment, next);
 
-    res.status(200).json(updatedProject);
+    res.status(200).json(updatedcomment);
   } catch (error) {
     console.error(
       `Something went while updating schema ID ${commentId} => ${error}`
@@ -106,8 +108,8 @@ const deleteSpecificCommentById = async (req, res, next) => {
 
   isFalsy(commentId, next);
 
-  const isProjectExist = await commentModelSchema.exists({ _id: commentId });
-  isFalsy(isProjectExist, next);
+  const iscommentExist = await commentModelSchema.exists({ _id: commentId });
+  isFalsy(iscommentExist, next);
 
   try {
     const deleted = await commentModelSchema.findByIdAndDelete(commentId);
@@ -115,10 +117,10 @@ const deleteSpecificCommentById = async (req, res, next) => {
     isFalsy(deleted, next);
 
     res.status(200).json({
-      message: `Project ID: ${commentId} has been successfully deleted from the database.`,
+      message: `comment ID: ${commentId} has been successfully deleted from the database.`,
     });
   } catch (error) {
-    console.error(`Error deleting project ${commentId} => ${error}`);
+    console.error(`Error deleting comment ${commentId} => ${error}`);
     error.type = `SERVER_ERROR`;
     next(error);
   }
@@ -127,7 +129,7 @@ const deleteSpecificCommentById = async (req, res, next) => {
 export {
   getCommentById,
   getAllComments,
-  createNewComment,
+  createnewComment,
   updateSpecificCommentById,
   deleteSpecificCommentById,
 };

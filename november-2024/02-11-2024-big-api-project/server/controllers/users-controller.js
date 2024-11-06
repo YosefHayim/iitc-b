@@ -18,9 +18,12 @@ const getUserById = async (req, res) => {
       dataFound: foundUser,
     });
   } catch (error) {
-    console.error(`Database doesn't have the user ID ${userId}.`);
-    error.type = `NOT_FOUND`;
-    next(error);
+    console.error(`Failed to find the user: ${commentId}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to find the user :${commentId}`,
+    });
   }
 };
 
@@ -32,8 +35,12 @@ const getAllUsers = async (req, res) => {
 
     res.status(200).json(allUsers);
   } catch (error) {
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to find all users: ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to find all users: ${error}`,
+    });
   }
 };
 
@@ -55,16 +62,18 @@ const createNewUsers = async (req, res) => {
     });
 
     const saveUser = await newUser.save();
-    if (saveUser) {
-      console.log(`The user ${fName} has been added to the database`);
-    }
 
-    return res.status(201).json({
-      message: "Successfully Register",
+    res.status(201).json({
+      message: `Success`,
+      response: saveUser,
     });
   } catch (error) {
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to create a new: ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to create a new: ${error}`,
+    });
   }
 };
 
@@ -108,13 +117,17 @@ const updateSpecificUserById = async (req, res) => {
 
     isFalsy(updatedUser);
 
-    res.json({
-      message: `Successfully updated user ${userId}:`,
-      updatedData: updatedUser,
+    res.status(200).json({
+      message: `Success`,
+      response: updatedUser,
     });
   } catch (error) {
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to update the user: ${userId}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to update the user: ${userId}`,
+    });
   }
 };
 
@@ -123,21 +136,22 @@ const deleteSpecificUserById = async (req, res) => {
 
   isFalsy(userId);
 
-  const isUserExist = await userModelSchema.exists({ _id: userId });
-
-  isFalsy(isUserExist);
   try {
     const deleted = await userModelSchema.findByIdAndDelete(userId);
 
     isFalsy(deleted);
 
     res.status(200).json({
-      message: `User ID: ${userId} has been successfully deleted from the database.`,
+      message: `Success`,
+      response: deleted,
     });
   } catch (error) {
-    console.error(`Something went wrong while performing the delete.`, error);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to delete the user: ${userId}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to delete the user: ${userId}`,
+    });
   }
 };
 

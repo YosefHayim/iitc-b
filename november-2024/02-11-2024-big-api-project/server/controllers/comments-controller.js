@@ -36,11 +36,11 @@ const getAllComments = async (req, res) => {
       response: allComments,
     });
   } catch (error) {
-    console.error(`Failed to find all comments`);
+    console.error(`Failed to find all comments , error: ${error}`);
 
     res.status(404).json({
       message: "Failed",
-      response: `Failed to find all comments`,
+      response: `Failed to find all comments , error: ${error}`,
     });
   }
 };
@@ -58,16 +58,17 @@ const createNewComment = async (req, res) => {
     });
 
     const savedComment = await newComment.save();
-    return res.status(201).json({
+
+    res.status(201).json({
       message: "Success",
       response: savedComment,
     });
   } catch (error) {
-    console.error(`Failed to add a new comment`);
+    console.error(`Failed to add a new comment , error: ${error}`);
 
     res.status(404).json({
       message: "Failed",
-      response: `Failed to add a new comment`,
+      response: `Failed to add a new comment , error: ${error}`,
     });
   }
 };
@@ -112,9 +113,6 @@ const deleteSpecificCommentById = async (req, res) => {
   const commentId = req.params.id;
 
   isFalsy(commentId);
-
-  const isCommentExist = await commentModelSchema.exists({ _id: commentId });
-  isFalsy(isCommentExist);
 
   try {
     const deleted = await commentModelSchema.findByIdAndDelete(commentId);

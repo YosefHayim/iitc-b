@@ -15,9 +15,9 @@ dotenvFlow.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(isBodyEmpty);
 app.use(logRequest);
 app.use(cors());
-app.use(isBodyEmpty);
 app.use(express.json());
 app.use(
   morgan(function (tokens, req, res) {

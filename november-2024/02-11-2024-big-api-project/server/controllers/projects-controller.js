@@ -12,13 +12,18 @@ const getProjectById = async (req, res) => {
     isFalsy(foundProject);
 
     res.status(200).json({
-      message: "Success found your project Id",
-      dataFound: foundProject,
+      message: "Success",
+      response: foundProject,
     });
   } catch (error) {
-    console.error(`Database doesn't have the project ID ${projectId}.`);
-    error.type = `NOT_FOUND`;
-    next(error);
+    console.error(
+      `Failed to find the project ID: ${projectId} , error: ${error}`
+    );
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to find the project ID :${projectId} , error: ${error}`,
+    });
   }
 };
 
@@ -30,11 +35,17 @@ const getAllProjects = async (req, res) => {
 
     isFalsy(allProjects);
 
-    res.status(200).json(allProjects);
+    res.status(200).json({
+      message: "Success",
+      response: allProjects,
+    });
   } catch (error) {
-    console.error(`Something went wrong while fetching projects => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to find all projects , error: ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to find all projects , error: ${error}`,
+    });
   }
 };
 
@@ -52,14 +63,18 @@ const createNewProject = async (req, res) => {
     });
 
     const savedProject = await newProject.save();
-    return res.status(201).json({
-      message: "Project added successfully",
-      data: savedProject,
+
+    res.status(201).json({
+      message: "Success",
+      response: savedProject,
     });
   } catch (error) {
-    console.error(`Something happened while inserting data => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to add a new project , error: ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to add a new project , error: ${error}`,
+    });
   }
 };
 
@@ -72,10 +87,10 @@ const updateSpecificProjectById = async (req, res) => {
 
   try {
     const updateFields = {};
-    if (name) updateFields.name = name;
-    if (description) updateFields.description = description;
-    if (status) updateFields.status = status;
-    if (user) updateFields.user = user;
+    updateFields.name = name;
+    updateFields.description = description;
+    updateFields.status = status;
+    updateFields.user = user;
 
     const updatedProject = await projectModelSchema.findByIdAndUpdate(
       projectId,
@@ -85,13 +100,19 @@ const updateSpecificProjectById = async (req, res) => {
 
     isFalsy(updatedProject);
 
-    res.status(200).json(updatedProject);
+    res.status(201).json({
+      message: "Success",
+      response: updatedProject,
+    });
   } catch (error) {
     console.error(
-      `Something went while updating schema ID ${projectId} => ${error}`
+      `Failed to update the project: ${projectId} , error: ${error}`
     );
-    error.type = `SERVER_ERROR`;
-    next(error);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to update the project: ${projectId} , error: ${error}`,
+    });
   }
 };
 
@@ -100,21 +121,24 @@ const deleteSpecificProjectById = async (req, res) => {
 
   isFalsy(projectId);
 
-  const isProjectExist = await projectModelSchema.exists({ _id: projectId });
-  isFalsy(isProjectExist);
-
   try {
     const deleted = await projectModelSchema.findByIdAndDelete(projectId);
 
     isFalsy(deleted);
 
     res.status(200).json({
-      message: `Project ID: ${projectId} has been successfully deleted from the database.`,
+      message: `Success`,
+      response: deleted,
     });
   } catch (error) {
-    console.error(`Error deleting project ${projectId} => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(
+      `Failed to delete the project: ${projectId} , error: ${error}`
+    );
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to delete the project: ${projectId} , error: ${error}`,
+    });
   }
 };
 

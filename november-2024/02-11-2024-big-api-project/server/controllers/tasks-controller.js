@@ -12,13 +12,16 @@ const getTaskById = async (req, res) => {
     isFalsy(foundTask);
 
     res.status(200).json({
-      message: "Success found your task Id",
-      dataFound: foundTask,
+      message: "Success",
+      response: foundTask,
     });
   } catch (error) {
-    console.error(`Database doesn't have the task ID ${taskId}.`);
-    error.type = `NOT_FOUND`;
-    next(error);
+    console.error(`Failed to find the task ID: ${taskId} ,error: ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to find the task ID :${taskId} ,error: ${error}`,
+    });
   }
 };
 
@@ -28,11 +31,17 @@ const getAllTasks = async (req, res) => {
 
     isFalsy(allTasks);
 
-    res.status(200).json(allTasks);
+    res.status(200).json({
+      message: "Success",
+      response: allTasks,
+    });
   } catch (error) {
-    console.error(`Something went wrong while fetching tasks => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to find all tasks, error ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to find all tasks, error ${error}`,
+    });
   }
 };
 
@@ -40,42 +49,19 @@ const createNewTask = async (req, res) => {
   let tasks = req.body;
 
   try {
-    if (!Array.isArray(tasks)) {
-      const { title, description, status, project, user, dueDate } = tasks;
-
-      const newTask = new taskModelSchema({
-        title,
-        description,
-        status,
-        project,
-        user,
-        dueDate,
-      });
-
-      const savedTask = await newTask.save();
-      return res.status(201).json({
-        message: "Task added successfully",
-        data: savedTask,
-      });
-    }
-
-    const tasksDocs = tasks.map((task) => {
-      const { title, description, status, dueDate } = task;
-      return { title, description, status, dueDate };
-    });
-
-    const savedTasks = await taskModelSchema.insertMany(tasksDocs);
-
-    isFalsy(savedTasks);
+    const savedTasks = await taskModelSchema.insertMany(tasks);
 
     res.status(201).json({
-      message: "All tasks added successfully",
+      message: "Success",
       data: savedTasks,
     });
   } catch (error) {
-    console.error(`Something went wrong while saving => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to create a task/s. , error ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to create a task/s. , error ${error}`,
+    });
   }
 };
 
@@ -101,11 +87,17 @@ const updateSpecificTaskById = async (req, res) => {
 
     isFalsy(updatedTask);
 
-    res.send(updatedTask);
+    res.status(201).json({
+      message: "Success",
+      response: updatedTask,
+    });
   } catch (error) {
-    console.error(`Something went wrong while updating task => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to update the task ID: ${taskId} ,error: ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to update task ID: ${taskId} ,error: ${error}`,
+    });
   }
 };
 
@@ -114,24 +106,22 @@ const deleteSpecificTaskById = async (req, res) => {
 
   isFalsy(taskId);
 
-  const isTaskExist = await taskModelSchema.exists({ _id: taskId });
+  try {
+    const deleted = await taskModelSchema.findByIdAndDelete(taskId);
 
-  isFalsy(isTaskExist);
+    isFalsy(deleted);
 
-  if (isTaskExist) {
-    try {
-      const deleted = await taskModelSchema.findByIdAndDelete(taskId);
-      isFalsy(deleted);
-      res.status(200).json({
-        message: `Task ID: ${taskId} has been successfully deleted from the database.`,
-      });
-    } catch (error) {
-      console.error(`Error deleting task ID ${taskId} => ${error}`);
-      error.type = `SERVER_ERROR`;
-      next(error);
-    }
-  } else {
-    throw new Error(`NOT_FOUND`);
+    res.status(201).json({
+      message: `Success`,
+      response: deleted,
+    });
+  } catch (error) {
+    console.error(`Failed to delete the task: ${taskId} ,error: ${error}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to delete the task: ${taskId} ,error: ${error}`,
+    });
   }
 };
 

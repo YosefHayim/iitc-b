@@ -16,7 +16,7 @@ router.get("/users", getAllUsers);
 
 router.post("/login", checkUserAuth);
 
-router.post("/users", createNewUsers);
+router.post("/signup", createNewUsers);
 
 router.patch("/users/:id", updateSpecificUserById);
 

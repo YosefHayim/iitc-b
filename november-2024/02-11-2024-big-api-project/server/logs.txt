@@ -1,0 +1,370 @@
+
+  Activity received at: 11/6/2024, 9:55:41 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/users/users
+  Status Code: 200
+  Headers: {"user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"0a9f46b2-37de-467e-810e-0c3f0186ff5d","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 9:56:28 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"d6866e58-c0a4-41a1-8ca1-bd6a4624f965","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"107"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 9:56:39 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"c954022d-e4c3-407c-a0b4-7897da5e4346","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"86"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 9:57:32 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"5420b73f-3015-4a22-8d00-e5c0d0d7d310","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"85"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:03:35 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"b512d834-e646-494c-84c8-ebfcc9fa67f5","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"115"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:06:17 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"75aa5b63-5592-47e7-b354-63e82ab08e01","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:06:39 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"e462de0f-471b-4586-b87e-77b478d5ce78","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:07:39 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"51592f4f-8226-4494-a1b1-bfcf150e4707","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:10:54 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"b9ace861-1bd0-47d5-8350-4339de94a948","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:12:19 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"387544e6-5213-41c4-9b7e-718fea547839","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:13:42 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"3a7da820-031c-4049-9e40-2ac94f0c2d16","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:15:15 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"c7532e29-f669-4c3f-a72d-d3fdb2bb2be6","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:16:04 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"f918d0fe-63a3-46ea-9ff6-d14eb0ec79e5","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"153"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:16:28 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/users/users
+  Status Code: 200
+  Headers: {"user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"7bfa8d4a-0a28-43fb-bfb1-1de6e6142ebe","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:16:38 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/users/user/672bcbf2a163d022d4271101
+  Status Code: 200
+  Headers: {"user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"1d77beaf-381b-42e0-8310-517da754f856","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:16:49 PM
+  Method: PATCH
+  Full Path: http://localhost:3000/api/users/users/672bcbf2a163d022d4271101
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"d5f255bd-c95f-470c-b783-5b9ada53a1a9","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"31"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:16:57 PM
+  Method: DELETE
+  Full Path: http://localhost:3000/api/users/users/672bcbf2a163d022d4271101
+  Status Code: 200
+  Headers: {"user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"490322ba-99d7-4ef3-a253-90b7ecd1bf88","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:17:20 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/users/
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"d9aaba9c-fed5-4225-a5e0-df2a31356846","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"167"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:18:25 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"0aca5dc5-becc-49f0-a6ef-405e62cf9e6b","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"167"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:18:43 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"23bb1d6f-51fb-462d-902f-44a9c8cdade2","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"163"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:18:45 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"e7a9ba59-9395-4232-97c7-bc45a48b56a2","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:19:29 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"f57ff35c-c630-461d-8092-bcbba36cd1d1","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:21:45 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"852578b3-c898-4ebc-981a-203cf8dae866","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:22:44 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"37e48272-e24b-4a3c-a63a-e67f6e86a001","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:23:28 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"ba01093b-461f-472c-a1e3-7136f987847e","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:23:32 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"d46bf588-8076-401e-b592-2bd13071d028","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 10:23:46 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"5c96ef38-43ee-42cb-a76f-70c105a0e8ee","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:19:31 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/signup
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"a005e55e-9372-455b-86bc-b80bd1fa5823","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"125"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:20:46 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"f4a08fe6-25cc-4b73-9245-66795c79c7b6","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:21:44 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"8aa663c7-02e0-4cbc-bad4-acaefd026bc4","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:21:54 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"aef679bf-2f52-4ea5-a70f-416be11cfd05","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:23:54 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"33c20fc2-d2dc-4ffc-9a5e-8bf595a14856","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:26:32 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"95f09bf7-4712-483b-93bc-74ba77fb957b","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:27:49 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"8cd3452f-2894-42b6-be55-6b6748ae530b","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:28:53 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"3a378f03-2614-4ebd-9ba3-448a1f9be127","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:28:59 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"fea5dfe2-2d0a-463a-905c-a2a34746e76e","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:29:07 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"b55a5c36-2c36-4da6-b414-f6d1476cad5e","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:29:10 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"e84087eb-6d90-4ade-b7cf-2d07f7737dfb","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:29:11 PM
+  Method: POST
+  Full Path: http://localhost:3000/api/users/login
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"17a42c0a-fab9-493e-99d8-0175d324f045","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"71"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:37:22 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/users/users
+  Status Code: 200
+  Headers: {"content-type":"application/json","user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"adf19c8e-ccc3-433d-a4d5-e6b2ea27bd0d","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"196"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/6/2024, 11:38:12 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/users/users
+  Status Code: 200
+  Headers: {"user-agent":"PostmanRuntime/7.42.0","accept":"*/*","cache-control":"no-cache","postman-token":"bf863dee-3af2-4e6a-87af-d22a8c88298e","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  

@@ -2,6 +2,7 @@ import { userModelSchema } from "../models/user-schema-creation.js";
 import { isFalsy } from "../utils/is-falsy.js";
 import { encryptedPw } from "../utils/encrypt-pw.js";
 import { isPasswordValid } from "../utils/auth-user.js";
+import { generateToken } from "../utils/token.js";
 
 const getUserById = async (req, res) => {
   const userId = req.params.id;
@@ -45,34 +46,30 @@ const getAllUsers = async (req, res) => {
 };
 
 const createNewUsers = async (req, res) => {
-  let user = req.body;
-
-  const isPwSecure = await encryptedPw(req.body.password);
-
-  isFalsy(isPwSecure);
-
   try {
-    const { fName, lName, email, isPwSecure } = user;
+    const { fName, lName, email, password, profileImg, role } = req.body;
+    console.log(
+      req.body.fName,
+      req.body.lName,
+      req.body.email,
+      req.body.password,
+      req.body.role
+    );
 
-    const newUser = new userModelSchema({
-      fName,
-      lName,
-      email,
-      password: isPwSecure,
-    });
+    const isPwSecure = await encryptedPw(password, process.env.SECRET_KEY);
+    console.log(`pw secure: ${isPwSecure}`);
 
-    const saveUser = await newUser.save();
+    const savedUserOrUsers = await userModelSchema.insertMany(req.body);
 
     res.status(201).json({
-      message: `Success`,
-      response: saveUser,
+      message: "Success",
+      response: savedUserOrUsers,
     });
   } catch (error) {
-    console.error(`Failed to create a new: ${error}`);
-
-    res.status(404).json({
+    console.error(`Failed to create a new user: ${error}`);
+    res.status(400).json({
       message: "Failed",
-      response: `Failed to create a new: ${error}`,
+      response: `Failed to create a new user: ${error}`,
     });
   }
 };
@@ -168,7 +165,7 @@ const checkUserAuth = async (req, res) => {
 
     res.status(200).json({
       message: "Success",
-      result: `User is valid and found in our db proceed to homepage.`,
+      response: generateToken({ userId: findUser._id }),
     });
   } catch (error) {
     res.status(500).json({

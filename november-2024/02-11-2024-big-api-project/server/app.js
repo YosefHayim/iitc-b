@@ -19,8 +19,9 @@ const PORT = process.env.PORT || 3000;
 app.use(morgan(customMorgan));
 app.use(logRequest);
 app.use(cors());
-app.use(isBodyEmpty);
 app.use(express.json());
+// Can't replace middleware of body before json.
+app.use(isBodyEmpty);
 
 connectDB();
 

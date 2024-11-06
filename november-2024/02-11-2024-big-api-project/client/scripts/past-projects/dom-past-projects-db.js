@@ -12,10 +12,17 @@ const projectSkeletons = async () => {
       projectCard.classList.add("project-card");
       projectCard.innerHTML = `
       <h2>${project.name}</h2>
-      <h3>Posted by: ${project.userSchema.fName} ${project.userSchema.lName}</h3>
+      <div class="user-info-container">
+        <img src="${project.userSchema.profileImg}" alt="user profile image" class="user-profile-img">
+        <h3>Posted by: ${project.userSchema.fName} ${project.userSchema.lName}</h3>
+      </div>
       <p>Description: ${project.description}</p>
       <p>Status: ${project.status}</p>
       <p>Created at: ${project.createdAt}</p>
+      <div class="comments-container">
+      <input type="text" placeholder="add a comment" class="comment-input">
+      <button class="submit-comment">Submit comment</button>
+      </div>
       `;
       pastProjectsContainer.appendChild(projectCard);
     });

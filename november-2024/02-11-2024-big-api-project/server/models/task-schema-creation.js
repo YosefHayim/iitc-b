@@ -24,10 +24,6 @@ const taskSchema = new mongoose.Schema({
       message: "Due date must be in the future.",
     },
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
   project: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "projects-databases",
@@ -37,6 +33,10 @@ const taskSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "users-databases",
     required: true,
+  },
+  createdAt: {
+    type: String,
+    default: new Date().toLocaleDateString("en-US"),
   },
 });
 

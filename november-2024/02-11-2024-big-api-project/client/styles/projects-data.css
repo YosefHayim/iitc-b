@@ -8,6 +8,17 @@ footer {
   margin-top: 4em;
 }
 
+.user-profile-img {
+  border-radius: 100em;
+  width: 3em;
+}
+
+.user-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;

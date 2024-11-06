@@ -27,7 +27,7 @@ const getAllProjects = async (req, res, next) => {
   try {
     const allProjects = await projectModelSchema
       .find()
-      .populate("userSchema", "fName lName");
+      .populate("userSchema", "fName lName profileImg");
 
     isFalsy(allProjects, next);
 

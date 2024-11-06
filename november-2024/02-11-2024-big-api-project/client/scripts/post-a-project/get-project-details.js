@@ -3,8 +3,8 @@ import { addProjectToDatabase } from "./post-project-db.js";
 
 const getProjectData = async () => {
   if (postProjectFormContainer) {
-    postProjectFormContainer.addEventListener("submit", (ev) => {
-      ev.preventDefault();
+    postProjectFormContainer.addEventListener("submit", (e) => {
+      e.preventDefault();
 
       const formData = new FormData(postProjectFormContainer);
 

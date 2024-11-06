@@ -52,8 +52,8 @@ const userSchema = new mongoose.Schema({
     default: "Member",
   },
   createdAt: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: new Date().toLocaleDateString("en-US"),
   },
 });
 

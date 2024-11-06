@@ -3,6 +3,7 @@ import { userModelSchema } from "../models/user-schema-creation.js";
 import { projectModelSchema } from "../models/project-schema-creation.js";
 import { taskModelSchema } from "../models/task-schema-creation.js";
 import { encryptedPw } from "../utils/encrypt-pw.js";
+import { commentModelSchema } from "../models/comment-schema-creation.js";
 
 const injectData = async () => {
   const users = await userModelSchema.insertMany(
@@ -20,7 +21,6 @@ const injectData = async () => {
       }))
     )
   );
-  console.log(users);
 
   const projects = await projectModelSchema.insertMany(
     Array.from({ length: 10 }).map(() => ({
@@ -35,7 +35,7 @@ const injectData = async () => {
     }))
   );
 
-  await taskModelSchema.insertMany(
+  const tasks = await taskModelSchema.insertMany(
     Array.from({ length: 10 }).map(() => ({
       title: faker.lorem.words(3),
       description: faker.lorem.sentences(2),
@@ -45,6 +45,11 @@ const injectData = async () => {
       project: faker.helpers.arrayElement(projects)._id,
     }))
   );
+
+  const comments = await commentModelSchema.insertMany(
+    Array.from({ length: })
+  )
+
 };
 
 export { injectData };

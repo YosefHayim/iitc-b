@@ -1,18 +1,17 @@
 import { userModelSchema } from "../models/user-schema-creation.js";
-import { isFalsy } from "../middleware/is-falsy.js";
-import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
+import { isFalsy } from "../utils/is-falsy.js";
 import { encryptedPw } from "../utils/encrypt-pw.js";
 import { isPasswordValid } from "../utils/auth-user.js";
 
-const getUserById = async (req, res, next) => {
+const getUserById = async (req, res) => {
   const userId = req.params.id;
 
-  isFalsy(userId, next);
+  isFalsy(userId);
 
   try {
     const foundUser = await userModelSchema.findById(userId);
 
-    isFalsy(foundUser, next);
+    isFalsy(foundUser);
 
     res.status(200).json({
       message: "Success found your user Id",
@@ -25,11 +24,11 @@ const getUserById = async (req, res, next) => {
   }
 };
 
-const getAllUsers = async (req, res, next) => {
+const getAllUsers = async (req, res) => {
   try {
     const allUsers = await userModelSchema.find();
 
-    isFalsy(allUsers, next);
+    isFalsy(allUsers);
 
     res.status(200).json(allUsers);
   } catch (error) {
@@ -38,10 +37,8 @@ const getAllUsers = async (req, res, next) => {
   }
 };
 
-const createNewUsers = async (req, res, next) => {
+const createNewUsers = async (req, res) => {
   let user = req.body;
-
-  isBodyEmpty(user, next);
 
   const isPwSecure = await encryptedPw(req.body.password);
 
@@ -71,12 +68,10 @@ const createNewUsers = async (req, res, next) => {
   }
 };
 
-const updateSpecificUserById = async (req, res, next) => {
+const updateSpecificUserById = async (req, res) => {
   const userId = req.params.id;
 
-  isFalsy(userId, next);
-
-  isBodyEmpty(req.body, next);
+  isFalsy(userId);
 
   try {
     const {
@@ -111,7 +106,7 @@ const updateSpecificUserById = async (req, res, next) => {
       { new: true }
     );
 
-    isFalsy(updatedUser, next);
+    isFalsy(updatedUser);
 
     res.json({
       message: `Successfully updated user ${userId}:`,
@@ -123,18 +118,18 @@ const updateSpecificUserById = async (req, res, next) => {
   }
 };
 
-const deleteSpecificUserById = async (req, res, next) => {
+const deleteSpecificUserById = async (req, res) => {
   const userId = req.params.id;
 
-  isFalsy(userId, next);
+  isFalsy(userId);
 
   const isUserExist = await userModelSchema.exists({ _id: userId });
 
-  isFalsy(isUserExist, next);
+  isFalsy(isUserExist);
   try {
     const deleted = await userModelSchema.findByIdAndDelete(userId);
 
-    isFalsy(deleted, next);
+    isFalsy(deleted);
 
     res.status(200).json({
       message: `User ID: ${userId} has been successfully deleted from the database.`,

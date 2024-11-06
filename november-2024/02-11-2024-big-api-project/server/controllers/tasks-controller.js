@@ -1,16 +1,15 @@
 import { taskModelSchema } from "../models/task-schema-creation.js";
-import { isFalsy } from "../middleware/is-falsy.js";
-import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
+import { isFalsy } from "../utils/is-falsy.js";
 
-const getTaskById = async (req, res, next) => {
+const getTaskById = async (req, res) => {
   const taskId = req.params.id;
 
-  isFalsy(taskId, next);
+  isFalsy(taskId);
 
   try {
     const foundTask = await taskModelSchema.findById(taskId);
 
-    isFalsy(foundTask, next);
+    isFalsy(foundTask);
 
     res.status(200).json({
       message: "Success found your task Id",
@@ -23,11 +22,11 @@ const getTaskById = async (req, res, next) => {
   }
 };
 
-const getAllTasks = async (req, res, next) => {
+const getAllTasks = async (req, res) => {
   try {
     const allTasks = await taskModelSchema.find();
 
-    isFalsy(allTasks, next);
+    isFalsy(allTasks);
 
     res.status(200).json(allTasks);
   } catch (error) {
@@ -37,10 +36,8 @@ const getAllTasks = async (req, res, next) => {
   }
 };
 
-const createNewTask = async (req, res, next) => {
+const createNewTask = async (req, res) => {
   let tasks = req.body;
-
-  isBodyEmpty(tasks, next);
 
   try {
     if (!Array.isArray(tasks)) {
@@ -69,7 +66,7 @@ const createNewTask = async (req, res, next) => {
 
     const savedTasks = await taskModelSchema.insertMany(tasksDocs);
 
-    isFalsy(savedTasks, next);
+    isFalsy(savedTasks);
 
     res.status(201).json({
       message: "All tasks added successfully",
@@ -82,20 +79,18 @@ const createNewTask = async (req, res, next) => {
   }
 };
 
-const updateSpecificTaskById = async (req, res, next) => {
+const updateSpecificTaskById = async (req, res) => {
   const taskId = req.params.id;
 
   try {
     const { title, description, status, project, user, dueDate } = req.body;
 
-    isBodyEmpty(req.body);
-
     const updateFields = {};
     updateFields.title = title;
     updateFields.description = description;
     updateFields.status = status;
-    updateFields.project = project
-    updateFields.user = user
+    updateFields.project = project;
+    updateFields.user = user;
     updateFields.dueDate = dueDate;
 
     const updatedTask = await taskModelSchema.findByIdAndUpdate(
@@ -104,7 +99,7 @@ const updateSpecificTaskById = async (req, res, next) => {
       { new: true }
     );
 
-    isFalsy(updatedTask, next);
+    isFalsy(updatedTask);
 
     res.send(updatedTask);
   } catch (error) {
@@ -114,19 +109,19 @@ const updateSpecificTaskById = async (req, res, next) => {
   }
 };
 
-const deleteSpecificTaskById = async (req, res, next) => {
+const deleteSpecificTaskById = async (req, res) => {
   const taskId = req.params.id;
 
-  isFalsy(taskId, next);
+  isFalsy(taskId);
 
   const isTaskExist = await taskModelSchema.exists({ _id: taskId });
 
-  isFalsy(isTaskExist, next);
+  isFalsy(isTaskExist);
 
   if (isTaskExist) {
     try {
       const deleted = await taskModelSchema.findByIdAndDelete(taskId);
-      isFalsy(deleted, next);
+      isFalsy(deleted);
       res.status(200).json({
         message: `Task ID: ${taskId} has been successfully deleted from the database.`,
       });

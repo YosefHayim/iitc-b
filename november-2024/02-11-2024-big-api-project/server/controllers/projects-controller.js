@@ -1,16 +1,15 @@
-import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
-import { isFalsy } from "../middleware/is-falsy.js";
+import { isFalsy } from "../utils/is-falsy.js";
 import { projectModelSchema } from "../models/project-schema-creation.js";
 
-const getProjectById = async (req, res, next) => {
+const getProjectById = async (req, res) => {
   const projectId = req.params.id;
 
-  isFalsy(projectId, next);
+  isFalsy(projectId);
 
   try {
     const foundProject = await projectModelSchema.findById(projectId);
 
-    isFalsy(foundProject, next);
+    isFalsy(foundProject);
 
     res.status(200).json({
       message: "Success found your project Id",
@@ -23,13 +22,13 @@ const getProjectById = async (req, res, next) => {
   }
 };
 
-const getAllProjects = async (req, res, next) => {
+const getAllProjects = async (req, res) => {
   try {
     const allProjects = await projectModelSchema
       .find()
       .populate("userSchema", "fName lName profileImg");
 
-    isFalsy(allProjects, next);
+    isFalsy(allProjects);
 
     res.status(200).json(allProjects);
   } catch (error) {
@@ -39,10 +38,8 @@ const getAllProjects = async (req, res, next) => {
   }
 };
 
-const createNewProject = async (req, res, next) => {
+const createNewProject = async (req, res) => {
   const project = req.body;
-
-  isBodyEmpty(project, next);
 
   try {
     const { name, description, status, user } = project;
@@ -66,14 +63,12 @@ const createNewProject = async (req, res, next) => {
   }
 };
 
-const updateSpecificProjectById = async (req, res, next) => {
+const updateSpecificProjectById = async (req, res) => {
   const projectId = req.params.id;
 
-  isFalsy(projectId, next);
+  isFalsy(projectId);
 
   const { name, description, status, user } = req.body;
-
-  isBodyEmpty(req.body, next);
 
   try {
     const updateFields = {};
@@ -88,7 +83,7 @@ const updateSpecificProjectById = async (req, res, next) => {
       { new: true }
     );
 
-    isFalsy(updatedProject, next);
+    isFalsy(updatedProject);
 
     res.status(200).json(updatedProject);
   } catch (error) {
@@ -100,18 +95,18 @@ const updateSpecificProjectById = async (req, res, next) => {
   }
 };
 
-const deleteSpecificProjectById = async (req, res, next) => {
+const deleteSpecificProjectById = async (req, res) => {
   const projectId = req.params.id;
 
-  isFalsy(projectId, next);
+  isFalsy(projectId);
 
   const isProjectExist = await projectModelSchema.exists({ _id: projectId });
-  isFalsy(isProjectExist, next);
+  isFalsy(isProjectExist);
 
   try {
     const deleted = await projectModelSchema.findByIdAndDelete(projectId);
 
-    isFalsy(deleted, next);
+    isFalsy(deleted);
 
     res.status(200).json({
       message: `Project ID: ${projectId} has been successfully deleted from the database.`,

@@ -9,18 +9,31 @@ import { logRequest } from "./middleware/logger.js";
 import { errorHandle } from "./middleware/error-handling.js";
 import { connectDB } from "./config/mongo-db-connection.js";
 import { handleUndefinedRoutes } from "./middleware/handle-undefined-routes.js";
+import { isBodyEmpty } from "./middleware/check-body-not-empty.js";
 
 dotenvFlow.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(logRequest);
+app.use(cors());
+app.use(isBodyEmpty);
+app.use(express.json());
+app.use(
+  morgan(function (tokens, req, res) {
+    return [
+      tokens.method(req, res),
+      tokens.url(req, res),
+      tokens.status(req, res),
+      tokens.res(req, res, "content-length"),
+      "-",
+      tokens["response-time"](req, res),
+      "ms",
+    ].join(" ");
+  })
+);
 
 connectDB();
-
-app.use(cors());
-app.use(logRequest);
-app.use(express.json());
-app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
   res.status(200).json({

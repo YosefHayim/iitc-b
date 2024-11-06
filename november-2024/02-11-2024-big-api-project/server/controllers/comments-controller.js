@@ -1,51 +1,52 @@
-import { isBodyEmpty } from "../middleware/check-body-not-empty.js";
-import { isFalsy } from "../middleware/is-falsy.js";
+import { isFalsy } from "../utils/is-falsy.js";
 import { commentModelSchema } from "../models/comment-schema-creation.js";
 
-const getCommentById = async (req, res, next) => {
+const getCommentById = async (req, res) => {
   const commentId = req.params.id;
 
-  isFalsy(commentId, next);
+  isFalsy(commentId);
 
   try {
     const foundComment = await commentModelSchema.findById(commentId);
 
-    isFalsy(foundComment, next);
+    isFalsy(foundComment);
 
     res.status(200).json({
       message: `Success`,
       response: foundComment,
     });
   } catch (error) {
+    console.error(`Failed to find the comment: ${commentId}`);
+
     res.status(404).json({
-      msg: "Failed",
+      message: "Failed",
       response: `Failed to find the comment :${commentId}`,
     });
   }
 };
 
-const getAllComments = async (req, res, next) => {
+const getAllComments = async (req, res) => {
   try {
     const allComments = await commentModelSchema.find();
 
-    isFalsy(allComments, next);
+    isFalsy(allComments);
 
     res.status(200).json({
-      msg: "Success",
+      message: "Success",
       response: allComments,
     });
   } catch (error) {
+    console.error(`Failed to find all comments`);
+
     res.status(404).json({
-      msg: "Failed",
+      message: "Failed",
       response: `Failed to find all comments`,
     });
   }
 };
 
-const createNewComment = async (req, res, next) => {
+const createNewComment = async (req, res) => {
   const comment = req.body;
-
-  isBodyEmpty(comment, next);
 
   try {
     const { commentDescription, projectId, userId } = comment;
@@ -58,25 +59,25 @@ const createNewComment = async (req, res, next) => {
 
     const savedComment = await newComment.save();
     return res.status(201).json({
-      message: "comment added successfully",
+      message: "Success",
       response: savedComment,
     });
   } catch (error) {
+    console.error(`Failed to add a new comment`);
+
     res.status(404).json({
-      msg: "Failed",
+      message: "Failed",
       response: `Failed to add a new comment`,
     });
   }
 };
 
-const updateSpecificCommentById = async (req, res, next) => {
+const updateSpecificCommentById = async (req, res) => {
   const commentId = req.params.id;
 
-  isFalsy(commentId, next);
+  isFalsy(commentId);
 
   const { name, description, status, user } = req.body;
-
-  isBodyEmpty(req.body, next);
 
   try {
     const updateFields = {};
@@ -85,51 +86,59 @@ const updateSpecificCommentById = async (req, res, next) => {
     if (status) updateFields.status = status;
     if (user) updateFields.user = user;
 
-    const updatedcomment = await commentModelSchema.findByIdAndUpdate(
+    const updateComment = await commentModelSchema.findByIdAndUpdate(
       commentId,
       { $set: updateFields },
       { new: true }
     );
 
-    isFalsy(updatedcomment, next);
+    isFalsy(updateComment);
 
-    res.status(200).json(updatedcomment);
+    res.status(200).json({
+      message: "Success",
+      response: `Success to update comment ID: ${commentId}`,
+    });
   } catch (error) {
-    console.error(
-      `Something went while updating schema ID ${commentId} => ${error}`
-    );
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to update the comment ID: ${commentId}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to update comment ID: ${commentId}`,
+    });
   }
 };
 
-const deleteSpecificCommentById = async (req, res, next) => {
+const deleteSpecificCommentById = async (req, res) => {
   const commentId = req.params.id;
 
-  isFalsy(commentId, next);
+  isFalsy(commentId);
 
-  const iscommentExist = await commentModelSchema.exists({ _id: commentId });
-  isFalsy(iscommentExist, next);
+  const isCommentExist = await commentModelSchema.exists({ _id: commentId });
+  isFalsy(isCommentExist);
 
   try {
     const deleted = await commentModelSchema.findByIdAndDelete(commentId);
 
-    isFalsy(deleted, next);
+    isFalsy(deleted);
 
     res.status(200).json({
-      message: `comment ID: ${commentId} has been successfully deleted from the database.`,
+      message: "Success",
+      response: `Success to delete comment ID: ${commentId}`,
     });
   } catch (error) {
-    console.error(`Error deleting comment ${commentId} => ${error}`);
-    error.type = `SERVER_ERROR`;
-    next(error);
+    console.error(`Failed to delete the comment ID: ${commentId}`);
+
+    res.status(404).json({
+      message: "Failed",
+      response: `Failed to delete comment ID: ${commentId}`,
+    });
   }
 };
 
 export {
   getCommentById,
   getAllComments,
-  createnewComment,
+  createNewComment,
   updateSpecificCommentById,
   deleteSpecificCommentById,
 };

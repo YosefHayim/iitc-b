@@ -13,7 +13,6 @@ const logRequest = (req, res, next) => {
   Body: ${JSON.stringify(req.body)} \n
   `;
 
-  console.log(log);
   fs.appendFile("./logs.txt", log, (err) => {
     if (err) {
       console.error("Error appending to logs.txt", err);

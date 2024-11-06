@@ -30,7 +30,7 @@ const injectData = async () => {
         "Not Started",
         "In Progress",
         "Completed",
-      ]), // Updated line
+      ]),
       user: faker.helpers.arrayElement(users)._id,
     }))
   );

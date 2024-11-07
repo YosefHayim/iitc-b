@@ -78,19 +78,14 @@ const updateSpecificCommentById = async (req, res) => {
 
   isFalsy(commentId);
 
-  const { name, description, status, user } = req.body;
+  const { commentDescription } = req.body;
 
   try {
-    const updateFields = {};
-    if (name) updateFields.name = name;
-    if (description) updateFields.description = description;
-    if (status) updateFields.status = status;
-    if (user) updateFields.user = user;
-
     const updateComment = await commentModelSchema.findByIdAndUpdate(
       commentId,
-      { $set: updateFields },
-      { new: true }
+      {
+        commentDescription,
+      }
     );
 
     isFalsy(updateComment);

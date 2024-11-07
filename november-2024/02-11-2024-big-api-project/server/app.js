@@ -5,6 +5,7 @@ import cors from "cors";
 import usersRoute from "./routes/user-route.js";
 import projectsRoute from "./routes/project-route.js";
 import tasksRoute from "./routes/task-route.js";
+import commentsRoute from "./routes/comments-route.js";
 import { logRequest } from "./middleware/logger.js";
 import { errorHandle } from "./middleware/error-handling.js";
 import { connectDB } from "./config/mongo-db-connection.js";
@@ -20,8 +21,8 @@ const PORT = process.env.PORT || 3000;
 app.use(morgan(customMorgan));
 app.use(logRequest);
 app.use(cors(corOptions));
-app.use(express.json());
 // Can't replace middleware of body before json.
+app.use(express.json());
 app.use(isBodyEmpty);
 
 connectDB();
@@ -35,6 +36,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", usersRoute);
 app.use("/api/projects", projectsRoute);
 app.use("/api/tasks", tasksRoute);
+app.use("/api/comments", commentsRoute);
 app.use("*", handleUndefinedRoutes);
 app.use(errorHandle);
 

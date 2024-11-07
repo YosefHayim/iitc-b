@@ -1,11 +1,11 @@
 import express from "express";
 import {
+  createNewComment,
+  deleteSpecificCommentById,
   getAllComments,
   getCommentById,
-  createNewComment,
   updateSpecificCommentById,
-  deleteSpecificCommentById,
-} from "../controllers/projects-controller.js";
+} from "../controllers/comments-controller.js";
 
 const router = express.Router();
 

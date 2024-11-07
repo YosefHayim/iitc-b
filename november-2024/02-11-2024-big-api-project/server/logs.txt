@@ -2861,3 +2861,174 @@
   Body: undefined 
 
   
+  Activity received at: 11/7/2024, 3:04:37 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:04:37 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Windows\"","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?0","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:05:40 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:05:40 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Windows\"","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?0","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1249-cmFRRUjMlC8M7oAxq8b0gTuWUbI\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:06:07 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:06:07 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1249-cmFRRUjMlC8M7oAxq8b0gTuWUbI\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:06:20 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:06:20 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1249-cmFRRUjMlC8M7oAxq8b0gTuWUbI\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:06:56 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:06:56 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1249-cmFRRUjMlC8M7oAxq8b0gTuWUbI\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:06:56 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:07:13 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:07:13 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1249-cmFRRUjMlC8M7oAxq8b0gTuWUbI\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:07:14 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1249-cmFRRUjMlC8M7oAxq8b0gTuWUbI\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:08:37 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:08:37 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1249-cmFRRUjMlC8M7oAxq8b0gTuWUbI\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:08:52 PM
+  Method: OPTIONS
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","accept":"*/*","access-control-request-method":"GET","access-control-request-headers":"content-type","origin":"http://127.0.0.1:8080","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-fetch-mode":"cors","sec-fetch-site":"cross-site","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:08:52 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8","if-none-match":"W/\"1238-eRQRDMM/Ukn/EG9YoJ+z2jnyWd0\""}
+  Query Parameters received: {}
+  Body: undefined 
+
+  
+  Activity received at: 11/7/2024, 3:08:53 PM
+  Method: GET
+  Full Path: http://localhost:3000/api/projects/projects
+  Status Code: 200
+  Headers: {"host":"localhost:3000","connection":"keep-alive","sec-ch-ua-platform":"\"Android\"","user-agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36","sec-ch-ua":"\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"","content-type":"application/json","sec-ch-ua-mobile":"?1","accept":"*/*","origin":"http://127.0.0.1:8080","sec-fetch-site":"cross-site","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"http://127.0.0.1:8080/","accept-encoding":"gzip, deflate, br, zstd","accept-language":"en,en-US;q=0.9,he;q=0.8"}
+  Query Parameters received: {}
+  Body: undefined 
+
+  

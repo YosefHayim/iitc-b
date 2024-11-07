@@ -35,10 +35,7 @@ const getAllProjects = async (req, res) => {
 
     isFalsy(allProjects);
 
-    res.status(200).json({
-      message: "Success",
-      response: allProjects,
-    });
+    res.status(200).json(allProjects);
   } catch (error) {
     console.error(`Failed to find all projects , error: ${error}`);
 

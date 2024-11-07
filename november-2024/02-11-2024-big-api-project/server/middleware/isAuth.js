@@ -12,8 +12,8 @@ const isTokenValid = async (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.SECRET_JWT);
-    if (decoded) {
+    const validUser = jwt.verify(token, process.env.SECRET_JWT);
+    if (validUser) {
       res.status(200).json({
         message: "Success",
         response: "You are logged in.",

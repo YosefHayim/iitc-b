@@ -11,6 +11,7 @@ import { connectDB } from "./config/mongo-db-connection.js";
 import { handleUndefinedRoutes } from "./middleware/handle-undefined-routes.js";
 import { isBodyEmpty } from "./middleware/check-body-not-empty.js";
 import { customMorgan } from "./middleware/custom-morgan.js";
+import { corOptions } from "./middleware/cors-options.js";
 
 dotenvFlow.config();
 
@@ -18,7 +19,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(morgan(customMorgan));
 app.use(logRequest);
-app.use(cors());
+app.use(cors(corOptions));
 app.use(express.json());
 // Can't replace middleware of body before json.
 app.use(isBodyEmpty);

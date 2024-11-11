@@ -1,4 +1,4 @@
-const isFalsy = require("../middlewares/is-falsy.js");
+const isFalsy = require("../utils/is-falsy.js");
 const { userModel } = require("../models/user-schema.js");
 
 const getAllUsers = async (req, res) => {

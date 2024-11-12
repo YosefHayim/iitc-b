@@ -24,7 +24,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const createNewUser = async (req, res) => {
-  const { user, password, email } = req.body;
+  const { fName, user, password, email } = req.body;
 
   let hashedPassword = await hashUserPassword(password + process.env.SECRET_PW);
 
@@ -32,6 +32,7 @@ const createNewUser = async (req, res) => {
 
   try {
     const newUser = await userModel.create({
+      fName,
       user,
       password: hashedPassword,
       email,
@@ -51,7 +52,7 @@ const createNewUser = async (req, res) => {
 };
 
 const validateUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { fName, email, password } = req.body;
 
   try {
     const user = await userModel.findOne({ email });
@@ -66,7 +67,7 @@ const validateUser = async (req, res) => {
     isFalsy(isValidatePassword);
 
     const generateToken = jwt.sign(
-      { email: user.email },
+      { fName: user.fName, email: user.email },
       process.env.SECRET_JWT,
       {
         expiresIn: "1h",

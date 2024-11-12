@@ -5,18 +5,21 @@ const {
   updateUserFullData,
   createNewUser,
   deleteUserById,
+  validateUser,
 } = require("../controllers/users-controller.js");
 
 const usersRoute = express.Router();
 
 usersRoute.get("/users", getAllUsers);
 
-usersRoute.post("/user", createNewUser);
+usersRoute.post("/users", createNewUser);
 
-usersRoute.put("/user/:id", updateUserFullData);
+usersRoute.post("/users/login", validateUser);
 
-usersRoute.patch("/user/:id", partialUpdateUser);
+usersRoute.put("/users/:id", updateUserFullData);
 
-usersRoute.delete("/user/:id", deleteUserById);
+usersRoute.patch("/users/:id", partialUpdateUser);
+
+usersRoute.delete("/users/:id", deleteUserById);
 
 module.exports = usersRoute;

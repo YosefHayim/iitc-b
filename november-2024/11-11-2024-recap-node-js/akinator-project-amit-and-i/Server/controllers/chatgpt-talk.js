@@ -2,6 +2,13 @@ const OpenAI = require("openai");
 const jwt = require("jsonwebtoken");
 const isFalsy = require("../utils/is-falsy.js");
 
+let messagesFlow = [
+  {
+    role: "user",
+    content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses. ask your first question.`,
+  },
+];
+
 const chatgptTalk = async (req, res) => {
   const userInput = req.body.text;
   const token = req.body.token;
@@ -53,12 +60,5 @@ const chatgptTalk = async (req, res) => {
     res.status(500).json({ error: "An error occurred with the AI request" });
   }
 };
-
-let messagesFlow = [
-  {
-    role: "user",
-    content: `You are expert in akinator game, you must use the model of the game in order to win the game. guess who am I thinking of, in the shortest amount of responses. ask your first question.`,
-  },
-];
 
 module.exports = chatgptTalk;

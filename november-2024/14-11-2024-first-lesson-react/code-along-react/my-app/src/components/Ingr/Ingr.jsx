@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Ingr.css";
+import "./Ingr.css";
 
 const Ingr = () => {
   return <div className="ingredients-container">Ingredients container</div>;

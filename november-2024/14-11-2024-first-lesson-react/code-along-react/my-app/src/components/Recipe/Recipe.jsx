@@ -1,7 +1,7 @@
 import React from "react";
-import "./styles/Recipe.css";
-import Ingr from "./Ingr/Ingr";
-import Inst from "./Inst/Inst";
+import "./Recipe.css";
+import Ingr from "../Ingr/Ingr";
+import Inst from "../Inst/Inst";
 
 const Recipe = () => {
   return (

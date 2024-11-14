@@ -1,4 +1,4 @@
-import "./styles/Head.css";
+import "./Head.css";
 import React from "react";
 import PrepTime from "../PrepTime/PrepTime";
 import Intro from "../Intro/Intro";

@@ -1,5 +1,5 @@
-import "./styles/MainContainer.css";
-import Head from "./Head/Head";
+import "./MainContainer.css";
+import Head from "../Head/Head";
 import Recipe from "../Recipe/Recipe";
 import React from "react";
 

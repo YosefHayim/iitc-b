@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/PrepTime.css";
+import "./PrepTime.css";
 
 const PrepTime = () => {
   return <div className="prep-time-container">preparation time container</div>;

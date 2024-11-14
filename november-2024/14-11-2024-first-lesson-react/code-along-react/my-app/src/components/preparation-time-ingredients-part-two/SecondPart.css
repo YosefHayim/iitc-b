@@ -1,0 +1,32 @@
+.part-one-second-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1em;
+  background: var(--rose-50);
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+}
+
+.part-one-second-container li {
+  margin-left: 1.6em;
+  margin-bottom: 1em;
+  color: var(--stone-600);
+}
+
+.part-two-second-container {
+}
+
+b {
+  margin-left: 1em;
+}
+
+span {
+  margin-left: 1em;
+}
+
+.preparation-time-title {
+  color: var(--rose-800);
+}

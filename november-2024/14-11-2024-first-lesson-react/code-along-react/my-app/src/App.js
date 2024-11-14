@@ -5,11 +5,11 @@ import ThirdPart from "./components/instructions-nutrition-part-three/ThirdPart"
 
 function App() {
   return (
-    <div>
+    <main>
       <FirstPart />
       <SecondPart />
       <ThirdPart />
-    </div>
+    </main>
   );
 }
 

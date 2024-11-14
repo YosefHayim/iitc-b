@@ -1,5 +1,31 @@
+@font-face {
+  font-family: "Outfit";
+  src: url(./components/fonts/Outfit/Outfit-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Young-Serif";
+  src: url(./components/fonts/Young-Serif/YoungSerif-Regular.ttf);
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+
+  --brown-800: hsl(14, 45%, 36%);
+
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body,
@@ -7,9 +33,26 @@ html {
   min-height: 100vh;
 }
 
+h1 {
+  font-family: "Young-Serif";
+}
+
+h2 {
+  font-family: "Outfit";
+}
+
+h1 {
+  color: var(--stone-900);
+}
+
+p {
+  color: var(--brown-800);
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Outfit";
 }

@@ -4,20 +4,23 @@ import React from "react";
 const SecondPart = () => {
   return (
     <div>
-      <h2>Preparation time</h2>
-      <ul>
-        <li>
-          <b>Total</b>: Approximately 10 minutes
-        </li>
-        <li>
-          <b>Preparation</b>: 5 minutes
-        </li>
-        <li>
-          <b>Cooking</b>: 5 minutes
-        </li>
-      </ul>
+      <div className="part-one-second-container">
+        <h2 className="preparation-time-title">Preparation time</h2>
+        <ul>
+          <li>
+            <b>Total</b>: Approximately 10 <br />
+            <span>minutes</span>
+          </li>
+          <li>
+            <b>Preparation</b>: 5 minutes
+          </li>
+          <li>
+            <b>Cooking</b>: 5 minutes
+          </li>
+        </ul>
+      </div>
 
-      <div>
+      <div className="part-two-second-container">
         <h2>Ingredients</h2>
         <ul>
           <li>2-3 large eggs</li>

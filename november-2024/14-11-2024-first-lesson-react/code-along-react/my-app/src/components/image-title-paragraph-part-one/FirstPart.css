@@ -1,3 +1,15 @@
 .omelette-img {
   width: 22em;
 }
+
+.first-container-title {
+  padding: 1em;
+  padding-bottom: 0.5em;
+}
+
+.first-container-paragraph {
+  padding-left: 1em;
+  line-height: 1.5em;
+  font-size: 1.04em;
+  padding-right: 1em;
+}

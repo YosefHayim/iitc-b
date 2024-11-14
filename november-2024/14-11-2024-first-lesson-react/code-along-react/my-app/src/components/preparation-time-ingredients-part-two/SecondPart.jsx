@@ -31,6 +31,7 @@ const SecondPart = () => {
             Optional fillings: cheese, diced vegetables, cooked meats, herbs
           </li>
         </ul>
+        <hr />
       </div>
     </div>
   );

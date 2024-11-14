@@ -38,7 +38,8 @@ h1 {
 }
 
 h2 {
-  font-family: "Outfit";
+  font-family: "Young-Serif";
+  color: var(--brown-800);
 }
 
 h1 {
@@ -46,7 +47,13 @@ h1 {
 }
 
 p {
-  color: var(--brown-800);
+  color: var(--stone-600);
+}
+
+hr {
+  margin-top: 1em;
+  width: 100%;
+  border: 0.01em solid var(--stone-150);
 }
 
 body {

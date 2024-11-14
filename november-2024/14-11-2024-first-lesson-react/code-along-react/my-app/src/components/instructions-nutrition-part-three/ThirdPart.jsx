@@ -3,7 +3,7 @@ import React from "react";
 
 const ThirdPart = () => {
   return (
-    <div>
+    <div className="third-part-container">
       <h2>Instructions</h2>
       <ol>
         <li>
@@ -34,18 +34,39 @@ const ThirdPart = () => {
           <b>Enjoy</b>: Serve hot, with additional salt and pepper if needed.
         </li>
       </ol>
+
+      <hr />
+
       <div>
         <h2>Nutrition</h2>
-        <p>
+        <p className="nutrition-text">
           The table below shows nutritional values per serving without the
           additional fillings.
         </p>
         <div>
           <ul>
-            <li>Calories 277kcal</li>
-            <li>Carbs 0g</li>
-            <li>Protein 20g</li>
-            <li>Fat 22g</li>
+            <ul className="inner-ul">
+              <li>Calories</li>
+              <li className="kcal-text">277kcal</li>
+            </ul>
+            <hr />
+
+            <ul className="inner-ul">
+              <li>Carbs</li>
+              <li className="zero-g">0g</li>
+            </ul>
+            <hr />
+
+            <ul className="inner-ul">
+              <li>Protein</li>
+              <li className="twenty-g">20g</li>
+            </ul>
+            <hr />
+
+            <ul className="inner-ul">
+              <li>Fat</li>
+              <li className="twenty-two-g">22g</li>
+            </ul>
           </ul>
         </div>
       </div>

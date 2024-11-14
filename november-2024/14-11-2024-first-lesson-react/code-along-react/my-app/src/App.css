@@ -63,3 +63,81 @@ body {
   align-items: center;
   font-family: "Outfit";
 }
+
+.omelette-img {
+  width: 22em;
+}
+
+.first-container-title {
+  padding: 1em;
+  padding-bottom: 0.5em;
+  padding-top: 0em;
+}
+
+.nutrition-text {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.kcal-text {
+  color: var(--brown-800);
+  font-weight: 700;
+  margin-left: 5.5em;
+}
+
+.zero-g {
+  color: var(--brown-800);
+  font-weight: 700;
+  margin-left: 6.5em;
+}
+
+.twenty-g {
+  color: var(--brown-800);
+  font-weight: 700;
+  margin-left: 6em;
+}
+
+.twenty-two-g {
+  color: var(--brown-800);
+  font-weight: 700;
+  margin-left: 7.6em;
+}
+
+@media screen and (min-width: 1024px) {
+  .kcal-text {
+    margin-left: 16.7em;
+  }
+
+  .zero-g {
+    margin-left: 17.5em;
+  }
+
+  .twenty-g {
+    margin-left: 17em;
+  }
+
+  .twenty-two-g {
+    margin-left: 18.6em;
+  }
+
+  body {
+    background: var(--stone-100);
+  }
+
+  main {
+    background-color: white;
+    width: 700px;
+    margin-top: 2em;
+    border-radius: 1.5em;
+  }
+
+  .omelette-img {
+    padding: 2em;
+    width: 100%;
+    border-radius: 3em;
+  }
+
+  br {
+    display: none;
+  }
+}

@@ -6,7 +6,7 @@
   align-items: baseline;
   gap: 1em;
   padding: 1em;
-  margin: 1em;
+  margin: 2em;
   border-radius: 1em;
 }
 
@@ -21,10 +21,6 @@
 }
 
 b {
-  margin-left: 1em;
-}
-
-span {
   margin-left: 1em;
 }
 

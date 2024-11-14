@@ -49,32 +49,3 @@ ul {
   width: 100%;
   list-style-type: none;
 }
-
-.nutrition-text {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.kcal-text {
-  color: var(--brown-800);
-  font-weight: 700;
-  margin-left: 5.5em;
-}
-
-.zero-g {
-  color: var(--brown-800);
-  font-weight: 700;
-  margin-left: 6.5em;
-}
-
-.twenty-g {
-  color: var(--brown-800);
-  font-weight: 700;
-  margin-left: 6em;
-}
-
-.twenty-two-g {
-  color: var(--brown-800);
-  font-weight: 700;
-  margin-left: 7.6em;
-}

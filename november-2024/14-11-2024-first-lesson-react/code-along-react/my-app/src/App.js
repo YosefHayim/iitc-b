@@ -1,11 +1,14 @@
 import "./App.css";
-import MainContainer from "./components/MainContainer/MainContainer";
+import FirstPart from "./components/image-title-paragraph-part-one/FirstPart";
+import SecondPart from "./components/instructions-nutrition-part-three/nutrition";
+import ThirdPart from "./components/preparation-time-ingredients-part-two/preparation";
 
 function App() {
   return (
     <div>
-      Welcome to my React Project
-      <MainContainer />
+      <FirstPart />
+      <SecondPart />
+      <ThirdPart />
     </div>
   );
 }

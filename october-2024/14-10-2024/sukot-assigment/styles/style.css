@@ -511,7 +511,7 @@ footer {
 }
 
 hr {
-  width: 270%;
+  width: 158%;
   position: absolute;
   animation: slideIn 0.3s ease-out forwards;
   animation-iteration-count: 1;

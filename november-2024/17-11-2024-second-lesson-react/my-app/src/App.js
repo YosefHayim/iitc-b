@@ -1,20 +1,21 @@
 import "./App.css";
-
-let currentCount = 0;
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   const increaseCount = () => {
-    currentCount++;
+    setCount(count + 1);
   };
 
   const reduceCount = () => {
-    currentCount--;
+    setCount(count - 1);
   };
 
   return (
     <div className="App">
       <button onClick={increaseCount}>+</button>
-      <p>{currentCount}</p>
+      <p>{count}</p>
       <button onClick={reduceCount}>-</button>
     </div>
   );

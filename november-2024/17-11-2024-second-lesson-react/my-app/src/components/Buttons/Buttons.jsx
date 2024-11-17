@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Buttons.module.css";
 
-const Buttons = () => {
+const Buttons = (props) => {
   const [currentButton, setCurrentButton] = useState(null);
 
   const buttonsListener = (e) => {
@@ -9,14 +9,14 @@ const Buttons = () => {
 
     if (button) {
       if (currentButton) {
-        currentButton.style.background = `var(--neutral-very-dark-blue);`;
-        currentButton.style.color = `var(--neutral-light-grey)`;
-      } else {
-        button.style.background = `var(--primary-orange);`;
-        button.style.color = `var(--neutral-very-dark-blue);`;
+        currentButton.style.background = "var(--neutral-very-dark-blue)";
+        currentButton.style.color = "var(--neutral-light-grey)";
       }
+      button.style.background = "var(--primary-orange)";
+      button.style.color = "var(--neutral-very-dark-blue)";
 
       setCurrentButton(button);
+      props.setValue(button.textContent);
     }
   };
 

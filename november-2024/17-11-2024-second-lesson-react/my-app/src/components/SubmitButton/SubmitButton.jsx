@@ -1,29 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./SubmitButton.module.css";
-import ThankYouPage from "../ThankYouPage/ThankYouPage";
 
-const SubmitButton = () => {
-  const [isThankYouPage, setIsThankYouPage] = useState(false);
-
-  const handleClick = (e) => {
+const SubmitButton = (props) => {
+  const clickListener = (e) => {
     if (e.target.closest("button")) {
-      setIsThankYouPage(true);
+      props.setSubmitted(true);
     }
   };
 
   return (
     <div className={styles.SubmitContainer}>
-      {isThankYouPage ? (
-        <ThankYouPage />
-      ) : (
-        <button
-          onClick={handleClick}
-          type="submit"
-          className={styles.SubmitButton}
-        >
-          Submit
-        </button>
-      )}
+      <button
+        onClick={clickListener}
+        type="submit"
+        className={styles.SubmitButton}
+      >
+        Submit
+      </button>
     </div>
   );
 };

@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .ratingNumber {
@@ -11,9 +11,11 @@
   border: none;
   background: none;
   color: var(--neutral-light-grey);
-  background: var(--neutral-very-dark-blue);
-  border-radius: 50em;
-  padding: 1.5em;
+  background: var(--neutral-dark-blue);
+  border-radius: 100em;
+  height: 3em;
+  width: 3em;
+  font-weight: 600;
 }
 
 .ratingNumber:hover {

@@ -1,0 +1,19 @@
+.SubmitButton {
+  border: none;
+  background: var(--primary-orange);
+  padding: 1em;
+  border-radius: 100em;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 100%;
+}
+
+.SubmitContainer {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.SubmitButton:hover {
+  background: white;
+}

@@ -1,0 +1,9 @@
+.FatherContainer {
+  background: var(--neutral-dark-blue);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1em;
+}

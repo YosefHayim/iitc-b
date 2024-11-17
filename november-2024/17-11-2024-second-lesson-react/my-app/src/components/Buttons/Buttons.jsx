@@ -9,7 +9,7 @@ const Buttons = (props) => {
 
     if (button) {
       if (currentButton) {
-        currentButton.style.background = "var(--neutral-very-dark-blue)";
+        currentButton.style.background = "var(--neutral-dark-blue)";
         currentButton.style.color = "var(--neutral-light-grey)";
       }
       button.style.background = "var(--primary-orange)";

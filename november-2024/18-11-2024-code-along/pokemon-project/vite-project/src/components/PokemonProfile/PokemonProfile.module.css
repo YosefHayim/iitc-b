@@ -4,3 +4,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.PokemonImg {
+  width: 7em;
+  transform: scaleX(-1);
+}
+
+.FatherContainer li {
+  list-style-type: none;
+}
+
+.TypesUlContainer {
+}

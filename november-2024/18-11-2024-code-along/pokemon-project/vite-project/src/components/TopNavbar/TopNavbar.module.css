@@ -1,0 +1,12 @@
+.BurgerIcon {
+  width: 2em;
+}
+
+.NavbarContainer {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}

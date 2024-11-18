@@ -1,19 +1,18 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
 import { useState, useEffect } from "react";
-import styles from "./PokemonProfile.module.css";
-import PokemonType from "../PokemonType/PokemonType";
-import PokemonImg from "../PokemonImage/PokemonImage";
-import PokemonNameAndId from "../PokemonNameAndId/PokemonNameAndId";
+import styles from "./PokemonCardProfile.module.css";
+import PokemonType from "../PokemonType/PokemonType.jsx";
+import PokemonImg from "../PokemonImage/PokemonImage.jsx";
+import PokemonNameAndId from "../PokemonNameAndId/PokemonNameAndId.jsx";
 import getTypeBackground from "../../utils/getBackgroundType.js";
 
-const PokemonProfile = ({ pokemonUrl }) => {
+const PokemonCardProfile = ({ pokemonUrl }) => {
   const [pokemon, setPokemon] = useState(null);
 
   const fetchData = async (pokemonUrl) => {
     const { data } = await axios.get(pokemonUrl);
     setPokemon(data);
-    console.log(pokemon);
   };
 
   useEffect(() => {
@@ -43,4 +42,4 @@ const PokemonProfile = ({ pokemonUrl }) => {
   );
 };
 
-export default PokemonProfile;
+export default PokemonCardProfile;

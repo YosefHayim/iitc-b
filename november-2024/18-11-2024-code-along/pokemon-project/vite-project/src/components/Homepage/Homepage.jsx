@@ -1,10 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import PokemonProfile from "../PokemonProfile/PokemonProfile";
+import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
 import styles from "./Homepage.module.css";
+import TopNavbar from "../TopNavbar/TopNavbar";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
+
+  const clickPokemonCard = (e) => {
+    e.preventDefault();
+    const pokemonCard = e.target.closest("div");
+
+    if (pokemonCard) {
+      console.log(`clicked`);
+    }
+  };
 
   const fetchData = async () => {
     const {
@@ -18,11 +28,12 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className={styles.PokemonCardsContainer}>
+    <div className={styles.PokemonCardsContainer} onClick={clickPokemonCard}>
+      <TopNavbar />
       <ul>
         {pokemons.map((pokemon, index) => (
           <li key={`pokemonId-${index}`}>
-            <PokemonProfile pokemonUrl={pokemon.url} />
+            <PokemonCardProfile pokemonUrl={pokemon.url} />
           </li>
         ))}
       </ul>

@@ -11,8 +11,12 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
   const [pokemon, setPokemon] = useState(null);
 
   const fetchData = async (pokemonUrl) => {
-    const { data } = await axios.get(pokemonUrl);
-    setPokemon(data);
+    try {
+      const { data } = await axios.get(pokemonUrl);
+      setPokemon(data);
+    } catch (error) {
+      console.error(`Error ocurred while fetching API data`, error);
+    }
   };
 
   useEffect(() => {

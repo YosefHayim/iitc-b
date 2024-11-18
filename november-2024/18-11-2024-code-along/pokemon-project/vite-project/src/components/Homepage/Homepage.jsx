@@ -17,10 +17,14 @@ const Homepage = () => {
   };
 
   const fetchData = async () => {
-    const {
-      data: { results },
-    } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
-    setPokemons(results);
+    try {
+      const {
+        data: { results },
+      } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
+      setPokemons(results);
+    } catch (error) {
+      console.error(`Error ocurred while fetching API`, error);
+    }
   };
 
   useEffect(() => {

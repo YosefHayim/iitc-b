@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import PokemonProfile from "../PokemonProfile/PokemonProfile";
+import styles from "./Homepage.module.css";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -17,7 +18,7 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.PokemonCardsContainer}>
       <ul>
         {pokemons.map((pokemon, index) => (
           <li key={`pokemonId-${index}`}>

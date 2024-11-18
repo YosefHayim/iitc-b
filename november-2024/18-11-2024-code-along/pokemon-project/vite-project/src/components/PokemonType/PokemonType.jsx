@@ -3,9 +3,11 @@ import styles from "./PokemonType.module.css";
 const PokemonType = ({ types }) => {
   return (
     <div className={styles.TypesContainer}>
-      <ul className={styles.TypesUlContainer}>
+      <ul className={styles.UlContainer}>
         {types.map((typeData, index) => (
-          <li key={index}>{typeData.type.name}</li>
+          <li key={index} className={styles.liType}>
+            {typeData.type.name}
+          </li>
         ))}
       </ul>
     </div>

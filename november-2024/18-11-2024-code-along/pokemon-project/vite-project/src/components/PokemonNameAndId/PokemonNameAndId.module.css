@@ -1,0 +1,18 @@
+.PokemonNameAndIdContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 100%;
+}
+
+.PokemonId {
+  z-index: 1;
+  font-size: 2em;
+  color: white;
+}
+
+.PokemonTitle {
+  color: white;
+  text-transform: uppercase;
+}

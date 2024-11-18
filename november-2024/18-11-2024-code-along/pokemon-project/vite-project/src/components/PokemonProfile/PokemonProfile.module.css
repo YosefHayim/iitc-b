@@ -1,18 +1,22 @@
-.PokemonCard {
+.PokemonCard,
+.PokemonCardsContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.PokemonCard {
+  height: 12em;
+  border-radius: 1em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 100%;
 }
 
 .PokemonImg {
   width: 7em;
   transform: scaleX(-1);
-}
-
-.FatherContainer li {
-  list-style-type: none;
-}
-
-.TypesUlContainer {
 }

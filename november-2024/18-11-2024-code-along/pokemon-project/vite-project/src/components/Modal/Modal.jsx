@@ -49,6 +49,8 @@ export default function PokemonViewButton({ pokemonData }) {
     species,
   } = pokemonData;
 
+  console.log(species);
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

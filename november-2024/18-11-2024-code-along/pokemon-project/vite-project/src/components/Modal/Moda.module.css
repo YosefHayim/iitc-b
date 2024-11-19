@@ -3,12 +3,6 @@
   width: 2em;
 }
 
-.StatContainer {
-  display: flex;
-  justify-content: unset;
-  align-items: center;
-}
-
 .StatValue {
   transform: translateY(-0.15em);
   margin-left: 0.2em;
@@ -17,5 +11,11 @@
 .StatsContainer {
   display: flex;
   gap: 0.2em;
-  margin-bottom: 2em;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.ExperienceContainer {
+  display: flex;
+  flex-direction: row;
 }

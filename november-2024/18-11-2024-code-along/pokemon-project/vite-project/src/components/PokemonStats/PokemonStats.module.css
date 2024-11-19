@@ -1,0 +1,12 @@
+.StatImg {
+  height: 2em;
+  width: 2em;
+}
+
+.statsContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

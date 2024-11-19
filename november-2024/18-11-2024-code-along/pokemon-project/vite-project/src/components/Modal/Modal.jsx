@@ -4,12 +4,13 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import styles from "./Moda.module.css";
-import getStatTypeImage from "../../utils/getStatTypeImage";
 import QueryStatsSharpIcon from "@mui/icons-material/QueryStatsSharp";
-import ExplicitIcon from "@mui/icons-material/Explicit";
-import ScaleIcon from "@mui/icons-material/Scale";
-import HeightIcon from "@mui/icons-material/Height";
-import IOSSlider from "../Slider/Slider";
+import ExperienceStat from "../ExperienceStat/Experiencestat";
+import HeightStat from "../HeightStat/HeightStat";
+import WeightStat from "../WeightStat/WeightStat";
+import AbilitiesStats from "../AbilitiesStat/AbilitesStat";
+import TypeStats from "../TypesStat/TypesStat";
+import PokemonStats from "../PokemonStats/PokemonStats";
 
 const style = {
   position: "absolute",
@@ -62,43 +63,19 @@ export default function PokemonViewButton({ pokemonData }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            {name}
+            <h2>{name} Information:</h2>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <div>
               <div className={styles.StatsContainer}>
                 <h3>Stats</h3>
                 <QueryStatsSharpIcon />
-                <div className={style.ExperienceContainer}>
-                  <h3>{base_experience}</h3>
-                  <ExplicitIcon />
-                </div>
-                <div className={style.HeightContainer}>
-                  <h3>{height}</h3>
-                  <HeightIcon />
-                </div>
-                <div className={styles.WeightContainer}>
-                  <h3>{weight}</h3>
-                  <ScaleIcon />
-                </div>
-              </div>
-              <div className={styles.statsContainer}>
-                {stats.map((stat) => {
-                  return (
-                    <div key={stat.stat.name} className={styles.StatContainer}>
-                      <div className={styles.StatImgContainer}>
-                        <img
-                          src={getStatTypeImage(stat.stat.name)}
-                          alt={stat.stat.name}
-                          className={styles.StatImg}
-                        />
-                      </div>
-                      <div>
-                        <IOSSlider length={stat.base_stat} />
-                      </div>
-                    </div>
-                  );
-                })}
+                <ExperienceStat base_experience={base_experience} />
+                <HeightStat height={height} />
+                <WeightStat weight={weight} />
+                <AbilitiesStats abilities={abilities} />
+                <TypeStats types={types} />
+                <PokemonStats stats={stats} />
               </div>
             </div>
           </Typography>

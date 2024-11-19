@@ -26,7 +26,7 @@ const IOSSlider = styled(Slider)(() => ({
   },
 }));
 
-export default function IOSSliderExample({ length }) {
+export default function StatsSlider({ length }) {
   return (
     <div style={{ width: 100 }}>
       <IOSSlider

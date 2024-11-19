@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
 import styles from "./Homepage.module.css";
-import TopNavbar from "../TopNavbar/TopNavbar";
 import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleData";
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
+import SearchAppBar from "../TopNavbar/TopNavbar";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -26,7 +26,7 @@ const Homepage = () => {
 
   return (
     <div className={styles.PokemonCardsContainer}>
-      <TopNavbar />
+      <SearchAppBar />
       {pokemons.map((pokemon) => (
         <div key={`pokemonId-${pokemon.name}`}>
           <PokemonCardProfile pokemonUrl={pokemon.url} />

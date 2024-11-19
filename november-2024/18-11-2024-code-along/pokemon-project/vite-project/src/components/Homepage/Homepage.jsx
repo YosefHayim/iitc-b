@@ -29,7 +29,7 @@ const Homepage = () => {
       {pokemons.map((pokemon) => (
         <div key={`pokemonId-${pokemon.name}`}>
           <PokemonCardProfile pokemonUrl={pokemon.url} />
-          <ViewPokemonSingleData />
+          <ViewPokemonSingleData pokemonUrl={pokemon.url} />
         </div>
       ))}
     </div>

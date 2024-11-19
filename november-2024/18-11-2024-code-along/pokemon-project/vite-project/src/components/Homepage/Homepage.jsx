@@ -3,18 +3,10 @@ import { useEffect, useState } from "react";
 import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
 import styles from "./Homepage.module.css";
 import TopNavbar from "../TopNavbar/TopNavbar";
+import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleData";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
-
-  const clickPokemonCard = (e) => {
-    e.preventDefault();
-    const pokemonCard = e.target.closest("div");
-
-    if (pokemonCard) {
-      console.log(`clicked`);
-    }
-  };
 
   const fetchData = async () => {
     try {
@@ -23,7 +15,7 @@ const Homepage = () => {
       } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
       setPokemons(results);
     } catch (error) {
-      console.error(`Error ocurred while fetching API`, error);
+      console.error(`Error occurred while fetching API`, error);
     }
   };
 
@@ -32,15 +24,14 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className={styles.PokemonCardsContainer} onClick={clickPokemonCard}>
+    <div className={styles.PokemonCardsContainer}>
       <TopNavbar />
-      <ul>
-        {pokemons.map((pokemon, index) => (
-          <li key={`pokemonId-${index}`}>
-            <PokemonCardProfile pokemonUrl={pokemon.url} />
-          </li>
-        ))}
-      </ul>
+      {pokemons.map((pokemon) => (
+        <div key={`pokemonId-${pokemon.name}`}>
+          <PokemonCardProfile pokemonUrl={pokemon.url} />
+          <ViewPokemonSingleData />
+        </div>
+      ))}
     </div>
   );
 };

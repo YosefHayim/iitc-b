@@ -1,10 +1,9 @@
 .PokemonImg {
   height: 8em;
   transform: scaleX(-1);
+  width: 15em;
 }
 
-.ImgContainer {
-  width: 100%;
-  text-align: right;
-  padding-right: 1em;
+.imgContainer {
+  width: 15em;
 }

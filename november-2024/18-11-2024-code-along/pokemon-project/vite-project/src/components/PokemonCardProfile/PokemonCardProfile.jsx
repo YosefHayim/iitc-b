@@ -2,7 +2,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "./PokemonCardProfile.module.css";
-import PokemonType from "../PokemonType/PokemonType.jsx";
 import PokemonImg from "../PokemonImage/PokemonImage.jsx";
 import PokemonNameAndId from "../PokemonNameAndId/PokemonNameAndId.jsx";
 import getTypeBackground from "../../utils/getBackgroundType.js";
@@ -15,7 +14,7 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
       const { data } = await axios.get(pokemonUrl);
       setPokemon(data);
     } catch (error) {
-      console.error(`Error ocurred while fetching API data`, error);
+      console.error(`Error occurred while fetching API data`, error);
     }
   };
 
@@ -40,7 +39,6 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
         <PokemonImg
           PokemonImg={pokemon.sprites.other.dream_world.front_default}
         />
-        <PokemonType types={pokemon.types} />
       </div>
     )
   );

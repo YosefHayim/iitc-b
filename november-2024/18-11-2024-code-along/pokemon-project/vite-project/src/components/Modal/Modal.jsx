@@ -1,25 +1,26 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import styles from "./Moda.module.css";
-import QueryStatsSharpIcon from "@mui/icons-material/QueryStatsSharp";
-import ExperienceStat from "../ExperienceStat/Experiencestat";
-import HeightStat from "../HeightStat/HeightStat";
+import styles from "./Modal.module.css";
 import WeightStat from "../WeightStat/WeightStat";
-import AbilitiesStats from "../AbilitiesStat/AbilitesStat";
+import HeightStat from "../HeightStat/HeightStat";
+import ExperienceStat from "../ExperienceStat/ExperienceStat";
+import AbilitiesStats from "../AbilitiesStat/AbilitiesStat";
 import TypeStats from "../TypesStat/TypesStat";
 import PokemonStats from "../PokemonStats/PokemonStats";
 
+// Mui import
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+
 const style = {
+  borderRadius: "1em",
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
+  bgcolor: "white",
   boxShadow: 24,
   p: 4,
 };
@@ -28,13 +29,15 @@ const styleButton = {
   borderRadius: "14px",
   fontWeight: "900",
   color: "white",
-  bgcolor: "purple",
+  bgcolor: "black",
+  "&:hover": {
+    color: "black",
+    bgcolor: "#f4f4f4",
+  },
   width: "100%",
 };
 
 export default function PokemonViewButton({ pokemonData }) {
-  console.log(pokemonData);
-
   const {
     abilities,
     base_experience,
@@ -63,13 +66,11 @@ export default function PokemonViewButton({ pokemonData }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            <h2>{name} Information:</h2>
+            <p className={styles.PokemonName}>{name.toUpperCase()}</p>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <div>
               <div className={styles.StatsContainer}>
-                <h3>Stats</h3>
-                <QueryStatsSharpIcon />
                 <ExperienceStat base_experience={base_experience} />
                 <HeightStat height={height} />
                 <WeightStat weight={weight} />

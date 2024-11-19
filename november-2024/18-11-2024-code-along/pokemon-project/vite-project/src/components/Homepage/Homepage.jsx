@@ -4,6 +4,7 @@ import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
 import styles from "./Homepage.module.css";
 import TopNavbar from "../TopNavbar/TopNavbar";
 import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleData";
+import PaginationRounded from "../HomepagePagination/HomepagePagination";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -32,6 +33,7 @@ const Homepage = () => {
           <ViewPokemonSingleData pokemonUrl={pokemon.url} />
         </div>
       ))}
+      <PaginationRounded />
     </div>
   );
 };

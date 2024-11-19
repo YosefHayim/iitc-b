@@ -1,11 +1,11 @@
 import ExplicitIcon from "@mui/icons-material/Explicit";
-import styles from "./Experiencestat.module.css";
+import styles from "./ExperienceStat.module.css";
 
 const ExperienceStat = ({ base_experience }) => {
   return (
     <div className={styles.ExperienceContainer}>
-      <h3>{base_experience}</h3>
       <ExplicitIcon />
+      <p>{base_experience}</p>
     </div>
   );
 };

@@ -4,8 +4,8 @@ import styles from "./WeightStat.module.css";
 const WeightStat = ({ weight }) => {
   return (
     <div className={styles.WeightContainer}>
-      <h3>{weight}</h3>
       <ScaleIcon />
+      <p>{weight}</p>
     </div>
   );
 };

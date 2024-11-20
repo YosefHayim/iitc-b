@@ -73,7 +73,7 @@ export default function PokemonViewButton({ pokemonData }) {
         }}
         onClick={handleOpen}
       >
-        <p>View {name}</p>
+        View {name}
       </Button>
       <Modal
         open={open}

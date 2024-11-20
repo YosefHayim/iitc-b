@@ -1,5 +1,6 @@
 import * as React from "react";
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
+import styles from "./TopNavbar.module.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -76,7 +77,15 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            PokedeX
+            <h1 className={styles.TitleName}>
+              <span className={styles.PLetter}>P</span>
+              <span className={styles.OLetter}>o</span>
+              <span className={styles.KLetter}>k</span>
+              <span className={styles.ELetter}>e</span>
+              <span className={styles.DLetter}>d</span>
+              <span className={styles.ELetter}>e</span>
+              <span className={styles.XLetter}>X</span>
+            </h1>
           </Typography>
           <Search>
             <SearchIconWrapper>

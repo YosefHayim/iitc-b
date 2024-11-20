@@ -8,15 +8,12 @@ import SearchAppBar from "../TopNavbar/TopNavbar";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [curentPage, setPage] = useState(0);
 
   const fetchData = async () => {
     try {
       const {
         data: { results },
-      } = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/?offset=${curentPage}`
-      );
+      } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
       setPokemons(results);
     } catch (error) {
       console.error(`Error occurred while fetching API`, error);
@@ -27,18 +24,18 @@ const Homepage = () => {
     fetchData();
   }, []);
 
-  console.log(pokemons);
-
   return (
-    <div className={styles.PokemonCardsContainer}>
+    <div className={styles.SearchBarContainer}>
       <SearchAppBar />
-      {pokemons.map((pokemon) => (
-        <div key={`pokemonId-${pokemon.name}`}>
-          <PokemonCardProfile pokemonUrl={pokemon.url} />
-          <ViewPokemonSingleData pokemonUrl={pokemon.url} />
-        </div>
-      ))}
-      <PaginationRounded />
+      <div className={styles.PokemonCardsContainer}>
+        {pokemons.map((pokemon) => (
+          <div key={`${pokemon.name}`}>
+            <PokemonCardProfile pokemonUrl={pokemon.url} />
+            <ViewPokemonSingleData pokemonUrl={pokemon.url} />
+          </div>
+        ))}
+        <PaginationRounded />
+      </div>
     </div>
   );
 };

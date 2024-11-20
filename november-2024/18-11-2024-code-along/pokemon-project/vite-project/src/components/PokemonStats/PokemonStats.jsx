@@ -1,6 +1,6 @@
 import styles from "./PokemonStats.module.css";
-import StatsSlider from "../Slider/Slider";
 import getStatTypeImage from "../../utils/getStatTypeImage";
+import ProgressSliderStats from "../ProgressStatsSliders/ProgressSliderStats";
 
 const PokemonStats = ({ stats }) => {
   return (
@@ -16,7 +16,10 @@ const PokemonStats = ({ stats }) => {
               />
             </div>
             <div>
-              <StatsSlider length={stat.base_stat} />
+              <ProgressSliderStats
+                statName={stat.stat.name}
+                length={stat.base_stat}
+              />
             </div>
           </div>
         );

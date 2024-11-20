@@ -11,10 +11,14 @@
   width: 100%;
 }
 
-.PLetter {
-  color: purple;
+.TitleName {
+  font-family: "Pokemon-Hollow";
+  margin-bottom: 0.1em;
+  text-align: center;
 }
 
 .XLetter {
-  color: purple;
+  color: #ffe62c;
+  -webkit-text-stroke: 0.01em blue;
+  font-family: "Pokemon-Solid";
 }

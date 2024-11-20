@@ -26,3 +26,8 @@
   text-align: center;
   color: black;
 }
+
+.PokemonDataContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}

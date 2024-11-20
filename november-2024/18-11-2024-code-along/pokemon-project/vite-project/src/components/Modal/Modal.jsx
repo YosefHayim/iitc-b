@@ -86,7 +86,7 @@ export default function PokemonViewButton({ pokemonData }) {
             <p className={styles.PokemonName}>{name.toUpperCase()}</p>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <div>
+            <div className={styles.PokemonDataContainer}>
               <div className={styles.StatsContainer}>
                 <ExperienceStat base_experience={base_experience} />
                 <HeightStat height={height} />

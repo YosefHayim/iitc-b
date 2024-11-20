@@ -28,7 +28,9 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
         className={styles.PokemonCard}
         style={{
           backgroundImage: `url(${getTypeBackground(
-            pokemon.types[0]?.type.name || "default"
+            pokemon.types[0]?.type.name ||
+              pokemon.types[1]?.type.name ||
+              "default"
           )})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",

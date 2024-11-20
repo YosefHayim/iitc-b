@@ -8,12 +8,15 @@ import SearchAppBar from "../TopNavbar/TopNavbar";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
+  const [curentPage, setPage] = useState(0);
 
   const fetchData = async () => {
     try {
       const {
         data: { results },
-      } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
+      } = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/?offset=${curentPage}`
+      );
       setPokemons(results);
     } catch (error) {
       console.error(`Error occurred while fetching API`, error);
@@ -23,6 +26,8 @@ const Homepage = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  console.log(pokemons);
 
   return (
     <div className={styles.PokemonCardsContainer}>

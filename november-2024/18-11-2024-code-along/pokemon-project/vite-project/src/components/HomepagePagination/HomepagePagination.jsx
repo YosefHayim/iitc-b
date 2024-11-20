@@ -10,7 +10,12 @@ const styles = {
 export default function PaginationRounded() {
   return (
     <Stack sx={styles} spacing={2}>
-      <Pagination count={10} variant="outlined" shape="rounded" />
+      <Pagination
+        count={10}
+        variant="outlined"
+        shape="rounded"
+        sx={{ display: "flex", justifyContent: "center" }}
+      />
     </Stack>
   );
 }

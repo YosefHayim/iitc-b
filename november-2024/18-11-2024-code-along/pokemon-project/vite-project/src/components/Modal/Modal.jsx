@@ -12,6 +12,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import getTypeBackground from "../../utils/getBackgroundType";
 
 const style = {
   borderRadius: "1em",
@@ -49,16 +50,30 @@ export default function PokemonViewButton({ pokemonData }) {
     species,
   } = pokemonData;
 
-  console.log(species);
-
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button sx={styleButton} onClick={handleOpen}>
-        Pokemon View
+      <Button
+        sx={{
+          backgroundImage: `url(${getTypeBackground(
+            types[0]?.type.name || types[1]?.type.name || "default"
+          )})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          width: "100%",
+          color: "white",
+          fontWeight: "900",
+          borderRadius: "0.5em",
+          "&:hover": {
+            backgroundImage: `url('public/images/blackly-background-button.png')`,
+          },
+        }}
+        onClick={handleOpen}
+      >
+        <p>View {name}</p>
       </Button>
       <Modal
         open={open}

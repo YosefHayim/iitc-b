@@ -57,7 +57,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchAppBar() {
+export default function SearchAppBar({ handleInputChange }) {
+  const handleInput = (e, page) => {
+    if (handleInputChange) {
+    }
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={mobileTopNavBarStyle}>
@@ -92,6 +97,7 @@ export default function SearchAppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+              onInput={handleInput}
               placeholder="Search"
               inputProps={{ "aria-label": "search" }}
             />

@@ -12,13 +12,9 @@
 }
 
 .TitleName {
-  font-family: "Pokemon-Hollow";
+  font-family: "Pokemon-Solid";
   margin-bottom: 0.1em;
   text-align: center;
-}
-
-.XLetter {
   color: #ffe62c;
-  -webkit-text-stroke: 0.01em blue;
-  font-family: "Pokemon-Solid";
+  -webkit-text-stroke: 0.025em blue;
 }

@@ -8,11 +8,18 @@ const styles = {
   marginBottom: "2em",
 };
 
-export default function PaginationRounded() {
+export default function PaginationRounded({ onPageChange }) {
+  const handlePageChange = (event, page) => {
+    if (onPageChange) {
+      onPageChange(page);
+    }
+  };
+
   return (
     <Stack sx={styles} spacing={2}>
       <Pagination
         count={10}
+        onChange={handlePageChange}
         variant="outlined"
         shape="rounded"
         sx={{ display: "flex", justifyContent: "center" }}

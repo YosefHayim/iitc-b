@@ -6,7 +6,7 @@ const TypeStats = ({ types }) => {
     <div className={styles.TypesContainer}>
       <MaleSharpIcon />
       {types.map((type) => (
-        <div key={type.type.name}>{type.type.name}</div>
+        <div key={type.type.name}>{type.type.name.toUpperCase()}</div>
       ))}
     </div>
   );

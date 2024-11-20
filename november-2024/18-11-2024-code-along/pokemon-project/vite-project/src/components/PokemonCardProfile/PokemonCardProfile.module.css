@@ -8,6 +8,11 @@
   width: 100%;
 }
 
+.PokemonCardsContainer {
+  margin-bottom: 2em;
+  padding: 0.3em;
+}
+
 .PokemonCard {
   height: 12em;
   border-radius: 0.5em;

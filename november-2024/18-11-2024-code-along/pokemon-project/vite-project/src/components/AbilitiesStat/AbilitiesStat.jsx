@@ -6,7 +6,9 @@ const AbilitiesStats = ({ abilities }) => {
     <div className={styles.AbilitiesContainer}>
       <CategorySharpIcon />
       {abilities.map((ability) => (
-        <div key={ability.ability.name}>{ability.ability.name}</div>
+        <div key={ability.ability.name}>
+          {ability.ability.name.toUpperCase()}
+        </div>
       ))}
     </div>
   );

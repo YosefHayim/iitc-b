@@ -9,15 +9,19 @@ import TemporaryDrawer from "../Drawer/Drawer";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [apiUrl, setApiUrl] = useState(`https://pokeapi.co/api/v2/pokemon/`);
-  const [maxPage, setMaxPage] = useState(0);
+  const [currentApiUrl, setApiUrl] = useState(
+    `https://pokeapi.co/api/v2/pokemon/`
+  );
+  const [nextPageUrl, setNextPageUrl] = useState();
+  const [prevPageUrl, setPrevPageUrl] = useState();
+  const [maxPage, setMaxPage] = useState(50);
 
   const fetchData = async (url) => {
     try {
       const { data } = await axios.get(url);
       setPokemons(data.results);
-      setApiUrl(data.next);
-      setMaxPage(data.count);
+      setNextPageUrl(data.next);
+      setPrevPageUrl(data.previous);
     } catch (error) {
       console.error(`Error occurred while fetching API`, error);
     }
@@ -26,25 +30,16 @@ const Homepage = () => {
   const handlePageChange = (page) => {
     const offset = (page - 1) * 20;
     const newUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`;
-    fetchData(newUrl);
+    setApiUrl(newUrl); 
   };
 
-  const handleInputChange = (e) => {
-    let input = e.target.value;
-
-    if (input.length > 3) {
-    }
-  };
-
-  const handleClick = (e) => {
-    console.log(e.target.value);
-
-    setClick(true);
+  const handleInputChange = (inputValue) => {
+    console.log(`Search input value: ${inputValue}`);
   };
 
   useEffect(() => {
-    fetchData(apiUrl);
-  }, []);
+    fetchData(currentApiUrl);
+  }, [currentApiUrl]);
 
   return (
     <div className={styles.SearchBarContainer}>
@@ -53,7 +48,7 @@ const Homepage = () => {
       <PaginationRounded onPageChange={handlePageChange} maxPage={maxPage} />
       <div className={styles.PokemonCardsContainer}>
         {pokemons.map((pokemon) => (
-          <div key={`${pokemon.name}`}>
+          <div key={pokemon.name}>
             <PokemonCardProfile pokemonUrl={pokemon.url} />
             <ViewPokemonSingleData pokemonUrl={pokemon.url} />
           </div>

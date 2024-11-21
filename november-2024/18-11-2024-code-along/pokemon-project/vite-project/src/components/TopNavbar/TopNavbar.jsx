@@ -60,6 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar({ handleInputChange }) {
   const handleInput = (e, page) => {
     if (handleInputChange) {
+      console.log(e.target.value);
     }
   };
 

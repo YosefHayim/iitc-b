@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
 import styles from "./Homepage.module.css";
+import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
 import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleData";
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
-import SearchAppBar from "../TopNavbar/TopNavbar";
-import TemporaryDrawer from "../Drawer/Drawer";
+import Loading from "../Loading/Loading";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -14,9 +13,12 @@ const Homepage = () => {
   );
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(50);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async (currentApiUrl) => {
+    setLoading(true);
     try {
       const { data } = await axios.get(currentApiUrl);
       setPokemons(data.results);
@@ -24,17 +26,16 @@ const Homepage = () => {
       setPrevPageUrl(data.previous);
     } catch (error) {
       console.error(`Error occurred while fetching API`, error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handlePageChange = (page) => {
+    setCurrentPage(page);
     const offset = (page - 1) * 20;
     const newUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`;
     setApiUrl(newUrl);
-  };
-
-  const handleInputChange = (inputValue) => {
-    console.log(`Search input value: ${inputValue}`);
   };
 
   useEffect(() => {
@@ -42,18 +43,27 @@ const Homepage = () => {
   }, [currentApiUrl]);
 
   return (
-    <div className={styles.SearchBarContainer}>
-      <SearchAppBar handleInputChange={handleInputChange} />
-      <TemporaryDrawer />
-      <PaginationRounded onPageChange={handlePageChange} maxPage={maxPage} />
-      <div className={styles.PokemonCardsContainer}>
-        {pokemons.map((pokemon) => (
-          <div key={pokemon.name}>
-            <PokemonCardProfile pokemonUrl={pokemon.url} />
-            <ViewPokemonSingleData pokemonUrl={pokemon.url} />
+    <div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <PaginationRounded
+            onPageChange={handlePageChange}
+            maxPage={maxPage}
+            currentPage={currentPage}
+          />
+
+          <div className={styles.PokemonCardsContainer}>
+            {pokemons.map((pokemon) => (
+              <div key={pokemon.name}>
+                <PokemonCardProfile pokemonUrl={pokemon.url} />
+                <ViewPokemonSingleData pokemonUrl={pokemon.url} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./PokemonCardProfile.module.css";
 import PokemonImg from "../PokemonImage/PokemonImage.jsx";
 import PokemonNameAndId from "../PokemonNameAndId/PokemonNameAndId.jsx";
-import getTypeBackground from "../../../utils/getBackgroundType.js";
+import getTypeBackground from "../../utils/getBackgroundType.js";
 
 const PokemonCardProfile = ({ pokemonUrl }) => {
   const [pokemon, setPokemon] = useState(null);

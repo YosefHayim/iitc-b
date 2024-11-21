@@ -6,6 +6,9 @@ import "./App.css";
 import SearchAppBar from "./components/TopNavbar/TopNavbar";
 import AllPokemonCards from "./components/AllPokemonCards/AllPokemonCards";
 import Home from "./pages/Home/Home";
+import TemporaryDrawer from "./components/Drawer/Drawer";
+import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
 
 function App() {
   const handleInputChange = (inputValue) => {
@@ -15,16 +18,19 @@ function App() {
   return (
     <BrowserRouter>
       <SearchAppBar handleInputChange={handleInputChange} />
+      <TemporaryDrawer />
       <Routes>
         <Route>
           <Route path="/" element={<AllPokemonCards />} />
+          <Route path="home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="contactus" element={<ContactUs />} />
           <Route
             path="/createCustomPokemon"
             element={<CreateCustomPokemon />}
           />
-          <Route path="Home" element={<Home />} />
-          <Route path="aboutUs" element={<AboutUs />} />
-          <Route path="ContactUs" element={<ContactUs />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,10 +1,10 @@
-import CategorySharpIcon from "@mui/icons-material/CategorySharp";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import styles from "./AbilitiesStat.module.css";
 
 const AbilitiesStats = ({ abilities }) => {
   return (
     <div className={styles.AbilitiesContainer}>
-      <CategorySharpIcon />
+      <AccountTreeIcon />
       {abilities.map((ability) => (
         <div key={ability.ability.name}>
           {ability.ability.name.toUpperCase()}

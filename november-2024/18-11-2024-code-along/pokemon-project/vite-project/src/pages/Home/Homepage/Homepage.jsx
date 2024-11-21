@@ -16,9 +16,9 @@ const Homepage = () => {
   const [prevPageUrl, setPrevPageUrl] = useState();
   const [maxPage, setMaxPage] = useState(50);
 
-  const fetchData = async (url) => {
+  const fetchData = async (currentApiUrl) => {
     try {
-      const { data } = await axios.get(url);
+      const { data } = await axios.get(currentApiUrl);
       setPokemons(data.results);
       setNextPageUrl(data.next);
       setPrevPageUrl(data.previous);
@@ -30,7 +30,7 @@ const Homepage = () => {
   const handlePageChange = (page) => {
     const offset = (page - 1) * 20;
     const newUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`;
-    setApiUrl(newUrl); 
+    setApiUrl(newUrl);
   };
 
   const handleInputChange = (inputValue) => {

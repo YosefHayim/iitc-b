@@ -1,5 +1,5 @@
 import styles from "./PokemonStats.module.css";
-import getStatTypeImage from "../../utils/getStatTypeImage";
+import getStatTypeImage from "../../../utils/getStatTypeImage";
 import ProgressSliderStats from "../ProgressStatsSliders/ProgressSliderStats";
 
 const PokemonStats = ({ stats }) => {

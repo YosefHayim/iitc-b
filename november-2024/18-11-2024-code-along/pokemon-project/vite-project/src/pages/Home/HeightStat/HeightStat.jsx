@@ -5,7 +5,8 @@ const HeightStat = ({ height }) => {
   return (
     <div className={styles.HeightContainer}>
       <HeightIcon />
-      <p>{height}</p>
+      <p >{height}</p>
+      <p className={styles.CM}>CM</p>
     </div>
   );
 };

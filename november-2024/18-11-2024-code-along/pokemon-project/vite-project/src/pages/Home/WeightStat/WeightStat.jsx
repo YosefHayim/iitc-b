@@ -6,6 +6,7 @@ const WeightStat = ({ weight }) => {
     <div className={styles.WeightContainer}>
       <ScaleIcon />
       <p>{weight}</p>
+      <p className={styles.KG}>KG</p>
     </div>
   );
 };

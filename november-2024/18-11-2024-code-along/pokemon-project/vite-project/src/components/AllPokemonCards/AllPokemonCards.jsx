@@ -6,7 +6,7 @@ import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleDat
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
 import Loading from "../Loading/Loading";
 
-const AllPokemonCards = ({ input }) => {
+const AllPokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
   const [currentApiUrl, setApiUrl] = useState(
     `https://pokeapi.co/api/v2/pokemon/`
@@ -41,7 +41,7 @@ const AllPokemonCards = ({ input }) => {
 
   useEffect(() => {
     fetchData(currentApiUrl);
-  }, [currentApiUrl]);
+  }, []);
 
   return (
     <div>

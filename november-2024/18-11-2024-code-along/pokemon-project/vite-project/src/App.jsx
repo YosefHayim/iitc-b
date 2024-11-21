@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import CreateCustomPokemon from "./pages/CreateCustomPokemon/CreateCustomPokemon";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
@@ -10,12 +9,15 @@ import Home from "./pages/Home/Home";
 import TemporaryDrawer from "./components/Drawer/Drawer";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
+import SearchForPokemon from "./pages/SearchForPokemon/SearchForPokemon";
 
 function App() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("bulbasaur");
 
   const handleInputChange = (e) => {
     const input = e.target.value;
+    console.log(input);
+
     setInput(input);
   };
 
@@ -24,13 +26,18 @@ function App() {
       <SearchAppBar onChange={handleInputChange} />
       <TemporaryDrawer />
       <Routes>
-        <Route path="/" element={<AllPokemonCards input={input} />} />
+        <Route path="/" element={<AllPokemonCards />} />
+        {/* input={input} */}
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/createCustomPokemon" element={<CreateCustomPokemon />} />
+        <Route
+          path={`/search/:${input}`}
+          element={<SearchForPokemon input={input} />}
+        />
       </Routes>
     </BrowserRouter>
   );

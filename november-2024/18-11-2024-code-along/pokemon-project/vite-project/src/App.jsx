@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./components/Homepage/Homepage";
 import CreateCustomPokemon from "./pages/CreateCustomPokemon/CreateCustomPokemon";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import "./App.css";
 import SearchAppBar from "./components/TopNavbar/TopNavbar";
-import TemporaryDrawer from "./components/Drawer/Drawer";
+import AllPokemonCards from "./components/AllPokemonCards/AllPokemonCards";
+import Home from "./pages/Home/Home";
 
 function App() {
   const handleInputChange = (inputValue) => {
@@ -15,14 +15,14 @@ function App() {
   return (
     <BrowserRouter>
       <SearchAppBar handleInputChange={handleInputChange} />
-      <TemporaryDrawer />
       <Routes>
         <Route>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<AllPokemonCards />} />
           <Route
             path="/createCustomPokemon"
             element={<CreateCustomPokemon />}
           />
+          <Route path="Home" element={<Home />} />
           <Route path="aboutUs" element={<AboutUs />} />
           <Route path="ContactUs" element={<ContactUs />} />
         </Route>

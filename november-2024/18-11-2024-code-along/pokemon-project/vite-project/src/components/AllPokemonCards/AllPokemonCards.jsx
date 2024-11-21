@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import styles from "./Homepage.module.css";
+import styles from "./AllPokemonCards.module.css";
 import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
 import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleData";
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
 import Loading from "../Loading/Loading";
 
-const Homepage = () => {
+const AllPokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
   const [currentApiUrl, setApiUrl] = useState(
     `https://pokeapi.co/api/v2/pokemon/`
@@ -14,7 +14,7 @@ const Homepage = () => {
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [maxPage, setMaxPage] = useState(50);
+  const [maxPage, setMaxPage] = useState(39);
   const [loading, setLoading] = useState(false);
 
   const fetchData = async (currentApiUrl) => {
@@ -68,4 +68,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default AllPokemonCards;

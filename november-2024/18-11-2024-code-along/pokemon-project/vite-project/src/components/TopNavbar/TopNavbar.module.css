@@ -14,7 +14,7 @@
 .TitleName {
   font-family: "Pokemon-Solid";
   margin-bottom: 0.1em;
-  text-align: center;
   color: #ffe62c;
   -webkit-text-stroke: 0.025em blue;
+  margin-left: 1em;
 }

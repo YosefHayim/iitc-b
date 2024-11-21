@@ -6,7 +6,7 @@ import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleDat
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
 import Loading from "../Loading/Loading";
 
-const AllPokemonCards = () => {
+const AllPokemonCards = ({ input }) => {
   const [pokemons, setPokemons] = useState([]);
   const [currentApiUrl, setApiUrl] = useState(
     `https://pokeapi.co/api/v2/pokemon/`
@@ -24,6 +24,7 @@ const AllPokemonCards = () => {
       setPokemons(data.results);
       setNextPageUrl(data.next);
       setPrevPageUrl(data.previous);
+      setMaxPage(data.count);
     } catch (error) {
       console.error(`Error occurred while fetching API`, error);
     } finally {
@@ -55,12 +56,16 @@ const AllPokemonCards = () => {
           />
 
           <div className={styles.PokemonCardsContainer}>
-            {pokemons.map((pokemon) => (
-              <div key={pokemon.name}>
-                <PokemonCardProfile pokemonUrl={pokemon.url} />
-                <ViewPokemonSingleData pokemonUrl={pokemon.url} />
-              </div>
-            ))}
+            {Array.isArray(pokemons) ? (
+              pokemons.map((pokemon) => (
+                <div key={pokemon.name}>
+                  <PokemonCardProfile pokemonUrl={pokemon.url} />
+                  <ViewPokemonSingleData pokemonUrl={pokemon.url} />
+                </div>
+              ))
+            ) : (
+              <div>No pokemons available or invalid data</div> // Handle the non-array case here
+            )}
           </div>
         </>
       )}

@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home/Home.jsx";
 import AboutUs from "./Pages/AboutUs/AboutUs.jsx";
 import Articles from "./Pages/Articles/Articles.jsx";
+import Tech from "./Pages/Tech/Tech.jsx";
 
 // MUI Components
 import Navbar from "./components/Navbar/Navbar.jsx";
@@ -21,6 +22,7 @@ function App() {
             <Route path="politics" element={<h1>This is politics page</h1>} />
             <Route path="sports" element={<h1>This is sports page</h1>} />
           </Route>
+          <Route path="/tech/:id" element={<Tech />} />
         </Routes>
       </BrowserRouter>
     </>

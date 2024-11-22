@@ -1,0 +1,52 @@
+.exploreButton {
+  background: none;
+  border: none;
+  background: black;
+  font-family: "Oswald";
+  padding: 1em;
+  border-radius: 100em;
+  opacity: 1;
+  border: 0.01em solid #f4f4f442;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  width: 10em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.linkTag {
+  text-decoration: none;
+  color: white;
+}
+
+.linkTag:hover {
+  color: black;
+}
+
+.exploreButton:hover {
+  background: white;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.imgContainer {
+  width: 100%;
+  text-align: center;
+}
+
+header > div > img {
+  border-radius: 100em;
+}

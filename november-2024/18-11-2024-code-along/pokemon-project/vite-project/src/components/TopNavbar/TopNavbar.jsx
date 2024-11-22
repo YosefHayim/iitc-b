@@ -10,6 +10,7 @@ import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import styles from "./TopNavbar.module.css";
+import logo from "/public/images/pokemon-logo.png";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -68,7 +69,7 @@ export default function SearchAppBar({ setInput, setOpen }) {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "#f4f4f4",
+          backgroundColor: "transparent",
           color: "black",
           position: "absolute",
           top: 0,
@@ -93,15 +94,7 @@ export default function SearchAppBar({ setInput, setOpen }) {
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             <Link to="/home" className={styles.logo}>
-              <h1 className={styles.TitleName}>
-                <span className={styles.letterP}>P</span>
-                <span className={styles.letterO}>o</span>
-                <span className={styles.letterK}>k</span>
-                <span className={styles.letterE}>e</span>
-                <span className={styles.letterM}>d</span>
-                <span className={styles.letterO}>e</span>
-                <span className={styles.letterX}>X</span>
-              </h1>
+              <img src={logo} alt="Logo" />
             </Link>
           </Typography>
           <form

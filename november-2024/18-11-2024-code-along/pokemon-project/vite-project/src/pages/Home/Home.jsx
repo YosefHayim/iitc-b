@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
+import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
+import homepageImage from "/public/images/homepage-image.png";
 
 const Home = () => {
   return (
@@ -9,11 +11,22 @@ const Home = () => {
         <p className={styles.subtitle}>
           Catch 'em all, train your team, and explore!
         </p>
+        <div className={styles.imgContainer}>
+          <img
+            src={homepageImage}
+            alt="Battle in middle of forest of Pikachu and another pokemon"
+          />
+        </div>
       </header>
 
       <section className={styles.buttonSection}>
         <button className={styles.exploreButton}>
-          <Link to="/">Explore Pokémon</Link>
+          <Link to="/" className={styles.linkTag}>
+            <div className={styles.buttonContainer}>
+              <CatchingPokemonIcon />
+              <p className={styles.discoverText}>Discover</p>
+            </div>
+          </Link>
         </button>
       </section>
 

@@ -8,6 +8,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
+import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 
 export default function TemporaryDrawer({ setOpen, open }) {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function TemporaryDrawer({ setOpen, open }) {
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
         {[
-          { text: "Home", path: "/home" },
+          { text: `Home`, path: "/home" },
           { text: "Login", path: "/login" },
           { text: "Register", path: "/register" },
           { text: "About Us", path: "/about-us" },
@@ -34,7 +35,6 @@ export default function TemporaryDrawer({ setOpen, open }) {
           </ListItem>
         ))}
       </List>
-      <Divider />
     </Box>
   );
 

@@ -52,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchAppBar({ setInput }) {
+export default function SearchAppBar({ setInput, setOpen }) {
   const navigateSearch = useNavigate();
 
   const handleSearchSubmit = (e) => {
@@ -67,7 +67,13 @@ export default function SearchAppBar({ setInput }) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#f4f4f4", color: "black" }}
+        sx={{
+          backgroundColor: "#f4f4f4",
+          color: "black",
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
       >
         <Toolbar>
           <IconButton
@@ -77,7 +83,7 @@ export default function SearchAppBar({ setInput }) {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <MenuIcon onClick={() => setOpen(true)} />
           </IconButton>
           <Typography
             variant="h6"

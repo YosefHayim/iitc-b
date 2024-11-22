@@ -9,8 +9,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
 
-export default function TemporaryDrawer() {
-  const [open, setOpen] = React.useState(false);
+export default function TemporaryDrawer({ setOpen, open }) {
   const navigate = useNavigate();
 
   const toggleDrawer = (newOpen) => () => {
@@ -41,7 +40,7 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)}>Open drawer</Button>
+      <Button onClick={toggleDrawer(true)}></Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>

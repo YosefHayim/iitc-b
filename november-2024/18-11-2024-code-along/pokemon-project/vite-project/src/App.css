@@ -31,7 +31,7 @@ body {
   justify-content: center;
   font-size: 1em;
   font-family: "Oswald";
-  background-image: url(/public/images/black-background.png);
+  background: #111111;
 }
 
 li {

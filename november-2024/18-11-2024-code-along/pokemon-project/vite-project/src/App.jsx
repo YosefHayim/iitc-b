@@ -22,8 +22,8 @@ function App() {
       <SearchAppBar setOpen={setOpen} setInput={setInput} />
       <TemporaryDrawer open={open} setOpen={setOpen} />
       <Routes>
-        <Route path="/" element={<AllPokemonCards />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/pokedex" element={<AllPokemonCards />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-us" element={<AboutUs />} />

@@ -1,54 +1,98 @@
-.exploreButton {
-  background: none;
-  border: none;
-  background: black;
-  font-family: "Oswald";
-  padding: 1em;
-  border-radius: 100em;
-  opacity: 1;
-  border: 0.01em solid #f4f4f442;
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
-  width: 10em;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+.Homepage {
+  background-image: url("../../../public/images/home-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 50%;
 }
 
-.homeContainer {
+.HomeTitle {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  margin-bottom: 0.5em;
+}
+
+.HomeContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContainerOptions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  padding: 2em;
+}
+
+.PokedexContainer,
+.MovesContainer,
+.LocationsContainer,
+.EvolutionsContainer {
+  cursor: pointer;
+  width: 15em;
+  height: 5em;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  border-radius: 1em;
+  transition: transform 0.3s ease;
 }
 
-.linkTag {
-  text-decoration: none;
+.PokedexContainer:hover,
+.MovesContainer:hover,
+.LocationsContainer:hover,
+.EvolutionsContainer:hover {
+  transform: translateY(-0.5em);
+}
+
+.PokedexButton,
+.MovesButton,
+.LocationsButton,
+.EvolutionButton {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1em;
+  font-weight: bolder;
   color: white;
 }
 
-.linkTag:hover {
+.PokedexContainer {
+  background: linear-gradient(to bottom, #ff4d4d, #d70000);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.EvolutionsContainer {
+  background: linear-gradient(to bottom, #66bb6a, #388e3c);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.MovesContainer {
+  background: linear-gradient(to bottom, #ffa726, #ff6f00);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.LocationsContainer {
+  background: linear-gradient(to bottom, #42a5f5, #0d47a1);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.LinkTag {
+  text-decoration: none;
+}
+
+.PokedexContainer:hover .PokedexButton,
+.MovesContainer:hover .MovesButton,
+.LocationsContainer:hover .LocationsButton,
+.EvolutionsContainer:hover .EvolutionButton {
   color: black;
-}
-
-.exploreButton:hover {
-  background: white;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5em;
-}
-
-.imgContainer {
-  width: 100%;
-  text-align: center;
-}
-
-header > div > img {
-  border-radius: 100em;
-  width: 100%;
-  padding: 2em;
 }

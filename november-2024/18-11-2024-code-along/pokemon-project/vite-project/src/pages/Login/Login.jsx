@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div>
-      <h1 className={styles.PageTitle}>Sign In</h1>
+      <h1 className={styles.PageTitle}>Sign in</h1>
       <div className={styles.LoginContainer}>
         <form className={styles.LoginFormContainer}>
           <label htmlFor="email" className={styles.TitlesInput}></label>
@@ -24,13 +24,20 @@ const Login = () => {
             className={styles.PasswordInput}
           />
           <button type="submit" className={styles.SubmitButton}>
-            Submit
+            Continue
           </button>
-          <button type="button" className={styles.ForgetPasswordButton}>
-            <Link to="/forget-password" className={styles.TagLink}>
-              Forgot Password?
-            </Link>
-          </button>
+          <div className={styles.userOptionsContainer}>
+            <button type="button" className={styles.ForgetPasswordButton}>
+              <Link to="/forget-password" className={styles.TagLink}>
+                Forgot Password?
+              </Link>
+            </button>
+            <button className={styles.RegisterButton}>
+              <Link to="/register" className={styles.TagLink}>
+                First time? Click here
+              </Link>
+            </button>
+          </div>
         </form>
       </div>
     </div>

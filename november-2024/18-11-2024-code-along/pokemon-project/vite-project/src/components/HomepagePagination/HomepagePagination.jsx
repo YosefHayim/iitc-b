@@ -3,8 +3,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 const styles = {
-  marginTop: "1em",
-  marginBottom: "2em",
+  marginTop: "4em",
 };
 
 export default function PaginationRounded({

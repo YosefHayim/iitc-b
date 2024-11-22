@@ -39,11 +39,11 @@ export default function TemporaryDrawer({ setOpen, open }) {
   );
 
   return (
-    <div>
+    <>
       <Button onClick={toggleDrawer(true)}></Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
-    </div>
+    </>
   );
 }

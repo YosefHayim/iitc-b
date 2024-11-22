@@ -2,50 +2,77 @@ import styles from "./CreateCustomPokemon.module.css";
 
 const CreateCustomPokemon = () => {
   return (
-    <div className={styles.CreateCustomPokemonContainer}>
-      <h1>Add custom pokemon</h1>
-
-      <form className={styles.CustomPokemonFormContainer}>
-        <div className={styles.PokemonNameContainer}>
+    <div>
+      <h1 className={styles.PageTitle}>Add custom pokemon</h1>
+      <div className={styles.CreateCustomPokemonContainer}>
+        <form className={styles.CustomPokemonFormContainer}>
           <label htmlFor="name">Pokemon Name</label>
-          <input type="text" id="name" placeholder="Pokemon name..." />
-        </div>
-
-        <div className={styles.ImgUrlContainer}>
+          <input
+            type="text"
+            id="name"
+            placeholder="Pokemon name..."
+            className={styles.DataInput}
+          />
           <label htmlFor="imageLink">Pokemon Image URL</label>
           <input
             type="text"
             id="imageLink"
             placeholder="Pokemon Image Url..."
+            className={styles.DataInput}
           />
-        </div>
 
-        <div className={styles.typesContainer}>
           <label htmlFor="types">Pokemon Types</label>
-          <input type="text" id="types" placeholder="Pokemon types..." />
-        </div>
+          <input
+            type="text"
+            id="types"
+            placeholder="Pokemon types..."
+            className={styles.DataInput}
+          />
 
-        <div className={styles.statsContainer}>
           <label htmlFor="stats">Pokemon Stats</label>
-          <input type="text" id="stats" placeholder="Pokemon stats..." />
-        </div>
+          <input
+            type="text"
+            id="stats"
+            placeholder="Pokemon stats..."
+            className={styles.DataInput}
+          />
 
-        <div className={styles.expContainer}>
           <label htmlFor="exp">Pokemon Base Experience</label>
-          <input type="text" id="exp" placeholder="Pokemon exp..." />
-        </div>
+          <input
+            type="text"
+            id="exp"
+            placeholder="Pokemon exp..."
+            className={styles.DataInput}
+          />
 
-        <div className={styles.heightNWeightContainer}>
-          <label htmlFor="heightNWeight">Pokemon Weight & Height</label>
-          <input type="text" id="height" placeholder="Pokemon height..." />
-          <input type="text" id="weight" placeholder="Pokemon weight..." />
-        </div>
+          <label htmlFor="heightNWeight">Pokemon Height</label>
+          <input
+            type="text"
+            id="height"
+            placeholder="Pokemon height..."
+            className={styles.DataInput}
+          />
 
-        <div className={styles.creatorContainer}>
-          <label htmlFor="creator">Created By</label>
-          <input type="text" id="creator" placeholder="Josephs Sabagos..." />
-        </div>
-      </form>
+          <label htmlFor="heightNWeight">Pokemon Weight</label>
+          <input
+            type="text"
+            id="weight"
+            placeholder="Pokemon weight..."
+            className={styles.DataInput}
+          />
+
+          <label htmlFor="creator">Creator name</label>
+          <input
+            type="text"
+            id="creator"
+            placeholder="Josephs Sabagos..."
+            className={styles.DataInput}
+          />
+          <button className={styles.CreateCustomPokemon}>
+            Create Custom Pokemon
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

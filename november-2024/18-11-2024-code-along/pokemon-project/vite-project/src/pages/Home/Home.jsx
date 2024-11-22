@@ -14,7 +14,7 @@ const Home = () => {
         <div className={styles.imgContainer}>
           <img
             src={homepageImage}
-            alt="Battle in middle of forest of Pikachu and another pokemon"
+            alt="Battle in middle of forest of two pokemon"
           />
         </div>
       </header>

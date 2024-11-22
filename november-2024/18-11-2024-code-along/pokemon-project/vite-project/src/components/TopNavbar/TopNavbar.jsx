@@ -69,7 +69,7 @@ export default function SearchAppBar({ setInput, setOpen }) {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: "transparent",
+          backgroundColor: "white",
           color: "black",
           position: "absolute",
           top: 0,

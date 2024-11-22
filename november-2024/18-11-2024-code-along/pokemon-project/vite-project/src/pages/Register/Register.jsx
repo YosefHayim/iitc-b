@@ -7,8 +7,7 @@ const Register = () => {
       <h1 className={styles.PageTitle}>Register</h1>
       <div className={styles.RegisterContainer}>
         <form className={styles.RegisterFormContainer}>
-          <div className={styles.emailContainer}>
-            <label htmlFor="email"></label>
+          <label htmlFor="email">
             <input
               className={styles.BoxInput}
               type="email"
@@ -17,9 +16,8 @@ const Register = () => {
               placeholder="Enter your email"
               required
             />
-          </div>
-          <div className={styles.fnameContainer}>
-            <label htmlFor="fname"></label>
+          </label>
+          <label htmlFor="fname">
             <input
               className={styles.BoxInput}
               type="text"
@@ -28,9 +26,8 @@ const Register = () => {
               placeholder="First name"
               required
             />
-          </div>
-          <div className={styles.lnameContainer}>
-            <label htmlFor="lname"></label>
+          </label>
+          <label htmlFor="lname">
             <input
               className={styles.BoxInput}
               type="text"
@@ -39,9 +36,8 @@ const Register = () => {
               placeholder="Last name"
               required
             />
-          </div>
-          <div className={styles.passwordContainer}>
-            <label htmlFor="password"></label>
+          </label>
+          <label htmlFor="password">
             <input
               className={styles.BoxInput}
               type="password"
@@ -50,9 +46,8 @@ const Register = () => {
               placeholder="Enter your password"
               required
             />
-          </div>
-          <div className={styles.confirmPasswordContainer}>
-            <label htmlFor="confirmPassword"></label>
+          </label>
+          <label htmlFor="confirmPassword">
             <input
               className={styles.BoxInput}
               type="password"
@@ -61,7 +56,7 @@ const Register = () => {
               placeholder="Confirm your password"
               required
             />
-          </div>
+          </label>
           <label>
             <input type="checkbox" name="agreeToTerms" /> I agree to the terms
             and conditions
@@ -73,11 +68,10 @@ const Register = () => {
           </div>
         </form>
         <p>
-          Already have an account?{" "}
+          Already have an account?
           <Link to="/login" className={styles.TagLink}>
             Login here
           </Link>
-          .
         </p>
       </div>
     </div>

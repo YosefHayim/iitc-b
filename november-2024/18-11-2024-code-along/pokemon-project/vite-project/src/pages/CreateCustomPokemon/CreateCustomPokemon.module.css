@@ -1,0 +1,59 @@
+.CreateCustomPokemonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 1em;
+  box-shadow: 0em 0em 1em 0.1em #0000007d;
+  padding: 2em;
+  text-align: center;
+  margin: 2em;
+}
+
+.CustomPokemonFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.DataInput {
+  width: 100%;
+  border: none;
+  border-radius: 100em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 1em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  border: 0.1em solid #0000004a;
+}
+
+.CreateCustomPokemon {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 100em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 1em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  border: 0.1em solid #0000004a;
+}
+
+.CreateCustomPokemon:hover {
+  background: black;
+  color: white;
+}
+
+.PageTitle {
+  margin-top: 2em;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}

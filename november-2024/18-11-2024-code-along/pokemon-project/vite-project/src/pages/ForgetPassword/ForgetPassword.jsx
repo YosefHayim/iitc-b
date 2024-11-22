@@ -2,10 +2,10 @@ import styles from "./ForgetPassword.module.css";
 
 const ForgetPassword = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <h1 className={styles.heading}>Reset Password</h1>
-      <form className={styles.form}>
-        <div className={styles.inputGroup}>
+      <div className={styles.ForgetPasswordContainer}>
+        <form className={styles.ResetPasswordForm}>
           <label htmlFor="email" className={styles.label}>
             Email Address
           </label>
@@ -17,9 +17,6 @@ const ForgetPassword = () => {
             required
             className={styles.input}
           />
-        </div>
-
-        <div className={styles.inputGroup}>
           <label htmlFor="newPassword" className={styles.label}>
             New Password
           </label>
@@ -31,9 +28,6 @@ const ForgetPassword = () => {
             required
             className={styles.input}
           />
-        </div>
-
-        <div className={styles.inputGroup}>
           <label htmlFor="confirmPassword" className={styles.label}>
             Confirm Password
           </label>
@@ -45,12 +39,11 @@ const ForgetPassword = () => {
             required
             className={styles.input}
           />
-        </div>
-
-        <button type="submit" className={styles.submitBtn}>
-          Reset Password
-        </button>
-      </form>
+          <button type="submit" className={styles.submitBtn}>
+            Reset Password
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -49,4 +49,6 @@
 
 header > div > img {
   border-radius: 100em;
+  width: 100%;
+  padding: 2em;
 }

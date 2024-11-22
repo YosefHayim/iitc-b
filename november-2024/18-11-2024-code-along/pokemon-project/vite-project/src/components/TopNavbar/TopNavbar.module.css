@@ -14,3 +14,34 @@
 .logo {
   transform: translateY(0.1em);
 }
+
+.TagLink {
+  text-decoration: none;
+  color: black;
+}
+
+.TagLink:hover {
+  color: white;
+}
+
+.UserButtonRegister,
+.UserButtonLogin {
+  margin-right: 1em;
+  border-radius: 100em;
+  padding: 1em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  width: 6em;
+  font-weight: 700;
+  border: none;
+}
+
+.UserButtonLogin:hover,
+.UserButtonRegister:hover {
+  background: black;
+  color: white;
+}
+
+.UserButtonLogin {
+  margin-right: 1em;
+}

@@ -67,3 +67,8 @@
   padding: 1em;
   text-align: center;
 }
+
+textarea {
+  max-width: 40em;
+  width: 100%;
+}

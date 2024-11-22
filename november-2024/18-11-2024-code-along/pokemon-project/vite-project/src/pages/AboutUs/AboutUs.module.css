@@ -1,0 +1,17 @@
+.AboutUsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 1em;
+  box-shadow: 0em 0em 1em 0.1em #0000007d;
+  padding: 2em;
+  text-align: center;
+  margin: 2em;
+}
+
+.AboutUsTitle {
+  width: 100%;
+  text-align: center;
+}

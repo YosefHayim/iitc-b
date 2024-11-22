@@ -22,11 +22,12 @@ export default function TemporaryDrawer({ setOpen, open }) {
       <List>
         {[
           { text: `Home`, path: "/home" },
-          { text: "Login", path: "/login" },
-          { text: "Register", path: "/register" },
           { text: "About Us", path: "/about-us" },
           { text: "Contact Us", path: "/contact-us" },
+          { text: "Explore Pokemons", path: "/" },
           { text: "Custom Pokemon", path: "/createCustomPokemon" },
+          { text: "Login", path: "/login" },
+          { text: "Register", path: "/register" },
         ].map((item) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton onClick={() => navigate(item.path)}>

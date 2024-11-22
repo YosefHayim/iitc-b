@@ -5,7 +5,6 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -87,16 +86,9 @@ export default function SearchAppBar({ setInput, setOpen }) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            <Link to="/home" className={styles.logo}>
-              <img src={logo} alt="Logo" />
-            </Link>
-          </Typography>
+          <Link to="/home" className={styles.logo}>
+            <img src={logo} alt="Logo" />
+          </Link>
           <form
             onSubmit={handleSearchSubmit}
             style={{ display: "flex", flexGrow: 1 }}
@@ -112,6 +104,16 @@ export default function SearchAppBar({ setInput, setOpen }) {
               />
             </Search>
           </form>
+          <button className={styles.UserButtonLogin}>
+            <Link to="/login" className={styles.TagLink}>
+              Login
+            </Link>
+          </button>
+          <button className={styles.UserButtonRegister}>
+            <Link to="/register" className={styles.TagLink}>
+              Register
+            </Link>
+          </button>
         </Toolbar>
       </AppBar>
     </Box>

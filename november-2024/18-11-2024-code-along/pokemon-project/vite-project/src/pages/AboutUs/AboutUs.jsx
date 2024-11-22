@@ -2,9 +2,9 @@ import styles from "./AboutUs.module.css";
 
 const AboutUs = () => {
   return (
-    <div className={styles.AboutUsContainer}>
-      <h1>About Us</h1>
-      <section>
+    <div>
+      <h1 className={styles.AboutUsTitle}>About Us</h1>
+      <div className={styles.AboutUsContainer}>
         <p>
           Welcome to our learning journey! We're on a mission to master the art
           of full-stack development, one React component at a time.
@@ -31,7 +31,7 @@ const AboutUs = () => {
           Join us on this adventure as we transform lines of code into
           real-world solutions!
         </p>
-      </section>
+      </div>
     </div>
   );
 };

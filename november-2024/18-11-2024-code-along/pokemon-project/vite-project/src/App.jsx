@@ -1,43 +1,34 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import CreateCustomPokemon from "./pages/CreateCustomPokemon/CreateCustomPokemon";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import SearchAppBar from "./components/TopNavbar/TopNavbar";
 import AllPokemonCards from "./components/AllPokemonCards/AllPokemonCards";
 import Home from "./pages/Home/Home";
-import TemporaryDrawer from "./components/Drawer/Drawer";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import SearchForPokemon from "./pages/SearchForPokemon/SearchForPokemon";
+import "./App.css";
+import TemporaryDrawer from "./components/Drawer/Drawer";
 
 function App() {
-  const [input, setInput] = useState("bulbasaur");
-
-  const handleInputChange = (e) => {
-    const input = e.target.value;
-    console.log(input);
-
-    setInput(input);
-  };
+  const [input, setInput] = useState("");
+  const [open, setOpen] = useState(false);
 
   return (
     <BrowserRouter>
-      <SearchAppBar onChange={handleInputChange} />
-      <TemporaryDrawer />
+      <SearchAppBar setInput={setInput} />
+      <TemporaryDrawer open={open} setOpen={setOpen} />
       <Routes>
         <Route path="/" element={<AllPokemonCards />} />
-        {/* input={input} */}
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/createCustomPokemon" element={<CreateCustomPokemon />} />
-        <Route
-          path={`/search/:${input}`}
-          element={<SearchForPokemon input={input} />}
-        />
+        <Route path="/search/:input" element={<SearchForPokemon />} />
       </Routes>
     </BrowserRouter>
   );

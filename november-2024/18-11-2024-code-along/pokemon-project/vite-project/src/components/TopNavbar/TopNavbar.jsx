@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-import styles from "./TopNavbar.module.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -9,11 +9,7 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-
-const mobileTopNavBarStyle = {
-  backgroundColor: "#f4f4f4",
-  color: "black",
-};
+import styles from "./TopNavbar.module.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -42,12 +38,11 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
-  width: "100%",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
+    width: "100%",
     [theme.breakpoints.up("sm")]: {
       width: "12ch",
       "&:focus": {
@@ -57,10 +52,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchAppBar({ onChange }) {
+export default function SearchAppBar({ setInput }) {
+  const navigateSearch = useNavigate();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const formObject = new FormData(e.target);
+    const inputValue = formObject.get("searchInput");
+    setInput(inputValue);
+    navigateSearch(`/search/${inputValue}`);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={mobileTopNavBarStyle}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "#f4f4f4", color: "black" }}
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -77,26 +85,33 @@ export default function SearchAppBar({ onChange }) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <h1 className={styles.TitleName}>
-              <span className={styles.PLetter}>P</span>
-              <span className={styles.OLetter}>o</span>
-              <span className={styles.KLetter}>k</span>
-              <span className={styles.ELetter}>e</span>
-              <span className={styles.DLetter}>d</span>
-              <span className={styles.ELetter}>e</span>
-              <span className={styles.XLetter}>X</span>
-            </h1>
+            <Link to="/home" className={styles.logo}>
+              <h1 className={styles.TitleName}>
+                <span className={styles.letterP}>P</span>
+                <span className={styles.letterO}>o</span>
+                <span className={styles.letterK}>k</span>
+                <span className={styles.letterE}>e</span>
+                <span className={styles.letterM}>d</span>
+                <span className={styles.letterO}>e</span>
+                <span className={styles.letterX}>X</span>
+              </h1>
+            </Link>
           </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              onChange={onChange}
-              placeholder="Search"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+          <form
+            onSubmit={handleSearchSubmit}
+            style={{ display: "flex", flexGrow: 1 }}
+          >
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                name="searchInput"
+                placeholder="Search"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+          </form>
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,13 +1,9 @@
 import styles from "./PokemonImage.module.css";
 
-const PokemonImg = ({ PokemonImg }) => {
+const PokemonImg = ({ pokemonImg, pokemonName }) => {
   return (
     <div className={styles.ImgContainer}>
-      <img
-        src={PokemonImg}
-        alt="Pokemon Creature"
-        className={styles.PokemonImg}
-      />
+      <img src={pokemonImg} alt={pokemonName} className={styles.PokemonImg} />
     </div>
   );
 };

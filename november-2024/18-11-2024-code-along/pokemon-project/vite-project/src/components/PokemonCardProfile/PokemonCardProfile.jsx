@@ -38,7 +38,8 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
       >
         <PokemonNameAndId pokemonName={pokemon.name} pokemonId={pokemon.id} />
         <PokemonImg
-          PokemonImg={pokemon.sprites.other.dream_world.front_default}
+          pokemonName={pokemon.name}
+          pokemonImg={pokemon.sprites.other.dream_world.front_default}
         />
       </div>
     )

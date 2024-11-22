@@ -4,11 +4,10 @@ import { useEffect, useState } from "react";
 import Loading from "../../components/Loading/Loading";
 import { useParams } from "react-router-dom";
 
-const SearchForPokemon = ({ input }) => {
-  const params = useParams();
-  console.log(params);
+const SearchForPokemon = () => {
+  const { input } = useParams();
 
-  const [pokemonUrl, setPokemonUrl] = useState("");
+  const [pokemonData, setPokemonData] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
@@ -17,7 +16,7 @@ const SearchForPokemon = ({ input }) => {
       const { data } = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${input}`
       );
-      setPokemonUrl(data);
+      setPokemonData(data);
     } catch (error) {
       console.error(`Error occurred while fetching API`, error);
     } finally {
@@ -26,42 +25,36 @@ const SearchForPokemon = ({ input }) => {
   };
 
   useEffect(() => {
-    fetchData(pokemonUrl);
-  }, []);
+    fetchData();
+  }, [input]);
 
   return (
     <div>
       {loading && <Loading />}
-      {pokemonUrl && (
+      {pokemonData && (
         <>
-          <h2>Meet {pokemonUrl.name}</h2>
+          <h2>Meet {pokemonData.name}</h2>
           <img
-            src={pokemonUrl.sprites.other.dream_world.front_default}
-            alt={pokemonUrl.name}
+            src={pokemonData.sprites.other.dream_world.front_default}
+            alt={pokemonData.name}
           />
-          <p>Weight: {pokemonUrl.weight}</p>
-          <p>Height: {pokemonUrl.height}</p>
-          <p>Base Experience: {pokemonUrl.base_experience}</p>
+          <p>Weight: {pokemonData.weight}</p>
+          <p>Height: {pokemonData.height}</p>
+          <p>Base Experience: {pokemonData.base_experience}</p>
           <h3>Abilities:</h3>
           <div>
-            {pokemonUrl.abilities.map((ability, index) => (
+            {pokemonData.abilities.map((ability, index) => (
               <div key={index}>
                 {ability.ability.name} {ability.is_hidden && "(Hidden Ability)"}
               </div>
             ))}
           </div>
-          <h3>Sprites:</h3>
           <h3>Types:</h3>
           <ul>
-            {pokemonUrl.types.map((type, index) => (
+            {pokemonData.types.map((type, index) => (
               <li key={index}>{type.type.name}</li>
             ))}
           </ul>
-          <h3>Voice:</h3>
-          <audio controls>
-            <source src={pokemonUrl.cries.latest} type="audio/ogg" />
-            Your browser does not support the audio element.
-          </audio>
         </>
       )}
     </div>

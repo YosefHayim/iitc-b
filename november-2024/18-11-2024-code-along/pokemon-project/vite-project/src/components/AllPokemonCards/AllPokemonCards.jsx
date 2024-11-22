@@ -41,7 +41,7 @@ const AllPokemonCards = () => {
 
   useEffect(() => {
     fetchData(currentApiUrl);
-  }, []);
+  }, [currentApiUrl]);
 
   return (
     <div>

@@ -14,7 +14,7 @@ import TemporaryDrawer from "./components/Drawer/Drawer";
 
 function App() {
   const [input, setInput] = useState("");
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(false);
 
   return (
     <BrowserRouter>

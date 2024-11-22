@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -11,8 +12,9 @@ const Home = () => {
       </header>
 
       <section className={styles.buttonSection}>
-        <button className={styles.exploreButton}>Explore Pokémon</button>
-        <button className={styles.teamButton}>View Your Team</button>
+        <button className={styles.exploreButton}>
+          <Link to="/">Explore Pokémon</Link>
+        </button>
       </section>
 
       <footer className={styles.footer}>

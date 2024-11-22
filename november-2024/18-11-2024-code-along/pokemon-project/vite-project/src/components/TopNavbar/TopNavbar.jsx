@@ -77,13 +77,14 @@ export default function SearchAppBar({ setInput, setOpen }) {
       >
         <Toolbar>
           <IconButton
+            onClick={() => setOpen(true)}
             size="large"
             edge="start"
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon onClick={() => setOpen(true)} />
+            <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"

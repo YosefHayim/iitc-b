@@ -25,6 +25,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <h2 className={styles.PopularPokedexPicks}>Popular Pokedex Picks</h2>
+      <hr className={styles.HomeUnderLine} />
     </div>
   );
 };

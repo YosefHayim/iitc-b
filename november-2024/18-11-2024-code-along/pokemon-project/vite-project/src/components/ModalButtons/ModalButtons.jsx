@@ -7,7 +7,6 @@ import styles from "./ModalButtons.module.css";
 
 const ModalButtons = ({ pokemonData }) => {
   const { height, weight, stats, moves, abilities } = pokemonData;
-  console.log(pokemonData);
 
   const [activeButton, setActiveButton] = useState(null);
 
@@ -40,8 +39,8 @@ const ModalButtons = ({ pokemonData }) => {
           <hr className={styles.animatedHr} />
         </div>
 
-        <div className={styles.evolutionsContainer}>
-          <button className={styles.evolutionsButton}>Evolutions</button>
+        <div className={styles.abilitiesContainer}>
+          <button className={styles.abilitiesButton}>Abilities</button>
           <hr className={styles.animatedHr} />
         </div>
 
@@ -56,7 +55,7 @@ const ModalButtons = ({ pokemonData }) => {
       )}
       {activeButton === "Stats" && <ModalPokemonStats stats={stats} />}
       {activeButton === "Moves" && <ModalPokemonsMove moves={moves} />}
-      {activeButton === "Evolutions" && (
+      {activeButton === "Abilities" && (
         <ModalPokemonAbilities abilities={abilities} />
       )}
     </div>

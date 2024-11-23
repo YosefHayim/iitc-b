@@ -7,3 +7,10 @@
   transform: scaleX(-1);
   height: 10em;
 }
+
+/* appearance: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    block-size: 1em;
+    inline-size: 10em;
+    vertical-align: -0.2em; */

@@ -9,7 +9,10 @@ import LocationIcon from "/public/images/location-3d.png";
 const Home = ({ setInput }) => {
   return (
     <div className={styles.Homepage}>
-      <h1 className={styles.HomeTitle}>What Pokemon are you looking for?</h1>
+      <h1 className={styles.HomeTitle}>
+        Discover Over 1,000 Pokémon in Our Database!
+      </h1>
+
       <div className={styles.HomeContainer}>
         <SearchBar setInput={setInput} />
 

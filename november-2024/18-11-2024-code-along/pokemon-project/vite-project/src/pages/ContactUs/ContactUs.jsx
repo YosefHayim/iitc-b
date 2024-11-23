@@ -3,7 +3,7 @@ import styles from "./ContactUs.module.css";
 const ContactUs = () => {
   return (
     <div>
-      <h1>Contact the Pokémon Center</h1>
+      <h1 className={styles.PageTitle}>Contact Pokémon Center</h1>
       <div className={styles.ContactUsContainer}>
         <form className={styles.ContactForm}>
           <label htmlFor="trainerName"></label>
@@ -22,7 +22,7 @@ const ContactUs = () => {
             placeholder="Email"
             className={styles.BarInput}
           />
-          <label htmlFor="queryType">What can we help with?</label>
+          <label htmlFor="queryType"></label>
           <select id="queryType" name="queryType" className={styles.QueryType}>
             <option value="pokemonSearch">Help me find a Pokémon</option>
             <option value="battleTips">Battle Tips & Tricks</option>
@@ -30,7 +30,7 @@ const ContactUs = () => {
             <option value="other">Other</option>
           </select>
 
-          <label htmlFor="trainerMessage">Your Message</label>
+          <label htmlFor="trainerMessage"></label>
           <textarea
             className={styles.TextArea}
             id="trainerMessage"

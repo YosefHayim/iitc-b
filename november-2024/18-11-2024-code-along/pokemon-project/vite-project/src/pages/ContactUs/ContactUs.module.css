@@ -6,69 +6,78 @@
   align-items: center;
 }
 
+.ContactForm {
+  gap: 0.5em;
+}
+
 .ContactUsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: white;
-  border-radius: 1em;
-  box-shadow: 0em 0em 1em 0.1em #0000007d;
+  background: #ffffff12;
+  border-radius: 0.5em;
+  box-shadow: 0em 0em 1em 0.01em #0000007d;
   padding: 2em;
-  text-align: center;
   margin: 2em;
+  color: white;
+}
+
+.PageTitle {
+  width: 100%;
+  text-align: center;
+  font-weight: 100;
+  color: white;
 }
 
 .BarInput {
   width: 100%;
   border: none;
-  border-radius: 100em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  border-radius: 0.5em;
   font-weight: 700;
   letter-spacing: 0.01em;
   padding: 1em;
   padding-top: 0.7em;
   padding-bottom: 0.7em;
-  border: 0.1em solid #0000004a;
 }
 
 .SubmitButton {
-  cursor: pointer;
-  width: 100%;
-  border-radius: 100em;
   margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  width: 100%;
+  border-radius: 0.5em;
   font-weight: 700;
   letter-spacing: 0.01em;
   padding: 1em;
   padding-top: 0.7em;
   padding-bottom: 0.7em;
   border: 0.1em solid #0000004a;
-  margin-top: 1em;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #42a5f5, #0d47a1);
 }
 
 .SubmitButton:hover {
-  background: black;
-  color: white;
+  color: black;
 }
 
 .QueryType {
   cursor: pointer;
-  border-radius: 100em;
+  border-radius: 0.5em;
   padding: 1em;
   padding-top: 0.7em;
   padding-bottom: 0.7em;
-  margin-bottom: 1em;
 }
 
 .TextArea {
-  border-radius: 100em;
+  font-family: "Oswald";
+  border-radius: 0.5em;
   padding: 1em;
-  text-align: center;
+  text-align: start;
 }
 
 textarea {
-  max-width: 40em;
+  height: 200px;
   width: 100%;
+  resize: none;
+  overflow-y: auto;
 }

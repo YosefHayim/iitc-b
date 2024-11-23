@@ -20,8 +20,6 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
     fetchData(pokemonUrl);
   }, []);
 
-  const beautyName = capitalizeFirstLetter(pokemon.name);
-
   return (
     pokemon && (
       <div
@@ -36,7 +34,7 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
         }}
       >
         <div className={styles.PokemonNameAndIdContainer}>
-          <h2 className={styles.name}>{beautyName}</h2>
+          <h2 className={styles.name}>{capitalizeFirstLetter(pokemon.name)}</h2>
           <h2 className={styles.id}>#{pokemon.id}</h2>
         </div>
         <div className={styles.ImgContainer}>

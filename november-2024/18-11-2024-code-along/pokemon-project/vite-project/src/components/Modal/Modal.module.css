@@ -1,40 +1,64 @@
-.StatImg {
-  height: 2em;
-  width: 2em;
-}
-
-.StatValue {
-  transform: translateY(-0.15em);
-  margin-left: 0.2em;
-}
-
-.StatsContainer {
+.HeightAndWeightContainer,
+.AlignIconAndText {
   display: flex;
-  gap: 0.2em;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.ExperienceContainer {
-  display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
 }
 
 .PokemonName {
-  font-weight: 900;
-  text-align: center;
-  color: black;
-}
-
-.PokemonDataContainer {
-  display: flex;
-  flex-direction: column-reverse;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 .HeightAndWeightContainer {
+  background: linear-gradient(to bottom, #5e5e5e, #272727);
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+.HeightContainer,
+.WeightContainer {
   display: flex;
-  gap: 1em;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.5em;
+}
+
+.SeparatorForHeightAndWeight {
+  width: 3em;
+  rotate: 90deg;
+  border: 1px solid gray;
+}
+
+.word {
+  color: #919191;
+}
+
+.TypesContainer {
+  margin-top: 0.5em;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.grass {
+  border: 1px solid green;
+  border-radius: 1em;
+  width: 5em;
+  text-align: center;
+  padding: 0.2em 1em 0.2em 1em;
+  background: green;
+}
+
+.poison {
+  border: 1px solid purple;
+  border-radius: 1em;
+  width: 5em;
+  text-align: center;
+  padding: 0.2em 1em 0.2em 1em;
+  background: purple;
 }

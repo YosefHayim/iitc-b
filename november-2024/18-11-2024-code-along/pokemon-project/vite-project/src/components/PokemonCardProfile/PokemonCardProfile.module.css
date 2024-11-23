@@ -27,4 +27,5 @@
 .name,
 .id {
   color: white;
+  font-weight: 100;
 }

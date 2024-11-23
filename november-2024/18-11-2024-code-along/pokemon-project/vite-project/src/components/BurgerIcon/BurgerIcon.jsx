@@ -28,8 +28,12 @@ export default function BurgerIcon({ setOpen }) {
             aria-label="open drawer"
             sx={{
               mr: 2,
+              borderRadius: "0.2em",
+              marginTop: "0.4em",
               "&:hover": {
                 background: "gray",
+                borderRadius: "0.2em",
+                marginTop: "0.4em",
               },
             }}
           >

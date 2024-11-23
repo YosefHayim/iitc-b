@@ -33,8 +33,11 @@
 }
 
 .AgreeToTermsContainer {
+  color: white;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .TagLink {
@@ -47,8 +50,16 @@ span:hover {
   color: white;
 }
 
+.IAgreeToThe {
+  color: gray;
+}
+
+.IAgreeToThe:hover {
+  color: gray;
+}
+
 .submitButton {
-  width: 100;
+  width: 100%;
   border-radius: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -83,6 +94,7 @@ span:hover {
 input[type="checkbox" i] {
   cursor: pointer;
   margin-bottom: 1em;
+  margin-right: 0.5em;
 }
 
 .UserOptionsContainer {

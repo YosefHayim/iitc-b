@@ -59,8 +59,11 @@ const Register = () => {
           </label>
           <div className={styles.AgreeToTermsContainer}>
             <label className={styles.AgreeToTerms}>
-              <input type="checkbox" name="agreeToTerms" />I agree to the terms
-              and conditions
+              <input type="checkbox" name="agreeToTerms" />
+              <span className={styles.IAgreeToThe}>I agree to the</span>
+              <Link to="/terms-and-conditions" className={styles.TagLink}>
+                <span>terms and conditions</span>
+              </Link>
             </label>
           </div>
           <div className={styles.submitButtonContainer}>

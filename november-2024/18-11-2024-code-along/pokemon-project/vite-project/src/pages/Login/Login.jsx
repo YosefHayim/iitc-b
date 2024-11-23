@@ -23,15 +23,15 @@ const Login = () => {
             placeholder="Password"
             className={styles.PasswordInput}
           />
+          <button type="button" className={styles.ForgetPasswordButton}>
+            <Link to="/forget-password" className={styles.TagLink}>
+              Forgot Password?
+            </Link>
+          </button>
           <button type="submit" className={styles.SubmitButton}>
             Continue
           </button>
           <div className={styles.userOptionsContainer}>
-            <button type="button" className={styles.ForgetPasswordButton}>
-              <Link to="/forget-password" className={styles.TagLink}>
-                Forgot Password?
-              </Link>
-            </button>
             <button className={styles.RegisterButton}>
               <Link to="/register" className={styles.TagLink}>
                 First time?

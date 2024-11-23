@@ -12,6 +12,7 @@ import SearchForPokemon from "./pages/SearchForPokemon/SearchForPokemon";
 import TemporaryDrawer from "./components/Drawer/Drawer";
 import ForgetPassword from "./pages/ForgetPassword/ForgetPassword";
 import "./App.css";
+import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 
 function App() {
   const [input, setInput] = useState("");
@@ -31,6 +32,7 @@ function App() {
         <Route path="/createCustomPokemon" element={<CreateCustomPokemon />} />
         <Route path="/search/:input" element={<SearchForPokemon />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   );

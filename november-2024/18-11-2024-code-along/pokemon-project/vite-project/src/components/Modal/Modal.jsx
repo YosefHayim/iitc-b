@@ -28,11 +28,12 @@ const boxStyle = {
   textAlign: "center",
   background: "linear-gradient(to bottom, #373535, #000000)",
   width: "20em",
-  height: "25em",
+  height: "35em",
 };
 
 export default function PokemonViewButton({ pokemonData }) {
   const { types, id, name } = pokemonData;
+  const img = pokemonData?.sprites.other.dream_world.front_default;
 
   const buttonStyle = {
     background: `${buttonColorType(
@@ -69,6 +70,7 @@ export default function PokemonViewButton({ pokemonData }) {
           <h2 className={`${styles.PokemonName}`}>
             {capitalizeFirstLetter(name)} #{id}
           </h2>
+          <img src={img} alt={name} className={styles.PokemonImg} />
           <ModalPokemonTypes types={types} />
           <ModalButtons pokemonData={pokemonData} />
         </Box>

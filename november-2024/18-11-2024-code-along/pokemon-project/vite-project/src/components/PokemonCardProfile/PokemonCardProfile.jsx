@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "./PokemonCardProfile.module.css";
-import getTypeBackground from "../../utils/getBackgroundType.js";
 import capitalizeFirstLetter from "../../utils/firstLetterUppercase.js";
 
 const PokemonCardProfile = ({ pokemonUrl }) => {

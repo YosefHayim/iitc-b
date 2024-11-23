@@ -29,7 +29,7 @@ const SearchForPokemon = () => {
   }, [input]);
 
   const name = pokemonData?.name;
-  const img = pokemonData?.sprites.other.home.front_default;
+  const img = pokemonData?.sprites.other.dream_world.front_default;
 
   return (
     <div className={styles.SearchPageContainer}>

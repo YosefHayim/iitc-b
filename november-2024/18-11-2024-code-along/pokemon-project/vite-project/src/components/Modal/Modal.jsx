@@ -1,11 +1,5 @@
 import * as React from "react";
 import styles from "./Modal.module.css";
-import WeightStat from "../WeightStat/WeightStat";
-import HeightStat from "../HeightStat/HeightStat";
-import ExperienceStat from "../ExperienceStat/ExperienceStat";
-import AbilitiesStats from "../AbilitiesStat/AbilitiesStat";
-import TypeStats from "../TypesStat/TypesStat";
-import PokemonStats from "../PokemonStats/PokemonStats";
 
 // Mui import
 import Modal from "@mui/material/Modal";
@@ -20,22 +14,12 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: "100%",
   bgcolor: "white",
   boxShadow: 24,
   p: 4,
-};
-
-const styleButton = {
-  borderRadius: "14px",
-  fontWeight: "900",
-  color: "white",
-  bgcolor: "black",
-  "&:hover": {
-    color: "black",
-    bgcolor: "#f4f4f4",
-  },
-  width: "100%",
+  borderRadius: "0.5em",
+  padding: "2em",
 };
 
 export default function PokemonViewButton({ pokemonData }) {
@@ -58,7 +42,7 @@ export default function PokemonViewButton({ pokemonData }) {
     <div>
       <Button
         sx={{
-          backgroundImage: `url(${getTypeBackground(
+          background: `url(${getTypeBackground(
             types[0]?.type.name || types[1]?.type.name || "default"
           )})`,
           backgroundSize: "cover",
@@ -68,12 +52,12 @@ export default function PokemonViewButton({ pokemonData }) {
           fontWeight: "900",
           borderRadius: "0.5em",
           "&:hover": {
-            backgroundImage: `url('public/images/blackly-background-button.png')`,
+            color: `black`,
           },
         }}
         onClick={handleOpen}
       >
-        View {name}
+        View Pokemon
       </Button>
       <Modal
         open={open}
@@ -83,18 +67,11 @@ export default function PokemonViewButton({ pokemonData }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            <p className={styles.PokemonName}>{name.toUpperCase()}</p>
+            <p className={styles.PokemonName}>{name}</p>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             <div className={styles.PokemonDataContainer}>
-              <div className={styles.StatsContainer}>
-                <ExperienceStat base_experience={base_experience} />
-                <HeightStat height={height} />
-                <WeightStat weight={weight} />
-                <AbilitiesStats abilities={abilities} />
-                <TypeStats types={types} />
-                <PokemonStats stats={stats} />
-              </div>
+              <div className={styles.StatsContainer}></div>
             </div>
           </Typography>
         </Box>

@@ -11,8 +11,6 @@ export default function SearchBar({ setInput }) {
     const formObject = new FormData(e.target);
     const inputValue = formObject.get("searchInput");
     setInput(inputValue);
-    console.log(inputValue);
-
     navigateSearch(`/search/${inputValue}`);
   };
 

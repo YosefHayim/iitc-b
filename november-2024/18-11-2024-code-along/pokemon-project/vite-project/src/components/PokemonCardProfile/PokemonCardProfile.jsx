@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "./PokemonCardProfile.module.css";
-import PokemonImg from "../PokemonImage/PokemonImage.jsx";
-import PokemonNameAndId from "../PokemonNameAndId/PokemonNameAndId.jsx";
 import getTypeBackground from "../../utils/getBackgroundType.js";
+import capitalizeFirstLetter from "../../utils/firstLetterUppercase.js";
 
 const PokemonCardProfile = ({ pokemonUrl }) => {
   const [pokemon, setPokemon] = useState(null);
@@ -21,7 +20,7 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
     fetchData(pokemonUrl);
   }, []);
 
-  console.log(pokemon);
+  const beautyName = capitalizeFirstLetter(pokemon.name);
 
   return (
     pokemon && (
@@ -30,19 +29,23 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
         className={styles.PokemonCard}
         style={{
           backgroundImage: `url(${getTypeBackground(
-            pokemon.types[0]?.type.name ||
-              pokemon.types[1]?.type.name ||
-              "default"
+            pokemon.types[0]?.type.name || "default"
           )})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <PokemonNameAndId pokemonName={pokemon.name} pokemonId={pokemon.id} />
-        <PokemonImg
-          pokemonName={pokemon.name}
-          pokemonImg={pokemon.sprites.other.home.front_default}
-        />
+        <div className={styles.PokemonNameAndIdContainer}>
+          <h2 className={styles.name}>{beautyName}</h2>
+          <h2 className={styles.id}>#{pokemon.id}</h2>
+        </div>
+        <div className={styles.ImgContainer}>
+          <img
+            src={pokemon.sprites.other.home.front_default}
+            alt={pokemon.name}
+            className={styles.pokemonImg}
+          />
+        </div>
       </div>
     )
   );

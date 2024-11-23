@@ -8,7 +8,6 @@ const ViewPokemonSingleData = ({ pokemonUrl }) => {
   const [pokemon, setPokemon] = useState(null);
 
   const handleClick = () => {
-    console.log(`clicked`);
     setClick(true);
   };
 

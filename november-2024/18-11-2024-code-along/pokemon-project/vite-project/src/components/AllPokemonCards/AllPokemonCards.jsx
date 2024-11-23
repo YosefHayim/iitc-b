@@ -64,7 +64,7 @@ const AllPokemonCards = () => {
                 </div>
               ))
             ) : (
-              <div>No pokemons available or invalid data</div> // Handle the non-array case here
+              <div>No pokemon's available or invalid data</div>
             )}
           </div>
         </>

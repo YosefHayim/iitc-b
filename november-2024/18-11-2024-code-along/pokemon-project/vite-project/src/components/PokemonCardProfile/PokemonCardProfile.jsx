@@ -21,6 +21,8 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
     fetchData(pokemonUrl);
   }, []);
 
+  console.log(pokemon);
+
   return (
     pokemon && (
       <div
@@ -39,7 +41,7 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
         <PokemonNameAndId pokemonName={pokemon.name} pokemonId={pokemon.id} />
         <PokemonImg
           pokemonName={pokemon.name}
-          pokemonImg={pokemon.sprites.other.dream_world.front_default}
+          pokemonImg={pokemon.sprites.other.home.front_default}
         />
       </div>
     )

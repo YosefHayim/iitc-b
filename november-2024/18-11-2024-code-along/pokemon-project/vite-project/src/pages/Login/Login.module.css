@@ -14,7 +14,7 @@
 .PasswordInput,
 .EmailInput {
   width: 100%;
-  border-radius: 100em;
+  border-radius: 1em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-weight: 700;
@@ -25,14 +25,24 @@
   border: 0.1em solid #0000004a;
 }
 
+.EmailInput,
+.PasswordInput {
+  background: gainsboro;
+}
+
+input[type="*"] {
+  border: 1px solid white;
+}
+
 .SubmitButton {
+  border: 0.1em solid white;
+  color: white;
   cursor: pointer;
+  background: linear-gradient(to bottom, #42a5f5, #0d47a1);
 }
 
 .SubmitButton:hover {
-  background: black;
-  color: white;
-  border: 0.1em solid white;
+  background: linear-gradient(to bottom, #66bb6a, #388e3c);
 }
 
 .ForgetPasswordButton,
@@ -55,6 +65,8 @@
   width: 100%;
   text-align: center;
   margin-bottom: 1em;
+  font-weight: 100;
+  color: white;
 }
 
 .userOptionsContainer {

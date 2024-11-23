@@ -10,6 +10,7 @@ import ScaleIcon from "@mui/icons-material/Scale";
 
 import getTypeBackground from "../../utils/getBackgroundType";
 import capitalizeFirstLetter from "../../utils/firstLetterUppercase";
+import { Link } from "react-router-dom";
 
 export default function PokemonViewButton({ pokemonData }) {
   const {
@@ -42,6 +43,7 @@ export default function PokemonViewButton({ pokemonData }) {
           color: "white",
           fontWeight: "100",
           borderRadius: "0.5em",
+          textTransform: "none",
           "&:hover": {
             color: `black`,
           },
@@ -83,6 +85,44 @@ export default function PokemonViewButton({ pokemonData }) {
                 {capitalizeFirstLetter(type.type.name)}
               </div>
             ))}
+          </div>
+
+          <div className={styles.userOptionsChoiceView}>
+            <div className={styles.statsContainer}>
+              <button className={styles.statsButton}>
+                <Link to="" className={styles.statsLink}>
+                  Stats
+                </Link>
+              </button>
+              <hr className={styles.animatedHr} />
+            </div>
+
+            <div className={styles.movesContainer}>
+              <button className={styles.movesButton}>
+                <Link to="" className={styles.movesLink}>
+                  Moves
+                </Link>
+              </button>
+              <hr className={styles.animatedHr} />
+            </div>
+
+            <div className={styles.evolutionsContainer}>
+              <button className={styles.evolutionsButton}>
+                <Link to="" className={styles.evolutionsLink}>
+                  Evolutions
+                </Link>
+              </button>
+              <hr className={styles.animatedHr} />
+            </div>
+
+            <div className={styles.locationsContainer}>
+              <button className={styles.locationsButton}>
+                <Link to="" className={styles.locationsLink}>
+                  Locations
+                </Link>
+              </button>
+              <hr className={styles.animatedHr} />
+            </div>
           </div>
 
           <div className={styles.HeightAndWeightContainer}>

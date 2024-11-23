@@ -20,18 +20,13 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
     fetchData(pokemonUrl);
   }, []);
 
+  console.log(pokemon);
+
   return (
     pokemon && (
       <div
         key={pokemon.name}
-        className={styles.PokemonCard}
-        style={{
-          backgroundImage: `url(${getTypeBackground(
-            pokemon.types[0]?.type.name || "default"
-          )})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
+        className={styles[pokemon.types[0]?.type.name || types[1]?.type.name]}
       >
         <div className={styles.PokemonNameAndIdContainer}>
           <h2 className={styles.name}>{capitalizeFirstLetter(pokemon.name)}</h2>

@@ -15,6 +15,7 @@ import getStatNameBeauty from "../../utils/getStatNameBeauty";
 
 export default function PokemonViewButton({ pokemonData }) {
   const {
+    id,
     abilities,
     base_experience,
     height,
@@ -25,6 +26,8 @@ export default function PokemonViewButton({ pokemonData }) {
     species,
     moves,
   } = pokemonData;
+
+  console.log(pokemonData);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -76,11 +79,11 @@ export default function PokemonViewButton({ pokemonData }) {
           }}
         >
           <h2 className={`${styles.PokemonName}`}>
-            {capitalizeFirstLetter(name)}
+            {capitalizeFirstLetter(name)} #{id}
           </h2>
           <div className={styles.TypesContainer}>
             {types.map((type) => (
-              <div className={styles[type.type.name]}>
+              <div key={type.type.name} className={styles[type.type.name]}>
                 {capitalizeFirstLetter(type.type.name)}
               </div>
             ))}
@@ -171,7 +174,28 @@ export default function PokemonViewButton({ pokemonData }) {
             </div>
           </div>
 
-          <div className={styles.movesContainer}>{}</div>
+          <div className={styles.movesContainer}>
+            {moves.slice(0, 5).map((move) => (
+              <div key={move.move.name}>
+                <h4>
+                  {capitalizeFirstLetter(move.move.name.replace(/-/g, " "))}
+                </h4>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.abilitiesContainer}>
+            {abilities.map(
+              (ability) => (
+                console.log(ability),
+                (
+                  <div key={ability.ability.name}>
+                    <h4>{capitalizeFirstLetter(ability.ability.name)}</h4>
+                  </div>
+                )
+              )
+            )}
+          </div>
         </Box>
       </Modal>
     </div>

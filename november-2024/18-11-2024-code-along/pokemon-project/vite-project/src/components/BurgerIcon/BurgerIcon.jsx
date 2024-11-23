@@ -13,7 +13,6 @@ export default function BurgerIcon({ setOpen }) {
         sx={{
           background: "none",
           boxShadow: "none",
-          backgroundColor: "transparent",
           color: "white",
           position: "absolute",
           top: 0,
@@ -31,7 +30,7 @@ export default function BurgerIcon({ setOpen }) {
               borderRadius: "0.2em",
               marginTop: "0.4em",
               "&:hover": {
-                background: "gray",
+                background: "linear-gradient(to bottom, #5e5e5e, #272727)",
                 borderRadius: "0.2em",
                 marginTop: "0.4em",
               },

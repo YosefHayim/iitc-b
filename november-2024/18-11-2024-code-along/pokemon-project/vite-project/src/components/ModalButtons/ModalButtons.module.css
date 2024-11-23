@@ -1,0 +1,62 @@
+.userOptionsChoiceView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1em;
+  gap: 0.1em;
+  width: 100%;
+}
+
+.statsContainer,
+.aboutContainer,
+.movesContainer,
+.evolutionsContainer,
+.locationsContainer {
+  text-align: center;
+}
+
+.statsLink:hover {
+  border-radius: 0.3em;
+}
+
+.statsButton,
+.movesButton,
+.aboutButton,
+.evolutionsButton,
+.locationsButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 100;
+  text-align: center;
+  padding: 0.5em;
+  position: relative;
+  font-family: "Oswald";
+  color: white;
+}
+
+.statsButton:hover,
+.movesButton:hover,
+.aboutButton:hover,
+.evolutionsButton:hover,
+.locationsButton:hover {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.animatedHr {
+  width: 0%;
+  height: 0.01em;
+  background-color: white;
+  border: none;
+  transition: width 0.3s ease-in-out;
+}
+
+.statsContainer:hover .animatedHr,
+.aboutContainer:hover .animatedHr,
+.movesContainer:hover .animatedHr,
+.evolutionsContainer:hover .animatedHr,
+.locationsContainer:hover .animatedHr {
+  width: 100%;
+}

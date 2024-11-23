@@ -17,8 +17,7 @@ import ModalPokemonsMove from "../ModalPokemonsMoves/ModalPokemonsMove";
 import ModalPokemonAbilities from "../ModalPokemonAbilities/ModalPokemonAbilities";
 
 export default function PokemonViewButton({ pokemonData }) {
-  const { id, abilities, height, name, weight, stats, types, moves } =
-    pokemonData;
+  const { types, id, name } = pokemonData;
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -69,22 +68,14 @@ export default function PokemonViewButton({ pokemonData }) {
             color: "white",
             textAlign: "center",
             background: "linear-gradient(to bottom, #373535, #000000)",
+            height: "30em",
           }}
         >
           <h2 className={`${styles.PokemonName}`}>
             {capitalizeFirstLetter(name)} #{id}
           </h2>
           <ModalPokemonTypes types={types} />
-          <ModalButtons />
-          <ModalPokemonStats stats={stats} />
-          <ModalPokemonWnH
-            height={height}
-            weight={weight}
-            setDisplay={setDisplay}
-            display={display}
-          />
-          <ModalPokemonsMove moves={moves} />
-          <ModalPokemonAbilities abilities={abilities} />
+          <ModalButtons pokemonData={pokemonData} />
         </Box>
       </Modal>
     </div>

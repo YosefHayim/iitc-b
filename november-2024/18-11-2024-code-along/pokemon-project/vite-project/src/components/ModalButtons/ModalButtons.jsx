@@ -4,6 +4,7 @@ import ModalPokemonsMove from "../ModalPokemonsMoves/ModalPokemonsMove";
 import ModalPokemonStats from "../ModalPokemonStats/ModalPokemonStats";
 import ModalPokemonWnH from "../ModalPokemonWnH/ModalPokemonWnH";
 import styles from "./ModalButtons.module.css";
+import ModalPokemonAudio from "../ModalPokemonAudio/ModalPokemonAudio";
 
 const ModalButtons = ({ pokemonData }) => {
   const { height, weight, stats, moves, abilities, cries } = pokemonData;
@@ -51,8 +52,6 @@ const ModalButtons = ({ pokemonData }) => {
 
           <div className={styles.TemplateContainer}>
             <button className={styles.TemplateButton}>Sounds</button>
-            {cries?.latest ? cries.latest : "null"}
-            {cries?.legacy ? cries.legacy : "null"}
           </div>
         </div>
         {activeButton === "About" && (
@@ -63,7 +62,7 @@ const ModalButtons = ({ pokemonData }) => {
         {activeButton === "Abilities" && (
           <ModalPokemonAbilities abilities={abilities} />
         )}
-        {activeButton === "Sounds"}
+        {activeButton === "Sounds" && <ModalPokemonAudio cries={cries} />}
       </div>
     </div>
   );

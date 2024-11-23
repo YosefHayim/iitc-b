@@ -37,9 +37,25 @@
 .BoltIcon,
 .EvolutionIcon,
 .LocationIcon {
+  opacity: 0;
   height: 5em;
   position: static;
   transform: translate(5em, 0em);
+  transition: opacity 0.5s ease;
+}
+
+.PokedexContainer:hover .PokemonBallIcon,
+.MovesContainer:hover .BoltIcon,
+.LocationsContainer:hover .LocationIcon,
+.EvolutionsContainer:hover .EvolutionIcon {
+  opacity: 1;
+}
+
+.PokedexContainer:hover .PokedexButton,
+.MovesContainer:hover .MovesButton,
+.LocationsContainer:hover .LocationsButton,
+.EvolutionsContainer:hover .EvolutionButton {
+  color: transparent;
 }
 
 .PokedexContainer,
@@ -100,13 +116,6 @@
 
 .LinkTag {
   text-decoration: none;
-}
-
-.PokedexContainer:hover .PokedexButton,
-.MovesContainer:hover .MovesButton,
-.LocationsContainer:hover .LocationsButton,
-.EvolutionsContainer:hover .EvolutionButton {
-  color: black;
 }
 
 .HomeUnderLine {

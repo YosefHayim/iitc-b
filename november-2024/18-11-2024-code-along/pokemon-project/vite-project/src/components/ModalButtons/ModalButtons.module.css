@@ -1,3 +1,8 @@
+.scrollContainer {
+  overflow-x: auto;
+  width: 100%;
+}
+
 .PokemonTitlesData {
   display: flex;
   flex-direction: row;
@@ -5,8 +10,11 @@
   align-items: center;
   margin-bottom: 1em;
   margin: 1em;
-  flex-wrap: wrap;
   font-size: 0.8em;
+  /* test */
+  min-width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 
 .statsLink:hover {
@@ -17,7 +25,8 @@
 .movesButton,
 .aboutButton,
 .abilitiesButton,
-.locationsButton {
+.locationsButton,
+.TemplateButton {
   border: none;
   background: none;
   cursor: pointer;
@@ -33,22 +42,11 @@
 .movesButton:hover,
 .aboutButton:hover,
 .abilitiesButton:hover,
-.locationsButton:hover {
+.locationsButton:hover,
+.TemplateButton:hover {
   padding: 0.5em;
 }
 
-.animatedHr {
-  width: 0%;
-  height: 0.01em;
-  background-color: gray;
-  border: none;
-  transition: width 0.3s ease-in-out;
-}
-
-.statsContainer:hover .animatedHr,
-.aboutContainer:hover .animatedHr,
-.movesContainer:hover .animatedHr,
-.abilitiesContainer:hover .animatedHr,
-.locationsContainer:hover .animatedHr {
-  width: 100%;
+.activeButton {
+  font-weight: 600;
 }

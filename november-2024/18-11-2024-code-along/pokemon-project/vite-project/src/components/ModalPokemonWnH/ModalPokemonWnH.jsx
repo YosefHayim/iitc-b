@@ -1,6 +1,7 @@
 import styles from "./ModalPokemonWnH.module.css";
 import StraightenIcon from "@mui/icons-material/Straighten";
 import ScaleIcon from "@mui/icons-material/Scale";
+import { useRef } from "react";
 
 const ModalPokemonWnH = ({ height, weight }) => {
   return (

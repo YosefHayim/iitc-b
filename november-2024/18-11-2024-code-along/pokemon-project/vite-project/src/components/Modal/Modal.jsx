@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from "./Modal.module.css";
+import { useState } from "react";
 
 // Mui import
 import Modal from "@mui/material/Modal";
@@ -22,6 +23,8 @@ export default function PokemonViewButton({ pokemonData }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const [display, setDisplay] = useState(false);
 
   return (
     <div>
@@ -74,7 +77,12 @@ export default function PokemonViewButton({ pokemonData }) {
           <ModalPokemonTypes types={types} />
           <ModalButtons />
           <ModalPokemonStats stats={stats} />
-          <ModalPokemonWnH height={height} weight={weight} />
+          <ModalPokemonWnH
+            height={height}
+            weight={weight}
+            setDisplay={setDisplay}
+            display={display}
+          />
           <ModalPokemonsMove moves={moves} />
           <ModalPokemonAbilities abilities={abilities} />
         </Box>

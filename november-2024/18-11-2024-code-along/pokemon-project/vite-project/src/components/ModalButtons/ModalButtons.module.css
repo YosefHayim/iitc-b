@@ -8,14 +8,6 @@
   width: 100%;
 }
 
-.statsContainer,
-.aboutContainer,
-.movesContainer,
-.evolutionsContainer,
-.locationsContainer {
-  text-align: center;
-}
-
 .statsLink:hover {
   border-radius: 0.3em;
 }
@@ -41,14 +33,13 @@
 .aboutButton:hover,
 .evolutionsButton:hover,
 .locationsButton:hover {
-  font-weight: 600;
   padding: 0.5em;
 }
 
 .animatedHr {
   width: 0%;
   height: 0.01em;
-  background-color: white;
+  background-color: gray;
   border: none;
   transition: width 0.3s ease-in-out;
 }

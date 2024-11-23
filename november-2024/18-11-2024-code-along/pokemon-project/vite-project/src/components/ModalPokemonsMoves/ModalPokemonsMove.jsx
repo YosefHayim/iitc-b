@@ -4,6 +4,7 @@ import styles from "./ModalPokemonsMove.module.css";
 const ModalPokemonsMove = ({ moves }) => {
   return (
     <div className={styles.movesContainer}>
+      <h2>Moves</h2>
       {moves.slice(0, 5).map((move) => (
         <div key={move.move.name}>
           <h4>{capitalizeFirstLetter(move.move.name.replace(/-/g, " "))}</h4>

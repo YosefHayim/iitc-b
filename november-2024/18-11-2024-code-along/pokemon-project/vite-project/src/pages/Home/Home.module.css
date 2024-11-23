@@ -31,6 +31,15 @@
   padding: 2em;
 }
 
+.PokemonBallIcon,
+.BoltIcon,
+.EvolutionIcon,
+.LocationIcon {
+  height: 5em;
+  position: static;
+  transform: translate(5em, 0em);
+}
+
 .PokedexContainer,
 .MovesContainer,
 .LocationsContainer,
@@ -64,6 +73,7 @@
   font-size: 1em;
   font-weight: bolder;
   color: white;
+  position: absolute;
 }
 
 .PokedexContainer {
@@ -94,7 +104,7 @@
 .MovesContainer:hover .MovesButton,
 .LocationsContainer:hover .LocationsButton,
 .EvolutionsContainer:hover .EvolutionButton {
-  color: black;
+  color: darkslategrey;
 }
 
 .HomeUnderLine {

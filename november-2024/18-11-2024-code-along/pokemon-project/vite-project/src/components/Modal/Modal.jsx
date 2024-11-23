@@ -14,20 +14,8 @@ import { Link } from "react-router-dom";
 import getStatNameBeauty from "../../utils/getStatNameBeauty";
 
 export default function PokemonViewButton({ pokemonData }) {
-  const {
-    id,
-    abilities,
-    base_experience,
-    height,
-    name,
-    weight,
-    stats,
-    types,
-    species,
-    moves,
-  } = pokemonData;
-
-  console.log(pokemonData);
+  const { id, abilities, height, name, weight, stats, types, moves } =
+    pokemonData;
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -68,7 +56,6 @@ export default function PokemonViewButton({ pokemonData }) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: "100%",
             bgcolor: "black",
             boxShadow: 24,
             p: 4,
@@ -76,6 +63,7 @@ export default function PokemonViewButton({ pokemonData }) {
             padding: "2em",
             color: "white",
             textAlign: "center",
+            background: "linear-gradient(to bottom, #373535, #000000)",
           }}
         >
           <h2 className={`${styles.PokemonName}`}>
@@ -90,47 +78,27 @@ export default function PokemonViewButton({ pokemonData }) {
           </div>
           <div className={styles.userOptionsChoiceView}>
             <div className={styles.aboutContainer}>
-              <button className={styles.aboutButton}>
-                <Link to="" className={styles.aboutLink}>
-                  About
-                </Link>
-              </button>
+              <button className={styles.aboutButton}>About</button>
               <hr className={styles.animatedHr} />
             </div>
 
             <div className={styles.statsContainer}>
-              <button className={styles.statsButton}>
-                <Link to="" className={styles.statsLink}>
-                  Stats
-                </Link>
-              </button>
+              <button className={styles.statsButton}>Stats</button>
               <hr className={styles.animatedHr} />
             </div>
 
             <div className={styles.movesContainer}>
-              <button className={styles.movesButton}>
-                <Link to="" className={styles.movesLink}>
-                  Moves
-                </Link>
-              </button>
+              <button className={styles.movesButton}>Moves </button>
               <hr className={styles.animatedHr} />
             </div>
 
             <div className={styles.evolutionsContainer}>
-              <button className={styles.evolutionsButton}>
-                <Link to="" className={styles.evolutionsLink}>
-                  Evolutions
-                </Link>
-              </button>
+              <button className={styles.evolutionsButton}>Evolutions</button>
               <hr className={styles.animatedHr} />
             </div>
 
             <div className={styles.locationsContainer}>
-              <button className={styles.locationsButton}>
-                <Link to="" className={styles.locationsLink}>
-                  Locations
-                </Link>
-              </button>
+              <button className={styles.locationsButton}>Locations</button>
               <hr className={styles.animatedHr} />
             </div>
           </div>
@@ -185,16 +153,11 @@ export default function PokemonViewButton({ pokemonData }) {
           </div>
 
           <div className={styles.abilitiesContainer}>
-            {abilities.map(
-              (ability) => (
-                console.log(ability),
-                (
-                  <div key={ability.ability.name}>
-                    <h4>{capitalizeFirstLetter(ability.ability.name)}</h4>
-                  </div>
-                )
-              )
-            )}
+            {abilities.map((ability) => (
+              <div key={ability.ability.name}>
+                <h4>{capitalizeFirstLetter(ability.ability.name)}</h4>
+              </div>
+            ))}
           </div>
         </Box>
       </Modal>

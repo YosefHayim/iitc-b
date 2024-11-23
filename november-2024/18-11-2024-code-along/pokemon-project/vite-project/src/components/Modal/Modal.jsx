@@ -7,44 +7,55 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
-import getTypeBackground from "../../utils/getBackgroundType";
 import capitalizeFirstLetter from "../../utils/firstLetterUppercase";
 import ModalPokemonTypes from "../ModalPokemonTypes/ModalPokemonTypes";
 import ModalButtons from "../ModalButtons/ModalButtons";
-import ModalPokemonStats from "../ModalPokemonStats/ModalPokemonStats";
-import ModalPokemonWnH from "../ModalPokemonWnH/ModalPokemonWnH";
-import ModalPokemonsMove from "../ModalPokemonsMoves/ModalPokemonsMove";
-import ModalPokemonAbilities from "../ModalPokemonAbilities/ModalPokemonAbilities";
+import buttonColorType from "../../utils/backgroundButtonColor";
+
+const boxStyle = {
+  borderRadius: "1em",
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  bgcolor: "black",
+  boxShadow: 24,
+  p: 4,
+  borderRadius: "0.5em",
+  padding: "2em",
+  color: "white",
+  textAlign: "center",
+  background: "linear-gradient(to bottom, #373535, #000000)",
+  height: "85vh",
+  width: "85vw",
+};
 
 export default function PokemonViewButton({ pokemonData }) {
   const { types, id, name } = pokemonData;
+
+  const buttonStyle = {
+    background: `${buttonColorType(
+      types[0]?.type.name || types[1]?.type.name
+    )}`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    color: "white",
+    fontWeight: "100",
+    borderRadius: "0.5em",
+    textTransform: "none",
+    "&:hover": {
+      color: `black`,
+    },
+  };
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [display, setDisplay] = useState(false);
-
   return (
     <div>
-      <Button
-        sx={{
-          background: `url(${getTypeBackground(
-            types[0]?.type.name || types[1]?.type.name
-          )})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          width: "100%",
-          color: "white",
-          fontWeight: "100",
-          borderRadius: "0.5em",
-          textTransform: "none",
-          "&:hover": {
-            color: `black`,
-          },
-        }}
-        onClick={handleOpen}
-      >
+      <Button sx={buttonStyle} onClick={handleOpen}>
         View Pokemon
       </Button>
       <Modal
@@ -53,24 +64,7 @@ export default function PokemonViewButton({ pokemonData }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box
-          sx={{
-            borderRadius: "1em",
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            bgcolor: "black",
-            boxShadow: 24,
-            p: 4,
-            borderRadius: "0.5em",
-            padding: "2em",
-            color: "white",
-            textAlign: "center",
-            background: "linear-gradient(to bottom, #373535, #000000)",
-            height: "30em",
-          }}
-        >
+        <Box sx={boxStyle}>
           <h2 className={`${styles.PokemonName}`}>
             {capitalizeFirstLetter(name)} #{id}
           </h2>

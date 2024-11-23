@@ -1,6 +1,6 @@
 .StatContainer {
   margin-bottom: 1em;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ModalPokemonAbilities from "../ModalPokemonAbilities/ModalPokemonAbilities";
 import ModalPokemonsMove from "../ModalPokemonsMoves/ModalPokemonsMove";
 import ModalPokemonStats from "../ModalPokemonStats/ModalPokemonStats";
@@ -8,8 +9,19 @@ const ModalButtons = ({ pokemonData }) => {
   const { id, abilities, height, name, weight, stats, types, moves } =
     pokemonData;
 
+  const [isVisible, setIsVisible] = useState(true);
+
+  const toggleVisibility = (e) => {
+    const button = e.target.closest("button");
+
+    if (button.innerText === `About` || button.innerText === `Stats`) {
+      console.log(button.innerText);
+      setIsVisible(!isVisible);
+    }
+  };
+
   return (
-    <div className={styles.userOptionsChoiceView}>
+    <div className={styles.userOptionsChoiceView} onClick={toggleVisibility}>
       <div className={styles.PokemonTitlesData}>
         <div className={styles.aboutContainer}>
           <button className={styles.aboutButton}>About</button>
@@ -34,10 +46,26 @@ const ModalButtons = ({ pokemonData }) => {
         </div>
         <div className={styles.PokemonDataContainer}></div>
       </div>
-      <ModalPokemonWnH height={height} weight={weight} />
-      <ModalPokemonStats stats={stats} />
-      <ModalPokemonsMove moves={moves} />
-      <ModalPokemonAbilities abilities={abilities} />
+
+      {isVisible && (
+        <ModalPokemonWnH
+          height={height}
+          weight={weight}
+          style={{ display: "flex" }}
+        />
+      )}
+      {isVisible && (
+        <ModalPokemonStats stats={stats} style={{ display: "flex" }} />
+      )}
+      {isVisible && (
+        <ModalPokemonsMove moves={moves} style={{ display: "flex" }} />
+      )}
+      {isVisible && (
+        <ModalPokemonAbilities
+          abilities={abilities}
+          style={{ display: "flex" }}
+        />
+      )}
     </div>
   );
 };

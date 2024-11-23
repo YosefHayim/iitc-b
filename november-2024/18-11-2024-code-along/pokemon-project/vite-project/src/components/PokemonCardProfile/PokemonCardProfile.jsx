@@ -20,8 +20,6 @@ const PokemonCardProfile = ({ pokemonUrl }) => {
     fetchData(pokemonUrl);
   }, []);
 
-  console.log(pokemon);
-
   return (
     pokemon && (
       <div

@@ -24,6 +24,8 @@ const ViewPokemonSingleData = ({ pokemonUrl }) => {
     fetchData(pokemonUrl);
   }, []);
 
+  console.log(pokemon);
+
   return (
     pokemon && (
       <div className={styles.PokemonViewSingleDataContainer}>

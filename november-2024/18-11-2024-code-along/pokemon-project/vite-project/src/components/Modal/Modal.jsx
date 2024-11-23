@@ -23,6 +23,7 @@ export default function PokemonViewButton({ pokemonData }) {
     stats,
     types,
     species,
+    moves,
   } = pokemonData;
 
   const [open, setOpen] = React.useState(false);
@@ -169,6 +170,8 @@ export default function PokemonViewButton({ pokemonData }) {
               <p className={styles.word}>Height</p>
             </div>
           </div>
+
+          <div className={styles.movesContainer}>{}</div>
         </Box>
       </Modal>
     </div>

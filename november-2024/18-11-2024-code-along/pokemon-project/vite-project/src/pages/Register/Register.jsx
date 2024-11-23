@@ -13,7 +13,7 @@ const Register = () => {
               type="email"
               name="email"
               id="email"
-              placeholder="Enter your email"
+              placeholder="Email"
               required
             />
           </label>
@@ -57,22 +57,26 @@ const Register = () => {
               required
             />
           </label>
-          <label>
-            <input type="checkbox" name="agreeToTerms" /> I agree to the terms
-            and conditions
-          </label>
+          <div className={styles.AgreeToTermsContainer}>
+            <label className={styles.AgreeToTerms}>
+              <input type="checkbox" name="agreeToTerms" />I agree to the terms
+              and conditions
+            </label>
+          </div>
           <div className={styles.submitButtonContainer}>
             <button type="submit" className={styles.submitButton}>
               Create Account
             </button>
           </div>
         </form>
-        <p>
-          Already have an account?
-          <Link to="/login" className={styles.TagLink}>
-            Login here
-          </Link>
-        </p>
+        <div className={styles.UserOptionsContainer}>
+          <p className={styles.AlreadyHaveAccount}>
+            Already have an account?
+            <Link to="/login" className={styles.TagLink}>
+              <span>Login here</span>
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

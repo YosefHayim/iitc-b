@@ -3,69 +3,69 @@ import styles from "./CreateCustomPokemon.module.css";
 const CreateCustomPokemon = () => {
   return (
     <div>
-      <h1 className={styles.PageTitle}>Add custom pokemon</h1>
+      <h1 className={styles.PageTitle}>Add your own custom pokemon</h1>
       <div className={styles.CreateCustomPokemonContainer}>
         <form className={styles.CustomPokemonFormContainer}>
-          <label htmlFor="name">Pokemon Name</label>
+          <label htmlFor="name"></label>
           <input
             type="text"
             id="name"
-            placeholder="Pokemon name..."
+            placeholder="Pokemon name"
             className={styles.DataInput}
           />
-          <label htmlFor="imageLink">Pokemon Image URL</label>
+          <label htmlFor="imageLink"></label>
           <input
             type="text"
             id="imageLink"
-            placeholder="Pokemon Image Url..."
+            placeholder="Pokemon Image Url"
             className={styles.DataInput}
           />
 
-          <label htmlFor="types">Pokemon Types</label>
+          <label htmlFor="types"></label>
           <input
             type="text"
             id="types"
-            placeholder="Pokemon types..."
+            placeholder="Pokemon types"
             className={styles.DataInput}
           />
 
-          <label htmlFor="stats">Pokemon Stats</label>
+          <label htmlFor="stats"></label>
           <input
             type="text"
             id="stats"
-            placeholder="Pokemon stats..."
+            placeholder="Pokemon stats"
             className={styles.DataInput}
           />
 
-          <label htmlFor="exp">Pokemon Base Experience</label>
+          <label htmlFor="exp"></label>
           <input
             type="text"
             id="exp"
-            placeholder="Pokemon exp..."
+            placeholder="Pokemon exp"
             className={styles.DataInput}
           />
 
-          <label htmlFor="heightNWeight">Pokemon Height</label>
+          <label htmlFor="heightNWeight"></label>
           <input
             type="text"
             id="height"
-            placeholder="Pokemon height..."
+            placeholder="Pokemon height"
             className={styles.DataInput}
           />
 
-          <label htmlFor="heightNWeight">Pokemon Weight</label>
+          <label htmlFor="heightNWeight"></label>
           <input
             type="text"
             id="weight"
-            placeholder="Pokemon weight..."
+            placeholder="Pokemon weight"
             className={styles.DataInput}
           />
 
-          <label htmlFor="creator">Creator name</label>
+          <label htmlFor="creator"></label>
           <input
             type="text"
             id="creator"
-            placeholder="Josephs Sabagos..."
+            placeholder="Creator name"
             className={styles.DataInput}
           />
           <button className={styles.CreateCustomPokemon}>

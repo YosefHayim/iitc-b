@@ -11,6 +11,7 @@ import ScaleIcon from "@mui/icons-material/Scale";
 import getTypeBackground from "../../utils/getBackgroundType";
 import capitalizeFirstLetter from "../../utils/firstLetterUppercase";
 import { Link } from "react-router-dom";
+import getStatNameBeauty from "../../utils/getStatNameBeauty";
 
 export default function PokemonViewButton({ pokemonData }) {
   const {
@@ -23,8 +24,6 @@ export default function PokemonViewButton({ pokemonData }) {
     types,
     species,
   } = pokemonData;
-
-  console.log(pokemonData);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -78,7 +77,6 @@ export default function PokemonViewButton({ pokemonData }) {
           <h2 className={`${styles.PokemonName}`}>
             {capitalizeFirstLetter(name)}
           </h2>
-
           <div className={styles.TypesContainer}>
             {types.map((type) => (
               <div className={styles[type.type.name]}>
@@ -86,8 +84,16 @@ export default function PokemonViewButton({ pokemonData }) {
               </div>
             ))}
           </div>
-
           <div className={styles.userOptionsChoiceView}>
+            <div className={styles.aboutContainer}>
+              <button className={styles.aboutButton}>
+                <Link to="" className={styles.aboutLink}>
+                  About
+                </Link>
+              </button>
+              <hr className={styles.animatedHr} />
+            </div>
+
             <div className={styles.statsContainer}>
               <button className={styles.statsButton}>
                 <Link to="" className={styles.statsLink}>
@@ -123,6 +129,27 @@ export default function PokemonViewButton({ pokemonData }) {
               </button>
               <hr className={styles.animatedHr} />
             </div>
+          </div>
+          <div className={styles.StatContainer}>
+            {stats.map((stat) => (
+              <div key={stat.stat.name} className={styles.StatNameContainer}>
+                <div className={styles.statContainerOfName}>
+                  <h4 className={stat.stat.name}>
+                    {getStatNameBeauty(stat.stat.name)}
+                  </h4>
+                </div>
+                <div className={styles.statValue}>
+                  <h4>{stat.base_stat}</h4>
+                </div>
+                <div className={styles.StatSliderValue}>
+                  <progress
+                    max={100}
+                    value={stat.base_stat}
+                    className={stat.stat.name}
+                  ></progress>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className={styles.HeightAndWeightContainer}>

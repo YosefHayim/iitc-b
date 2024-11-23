@@ -34,7 +34,8 @@ const Login = () => {
             </button>
             <button className={styles.RegisterButton}>
               <Link to="/register" className={styles.TagLink}>
-                First time? Click here
+                First time?
+                <span className={styles.RegisterHere}> Register here.</span>
               </Link>
             </button>
           </div>

@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: white;
+  background: #ffffff12;
   border-radius: 1em;
   box-shadow: 0em 0em 1em 0.01em #0000007d;
   padding: 2em;
@@ -30,19 +30,20 @@
   background: gainsboro;
 }
 
-input[type="*"] {
-  border: 1px solid white;
+input:focus {
+  outline: none;
+  color: black;
+  border-color: white;
 }
 
 .SubmitButton {
-  border: 0.1em solid white;
   color: white;
   cursor: pointer;
   background: linear-gradient(to bottom, #42a5f5, #0d47a1);
 }
 
 .SubmitButton:hover {
-  background: linear-gradient(to bottom, #66bb6a, #388e3c);
+  color: black;
 }
 
 .ForgetPasswordButton,
@@ -55,10 +56,14 @@ input[type="*"] {
   text-decoration: none;
   color: gray;
   font-weight: 700;
+  padding: 0.3em;
 }
 
 .TagLink:hover {
-  color: black;
+  color: white;
+  background: linear-gradient(to bottom, #ffa726, #ff6f00);
+  padding: 0.3em;
+  border-radius: 0.4em;
 }
 
 .PageTitle {
@@ -69,9 +74,14 @@ input[type="*"] {
   color: white;
 }
 
+.RegisterHere:hover {
+  color: black;
+}
+
 .userOptionsContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
+  margin-top: 0.5em;
 }

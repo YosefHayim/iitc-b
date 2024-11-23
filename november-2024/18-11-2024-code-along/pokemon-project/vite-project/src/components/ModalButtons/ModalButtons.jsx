@@ -7,6 +7,7 @@ import styles from "./ModalButtons.module.css";
 
 const ModalButtons = ({ pokemonData }) => {
   const { height, weight, stats, moves, abilities } = pokemonData;
+  console.log(pokemonData);
 
   const [activeButton, setActiveButton] = useState(null);
 

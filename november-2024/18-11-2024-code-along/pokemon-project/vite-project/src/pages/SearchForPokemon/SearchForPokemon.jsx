@@ -3,9 +3,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading/Loading";
 import { useParams } from "react-router-dom";
+import ModalButtons from "../../components/ModalButtons/ModalButtons";
 
 const SearchForPokemon = () => {
   const { input } = useParams();
+  const url = `https://pokeapi.co/api/v2/pokemon/${input}`;
 
   const [pokemonData, setPokemonData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -13,13 +15,11 @@ const SearchForPokemon = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${input}`
-      );
+      const { data } = await axios.get(url);
       setPokemonData(data);
+      setLoading(false);
     } catch (error) {
       console.error(`Error occurred while fetching API`, error);
-    } finally {
       setLoading(false);
     }
   };
@@ -28,34 +28,29 @@ const SearchForPokemon = () => {
     fetchData();
   }, [input]);
 
+  const name = pokemonData?.name;
+  const img = pokemonData?.sprites.other.home.front_default;
+
   return (
-    <div>
-      {loading && <Loading />}
-      {pokemonData && (
+    <div className={styles.SearchPageContainer}>
+      {loading ? (
+        <Loading />
+      ) : pokemonData ? (
         <>
-          <h2>Meet {pokemonData.name}</h2>
-          <img
-            src={pokemonData.sprites.other.dream_world.front_default}
-            alt={pokemonData.name}
-          />
-          <p>Weight: {pokemonData.weight}</p>
-          <p>Height: {pokemonData.height}</p>
-          <p>Base Experience: {pokemonData.base_experience}</p>
-          <h3>Abilities:</h3>
-          <div>
-            {pokemonData.abilities.map((ability, index) => (
-              <div key={index}>
-                {ability.ability.name} {ability.is_hidden && "(Hidden Ability)"}
-              </div>
-            ))}
+          <h2 className={styles.SearchResultTitle}>Result for: {name}</h2>
+          <div className={styles.SearchPokemonContainer}>
+            <div className={styles.ImageContainer}>
+              <img
+                src={img}
+                alt="Pokemon image"
+                className={styles.PokemonImg}
+              />
+            </div>
+            <ModalButtons pokemonData={pokemonData} />
           </div>
-          <h3>Types:</h3>
-          <ul>
-            {pokemonData.types.map((type, index) => (
-              <li key={index}>{type.type.name}</li>
-            ))}
-          </ul>
         </>
+      ) : (
+        <p>Pokemon not found or invalid input.</p>
       )}
     </div>
   );

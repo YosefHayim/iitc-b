@@ -1,19 +1,12 @@
-.userOptionsChoiceView {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 1em;
-  gap: 0.1em;
-  width: 100%;
-}
-
 .PokemonTitlesData {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1em;
+  padding: 0.5em;
+  margin: 1em;
+  flex-wrap: wrap;
 }
 
 .statsLink:hover {

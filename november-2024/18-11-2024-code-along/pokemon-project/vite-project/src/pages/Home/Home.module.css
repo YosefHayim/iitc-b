@@ -11,6 +11,8 @@
   color: white;
   font-weight: 100;
   margin-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .HomeContainer {
@@ -104,7 +106,7 @@
 .MovesContainer:hover .MovesButton,
 .LocationsContainer:hover .LocationsButton,
 .EvolutionsContainer:hover .EvolutionButton {
-  color: darkslategrey;
+  color: black;
 }
 
 .HomeUnderLine {
@@ -118,4 +120,6 @@
   margin-left: 0.5em;
   color: white;
   font-weight: 100;
+  padding-right: 1em;
+  padding-left: 1em;
 }

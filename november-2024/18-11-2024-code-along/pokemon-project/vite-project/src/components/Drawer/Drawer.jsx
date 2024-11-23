@@ -3,12 +3,10 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
-import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 
 export default function TemporaryDrawer({ setOpen, open }) {
   const navigate = useNavigate();
@@ -21,10 +19,10 @@ export default function TemporaryDrawer({ setOpen, open }) {
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
         {[
-          { text: `Home`, path: "/home" },
+          { text: `Home`, path: "/" },
           { text: "About Us", path: "/about-us" },
           { text: "Contact Us", path: "/contact-us" },
-          { text: "Explore Pokemons", path: "/" },
+          { text: "Pokedex", path: "/pokedex" },
           { text: "Custom Pokemon", path: "/createCustomPokemon" },
           { text: "Login", path: "/login" },
           { text: "Register", path: "/register" },

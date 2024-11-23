@@ -3,15 +3,15 @@ import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import CreateCustomPokemon from "./pages/CreateCustomPokemon/CreateCustomPokemon";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
-import SearchAppBar from "./components/TopNavbar/TopNavbar";
+import BurgerIcon from "./components/BurgerIcon/BurgerIcon";
 import AllPokemonCards from "./components/AllPokemonCards/AllPokemonCards";
 import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import SearchForPokemon from "./pages/SearchForPokemon/SearchForPokemon";
-import "./App.css";
 import TemporaryDrawer from "./components/Drawer/Drawer";
 import ForgetPassword from "./pages/ForgetPassword/ForgetPassword";
+import "./App.css";
 
 function App() {
   const [input, setInput] = useState("");
@@ -19,10 +19,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <SearchAppBar setOpen={setOpen} setInput={setInput} />
+      <BurgerIcon setOpen={setOpen} />
       <TemporaryDrawer open={open} setOpen={setOpen} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setInput={setInput} />} />
         <Route path="/pokedex" element={<AllPokemonCards />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

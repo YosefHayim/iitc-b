@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./AboutUs.module.css";
 
 const AboutUs = () => {
@@ -26,7 +27,7 @@ const AboutUs = () => {
             expertise.
           </p>
         </div>
-        <div className={styles.Skills}>
+        <div className={styles.SkillsContainer}>
           <h2 className={styles.SkillsWereGainingTitle}>
             Skills We're Gaining
           </h2>
@@ -51,6 +52,11 @@ const AboutUs = () => {
             real-world solutions!
           </p>
         </div>
+        <button className={styles.NavigatePokedexButton}>
+          <Link to="/pokedex" className={styles.TagLink}>
+            Visit Our PokedeX database!
+          </Link>
+        </button>
       </div>
     </div>
   );

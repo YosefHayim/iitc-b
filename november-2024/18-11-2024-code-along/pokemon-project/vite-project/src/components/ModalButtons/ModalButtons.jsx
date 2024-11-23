@@ -6,18 +6,19 @@ import ModalPokemonWnH from "../ModalPokemonWnH/ModalPokemonWnH";
 import styles from "./ModalButtons.module.css";
 
 const ModalButtons = ({ pokemonData }) => {
-  const { id, abilities, height, name, weight, stats, types, moves } =
-    pokemonData;
+  const { height, weight, stats, moves, abilities } = pokemonData;
 
-  const [isVisible, setIsVisible] = useState(true);
+  const [activeButton, setActiveButton] = useState(null);
 
   const toggleVisibility = (e) => {
     const button = e.target.closest("button");
 
-    if (button.innerText === `About` || button.innerText === `Stats`) {
-      console.log(button.innerText);
-      setIsVisible(!isVisible);
+    if (!button || !button.innerText) {
+      return;
     }
+
+    const buttonName = button.innerText;
+    setActiveButton((prev) => (prev === buttonName ? null : buttonName));
   };
 
   return (
@@ -32,39 +33,30 @@ const ModalButtons = ({ pokemonData }) => {
           <button className={styles.statsButton}>Stats</button>
           <hr className={styles.animatedHr} />
         </div>
+
         <div className={styles.movesContainer}>
-          <button className={styles.movesButton}>Moves </button>
+          <button className={styles.movesButton}>Moves</button>
           <hr className={styles.animatedHr} />
         </div>
+
         <div className={styles.evolutionsContainer}>
           <button className={styles.evolutionsButton}>Evolutions</button>
           <hr className={styles.animatedHr} />
         </div>
+
         <div className={styles.locationsContainer}>
           <button className={styles.locationsButton}>Locations</button>
           <hr className={styles.animatedHr} />
         </div>
-        <div className={styles.PokemonDataContainer}></div>
       </div>
 
-      {isVisible && (
-        <ModalPokemonWnH
-          height={height}
-          weight={weight}
-          style={{ display: "flex" }}
-        />
+      {activeButton === "About" && (
+        <ModalPokemonWnH height={height} weight={weight} />
       )}
-      {isVisible && (
-        <ModalPokemonStats stats={stats} style={{ display: "flex" }} />
-      )}
-      {isVisible && (
-        <ModalPokemonsMove moves={moves} style={{ display: "flex" }} />
-      )}
-      {isVisible && (
-        <ModalPokemonAbilities
-          abilities={abilities}
-          style={{ display: "flex" }}
-        />
+      {activeButton === "Stats" && <ModalPokemonStats stats={stats} />}
+      {activeButton === "Moves" && <ModalPokemonsMove moves={moves} />}
+      {activeButton === "Evolutions" && (
+        <ModalPokemonAbilities abilities={abilities} />
       )}
     </div>
   );

@@ -56,5 +56,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 1em;
+  width: 100%;
+}
+.SkillsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.NavigatePokedexButton {
+  margin-top: 1em;
+  background: linear-gradient(to bottom, #5e26ff, #f000ff);
+  border-radius: 0.5em;
+  text-align: center;
+  padding: 0.5em;
+  font-weight: 900;
+  border: none;
+  animation: jump 2s infinite ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+}
+
+.TagLink {
+  text-decoration: none;
+  color: white;
+}
+
+.NavigatePokedexButton:hover .TagLink {
+  color: black;
 }

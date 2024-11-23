@@ -11,6 +11,7 @@ import capitalizeFirstLetter from "../../utils/firstLetterUppercase";
 import ModalPokemonTypes from "../ModalPokemonTypes/ModalPokemonTypes";
 import ModalButtons from "../ModalButtons/ModalButtons";
 import buttonColorType from "../../utils/backgroundButtonColor";
+import { Height } from "@mui/icons-material";
 
 const boxStyle = {
   borderRadius: "1em",
@@ -22,12 +23,12 @@ const boxStyle = {
   boxShadow: 24,
   p: 4,
   borderRadius: "0.5em",
-  padding: "2em",
+  padding: "1em",
   color: "white",
   textAlign: "center",
   background: "linear-gradient(to bottom, #373535, #000000)",
-  height: "85vh",
-  width: "85vw",
+  width: "20em",
+  height: "25em",
 };
 
 export default function PokemonViewButton({ pokemonData }) {

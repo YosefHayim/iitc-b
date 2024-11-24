@@ -5,6 +5,22 @@
   background-position: 0% 50%;
 }
 
+.ImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50%;
+}
+
+.HomeImage {
+  top: 0;
+  opacity: 0.7;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+}
+
 .HomeTitle {
   width: 100%;
   text-align: center;
@@ -13,6 +29,7 @@
   margin-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
+  margin-top: 1em;
 }
 
 .HomeContainer {

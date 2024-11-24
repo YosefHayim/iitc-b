@@ -26,6 +26,7 @@ export default function SearchBar({ setInput }) {
           borderRadius: "100em",
           width: "70vw",
           "& .MuiOutlinedInput-root": {
+            fontFamily: "Oswald",
             color: "#ffffff94",
             borderRadius: "100em",
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {

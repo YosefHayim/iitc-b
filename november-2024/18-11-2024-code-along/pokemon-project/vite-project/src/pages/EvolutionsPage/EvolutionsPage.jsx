@@ -4,8 +4,6 @@ import axios from "axios";
 import { useState } from "react";
 
 const EvolutionsPage = () => {
-  const [pokemonsEvolution, setPokemonsEvolution] = useState(null);
-
   const fetchData = async () => {
     const { data } = await axios.get(
       "https://pokeapi.co/api/v2/evolution-chain/"
@@ -24,7 +22,6 @@ const EvolutionsPage = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(pokemonsEvolution);
 
   return (
     <div className={styles.EvolutionsPage}>

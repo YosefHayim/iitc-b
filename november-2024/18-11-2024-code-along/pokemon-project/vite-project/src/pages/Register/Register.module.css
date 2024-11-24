@@ -72,10 +72,12 @@ span:hover {
   color: white;
   cursor: pointer;
   background: linear-gradient(to bottom, #42a5f5, #0d47a1);
+  transition: background 0.5s ease-in;
 }
 
 .submitButton:hover {
   color: black;
+  background: #d4a017;
 }
 
 .BoxInput {

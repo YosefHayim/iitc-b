@@ -1,9 +1,16 @@
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-
+import LoginImage from "/public/images/login-image.png";
 const Login = () => {
   return (
     <div>
+      <div className={styles.ImageContainer}>
+        <img
+          src={LoginImage}
+          alt="Pikachu waving hello"
+          className={styles.PikachuImage}
+        />
+      </div>
       <h1 className={styles.PageTitle}>Sign in</h1>
       <div className={styles.LoginContainer}>
         <form className={styles.LoginFormContainer}>

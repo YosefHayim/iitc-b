@@ -7,6 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
+import { Divider } from "@mui/material";
 
 export default function TemporaryDrawer({ setOpen, open }) {
   const navigate = useNavigate();
@@ -16,7 +17,16 @@ export default function TemporaryDrawer({ setOpen, open }) {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+    <Box
+      sx={{
+        width: 250,
+        height: "100%",
+        backgroundColor: "black", // Set background to black
+        color: "white", // Default text color to white
+      }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+    >
       <List>
         {[
           { text: `Home`, path: "/" },
@@ -28,7 +38,18 @@ export default function TemporaryDrawer({ setOpen, open }) {
           { text: "Register", path: "/register" },
         ].map((item) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton onClick={() => navigate(item.path)}>
+            <ListItemButton
+              onClick={() => navigate(item.path)}
+              sx={{
+                color: "white",
+                fontFamily: "Oswald",
+                "&:hover": {
+                  backgroundColor: "gray",
+                },
+              }}
+            >
+              <Divider />
+
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
@@ -40,7 +61,16 @@ export default function TemporaryDrawer({ setOpen, open }) {
   return (
     <>
       <Button onClick={toggleDrawer(true)}></Button>
-      <Drawer open={open} onClose={toggleDrawer(false)}>
+      <Drawer
+        open={open}
+        onClose={toggleDrawer(false)}
+        sx={{
+          "& .MuiDrawer-paper": {
+            backgroundColor: "black",
+            color: "white",
+          },
+        }}
+      >
         {DrawerList}
       </Drawer>
     </>

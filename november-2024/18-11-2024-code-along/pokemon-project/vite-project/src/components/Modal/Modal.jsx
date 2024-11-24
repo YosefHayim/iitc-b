@@ -1,6 +1,5 @@
 import * as React from "react";
 import styles from "./Modal.module.css";
-import { useState } from "react";
 
 // Mui import
 import Modal from "@mui/material/Modal";
@@ -11,7 +10,6 @@ import capitalizeFirstLetter from "../../utils/firstLetterUppercase";
 import ModalPokemonTypes from "../ModalPokemonTypes/ModalPokemonTypes";
 import ModalButtons from "../ModalButtons/ModalButtons";
 import buttonColorType from "../../utils/backgroundButtonColor";
-import { Height } from "@mui/icons-material";
 
 const boxStyle = {
   position: "absolute",

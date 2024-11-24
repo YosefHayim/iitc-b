@@ -40,10 +40,12 @@ input:focus {
   color: white;
   cursor: pointer;
   background: linear-gradient(to bottom, #42a5f5, #0d47a1);
+  transition: background 0.5s ease-in;
 }
 
 .SubmitButton:hover {
   color: black;
+  background: #d4a017;
 }
 
 .ForgetPasswordButton,
@@ -87,4 +89,18 @@ input:focus {
   align-items: center;
   gap: 1em;
   margin-top: 0.5em;
+}
+
+.ImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.PikachuImage {
+  margin-top: -5em;
+  border-radius: 1em;
+  opacity: 0.7;
+  width: 100%;
 }

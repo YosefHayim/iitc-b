@@ -3,8 +3,10 @@ import styles from "./ModalPokemonAudio.module.css";
 const ModalPokemonAudio = ({ cries }) => {
   return (
     <div className={styles.AudioContainer}>
-      <div>{cries?.latest ? cries.latest : "null"}</div>
-      <div>{cries?.legacy ? cries.legacy : "null"}</div>
+      <audio controls>
+        <source src={cries?.latest || "null"} type="audio/mpeg" />
+        <source src={cries?.legacy || "null"} type="audio/mpeg" />
+      </audio>
     </div>
   );
 };

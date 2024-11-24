@@ -14,7 +14,6 @@ import buttonColorType from "../../utils/backgroundButtonColor";
 import { Height } from "@mui/icons-material";
 
 const boxStyle = {
-  borderRadius: "1em",
   position: "absolute",
   top: "50%",
   left: "50%",

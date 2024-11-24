@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   border-radius: 0.5em;
-  box-shadow: 0em 0em 1em 0.01em #0000007d;
+  box-shadow: 0em 0em 1em 0.01em #00000014;
   padding: 2em;
   margin: 2em;
 }
@@ -75,8 +75,6 @@ input:focus {
   text-align: center;
   font-weight: 100;
   color: white;
-  background: hsl(0deg 0% 0% / 50%);
-  margin-bottom: -4%;
 }
 
 .RegisterHere:hover {

@@ -1,10 +1,17 @@
 import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
+import SignUpImage from "/public/images/sign-up-page.svg";
 
 const Register = () => {
   return (
     <div>
-      <h1 className={styles.PageTitle}>Register</h1>
+      <div className={styles.ImageContainer}>
+        <img
+          src={SignUpImage}
+          alt="Pikachu holding a sign to sign up"
+          className={styles.SignUpImage}
+        />
+      </div>
       <div className={styles.RegisterContainer}>
         <form className={styles.RegisterFormContainer}>
           <label htmlFor="email">

@@ -1,6 +1,6 @@
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-import LoginImage from "/public/images/login-image.png";
+import LoginImage from "/public/images/login-image.svg";
 const Login = () => {
   return (
     <div>

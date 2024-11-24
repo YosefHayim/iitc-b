@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import SearchBar from "../../components/Searchbar/Searchbar";
-import PokemonBallIcon from "/public/images/pokemon-ball-3d.png";
-import BoltIcon from "/public/images/bolt-3d.png";
-import EvolutionIcon from "/public/images/evolution-3d.png";
-import LocationIcon from "/public/images/location-3d.png";
+import PokemonBallIcon from "/public/images/pokemon-ball-3d.svg";
+import BoltIcon from "/public/images/bolt-3d.svg";
+import EvolutionIcon from "/public/images/evolution-3d.svg";
+import LocationIcon from "/public/images/location-3d.svg";
 
 const Home = ({ setInput }) => {
   return (

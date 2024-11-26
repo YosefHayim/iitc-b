@@ -17,17 +17,14 @@ const RandomPokedexPicks = () => {
           axios.get(`https://pokeapi.co/api/v2/pokemon/${n}`)
         )
       );
-      console.log(results.map((res) => res.data));
+      console.log(results?.map((res) => res.data));
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
-    setPokemonsUrl(pokemonsUrl);
   };
 
   useEffect(() => {
-    if (randomArray.length > 0) {
-      fetchData(randomArray);
-    }
+    fetchData(randomArray);
   }, [randomArray]);
 
   return (

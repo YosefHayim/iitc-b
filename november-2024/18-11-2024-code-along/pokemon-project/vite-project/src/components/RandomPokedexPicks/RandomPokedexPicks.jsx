@@ -37,7 +37,7 @@ const RandomPokedexPicks = () => {
         <hr className={styles.HomeUnderLine} />
         <div className={styles.RandomPokedexContainer}>
           {randomPokemons.map((pokemon) => (
-            <div key={pokemon?.name}>{pokemon.name}</div>
+            <div key={pokemon?.name}>{pokemon?.name}</div>
           ))}
         </div>
       </div>

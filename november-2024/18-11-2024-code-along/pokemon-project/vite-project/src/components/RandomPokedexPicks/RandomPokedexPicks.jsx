@@ -7,8 +7,7 @@ const RandomPokedexPicks = () => {
   const [randomArray, setRandomArray] = useState([]);
 
   useEffect(() => {
-    const generatedArray = randomizeArray();
-    setRandomArray(generatedArray);
+    setRandomArray(randomizeArray());
   }, []);
 
   const fetchData = async (arrayRandomN) => {
@@ -22,6 +21,7 @@ const RandomPokedexPicks = () => {
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
+    setPokemonsUrl(pokemonsUrl);
   };
 
   useEffect(() => {

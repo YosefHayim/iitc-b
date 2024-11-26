@@ -1,9 +1,21 @@
 .PopularPokedexPicks {
-  margin-bottom: 0.5em;
-  margin-left: 0.5em;
-  color: white;
-  font-weight: 100;
+  margin-bottom: 0.2em;
+  font-weight: 900;
   text-align: center;
+  color: white;
+  background: #0000000d;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.RandomPokedexContainer {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .HomeUnderLine {

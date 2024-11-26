@@ -5,6 +5,7 @@ import axios from "axios";
 
 const RandomPokedexPicks = () => {
   const [randomArray, setRandomArray] = useState([]);
+  const [randomPokemons, setRandomPokemons] = useState([]);
 
   useEffect(() => {
     setRandomArray(randomizeArray());
@@ -17,7 +18,9 @@ const RandomPokedexPicks = () => {
           axios.get(`https://pokeapi.co/api/v2/pokemon/${n}`)
         )
       );
-      console.log(results?.map((res) => res.data));
+      const threeRandomPokemons = results?.map((res) => res.data);
+      setRandomPokemons(threeRandomPokemons);
+      console.log(threeRandomPokemons);
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
@@ -30,8 +33,13 @@ const RandomPokedexPicks = () => {
   return (
     <div>
       <h2 className={styles.PopularPokedexPicks}>Popular Pokedex Picks</h2>
-      <div className={styles.PokedexRandomPicksContainer}>
+      <div>
         <hr className={styles.HomeUnderLine} />
+        <div className={styles.RandomPokedexContainer}>
+          {randomPokemons.map((pokemon) => (
+            <div key={pokemon?.name}>{pokemon.name}</div>
+          ))}
+        </div>
       </div>
     </div>
   );

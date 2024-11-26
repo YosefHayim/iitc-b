@@ -24,11 +24,12 @@
   width: 100%;
   text-align: center;
   color: white;
-  font-weight: 100;
+  font-weight: 900;
   margin-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
   margin-top: 1em;
+  background: #0000000d;
 }
 
 .HomeContainer {

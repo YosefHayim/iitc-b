@@ -30,7 +30,6 @@ const boxStyle = {
 
 export default function PokemonViewButton({ pokemonData }) {
   const { types, id, name } = pokemonData;
-  console.log(pokemonData);
 
   const img = pokemonData?.sprites.other.dream_world.front_default;
 

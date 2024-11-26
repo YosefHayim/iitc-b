@@ -6,6 +6,8 @@ import BoltIcon from "/public/images/bolt-3d.svg";
 import EvolutionIcon from "/public/images/evolution-3d.svg";
 import LocationIcon from "/public/images/location-3d.svg";
 import HomeImage from "/public/images/homepage-image.svg";
+import { useState } from "react";
+import RandomPokedexPicks from "../../components/RandomPokedexPicks/RandomPokedexPicks";
 
 const Home = ({ setInput }) => {
   return (
@@ -66,8 +68,7 @@ const Home = ({ setInput }) => {
           </Link>
         </div>
       </div>
-      <h2 className={styles.PopularPokedexPicks}>Popular Pokedex Picks</h2>
-      <hr className={styles.HomeUnderLine} />
+      <RandomPokedexPicks />
     </div>
   );
 };

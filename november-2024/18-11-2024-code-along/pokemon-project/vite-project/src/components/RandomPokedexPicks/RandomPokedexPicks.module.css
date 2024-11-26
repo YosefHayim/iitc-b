@@ -1,0 +1,13 @@
+.PopularPokedexPicks {
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+  color: white;
+  font-weight: 100;
+  text-align: center;
+}
+
+.HomeUnderLine {
+  width: 95%;
+  border: 0.001em solid gray;
+  opacity: 0.25;
+}

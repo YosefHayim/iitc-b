@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import styles from "./RandomPokedexPicks.module.css";
 import randomizeArray from "../../utils/randomArrayNumbers";
 import axios from "axios";
-import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
+import AllPokemonCards from "../AllPokemonCards/AllPokemonCards";
 
 const RandomPokedexPicks = () => {
   const [randomArray, setRandomArray] = useState([]);
-  const [randomPokemons, setRandomPokemons] = useState([]);
+  const [randomPokemons, setRandomPokemons] = useState({});
 
   useEffect(() => {
     setRandomArray(randomizeArray());
@@ -21,7 +21,6 @@ const RandomPokedexPicks = () => {
       );
       const threeRandomPokemons = results?.map((res) => res.data);
       setRandomPokemons(threeRandomPokemons);
-      console.log(threeRandomPokemons);
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
@@ -31,14 +30,20 @@ const RandomPokedexPicks = () => {
     fetchData(randomArray);
   }, [randomArray]);
 
+  useEffect(() => {}, [randomPokemons]);
+
   return (
-    <div>
-      <h2 className={styles.PopularPokedexPicks}>Popular Pokedex Picks</h2>
-      <div>
-        <hr className={styles.HomeUnderLine} />
-        <div className={styles.RandomPokedexContainer}></div>
+    randomPokemons && (
+      <div className={styles.RandomPokedexContainer}>
+        <h2 className={styles.PopularPokedexPicks}>Popular Pokedex Picks</h2>
+        <div>
+          <hr className={styles.HomeUnderLine} />
+          <div>
+            <AllPokemonCards randomPokemons={randomPokemons} />
+          </div>
+        </div>
       </div>
-    </div>
+    )
   );
 };
 

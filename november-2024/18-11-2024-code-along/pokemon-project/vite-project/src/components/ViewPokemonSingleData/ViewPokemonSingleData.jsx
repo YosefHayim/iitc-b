@@ -4,6 +4,10 @@ import styles from "./ViewPokemonSingleData.module.css";
 import { useState, useEffect } from "react";
 
 const ViewPokemonSingleData = ({ pokemonUrl }) => {
+  if (!pokemonUrl) {
+    return;
+  }
+
   const [isClicked, setClick] = useState(false);
   const [pokemon, setPokemon] = useState(null);
 

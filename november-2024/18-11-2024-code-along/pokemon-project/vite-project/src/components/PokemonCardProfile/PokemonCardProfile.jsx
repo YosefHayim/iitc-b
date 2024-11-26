@@ -4,6 +4,10 @@ import styles from "./PokemonCardProfile.module.css";
 import capitalizeFirstLetter from "../../utils/firstLetterUppercase.js";
 
 const PokemonCardProfile = ({ pokemonUrl }) => {
+  if (!pokemonUrl) {
+    return;
+  } 
+
   const [pokemon, setPokemon] = useState(null);
 
   const fetchData = async (pokemonUrl) => {

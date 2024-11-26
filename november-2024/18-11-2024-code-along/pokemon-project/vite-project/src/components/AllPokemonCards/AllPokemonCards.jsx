@@ -6,32 +6,34 @@ import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleDat
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
 import Loading from "../Loading/Loading";
 
-const AllPokemonCards = ({ setRandomPokemons }) => {
+const AllPokemonCards = ({ randomPokemons }) => {
   const [pokemons, setPokemons] = useState([]);
-  const [currentApiUrl, setApiUrl] = useState(
-    `https://pokeapi.co/api/v2/pokemon/`
-  );
+  const [currentApiUrl, setApiUrl] = useState(null);
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(39);
   const [loading, setLoading] = useState(false);
 
-  const fetchData = async (currentApiUrl) => {
+  const fetchData = async () => {
     setLoading(true);
-    try {
-      const { data } = await axios.get(currentApiUrl);
-      setPokemons(data.results);
-      setNextPageUrl(data.next);
-      setPrevPageUrl(data.previous);
-      setMaxPage(data.count);
-    } catch (error) {
-      console.error(`Error occurred while fetching API`, error);
-    } finally {
+
+    if (randomPokemons.length > 0) {
+      setPokemons(randomPokemons);
       setLoading(false);
+    } else {
+      try {
+        const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
+        setPokemons(data.results);
+        setNextPageUrl(data.next);
+        setPrevPageUrl(data.previous);
+        setMaxPage(data.count);
+        setLoading(false);
+      } catch (error) {
+        console.error(`Error occurred while fetching API`, error);
+      }
     }
   };
-
   const handlePageChange = (page) => {
     setCurrentPage(page);
     const offset = (page - 1) * 20;
@@ -40,8 +42,15 @@ const AllPokemonCards = ({ setRandomPokemons }) => {
   };
 
   useEffect(() => {
-    fetchData(currentApiUrl);
+    fetchData();
   }, [currentApiUrl]);
+
+  useEffect(() => {
+    if (randomPokemons?.length > 0) {
+      setPokemons(randomPokemons);
+      setLoading(false);
+    }
+  }, [randomPokemons]);
 
   return (
     <div>
@@ -50,9 +59,9 @@ const AllPokemonCards = ({ setRandomPokemons }) => {
       ) : (
         <>
           <PaginationRounded
-            onPageChange={handlePageChange}
-            maxPage={maxPage}
-            currentPage={currentPage}
+            onPageChange={handlePageChange ? handlePageChange : null}
+            maxPage={maxPage ? maxPage : null}
+            currentPage={currentPage ? currentPage : null}
           />
 
           <div className={styles.PokemonCardsContainer}>
@@ -64,7 +73,9 @@ const AllPokemonCards = ({ setRandomPokemons }) => {
                 </div>
               ))
             ) : (
-              <div>No pokemon's available or invalid data</div>
+              <div>
+                <h1>No pokemon's available or invalid data</h1>
+              </div>
             )}
           </div>
         </>

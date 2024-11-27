@@ -10,7 +10,7 @@ import RandomPokedexPicks from "../../components/RandomPokedexPicks/RandomPokede
 
 const Home = ({ setInput }) => {
   return (
-    <div className={styles.Homepage}>
+    <div className={styles.HomepageContainer}>
       <div className={styles.ImageContainer}>
         <img
           className={styles.HomeImage}
@@ -18,9 +18,7 @@ const Home = ({ setInput }) => {
           alt="Ash And Pikachu sitting on a mountain and watching the sunset"
         />
       </div>
-      <h1 className={styles.HomeTitle}>
-        Discover Over 1,000 Pokémon in Our Database!
-      </h1>
+      <h1 className={styles.HomeTitle}>Over 1,000 Pokémon in Our Database!</h1>
 
       <div className={styles.HomeContainer}>
         <SearchBar setInput={setInput} />

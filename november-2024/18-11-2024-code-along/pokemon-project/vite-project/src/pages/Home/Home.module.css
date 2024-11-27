@@ -1,8 +1,7 @@
-.Homepage {
+.HomepageContainer {
   background-image: url("../../../public/images/home-background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0% 50%;
 }
 
 .ImageContainer {
@@ -29,7 +28,6 @@
   padding-left: 1em;
   padding-right: 1em;
   margin-top: 1em;
-  background: #0000000d;
 }
 
 .HomeContainer {

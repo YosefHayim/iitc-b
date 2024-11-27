@@ -103,3 +103,7 @@ let sObjQ1 = { ...objQ1 };
 let objq2 = { name: "q2", lName: "q2 last name", baba: "gaba" };
 let mergedObjq = { ...objq2, ...objQ1 };
 // console.log(mergedObjq);
+
+// Q3
+let additionalKey = { ...objQ1, age: 24 };
+// console.log(additionalKey);

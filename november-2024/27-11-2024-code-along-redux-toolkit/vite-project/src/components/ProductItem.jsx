@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 // Redux Imports
-import { addItem } from "../store/slices/cartSlice.js";
 import { useDispatch } from "react-redux";
+import { addItem } from "../store/slices/cartSlicer";
 
 const ProductItem = ({ item }) => {
   const [quantity, setQuantity] = useState(1);

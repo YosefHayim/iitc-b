@@ -4,7 +4,7 @@
   background-size: cover;
 }
 
-.ImageContainer {
+.ImageContainer { 
   display: flex;
   justify-content: center;
   align-items: center;

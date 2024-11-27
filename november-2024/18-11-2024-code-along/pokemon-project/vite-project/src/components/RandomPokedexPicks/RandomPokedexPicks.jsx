@@ -2,20 +2,17 @@ import { useEffect, useState } from "react";
 import styles from "./RandomPokedexPicks.module.css";
 import randomizeArray from "../../utils/randomArrayNumbers";
 import axios from "axios";
-import AllPokemonCards from "../AllPokemonCards/AllPokemonCards";
+import PokemonViewButton from "../Modal/Modal";
 
 const RandomPokedexPicks = () => {
-  const [randomArray, setRandomArray] = useState([]);
-  const [randomPokemons, setRandomPokemons] = useState({});
+  const [randomArray, setRandomArray] = useState(randomizeArray());
 
-  useEffect(() => {
-    setRandomArray(randomizeArray());
-  }, []);
+  const [randomPokemons, setRandomPokemons] = useState([]);
 
-  const fetchData = async (arrayRandomN) => {
+  const fetchData = async (randomArray) => {
     try {
       const results = await Promise.all(
-        arrayRandomN.map((n) =>
+        randomArray.map((n) =>
           axios.get(`https://pokeapi.co/api/v2/pokemon/${n}`)
         )
       );
@@ -28,18 +25,36 @@ const RandomPokedexPicks = () => {
 
   useEffect(() => {
     fetchData(randomArray);
-  }, [randomArray]);
-
-  useEffect(() => {}, [randomPokemons]);
+  }, []);
 
   return (
     <div>
       <h2 className={styles.PopularPokedexPicks}>Popular Pokedex Picks</h2>
       <div>
         <hr className={styles.HomeUnderLine} />
-        <div className={styles.RandomPokedexContainer}></div>
+        <div className={styles.RandomPokedexContainer}>
+          {randomPokemons.map((pokemonData) => (
+            <div key={pokemonData.name}>
+              <div
+                className={
+                  styles[
+                    pokemonData.types[0]?.type.name ||
+                      pokemonData.types[1]?.type.name
+                  ]
+                }
+              >
+                <img
+                  className={styles.pokemonHomeImg}
+                  src={pokemonData.sprites.other.home.front_default}
+                  alt={pokemonData.name}
+                />
+              </div>
+              <PokemonViewButton pokemonData={pokemonData} />
+            </div>
+          ))}
+        </div>
       </div>
-    )
+    </div>
   );
 };
 

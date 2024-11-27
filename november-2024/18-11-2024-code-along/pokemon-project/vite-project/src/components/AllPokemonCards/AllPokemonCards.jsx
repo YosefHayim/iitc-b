@@ -6,12 +6,7 @@ import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleDat
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
 import Loading from "../Loading/Loading";
 
-const AllPokemonCards = ({ randomPokemons }) => {
-<<<<<<< HEAD
-  console.log(randomPokemons);
-
-=======
->>>>>>> f673e26a590e55004ba98c55f0fc97621f440ade
+const AllPokemonCards = () => {
   const [pokemons, setPokemons] = useState([]);
   const [currentApiUrl, setApiUrl] = useState(null);
   const [nextPageUrl, setNextPageUrl] = useState();
@@ -22,21 +17,15 @@ const AllPokemonCards = ({ randomPokemons }) => {
 
   const fetchData = async () => {
     setLoading(true);
-
-    if (randomPokemons.length > 0) {
-      setPokemons(randomPokemons);
+    try {
+      const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
+      setPokemons(data.results);
+      setNextPageUrl(data.next);
+      setPrevPageUrl(data.previous);
+      setMaxPage(data.count);
       setLoading(false);
-    } else {
-      try {
-        const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
-        setPokemons(data.results);
-        setNextPageUrl(data.next);
-        setPrevPageUrl(data.previous);
-        setMaxPage(data.count);
-        setLoading(false);
-      } catch (error) {
-        console.error(`Error occurred while fetching API`, error);
-      }
+    } catch (error) {
+      console.error(`Error occurred while fetching API`, error);
     }
   };
   const handlePageChange = (page) => {
@@ -50,13 +39,6 @@ const AllPokemonCards = ({ randomPokemons }) => {
     fetchData();
   }, [currentApiUrl]);
 
-  useEffect(() => {
-    if (randomPokemons?.length > 0) {
-      setPokemons(randomPokemons);
-      setLoading(false);
-    }
-  }, [randomPokemons]);
-
   return (
     <div>
       {loading ? (
@@ -64,9 +46,9 @@ const AllPokemonCards = ({ randomPokemons }) => {
       ) : (
         <>
           <PaginationRounded
-            onPageChange={handlePageChange ? handlePageChange : null}
-            maxPage={maxPage ? maxPage : null}
-            currentPage={currentPage ? currentPage : null}
+            onPageChange={handlePageChange}
+            maxPage={maxPage}
+            currentPage={currentPage}
           />
 
           <div className={styles.PokemonCardsContainer}>

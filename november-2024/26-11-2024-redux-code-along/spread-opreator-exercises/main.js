@@ -107,3 +107,15 @@ let mergedObjq = { ...objq2, ...objQ1 };
 // Q3
 let additionalKey = { ...objQ1, age: 24 };
 // console.log(additionalKey);
+
+// Q4
+let q4Merged = { ...objQ1, ...objq2, ...mergedObjq };
+// console.log(q4Merged);
+
+// Q5
+let q5Obj = { ...objQ1, ...objq2 };
+// console.log(q5Obj);
+
+// Q6
+let q6Obj = { ...objQ1, favoriteFood: "omelet" };
+// console.log(q6Obj);

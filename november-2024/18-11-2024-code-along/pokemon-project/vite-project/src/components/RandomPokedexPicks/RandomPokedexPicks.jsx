@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./RandomPokedexPicks.module.css";
 import randomizeArray from "../../utils/randomArrayNumbers";
 import axios from "axios";
-import PokemonCardProfile from "../PokemonCardProfile/PokemonCardProfile";
+import AllPokemonCards from "../AllPokemonCards/AllPokemonCards";
 
 const RandomPokedexPicks = () => {
   const [randomArray, setRandomArray] = useState([]);
@@ -36,7 +36,9 @@ const RandomPokedexPicks = () => {
       <h2 className={styles.PopularPokedexPicks}>Popular Pokedex Picks</h2>
       <div>
         <hr className={styles.HomeUnderLine} />
-        <div className={styles.RandomPokedexContainer}></div>
+        <div className={styles.RandomPokedexContainer}>
+          <AllPokemonCards randomPokemons={randomPokemons} />
+        </div>
       </div>
     </div>
   );

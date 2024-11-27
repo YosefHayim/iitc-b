@@ -6,7 +6,9 @@ import ViewPokemonSingleData from "../ViewPokemonSingleData/ViewPokemonSingleDat
 import PaginationRounded from "../HomepagePagination/HomepagePagination";
 import Loading from "../Loading/Loading";
 
-const AllPokemonCards = ({ setRandomPokemons }) => {
+const AllPokemonCards = ({ randomPokemons }) => {
+  console.log(randomPokemons);
+
   const [pokemons, setPokemons] = useState([]);
   const [currentApiUrl, setApiUrl] = useState(
     `https://pokeapi.co/api/v2/pokemon/`

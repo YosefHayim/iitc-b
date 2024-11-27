@@ -44,7 +44,7 @@ const cartSlice = createSlice({
       // 2. Filter Index
       const item = state.items[itemIndex];
       state.totalQuantity -= item.quantity;
-      state.totalPrice -= item.price;
+      state.totalPrice -= item.price * item.quantity;
       state.items.splice(item, 1);
     },
   },

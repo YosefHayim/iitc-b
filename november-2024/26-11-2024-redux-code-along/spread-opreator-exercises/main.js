@@ -1,4 +1,5 @@
 "use strict";
+// Basic Array Operations (Beginner)
 
 // Q1
 let array = [1, 2, 3, 3];
@@ -91,3 +92,14 @@ const mergedArraysFn = (arrayOne, arrayTwo, arrayThree) => {
 // Q10
 let questionTen = [...array.sort(() => Math.random() - 0.5)];
 // console.log(questionTen);
+
+// Spread Operator with Objects
+// Q1
+let objQ1 = { fName: "Joseph", lName: "Sabag" };
+let sObjQ1 = { ...objQ1 };
+// console.log(sObjQ1);
+
+// Q2
+let objq2 = { name: "q2", lName: "q2 last name", baba: "gaba" };
+let mergedObjq = { ...objq2, ...objQ1 };
+// console.log(mergedObjq);

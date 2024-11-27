@@ -1,10 +1,13 @@
 import "./App.css";
+import Cart from "./components/Cart";
+import Products from "./components/Products";
 
 function App() {
   return (
     <>
-      <h1>Hello</h1>
-      <button>Click me</button>
+      <h1>Redux toolkit Cart</h1>
+      <Cart />
+      <Products />
     </>
   );
 }

@@ -1,15 +1,43 @@
 .AboutUsContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
-  background: #ffffff12;
   border-radius: 0.5em;
-  box-shadow: 0em 0em 1em 0.01em #0000007d;
-  padding: 2em;
   color: white;
   gap: 1em;
-  margin: 2em;
+  width: 100%;
+}
+
+.HomeUnderLine {
+  width: 100%;
+  border: 0.001em solid white;
+  opacity: 0.25;
+  text-align: center;
+}
+
+.AboutUsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+.ImageContainer {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.PikachuSquirtleImg {
+  width: 100%;
+  border-radius: 0.5em;
 }
 
 .Introduction {
@@ -18,30 +46,6 @@
   text-align: center;
   width: 100%;
   padding: 0em 1em 0em 1em;
-}
-
-.OurMissionTitle {
-  background: linear-gradient(to bottom, #ff4d4d, #d70000);
-  border-radius: 0.2em;
-  text-align: center;
-}
-
-.PotentialTitle {
-  background: linear-gradient(to bottom, #ffa726, #ff6f00);
-  border-radius: 0.2em;
-  text-align: center;
-}
-
-.SkillsWereGainingTitle {
-  background: linear-gradient(to bottom, #66bb6a, #388e3c);
-  border-radius: 0.2em;
-  text-align: center;
-}
-
-.OurCodingJourneyTitle {
-  background: linear-gradient(to bottom, #42a5f5, #0d47a1);
-  border-radius: 0.2em;
-  text-align: center;
 }
 
 .AboutUsTitle {
@@ -55,7 +59,7 @@
 .SkillsUl {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
   gap: 1em;
   width: 100%;
@@ -68,7 +72,11 @@
 
 .NavigatePokedexButton {
   margin-top: 1em;
-  background: linear-gradient(to bottom, #5e26ff, #f000ff);
+  background: linear-gradient(
+    to bottom,
+    #ffdb00,
+    #ffc107
+  ); /* Pikachu-inspired colors */
   border-radius: 0.5em;
   text-align: center;
   padding: 0.5em;
@@ -76,29 +84,17 @@
   border: none;
   animation: jump 2s infinite ease-in-out;
   cursor: pointer;
+  width: 100%;
+  margin-bottom: 1em;
+  transition: background 0.5s ease-in; /* Smooth transition */
 }
 
-@keyframes jump {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  30% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-  70% {
-    transform: translateY(-5px);
-  }
+.NavigatePokedexButton:hover {
+  background: white; /* Hover changes to white */
 }
 
 .TagLink {
   text-decoration: none;
-  color: white;
-}
-
-.NavigatePokedexButton:hover .TagLink {
-  color: black;
+  color: black; /* Text link to black */
+  transition: color 0.5s ease-in; /* Smooth transition for link color */
 }

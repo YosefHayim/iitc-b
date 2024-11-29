@@ -18,16 +18,20 @@ const AllPokemonCards = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/`);
+      const url = currentApiUrl || `https://pokeapi.co/api/v2/pokemon/`;
+      const { data } = await axios.get(url);
       setPokemons(data.results);
       setNextPageUrl(data.next);
       setPrevPageUrl(data.previous);
-      setMaxPage(data.count);
-      setLoading(false);
+      setMaxPage(Math.ceil(data.count / 20));
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
     } catch (error) {
-      console.error(`Error occurred while fetching API`, error);
+      console.error("Error fetching data:", error);
     }
   };
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
     const offset = (page - 1) * 20;
@@ -46,13 +50,13 @@ const AllPokemonCards = () => {
       ) : (
         <>
           <PaginationRounded
-            onPageChange={handlePageChange}
+            setCurrentPage={handlePageChange}
             maxPage={maxPage}
             currentPage={currentPage}
           />
 
           <div className={styles.PokemonCardsContainer}>
-            {Array.isArray(pokemons) ? (
+            {Array.isArray(pokemons) && pokemons.length > 0 ? (
               pokemons.map((pokemon) => (
                 <div key={pokemon.name}>
                   <PokemonCardProfile pokemonUrl={pokemon.url} />
@@ -60,9 +64,7 @@ const AllPokemonCards = () => {
                 </div>
               ))
             ) : (
-              <div>
-                <h1>No pokemon's available or invalid data</h1>
-              </div>
+              <h1>No Pokémon available</h1>
             )}
           </div>
         </>

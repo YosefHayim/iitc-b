@@ -3,7 +3,6 @@
   font-weight: 900;
   text-align: center;
   color: white;
-  background: #0000000d;
   width: 100%;
   padding: 0.5em;
 }
@@ -25,9 +24,10 @@
 }
 
 .HomeUnderLine {
-  width: 95%;
-  border: 0.001em solid gray;
+  width: 100%;
+  border: 0.001em solid rgb(0, 0, 0);
   opacity: 0.25;
+  text-align: center;
 }
 
 .grass {

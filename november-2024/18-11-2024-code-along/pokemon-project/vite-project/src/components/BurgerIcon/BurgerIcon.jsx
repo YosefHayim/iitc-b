@@ -9,7 +9,6 @@ export default function BurgerIcon({ setOpen }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="static"
         sx={{
           background: "none",
           boxShadow: "none",
@@ -26,11 +25,14 @@ export default function BurgerIcon({ setOpen }) {
             color="inherit"
             aria-label="open drawer"
             sx={{
+              background: "linear-gradient(to bottom, #3d3d3d, #1a1a1a)",
+              position: "fixed",
               mr: 2,
               borderRadius: "0.2em",
               marginTop: "0.4em",
+              transition: "all 0.5s ease-in",
               "&:hover": {
-                background: "linear-gradient(to bottom, #5e5e5e, #272727)",
+                background: "linear-gradient(to bottom, #2d2d2d, #0f0f0f)",
                 borderRadius: "0.2em",
                 marginTop: "0.4em",
               },

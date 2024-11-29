@@ -4,6 +4,8 @@ const ContactUs = () => {
   return (
     <div>
       <h1 className={styles.PageTitle}>Contact Pokémon Center</h1>
+      <hr className={styles.HomeUnderLine} />
+
       <div className={styles.ContactUsContainer}>
         <form className={styles.ContactForm}>
           <label htmlFor="trainerName"></label>

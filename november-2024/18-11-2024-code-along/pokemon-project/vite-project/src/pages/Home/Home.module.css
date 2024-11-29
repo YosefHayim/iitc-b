@@ -4,7 +4,7 @@
   background-size: cover;
 }
 
-.ImageContainer { 
+.ImageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,7 @@
   opacity: 0.9;
   z-index: -1;
   position: absolute;
+  width: 100%;
 }
 
 .HomeTitle {
@@ -46,6 +47,7 @@
   flex-wrap: wrap;
   gap: 1.5em;
   padding: 2em;
+  margin-bottom: 4.5em;
 }
 
 .PokemonBallIcon,

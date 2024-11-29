@@ -75,6 +75,8 @@ input:focus {
   text-align: center;
   font-weight: 100;
   color: white;
+  position: absolute;
+  top: 35%;
 }
 
 .RegisterHere:hover {

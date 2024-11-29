@@ -3,7 +3,9 @@ import styles from "./CreateCustomPokemon.module.css";
 const CreateCustomPokemon = () => {
   return (
     <div>
-      <h1 className={styles.PageTitle}>Add your own custom pokemon</h1>
+      <h1 className={styles.PageTitle}>Create Custom Pokemon</h1>
+      <hr className={styles.HomeUnderLine} />
+
       <div className={styles.CreateCustomPokemonContainer}>
         <form className={styles.CustomPokemonFormContainer}>
           <label htmlFor="name"></label>

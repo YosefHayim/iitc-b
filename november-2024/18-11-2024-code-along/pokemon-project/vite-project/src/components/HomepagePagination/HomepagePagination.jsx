@@ -1,15 +1,20 @@
 import * as React from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { useSearchParams } from "react-router-dom";
 
 export default function PaginationRounded({
-  onPageChange,
+  setCurrentPage,
   maxPage,
   currentPage,
 }) {
+  const [searchParams, setSearchParams] = useSearchParams(1);
+
   const handlePageChange = (event, page) => {
-    if (onPageChange) {
-      onPageChange(page);
+    if (page) {
+      searchParams.set("page", page);
+      setSearchParams(searchParams);
+      setCurrentPage(page);
     }
   };
 

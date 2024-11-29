@@ -13,14 +13,14 @@ app.use(morgan("tiny"));
 
 connectDb();
 
+app.use("/users", usersRoute);
+
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Success",
     response: "Welcome to the Pokemon DB server",
   });
 });
-
-app.use("/users", usersRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);

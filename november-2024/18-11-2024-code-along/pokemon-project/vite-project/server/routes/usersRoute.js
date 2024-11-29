@@ -1,14 +1,12 @@
-const isFalsy = require("../utils/isFalsy.js");
 const express = require("express");
-const userSchema = require("../models/userSchema.js");
+const isFalsy = require("../utils/isFalsy");
+const userSchema = require("../models/userSchema");
 
 const router = express.Router();
 
 router.get("/all", async (req, res) => {
   try {
     const allUsers = await userSchema.find();
-
-    isFalsy(allUsers);
 
     if (isFalsy(allUsers)) {
       return res.status(404).json({ message: "No users found." });
@@ -27,4 +25,4 @@ router.get("/all", async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;

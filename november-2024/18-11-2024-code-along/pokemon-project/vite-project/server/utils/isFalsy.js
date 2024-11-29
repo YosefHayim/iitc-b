@@ -1,3 +1,3 @@
 const isFalsy = (value) => !value;
 
-export default isFalsy;
+module.exports = isFalsy;

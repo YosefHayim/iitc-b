@@ -44,7 +44,7 @@ export default function TemporaryDrawer({ setOpen, open }) {
             path: "/contact-us",
             icon: <ContactMailIcon />,
           },
-          { text: "Pokedex", path: "/pokedex", icon: <CatchingPokemonIcon /> },
+          { text: "PokedeX", path: "/pokedex", icon: <CatchingPokemonIcon /> },
           {
             text: "Custom Pokemon",
             path: "/createCustomPokemon",

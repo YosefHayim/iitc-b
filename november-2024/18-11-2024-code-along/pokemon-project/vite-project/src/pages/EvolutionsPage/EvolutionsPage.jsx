@@ -32,7 +32,7 @@ const EvolutionsPage = () => {
 
   return (
     <div className={styles.EvolutionsPage}>
-      <h1 className={styles.PageTitle}>Evolutions Page</h1>
+      <h1 className={styles.PageTitle}>Coming soon...</h1>
       {arrayData ? (
         arrayData.map((pokemonEvo) => (
           <div

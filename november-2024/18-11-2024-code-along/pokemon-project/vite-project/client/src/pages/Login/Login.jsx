@@ -1,7 +1,44 @@
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 import LoginImage from "/public/images/login-image.svg";
+import axios from "axios";
+import { useState } from "react";
+
 const Login = () => {
+  const [isLogin, setLogin] = useState(false);
+
+  const loginUser = async (loginData) => {
+    try {
+      const res = await axios.post(
+        "http://localhost:3000/users/login",
+        loginData
+      );
+
+      if (res) {
+        console.log(res);
+
+        setLogin(true);
+      }
+    } catch (error) {
+      console.error("Error has been occurred durning login", error);
+    }
+  };
+
+  const handleSubmitLogin = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const loginData = {
+      email,
+      password,
+    };
+
+    loginUser(loginData);
+  };
+
   return (
     <div>
       <div className={styles.ImageContainer}>
@@ -13,7 +50,10 @@ const Login = () => {
       </div>
       <h1 className={styles.PageTitle}>Sign in</h1>
       <div className={styles.LoginContainer}>
-        <form className={styles.LoginFormContainer}>
+        <form
+          className={styles.LoginFormContainer}
+          onSubmit={handleSubmitLogin}
+        >
           <label htmlFor="email" className={styles.TitlesInput}></label>
           <input
             type="text"
@@ -36,7 +76,7 @@ const Login = () => {
             </Link>
           </button>
           <button type="submit" className={styles.SubmitButton}>
-            Continue
+            Login
           </button>
           <div className={styles.userOptionsContainer}>
             <button className={styles.RegisterButton}>

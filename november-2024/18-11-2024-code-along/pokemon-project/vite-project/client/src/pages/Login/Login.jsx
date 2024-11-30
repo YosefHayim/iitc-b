@@ -17,10 +17,12 @@ const Login = () => {
         loginData
       );
 
-      if (res) {
+      console.log(res);
+
+      if (res.data.token) {
         const token = res.data.token;
+        Cookies.set("token", token, { expires: 1 / 24 });
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        Cookies.set(("token", `${token}`, { expires: 1 / 24 }));
         setLogin(true);
       }
     } catch (error) {

@@ -81,7 +81,6 @@ const validateUser = async (req, res) => {
       httpOnly: false, // NOTE: For production, set this to `true` to prevent JavaScript access.
       secure: true, // Ensure the cookie is sent over HTTPS.
       sameSite: "strict", // Prevent cross-site requests.
-      maxAge: 3600000, // Cookie lifespan of 1 hour (in milliseconds).
     });
 
     // Then send the JSON response

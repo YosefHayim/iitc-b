@@ -16,31 +16,41 @@ import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 import MovesPage from "./pages/MovesPage/MovesPage";
 import EvolutionsPage from "./pages/EvolutionsPage/EvolutionsPage";
 import LocationsPage from "./pages/LocationsPage/LocationsPage";
+import { Provider } from "react-redux";
+import { store } from "../store";
 
 function App() {
   const [input, setInput] = useState("");
   const [open, setOpen] = useState(false);
 
   return (
-    <BrowserRouter>
-      <BurgerIcon setOpen={setOpen} />
-      <TemporaryDrawer open={open} setOpen={setOpen} />
-      <Routes>
-        <Route path="/" element={<Home setInput={setInput} />} />
-        <Route path="/pokedex" element={<AllPokemonCards />} />
-        <Route path="/moves" element={<MovesPage />} />
-        <Route path="/evolutions" element={<EvolutionsPage />} />
-        <Route path="/locations" element={<LocationsPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/createCustomPokemon" element={<CreateCustomPokemon />} />
-        <Route path="/search/:input" element={<SearchForPokemon />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <BurgerIcon setOpen={setOpen} />
+        <TemporaryDrawer open={open} setOpen={setOpen} />
+        <Routes>
+          <Route path="/" element={<Home setInput={setInput} />} />
+          <Route path="/pokedex" element={<AllPokemonCards />} />
+          <Route path="/moves" element={<MovesPage />} />
+          <Route path="/evolutions" element={<EvolutionsPage />} />
+          <Route path="/locations" element={<LocationsPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route
+            path="/createCustomPokemon"
+            element={<CreateCustomPokemon />}
+          />
+          <Route path="/search/:input" element={<SearchForPokemon />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

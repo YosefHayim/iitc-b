@@ -67,12 +67,11 @@ const validateUser = async (req, res) => {
       });
     }
 
-    const validateUserPw = await compareHashPw(password, userData.password);
+    await compareHashPw(password, userData.password);
 
     const userObj = {
       email: userData.email,
       fName: userData.fName,
-      lName: userData.lName,
     };
 
     const token = await generateToken(userObj);

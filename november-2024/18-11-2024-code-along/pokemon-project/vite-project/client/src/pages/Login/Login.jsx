@@ -4,9 +4,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import { useSelector } from "react-redux";
 
 const Login = () => {
   const [isLogin, setLogin] = useState(false);
+  const user = useSelector((state) => state.user);
 
   const loginUser = async (loginData) => {
     try {
@@ -17,11 +19,8 @@ const Login = () => {
 
       if (res) {
         const token = res.data.token;
-        console.log(token);
-
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         Cookies.set(("token", `${token}`, { expires: 1 / 24 }));
-
         setLogin(true);
       }
     } catch (error) {
@@ -54,6 +53,7 @@ const Login = () => {
         />
       </div>
       <h1 className={styles.PageTitle}>Sign in</h1>
+      <h1>Hello {user?.email}</h1>
       <div className={styles.LoginContainer}>
         <form
           className={styles.LoginFormContainer}

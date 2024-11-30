@@ -5,12 +5,11 @@ const userSlice = createSlice({
 
   initialState: {
     name: "",
-    email: "",
+    email: "Bob",
   },
   reducers: {
     setUser: (state, action) => {
       state.name = action.payload.name;
-
       state.email = action.payload.email;
     },
   },

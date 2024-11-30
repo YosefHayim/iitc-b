@@ -1,8 +1,33 @@
 import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
 import SignUpImage from "/public/images/sign-up-page.svg";
+import axios from "axios";
 
 const Register = () => {
+  const registerUser = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/");
+      console.log(res);
+    } catch (error) {
+      console.error("Error has been occurred durning registration", error);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    const fName = formData.get("fname");
+    const lName = formData.get("lname");
+
+    const dataObject = Object.fromEntries(formData.entries());
+    console.log(dataObject);
+
+    // registerUser();
+  };
+
   return (
     <div>
       <div className={styles.ImageContainer}>
@@ -13,7 +38,7 @@ const Register = () => {
         />
       </div>
       <div className={styles.RegisterContainer}>
-        <form className={styles.RegisterFormContainer}>
+        <form className={styles.RegisterFormContainer} onSubmit={handleSubmit}>
           <label htmlFor="email">
             <input
               className={styles.BoxInput}

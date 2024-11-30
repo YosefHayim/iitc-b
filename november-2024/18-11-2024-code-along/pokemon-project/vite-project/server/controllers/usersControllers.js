@@ -82,15 +82,19 @@ const validateUser = async (req, res) => {
       response: "Successfully logged in",
       token,
     });
+
+    res.cookie("token", token, {
+      httpOnly: false, // NOTE: For production, set this to `true` to prevent JavaScript access.
+      secure: true, // Ensure the cookie is sent over HTTPS.
+      sameSite: "strict", // Prevent cross-site requests.
+      maxAge: 3600000, // Cookie lifespan of 1 hour (in milliseconds).
+    });
   } catch (error) {
     res.status(500).json({
-      message: "Error occurred while processing the request.",
+      message: "Error occurred while validating user the request.",
       error: error.message,
     });
-    console.error(
-      "Error occurred while searching for the user in the database",
-      error
-    );
+    console.error("Error occurred while validating user the request.", error);
   }
 };
 

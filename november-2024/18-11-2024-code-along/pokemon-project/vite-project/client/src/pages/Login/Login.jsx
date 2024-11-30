@@ -17,6 +17,10 @@ const Login = () => {
       if (res) {
         console.log(res);
 
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${res.data.token}`;
+
         setLogin(true);
       }
     } catch (error) {

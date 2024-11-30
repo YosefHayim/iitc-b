@@ -4,9 +4,12 @@ import SignUpImage from "/public/images/sign-up-page.svg";
 import axios from "axios";
 
 const Register = () => {
-  const registerUser = async () => {
+  const registerUser = async (registerData) => {
     try {
-      const res = await axios.get("http://localhost:3000/");
+      const res = await axios.post(
+        "http://localhost:3000/users/register",
+        registerData
+      );
       console.log(res);
     } catch (error) {
       console.error("Error has been occurred durning registration", error);
@@ -22,10 +25,15 @@ const Register = () => {
     const fName = formData.get("fname");
     const lName = formData.get("lname");
 
-    const dataObject = Object.fromEntries(formData.entries());
-    console.log(dataObject);
+    const registerData = {
+      email,
+      password,
+      fName,
+      lName,
+    };
+    console.log(registerData);
 
-    // registerUser();
+    registerUser(registerData);
   };
 
   return (

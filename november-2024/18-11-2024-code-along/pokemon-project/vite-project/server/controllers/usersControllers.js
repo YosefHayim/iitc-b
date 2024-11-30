@@ -50,7 +50,30 @@ const createUser = async (req, res) => {
   }
 };
 
+const validateUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const isValidate = await userSchema.findOne({ email });
+
+    res.status(200).json({
+      message: "Success",
+      response: "Successfully login",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error occurred while searching user in database.",
+      error: error,
+    });
+    console.error(
+      "Error occurred while searching for the user in the database",
+      error
+    );
+  }
+};
+
 module.exports = {
   getAllUsers,
   createUser,
+  validateUser,
 };

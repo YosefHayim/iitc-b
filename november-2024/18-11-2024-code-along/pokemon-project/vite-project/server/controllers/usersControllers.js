@@ -77,17 +77,19 @@ const validateUser = async (req, res) => {
 
     const token = await generateToken(userObj);
 
-    res.status(200).json({
-      message: "Success",
-      response: "Successfully logged in",
-      token,
-    });
-
+    // Set the cookie before sending the response
     res.cookie("token", token, {
       httpOnly: false, // NOTE: For production, set this to `true` to prevent JavaScript access.
       secure: true, // Ensure the cookie is sent over HTTPS.
       sameSite: "strict", // Prevent cross-site requests.
       maxAge: 3600000, // Cookie lifespan of 1 hour (in milliseconds).
+    });
+
+    // Then send the JSON response
+    res.status(200).json({
+      message: "Success",
+      response: "Successfully logged in",
+      token,
     });
   } catch (error) {
     res.status(500).json({

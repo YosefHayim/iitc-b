@@ -1,8 +1,9 @@
 import styles from "./Login.module.css";
-import { Link } from "react-router-dom";
 import LoginImage from "/public/images/login-image.svg";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [isLogin, setLogin] = useState(false);
@@ -15,11 +16,11 @@ const Login = () => {
       );
 
       if (res) {
-        console.log(res);
+        const token = res.data.token;
+        console.log(token);
 
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${res.data.token}`;
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+        Cookies.set(("token", `${token}`, { expires: 1 / 24 }));
 
         setLogin(true);
       }

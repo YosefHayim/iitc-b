@@ -15,8 +15,10 @@
     "@mui/base": "^5.0.0-beta.61",
     "@mui/icons-material": "^6.1.7",
     "@mui/material": "^6.1.7",
+    "@reduxjs/toolkit": "^2.4.0",
     "axios": "^1.7.8",
     "debounce": "^2.2.0",
+    "js-cookie": "^3.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0"

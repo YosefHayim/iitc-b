@@ -1,5 +1,8 @@
 const isFalsy = require("../utils/isFalsy");
 const userSchema = require("../models/userSchema");
+const securePw = require("../utils/hashPw");
+const compareHashPw = require("../utils/compareHashPw");
+const generateToken = require("../utils/generateToken");
 
 const getAllUsers = async (req, res) => {
   try {
@@ -25,12 +28,14 @@ const getAllUsers = async (req, res) => {
 const createUser = async (req, res) => {
   const { email, fName, lName, password } = req.body;
 
+  const hashedPassword = await securePw(password);
+
   try {
     const newUser = await userSchema.create({
       email,
       fName,
       lName,
-      password,
+      password: hashedPassword,
     });
 
     if (!newUser) {
@@ -54,16 +59,33 @@ const validateUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const isValidate = await userSchema.findOne({ email });
+    const userData = await userSchema.findOne({ email });
+
+    if (!userData) {
+      return res.status(404).json({
+        message: "User not found.",
+      });
+    }
+
+    const validateUserPw = await compareHashPw(password, userData.password);
+
+    const userObj = {
+      email: userData.email,
+      fName: userData.fName,
+      lName: userData.lName,
+    };
+
+    const token = await generateToken(userObj);
 
     res.status(200).json({
       message: "Success",
-      response: "Successfully login",
+      response: "Successfully logged in",
+      token,
     });
   } catch (error) {
     res.status(500).json({
-      message: "Error occurred while searching user in database.",
-      error: error,
+      message: "Error occurred while processing the request.",
+      error: error.message,
     });
     console.error(
       "Error occurred while searching for the user in the database",

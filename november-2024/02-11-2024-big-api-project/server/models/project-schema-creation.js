@@ -30,7 +30,8 @@ const projectSchema = new mongoose.Schema(
   {
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
-  }
+  },
+  { timestamps: true }
 );
 
 projectSchema.virtual("userSchema", {

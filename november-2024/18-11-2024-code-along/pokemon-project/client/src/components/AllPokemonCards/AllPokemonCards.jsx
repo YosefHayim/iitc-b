@@ -24,9 +24,10 @@ const AllPokemonCards = () => {
       setNextPageUrl(data.next);
       setPrevPageUrl(data.previous);
       setMaxPage(Math.ceil(data.count / 20));
+
       setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 100);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./AboutUs.module.css";
-const AboutUsImage = "/images/AboutUsImage.svg";
+import AboutUsImage from "/images/AboutUsImage.svg";
 
 const AboutUs = () => {
   return (

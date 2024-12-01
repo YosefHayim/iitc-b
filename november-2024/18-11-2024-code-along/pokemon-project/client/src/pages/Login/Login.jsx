@@ -13,7 +13,7 @@ const Login = () => {
   const loginUser = async (loginData) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/users/login",
+        "https://iitc-b-pokemon-backend.onrender.com/login",
         loginData
       );
 

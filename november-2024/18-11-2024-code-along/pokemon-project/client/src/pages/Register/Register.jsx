@@ -11,7 +11,7 @@ const Register = () => {
   const registerUser = async (registerData) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/users/register",
+        "https://iitc-b-pokemon-backend.onrender.com/register",
         registerData
       );
 

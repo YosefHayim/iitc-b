@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./AboutUs.module.css";
-const AboutUsImage = "/public/images/AboutUsImage.svg";
+import aboutUsImg from "../../../public/images/about-us-image.svg";
 
 const AboutUs = () => {
   return (
@@ -15,7 +15,7 @@ const AboutUs = () => {
       </div>
       <div className={styles.ImageContainer}>
         <img
-          src={AboutUsImage}
+          src={aboutUsImg}
           alt="Pikachu against squirtle"
           className={styles.PikachuSquirtleImg}
         />

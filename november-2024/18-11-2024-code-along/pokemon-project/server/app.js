@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 // Middlewares
 const logger = require("./middlewares/logger.js");
 const errorHandler = require("./middlewares/errorHandle.js");
-const undefinedRoutes = require("./middlewares/undefinedRoutes.js");
+const { undefinedRoutes } = require("./middlewares/undefinedRoutes.js");
 
 // etc
 const usersRoute = require("./routes/usersRoute.js");

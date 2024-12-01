@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ["/images/AboutUsImage.svg"], // Prevents Rollup from trying to process the asset
+      external: ["./public/images/AboutusImage.svg"], // Prevents Rollup from trying to process the asset
     },
   },
 });

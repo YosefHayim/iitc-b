@@ -1,6 +1,6 @@
 import styles from "./Register.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import SignUpImage from "../../../public/images/sign-up-page.svg";
+import SignUpImage from "/images/sign-up-page.svg";
 import axios from "axios";
 import { useState } from "react";
 

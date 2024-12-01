@@ -1,5 +1,5 @@
 import styles from "./Login.module.css";
-import LoginImage from "/public/images/login-image.svg";
+import LoginImage from "../../../public/images/login-image.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";

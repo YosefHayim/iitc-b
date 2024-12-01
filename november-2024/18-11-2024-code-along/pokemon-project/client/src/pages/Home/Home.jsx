@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import SearchBar from "../../components/Searchbar/Searchbar";
-import PokemonBallIcon from "/public/images/pokemon-ball-3d.svg";
-import BoltIcon from "/public/images/bolt-3d.svg";
-import EvolutionIcon from "/public/images/evolution-3d.svg";
-import LocationIcon from "/public/images/location-3d.svg";
-import HomeImage from "/public/images/homepage-image.svg";
+import PokemonBallIcon from "../../../public/images/pokemon-ball-3d.svg";
+import BoltIcon from "../../../public/images/bolt-3d.svg";
+import EvolutionIcon from "../../../public/images/evolution-3d.svg";
+import LocationIcon from "../../../public/images/location-3d.svg";
+import HomeImage from "../../../public/images/homepage-image.svg";
 import RandomPokedexPicks from "../../components/RandomPokedexPicks/RandomPokedexPicks";
 
 const Home = ({ setInput }) => {

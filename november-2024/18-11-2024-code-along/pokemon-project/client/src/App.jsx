@@ -17,7 +17,7 @@ import MovesPage from "./pages/MovesPage/MovesPage";
 import EvolutionsPage from "./pages/EvolutionsPage/EvolutionsPage";
 import LocationsPage from "./pages/LocationsPage/LocationsPage";
 import { Provider } from "react-redux";
-import { store } from "../store";
+import { store } from "./store";
 
 function App() {
   const [input, setInput] = useState("");

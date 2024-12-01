@@ -55,7 +55,6 @@ const Login = () => {
         />
       </div>
       <h1 className={styles.PageTitle}>Sign in</h1>
-      <h1>Hello {user?.email}</h1>
       <div className={styles.LoginContainer}>
         <form
           className={styles.LoginFormContainer}

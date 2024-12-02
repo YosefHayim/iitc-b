@@ -16,7 +16,11 @@ const ModalPokemonStats = ({ stats }) => {
               <h4>{stat.base_stat}</h4>
             </div>
             <div className={styles.StatSliderValue}>
-              <progress max={100} value={stat.base_stat}></progress>
+              <progress
+                max={100}
+                value={stat.base_stat}
+                className={styles[stat.stat.name]}
+              ></progress>
             </div>
           </div>
         ))}

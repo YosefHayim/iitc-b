@@ -32,7 +32,7 @@ h4 {
 }
 
 progress {
-  height: 0.4em;
+  height: 0.8em;
 }
 
 .StatNameContainer {
@@ -41,4 +41,28 @@ progress {
   width: 100%;
   gap: 1em;
   justify-content: space-between;
+}
+
+.hp {
+  accent-color: red;
+}
+
+.attack {
+  accent-color: blue;
+}
+
+.defense {
+  accent-color: green;
+}
+
+.special-attack {
+  accent-color: springgreen;
+}
+
+.special-defense {
+  accent-color: springgreen;
+}
+
+.speed {
+  accent-color: orange;
 }

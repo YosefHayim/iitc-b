@@ -1,6 +1,17 @@
 .scrollContainer {
   overflow-x: auto;
-  width: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  background: white;
+  border-radius: 100em;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: gray;
+  border-radius: 100em;
+  cursor: pointer;
 }
 
 .PokemonTitlesData {

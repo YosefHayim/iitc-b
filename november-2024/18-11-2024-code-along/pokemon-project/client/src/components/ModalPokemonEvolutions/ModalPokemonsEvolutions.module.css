@@ -1,0 +1,36 @@
+.PokemonImg {
+  width: 70%;
+}
+
+.EvolutionContainer {
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 25vh;
+}
+
+.EvolutionContainer::-webkit-scrollbar {
+  background: white;
+  border-radius: 100em;
+  width: 6px;
+}
+
+.EvolutionContainer::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 100em;
+  cursor: pointer;
+}
+
+.EvolutionContainer::-webkit-scrollbar-thumb:horizontal {
+  background: darkgray;
+}
+
+.fontLight {
+  font-weight: 100;
+}
+
+.PokemonCard {
+  margin-bottom: 2em;
+}

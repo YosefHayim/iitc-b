@@ -7,9 +7,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 export default function BurgerIcon({ setOpen }) {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, cursor: "pointer" }}>
       <AppBar
         sx={{
+          cursor: "pointer",
           background: "none",
           boxShadow: "none",
           color: "white",
@@ -25,6 +26,7 @@ export default function BurgerIcon({ setOpen }) {
             color="inherit"
             aria-label="open drawer"
             sx={{
+              cursor: "pointer",
               background: "linear-gradient(to bottom, #3d3d3d, #1a1a1a)",
               position: "fixed",
               mr: 2,
@@ -32,6 +34,7 @@ export default function BurgerIcon({ setOpen }) {
               marginTop: "0.4em",
               transition: "all 0.5s ease-in",
               "&:hover": {
+                cursor: "pointer",
                 background: "linear-gradient(to bottom, #2d2d2d, #0f0f0f)",
                 borderRadius: "0.2em",
                 marginTop: "0.4em",

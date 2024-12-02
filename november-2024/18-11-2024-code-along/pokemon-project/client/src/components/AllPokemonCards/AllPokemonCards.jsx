@@ -27,7 +27,7 @@ const AllPokemonCards = () => {
 
       setTimeout(() => {
         setLoading(false);
-      }, 100);
+      }, 400);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

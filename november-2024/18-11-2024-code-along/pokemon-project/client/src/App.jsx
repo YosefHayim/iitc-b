@@ -18,6 +18,7 @@ import EvolutionsPage from "./pages/EvolutionsPage/EvolutionsPage";
 import LocationsPage from "./pages/LocationsPage/LocationsPage";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Error404 from "./components/Error404/Error404";
 
 function App() {
   const [input, setInput] = useState("");
@@ -48,6 +49,7 @@ function App() {
             path="/terms-and-conditions"
             element={<TermsAndConditions />}
           />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </Provider>

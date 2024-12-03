@@ -1,17 +1,27 @@
 .scrollContainer {
   overflow-x: auto;
-  width: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  background: white;
+  border-radius: 100em;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: gray;
+  border-radius: 100em;
+  cursor: pointer;
 }
 
 .PokemonTitlesData {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 1em;
   font-size: 0.8em;
-  white-space: nowrap;
-  overflow-x: scroll;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .statsLink:hover {
@@ -46,4 +56,10 @@
 
 .activeButton {
   font-weight: 600;
+}
+
+.separatorLine {
+  width: 100%;
+  border: 1px solid gray;
+  margin-bottom: 0.5em;
 }

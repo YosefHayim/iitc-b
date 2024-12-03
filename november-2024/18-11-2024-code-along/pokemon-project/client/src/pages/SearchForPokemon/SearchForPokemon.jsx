@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Loading from "../../components/Loading/Loading";
 import { useParams } from "react-router-dom";
 import ModalButtons from "../../components/ModalButtons/ModalButtons";
+import capitalizeFirstLetter from "../../utils/firstLetterUppercase";
 
 const SearchForPokemon = () => {
   const { input } = useParams();
@@ -37,7 +38,9 @@ const SearchForPokemon = () => {
         <Loading />
       ) : pokemonData ? (
         <>
-          <h2 className={styles.SearchResultTitle}>Result for: {name}</h2>
+          <h2 className={styles.SearchResultTitle}>
+            Result for: "{input}" Pokemon
+          </h2>
           <div className={styles.SearchPokemonContainer}>
             <div className={styles.ImageContainer}>
               <img

@@ -43,7 +43,6 @@ const ModalPokemonsEvolutions = ({ id, name }) => {
 
   return (
     <div className={styles.EvolutionContainer}>
-      (
       {evoPokemonsArray ? (
         evoPokemonsArray.map((pokemon, index) => (
           <div key={pokemon.name} className={styles.PokemonCard}>
@@ -62,7 +61,6 @@ const ModalPokemonsEvolutions = ({ id, name }) => {
           There is no evolution information about this Pokémon.
         </h1>
       )}
-      )
     </div>
   );
 };

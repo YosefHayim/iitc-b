@@ -66,3 +66,27 @@ progress {
 .speed {
   accent-color: orange;
 }
+
+.hp {
+  accent-color: red;
+}
+
+.attack {
+  accent-color: blue;
+}
+
+.defense {
+  accent-color: green;
+}
+
+.special-attack {
+  accent-color: springgreen;
+}
+
+.special-defense {
+  accent-color: springgreen;
+}
+
+.speed {
+  accent-color: orange;
+}

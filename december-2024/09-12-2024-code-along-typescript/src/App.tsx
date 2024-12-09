@@ -5,7 +5,6 @@ interface Todo {
   text: string;
   completed: boolean;
   description?: string;
-  [key: string]: any;
 }
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
     },
   ]);
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>, id?: string) => {
     const buttonValue = e.currentTarget.value;
 
     const textInput = textInputRef.current?.value;
@@ -51,27 +50,47 @@ function App() {
     if (buttonValue === "Remove all") {
       setDummyList([]);
     }
+
+    if (buttonValue === "Remove Task" && id) {
+      const updatedList = dummyList.filter((task) => task.id !== id);
+      setDummyList(updatedList);
+    }
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-full bg-red-500">
+    <div className="flex flex-col items-center justify-center w-full bg-red-500 p-4">
       <h1>Learn Typescript TODO Exercise</h1>
+      <div>
+        <label>Status:</label>
+        <select name="statusTodos" id="statusTodos">
+          <option value="completed">Completed</option>
+          <option value="notCompleted">Not Completed</option>
+        </select>
+      </div>
       {dummyList.map((obj) => (
-        <div key={obj.id}>
+        <div key={obj.id} className="todo-item">
           <p>ID: {obj.id}</p>
           <p>Description: {obj.description}</p>
           <p>Text: {obj.text}</p>
           <p>Completed: {obj.completed.toString()}</p>
-          <input type="checkbox" />
+          <input type="checkbox" checked={obj.completed} readOnly />
+          <button value="Remove Task" onClick={(e) => handleClick(e, obj.id)}>
+            Remove Task
+          </button>
         </div>
       ))}
       <div>
-        <label htmlFor="">Text Field</label>
-        <input type="text" ref={textInputRef} required />
+        <label htmlFor="textField">Text Field:</label>
+        <input type="text" id="textField" ref={textInputRef} required />
       </div>
       <div>
-        <label htmlFor="">Description Field</label>
-        <input type="text" ref={descriptionInputRef} required />
+        <label htmlFor="descriptionField">Description Field:</label>
+        <input
+          type="text"
+          id="descriptionField"
+          ref={descriptionInputRef}
+          required
+        />
       </div>
       <button value="Add todo" onClick={handleClick}>
         Add todo

@@ -26,19 +26,30 @@ function App() {
     },
   ]);
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const buttonValue = e.currentTarget.value;
+
     const textInput = textInputRef.current?.value;
     const description = descriptionInputRef.current?.value;
-    if (textInput && description) {
-      setDummyList((prev) => [
-        ...prev,
-        {
-          id: Date.now().toString(),
-          text: textInput,
-          completed: false,
-          description,
-        },
-      ]);
+
+    if (buttonValue === "Add todo") {
+      if (textInput && description) {
+        setDummyList((prev) => [
+          ...prev,
+          {
+            id: Date.now().toString(),
+            text: textInput,
+            completed: false,
+            description,
+          },
+        ]);
+      } else {
+        alert("You can't add an empty task.");
+      }
+    }
+
+    if (buttonValue === "Remove all") {
+      setDummyList([]);
     }
   };
 
@@ -50,18 +61,24 @@ function App() {
           <p>ID: {obj.id}</p>
           <p>Description: {obj.description}</p>
           <p>Text: {obj.text}</p>
-          <p>Completed: {obj.completed}</p>
+          <p>Completed: {obj.completed.toString()}</p>
+          <input type="checkbox" />
         </div>
       ))}
       <div>
         <label htmlFor="">Text Field</label>
-        <input type="text" ref={textInputRef} />
+        <input type="text" ref={textInputRef} required />
       </div>
       <div>
         <label htmlFor="">Description Field</label>
-        <input type="text" ref={descriptionInputRef} />
+        <input type="text" ref={descriptionInputRef} required />
       </div>
-      <button onClick={handleClick}>Add todo</button>
+      <button value="Add todo" onClick={handleClick}>
+        Add todo
+      </button>
+      <button value="Remove all" onClick={handleClick}>
+        Remove all
+      </button>
     </div>
   );
 }

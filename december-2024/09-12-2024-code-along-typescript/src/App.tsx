@@ -10,6 +10,8 @@ interface Todo {
 function App() {
   const textInputRef = useRef<HTMLInputElement | null>(null);
   const descriptionInputRef = useRef<HTMLInputElement | null>(null);
+  const [editTaskId, setEditTaskId] = useState<string | null>(null);
+
   const [dummyList, setDummyList] = useState<Todo[]>([
     {
       id: "1",
@@ -58,7 +60,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-red-500 p-4">
+    <div className="flex flex-col items-center justify-center w-full  p-4">
       <h1>Learn Typescript TODO Exercise</h1>
       <div>
         <label>Status:</label>
@@ -68,18 +70,30 @@ function App() {
         </select>
       </div>
       {dummyList.map((obj) => (
-        <div key={obj.id} className="todo-item">
+        <div key={obj.id} className={obj.id}>
           <p>ID: {obj.id}</p>
           <p>Description: {obj.description}</p>
           <p>Text: {obj.text}</p>
           <p>Completed: {obj.completed.toString()}</p>
           <input type="checkbox" checked={obj.completed} readOnly />
-          <button value="Remove Task" onClick={(e) => handleClick(e, obj.id)}>
-            Remove Task
-          </button>
+          <div className="flex flex-row items-center w-full gap-[1em]">
+            <button
+              className="bg-slate-600"
+              value="Remove Task"
+              onClick={(e) => handleClick(e, obj.id)}
+            >
+              Remove Task
+            </button>
+            <button
+              className="bg-slate-600"
+              onClick={(e) => handleClick(e, obj.id)}
+            >
+              Edit Task
+            </button>
+          </div>
         </div>
       ))}
-      <div>
+      <div className="mb-[1em] mt-[1em]">
         <label htmlFor="textField">Text Field:</label>
         <input type="text" id="textField" ref={textInputRef} required />
       </div>
@@ -92,10 +106,14 @@ function App() {
           required
         />
       </div>
-      <button value="Add todo" onClick={handleClick}>
+      <button
+        className="bg-slate-600 mb-[1em] mt-[1em]"
+        value="Add todo"
+        onClick={handleClick}
+      >
         Add todo
       </button>
-      <button value="Remove all" onClick={handleClick}>
+      <button className="bg-slate-600" value="Remove all" onClick={handleClick}>
         Remove all
       </button>
     </div>

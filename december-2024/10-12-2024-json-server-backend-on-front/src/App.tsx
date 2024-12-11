@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import "./App.css";
-import { Task } from "./types";
 import axios, { AxiosResponse } from "axios";
+import { Task } from "./types";
+
+// Create the context
+const TaskContext = createContext<Task[]>([]);
 
 function App() {
   const [posts, setPosts] = useState<Task[]>([]);
@@ -20,47 +23,60 @@ function App() {
     }
   };
 
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const button = (e.target as HTMLElement).closest("button");
+    const parentDiv = button?.parentElement;
+
+    if (button?.innerText.includes("Delete")) {
+      if (parentDiv) {
+        parentDiv.remove();
+      }
+    }
+
+    if (button?.innerText.includes("Edit")) {
+      if (parentDiv) {
+        parentDiv.setAttribute("contenteditable", "true");
+        parentDiv.focus();
+      }
+    }
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
 
   return (
-    <>
-      <div>
+    <TaskContext.Provider value={posts}>
+      <div onClick={handleClick}>
         <h1>Learning JSON Server on Frontend</h1>
-        <div>
-          <div className="flex gap-[1em] mt-[1em] ml-[1em]">
-            <div>
-              <select name="status" id="status">
-                <option value="Pending">Pending</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Completed">Completed</option>
-              </select>
-            </div>
-            <div>
-              <select name="priority" id="priority">
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-              </select>
-            </div>
-          </div>
-          <ul className="mt-[1em] flex flex-col items-start justify-center ml-[1em] gap-[1em]">
-            {posts.map((post) => (
-              <li key={post.id}>
-                <p>Title: {post.title}</p>
-                <p>Description: {post.description}</p>
-                <p>Due Date: {post.dueDate}</p>
-                <p>Priority: {post.priority}</p>
-                <p>Status: {post.status}</p>
-                <button>Delete Task: {post.title}</button>
-                <button>Edit Task: {post.title}</button>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <TaskList />
       </div>
-    </>
+    </TaskContext.Provider>
+  );
+}
+
+// Consume the context
+function TaskList() {
+  const tasks = useContext(TaskContext);
+
+  return (
+    <ul className="mt-[1em] flex flex-col items-start justify-center ml-[1em] gap-[1.2em]">
+      {tasks.map((task) => (
+        <li key={task.id}>
+          <p>Title: {task.title}</p>
+          <p>Description: {task.description}</p>
+          <p>Due Date: {task.dueDate}</p>
+          <p>Priority: {task.priority}</p>
+          <p>Status: {task.status}</p>
+          <button className="bg-gray-500 rounded-[0.5em]">
+            Delete Task: {task.title}
+          </button>
+          <button className="bg-gray-500 rounded-[0.5em]">
+            Edit Task: {task.title}
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 }
 

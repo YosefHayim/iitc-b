@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 import FoodCategory from "../FoodCategory/FoodCategory";
+import RecommendationForVegan from "../RecommendationForVegan/RecommendationForVegan";
 
 const boldText = "font-bold";
 
@@ -31,7 +32,7 @@ const Dashboard = () => {
             Get access all the amazing recipes from the world
           </p>
           <Button variant="white" className="text-[0.9em] mt-[1em]">
-            Start 7-day FREE Trail
+            Start 7-day free trail
           </Button>
         </div>
         <img src={dashboardImg} alt="" className="overflow-auto" />
@@ -51,7 +52,7 @@ const Dashboard = () => {
           <MdKeyboardArrowRight />
         </div>
       </div>
-      {/* placeholder for the vegan reccomendation */}
+      <RecommendationForVegan />
     </div>
   );
 };

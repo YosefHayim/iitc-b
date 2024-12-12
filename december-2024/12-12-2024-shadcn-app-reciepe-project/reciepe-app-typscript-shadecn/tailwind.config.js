@@ -14,6 +14,7 @@ export default {
       },
       boxShadow: {
         customShadow: "0em 0em 0em 0.1em #00000030",
+        profileUserShadow: "0em 0em 1em 0.5em #0000001a",
       },
       backgroundImage: {
         textGradient:

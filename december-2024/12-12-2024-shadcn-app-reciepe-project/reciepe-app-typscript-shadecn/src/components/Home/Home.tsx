@@ -13,7 +13,8 @@ import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const imgSize = "rounded-[1em]";
-export const pageDefaultStyle = "flex flex-col p-[1em] font-Halenoir";
+export const pageDefaultStyle =
+  "flex flex-col p-[1em] font-Halenoir justify-center";
 
 const Home = () => {
   return (

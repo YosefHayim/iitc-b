@@ -20,7 +20,7 @@ const Dashboard = () => {
           <FaUserCircle className="text-4xl" />
         </div>
       </div>
-      <div className="w-full rounded-[1em] flex-row flex bg-black text-white items-center justify-start px-[1em] p-[1em] mt-[1em] gap-[0.5em] shadow-customShadow">
+      <div className="w-full rounded-[1em] flex-row flex bg-black text-white items-center justify-start px-[1em] p-[1em] mt-[1em] gap-[0.5em] shadow-customShadow mb-[1em]">
         <div className="flex flex-col items-start justify-start">
           <h2
             className={`${boldText} bg-textGradient bg-clip-text text-transparent`}
@@ -36,18 +36,34 @@ const Dashboard = () => {
         </div>
         <img src={dashboardImg} alt="" className="overflow-auto" />
       </div>
-      <div className="mt-[1em]">
-        <div className="flex flex-row items-center justify-between">
-          <h2 className={boldText}>Category</h2>
-          <div className="flex flex-row items-center">
-            <button className="text-gray-500">Sell all</button>
-            <MdKeyboardArrowRight />
-          </div>
+      <div className="mb-[2.5em] flex flex-row justify-between">
+        <h2 className={boldText}>Category</h2>
+        <div className="flex flex-row items-center justify-center">
+          <button className="text-gray-500">Sell all</button>
+          <MdKeyboardArrowRight />
         </div>
-        <FoodCategory />
       </div>
+      <FoodCategory />
+      <div className="mt-[2.5em]  flex flex-row justify-between">
+        <h2 className={boldText}>Recommendation for vegan</h2>
+        <div className="flex flex-row items-center justify-center">
+          <button className="text-gray-500">Sell all</button>
+          <MdKeyboardArrowRight />
+        </div>
+      </div>
+      {/* placeholder for the vegan reccomendation */}
     </div>
   );
 };
 
 export default Dashboard;
+
+{
+  /* <h2 className={boldText}>Category</h2>
+<div className="flex flex-row items-center w-full justify-between">
+  <div className="mb-[3em] flex flex-row items-center justify-center">
+    <button className="text-gray-500">Sell all</button>
+    <MdKeyboardArrowRight />
+  </div>
+</div> */
+}

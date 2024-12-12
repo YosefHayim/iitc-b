@@ -12,6 +12,13 @@ export default {
       fontFamily: {
         Halenoir: "Halenoir",
       },
+      boxShadow: {
+        customShadow: "0em 0em 0em 0.1em #00000030",
+      },
+      backgroundImage: {
+        textGradient:
+          "linear-gradient(90deg, hsl(59deg 100% 50%) 0%, hsl(134deg 100% 50.19%) 100%)",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="dashboard" element={<Dashboard />}>
+        <Route path="/recipe-page/home" element={<Dashboard />}>
           <Route path="settings" element={<Settings />} />
           <Route path="recipe/:id" element={<Recipe />} />
         </Route>

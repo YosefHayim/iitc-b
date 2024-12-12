@@ -6,10 +6,11 @@ import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const imgSize = "h-[10vh] rounded-[0.5em]";
+export const pageDefaultStyle = "flex flex-col p-[1em] font-Halenoir";
 
 const Home = () => {
   return (
-    <div className="flex flex-col p-[1em] font-Halenoir">
+    <div className={pageDefaultStyle}>
       <div className="flex flex-row flex-wrap w-full items-center justify-between gap-[0.5em]">
         <img src={placeholderImg} alt="" className={imgSize} />
         <img src={placeholderImg} alt="" className={imgSize} />

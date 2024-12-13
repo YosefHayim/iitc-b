@@ -12,6 +12,7 @@ import { MailIcon } from "../ui/Mail";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Faq } from "../Faq/Faq";
 
 const imgSize = "rounded-[0.5em]";
 export const pageDefaultStyle =
@@ -41,7 +42,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-col items-center justify-center">
         <h1 className="text-center mt-[1em] mb-[1em]">
           <b>
             Elevate your home <br></br>cooking with our expertly <br></br>
@@ -70,6 +71,14 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <div className="flex flex-col mt-[2em] mb-[1em]">
+        <h2 className="text-[1.3em]">Frequently Asked Questions</h2>
+        <Faq />
+      </div>
+      <p className="text-[0.8em] text-gray-700">
+        Still got some questions? Contact us via our email support:
+        Bite@support.com
+      </p>
     </div>
   );
 };

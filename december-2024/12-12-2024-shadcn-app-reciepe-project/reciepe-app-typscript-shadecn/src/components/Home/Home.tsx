@@ -66,7 +66,7 @@ const Home = () => {
           <Link to="/recipe-page/sign-in">
             <p className="text-gray-500 text-[0.8em]">
               Already have an account?
-              <b className="text-black hover:text-gray-400">Sign in</b>
+              <b className="text-black hover:text-gray-400"> Sign in</b>
             </p>
           </Link>
         </div>

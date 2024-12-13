@@ -11,15 +11,15 @@ const textStyle = "absolute text-white font-bold z-10 text-center";
 
 const FoodCategory = () => {
   return (
-    <div className="flex flex-row items-center justify-between p-[1em]  flex-wrap">
+    <div className="flex flex-row items-center justify-between p-[1em] flex-wrap gap-[1em]">
       {categoryData?.map((category) => (
-        <div className="relative w-[6em] h-[6em]">
+        <div className="relative w-[6em] h-[6em]" key={category.categoryName}>
           <img
             src={category.img}
             alt={category.categoryName}
             className={imgStyle}
           />
-          <div className="absolute inset-0 bg-black opacity-50 rounded-full"></div>
+          <div className="absolute inset-0 bg-black opacity-[0.3] rounded-full"></div>
           <h2
             className={`${textStyle} inset-0 flex items-center justify-center`}
           >

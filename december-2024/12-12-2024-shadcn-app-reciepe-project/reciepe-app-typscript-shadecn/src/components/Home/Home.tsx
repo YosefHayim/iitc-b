@@ -13,7 +13,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const imgSize = "rounded-[1em]";
+const imgSize = "rounded-[0.5em]";
 export const pageDefaultStyle =
   "flex flex-col p-[1em] font-Halenoir justify-center";
 
@@ -64,7 +64,7 @@ const Home = () => {
           </Button>
           <Link to="/recipe-page/sign-in">
             <p className="text-gray-500 text-[0.8em]">
-              Already have an account?{" "}
+              Already have an account?
               <b className="text-black hover:text-gray-400">Sign in</b>
             </p>
           </Link>

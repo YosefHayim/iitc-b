@@ -11,9 +11,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recipe-page/home" element={<Dashboard />}>
+          <Route path="sign-up" element={<Settings />} />
+          <Route path="sign-in" element={<Settings />} />
+          <Route path="recipe" element={<Recipe />} />
           <Route path="settings" element={<Settings />} />
         </Route>
-        <Route path="/recipe" element={<Recipe />} />
       </Routes>
     </BrowserRouter>
   );

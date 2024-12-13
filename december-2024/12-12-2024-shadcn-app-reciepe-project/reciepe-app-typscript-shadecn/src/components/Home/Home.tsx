@@ -5,6 +5,7 @@ import imgFour from "../../../public/image-4.svg";
 import imgFive from "../../../public/image-5.svg";
 import imgSix from "../../../public/image-6.svg";
 import imgSeven from "../../../public/image-7.svg";
+import logo from "../../../public/logo.svg";
 
 import { Button } from "../ui/button";
 import { MailIcon } from "../ui/Mail";
@@ -19,6 +20,13 @@ export const pageDefaultStyle =
 const Home = () => {
   return (
     <div className={pageDefaultStyle}>
+      <div>
+        <Link to="/">
+          <button>
+            <img src={logo} alt="logo" />
+          </button>
+        </Link>
+      </div>
       <div className="flex flex-row flex-wrap gap-[0.5em]">
         <div className="grid grid-cols-3 gap-[0.5em]">
           <img src={imgOne} alt="" className={imgSize} />
@@ -41,9 +49,11 @@ const Home = () => {
           </b>
         </h1>
         <div className="flex flex-col w-full text-center gap-[1em]">
-          <Button variant="outline">
-            <MailIcon /> Sign up with email
-          </Button>
+          <Link to="/recipe-page/sign-up">
+            <Button variant="outline">
+              <MailIcon /> Sign up with email
+            </Button>
+          </Link>
           <p className="text-gray-500 text-[0.8em]">or use social media</p>
           <Button variant="outline">
             <FcGoogle />
@@ -52,9 +62,10 @@ const Home = () => {
           <Button>
             <FaApple /> Sign up with Apple
           </Button>
-          <Link to="/sign-in">
+          <Link to="/recipe-page/sign-in">
             <p className="text-gray-500 text-[0.8em]">
-              Already have an account? <b className="text-black">Sign in</b>
+              Already have an account?{" "}
+              <b className="text-black hover:text-gray-400">Sign in</b>
             </p>
           </Link>
         </div>

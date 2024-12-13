@@ -14,7 +14,7 @@ const boldText = "font-bold";
 const Dashboard = () => {
   return (
     <div className={`${pageDefaultStyle} text-[0.8em]`}>
-      <div className="relative w-full  flex flex-row items-center justify-between gap-[1em]">
+      <div className="relative w-full flex flex-row items-center justify-between gap-[1em]">
         <IoSearchOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
         <Input className="pl-10" placeholder="Search your recipes" />
         <div>
@@ -35,7 +35,11 @@ const Dashboard = () => {
             Start 7-day free trail
           </Button>
         </div>
-        <img src={dashboardImg} alt="" className="overflow-auto" />
+        <img
+          src={dashboardImg}
+          alt=""
+          className="overflow-auto transform translate-y-[1em]"
+        />
       </div>
       <div className="mb-[2.5em] flex flex-row justify-between">
         <h2 className={boldText}>Category</h2>

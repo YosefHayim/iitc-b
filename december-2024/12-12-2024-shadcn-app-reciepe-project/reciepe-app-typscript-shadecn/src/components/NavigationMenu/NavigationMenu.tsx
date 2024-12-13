@@ -13,31 +13,31 @@ const divStyle =
 const NavigationMenu = () => {
   return (
     <div className="flex flex-wrap items-center w-full absolute bottom-0 left-0 justify-between bg-black p-[0.2em]">
-      <div className={divStyle}>
-        <Link to="">
+      <Link to="">
+        <div className={divStyle}>
           <Home />
-        </Link>
-      </div>
-      <div className={divStyle}>
-        <Link to="">
+        </div>
+      </Link>
+      <Link to="">
+        <div className={divStyle}>
           <Search />
-        </Link>
-      </div>
-      <div className={divStyle}>
-        <Link to="">
+        </div>
+      </Link>
+      <Link to="">
+        <div className={divStyle}>
           <ChatMessages />
-        </Link>
-      </div>
-      <div className={divStyle}>
-        <Link to="">
+        </div>
+      </Link>
+      <Link to="">
+        <div className={divStyle}>
           <Bookmark />
-        </Link>
-      </div>
-      <div className={divStyle}>
-        <Link to="">
+        </div>
+      </Link>
+      <Link to="">
+        <div className={divStyle}>
           <CogFour />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 };

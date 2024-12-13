@@ -8,6 +8,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 import FoodCategory from "../FoodCategory/FoodCategory";
 import RecommendationForVegan from "../RecommendationForVegan/RecommendationForVegan";
+import NavigationMenu from "../NavigationMenu/NavigationMenu";
 
 const boldText = "font-bold";
 
@@ -57,6 +58,7 @@ const Dashboard = () => {
         </div>
       </div>
       <RecommendationForVegan />
+      <NavigationMenu />
     </div>
   );
 };

@@ -2,19 +2,13 @@ import { Link } from "react-router-dom";
 import { pageDefaultStyle } from "../Home/Home";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import logo from "../../../public/logo.svg";
 import { Checkbox } from "@/components/ui/checkbox";
+import Logo from "../Logo/Logo";
 
 const SignUp = () => {
   return (
     <div className={pageDefaultStyle}>
-      <div>
-        <Link to="/">
-          <button>
-            <img src={logo} alt="" />
-          </button>
-        </Link>
-      </div>
+      <Logo />
       <div>
         <form className="flex flex-col gap-[0.5em]">
           <Input placeholder="First name" />

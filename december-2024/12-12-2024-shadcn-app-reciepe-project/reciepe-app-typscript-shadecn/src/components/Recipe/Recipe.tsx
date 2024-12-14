@@ -12,7 +12,11 @@ import Ingredients from "../Ingredients/Ingredients";
 const Recipe = () => {
   return (
     <div className={pageDefaultStyle}>
-      <img src={placeholderImg} alt="" className="absolute top-0 left-0" />
+      <img
+        src={placeholderImg}
+        alt=""
+        className="absolute top-0 left-0 w-[100vw]"
+      />
       <div className="absolute inset-0 bg-black opacity-50 h-[180px]"></div>
       <div className="flex flex-row items-center justify-between absolute top-0 left-0 w-full p-[1em]">
         <button>

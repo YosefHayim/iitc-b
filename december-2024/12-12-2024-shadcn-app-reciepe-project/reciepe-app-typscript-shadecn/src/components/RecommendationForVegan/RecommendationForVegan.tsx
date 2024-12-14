@@ -19,7 +19,7 @@ const veganImages = [
 
 const RecommendationForVegan = () => {
   return (
-    <div className="flex flex-row items-center justify-between gap-[0.5em]">
+    <div className="flex flex-row items-center justify-between gap-[0.5em] mb-[5em]">
       {veganImages?.map((veganMeal) => (
         <div
           className="flex flex-col items-start justify-center mt-[1em] relative"

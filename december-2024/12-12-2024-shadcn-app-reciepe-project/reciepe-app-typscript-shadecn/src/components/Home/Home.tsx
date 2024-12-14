@@ -13,6 +13,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Faq } from "../Faq/Faq";
+import Logo from "../Logo/Logo";
 
 const imgSize = "rounded-[0.5em]";
 export const pageDefaultStyle =
@@ -21,13 +22,7 @@ export const pageDefaultStyle =
 const Home = () => {
   return (
     <div className={pageDefaultStyle}>
-      <div>
-        <Link to="/">
-          <button>
-            <img src={logo} alt="logo" />
-          </button>
-        </Link>
-      </div>
+      <Logo />
       <div className="flex flex-row flex-wrap gap-[0.5em]">
         <div className="grid grid-cols-3 gap-[0.5em]">
           <img src={imgOne} alt="" className={imgSize} />

@@ -21,7 +21,7 @@ function App() {
         <Route path="/recipe-page/sign-in" element={<SignIn />} />
         <Route path="/recipe-page/forget-pw" element={<ForgetPw />} />
         <Route path="/recipe-page/sign-up" element={<SignUp />} />
-        <Route path="/recipe-page/recipe" element={<Recipe />} />
+        <Route path="/recipe-page/recipe/:id" element={<Recipe />} />
         <Route path="/recipe-page/settings" element={<Settings />} />
         <Route path="/recipe-page/news" element={<News />} />
         <Route path="/recipe-page/saved" element={<Saved />} />

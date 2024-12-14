@@ -10,7 +10,9 @@ const RecommendationForVegan = () => {
 
   const fetchData = async (): Promise<void> => {
     try {
-      const res = await axios.get<ApiData>("http://localhost:3000/veganImages");
+      const res = await axios.get<ApiData>(
+        "http://localhost:3000/veganRecipes"
+      );
 
       if (res) {
         setData(res.data);

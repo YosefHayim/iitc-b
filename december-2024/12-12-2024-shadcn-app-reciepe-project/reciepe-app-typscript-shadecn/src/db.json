@@ -4,38 +4,38 @@
       "id": "1",
       "categoryName": "Italian",
       "img": "../../../public/category-image-one.svg",
-      "description": "Traditional Italian recipes with rich flavors."
+      "description": "Delicious pasta, pizza, and other Italian favorites."
     },
     {
       "id": "2",
       "categoryName": "Noodles",
       "img": "../../../public/category-image-two.svg",
-      "description": "A variety of noodle dishes from around the world."
+      "description": "Tasty noodle dishes from Asia and beyond."
     },
     {
       "id": "3",
       "categoryName": "Salad",
       "img": "../../../public/category-image-three.svg",
-      "description": "Fresh and healthy salads for any meal."
+      "description": "Fresh, healthy, and flavorful salads."
     },
     {
       "id": "4",
       "categoryName": "Meat",
       "img": "../../../public/category-image-four.svg",
-      "description": "Savory and hearty meat-based recipes."
+      "description": "Juicy and savory meat-based dishes."
     },
     {
       "id": "5",
       "categoryName": "Sushi",
       "img": "../../../public/category-image-five.svg",
-      "description": "Delicious sushi rolls and Japanese classics."
+      "description": "Elegant sushi rolls and Japanese cuisine."
     }
   ],
-  "veganImages": [
+  "veganRecipes": [
     {
       "id": "101",
       "title": "Ginger Roasted Tomato",
-      "username": "Mc Hustkler",
+      "username": "Chef John",
       "rating": "4.9",
       "img": "../../../public/ginger-roasted-tomato.svg",
       "prepTime": "25 mins",
@@ -44,87 +44,250 @@
     {
       "id": "102",
       "title": "Spiced Lentil Bowl",
-      "username": "Anna Delish",
+      "username": "Anna Smith",
       "rating": "4.8",
-      "img": "../../../public/ginger-roasted-tomato.svg",
+      "img": "../../../public/spiced-lentil-bowl.svg",
       "prepTime": "30 mins",
       "ingredients": ["Lentils", "Spinach", "Spices", "Coconut Milk"]
     },
     {
       "id": "103",
       "title": "Herb Avocado Salad",
-      "username": "Green Chef",
+      "username": "Vegan Chef",
       "rating": "5.0",
-      "img": "../../../public/ginger-roasted-tomato.svg",
+      "img": "../../../public/herb-avocado-salad.svg",
       "prepTime": "15 mins",
       "ingredients": ["Avocado", "Mixed Greens", "Herbs", "Lemon Juice"]
     },
     {
       "id": "104",
       "title": "Maple Glazed Carrots",
-      "username": "Vegan Vibes",
+      "username": "Healthy Eats",
       "rating": "4.7",
-      "img": "../../../public/ginger-roasted-tomato.svg",
+      "img": "../../../public/maple-glazed-carrots.svg",
       "prepTime": "20 mins",
       "ingredients": ["Carrots", "Maple Syrup", "Thyme", "Butter"]
     },
     {
       "id": "105",
       "title": "Chickpea Stew",
-      "username": "Soup Master",
+      "username": "Soup Lover",
       "rating": "4.9",
-      "img": "../../../public/ginger-roasted-tomato.svg",
+      "img": "../../../public/chickpea-stew.svg",
       "prepTime": "40 mins",
       "ingredients": ["Chickpeas", "Tomatoes", "Onion", "Garlic", "Spices"]
     }
   ],
   "recipes": [
     {
-      "id": "201",
-      "title": "Ginger Roasted Tomato",
-      "author": {
-        "name": "Mc Hustkler",
-        "profileImage": "../../../public/profile-image-placeholder.svg",
-        "verified": true
-      },
-      "rating": 4.9,
-      "image": "../../../public/ginger-roasted-tomato.svg",
-      "prepTime": "25 mins",
-      "ingredients": ["Tomatoes", "Ginger", "Olive Oil", "Salt"]
+      "id": "1",
+      "recipeName": "Ginger Roasted Tomato",
+      "authorName": "Chef John",
+      "categoryName": "Appetizers",
+      "imagePath": "../../../public/ginger-roasted-tomato.svg"
     },
     {
-      "id": "202",
-      "title": "Spiced Lentil Bowl",
-      "author": {
-        "name": "Anna Delish",
-        "profileImage": "../../../public/profile-image-placeholder.svg",
-        "verified": true
-      },
-      "rating": 4.8,
-      "image": "../../../public/spiced-lentil-bowl.svg",
-      "prepTime": "30 mins",
-      "ingredients": ["Lentils", "Spinach", "Spices", "Coconut Milk"]
+      "id": "2",
+      "recipeName": "Spiced Lentil Bowl",
+      "authorName": "Anna Smith",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/spiced-lentil-bowl.svg"
     },
     {
-      "id": "203",
-      "title": "Herb Avocado Salad",
-      "author": {
-        "name": "Green Chef",
-        "profileImage": "../../../public/profile-image-placeholder.svg",
-        "verified": false
-      },
-      "rating": 2,
-      "image": "../../../public/herb-avocado-salad.svg",
-      "prepTime": "15 mins",
-      "ingredients": ["Avocado", "Mixed Greens", "Herbs", "Lemon Juice"]
+      "id": "3",
+      "recipeName": "Herb Avocado Salad",
+      "authorName": "Vegan Chef",
+      "categoryName": "Salads",
+      "imagePath": "../../../public/herb-avocado-salad.svg"
     },
     {
-      "id": "7318",
-      "recipeName": "fds",
-      "authorName": "fds",
-      "categoryName": "fsd",
-      "description": "fds",
-      "imagePath": {}
+      "id": "4",
+      "recipeName": "Classic Chocolate Cake",
+      "authorName": "Baker Joe",
+      "categoryName": "Desserts",
+      "imagePath": "../../../public/chocolate-cake.svg"
+    },
+    {
+      "id": "5",
+      "recipeName": "Berry Smoothie",
+      "authorName": "Healthy Chef",
+      "categoryName": "Drinks",
+      "imagePath": "../../../public/berry-smoothie.svg"
+    },
+    {
+      "id": "6",
+      "recipeName": "Grilled Lemon Chicken",
+      "authorName": "Chef Alice",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/grilled-lemon-chicken.svg"
+    },
+    {
+      "id": "7",
+      "recipeName": "Vegetable Stir-Fry",
+      "authorName": "Wok Master",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/vegetable-stir-fry.svg"
+    },
+    {
+      "id": "8",
+      "recipeName": "Banana Bread",
+      "authorName": "Grandma Betty",
+      "categoryName": "Desserts",
+      "imagePath": "../../../public/banana-bread.svg"
+    },
+    {
+      "id": "9",
+      "recipeName": "Tomato Basil Soup",
+      "authorName": "Chef Tom",
+      "categoryName": "Soups",
+      "imagePath": "../../../public/tomato-basil-soup.svg"
+    },
+    {
+      "id": "10",
+      "recipeName": "Fish Tacos",
+      "authorName": "Taco Master",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/fish-tacos.svg"
+    },
+    {
+      "id": "11",
+      "recipeName": "Pumpkin Spice Latte",
+      "authorName": "Barista Sam",
+      "categoryName": "Drinks",
+      "imagePath": "../../../public/pumpkin-spice-latte.svg"
+    },
+    {
+      "id": "12",
+      "recipeName": "Mango Salsa",
+      "authorName": "Tropical Chef",
+      "categoryName": "Appetizers",
+      "imagePath": "../../../public/mango-salsa.svg"
+    },
+    {
+      "id": "13",
+      "recipeName": "Eggplant Parmesan",
+      "authorName": "Chef Italiano",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/eggplant-parmesan.svg"
+    },
+    {
+      "id": "14",
+      "recipeName": "Shrimp Scampi",
+      "authorName": "Seafood Pro",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/shrimp-scampi.svg"
+    },
+    {
+      "id": "15",
+      "recipeName": "Caprese Salad",
+      "authorName": "Simple Chef",
+      "categoryName": "Salads",
+      "imagePath": "../../../public/caprese-salad.svg"
+    },
+    {
+      "id": "16",
+      "recipeName": "Blueberry Pancakes",
+      "authorName": "Breakfast King",
+      "categoryName": "Breakfast",
+      "imagePath": "../../../public/blueberry-pancakes.svg"
+    },
+    {
+      "id": "17",
+      "recipeName": "Roasted Brussels Sprouts",
+      "authorName": "Chef Green",
+      "categoryName": "Side Dishes",
+      "imagePath": "../../../public/roasted-brussels-sprouts.svg"
+    },
+    {
+      "id": "18",
+      "recipeName": "Chicken Alfredo Pasta",
+      "authorName": "Pasta Lover",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/chicken-alfredo-pasta.svg"
+    },
+    {
+      "id": "19",
+      "recipeName": "Garlic Butter Shrimp",
+      "authorName": "Seafood Chef",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/garlic-butter-shrimp.svg"
+    },
+    {
+      "id": "20",
+      "recipeName": "Chocolate Chip Cookies",
+      "authorName": "Cookie Master",
+      "categoryName": "Desserts",
+      "imagePath": "../../../public/chocolate-chip-cookies.svg"
+    },
+    {
+      "id": "21",
+      "recipeName": "Avocado Toast",
+      "authorName": "Chef Brunch",
+      "categoryName": "Breakfast",
+      "imagePath": "../../../public/avocado-toast.svg"
+    },
+    {
+      "id": "22",
+      "recipeName": "Lemon Garlic Salmon",
+      "authorName": "Seafood Pro",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/lemon-garlic-salmon.svg"
+    },
+    {
+      "id": "23",
+      "recipeName": "Vegetarian Chili",
+      "authorName": "Chef Bean",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/vegetarian-chili.svg"
+    },
+    {
+      "id": "24",
+      "recipeName": "Spinach Artichoke Dip",
+      "authorName": "Chef Party",
+      "categoryName": "Appetizers",
+      "imagePath": "../../../public/spinach-artichoke-dip.svg"
+    },
+    {
+      "id": "25",
+      "recipeName": "Beef Tacos",
+      "authorName": "Taco King",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/beef-tacos.svg"
+    },
+    {
+      "id": "26",
+      "recipeName": "Stuffed Bell Peppers",
+      "authorName": "Chef Home",
+      "categoryName": "Main Dishes",
+      "imagePath": "../../../public/stuffed-bell-peppers.svg"
+    },
+    {
+      "id": "27",
+      "recipeName": "Lemon Bars",
+      "authorName": "Dessert Chef",
+      "categoryName": "Desserts",
+      "imagePath": "../../../public/lemon-bars.svg"
+    },
+    {
+      "id": "28",
+      "recipeName": "Sweet Potato Casserole",
+      "authorName": "Chef Comfort",
+      "categoryName": "Side Dishes",
+      "imagePath": "../../../public/sweet-potato-casserole.svg"
+    },
+    {
+      "id": "29",
+      "recipeName": "Caesar Salad",
+      "authorName": "Healthy Chef",
+      "categoryName": "Salads",
+      "imagePath": "../../../public/caesar-salad.svg"
+    },
+    {
+      "id": "30",
+      "recipeName": "French Onion Soup",
+      "authorName": "Chef Classic",
+      "categoryName": "Soups",
+      "imagePath": "../../../public/french-onion-soup.svg"
     }
   ]
 }

@@ -15,7 +15,7 @@ const AddRecipe = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const id = generateRandomId;
+    const id = generateRandomId();
     const formData = new FormData(e.target as HTMLFormElement);
     const recipeName = formData.get("recipeName") as string;
     const authorName = formData.get("authorName") as string;
@@ -59,11 +59,15 @@ const AddRecipe = () => {
         className="flex flex-col items-center gap-[0.5em]"
         onSubmit={handleSubmit}
       >
-        <Input placeholder="Recipe name" name="recipeName" />
-        <Input placeholder="Author name" name="authorName" />
-        <Input placeholder="Category name" name="categoryName" />
-        <Input placeholder="Description" name="description" />
-        <Input placeholder="Image path" name="imagePath" />
+        <Input placeholder="Recipe name" name="recipeName" required />
+        <Input placeholder="Author name" name="authorName" required />
+        <Input placeholder="Category name" name="categoryName" required />
+        <Input placeholder="Description" name="description" required />
+        <Input
+          placeholder="(Optional) Image path..."
+          type="file"
+          name="imagePath"
+        />
         <Button type="submit">Add Recipe</Button>
       </form>
       {postAdded && <UserNotification text="Post added successfully!" />}

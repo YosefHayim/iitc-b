@@ -1,31 +1,31 @@
 {
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "categoryName": "Italian",
       "img": "../../../public/category-image-one.svg",
       "description": "Traditional Italian recipes with rich flavors."
     },
     {
-      "id": 2,
+      "id": "2",
       "categoryName": "Noodles",
       "img": "../../../public/category-image-two.svg",
       "description": "A variety of noodle dishes from around the world."
     },
     {
-      "id": 3,
+      "id": "3",
       "categoryName": "Salad",
       "img": "../../../public/category-image-three.svg",
       "description": "Fresh and healthy salads for any meal."
     },
     {
-      "id": 4,
+      "id": "4",
       "categoryName": "Meat",
       "img": "../../../public/category-image-four.svg",
       "description": "Savory and hearty meat-based recipes."
     },
     {
-      "id": 5,
+      "id": "5",
       "categoryName": "Sushi",
       "img": "../../../public/category-image-five.svg",
       "description": "Delicious sushi rolls and Japanese classics."
@@ -33,7 +33,7 @@
   ],
   "veganImages": [
     {
-      "id": 101,
+      "id": "101",
       "title": "Ginger Roasted Tomato",
       "username": "Mc Hustkler",
       "rating": "4.9",
@@ -42,7 +42,7 @@
       "ingredients": ["Tomatoes", "Ginger", "Olive Oil", "Salt"]
     },
     {
-      "id": 102,
+      "id": "102",
       "title": "Spiced Lentil Bowl",
       "username": "Anna Delish",
       "rating": "4.8",
@@ -51,7 +51,7 @@
       "ingredients": ["Lentils", "Spinach", "Spices", "Coconut Milk"]
     },
     {
-      "id": 103,
+      "id": "103",
       "title": "Herb Avocado Salad",
       "username": "Green Chef",
       "rating": "5.0",
@@ -60,7 +60,7 @@
       "ingredients": ["Avocado", "Mixed Greens", "Herbs", "Lemon Juice"]
     },
     {
-      "id": 104,
+      "id": "104",
       "title": "Maple Glazed Carrots",
       "username": "Vegan Vibes",
       "rating": "4.7",
@@ -69,7 +69,7 @@
       "ingredients": ["Carrots", "Maple Syrup", "Thyme", "Butter"]
     },
     {
-      "id": 105,
+      "id": "105",
       "title": "Chickpea Stew",
       "username": "Soup Master",
       "rating": "4.9",
@@ -80,7 +80,7 @@
   ],
   "recipes": [
     {
-      "id": 201,
+      "id": "201",
       "title": "Ginger Roasted Tomato",
       "author": {
         "name": "Mc Hustkler",
@@ -93,7 +93,7 @@
       "ingredients": ["Tomatoes", "Ginger", "Olive Oil", "Salt"]
     },
     {
-      "id": 202,
+      "id": "202",
       "title": "Spiced Lentil Bowl",
       "author": {
         "name": "Anna Delish",
@@ -106,25 +106,25 @@
       "ingredients": ["Lentils", "Spinach", "Spices", "Coconut Milk"]
     },
     {
-      "id": 203,
+      "id": "203",
       "title": "Herb Avocado Salad",
       "author": {
         "name": "Green Chef",
         "profileImage": "../../../public/profile-image-placeholder.svg",
         "verified": false
       },
-      "rating": 5,
+      "rating": 2,
       "image": "../../../public/herb-avocado-salad.svg",
       "prepTime": "15 mins",
       "ingredients": ["Avocado", "Mixed Greens", "Herbs", "Lemon Juice"]
     },
     {
-      "id": "8ae6",
-      "recipeName": "dsada",
-      "authorName": "dsadas",
-      "categoryName": "dsadas",
-      "description": "dsa",
-      "imagePath": "../../../public/placeholder-food-image.svg"
+      "id": "7318",
+      "recipeName": "fds",
+      "authorName": "fds",
+      "categoryName": "fsd",
+      "description": "fds",
+      "imagePath": {}
     }
   ]
 }

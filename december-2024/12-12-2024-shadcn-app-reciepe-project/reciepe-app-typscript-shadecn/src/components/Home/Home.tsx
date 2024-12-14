@@ -5,7 +5,6 @@ import imgFour from "../../../public/image-4.svg";
 import imgFive from "../../../public/image-5.svg";
 import imgSix from "../../../public/image-6.svg";
 import imgSeven from "../../../public/image-7.svg";
-import logo from "../../../public/logo.svg";
 
 import { Button } from "../ui/button";
 import { MailIcon } from "../ui/Mail";
@@ -56,7 +55,8 @@ const Home = () => {
             Sign up with Google
           </Button>
           <Button>
-            <FaApple /> Sign up with Apple
+            <FaApple style={{ transform: "translateY(-0.1em)" }} /> Sign up with
+            Apple
           </Button>
           <Link to="/recipe-page/sign-in">
             <p className="text-gray-500 text-[0.8em]">

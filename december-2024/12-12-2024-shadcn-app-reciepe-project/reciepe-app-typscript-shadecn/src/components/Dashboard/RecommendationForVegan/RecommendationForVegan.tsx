@@ -1,26 +1,32 @@
 import { FaStar } from "react-icons/fa";
 import { HiCheckBadge } from "react-icons/hi2";
 import { FaUserCircle } from "react-icons/fa";
-
-const veganImages = [
-  {
-    title: "alorem lorem lorem",
-    username: "Mc Hustkler",
-    rating: "4.9",
-    img: "../../../public/ginger-roasted-tomato.svg",
-  },
-  {
-    title: "slorem lorem lorem",
-    username: "Mc Hustkler",
-    rating: "4.9",
-    img: "../../../public/ginger-roasted-tomato.svg",
-  },
-];
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { VeganCategory } from "@/types/types";
 
 const RecommendationForVegan = () => {
+  const [data, setData] = useState<VeganCategory[] | []>([]);
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/veganImages");
+
+      if (res) {
+        setData(res.data);
+      }
+    } catch (error) {
+      console.error("Error occurred durning fetching categories data: ", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="flex flex-row items-center justify-between gap-[0.5em] mb-[5em]">
-      {veganImages?.map((veganMeal) => (
+      {data?.map((veganMeal: VeganCategory) => (
         <div
           className="flex flex-col items-start justify-center mt-[1em] relative"
           key={veganMeal.title}
@@ -32,9 +38,7 @@ const RecommendationForVegan = () => {
               <p>{veganMeal.rating}</p>
             </div>
           </div>
-          <h2 className="font-bold text-[1.3em] mt-[0.5em]">
-            {veganMeal.title}
-          </h2>
+          <h2 className="font-bold mt-[0.5em]">{veganMeal.title}</h2>
           <div className="flex flex-row items-center gap-[0.5em]">
             <FaUserCircle className="text-2xl" />
             <h2>{veganMeal.username}</h2>

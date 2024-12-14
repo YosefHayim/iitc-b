@@ -46,7 +46,7 @@
       "title": "Spiced Lentil Bowl",
       "username": "Anna Delish",
       "rating": "4.8",
-      "img": "../../../public/spiced-lentil-bowl.svg",
+      "img": "../../../public/ginger-roasted-tomato.svg",
       "prepTime": "30 mins",
       "ingredients": ["Lentils", "Spinach", "Spices", "Coconut Milk"]
     },
@@ -55,7 +55,7 @@
       "title": "Herb Avocado Salad",
       "username": "Green Chef",
       "rating": "5.0",
-      "img": "../../../public/herb-avocado-salad.svg",
+      "img": "../../../public/ginger-roasted-tomato.svg",
       "prepTime": "15 mins",
       "ingredients": ["Avocado", "Mixed Greens", "Herbs", "Lemon Juice"]
     },
@@ -64,7 +64,7 @@
       "title": "Maple Glazed Carrots",
       "username": "Vegan Vibes",
       "rating": "4.7",
-      "img": "../../../public/maple-glazed-carrots.svg",
+      "img": "../../../public/ginger-roasted-tomato.svg",
       "prepTime": "20 mins",
       "ingredients": ["Carrots", "Maple Syrup", "Thyme", "Butter"]
     },
@@ -73,7 +73,7 @@
       "title": "Chickpea Stew",
       "username": "Soup Master",
       "rating": "4.9",
-      "img": "../../../public/chickpea-stew.svg",
+      "img": "../../../public/ginger-roasted-tomato.svg",
       "prepTime": "40 mins",
       "ingredients": ["Chickpeas", "Tomatoes", "Onion", "Garlic", "Spices"]
     }

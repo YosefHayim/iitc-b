@@ -2,7 +2,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const boldText = "font-bold";
 
-const OptionsComponent = ({ name }) => {
+const OptionsComponent: React.FC<{ name: string }> = ({ name }) => {
   return (
     <div className="flex flex-row justify-between">
       <h2 className={boldText}>{name}</h2>

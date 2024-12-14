@@ -29,7 +29,7 @@ const RecommendationForVegan = () => {
       {data?.map((veganMeal: VeganCategory) => (
         <div
           className="flex flex-col items-start justify-center mt-[1em] relative"
-          key={veganMeal.title}
+          key={veganMeal.id}
         >
           <div className="relative">
             <img src={veganMeal.img} alt="" className="rounded-[1em]" />

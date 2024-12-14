@@ -27,7 +27,7 @@ const FoodCategory = () => {
   return (
     <div className="flex flex-row items-center justify-between p-[1em] flex-wrap gap-[1em]">
       {data?.map((category: Category) => (
-        <div className="relative w-[6em] h-[6em]" key={category.categoryName}>
+        <div className="relative w-[6em] h-[6em]" key={category.id}>
           <img
             src={category.img}
             alt={category.categoryName}

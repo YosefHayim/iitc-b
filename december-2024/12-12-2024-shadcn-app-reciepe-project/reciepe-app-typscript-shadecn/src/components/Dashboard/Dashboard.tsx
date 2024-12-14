@@ -1,5 +1,5 @@
 import { pageDefaultStyle } from "../Home/Home";
-import FoodCategory from "../FoodCategory/FoodCategory";
+import FoodCategory from "./FoodCategory/FoodCategory";
 import RecommendationForVegan from "./RecommendationForVegan/RecommendationForVegan";
 import NavigationMenu from "../NavigationMenu/NavigationMenu";
 import Searchbar from "./Searchbar/Searchbar";

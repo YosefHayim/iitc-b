@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Italian",
+      "img": "../../../public/category-image-one.svg",
+      "description": "Traditional Italian recipes with rich flavors."
+    },
+    {
+      "id": 2,
+      "categoryName": "Noodles",
+      "img": "../../../public/category-image-two.svg",
+      "description": "A variety of noodle dishes from around the world."
+    },
+    {
+      "id": 3,
+      "categoryName": "Salad",
+      "img": "../../../public/category-image-three.svg",
+      "description": "Fresh and healthy salads for any meal."
+    },
+    {
+      "id": 4,
+      "categoryName": "Meat",
+      "img": "../../../public/category-image-four.svg",
+      "description": "Savory and hearty meat-based recipes."
+    },
+    {
+      "id": 5,
+      "categoryName": "Sushi",
+      "img": "../../../public/category-image-five.svg",
+      "description": "Delicious sushi rolls and Japanese classics."
+    }
+  ],
+  "veganImages": [
+    {
+      "id": 101,
+      "title": "Ginger Roasted Tomato",
+      "username": "Mc Hustkler",
+      "rating": "4.9",
+      "img": "../../../public/ginger-roasted-tomato.svg",
+      "prepTime": "25 mins",
+      "ingredients": ["Tomatoes", "Ginger", "Olive Oil", "Salt"]
+    },
+    {
+      "id": 102,
+      "title": "Spiced Lentil Bowl",
+      "username": "Anna Delish",
+      "rating": "4.8",
+      "img": "../../../public/spiced-lentil-bowl.svg",
+      "prepTime": "30 mins",
+      "ingredients": ["Lentils", "Spinach", "Spices", "Coconut Milk"]
+    },
+    {
+      "id": 103,
+      "title": "Herb Avocado Salad",
+      "username": "Green Chef",
+      "rating": "5.0",
+      "img": "../../../public/herb-avocado-salad.svg",
+      "prepTime": "15 mins",
+      "ingredients": ["Avocado", "Mixed Greens", "Herbs", "Lemon Juice"]
+    },
+    {
+      "id": 104,
+      "title": "Maple Glazed Carrots",
+      "username": "Vegan Vibes",
+      "rating": "4.7",
+      "img": "../../../public/maple-glazed-carrots.svg",
+      "prepTime": "20 mins",
+      "ingredients": ["Carrots", "Maple Syrup", "Thyme", "Butter"]
+    },
+    {
+      "id": 105,
+      "title": "Chickpea Stew",
+      "username": "Soup Master",
+      "rating": "4.9",
+      "img": "../../../public/chickpea-stew.svg",
+      "prepTime": "40 mins",
+      "ingredients": ["Chickpeas", "Tomatoes", "Onion", "Garlic", "Spices"]
+    }
+  ]
+}

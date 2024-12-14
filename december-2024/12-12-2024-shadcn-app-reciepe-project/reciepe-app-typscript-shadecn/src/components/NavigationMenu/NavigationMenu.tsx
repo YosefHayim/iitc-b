@@ -18,22 +18,22 @@ const NavigationMenu = () => {
           <Home />
         </div>
       </Link>
-      <Link to="">
+      <Link to="/recipe-page/search">
         <div className={divStyle}>
           <Search />
         </div>
       </Link>
-      <Link to="">
+      <Link to="/recipe-page/news">
         <div className={divStyle}>
           <ChatMessages />
         </div>
       </Link>
-      <Link to="">
+      <Link to="/recipe-page/saved">
         <div className={divStyle}>
           <Bookmark />
         </div>
       </Link>
-      <Link to="">
+      <Link to="/recipe-page/settings">
         <div className={divStyle}>
           <CogFour />
         </div>

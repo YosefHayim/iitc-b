@@ -21,7 +21,7 @@ const Commercial = () => {
       <img
         src={dashboardImg}
         alt=""
-        className="overflow-auto transform translate-y-[1em]"
+        className="transform translate-y-[1em] w-[10em]"
       />
     </div>
   );

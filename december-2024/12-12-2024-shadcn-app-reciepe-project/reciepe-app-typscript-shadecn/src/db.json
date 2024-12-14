@@ -77,5 +77,54 @@
       "prepTime": "40 mins",
       "ingredients": ["Chickpeas", "Tomatoes", "Onion", "Garlic", "Spices"]
     }
+  ],
+  "recipes": [
+    {
+      "id": 201,
+      "title": "Ginger Roasted Tomato",
+      "author": {
+        "name": "Mc Hustkler",
+        "profileImage": "../../../public/profile-image-placeholder.svg",
+        "verified": true
+      },
+      "rating": 4.9,
+      "image": "../../../public/ginger-roasted-tomato.svg",
+      "prepTime": "25 mins",
+      "ingredients": ["Tomatoes", "Ginger", "Olive Oil", "Salt"]
+    },
+    {
+      "id": 202,
+      "title": "Spiced Lentil Bowl",
+      "author": {
+        "name": "Anna Delish",
+        "profileImage": "../../../public/profile-image-placeholder.svg",
+        "verified": true
+      },
+      "rating": 4.8,
+      "image": "../../../public/spiced-lentil-bowl.svg",
+      "prepTime": "30 mins",
+      "ingredients": ["Lentils", "Spinach", "Spices", "Coconut Milk"]
+    },
+    {
+      "id": 203,
+      "title": "Herb Avocado Salad",
+      "author": {
+        "name": "Green Chef",
+        "profileImage": "../../../public/profile-image-placeholder.svg",
+        "verified": false
+      },
+      "rating": 5,
+      "image": "../../../public/herb-avocado-salad.svg",
+      "prepTime": "15 mins",
+      "ingredients": ["Avocado", "Mixed Greens", "Herbs", "Lemon Juice"]
+    },
+    {
+      "id": "8ae6",
+      "recipeName": "dsada",
+      "authorName": "dsadas",
+      "categoryName": "dsadas",
+      "description": "dsa",
+      "imagePath": "../../../public/placeholder-food-image.svg"
+    }
   ]
 }

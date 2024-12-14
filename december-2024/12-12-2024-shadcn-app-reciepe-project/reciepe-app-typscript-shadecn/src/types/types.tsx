@@ -19,3 +19,11 @@ export interface ApiData {
   categories: Category[];
   veganImages: VeganCategory[];
 }
+
+export interface DataRecipes {
+  id: string;
+  authorName: string;
+  recipeName: string;
+  categoryName: string;
+  imagePath: string;
+}

@@ -29,6 +29,48 @@
       "categoryName": "Sushi",
       "img": "../../../public/category-image-five.svg",
       "description": "Elegant sushi rolls and Japanese cuisine."
+    },
+    {
+      "id": "6",
+      "categoryName": "Desserts",
+      "img": "../../../public/category-image-six.svg",
+      "description": "Sweet treats and delightful desserts."
+    },
+    {
+      "id": "7",
+      "categoryName": "Seafood",
+      "img": "../../../public/category-image-seven.svg",
+      "description": "Fresh and flavorful seafood dishes."
+    },
+    {
+      "id": "8",
+      "categoryName": "Burgers",
+      "img": "../../../public/category-image-eight.svg",
+      "description": "Classic and gourmet burgers."
+    },
+    {
+      "id": "9",
+      "categoryName": "Vegan",
+      "img": "../../../public/category-image-nine.svg",
+      "description": "Plant-based and wholesome vegan meals."
+    },
+    {
+      "id": "10",
+      "categoryName": "Breakfast",
+      "img": "../../../public/category-image-ten.svg",
+      "description": "Hearty and delicious breakfast options."
+    },
+    {
+      "id": "11",
+      "categoryName": "Lunch",
+      "img": "../../../public/category-image-twelve.svg",
+      "description": "Tasty meals to fuel your afternoon."
+    },
+    {
+      "id": "12",
+      "categoryName": "Dinner",
+      "img": "../../../public/category-image-thirteen.svg",
+      "description": "Sumptuous dishes for a perfect evening meal."
     }
   ],
   "veganRecipes": [

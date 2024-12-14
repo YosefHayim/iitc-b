@@ -4,7 +4,7 @@ import dashboardImg from "../../../../public/tacos-hand-image.svg";
 
 const Commercial = () => {
   return (
-    <div className="w-full rounded-[1em] flex-row flex bg-black text-white items-center justify-start px-[1em] p-[1em] mt-[1em] gap-[0.5em] shadow-customShadow mb-[1em]">
+    <div className="w-full rounded-[1em] flex-row flex bg-black text-white items-center justify-start px-[1em] p-[1em] mt-[1em] shadow-customShadow mb-[1em]">
       <div className="flex flex-col items-start justify-start">
         <h2
           className={`${boldText} bg-textGradient bg-clip-text text-transparent`}

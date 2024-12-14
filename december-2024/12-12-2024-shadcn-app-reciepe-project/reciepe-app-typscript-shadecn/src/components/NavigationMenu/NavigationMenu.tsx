@@ -5,6 +5,8 @@ import {
   CogFour,
   ChatMessages,
 } from "@mynaui/icons-react";
+import { IoAddCircleOutline } from "react-icons/io5";
+
 import { Link } from "react-router-dom";
 
 const divStyle =
@@ -26,6 +28,11 @@ const NavigationMenu = () => {
       <Link to="/recipe-page/news">
         <div className={divStyle}>
           <ChatMessages />
+        </div>
+      </Link>
+      <Link to="/recipe-page/add/recipe">
+        <div className={divStyle}>
+          <IoAddCircleOutline style={{ fontSize: "2em" }} />
         </div>
       </Link>
       <Link to="/recipe-page/saved">

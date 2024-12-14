@@ -3,14 +3,14 @@ import { HiCheckBadge } from "react-icons/hi2";
 import { FaUserCircle } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { VeganCategory } from "@/types/types";
+import { ApiData, VeganCategory } from "@/types/types";
 
 const RecommendationForVegan = () => {
   const [data, setData] = useState<VeganCategory[] | []>([]);
 
-  const fetchData = async () => {
+  const fetchData = async (): Promise<void> => {
     try {
-      const res = await axios.get("http://localhost:3000/veganImages");
+      const res = await axios.get<ApiData>("http://localhost:3000/veganImages");
 
       if (res) {
         setData(res.data);

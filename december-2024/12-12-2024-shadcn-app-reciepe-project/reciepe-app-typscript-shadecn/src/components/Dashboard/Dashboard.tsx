@@ -1,11 +1,12 @@
 import { pageDefaultStyle } from "../Home/Home";
 import FoodCategory from "./FoodCategory/FoodCategory";
 import RecommendationForVegan from "./RecommendationForVegan/RecommendationForVegan";
-import NavigationMenu from "../NavigationMenu/NavigationMenu";
+
 import Searchbar from "./Searchbar/Searchbar";
 import Commercial from "./Commercial/Commercial";
 import OptionsComponent from "./OptionsComponent/OptionsComponent";
 import Logo from "../Logo/Logo";
+import NavigationMenu from "../NavigationMenu/NavigationMenu";
 
 const Dashboard = () => {
   return (

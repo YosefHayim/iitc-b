@@ -10,6 +10,7 @@ import ForgetPw from "./components/ForgetPw/ForgetPw";
 import Search from "./Pages/Search/Search";
 import Saved from "./Pages/Saved/Saved";
 import News from "./Pages/News/News";
+import AddRecipe from "./Pages/AddRecipe/AddRecipe";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/recipe-page/news" element={<News />} />
         <Route path="/recipe-page/saved" element={<Saved />} />
         <Route path="/recipe-page/search" element={<Search />} />
+        <Route path="/recipe-page/add/recipe" element={<AddRecipe />} />
       </Routes>
     </BrowserRouter>
   );

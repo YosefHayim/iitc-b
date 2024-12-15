@@ -11,6 +11,7 @@ import Search from "./Pages/Search/Search";
 import Saved from "./Pages/Saved/Saved";
 import News from "./Pages/News/News";
 import AddRecipe from "./Pages/AddRecipe/AddRecipe";
+import CategoryRecipes from "./Pages/CategoryRecipes/CategoryRecipes";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/recipe-page/saved" element={<Saved />} />
         <Route path="/recipe-page/search" element={<Search />} />
         <Route path="/recipe-page/add/recipe" element={<AddRecipe />} />
+        <Route path="/recipe-page/:category" element={<CategoryRecipes />} />
       </Routes>
     </BrowserRouter>
   );

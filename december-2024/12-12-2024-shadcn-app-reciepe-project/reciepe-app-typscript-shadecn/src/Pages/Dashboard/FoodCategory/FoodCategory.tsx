@@ -1,6 +1,7 @@
 import { Category } from "@/types/types";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const imgStyle = "w-[6em] h-[6em] rounded-full";
 const textStyle = "absolute text-white font-bold z-10 text-center";
@@ -28,11 +29,13 @@ const FoodCategory = () => {
     <div className="flex flex-row items-center justify-between p-[1em] flex-wrap gap-[1em]">
       {data?.map((category: Category) => (
         <div className="relative w-[6em] h-[6em]" key={category.id}>
-          <img
-            src={category.img}
-            alt={category.categoryName}
-            className={imgStyle}
-          />
+          <Link to="">
+            <img
+              src={category.img}
+              alt={category.categoryName}
+              className={imgStyle}
+            />
+          </Link>
           <div className="absolute inset-0 bg-black opacity-[0.3] rounded-full"></div>
           <h2
             className={`${textStyle} inset-0 flex items-center justify-center`}

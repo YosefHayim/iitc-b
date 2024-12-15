@@ -1,10 +1,10 @@
-import imgOne from "../../../public/image-1.svg";
-import imgTwo from "../../../public/image-2.svg";
-import imgThree from "../../../public/image-3.svg";
-import imgFour from "../../../public/image-4.svg";
-import imgFive from "../../../public/image-5.svg";
-import imgSix from "../../../public/image-6.svg";
-import imgSeven from "../../../public/image-7.svg";
+import imgOne from "../../../public/homepage-images/image-1.svg";
+import imgTwo from "../../../public/homepage-images/image-2.svg";
+import imgThree from "../../../public/homepage-images/image-3.svg";
+import imgFour from "../../../public/homepage-images/image-4.svg";
+import imgFive from "../../../public/homepage-images/image-5.svg";
+import imgSix from "../../../public/homepage-images/image-6.svg";
+import imgSeven from "../../../public/homepage-images/image-7.svg";
 
 import { Button } from "../../components/ui/button";
 import { MailIcon } from "../../components/ui/Mail";

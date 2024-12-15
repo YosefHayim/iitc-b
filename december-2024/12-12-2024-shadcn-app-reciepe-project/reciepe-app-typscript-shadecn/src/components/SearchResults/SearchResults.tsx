@@ -1,5 +1,5 @@
 import { DataRecipes } from "@/types/types";
-import foodImagePlaceholder from "../../../public/image-placeholder.svg";
+import foodImagePlaceholder from "../../../public/recipes-images/image-placeholder.svg";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 

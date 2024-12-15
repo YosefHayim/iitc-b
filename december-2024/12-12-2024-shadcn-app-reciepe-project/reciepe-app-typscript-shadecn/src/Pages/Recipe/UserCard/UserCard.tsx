@@ -1,4 +1,4 @@
-import profileImgPlaceholder from "../../../../public/profile-image-placeholder.svg";
+import profileImgPlaceholder from "../../../../public/user-images/profile-image-placeholder.svg";
 import { BsDot, BsFillBookmarkHeartFill } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
 import { HiCheckBadge } from "react-icons/hi2";

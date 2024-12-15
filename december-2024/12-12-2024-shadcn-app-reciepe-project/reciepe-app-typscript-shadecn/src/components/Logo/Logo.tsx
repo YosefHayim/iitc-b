@@ -1,4 +1,4 @@
-import logo from "../../../public/logo.svg";
+import logo from "../../../public/logo/logo.svg";
 import { Link } from "react-router-dom";
 
 const Logo = () => {

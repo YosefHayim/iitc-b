@@ -12,7 +12,7 @@ const AddRecipe = () => {
   const [postAdded, setPostAdded] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const id = generateRandomId();
@@ -20,35 +20,42 @@ const AddRecipe = () => {
     const recipeName = formData.get("recipeName") as string;
     const authorName = formData.get("authorName") as string;
     const categoryName = formData.get("categoryName") as string;
-    const description = formData.get("description") as string;
-    let imagePath = formData.get("imagePath") as string;
+    const ingredients = formData.get("ingredients") as string;
+    const instructions = formData.get("instructions") as string;
+    const prepTime = formData.get("prepTime") as string;
+    const cookTime = formData.get("cookTime") as string;
+    const servings = Number(formData.get("servings"));
+    const imagePath = formData.get("imagePath") as File;
 
-    if (!imagePath) {
-      imagePath = "../../../public/placeholder-food-image.svg";
-    }
+    const urlFileConvert = URL.createObjectURL(imagePath);
+
+    let imagePathToSave =
+      urlFileConvert || "../../../public/image-placeholder.svg";
 
     const formObject = {
       id,
       recipeName,
       authorName,
       categoryName,
-      description,
-      imagePath,
+      ingredients,
+      instructions,
+      prepTime,
+      cookTime,
+      servings,
+      imagePath: imagePathToSave,
     };
+    addRecipeToDb(formObject);
+  };
 
+  const addRecipeToDb = async (formObject: {}) => {
     try {
       const res = await axios.post("http://localhost:3000/recipes", formObject);
-
       if (res) {
-        console.log(res);
         setPostAdded(true);
-
-        setTimeout(() => {
-          navigate("/recipe-page/dashboard");
-        }, 1000);
+        setTimeout(() => navigate("/recipe-page/dashboard"), 1000);
       }
     } catch (error) {
-      console.error("Error has occurred during adding recipe to db: ", error);
+      console.error("Error adding recipe to db: ", error);
     }
   };
 
@@ -60,9 +67,46 @@ const AddRecipe = () => {
         onSubmit={handleSubmit}
       >
         <Input placeholder="Recipe name" name="recipeName" required />
-        <Input placeholder="Author name" name="authorName" required />
-        <Input placeholder="Category name" name="categoryName" required />
-        <Input placeholder="Description" name="description" required />
+        <Input placeholder="Chef's name" name="authorName" required />
+        <select
+          name="categoryName"
+          id="categoryName"
+          required
+          className="w-full h-10 rounded-md border border-gray-300 bg-white pl-3 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-black"
+        >
+          <option value="" disabled selected>
+            Select a category
+          </option>
+          <option value="Italian">Italian</option>
+          <option value="Noodles">Noodles</option>
+          <option value="Salad">Salad</option>
+          <option value="Meat">Meat</option>
+          <option value="Sushi">Sushi</option>
+          <option value="Desserts">Desserts</option>
+          <option value="Seafood">Seafood</option>
+          <option value="Burgers">Burgers</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+        </select>
+        <label
+          htmlFor="instructions"
+          className="w-full font-bold text-[1.5em] text-center"
+        >
+          Instructions
+        </label>
+        <Input
+          placeholder=""
+          name="instructions"
+          className="h-[200px]"
+          required
+        />
+        <Input
+          placeholder="Ingredients: Tomato, Cucumber..."
+          name="ingredients"
+          required
+        />
         <Input
           placeholder="(Optional) Image path..."
           type="file"

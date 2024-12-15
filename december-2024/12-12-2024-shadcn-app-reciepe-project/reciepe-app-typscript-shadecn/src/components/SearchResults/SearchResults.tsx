@@ -46,7 +46,10 @@ const SearchResults: React.FC<{ data: DataRecipes[] }> = ({ data }) => {
             </Button>
           </div>
         ))
-      : ""}
+      : <div className="w-full text-center">
+          <p>bite is empty.</p>
+        </div>
+      }
     </div>
   );
 };

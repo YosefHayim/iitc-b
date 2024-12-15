@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SearchResults from "@/components/SearchResults/SearchResults";
+import { pageDefaultStyle } from "../Home/Home";
+import Logo from "@/components/Logo/Logo";
 
 const CategoryRecipes = () => {
   const { categoryName } = useParams();
@@ -30,7 +32,12 @@ const CategoryRecipes = () => {
 
   console.log(data);
 
-  return <div>{data && <SearchResults data={data} />}</div>;
+  return (
+    <div className={pageDefaultStyle}>
+      <Logo />
+      <div>{data && <SearchResults data={data} />}</div>
+    </div>
+  );
 };
 
 export default CategoryRecipes;

@@ -26,24 +26,26 @@ const FoodCategory = () => {
   }, []);
 
   return (
-    <div className="flex flex-row items-center justify-between p-[1em] flex-wrap gap-[1em]">
-      {data?.map((category: Category) => (
-        <Link to={`/recipe-page/${category.categoryName} `} key={category.id}>
-          <div className="relative w-[6em] h-[6em]">
-            <img
-              src={category.img}
-              alt={category.categoryName}
-              className={imgStyle}
-            />
-            <div className="absolute inset-0 bg-black opacity-[0.5] rounded-full"></div>
-            <h2
-              className={`${textStyle} inset-0 flex items-center justify-center hover:text-transparent`}
-            >
-              {category.categoryName}
-            </h2>
-          </div>
-        </Link>
-      ))}
+    <div className="overflow-x-auto w-[290px] p-[1em] scrollbar-thin scrollbar-thumb-btnColor scrollbar-track-gray-200 scrollbar-rounded mb-[1em]">
+      <div className="flex flex-row items-center justify-between gap-[1em]">
+        {data?.map((category: Category) => (
+          <Link to={`/recipe-page/${category.categoryName} `} key={category.id}>
+            <div className="relative w-[6em] h-[6em]">
+              <img
+                src={category.img}
+                alt={category.categoryName}
+                className={imgStyle}
+              />
+              <div className="absolute inset-0 bg-black opacity-[0.5] rounded-full"></div>
+              <h2
+                className={`${textStyle} inset-0 flex items-center justify-center hover:text-transparent`}
+              >
+                {category.categoryName}
+              </h2>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

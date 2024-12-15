@@ -28,7 +28,7 @@ const SearchResults: React.FC<{ data: DataRecipes[] }> = ({ data }) => {
         data.map((recipe) => (
           <div
             key={recipe.id}
-            className={`flex flex-col items-start justify-start mb-[1em] gap-[0.5em] rounded-[1em]`}
+            className={`flex flex-col items-start justify-start mb-[1em] gap-[0.5em] rounded-[1em] w-full`}
           >
             <p>Recipe name: {recipe.recipeName}</p>
             <p>User: {recipe.authorName}</p>

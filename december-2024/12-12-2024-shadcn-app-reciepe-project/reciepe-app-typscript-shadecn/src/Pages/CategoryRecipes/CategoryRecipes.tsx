@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import SearchResults from "@/components/SearchResults/SearchResults";
 import { pageDefaultStyle } from "../Home/Home";
 import Logo from "@/components/Logo/Logo";
+import GoBackArrow from "@/components/GoBackArrow/GoBackArrow";
 
 const CategoryRecipes = () => {
   const { categoryName } = useParams();
@@ -32,6 +33,7 @@ const CategoryRecipes = () => {
 
   return (
     <div className={pageDefaultStyle}>
+      <GoBackArrow />
       <Logo />
       <div>{data && <SearchResults data={data} />}</div>
     </div>

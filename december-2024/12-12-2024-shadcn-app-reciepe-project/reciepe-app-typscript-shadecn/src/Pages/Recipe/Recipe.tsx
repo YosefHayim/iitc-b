@@ -1,4 +1,3 @@
-import { IoMdArrowRoundBack } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 import { pageDefaultStyle } from "../Home/Home";
 import Ingredients from "./Ingredients/Ingredients";

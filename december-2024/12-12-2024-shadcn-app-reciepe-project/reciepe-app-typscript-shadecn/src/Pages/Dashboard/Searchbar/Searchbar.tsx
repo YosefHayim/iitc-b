@@ -9,7 +9,7 @@ const Searchbar: React.FC<{
   setInput: React.Dispatch<React.SetStateAction<string | number>>;
 }> = ({ input, setInput }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value); // Works because `e.target.value` is a string
+    setInput(e.target.value);
   };
 
   if (!input && !setInput) {

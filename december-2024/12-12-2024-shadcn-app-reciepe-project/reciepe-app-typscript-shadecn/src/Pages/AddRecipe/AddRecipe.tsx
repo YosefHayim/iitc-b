@@ -7,6 +7,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import generateRandomId from "../../utils/randomId.js";
+import NavigationMenu from "@/components/NavigationMenu/NavigationMenu.js";
 
 const AddRecipe = () => {
   const [postAdded, setPostAdded] = useState(false);
@@ -115,6 +116,7 @@ const AddRecipe = () => {
         <Button type="submit">Add Recipe</Button>
       </form>
       {postAdded && <UserNotification text="Post added successfully!" />}
+      <NavigationMenu />
     </div>
   );
 };

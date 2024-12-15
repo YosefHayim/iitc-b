@@ -18,6 +18,7 @@ export interface VeganCategory {
 export interface ApiData {
   categories: Category[];
   veganImages: VeganCategory[];
+  dataRecipes: DataRecipes[];
 }
 
 export interface DataRecipes {
@@ -26,4 +27,5 @@ export interface DataRecipes {
   recipeName: string;
   categoryName: string;
   imagePath: string;
+  [key: string]: string;
 }

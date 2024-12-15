@@ -1,4 +1,4 @@
-import Searchbar from "@/components/Dashboard/Searchbar/Searchbar";
+import Searchbar from "../Dashboard/Searchbar/Searchbar";
 import { pageDefaultStyle } from "@/Pages/Home/Home";
 import axios from "axios";
 import { useEffect, useState } from "react";

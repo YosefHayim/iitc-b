@@ -4,7 +4,7 @@ import RecommendationForVegan from "./RecommendationForVegan/RecommendationForVe
 import Searchbar from "./Searchbar/Searchbar";
 import Commercial from "./Commercial/Commercial";
 import OptionsComponent from "./OptionsComponent/OptionsComponent";
-import NavigationMenu from "../NavigationMenu/NavigationMenu";
+import NavigationMenu from "../../components/NavigationMenu/NavigationMenu";
 
 const Dashboard = () => {
   return (

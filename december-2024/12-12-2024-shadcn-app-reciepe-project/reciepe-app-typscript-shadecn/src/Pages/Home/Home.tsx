@@ -11,7 +11,7 @@ import { MailIcon } from "../../components/ui/Mail";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Faq } from "../../components/Dashboard/Faq/Faq";
+import { Faq } from "./Faq/Faq";
 import Logo from "../../components/Logo/Logo";
 
 const imgSize = "rounded-[0.5em]";

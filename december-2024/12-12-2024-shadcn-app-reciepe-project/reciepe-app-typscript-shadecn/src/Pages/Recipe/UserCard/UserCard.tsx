@@ -8,7 +8,7 @@ const UserCard: React.FC<{ recipeName: string; authorName: string }> = ({
   authorName,
 }) => {
   return (
-    <div className="flex flex-row items-center justify-between p-[0.4em] rounded-[1em] shadow-profileUserShadow bg-white transform translate-y-[-15.5em] absolute left-[17px]">
+    <div className="flex flex-row items-center justify-between p-[0.4em] rounded-[1em] shadow-profileUserShadow bg-white transform translate-y-[-15.5em] absolute left-0 w-full">
       <div className="flex flex-col items-start justify-center">
         <h2 className="font-bold">{recipeName}</h2>
         <div className="flex flex-row items-center gap-[0.2em]">

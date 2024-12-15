@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import Recipe from "./Pages/Recipe/Recipe";
 import Settings from "./Pages/Settings/Settings";
 import SignIn from "./Pages/SignIn/SignIn";

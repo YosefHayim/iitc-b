@@ -37,7 +37,7 @@ const FoodCategory = () => {
             />
             <div className="absolute inset-0 bg-black opacity-[0.5] rounded-full"></div>
             <h2
-              className={`${textStyle} inset-0 flex items-center justify-center`}
+              className={`${textStyle} inset-0 flex items-center justify-center hover:text-transparent`}
             >
               {category.categoryName}
             </h2>

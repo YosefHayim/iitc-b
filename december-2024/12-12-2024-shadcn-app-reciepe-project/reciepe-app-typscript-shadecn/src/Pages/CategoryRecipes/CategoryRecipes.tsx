@@ -30,8 +30,6 @@ const CategoryRecipes = () => {
     fetchRecipesByCategory();
   }, []);
 
-  console.log(data);
-
   return (
     <div className={pageDefaultStyle}>
       <Logo />

@@ -21,6 +21,8 @@ const Search = () => {
           : `http://localhost:3000/recipes/?id=${query}`
         );
 
+        console.log(res);
+
         if (res.data && Array.isArray(res.data)) {
           const filteredData = res.data.filter((recipeResult) =>
             recipeResult.recipeName?.toLowerCase().includes(query.toLowerCase())

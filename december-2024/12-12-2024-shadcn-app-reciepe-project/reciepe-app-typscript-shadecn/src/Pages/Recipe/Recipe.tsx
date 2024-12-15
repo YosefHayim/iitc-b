@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import UserCard from "./UserCard/UserCard";
 import { DataRecipes } from "@/types/types";
 import Loader from "@/components/Loader/Loader";
+import GoBackArrow from "@/components/GoBackArrow/GoBackArrow";
+import NavigationMenu from "@/components/NavigationMenu/NavigationMenu";
 
 const Recipe = () => {
   const { id } = useParams();
@@ -18,7 +20,6 @@ const Recipe = () => {
       const res = await axios.get(`http://localhost:3000/recipes/?id=${id}`);
 
       if (res) {
-        console.log(res.data[0]);
         setRecipeData(res.data[0]);
       }
     } catch (error) {
@@ -45,7 +46,7 @@ const Recipe = () => {
           <div className="absolute inset-0 bg-black opacity-50 h-[180px]"></div>
           <div className="flex flex-row items-center justify-between absolute top-0 left-0 w-full p-[1em]">
             <button>
-              <IoMdArrowRoundBack style={{ color: "white" }} />
+              <GoBackArrow />
             </button>
             <h1 className="text-white">Recipe details</h1>
             <button>
@@ -64,6 +65,7 @@ const Recipe = () => {
           />
         </div>
       : <Loader />}
+      <NavigationMenu />
     </div>
   );
 };

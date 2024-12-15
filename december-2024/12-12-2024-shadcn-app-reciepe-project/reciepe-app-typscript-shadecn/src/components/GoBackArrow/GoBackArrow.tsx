@@ -8,7 +8,7 @@ const GoBackArrow = () => {
       className="aboslute top-0 w-full"
       onClick={() => navigate("/recipe-page/dashboard")}
     >
-      <button className="hover:text-white bg-white hover:bg-black rounded-[1em] p-[0.4em]">
+      <button className="text-white rounded-[1em] p-[0.4em] hover:bg-black">
         <IoIosArrowBack />
       </button>
     </div>

@@ -1,5 +1,5 @@
 import Searchbar from "@/components/Dashboard/Searchbar/Searchbar";
-import { pageDefaultStyle } from "@/components/Home/Home";
+import { pageDefaultStyle } from "@/Pages/Home/Home";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";

@@ -1,8 +1,8 @@
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import { pageDefaultStyle } from "../Home/Home";
 import { Link } from "react-router-dom";
-import Logo from "../Logo/Logo";
+import Logo from "../../components/Logo/Logo";
 
 const SignIn = () => {
   return (

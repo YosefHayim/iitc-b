@@ -1,4 +1,4 @@
-import { pageDefaultStyle } from "../Home/Home";
+import { pageDefaultStyle } from "../../Pages/Home/Home";
 import FoodCategory from "./FoodCategory/FoodCategory";
 import RecommendationForVegan from "./RecommendationForVegan/RecommendationForVegan";
 import Searchbar from "./Searchbar/Searchbar";

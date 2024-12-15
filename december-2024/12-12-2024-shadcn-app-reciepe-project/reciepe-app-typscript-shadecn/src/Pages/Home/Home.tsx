@@ -6,13 +6,13 @@ import imgFive from "../../../public/image-5.svg";
 import imgSix from "../../../public/image-6.svg";
 import imgSeven from "../../../public/image-7.svg";
 
-import { Button } from "../ui/button";
-import { MailIcon } from "../ui/Mail";
+import { Button } from "../../components/ui/button";
+import { MailIcon } from "../../components/ui/Mail";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Faq } from "../Faq/Faq";
-import Logo from "../Logo/Logo";
+import { Faq } from "../../components/Dashboard/Faq/Faq";
+import Logo from "../../components/Logo/Logo";
 
 const imgSize = "rounded-[0.5em]";
 export const pageDefaultStyle =

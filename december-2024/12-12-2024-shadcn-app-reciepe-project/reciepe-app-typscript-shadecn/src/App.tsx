@@ -1,11 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
+import Home from "./Pages/Home/Home";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Recipe from "./Pages/Recipe/Recipe";
 import Settings from "./Pages/Settings/Settings";
-import SignIn from "./components/SignIn/SignIn";
-import SignUp from "./components/SignUp/SignUp";
+import SignIn from "./Pages/SignIn/SignIn";
+import SignUp from "./Pages/SignUp/SignUp";
 import ForgetPw from "./components/ForgetPw/ForgetPw";
 import Search from "./Pages/Search/Search";
 import Saved from "./Pages/Saved/Saved";

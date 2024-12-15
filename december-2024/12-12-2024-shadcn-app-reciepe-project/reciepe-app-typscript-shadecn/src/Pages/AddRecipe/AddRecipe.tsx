@@ -1,4 +1,4 @@
-import { pageDefaultStyle } from "@/components/Home/Home";
+import { pageDefaultStyle } from "@/Pages/Home/Home.js";
 import Logo from "@/components/Logo/Logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

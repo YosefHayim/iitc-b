@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { pageDefaultStyle } from "../Home/Home";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import Logo from "../Logo/Logo";
+import Logo from "../../components/Logo/Logo";
 
 const SignUp = () => {
   return (

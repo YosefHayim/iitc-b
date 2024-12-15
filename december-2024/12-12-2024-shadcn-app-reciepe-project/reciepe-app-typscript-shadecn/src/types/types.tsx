@@ -27,5 +27,9 @@ export interface DataRecipes {
   recipeName: string;
   categoryName: string;
   imagePath: string;
-  [key: string]: string;
+  ingredients: { name: string; amount: string }[];
+  instructions: string[];
+  prepTime: string;
+  servings: number;
+  [key: string]: any;
 }

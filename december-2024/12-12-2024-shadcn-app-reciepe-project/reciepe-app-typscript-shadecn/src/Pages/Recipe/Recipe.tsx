@@ -56,7 +56,12 @@ const Recipe = () => {
             authorName={recipeData.authorName}
             recipeName={recipeData.recipeName}
           />
-          <Ingredients />
+          <Ingredients
+            ingredients={recipeData.ingredients}
+            instructions={recipeData.instructions}
+            prepTime={recipeData.prepTime}
+            servings={recipeData.servings}
+          />
         </div>
       : <Loader />}
     </div>

@@ -14,7 +14,7 @@ const divStyle =
 
 const NavigationMenu = () => {
   return (
-    <div className="flex flex-wrap items-center w-full fixed bottom-0 left-0 justify-between bg-black p-[0.2em]">
+    <div className="flex flex-wrap items-center w-full fixed bottom-0 left-0 justify-between bg-black p-[0.2em] z-10">
       <Link to="/recipe-page/dashboard">
         <div className={divStyle}>
           <Home />

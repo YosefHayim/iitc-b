@@ -11,7 +11,7 @@ const Dashboard = () => {
     <div className={`${pageDefaultStyle} text-[0.8em]`}>
       <Searchbar />
       <Commercial />
-      <OptionsComponent name="Category" />
+      <OptionsComponent name="Categories" />
       <FoodCategory />
       <OptionsComponent name="Recommendation for vegans" />
       <RecommendationForVegan />

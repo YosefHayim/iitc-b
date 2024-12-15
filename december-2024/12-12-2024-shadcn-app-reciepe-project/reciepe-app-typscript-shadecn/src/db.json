@@ -71,6 +71,12 @@
       "categoryName": "Dinner",
       "img": "../../../public/category-images-dashboard/category-image-twelve.svg",
       "description": "Sumptuous dishes for a perfect evening meal."
+    },
+    {
+      "id": "13",
+      "categoryName": "Drinks",
+      "img": "../../../public/category-images-dashboard/category-image-thirteen.svg",
+      "description": "Drinks."
     }
   ],
   "veganRecipes": [

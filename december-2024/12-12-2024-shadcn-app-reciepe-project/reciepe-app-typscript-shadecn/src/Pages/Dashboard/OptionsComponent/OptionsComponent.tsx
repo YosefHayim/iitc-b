@@ -7,7 +7,7 @@ const OptionsComponent: React.FC<{ name: string }> = ({ name }) => {
     <div className="flex flex-row justify-between w-full items-center">
       <h2 className={boldText}>{name}</h2>
       <div className="flex flex-row items-center justify-center">
-        <button className="text-gray-500">Sell all</button>
+        <button className="text-gray-500 hover:text-black">Sell all</button>
         <MdKeyboardArrowRight />
       </div>
     </div>

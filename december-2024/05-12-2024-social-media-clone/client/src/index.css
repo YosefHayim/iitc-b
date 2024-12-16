@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  img {
+    @apply rounded-[0.5em];
+  }
+}
+
+:root {
+  --bgTheme: #050f20;
+  --CaustenFont: "Causten";
+}
+
+@font-face {
+  font-family: "Causten";
+  src: url("/fonts/Causten-Regular.otf");
+}
+
+@font-face {
+  font-family: "Causten bold";
+  src: url("/fonts/Causten-Bold.otf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  min-height: 100vh;
+}
+
+body {
+  background: var(--bgTheme);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  width: 100%;
+  font-family: var(--CaustenFont);
+}

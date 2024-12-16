@@ -2,9 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Chat from "./components/Chat/Chat";
 import Rooms from "./components/Rooms/Rooms";
-import io from "socket.io-client";
-
-const socket = io("http//localhost:3000");
 
 function App() {
   const [roomName, setRoomName] = useState<string>("");

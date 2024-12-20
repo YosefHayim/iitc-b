@@ -10,6 +10,7 @@ const router = express.Router();
 router.get("/all", getAllUsers);
 
 router.post("/register", createUser);
+// http://localhost:3000/users/register
 
 router.post("/login", validateUser);
 

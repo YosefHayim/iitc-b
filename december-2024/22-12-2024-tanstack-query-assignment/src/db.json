@@ -1,0 +1,94 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "The Future of Artificial Intelligence in Everyday Life",
+      "postContent": "Artificial intelligence is revolutionizing industries, from healthcare to transportation. This post explores how AI impacts our daily routines and what the future might hold.",
+      "authorName": "John Doe"
+    },
+    {
+      "id": 2,
+      "title": "Exploring the Wonders of the Cosmos",
+      "postContent": "From black holes to exoplanets, the universe holds endless mysteries. Discover the latest breakthroughs in space exploration and what they mean for humanity.",
+      "authorName": "Jane Smith"
+    },
+    {
+      "id": 3,
+      "title": "10 Simple Steps to a Healthier Lifestyle",
+      "postContent": "Improving your health doesn’t have to be complicated. Learn practical tips for better eating, exercise, and mindfulness to lead a balanced life.",
+      "authorName": "Emily Johnson"
+    },
+    {
+      "id": 4,
+      "title": "Minimalism: The Key to a Simpler, Happier Life",
+      "postContent": "In a world full of distractions, minimalism offers clarity. This post dives into the philosophy and how it can improve your mental and physical well-being.",
+      "authorName": "Michael Brown"
+    },
+    {
+      "id": 5,
+      "title": "Top 10 Travel Destinations for 2024",
+      "postContent": "From tropical beaches to bustling cities, these destinations should be on your radar for the coming year. Find out why they’re worth a visit.",
+      "authorName": "Sarah Davis"
+    },
+    {
+      "id": 6,
+      "title": "Smart Financial Planning for Beginners",
+      "postContent": "Understanding the basics of budgeting, saving, and investing can set you up for financial success. Learn strategies to manage your money effectively.",
+      "authorName": "David Wilson"
+    },
+    {
+      "id": 7,
+      "title": "Building Better Habits for a Better Life",
+      "postContent": "Habits shape our lives. Discover the science behind habit formation and how you can create positive, lasting changes in your daily routine.",
+      "authorName": "Anna Martinez"
+    },
+    {
+      "id": 8,
+      "title": "Why Electric Vehicles Are Taking Over the Roads",
+      "postContent": "The shift to electric vehicles is accelerating. Learn about the environmental and economic benefits of EVs, and why they’re becoming the norm.",
+      "authorName": "Chris Taylor"
+    },
+    {
+      "id": 9,
+      "title": "Unleashing Creativity: Tips for Thinking Outside the Box",
+      "postContent": "Creativity isn’t just for artists. Discover how innovative thinking can benefit your personal and professional life.",
+      "authorName": "Jessica Anderson"
+    },
+    {
+      "id": 10,
+      "title": "Mindfulness: A Beginner’s Guide to Inner Peace",
+      "postContent": "Learn the basics of mindfulness, including meditation and breathing techniques, to reduce stress and improve focus in your everyday life.",
+      "authorName": "Matthew Thomas"
+    },
+    {
+      "id": 11,
+      "title": "The Evolution of Video Games: From Pixels to Immersion",
+      "postContent": "Gaming has come a long way. This post explores how technological advancements have transformed the industry into a cultural phenomenon.",
+      "authorName": "Laura Jackson"
+    },
+    {
+      "id": 12,
+      "title": "Quick and Easy Recipes for Busy People",
+      "postContent": "Short on time? These delicious recipes are perfect for weeknight dinners or quick snacks, without compromising on taste or nutrition.",
+      "authorName": "Anthony White"
+    },
+    {
+      "id": 13,
+      "title": "Understanding Blockchain Technology",
+      "postContent": "Blockchain is more than just cryptocurrency. Dive into the mechanics of this technology and its potential to revolutionize industries.",
+      "authorName": "Sophia Harris"
+    },
+    {
+      "id": 14,
+      "title": "How Communities Can Combat Climate Change",
+      "postContent": "Addressing climate change requires collective effort. Explore practical ways individuals and communities can contribute to a more sustainable future.",
+      "authorName": "Ethan Lewis"
+    },
+    {
+      "id": 15,
+      "title": "The Science of Achieving Personal Success",
+      "postContent": "Success isn’t just luck. This post delves into the psychological principles and habits that help people achieve their goals.",
+      "authorName": "Olivia Walker"
+    }
+  ]
+}

@@ -13,6 +13,20 @@ const Home: React.FC = () => {
     queryFn: getPosts,
   });
 
+  const handleClick = (e) => {
+    const btn = e.target.closest("button");
+
+    if (btn.innerText === "View Post") {
+      console.log(`clicked view `);
+    } else if (btn.innerText === "Edit Post") {
+      console.log(`clicked edit`);
+    } else if (btn.innerText === "Delete Post") {
+      console.log(`clicked delete`);
+    } else {
+      return;
+    }
+  };
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -26,7 +40,7 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div>
+    <div onClick={handleClick}>
       {isSuccess && data && data.length > 0 ?
         <ul className="flex flex-col items-center justify-start gap-[2em]">
           {data.map((post) => (

@@ -1,34 +1,48 @@
 import React, { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import addPost from "../api/getPosts";
+import { randomId } from "../utils/randomId";
+
+interface FormData {
+  title: string;
+  postContent: string;
+  authorName: string;
+}
+
+// Define the type for the addPost function
+type AddPostFn = (data: FormData) => Promise<void>;
 
 const AddPost: React.FC = () => {
   const queryClient = useQueryClient();
 
   // Form state
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     title: "",
     postContent: "",
     authorName: "",
   });
 
   // Mutation setup
-  const mutation = useMutation({
-    mutationFn: addPost,
+  const mutation = useMutation<void, Error, FormData>({
+    mutationFn: addPost as AddPostFn, // Ensures the mutation function adheres to the defined type
     onSuccess: () => {
       queryClient.invalidateQueries(["posts"]);
       setFormData({ title: "", postContent: "", authorName: "" });
     },
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    mutation.mutate(formData);
+
+    const formData = new FormData(e.currentTarget);
+    const id = randomId();
+    const title = formData.get("title") as string;
+    const postContent = formData.get("postContent") as string;
+    const authorName = formData.get("authorName") as string;
+
+    console.log(title, postContent, authorName);
+
+    mutation.mutate({ title, postContent, authorName });
   };
 
   return (
@@ -38,11 +52,10 @@ const AddPost: React.FC = () => {
         <div>
           <label htmlFor="title">Post Title</label>
           <input
+            className="bg-gray-400 placeholder:text-gray-700"
             type="text"
             name="title"
             id="title"
-            value={formData.title}
-            onChange={handleChange}
             placeholder="Post title..."
             required
           />
@@ -50,11 +63,10 @@ const AddPost: React.FC = () => {
         <div>
           <label htmlFor="postContent">Post Content</label>
           <input
+            className="bg-gray-400 placeholder:text-gray-700"
             type="text"
             name="postContent"
             id="postContent"
-            value={formData.postContent}
-            onChange={handleChange}
             placeholder="Post content..."
             required
           />
@@ -62,16 +74,19 @@ const AddPost: React.FC = () => {
         <div>
           <label htmlFor="authorName">Author Name</label>
           <input
+            className="bg-gray-400 placeholder:text-gray-700"
             type="text"
             name="authorName"
             id="authorName"
-            value={formData.authorName}
-            onChange={handleChange}
             placeholder="Author name..."
             required
           />
         </div>
-        <button type="submit" disabled={mutation.isLoading}>
+        <button
+          type="submit"
+          disabled={mutation.isLoading}
+          className="bg-gray-500 hover:text-white p-[0.5em] rounded-[0.2em]"
+        >
           {mutation.isLoading ? "Creating..." : "Create Post"}
         </button>
         {mutation.isError && (

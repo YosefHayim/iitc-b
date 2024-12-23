@@ -1,4 +1,7 @@
 const User = require("../models/userModel");
+const { hashPw } = require("../utils/hashPw");
+
+const SECRET_PW_ADDITION = "abcd";
 
 // Create a new user
 const createUser = async (req, res, next) => {
@@ -17,9 +20,12 @@ const createUser = async (req, res, next) => {
 
     if (existingUser) {
       const error = new Error("A user with this email already exists");
-      error.statusCode = 409; // Conflict
+      error.statusCode = 409;
       throw error;
     }
+
+    const hashedPassword = hashPw(password + SECRET_PW_ADDITION);
+    console.log(hashedPassword);
 
     const newUser = new User({ firstName, lastName, email, password });
     const savedUser = await newUser.save();

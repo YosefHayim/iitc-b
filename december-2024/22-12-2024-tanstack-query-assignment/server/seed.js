@@ -8,6 +8,9 @@ const seedDatabase = async () => {
   try {
     connectDB();
 
+    await User.deleteMany();
+    await Post.deleteMany();
+
     // Seed users
     const users = [];
     for (let i = 0; i < 10; i++) {
@@ -17,6 +20,7 @@ const seedDatabase = async () => {
         lastName: faker.name.lastName(),
         email: faker.internet.email(),
         password: faker.internet.password(8),
+        profileImg: faker.image.avatar(),
       });
     }
     const createdUsers = await User.insertMany(users);
@@ -31,6 +35,7 @@ const seedDatabase = async () => {
         postContent: faker.lorem.paragraphs(2),
         authorName: `${randomUser.firstName} ${randomUser.lastName}`,
         authorId: randomUser._id,
+        postImg: faker.image.imageUrl(), // Add post image
       });
     }
     const createdPosts = await Post.insertMany(posts);

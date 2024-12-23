@@ -7,6 +7,10 @@ const postSchema = new mongoose.Schema(
       required: [true, "Post title is required"],
       minlength: [5, "Title must be at least 5 characters"],
     },
+    postImg: {
+      type: String,
+      required: [true, "Post image is required."],
+    },
     postContent: {
       type: String,
       required: [true, "Post content is required"],
@@ -18,7 +22,7 @@ const postSchema = new mongoose.Schema(
     },
     authorId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User", 
+      ref: "User",
       required: [true, "Author ID is required"],
     },
   },

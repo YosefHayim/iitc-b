@@ -1,27 +1,19 @@
 const mongoose = require("mongoose");
 const faker = require("faker");
-const User = require("../models/userModel");
-const Post = require("../models/postModel");
+const User = require("./models/userModel");
+const Post = require("./models/postModel");
+const connectDB = require("./config/connectDb");
 
 const seedDatabase = async () => {
   try {
-    // Connect to MongoDB
-    await mongoose.connect(process.env.URI_DB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("Connected to MongoDB");
-
-    // Clear existing data
-    await User.deleteMany();
-    await Post.deleteMany();
-    console.log("Existing data cleared");
+    connectDB();
 
     // Seed users
     const users = [];
     for (let i = 0; i < 10; i++) {
+      const firstName = faker.name.firstName();
       users.push({
-        firstName: faker.name.firstName(),
+        firstName: firstName.length >= 5 ? firstName : firstName.padEnd(5, "a"),
         lastName: faker.name.lastName(),
         email: faker.internet.email(),
         password: faker.internet.password(8),

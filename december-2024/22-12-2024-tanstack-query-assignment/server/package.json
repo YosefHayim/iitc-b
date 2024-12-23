@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "seed": "node seed.js",
+    "seed": "node ./seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,7 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "faker": "^6.6.6",
+    "faker": "^5.5.3",
     "mongoose": "^8.9.2",
     "morgan": "^1.10.0"
   }

@@ -22,4 +22,4 @@ export interface UserLogin {
   password;
 }
 
-export type AddPostFn = (data: FormData) => Promise<void>;
+export type AddPostFn = (data: PostFormData) => Promise<void>;

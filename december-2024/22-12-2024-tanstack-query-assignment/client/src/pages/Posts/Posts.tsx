@@ -34,7 +34,7 @@ const Posts: React.FC = () => {
     if (btn.innerText === "View Post") {
       navigate(`/view-post/${id}`);
     } else if (btn.innerText === "Edit Post") {
-      navigate(`/edit-post/edit/${id}`);
+      navigate(`/edit-post/${id}`);
     } else if (btn.innerText === "Delete Post") {
       mutation.mutate(id);
     }

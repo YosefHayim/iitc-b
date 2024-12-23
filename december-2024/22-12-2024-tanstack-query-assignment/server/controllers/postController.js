@@ -3,24 +3,17 @@ const Post = require("../models/postModel");
 // Create a new post
 const createPost = async (req, res, next) => {
   try {
-    const { id, title, postContent, authorName } = req.body;
+    const { title, postContent, authorName } = req.body;
 
-    if (!id || !title || !postContent || !authorName) {
+    if (!title || !postContent || !authorName) {
       const error = new Error(
-        "All fields (id, title, postContent, authorName) are required"
+        "All fields (title, postContent, authorName) are required"
       );
       error.statusCode = 400;
       throw error;
     }
 
-    const existingPost = await Post.findOne({ _id: id });
-    if (existingPost) {
-      const error = new Error("A post with this ID already exists");
-      error.statusCode = 409; // Conflict
-      throw error;
-    }
-
-    const newPost = new Post({ id, title, postContent, authorName });
+    const newPost = new Post({ title, postContent, authorName });
     const savedPost = await newPost.save();
 
     res

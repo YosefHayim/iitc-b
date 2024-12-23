@@ -25,6 +25,9 @@ const Navbar = () => {
       <Link to="/about" className={`${navBarDesign}`}>
         <div>About</div>
       </Link>
+      <Link to="/add-post" className={`${navBarDesign}`}>
+        <div>Add post</div>
+      </Link>
       <Searchbar type="text" placeholderText="Search..." />
       <Button text="Login" />
     </div>

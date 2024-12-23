@@ -46,7 +46,7 @@ const getPostById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const post = await Post.findOne({ id });
+    const post = await Post.findOne({ _id: id });
     if (!post) {
       const error = new Error(`Post with ID '${id}' not found`);
       error.statusCode = 404;

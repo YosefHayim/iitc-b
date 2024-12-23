@@ -1,9 +1,11 @@
 import axios from "axios";
 import { Post } from "../types/types";
 
-const getPostById = async (id: string | number): Promise<Post | null> => {
+const getPostById = async (id: string): Promise<Post | null> => {
   try {
-    const res = await axios.get<Post>(`http://localhost:3000/posts/${id}`);
+    const res = await axios.get<Post>(`http://localhost:3000/api/posts/${id}`);
+    console.log(res.data);
+
     return res.data;
   } catch (error: any) {
     if (error.response?.status === 404) {

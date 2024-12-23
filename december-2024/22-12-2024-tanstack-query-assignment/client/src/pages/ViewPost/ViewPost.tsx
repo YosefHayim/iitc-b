@@ -13,8 +13,7 @@ const ViewPost: React.FC = () => {
     error,
   } = useQuery({
     queryKey: ["post", id],
-    queryFn: () => getPostById(id!),
-    enabled: !!id, // Ensure the query only runs if ID is valid
+    queryFn: () => getPostById(id),
   });
 
   if (isLoading) {

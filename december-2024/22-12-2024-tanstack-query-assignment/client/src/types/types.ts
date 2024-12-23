@@ -1,12 +1,11 @@
 export interface PostFormData {
-  id: string | number;
+  _id: string;
   title: string;
   postContent: string;
   authorName: string;
 }
 
 export interface FormData {
-  id: string | number;
   title: string;
   postContent: string;
   authorName: string;

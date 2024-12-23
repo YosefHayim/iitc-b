@@ -58,9 +58,9 @@ const Topics: React.FC = () => {
         <ul className="flex flex-col items-center justify-start gap-[2em]">
           {data.map((post) => (
             <li
-              key={post.id}
+              key={post._id}
               className="bg-slate-400 p-[1em] flex flex-col items-center justify-start gap-[1em]"
-              onClick={(e) => handleClick(e, post.id)}
+              onClick={(e) => handleClick(e, post._id)}
             >
               <h3 className="text-[0.75em] font-bold">Title: {post.title}</h3>
               <p>Content: {post.postContent}</p>

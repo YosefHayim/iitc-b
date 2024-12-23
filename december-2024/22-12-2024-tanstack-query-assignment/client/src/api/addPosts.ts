@@ -3,7 +3,7 @@ import { PostFormData } from "../types/types";
 
 const addPosts = async (data: PostFormData): Promise<void> => {
   try {
-    const res = await axios.post("http://localhost:3000/posts", data);
+    const res = await axios.post("http://localhost:3000/api/posts", data);
     console.log(res);
 
     return res.data;

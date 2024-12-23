@@ -141,4 +141,5 @@ module.exports = {
   getUser,
   updateUser,
   deleteUser,
+  joinNewsLetter,
 };

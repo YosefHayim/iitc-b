@@ -1,7 +1,10 @@
 const User = require("../models/userModel");
-const { hashPw } = require("../utils/hashPw");
-
-const SECRET_PW_ADDITION = "abcd";
+const {
+  hashPw,
+  comparePw,
+  generateToken,
+  verifyToken,
+} = require("../utils/hashPw");
 
 // Create a new user
 const createUser = async (req, res, next) => {
@@ -24,7 +27,7 @@ const createUser = async (req, res, next) => {
       throw error;
     }
 
-    const hashedPassword = hashPw(password + SECRET_PW_ADDITION);
+    const hashedPassword = hashPw(password + process.env.SECRET_PW_ADDITION);
     console.log(hashedPassword);
 
     const newUser = new User({ firstName, lastName, email, password });

@@ -41,7 +41,6 @@ const seedDatabase = async () => {
     const createdPosts = await Post.insertMany(posts);
     console.log(`${createdPosts.length} posts added`);
 
-    // Close connection
     mongoose.connection.close();
     console.log("Database seeding completed and connection closed");
   } catch (error) {

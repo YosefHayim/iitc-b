@@ -8,6 +8,7 @@ const userRouter = require("./routes/userRoute");
 const postRouter = require("./routes/postRoutes");
 const errorHandler = require("./middlewares/errorHandler");
 const connectDB = require("./config/connectDb");
+const logger = require("./middlewares/logger");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,18 @@ connectDB();
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(cors());
+
+app.use((req, res, next) => {
+  logger.info({
+    method: req.method,
+    url: req.url,
+    headers: req.headers,
+    query: req.query,
+    body: req.body,
+    timestamp: new Date().toISOString(),
+  });
+  next();
+});
 
 app.get("/", (req, res) => {
   res.status(200).json({

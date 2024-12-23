@@ -4,8 +4,13 @@ import Input from "../Input/Input";
 import MediaIcons from "../MediaIcons/MediaIcons";
 
 const NewsLetter = () => {
+  const handleSubmit = () => {};
+
   return (
-    <div className="flex flex-col items-center justify-center w-full text-center">
+    <div
+      className="flex flex-col items-center justify-center w-full text-center"
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col items-center justify-center mb-[2em] w-[400px]">
         <h1 className="text-[1.3em]">Subscribe to Our Popular Newsletter</h1>
         <p className="mt-[1em]">

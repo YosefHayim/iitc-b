@@ -16,7 +16,7 @@ const Navbar = () => {
       <Link to="/" className={`${navBarDesign}`}>
         <div>Home</div>
       </Link>
-      <Link to="/topics" className={`${navBarDesign}`}>
+      <Link to="/posts" className={`${navBarDesign}`}>
         <div>Topics</div>
       </Link>
       <Link to="/contact" className={`${navBarDesign}`}>

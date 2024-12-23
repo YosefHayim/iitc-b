@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import getPosts from "../../api/posts/getPosts";
 import deletePost from "../../api/posts/deletePosts";
 
-const Topics: React.FC = () => {
+const Posts: React.FC = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -86,4 +86,4 @@ const Topics: React.FC = () => {
   );
 };
 
-export default Topics;
+export default Posts;

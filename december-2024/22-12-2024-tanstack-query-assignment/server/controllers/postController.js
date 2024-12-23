@@ -13,7 +13,7 @@ const createPost = async (req, res, next) => {
       throw error;
     }
 
-    const existingPost = await Post.findOne({ id });
+    const existingPost = await Post.findOne({ _id: id });
     if (existingPost) {
       const error = new Error("A post with this ID already exists");
       error.statusCode = 409; // Conflict
@@ -71,7 +71,7 @@ const updatePost = async (req, res, next) => {
       throw error;
     }
 
-    const updatedPost = await Post.findOneAndUpdate({ id }, updates, {
+    const updatedPost = await Post.findOneAndUpdate({ id: _id }, updates, {
       new: true,
       runValidators: true,
     });
@@ -95,7 +95,7 @@ const deletePost = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const deletedPost = await Post.findOneAndDelete({ id });
+    const deletedPost = await Post.findOneAndDelete({ _id: id });
     if (!deletedPost) {
       const error = new Error(`Post with ID '${id}' not found`);
       error.statusCode = 404;

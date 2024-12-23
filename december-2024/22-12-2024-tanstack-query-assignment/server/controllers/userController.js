@@ -1,11 +1,24 @@
-const User = require("../models/userModel");
+const User = require("./models/userModel");
 
-const createUser = async (req, res) => {
+// Create a new user
+const createUser = async (req, res, next) => {
   try {
     const { firstName, lastName, email, password } = req.body;
 
     if (!firstName || !lastName || !email || !password) {
-      return res.status(400).json({ error: "All fields are required" });
+      const error = new Error(
+        "All fields (firstName, lastName, email, password) are required"
+      );
+      error.statusCode = 400;
+      throw error;
+    }
+
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      const error = new Error("A user with this email already exists");
+      error.statusCode = 409; // Conflict
+      throw error;
     }
 
     const newUser = new User({ firstName, lastName, email, password });
@@ -15,29 +28,40 @@ const createUser = async (req, res) => {
       .status(201)
       .json({ message: "User created successfully", user: savedUser });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };
 
-const getUser = async (req, res) => {
+// Get a user by email
+const getUser = async (req, res, next) => {
   try {
     const { email } = req.params;
 
     const user = await User.findOne({ email });
+
     if (!user) {
-      return res.status(404).json({ error: "User not found" });
+      const error = new Error(`User with email '${email}' not found`);
+      error.statusCode = 404;
+      throw error;
     }
 
     res.status(200).json({ user });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };
 
-const updateUser = async (req, res) => {
+// Update a user
+const updateUser = async (req, res, next) => {
   try {
     const { email } = req.params;
     const updates = req.body;
+
+    if (!Object.keys(updates).length) {
+      const error = new Error("No fields provided to update");
+      error.statusCode = 400;
+      throw error;
+    }
 
     const updatedUser = await User.findOneAndUpdate({ email }, updates, {
       new: true,
@@ -45,31 +69,37 @@ const updateUser = async (req, res) => {
     });
 
     if (!updatedUser) {
-      return res.status(404).json({ error: "User not found" });
+      const error = new Error(`User with email '${email}' not found`);
+      error.statusCode = 404;
+      throw error;
     }
 
     res
       .status(200)
       .json({ message: "User updated successfully", user: updatedUser });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };
 
-const deleteUser = async (req, res) => {
+// Delete a user
+const deleteUser = async (req, res, next) => {
   try {
     const { email } = req.params;
 
     const deletedUser = await User.findOneAndDelete({ email });
+
     if (!deletedUser) {
-      return res.status(404).json({ error: "User not found" });
+      const error = new Error(`User with email '${email}' not found`);
+      error.statusCode = 404;
+      throw error;
     }
 
     res
       .status(200)
       .json({ message: "User deleted successfully", user: deletedUser });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };
 

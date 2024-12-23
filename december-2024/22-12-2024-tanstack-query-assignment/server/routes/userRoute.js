@@ -8,8 +8,8 @@ const {
 
 const router = express.Router();
 
-router.post("/register", createUser);
 router.get("/:email", getUser);
+router.post("/register", createUser);
 router.put("/:email", updateUser);
 router.delete("/:email", deleteUser);
 

@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AddPost from "./pages/AddPost";
+import EditPost from "./pages/EditPost";
+import ViewPost from "./pages/ViewPost";
 
 function App() {
   return (
@@ -11,7 +13,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/view-post/:id" element={<Home />} />
+        <Route path="/view-post/:id" element={<ViewPost />} />
+        <Route path="/edit-post/:id" element={<EditPost />} />
         <Route path="/add-post" element={<AddPost />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

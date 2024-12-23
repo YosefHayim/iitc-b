@@ -1,29 +1,42 @@
 import React from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import getPosts from "../api/getPosts";
-import Post from "../types/Post";
+import deletePost from "../api/deletePosts";
 
 const Home: React.FC = () => {
   const queryClient = useQueryClient();
-  const { isLoading, isError, data, error, isSuccess } = useQuery<
-    Post[],
-    Error
-  >({
+  const navigate = useNavigate();
+
+  // Fetch posts
+  const { isLoading, isError, data, error, isSuccess } = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
   });
 
-  const handleClick = (e) => {
-    const btn = e.target.closest("button");
+  // Mutation for deleting a post
+  const mutation = useMutation<void, Error, number>({
+    mutationFn: deletePost,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["posts"]); // Refresh posts after successful deletion
+    },
+  });
+
+  // Handle button clicks
+  const handleClick = (
+    e: React.MouseEvent<HTMLDivElement>,
+    id: number | string
+  ): void => {
+    const btn = (e.target as HTMLElement).closest("button");
+
+    if (!btn) return;
 
     if (btn.innerText === "View Post") {
-      console.log(`clicked view `);
+      navigate(`/view-post/${id}`);
     } else if (btn.innerText === "Edit Post") {
-      console.log(`clicked edit`);
+      navigate(`/edit-post/edit/${id}`);
     } else if (btn.innerText === "Delete Post") {
-      console.log(`clicked delete`);
-    } else {
-      return;
+      mutation.mutate(id);
     }
   };
 
@@ -40,13 +53,14 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div onClick={handleClick}>
+    <div>
       {isSuccess && data && data.length > 0 ?
         <ul className="flex flex-col items-center justify-start gap-[2em]">
           {data.map((post) => (
             <li
               key={post.id}
               className="bg-slate-400 p-[1em] flex flex-col items-center justify-start gap-[1em]"
+              onClick={(e) => handleClick(e, post.id)}
             >
               <h3 className="text-[0.75em] font-bold">Title: {post.title}</h3>
               <p>Content: {post.postContent}</p>
@@ -57,10 +71,10 @@ const Home: React.FC = () => {
                 <button className="rounded-[0.5em] bg-slate-500 p-[0.5em] text-white hover:text-black">
                   View Post
                 </button>
-                <button className="rounded-[0.5em] bg-slate-500 p-[0.5em] text-white  hover:text-black">
+                <button className="rounded-[0.5em] bg-slate-500 p-[0.5em] text-white hover:text-black">
                   Edit Post
                 </button>
-                <button className="rounded-[0.5em] bg-slate-500 p-[0.5em] text-white  hover:text-black">
+                <button className="rounded-[0.5em] bg-slate-500 p-[0.5em] text-white hover:text-black">
                   Delete Post
                 </button>
               </div>

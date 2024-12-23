@@ -1,48 +1,48 @@
 import React, { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import addPost from "../api/getPosts";
 import { randomId } from "../utils/randomId";
-
-interface FormData {
-  title: string;
-  postContent: string;
-  authorName: string;
-}
-
-// Define the type for the addPost function
-type AddPostFn = (data: FormData) => Promise<void>;
+import addPosts from "../api/addPosts";
+import { AddPostFn, PostFormData } from "../types/types";
 
 const AddPost: React.FC = () => {
   const queryClient = useQueryClient();
 
-  // Form state
-  const [formData, setFormData] = useState<FormData>({
+  // Initialize form state with an `id`
+  const [formData, setFormData] = useState<PostFormData>({
+    id: randomId(),
     title: "",
     postContent: "",
     authorName: "",
   });
 
   // Mutation setup
-  const mutation = useMutation<void, Error, FormData>({
-    mutationFn: addPost as AddPostFn, // Ensures the mutation function adheres to the defined type
+  const mutation = useMutation<void, Error, PostFormData>({
+    mutationFn: addPosts as AddPostFn,
     onSuccess: () => {
       queryClient.invalidateQueries(["posts"]);
-      setFormData({ title: "", postContent: "", authorName: "" });
+      setFormData({
+        id: randomId(),
+        title: "",
+        postContent: "",
+        authorName: "",
+      });
     },
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-    const id = randomId();
-    const title = formData.get("title") as string;
-    const postContent = formData.get("postContent") as string;
-    const authorName = formData.get("authorName") as string;
+    // Extract form data manually
+    const form = e.currentTarget;
+    const title = (form.title as HTMLInputElement).value;
+    const postContent = (form.postContent as HTMLInputElement).value;
+    const authorName = (form.authorName as HTMLInputElement).value;
 
-    console.log(title, postContent, authorName);
+    // Merge extracted values with the current formData state
+    const updatedFormData = { ...formData, title, postContent, authorName };
 
-    mutation.mutate({ title, postContent, authorName });
+    console.log("Submitting data:", updatedFormData);
+    mutation.mutate(updatedFormData);
   };
 
   return (

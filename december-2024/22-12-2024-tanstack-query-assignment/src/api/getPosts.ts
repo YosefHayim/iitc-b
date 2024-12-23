@@ -1,9 +1,11 @@
 import axios from "axios";
-import Post from "../types/Post";
+import { PostFormData } from "../types/types";
 
-const getPosts = async (): Promise<Post[]> => {
+const getPosts = async (): Promise<PostFormData[]> => {
   try {
-    const res = await axios.get<Post[]>("http://localhost:3000/posts");
+    const res = await axios.get<PostFormData[]>("http://localhost:3000/posts");
+    console.log(res);
+
     return res.data;
   } catch (error: any) {
     console.error("Error occurred during fetching posts: ", error.message);

@@ -3,7 +3,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import getPosts from "../../api/getPosts";
 import deletePost from "../../api/deletePosts";
-import NewsLetter from "../../components/NewsLetter/NewsLetter";
 
 const Topics: React.FC = () => {
   const queryClient = useQueryClient();

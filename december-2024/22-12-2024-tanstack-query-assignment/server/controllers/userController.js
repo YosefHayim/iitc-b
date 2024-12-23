@@ -4,7 +4,7 @@ const {
   comparePw,
   generateToken,
   verifyToken,
-} = require("../utils/hashPw");
+} = require("../utils/auth");
 
 // Create a new user
 const createUser = async (req, res, next) => {

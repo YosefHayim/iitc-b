@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const faker = require("faker");
-const User = require("./models/userModel"); // Adjust path as needed
-const Post = require("./models/postModel"); // Adjust path as needed
+const User = require("../models/userModel");
+const Post = require("../models/postModel");
 
 const seedDatabase = async () => {
   try {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { randomId } from "../../utils/randomId";
-import addPosts from "../../api/addPosts";
+import addPosts from "../../api/posts/addPosts";
 import { AddPostFn, PostFormData } from "../../types/types";
 
 const AddPost: React.FC = () => {

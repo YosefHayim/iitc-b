@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import getPostById from "../../api/getPostById";
+import getPostById from "../../api/posts/getPostById";
 
 const ViewPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();

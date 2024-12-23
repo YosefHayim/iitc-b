@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PostFormData } from "../types/types";
+import { PostFormData } from "../../types/types";
 
 const getPosts = async (): Promise<PostFormData[]> => {
   try {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Post } from "../types/types";
+import { Post } from "../../types/types";
 
 const getPostById = async (id: string): Promise<Post | null> => {
   try {

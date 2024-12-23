@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
     },
     profileImg: {
       type: String,
-      required: [true, "User profile image is required"],
+      default: "../public/profile-user-default.svg",
     },
     lastName: {
       type: String,

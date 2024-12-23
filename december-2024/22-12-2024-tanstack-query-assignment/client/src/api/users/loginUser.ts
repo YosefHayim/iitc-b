@@ -1,7 +1,7 @@
 import axios from "axios";
-import { PostFormData } from "../../types/types";
+import { UserLogin } from "../../types/types";
 
-const loginUser = async (data: PostFormData): Promise<void> => {
+const loginUser = async (data: UserLogin): Promise<void> => {
   try {
     const res = await axios.post("http://localhost:3000/api/users/login", data);
     console.log(res);

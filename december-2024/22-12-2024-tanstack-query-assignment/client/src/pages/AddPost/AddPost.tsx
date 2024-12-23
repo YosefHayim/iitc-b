@@ -9,7 +9,6 @@ const AddPost: React.FC = () => {
 
   // Initialize form state with an `id`
   const [formData, setFormData] = useState<PostFormData>({
-    id: randomId(),
     title: "",
     postContent: "",
     authorName: "",
@@ -21,7 +20,6 @@ const AddPost: React.FC = () => {
     onSuccess: () => {
       queryClient.invalidateQueries(["posts"]);
       setFormData({
-        id: randomId(),
         title: "",
         postContent: "",
         authorName: "",
@@ -32,16 +30,12 @@ const AddPost: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
-    // Extract form data manually
     const form = e.currentTarget;
     const title = (form.title as HTMLInputElement).value;
     const postContent = (form.postContent as HTMLInputElement).value;
     const authorName = (form.authorName as HTMLInputElement).value;
 
-    // Merge extracted values with the current formData state
-    const updatedFormData = { ...formData, title, postContent, authorName };
-
-    console.log("Submitting data:", updatedFormData);
+    const updatedFormData = { title, postContent, authorName };
     mutation.mutate(updatedFormData);
   };
 

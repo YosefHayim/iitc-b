@@ -1,30 +1,26 @@
 const mongoose = require("mongoose");
 const faker = require("faker");
-const User = require("../models/userModel");
-const Post = require("../models/postModel");
+const User = require("./models/userModel");
+const Post = require("./models/postModel");
+const connectDB = require("./config/connectDb");
 
 const seedDatabase = async () => {
   try {
-    // Connect to MongoDB
-    await mongoose.connect(process.env.URI_DB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("Connected to MongoDB");
+    connectDB();
 
-    // Clear existing data
     await User.deleteMany();
     await Post.deleteMany();
-    console.log("Existing data cleared");
 
     // Seed users
     const users = [];
     for (let i = 0; i < 10; i++) {
+      const firstName = faker.name.firstName();
       users.push({
-        firstName: faker.name.firstName(),
+        firstName: firstName.length >= 5 ? firstName : firstName.padEnd(5, "a"),
         lastName: faker.name.lastName(),
         email: faker.internet.email(),
         password: faker.internet.password(8),
+        profileImg: faker.image.avatar(),
       });
     }
     const createdUsers = await User.insertMany(users);
@@ -39,12 +35,12 @@ const seedDatabase = async () => {
         postContent: faker.lorem.paragraphs(2),
         authorName: `${randomUser.firstName} ${randomUser.lastName}`,
         authorId: randomUser._id,
+        postImg: faker.image.imageUrl(), // Add post image
       });
     }
     const createdPosts = await Post.insertMany(posts);
     console.log(`${createdPosts.length} posts added`);
 
-    // Close connection
     mongoose.connection.close();
     console.log("Database seeding completed and connection closed");
   } catch (error) {

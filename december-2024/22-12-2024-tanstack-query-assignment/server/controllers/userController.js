@@ -1,4 +1,11 @@
-const User = require("./models/userModel");
+const User = require("../models/userModel");
+const {
+  hashPw,
+  comparePw,
+  generateToken,
+  verifyToken,
+} = require("../utils/auth");
+const { emailSender } = require("../utils/emailSender");
 
 // Create a new user
 const createUser = async (req, res, next) => {
@@ -17,9 +24,12 @@ const createUser = async (req, res, next) => {
 
     if (existingUser) {
       const error = new Error("A user with this email already exists");
-      error.statusCode = 409; // Conflict
+      error.statusCode = 409;
       throw error;
     }
+
+    const hashedPassword = hashPw(password + process.env.SECRET_PW_ADDITION);
+    console.log(hashedPassword);
 
     const newUser = new User({ firstName, lastName, email, password });
     const savedUser = await newUser.save();
@@ -27,6 +37,29 @@ const createUser = async (req, res, next) => {
     res
       .status(201)
       .json({ message: "User created successfully", user: savedUser });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// join user to newsLetter
+const joinNewsLetter = async (req, res, next) => {
+  try {
+    const { email } = req.params;
+
+    if (!email) {
+      return res.status(400).json({
+        status: "failed",
+        response: "must provide user email in url.",
+      });
+    }
+
+    await emailSender(email);
+
+    return res.status(200).json({
+      status: "success",
+      response: "email has been sent.",
+    });
   } catch (error) {
     next(error);
   }
@@ -108,4 +141,5 @@ module.exports = {
   getUser,
   updateUser,
   deleteUser,
+  joinNewsLetter,
 };

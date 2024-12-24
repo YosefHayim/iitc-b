@@ -16,7 +16,7 @@ const Navbar = () => {
       <Link to="/" className={`${navBarDesign}`}>
         <div>Home</div>
       </Link>
-      <Link to="/topics" className={`${navBarDesign}`}>
+      <Link to="/posts" className={`${navBarDesign}`}>
         <div>Topics</div>
       </Link>
       <Link to="/contact" className={`${navBarDesign}`}>
@@ -24,6 +24,9 @@ const Navbar = () => {
       </Link>
       <Link to="/about" className={`${navBarDesign}`}>
         <div>About</div>
+      </Link>
+      <Link to="/add-post" className={`${navBarDesign}`}>
+        <div>Add post</div>
       </Link>
       <Searchbar type="text" placeholderText="Search..." />
       <Button text="Login" />

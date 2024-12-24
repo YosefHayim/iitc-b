@@ -8,6 +8,10 @@ const userSchema = new mongoose.Schema(
       minlength: [5, "First name must be at least 5 characters"],
       maxlength: [10, "First name can't be more than 10 characters"],
     },
+    profileImg: {
+      type: String,
+      default: "../public/profile-user-default.svg",
+    },
     lastName: {
       type: String,
       required: [true, "Last name is required"],

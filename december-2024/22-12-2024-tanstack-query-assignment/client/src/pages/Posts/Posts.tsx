@@ -1,11 +1,10 @@
 import React from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import getPosts from "../../api/getPosts";
-import deletePost from "../../api/deletePosts";
-import NewsLetter from "../../components/NewsLetter/NewsLetter";
+import getPosts from "../../api/posts/getPosts";
+import deletePost from "../../api/posts/deletePosts";
 
-const Topics: React.FC = () => {
+const Posts: React.FC = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -35,7 +34,7 @@ const Topics: React.FC = () => {
     if (btn.innerText === "View Post") {
       navigate(`/view-post/${id}`);
     } else if (btn.innerText === "Edit Post") {
-      navigate(`/edit-post/edit/${id}`);
+      navigate(`/edit-post/${id}`);
     } else if (btn.innerText === "Delete Post") {
       mutation.mutate(id);
     }
@@ -59,9 +58,9 @@ const Topics: React.FC = () => {
         <ul className="flex flex-col items-center justify-start gap-[2em]">
           {data.map((post) => (
             <li
-              key={post.id}
+              key={post._id}
               className="bg-slate-400 p-[1em] flex flex-col items-center justify-start gap-[1em]"
-              onClick={(e) => handleClick(e, post.id)}
+              onClick={(e) => handleClick(e, post._id)}
             >
               <h3 className="text-[0.75em] font-bold">Title: {post.title}</h3>
               <p>Content: {post.postContent}</p>
@@ -87,4 +86,4 @@ const Topics: React.FC = () => {
   );
 };
 
-export default Topics;
+export default Posts;

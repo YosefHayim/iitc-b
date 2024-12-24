@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import getPostById from "../../api/getPostById";
+import getPostById from "../../api/posts/getPostById";
 
 const ViewPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,8 +13,7 @@ const ViewPost: React.FC = () => {
     error,
   } = useQuery({
     queryKey: ["post", id],
-    queryFn: () => getPostById(id!),
-    enabled: !!id, // Ensure the query only runs if ID is valid
+    queryFn: () => getPostById(id),
   });
 
   if (isLoading) {

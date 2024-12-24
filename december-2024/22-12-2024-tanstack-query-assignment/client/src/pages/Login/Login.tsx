@@ -1,6 +1,15 @@
+import { useMutation } from "@tanstack/react-query";
 import React from "react";
 
 const Login = () => {
+  const queryClient = useQueryClient();
+
+  // Mutation for deleting a post
+  // const mutation = useMutation<void, Error, number>({
+  //   mutationFn: deletePost,
+  //   onSuccess: () => {},
+  // });
+
   return (
     <div>
       <h1>Login Page</h1>

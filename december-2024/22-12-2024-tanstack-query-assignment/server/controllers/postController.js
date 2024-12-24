@@ -3,24 +3,17 @@ const Post = require("../models/postModel");
 // Create a new post
 const createPost = async (req, res, next) => {
   try {
-    const { id, title, postContent, authorName } = req.body;
+    const { title, postContent, authorName } = req.body;
 
-    if (!id || !title || !postContent || !authorName) {
+    if (!title || !postContent || !authorName) {
       const error = new Error(
-        "All fields (id, title, postContent, authorName) are required"
+        "All fields (title, postContent, authorName) are required"
       );
       error.statusCode = 400;
       throw error;
     }
 
-    const existingPost = await Post.findOne({ id });
-    if (existingPost) {
-      const error = new Error("A post with this ID already exists");
-      error.statusCode = 409; // Conflict
-      throw error;
-    }
-
-    const newPost = new Post({ id, title, postContent, authorName });
+    const newPost = new Post({ title, postContent, authorName });
     const savedPost = await newPost.save();
 
     res
@@ -46,7 +39,7 @@ const getPostById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const post = await Post.findOne({ id });
+    const post = await Post.findOne({ _id: id });
     if (!post) {
       const error = new Error(`Post with ID '${id}' not found`);
       error.statusCode = 404;
@@ -71,7 +64,7 @@ const updatePost = async (req, res, next) => {
       throw error;
     }
 
-    const updatedPost = await Post.findOneAndUpdate({ id }, updates, {
+    const updatedPost = await Post.findOneAndUpdate({ id: _id }, updates, {
       new: true,
       runValidators: true,
     });
@@ -95,7 +88,7 @@ const deletePost = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const deletedPost = await Post.findOneAndDelete({ id });
+    const deletedPost = await Post.findOneAndDelete({ _id: id });
     if (!deletedPost) {
       const error = new Error(`Post with ID '${id}' not found`);
       error.statusCode = 404;

@@ -21,6 +21,7 @@ const seedDatabase = async () => {
         email: faker.internet.email(),
         password: faker.internet.password(8),
         plan: faker.random.arrayElement(["Standard", "Gold", "Platinum"]),
+        role: faker.random.arrayElement(["user", "businessOwner", "guest"]),
       });
     }
     const createdUsers = await User.insertMany(users);

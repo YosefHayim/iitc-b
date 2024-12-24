@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { User } = require("../models/userModel");
+const { generateToken } = require("../utils/auth");
 
 // Get all users
 getAllUsers = async (req, res, next) => {
@@ -11,7 +12,7 @@ getAllUsers = async (req, res, next) => {
       throw error;
     }
     res.status(200).json({
-      status: "Success",
+      status: "Login Successfully",
       total: users.length,
       response: users,
     });
@@ -67,6 +68,34 @@ createUser = async (req, res, next) => {
     const err = error.statusCode ? error : new Error("Failed to create user.");
     err.statusCode = error.statusCode || 400; // Bad Request for validation issues
     next(err);
+  }
+};
+
+// Validate user in db
+const validateUser = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    const isUser = await User.findOne({ email });
+
+    if (password === isUser.password) {
+      const payload = {
+        id: isUser._id,
+        email: isUser.email,
+        name: isUser.name,
+      };
+      const token = await generateToken(payload);
+      res.status(200).json({
+        status: "Success",
+        response: token,
+      });
+    }
+
+    const error = new Error("Email or password are incorrect. ");
+    error.statusCode = 404; // Not Found
+    throw error;
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -133,4 +162,5 @@ module.exports = {
   createUser,
   updateUserById,
   deleteUserById,
+  validateUser,
 };

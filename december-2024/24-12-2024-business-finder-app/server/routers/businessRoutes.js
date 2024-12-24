@@ -14,7 +14,7 @@ const router = express.Router();
 router.get("/", getAllBusinesses);
 router.get("/:id", getBusinessById);
 router.get("/:userId/:businessId", toggleBusiness);
-router.post("/:userId/:businessId/review", addReviewToBusiness);
+router.post("/:userId/:businessId", addReviewToBusiness);
 router.post("/", createBusiness);
 router.put("/:id", updateBusinessById);
 router.delete("/:id", deleteBusinessById);

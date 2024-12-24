@@ -18,4 +18,9 @@ const businessSchema = new Schema(
   { timestamps: true }
 );
 
+businessSchema.pre("find", function (next) {
+  this.sort({ createdAt: -1 });
+  next();
+});
+
 module.exports.business = model("Business", businessSchema);

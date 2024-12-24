@@ -11,8 +11,17 @@ const userSchema = new Schema(
       default: "Standard",
     },
     savedBusinesses: [{ type: Schema.Types.ObjectId, ref: "Business" }],
+    role: {
+      enum: ["user", "businessOwner", "guest"],
+      default: "user",
+    },
   },
   { timestamps: true }
 );
+
+userSchema.pre("find", function (next) {
+  this.sort({ createdAt: -1 });
+  next();
+});
 
 module.exports.User = model("User", userSchema);

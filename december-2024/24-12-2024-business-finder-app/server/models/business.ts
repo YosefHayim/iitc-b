@@ -1,0 +1,38 @@
+import { Schema, model, Document, Types } from "mongoose";
+
+interface IReview {
+  userId: Types.ObjectId;
+  comment: string;
+  createdAt: Date;
+}
+
+interface IBusiness extends Document {
+  name: string;
+  description: string;
+  category: string;
+  owner: Types.ObjectId;
+  subscribers: Types.ObjectId[];
+  reviews: IReview[];
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+const businessSchema = new Schema<IBusiness>(
+  {
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    category: { type: String, required: true },
+    owner: { type: Types.ObjectId, ref: "User", required: true },
+    subscribers: [{ type: Types.ObjectId, ref: "User" }],
+    reviews: [
+      {
+        userId: { type: Types.ObjectId, ref: "User", required: true },
+        comment: { type: String, required: true },
+        createdAt: { type: Date, default: Date.now },
+      },
+    ],
+  },
+  { timestamps: true }
+);
+
+export const Business = model<IBusiness>("Business", businessSchema);

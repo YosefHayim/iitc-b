@@ -5,11 +5,13 @@ const {
   getAllUsers,
   getUserById,
   updateUserById,
+  toggleBusiness,
 } = require("../controllers/userControllers");
 
 const router = express.Router();
 
 router.get("/", getAllUsers);
+router.get("/:userId/:businessId", toggleBusiness);
 router.get("/:id", getUserById);
 router.post("/", createUser);
 router.put("/:id", updateUserById);

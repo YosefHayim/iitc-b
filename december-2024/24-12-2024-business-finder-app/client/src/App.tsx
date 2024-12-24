@@ -1,24 +1,26 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
 import Register from "./pages/Register/Register";
-import UserEditProfile from "./pages/UserEditProfile/UserEditProfile";
+import Login from "./pages/Login/Login";
+import Home from "./pages/Home/Home";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
-import Login from "./pages/Login/Login";
-import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
-import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
-import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
+import UserEdit from "./pages/UserEditProfile/UserEditProfile";
+import UserEditProfile from "./pages/UserEditProfile/UserEditProfile";
 import BusinessFeed from "./pages/BusinessFeed/BusinessFeed";
-import UserProfile from "./pages/UserProfile/UserProfile";
+import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
+import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
+import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
 
 function App() {
   return (
     <div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/user/profile" element={<UserProfile />} />
-        <Route path="/user/edit-profile" element={<UserEditProfile />} />
+        <Route path="/user/profile" element={<UserEditProfile />} />
+        <Route path="/user/edit-profile" element={<UserEdit />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />

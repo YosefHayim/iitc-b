@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const { User } = require("../models/userModel");
 
 // Get all users
@@ -39,18 +40,25 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
-// Update a user by ID
 exports.updateUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
+
+    // Validate if the id is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: "Invalid user ID format." });
+    }
+
     const userData = req.body;
     const updatedUser = await User.findByIdAndUpdate(id, userData, {
       new: true,
       runValidators: true,
     });
+
     if (!updatedUser) {
       return res.status(404).json({ message: "User not found." });
     }
+
     res.status(200).json({ message: "User updated.", user: updatedUser });
   } catch (error) {
     next(error);

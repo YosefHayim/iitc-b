@@ -20,13 +20,14 @@ exports.getAllBusinesses = async (req, res, next) => {
 exports.getBusinessById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const business = await business
+    const findBusiness = await business
       .findById(id)
       .populate("owner subscribers reviews.userId");
-    if (!business) {
+
+    if (!findBusiness) {
       return res.status(404).json({ message: "Business not found." });
     }
-    res.status(200).json(business);
+    res.status(200).json(findBusiness);
   } catch (error) {
     next(error);
   }
@@ -36,7 +37,7 @@ exports.getBusinessById = async (req, res, next) => {
 exports.createBusiness = async (req, res, next) => {
   try {
     const businessData = req.body;
-    const newBusiness = await Business.create(businessData);
+    const newBusiness = await business.create(businessData);
     res
       .status(201)
       .json({ message: "Business created.", business: newBusiness });

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const faker = require("faker");
 const { User } = require("./models/userModel");
-const { Business } = require("./models/businessModel");
+const { business } = require("./models/businessModel");
 const connectDB = require("./config/connectDb");
 
 const seedDatabase = async () => {
@@ -11,7 +11,7 @@ const seedDatabase = async () => {
 
     // Clear existing data
     await User.deleteMany();
-    await Business.deleteMany();
+    await business.deleteMany();
 
     // Seed users
     const users = [];
@@ -45,7 +45,7 @@ const seedDatabase = async () => {
         ],
       });
     }
-    const createdBusinesses = await Business.insertMany(businesses);
+    const createdBusinesses = await business.insertMany(businesses);
     console.log(`${createdBusinesses.length} businesses added`);
 
     await mongoose.connection.close();

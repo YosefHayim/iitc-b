@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { User } = require("../models/userModel");
 
 // Get all users
-exports.getAllUsers = async (req, res, next) => {
+getAllUsers = async (req, res, next) => {
   try {
     const users = await User.find();
     if (!users || users.length === 0) {
@@ -23,7 +23,7 @@ exports.getAllUsers = async (req, res, next) => {
 };
 
 // Get a specific user by ID
-exports.getUserById = async (req, res, next) => {
+getUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
@@ -51,7 +51,7 @@ exports.getUserById = async (req, res, next) => {
 };
 
 // Create a new user
-exports.createUser = async (req, res, next) => {
+createUser = async (req, res, next) => {
   try {
     const userData = req.body;
 
@@ -71,7 +71,7 @@ exports.createUser = async (req, res, next) => {
 };
 
 // Update a user by ID
-exports.updateUserById = async (req, res, next) => {
+updateUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
@@ -102,7 +102,7 @@ exports.updateUserById = async (req, res, next) => {
 };
 
 // Delete a user by ID
-exports.deleteUserById = async (req, res, next) => {
+deleteUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
@@ -127,50 +127,10 @@ exports.deleteUserById = async (req, res, next) => {
   }
 };
 
-// Add or toggle a business in the user's favorite list
-exports.toggleBusiness = async (req, res, next) => {
-  const { userId, businessId } = req.params;
-
-  try {
-    if (
-      !mongoose.Types.ObjectId.isValid(userId) ||
-      !mongoose.Types.ObjectId.isValid(businessId)
-    ) {
-      const error = new Error("Invalid User ID or Business ID format.");
-      error.statusCode = 400; // Bad Request
-      throw error;
-    }
-
-    const user = await User.findById(userId);
-    if (!user) {
-      const error = new Error("User not found.");
-      error.statusCode = 404; // Not Found
-      throw error;
-    }
-
-    const isFavorite = user.savedBusinesses.includes(businessId);
-
-    if (isFavorite) {
-      user.savedBusinesses = user.savedBusinesses.filter(
-        (savedBusinessId) => savedBusinessId.toString() !== businessId
-      );
-    } else {
-      user.savedBusinesses.push(businessId);
-    }
-
-    await user.save();
-
-    res.status(200).json({
-      result: isFavorite
-        ? "Business removed from favorites."
-        : "Business added to favorites.",
-      savedBusinesses: user.savedBusinesses,
-    });
-  } catch (error) {
-    const err = error.statusCode
-      ? error
-      : new Error("Failed to toggle favorite business.");
-    err.statusCode = error.statusCode || 500; // Internal Server Error
-    next(err);
-  }
+module.exports = {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUserById,
+  deleteUserById,
 };

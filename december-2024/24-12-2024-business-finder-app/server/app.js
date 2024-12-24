@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const cors = require("cors");
 const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
 
 const connectDB = require("./config/connectDb");
 const errorHandler = require("./middlewares/errorHandler");
@@ -15,9 +16,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(logger);
 app.use(cors());
 app.use(morgan("tiny"));
-app.use(logger);
+app.use(cookieParser());
 
 connectDB();
 

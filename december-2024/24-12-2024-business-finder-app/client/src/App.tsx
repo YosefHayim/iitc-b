@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Register from "./pages/Register/Register";
+import UserEditProfile from "./pages/UserEditProfile/UserEditProfile";
+import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
+import Login from "./pages/Login/Login";
+import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
+import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
+import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
+import BusinessFeed from "./pages/BusinessFeed/BusinessFeed";
+import UserProfile from "./pages/UserProfile/UserProfile";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/user/profile" element={<UserProfile />} />
+        <Route path="/user/edit-profile" element={<UserEditProfile />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/posts" element={<BusinessFeed />} />
+        <Route path="/view-post/:id" element={<ViewBusinessPost />} />
+        <Route path="/edit-post/:id" element={<EditBusinessPost />} />
+        <Route path="/add-post" element={<AddBusinessPost />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

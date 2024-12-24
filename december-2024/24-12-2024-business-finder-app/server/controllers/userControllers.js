@@ -84,7 +84,15 @@ const validateUser = async (req, res, next) => {
         email: isUser.email,
         name: isUser.name,
       };
+
       const token = await generateToken(payload);
+
+      res.cookie("cookie", token, {
+        httpOnly: false,
+        secure: false,
+        maxAge: 60 * 60 * 1000,
+      });
+
       res.status(200).json({
         status: "Success",
         response: token,

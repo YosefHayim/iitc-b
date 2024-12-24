@@ -11,6 +11,7 @@ import BusinessFeed from "./pages/BusinessFeed/BusinessFeed";
 import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
 import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
 import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
+import PlanPage from "./pages/PlanPage/PlanPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/subscription-plans" element={<PlanPage />} />
         <Route path="/user/profile" element={<UserEditProfile />} />
         <Route path="/user/edit-profile" element={<UserEdit />} />
         <Route path="/contact" element={<Contact />} />

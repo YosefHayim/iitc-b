@@ -18,4 +18,4 @@ const businessSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports.Business = model("Business", businessSchema);
+module.exports.business = model("Business", businessSchema);

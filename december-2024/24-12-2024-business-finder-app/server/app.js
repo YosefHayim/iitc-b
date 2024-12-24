@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const connectDB = require("./config/connectDb");
 const errorHandler = require("./middlewares/errorHandler");
 const userRouter = require("./routers/userRoutes");
+const businessRouter = require("./routers/businessRoutes");
 const undefinedRoutes = require("./middlewares/undefinedRoutes");
 const logger = require("./middlewares/logger");
 
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRouter);
+app.use("/api/business", businessRouter);
 
 app.all("*", undefinedRoutes);
 

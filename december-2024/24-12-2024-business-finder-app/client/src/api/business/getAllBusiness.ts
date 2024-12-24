@@ -6,6 +6,7 @@ const getAllBusiness = async () => {
 
     if (data) {
       console.log(data.response);
+
       return data.response;
     }
   } catch (error) {

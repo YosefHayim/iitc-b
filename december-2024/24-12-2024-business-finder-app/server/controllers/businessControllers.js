@@ -203,6 +203,7 @@ addReviewToBusiness = async (req, res, next) => {
   try {
     const { userId, businessId } = req.params;
     const { comment } = req.body;
+    console.log(userId, businessId, comment);
 
     // Validate input
     if (
@@ -262,6 +263,43 @@ addReviewToBusiness = async (req, res, next) => {
   }
 };
 
+const deleteReviewFromBusiness = async (req, res, next) => {
+  try {
+    const { userId, businessId, reviewId } = req.params;
+
+    console.log("Received Params:", { userId, businessId, reviewId });
+
+    if (
+      !mongoose.Types.ObjectId.isValid(userId) ||
+      !mongoose.Types.ObjectId.isValid(businessId) ||
+      !mongoose.Types.ObjectId.isValid(reviewId)
+    ) {
+      return res.status(400).json({ message: "Invalid IDs." });
+    }
+
+    const isBusinessPostFound = await business.findById(businessId);
+    if (!isBusinessPostFound)
+      return res.status(404).json({ message: "Business not found." });
+
+    const reviewIndex = isBusinessPostFound.reviews.findIndex(
+      (review) => review._id.toString() === reviewId
+    );
+    if (reviewIndex === -1) {
+      return res.status(404).json({ message: "Review not found." });
+    }
+
+    isBusinessPostFound.reviews.splice(reviewIndex, 1);
+    await isBusinessPostFound.save();
+
+    return res
+      .status(200)
+      .json({ message: "Review deleted successfully.", isBusinessPostFound });
+  } catch (error) {
+    console.error("Error deleting review:", error);
+    return res.status(500).json({ message: "Internal Server Error." });
+  }
+};
+
 module.exports = {
   getAllBusinesses,
   getBusinessById,
@@ -270,4 +308,5 @@ module.exports = {
   deleteBusinessById,
   toggleBusiness,
   addReviewToBusiness,
+  deleteReviewFromBusiness,
 };

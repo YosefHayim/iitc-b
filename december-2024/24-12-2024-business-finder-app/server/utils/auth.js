@@ -1,21 +1,20 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { dbPw, Payload, Up } from "../types/types";
 
 // payload is the object of user data without pw
-const generateToken = async (payload: Payload) => {
+const generateToken = async (payload) => {
   const token = await jwt.sign(payload, process.env.SECRET_TOKEN_ADDITION, {
     expiresIn: "1h",
   });
   return token;
 };
 
-const verifyToken = async (payload: Payload) => {
+const verifyToken = async (payload) => {
   const token = await jwt.verify(payload, process.env.SECRET_TOKEN_ADDITION);
   return token;
 };
 
-const comparePw = async (userPassword: Up, dbPassword: dbPw) => {
+const comparePw = async (userPassword, dbPassword) => {
   try {
     const match = await bcrypt.compare(userPassword, dbPassword);
     return match;
@@ -24,9 +23,9 @@ const comparePw = async (userPassword: Up, dbPassword: dbPw) => {
   }
 };
 
-const hashPw = async (userPassword: Up) => {
-  const res = await bcrypt.genSalt((err: any, salt: Number) => {
-    bcrypt.hash(userPassword, salt, (err: any, hash: string) => {
+const hashPw = async (userPassword) => {
+  const res = await bcrypt.genSalt((err, salt) => {
+    bcrypt.hash(userPassword, salt, (err, hash) => {
       if (err)
         throw new Error("Error occurred during hashing password: " + err);
       return hash;

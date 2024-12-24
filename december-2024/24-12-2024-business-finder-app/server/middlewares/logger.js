@@ -1,5 +1,4 @@
-import { NextFunction, Request, Response } from "express";
-import winston from "winston";
+const winston = require("winston");
 
 const initialLogger = winston.createLogger({
   level: "info",
@@ -7,7 +6,7 @@ const initialLogger = winston.createLogger({
   transports: [new winston.transports.File({ filename: "logs.txt" })],
 });
 
-const logger = (req: Request, res: Response, next: NextFunction) => {
+const logger = (req, res, next) => {
   initialLogger.info({
     method: req.method,
     url: req.url,
@@ -19,4 +18,4 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-export default logger;
+module.exports = logger;

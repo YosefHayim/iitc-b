@@ -1,7 +1,6 @@
-import { Schema, model, Types } from "mongoose";
-import { IBusiness } from "../types/types";
+const { Schema, model, Types } = require("mongoose");
 
-const businessSchema = new Schema<IBusiness>(
+const businessSchema = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
@@ -19,4 +18,4 @@ const businessSchema = new Schema<IBusiness>(
   { timestamps: true }
 );
 
-export const Business = model<IBusiness>("Business", businessSchema);
+module.exports.Business = model("Business", businessSchema);

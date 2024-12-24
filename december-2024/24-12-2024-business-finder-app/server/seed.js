@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
-import faker from "faker";
-import { User } from "./models/userModel";
-import { Business } from "./models/businessModel";
-import connectDB from "./config/connectDb";
+const mongoose = require("mongoose");
+const faker = require("faker");
+const { User } = require("./models/userModel");
+const { Business } = require("./models/businessModel");
+const connectDB = require("./config/connectDb");
 
-const seedDatabase = async (): Promise<void> => {
+const seedDatabase = async () => {
   try {
     // Connect to the database
     await connectDB();

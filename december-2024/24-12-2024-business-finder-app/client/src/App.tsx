@@ -29,7 +29,7 @@ function App() {
         <Route path="/posts" element={<BusinessFeed />} />
         <Route path="/view-post/:id" element={<ViewBusinessPost />} />
         <Route path="/edit-post/:id" element={<EditBusinessPost />} />
-        <Route path="/add-post" element={<AddBusinessPost />} />
+        <Route path="/add-business" element={<AddBusinessPost />} />
       </Routes>
     </div>
   );

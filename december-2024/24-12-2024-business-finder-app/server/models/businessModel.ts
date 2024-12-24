@@ -1,21 +1,5 @@
-import { Schema, model, Document, Types } from "mongoose";
-
-interface IReview {
-  userId: Types.ObjectId;
-  comment: string;
-  createdAt: Date;
-}
-
-interface IBusiness extends Document {
-  name: string;
-  description: string;
-  category: string;
-  owner: Types.ObjectId;
-  subscribers: Types.ObjectId[];
-  reviews: IReview[];
-  createdAt?: Date;
-  updatedAt?: Date;
-}
+import { Schema, model, Types } from "mongoose";
+import { IBusiness } from "../types/types";
 
 const businessSchema = new Schema<IBusiness>(
   {

@@ -1,0 +1,1 @@
+{"level":"info","message":{"headers":{"accept":"*/*","accept-encoding":"gzip, deflate, br","cache-control":"no-cache","connection":"keep-alive","host":"localhost:3000","postman-token":"2f50626f-f9af-46e4-861e-cd3700ae5a9c","user-agent":"PostmanRuntime/7.43.0"},"method":"GET","query":{},"timestamp":"2024-12-24T11:30:59.633Z","url":"/"}}

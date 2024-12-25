@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../ui/button";
 import { useSelector } from "react-redux";
 import Cookies from "js-cookie";
 
@@ -20,37 +19,37 @@ const Navbar = () => {
     <div className="flex flex-row items-center justify-around mb-[1em]">
       <div>
         <Link to="/">
-          <Button>Home</Button>
+          <button>Home</button>
         </Link>
       </div>
       <div>
         <Link to="/about">
-          <Button>About</Button>
+          <button>About</button>
         </Link>
       </div>
       <div>
         <Link to="/contact">
-          <Button>Contact</Button>
+          <button>Contact</button>
         </Link>
       </div>
       <div>
         <Link to="/add-business">
-          <Button>Add business</Button>
+          <button>Add business</button>
         </Link>
       </div>
       <div>
         <Link to="/login">
-          <Button>Login</Button>
+          <button>Login</button>
         </Link>
       </div>
       <div>
         <Link to="/register">
-          <Button>Register</Button>
+          <button>Register</button>
         </Link>
       </div>
       <div>hey {username || "default name"}!</div>
       <div onClick={handleClick}>
-        <Button>Log out</Button>
+        <button>Log out</button>
       </div>
     </div>
   );

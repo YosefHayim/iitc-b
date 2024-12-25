@@ -2,8 +2,8 @@ import addBusinessPostReview from "@/api/business/addBusinessPostReview";
 import deleteBusinessPostReview from "@/api/business/deleteBusinessPostReview";
 import getAllBusiness from "@/api/business/getAllBusiness";
 import toggleBusiness from "@/api/business/toggleBusinessPost";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { button } from "@/components/ui/button";
+import { input } from "@/components/ui/input";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -111,16 +111,16 @@ const Home = () => {
             <h2 className="text-xl font-bold">{businessPost.name}</h2>
             <img src={`${businessPost.businessImg}`} />
             <h4>business owner: {businessPost.owner.name}</h4>
-            <Button id={businessPost._id} onClick={handleViewPost}>
+            <button id={businessPost._id} onClick={handleViewPost}>
               View business profile page
-            </Button>
-            <Button id={businessPost.owner._id} onClick={handleViewOwner}>
+            </button>
+            <button id={businessPost.owner._id} onClick={handleViewOwner}>
               View user owner profile
-            </Button>
-            <Button>share business post</Button>
-            <Button id={businessPost._id} onClick={handleToggleBusiness}>
+            </button>
+            <button>share business post</button>
+            <button id={businessPost._id} onClick={handleToggleBusiness}>
               save business post
-            </Button>
+            </button>
             <p className="text-gray-600">{businessPost.description}</p>
             <h3 className="mt-4 text-lg font-semibold">Reviews:</h3>
             <div className="pl-4">
@@ -129,21 +129,21 @@ const Home = () => {
                   <div key={review._id} className="mb-2">
                     <p className="font-medium">User: {review.userId.name}</p>
                     <p>Comment: {review.comment}</p>
-                    <Button
+                    <button
                       data-review-id={review._id}
                       data-business-id={businessPost._id}
                       onClick={handleDeleteReview}
                     >
                       delete comment
-                    </Button>
-                    <Button id={review._id}>edit comment</Button>
+                    </button>
+                    <button id={review._id}>edit comment</button>
                     <form id={businessPost._id} onSubmit={handleReviewSubmit}>
-                      <Input
+                      <input
                         name="comment"
                         id="comment"
                         placeholder={`Add comment to ${businessPost.owner.name}...`}
-                      ></Input>
-                      <Button type="submit">add comment</Button>
+                      ></input>
+                      <button type="submit">add comment</button>
                     </form>
                   </div>
                 ))

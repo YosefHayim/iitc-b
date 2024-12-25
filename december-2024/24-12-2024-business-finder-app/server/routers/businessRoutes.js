@@ -9,11 +9,10 @@ const {
   addReviewToBusiness,
   deleteReviewFromBusiness,
 } = require("../controllers/businessControllers");
-const { isUserAuth } = require("../middlewares/authAccess");
 
 const router = express.Router();
 
-router.get("/", isUserAuth, getAllBusinesses);
+router.get("/", getAllBusinesses);
 router.get("/:id", getBusinessById);
 
 router.put("/:userId/:businessId", toggleBusiness);

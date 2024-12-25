@@ -11,6 +11,8 @@ import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
 import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
 import PlanPage from "./pages/PlanPage/PlanPage";
 import ViewBusinessOwner from "./pages/ViewBusinessOwner/ViewBusinessOwner";
+import Privacy from "./pages/Privacy/Privacy";
+import TermsOfService from "./pages/TermsOfService/TermsOfService";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/subscription-plans" element={<PlanPage />} />
         <Route path="/user/profile/:id" element={<ViewBusinessOwner />} />
         <Route path="/contact" element={<Contact />} />

@@ -12,6 +12,7 @@ import {
   setPlan,
   setProfilePicUser,
 } from "@/store/slices/userSlice";
+import handleGoogleSignIn from "@/api/googleOAuth";
 
 const Login = () => {
   const queryClient = useQueryClient();
@@ -28,8 +29,7 @@ const Login = () => {
       dispatch(setName(decoded.name));
       dispatch(setProfilePicUser(decoded.profileImg));
       dispatch(setPlan(decoded.plan));
-
-      // navigate("/");
+      navigate("/");
     },
     onError: (error) => {
       console.error("Login Failed:", error);
@@ -65,6 +65,7 @@ const Login = () => {
           id="password"
         ></Input>
         <Button type="submit">Login</Button>
+        <Button onClick={handleGoogleSignIn}>Sign up with google</Button>
       </form>
     </div>
   );

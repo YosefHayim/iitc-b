@@ -13,6 +13,7 @@ const Navbar = () => {
     localStorage.removeItem("persist:root");
     console.log("persist:root manually removed.");
     navigate("/login");
+    window.location.reload();
   };
 
   return (

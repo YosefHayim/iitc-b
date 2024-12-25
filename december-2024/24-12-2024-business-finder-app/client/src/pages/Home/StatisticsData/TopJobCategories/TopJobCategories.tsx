@@ -7,7 +7,7 @@ const TopJobCategories = () => {
     <div className={`${statsStyle} flex-col`}>
       <p>Top Job Categories</p>
       <BsGraphUpArrow style={{ fontSize: "3em" }} />
-      <div className="flex text-[0.8em] justify-between w-full">
+      <div className="flex text-[0.8em] justify-center w-full">
         <p>Product</p>
         <p>Content</p>
         <p>Finance</p>

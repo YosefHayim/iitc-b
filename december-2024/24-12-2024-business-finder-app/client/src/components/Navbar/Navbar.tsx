@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cookies from "js-cookie";
 import logo from "../../../public/images/logo.svg";
+import { navbarStyle } from "@/utils/stylesWarehouse";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -17,32 +18,34 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-around w-full gap-[1em]">
+    <div className="flex flex-row items-center justify-around w-full gap-[1em] absolute top-0 left-0 py-[1.5em] hover:bg-transBg">
       <div className="flex flex-row items-center justify-center">
-        <img src={logo} alt="" className="h-[2em]" />
-        <h1>HireMe</h1>
+        <Link to="/">
+          <img src={logo} alt="" className="h-[2em]" />
+          <h1>HireMe</h1>
+        </Link>
       </div>
-      <div>
+      <div className={`${navbarStyle}`}>
         <Link to="/">
           <button>Find a Job</button>
         </Link>
       </div>
-      <div>
-        <Link to="/about">
+      <div className={`${navbarStyle}`}>
+        <Link to="/companies">
           <button>Companies</button>
         </Link>
       </div>
-      <div>
-        <Link to="/contact">
-          <button>How it׳s Works</button>
+      <div className={`${navbarStyle}`}>
+        <Link to="/how-it-works">
+          <button>How its Works</button>
         </Link>
       </div>
-      <div>
+      <div className={`${navbarStyle}`}>
         <Link to="/add-business">
           <button>Blog</button>
         </Link>
       </div>
-      <div>
+      <div className={`${navbarStyle}`}>
         <Link to="/contact">
           <button>Contact</button>
         </Link>
@@ -51,7 +54,7 @@ const Navbar = () => {
       <div className="flex flex-row gap-[1em]">
         <div>
           <Link to="/login">
-            <button className="border border-black rounded-[100em] px-[0.5em] py-[0.2em] hover:text-white hover:bg-black">
+            <button className="text-white border border-white rounded-[100em] px-[0.5em] py-[0.2em] hover:text-white hover:bg-black hover:border-none">
               Sign In
             </button>
           </Link>

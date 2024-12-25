@@ -8,7 +8,7 @@ import MoreEfficient from "./MoreEfficient/MoreEfficient";
 
 const StatisticsData = () => {
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-4 mt-[3em]">
       <CustomerSuccess />
       <DesignerEngineer />
       <MoreEfficient />

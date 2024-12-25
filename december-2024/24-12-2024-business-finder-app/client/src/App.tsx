@@ -5,7 +5,6 @@ import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import BusinessFeed from "./pages/BusinessFeed/BusinessFeed";
 import Contact from "./pages/Contact/Contact";
-import About from "./pages/About/About";
 import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
 import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
 import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
@@ -14,6 +13,8 @@ import ViewBusinessOwner from "./pages/ViewBusinessOwner/ViewBusinessOwner";
 import Privacy from "./pages/Privacy/Privacy";
 import TermsOfService from "./pages/TermsOfService/TermsOfService";
 import GoogleCallback from "./pages/GoogleCallback/GoogleCallback";
+import Companies from "./pages/Companies/Companies";
+import HowItWorks from "./pages/HowItWorks/HowItWorks";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/business-feed" element={<BusinessFeed />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/register" element={<Register />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -29,7 +31,7 @@ function App() {
         <Route path="/subscription-plans" element={<PlanPage />} />
         <Route path="/user/profile/:id" element={<ViewBusinessOwner />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/companies" element={<Companies />} />
         <Route path="/login" element={<Login />} />
         <Route path="/posts" element={<BusinessFeed />} />
         <Route path="/view-post/:id" element={<ViewBusinessPost />} />

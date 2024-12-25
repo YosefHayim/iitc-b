@@ -8,11 +8,15 @@ const Home = () => {
   return (
     <div>
       <div className={styles}>
-        <div className="flex flex-col items-center justify-center">
-          <h1>Modernizing the Job</h1>
-          <h2>Search Experience</h2>
-          <p>Search and find your dream job now easier than ever, you can</p>
-          <p>simply browse and find a job if you need it</p>
+        <div className="flex flex-col items-center justify-center mb-[1em]">
+          <h1 className="text-[4em] text-white">Modernizing the Job</h1>
+          <h2 className="text-[4em] text-white">Search Experience</h2>
+          <p className="text-[1.5em] text-white">
+            Search and find your dream job now easier than ever, you can
+          </p>
+          <p className="text-[1.5em] text-white">
+            simply browse and find a job if you need it
+          </p>
         </div>
         <div className="flex flex-row w-full gap-[0.5em]">
           <div className="relative w-3/4">

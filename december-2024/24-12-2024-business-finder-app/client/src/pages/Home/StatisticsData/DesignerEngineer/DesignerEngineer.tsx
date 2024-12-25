@@ -6,8 +6,8 @@ import { PiOpenAiLogoThin } from "react-icons/pi";
 const DesignerEngineer = () => {
   return (
     <div className={`${statsStyle}`}>
-      <div className="flex items-center justify-between w-full ">
-        <div>
+      <div className="flex items-center justify-center w-full gap-[0.5em]">
+        <div className="border border-gray-200 p-[0.5em] rounded-[100em]">
           <PiOpenAiLogoThin style={{ fontSize: "2em" }} />
         </div>
         <div>

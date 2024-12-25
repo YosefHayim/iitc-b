@@ -54,6 +54,9 @@ export default {
       boxShadow: {
         statShadow: "0em 0em 3.1em 0.1em #0000002e",
       },
+      backgroundColor: {
+        transBg: "#00000008",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

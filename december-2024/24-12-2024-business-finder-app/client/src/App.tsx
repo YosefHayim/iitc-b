@@ -13,6 +13,7 @@ import PlanPage from "./pages/PlanPage/PlanPage";
 import ViewBusinessOwner from "./pages/ViewBusinessOwner/ViewBusinessOwner";
 import Privacy from "./pages/Privacy/Privacy";
 import TermsOfService from "./pages/TermsOfService/TermsOfService";
+import GoogleCallback from "./pages/GoogleCallback/GoogleCallback";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/auth/google/callback" element={<GoogleCallback />} />
         <Route path="/subscription-plans" element={<PlanPage />} />
         <Route path="/user/profile/:id" element={<ViewBusinessOwner />} />
         <Route path="/contact" element={<Contact />} />

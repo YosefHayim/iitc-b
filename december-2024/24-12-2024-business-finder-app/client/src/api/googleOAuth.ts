@@ -5,8 +5,6 @@ const handleGoogleSignIn = async () => {
     const response = await axios.get("http://localhost:3000/oAuth/google");
     const authUrl = response.data.url;
 
-    console.log(authUrl);
-
     // Redirect the user to Google's OAuth2 page
     window.location.href = authUrl;
   } catch (error) {

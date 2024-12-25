@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { User } = require("../models/userModel");
 const { generateToken } = require("../utils/auth");
 const { emailSender } = require("../utils/emailSender");
+const { oAuth2Client } = require("../utils/googleOAuth");
 
 // Get all users
 getAllUsers = async (req, res, next) => {
@@ -180,7 +181,9 @@ const contactUsEmail = async (req, res, next) => {
         response: "Request has been successfully sent",
       });
     } else {
-      throw new Error("Failed to send email.");
+      const error = new Error("Email has not been sent.");
+      error.statusCode = 404;
+      throw error;
     }
   } catch (error) {
     console.error("Error sending email:", error);
@@ -192,6 +195,55 @@ const contactUsEmail = async (req, res, next) => {
   }
 };
 
+// Controller function to generate the auth URL
+const getGoogleAuthUrl = (req, res) => {
+  try {
+    const authUrl = oAuth2Client.generateAuthUrl({
+      access_type: "offline",
+      scope: [
+        "https://www.googleapis.com/auth/userinfo.profile",
+        "https://www.googleapis.com/auth/userinfo.email",
+      ],
+    });
+
+    if (!authUrl) {
+      const error = new Error("Error with getting redirect url from google");
+      error.statusCode = 404;
+      throw error;
+    }
+
+    console.log("Generated Auth URL:", authUrl);
+    res.status(200).send({ url: authUrl });
+  } catch (error) {
+    console.error("Error generating Google Auth URL:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+const googleCallBack = async (req, res) => {
+  const { code } = req.body;
+
+  try {
+    const { tokens } = await oAuth2Client.getToken(code); // Exchange code for tokens
+    oAuth2Client.setCredentials(tokens);
+
+    // Optional: Fetch user info from Google's API
+    const userInfoResponse = await oAuth2Client.request({
+      url: "https://www.googleapis.com/oauth2/v3/userinfo",
+    });
+
+    console.log("User Info:", userInfoResponse.data);
+
+    res.status(200).json({
+      tokens,
+      user: userInfoResponse.data, // Include user data if needed
+    });
+  } catch (error) {
+    console.error("Error exchanging code for tokens:", error);
+    res.status(500).send("Failed to exchange code for tokens");
+  }
+};
+
 module.exports = {
   getAllUsers,
   getUserById,
@@ -200,4 +252,6 @@ module.exports = {
   deleteUserById,
   validateUser,
   contactUsEmail,
+  getGoogleAuthUrl,
+  googleCallBack,
 };

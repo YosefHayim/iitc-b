@@ -65,7 +65,7 @@ const Login = () => {
           id="password"
         ></Input>
         <Button type="submit">Login</Button>
-        <Button onClick={handleGoogleSignIn}>Sign up with google</Button>
+        <Button onClick={handleGoogleSignIn}>Sign in with google</Button>
       </form>
     </div>
   );

@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    id: "",
-    name: "guest",
+    id: "id",
+    name: "user",
     profileImg: "../../../public/default-profile-img.svg",
     plan: "unknown",
   },

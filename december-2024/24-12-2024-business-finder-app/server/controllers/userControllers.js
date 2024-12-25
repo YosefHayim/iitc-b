@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { User } = require("../models/userModel");
 const { generateToken } = require("../utils/auth");
+const { emailSender } = require("../utils/emailSender");
 
 // Get all users
 getAllUsers = async (req, res, next) => {
@@ -164,6 +165,32 @@ deleteUserById = async (req, res, next) => {
   }
 };
 
+const contactUsEmail = async (req, res, next) => {
+  const { email, message, subject, name } = req.body;
+  console.log(email, message, subject, name);
+
+  try {
+    // Send email using the email sender function
+    const isSend = await emailSender(email, subject, message, name);
+
+    if (isSend) {
+      return res.status(200).json({
+        status: "success",
+        response: "Request has been successfully sent",
+      });
+    } else {
+      throw new Error("Failed to send email.");
+    }
+  } catch (error) {
+    console.error("Error sending email:", error);
+    const err = error.statusCode
+      ? error
+      : new Error("Failed to send email to user.");
+    err.statusCode = error.statusCode || 500;
+    next(err);
+  }
+};
+
 module.exports = {
   getAllUsers,
   getUserById,
@@ -171,4 +198,5 @@ module.exports = {
   updateUserById,
   deleteUserById,
   validateUser,
+  contactUsEmail,
 };

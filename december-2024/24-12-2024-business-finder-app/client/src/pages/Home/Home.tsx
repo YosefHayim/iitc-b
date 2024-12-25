@@ -52,6 +52,12 @@ const Home = () => {
     }
   };
 
+  const handleViewOwner = (e: any) => {
+    const ownerId = e.target.id;
+
+    navigate(`/user/profile/${ownerId}`);
+  };
+
   const handleReviewSubmit = (e: any) => {
     e.preventDefault();
 
@@ -119,7 +125,9 @@ const Home = () => {
             <Button id={businessPost._id} onClick={handleViewPost}>
               View business profile page
             </Button>
-            <Button>View user owner profile</Button>
+            <Button id={businessPost.owner._id} onClick={handleViewOwner}>
+              View user owner profile
+            </Button>
             <Button>share business post</Button>
           </div>
         ))}

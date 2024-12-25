@@ -7,7 +7,6 @@ const addBusinessPostReview = async ({ userId, businessId, comment }) => {
     const response = await axios.post(url, { comment });
 
     if (response) {
-      console.log(response);
       return response.data;
     }
   } catch (error) {

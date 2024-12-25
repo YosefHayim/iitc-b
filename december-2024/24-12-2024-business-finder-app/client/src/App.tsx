@@ -12,6 +12,7 @@ import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
 import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
 import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
 import PlanPage from "./pages/PlanPage/PlanPage";
+import ViewBusinessOwner from "./pages/ViewBusinessOwner/ViewBusinessOwner";
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/subscription-plans" element={<PlanPage />} />
-        <Route path="/user/profile" element={<UserEditProfile />} />
-        <Route path="/user/edit-profile" element={<UserEdit />} />
+        <Route path="/user/profile/:id" element={<ViewBusinessOwner />} />
+        <Route path="/user/edit-profile" element={<UserEditProfile />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />

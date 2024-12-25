@@ -6,7 +6,6 @@ const deleteBusinessPostReview = async ({ userId, businessId, reviewId }) => {
     const response = await axios.delete(url);
 
     if (response) {
-      console.log(response);
       return response.data;
     }
   } catch (error) {

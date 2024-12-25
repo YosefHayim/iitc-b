@@ -103,55 +103,66 @@ const Home = () => {
     <div>
       <h1 className="w-full text-center">Home</h1>
       <div className="flex flex-col items-start justify-start w-full gap-[1.5em]">
-        {data?.map((businessPost: any) => (
-          <div
-            key={businessPost._id}
-            className="p-4 border border-gray-300 rounded-md"
-          >
-            <h2 className="text-xl font-bold">{businessPost.name}</h2>
-            <h4>business owner: {businessPost.owner.name}</h4>
-            <p className="text-gray-600">{businessPost.description}</p>
-            <h3 className="mt-4 text-lg font-semibold">Reviews:</h3>
-            <div className="pl-4">
-              {businessPost.reviews?.length > 0 ? (
-                businessPost.reviews.map((review: any) => (
-                  <div key={review._id} className="mb-2">
-                    <p className="font-medium">User: {review.userId.name}</p>
-                    <p>Comment: {review.comment}</p>
-                    <Button
-                      data-review-id={review._id}
-                      data-business-id={businessPost._id}
-                      onClick={handleDeleteReview}
-                    >
-                      delete comment
-                    </Button>
-                    <Button id={review._id}>edit comment</Button>
-                    <form id={businessPost._id} onSubmit={handleReviewSubmit}>
-                      <Input
-                        name="comment"
-                        id="comment"
-                        placeholder={`Add comment to ${businessPost.owner.name}...`}
-                      ></Input>
-                      <Button type="submit">add comment</Button>
-                    </form>
-                  </div>
-                ))
-              ) : (
-                <p className="text-gray-500">No reviews yet.</p>
-              )}
-            </div>
-            <Button id={businessPost._id} onClick={handleViewPost}>
-              View business profile page
-            </Button>
-            <Button id={businessPost.owner._id} onClick={handleViewOwner}>
-              View user owner profile
-            </Button>
-            <Button>share business post</Button>
-            <Button id={businessPost._id} onClick={handleToggleBusiness}>
-              save business post
-            </Button>
-          </div>
-        ))}
+        {data?.map(
+          (businessPost: any) => (
+            console.log(businessPost),
+            (
+              <div
+                key={businessPost._id}
+                className="p-4 border border-gray-300 rounded-md"
+              >
+                <h2 className="text-xl font-bold">{businessPost.name}</h2>
+                <img src={businessPost.businessImg} />
+                <h4>business owner: {businessPost.owner.name}</h4>
+                <p className="text-gray-600">{businessPost.description}</p>
+                <h3 className="mt-4 text-lg font-semibold">Reviews:</h3>
+                <div className="pl-4">
+                  {businessPost.reviews?.length > 0 ? (
+                    businessPost.reviews.map((review: any) => (
+                      <div key={review._id} className="mb-2">
+                        <p className="font-medium">
+                          User: {review.userId.name}
+                        </p>
+                        <p>Comment: {review.comment}</p>
+                        <Button
+                          data-review-id={review._id}
+                          data-business-id={businessPost._id}
+                          onClick={handleDeleteReview}
+                        >
+                          delete comment
+                        </Button>
+                        <Button id={review._id}>edit comment</Button>
+                        <form
+                          id={businessPost._id}
+                          onSubmit={handleReviewSubmit}
+                        >
+                          <Input
+                            name="comment"
+                            id="comment"
+                            placeholder={`Add comment to ${businessPost.owner.name}...`}
+                          ></Input>
+                          <Button type="submit">add comment</Button>
+                        </form>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-gray-500">No reviews yet.</p>
+                  )}
+                </div>
+                <Button id={businessPost._id} onClick={handleViewPost}>
+                  View business profile page
+                </Button>
+                <Button id={businessPost.owner._id} onClick={handleViewOwner}>
+                  View user owner profile
+                </Button>
+                <Button>share business post</Button>
+                <Button id={businessPost._id} onClick={handleToggleBusiness}>
+                  save business post
+                </Button>
+              </div>
+            )
+          )
+        )}
       </div>
     </div>
   );

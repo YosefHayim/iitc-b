@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const faker = require("faker");
 const { User } = require("./models/userModel");
-const { business } = require("./models/businessModel");
+const { business: Business } = require("./models/businessModel");
 const connectDB = require("./config/connectDb");
 
 const seedDatabase = async () => {
@@ -11,8 +11,8 @@ const seedDatabase = async () => {
 
     // Clear existing data
     await User.deleteMany();
-    await business.deleteMany();
-    console.log("Deleted users and business...");
+    await Business.deleteMany();
+    console.log("Deleted users and businesses...");
 
     // Seed users
     const users = [];
@@ -21,6 +21,7 @@ const seedDatabase = async () => {
         name: faker.name.findName(),
         email: faker.internet.email(),
         password: faker.internet.password(8),
+        profileImg: faker.image.avatar(),
         plan: faker.random.arrayElement(["Standard", "Gold", "Platinum"]),
         role: faker.random.arrayElement(["user", "businessOwner", "guest"]),
       });
@@ -32,24 +33,27 @@ const seedDatabase = async () => {
     const businesses = [];
     for (let i = 0; i < 100; i++) {
       const randomOwner = faker.random.arrayElement(createdUsers);
+      const randomReviewers = Array.from({ length: 3 }, () =>
+        faker.random.arrayElement(createdUsers)
+      );
       businesses.push({
         name: faker.company.companyName(),
+        businessImg: faker.image.business(),
         description: faker.lorem.paragraph(),
         category: faker.commerce.department(),
         owner: randomOwner._id,
-        subscribers: [],
-        reviews: [
-          {
-            userId: randomOwner._id,
-            comment: faker.lorem.sentence(),
-            createdAt: faker.date.recent(),
-          },
-        ],
+        subscribers: [], // Start with no subscribers
+        reviews: randomReviewers.map((reviewer) => ({
+          userId: reviewer._id,
+          comment: faker.lorem.sentence(),
+          createdAt: faker.date.recent(),
+        })),
       });
     }
-    const createdBusinesses = await business.insertMany(businesses);
+    const createdBusinesses = await Business.insertMany(businesses);
     console.log(`${createdBusinesses.length} businesses added`);
 
+    // Close the database connection
     await mongoose.connection.close();
     console.log("Database seeding completed and connection closed");
   } catch (error) {

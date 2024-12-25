@@ -82,7 +82,8 @@ const validateUser = async (req, res, next) => {
     if (password === isUser.password) {
       const payload = {
         id: isUser._id,
-        email: isUser.email,
+        profileImg: isUser.profileImg,
+        plan: isUser.plan,
         name: isUser.name,
       };
 

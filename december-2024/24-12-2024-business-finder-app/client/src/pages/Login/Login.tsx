@@ -3,18 +3,33 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Cookies from "js-cookie";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import {
+  setId,
+  setName,
+  setPlan,
+  setProfilePicUser,
+} from "@/store/slices/userSlice";
 
 const Login = () => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const mutation = useMutation({
     mutationFn: loginUser,
     onSuccess: (data) => {
       console.log(data);
       Cookies.set("cookie", data.cookie, { expires: 1 });
-      navigate("/");
+      const decoded = jwtDecode(data.cookie);
+      dispatch(setId(decoded.id));
+      dispatch(setName(decoded.name));
+      dispatch(setProfilePicUser(decoded.profileImg));
+      dispatch(setPlan(decoded.plan));
+
+      // navigate("/");
     },
     onError: (error) => {
       console.error("Login Failed:", error);

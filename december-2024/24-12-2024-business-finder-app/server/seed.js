@@ -38,7 +38,8 @@ const seedDatabase = async () => {
       );
       businesses.push({
         name: faker.company.companyName(),
-        businessImg: faker.image.business(),
+        businessImg:
+          "https://as2.ftcdn.net/v2/jpg/03/84/55/29/1000_F_384552930_zPoe9zgmCF7qgt8fqSedcyJ6C6Ye3dFs.jpg",
         description: faker.lorem.paragraph(),
         category: faker.commerce.department(),
         owner: randomOwner._id,

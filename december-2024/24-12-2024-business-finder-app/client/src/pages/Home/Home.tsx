@@ -112,7 +112,7 @@ const Home = () => {
                 className="p-4 border border-gray-300 rounded-md"
               >
                 <h2 className="text-xl font-bold">{businessPost.name}</h2>
-                <img src={businessPost.businessImg} />
+                <img src={`${businessPost.businessImg}`} />
                 <h4>business owner: {businessPost.owner.name}</h4>
                 <p className="text-gray-600">{businessPost.description}</p>
                 <h3 className="mt-4 text-lg font-semibold">Reviews:</h3>

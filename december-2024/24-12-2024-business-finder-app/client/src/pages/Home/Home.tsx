@@ -4,9 +4,11 @@ import getAllBusiness from "@/api/business/getAllBusiness";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["businessPosts"],
@@ -28,6 +30,11 @@ const Home = () => {
       queryClient.invalidateQueries({ queryKey: ["businessPosts"] });
     },
   });
+
+  const handleViewPost = (e: any) => {
+    const businessPostId = e.target.id;
+    navigate(`/view-post/${businessPostId}`);
+  };
 
   const handleDeleteReview = (e: any) => {
     const reviewId = e.target.dataset.reviewId;
@@ -52,10 +59,10 @@ const Home = () => {
     const comment = formData.get("comment");
 
     const businessPostId = e.target.id;
-    const userId = "676ad913ba064dcdbecf8996";
+    const userId = "676b1bca7c698fd6fc3f0d2a";
 
     if (comment) {
-      addBusinessPostReview.mutate({
+      addCommentMutation.mutate({
         userId,
         businessId: businessPostId,
         comment,
@@ -109,7 +116,9 @@ const Home = () => {
                 <p className="text-gray-500">No reviews yet.</p>
               )}
             </div>
-            <Button>View business profile page</Button>
+            <Button id={businessPost._id} onClick={handleViewPost}>
+              View business profile page
+            </Button>
             <Button>View user owner profile</Button>
             <Button>share business post</Button>
           </div>

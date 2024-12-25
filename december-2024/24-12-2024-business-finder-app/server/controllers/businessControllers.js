@@ -29,15 +29,12 @@ getAllBusinesses = async (req, res, next) => {
   }
 };
 
-// Get a specific business by ID
 getBusinessById = async (req, res, next) => {
   try {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      const error = new Error("Invalid business ID format.");
-      error.statusCode = 400; // Bad Request
-      throw error;
+      return res.status(400).json({ error: "Invalid business ID format." });
     }
 
     const findBusiness = await business
@@ -45,18 +42,12 @@ getBusinessById = async (req, res, next) => {
       .populate("owner subscribers reviews.userId");
 
     if (!findBusiness) {
-      const error = new Error("Business not found.");
-      error.statusCode = 404; // Not Found
-      throw error;
+      return res.status(404).json({ error: "Business not found." });
     }
 
-    res.status(200).json(findBusiness);
+    res.status(200).json({ success: true, response: findBusiness });
   } catch (error) {
-    const err = error.statusCode
-      ? error
-      : new Error("Failed to get business by ID.");
-    err.statusCode = error.statusCode || 500; // Internal Server Error
-    next(err);
+    next({ statusCode: 500, message: "Failed to get business by ID." });
   }
 };
 

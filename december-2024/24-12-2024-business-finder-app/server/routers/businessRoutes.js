@@ -18,7 +18,7 @@ router.get("/:userId/:businessId", toggleBusiness);
 
 router.put("/:id", updateBusinessById);
 
-router.post("/:userId/:businessId");
+router.post("/:userId/:businessId", addReviewToBusiness);
 router.post("/", createBusiness);
 router.delete("/:id", deleteBusinessById);
 router.delete("/:userId/:businessId/:reviewId", deleteReviewFromBusiness);

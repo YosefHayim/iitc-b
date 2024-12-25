@@ -12,10 +12,11 @@ const seedDatabase = async () => {
     // Clear existing data
     await User.deleteMany();
     await business.deleteMany();
+    console.log("Deleted users and business...");
 
     // Seed users
     const users = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
       users.push({
         name: faker.name.findName(),
         email: faker.internet.email(),
@@ -29,7 +30,7 @@ const seedDatabase = async () => {
 
     // Seed businesses
     const businesses = [];
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 100; i++) {
       const randomOwner = faker.random.arrayElement(createdUsers);
       businesses.push({
         name: faker.company.companyName(),

@@ -4,6 +4,16 @@
 
 /* ... */
 
+@font-face {
+  font-family: "Latinka Thin";
+  src: url("/fonts/latinka/Latinka\ Thin.ttf");
+}
+
+@font-face {
+  font-family: "Latinka Bold";
+  src: url("/fonts/latinka/Latinka\ Medium.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +23,24 @@
 body,
 html {
   min-height: 100vh;
+}
+
+body {
+  font-family: "Latinka Thin";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Latinka Bold";
 }
 
 @layer base {

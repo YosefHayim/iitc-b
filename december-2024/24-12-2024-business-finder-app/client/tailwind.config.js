@@ -51,6 +51,9 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      boxShadow: {
+        statShadow: "0em 0em 3.1em 0.1em #0000002e",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

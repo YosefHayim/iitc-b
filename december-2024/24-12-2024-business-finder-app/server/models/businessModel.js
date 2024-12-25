@@ -3,6 +3,10 @@ const { Schema, model, Types } = require("mongoose");
 const businessSchema = new Schema(
   {
     name: { type: String, required: true },
+    businessImg: {
+      type: String,
+      default: "../public/default-business-img.svg",
+    },
     description: { type: String, required: true },
     category: { type: String, required: true },
     owner: { type: Types.ObjectId, ref: "User", required: true },

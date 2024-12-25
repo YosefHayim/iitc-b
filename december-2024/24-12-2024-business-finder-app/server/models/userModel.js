@@ -4,6 +4,10 @@ const userSchema = new Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
+    profileImg: {
+      type: String,
+      default: "../public/default-profile-img.svg",
+    },
     password: { type: String, required: true },
     plan: {
       type: String,

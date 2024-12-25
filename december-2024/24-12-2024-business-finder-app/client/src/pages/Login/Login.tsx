@@ -1,6 +1,4 @@
 import loginUser from "@/api/users/loginUser";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
@@ -52,20 +50,20 @@ const Login = () => {
     <div>
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
-        <Input
+        <input
           className=""
           placeholder="Enter email"
           name="email"
           id="email"
-        ></Input>
-        <Input
+        ></input>
+        <input
           className=""
           placeholder="Enter password"
           name="password"
           id="password"
-        ></Input>
-        <Button type="submit">Login</Button>
-        <Button onClick={handleGoogleSignIn}>Sign in with google</Button>
+        ></input>
+        <button type="submit">Login</button>
+        <button onClick={handleGoogleSignIn}>Sign in with google</button>
       </form>
     </div>
   );

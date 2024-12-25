@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
+import BusinessFeed from "./pages/BusinessFeed/BusinessFeed";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
-import BusinessFeed from "./pages/BusinessFeed/BusinessFeed";
 import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
 import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
 import EditBusinessPost from "./pages/EditBusinessPost/EditBusinessPost";
@@ -21,6 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/business-feed" element={<BusinessFeed />} />
         <Route path="/register" element={<Register />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />

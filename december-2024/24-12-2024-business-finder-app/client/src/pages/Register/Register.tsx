@@ -1,6 +1,4 @@
 import registerUser from "@/api/users/registerUser";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 
@@ -37,21 +35,21 @@ const Register = () => {
     <div>
       <h1>Register</h1>
       <form onSubmit={handleRegister}>
-        <Input
+        <input
           name="email"
           className=""
           placeholder="Enter email"
           id="email"
           required
         />
-        <Input
+        <input
           name="name"
           className=""
           placeholder="Enter name"
           id="name"
           required
         />
-        <Input
+        <input
           name="password"
           className=""
           placeholder="Enter password"
@@ -59,7 +57,7 @@ const Register = () => {
           type="password"
           required
         />
-        <Button type="submit">Register</Button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );

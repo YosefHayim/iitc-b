@@ -1,20 +1,17 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
 const AddBusinessPost = () => {
-const handleAddBusiness = () => {
+  const handleAddBusiness = () => {};
 
-}
-
-  return <div>
-    <h1>AddBusinessPost</h1>
-    <form onSubmit={handleAddBusiness}>
-      <Input className="" placeholder="business name"></Input>
-      <Input className="" placeholder="description"></Input>
-      <Input className="" placeholder="owner name"></Input>
-      <Button type="submit">Add business</Button>
-    </form>
-  </div>;
+  return (
+    <div>
+      <h1>AddBusinessPost</h1>
+      <form onSubmit={handleAddBusiness}>
+        <input className="" placeholder="business name"></input>
+        <input className="" placeholder="description"></input>
+        <input className="" placeholder="owner name"></input>
+        <button type="submit">Add business</button>
+      </form>
+    </div>
+  );
 };
 
 export default AddBusinessPost;

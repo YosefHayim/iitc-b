@@ -16,6 +16,7 @@ const ViewBusinessOwner = () => {
 
   return (
     <div className="p-4 border border-gray-300 rounded-md">
+      <img src={data?.profileImg} alt="" className="rounded-[100em] h-[25vw]" />
       <h1 className="text-2xl font-bold">{data?.name}</h1>
       <p>
         <strong>Email:</strong> {data?.email}

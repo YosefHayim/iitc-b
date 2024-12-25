@@ -5,6 +5,7 @@ const getUserById = async (userId: any) => {
     const { data } = await axios.get(
       `http://localhost:3000/api/users/${userId}`
     );
+    console.log(data);
 
     if (data) {
       console.log(data);

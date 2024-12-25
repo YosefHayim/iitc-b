@@ -5,6 +5,7 @@ const getBusinessById = async (businessId: string) => {
     const { data } = await axios.get(
       `http://localhost:3000/api/business/${businessId}`
     );
+    console.log(data);
 
     if (data?.success && data?.response) {
       return data.response;

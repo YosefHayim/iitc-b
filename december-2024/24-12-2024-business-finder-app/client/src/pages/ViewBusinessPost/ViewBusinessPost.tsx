@@ -17,6 +17,7 @@ const ViewBusinessPost = () => {
   return (
     <div className="p-4 border border-gray-300 rounded-md">
       <h1 className="text-2xl font-bold">{data?.name}</h1>
+      <img src={data.businessImg} alt="" />
       <p className="text-gray-600 mb-4">{data?.description}</p>
       <p>
         <strong>Category:</strong> {data?.category}

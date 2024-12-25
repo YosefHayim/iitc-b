@@ -21,7 +21,8 @@ const seedDatabase = async () => {
         name: faker.name.findName(),
         email: faker.internet.email(),
         password: faker.internet.password(8),
-        profileImg: faker.image.avatar(),
+        profileImg:
+          "https://cdn.vectorstock.com/i/2000v/95/56/user-profile-icon-avatar-or-person-vector-45089556.avif",
         plan: faker.random.arrayElement(["Standard", "Gold", "Platinum"]),
         role: faker.random.arrayElement(["user", "businessOwner", "guest"]),
       });
@@ -43,7 +44,7 @@ const seedDatabase = async () => {
         description: faker.lorem.paragraph(),
         category: faker.commerce.department(),
         owner: randomOwner._id,
-        subscribers: [], // Start with no subscribers
+        subscribers: [],
         reviews: randomReviewers.map((reviewer) => ({
           userId: reviewer._id,
           comment: faker.lorem.sentence(),

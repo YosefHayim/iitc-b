@@ -5,8 +5,6 @@ import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
-import UserEdit from "./pages/UserEditProfile/UserEditProfile";
-import UserEditProfile from "./pages/UserEditProfile/UserEditProfile";
 import BusinessFeed from "./pages/BusinessFeed/BusinessFeed";
 import ViewBusinessPost from "./pages/ViewBusinessPost/ViewBusinessPost";
 import AddBusinessPost from "./pages/AddBusinessPost/AddBusinessPost";
@@ -23,7 +21,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/subscription-plans" element={<PlanPage />} />
         <Route path="/user/profile/:id" element={<ViewBusinessOwner />} />
-        <Route path="/user/edit-profile" element={<UserEditProfile />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />

@@ -1,6 +1,7 @@
 import addBusinessPostReview from "@/api/business/addBusinessPostReview";
 import deleteBusinessPostReview from "@/api/business/deleteBusinessPostReview";
 import getAllBusiness from "@/api/business/getAllBusiness";
+import toggleBusiness from "@/api/business/toggleBusinessPost";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -31,6 +32,16 @@ const Home = () => {
     },
   });
 
+  const toggleBusinessPostMutation = useMutation({
+    mutationFn: toggleBusiness,
+    onSuccess: (data) => {
+      console.log("Toggle Success:", data);
+    },
+    onError: (error) => {
+      console.error("Toggle Failed:", error.message);
+    },
+  });
+
   const handleViewPost = (e: any) => {
     const businessPostId = e.target.id;
     navigate(`/view-post/${businessPostId}`);
@@ -39,7 +50,7 @@ const Home = () => {
   const handleDeleteReview = (e: any) => {
     const reviewId = e.target.dataset.reviewId;
     const businessPostId = e.target.dataset.businessId;
-    const userId = "676ad913ba064dcdbecf8996";
+    const userId = "676bb51cf578bc1fd14f4620";
 
     if (reviewId && businessPostId) {
       deleteCommentMutation.mutate({
@@ -76,6 +87,13 @@ const Home = () => {
     } else {
       console.error("Comment cannot be empty");
     }
+  };
+
+  const handleToggleBusiness = (e: any) => {
+    const businessPostId = e.target.id;
+    const userId = "676b1bca7c698fd6fc3f0d2a";
+
+    toggleBusinessPostMutation.mutate({ userId, businessId: businessPostId });
   };
 
   if (isLoading) return <div>Loading...</div>;
@@ -129,6 +147,9 @@ const Home = () => {
               View user owner profile
             </Button>
             <Button>share business post</Button>
+            <Button id={businessPost._id} onClick={handleToggleBusiness}>
+              save business post
+            </Button>
           </div>
         ))}
       </div>

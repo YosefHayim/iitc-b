@@ -1,16 +1,13 @@
-import axios from "axios";
+import apiClient from "../apiClient";
 
-const loginUser = async (data: any) => {
+const loginUser = async (data) => {
   try {
-    const url = `http://localhost:3000/api/users/login`;
-
-    const response = await axios.post(url, data);
-
+    const response = await apiClient.post(`/api/users/login`, data);
     if (response) {
       return response.data;
     }
   } catch (error) {
-    console.error("Error adding business post:", error);
+    console.error("Error logging in:", error.message);
     throw error;
   }
 };

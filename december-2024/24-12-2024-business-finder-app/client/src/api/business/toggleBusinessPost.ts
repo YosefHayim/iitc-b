@@ -1,4 +1,4 @@
-import axios from "axios";
+import apiClient from "../apiClient";
 
 const toggleBusiness = async ({
   userId,
@@ -8,7 +8,7 @@ const toggleBusiness = async ({
   businessId: string;
 }) => {
   try {
-    const { data } = await axios.put(
+    const { data } = await apiClient.put(
       `http://localhost:3000/api/business/${userId}/${businessId}` // Corrected route
     );
 

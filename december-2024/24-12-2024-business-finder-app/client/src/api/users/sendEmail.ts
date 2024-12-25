@@ -1,11 +1,10 @@
-import axios from "axios";
+import apiClient from "../apiClient";
 
 const sendEmail = async (data) => {
   console.log(data);
 
   try {
-    const url = `http://localhost:3000/api/users/send-email`;
-    const response = await axios.post(url, data);
+    const response = await apiClient.post(`/api/users/send-email`, data);
     console.log(response);
     return response;
   } catch (error) {

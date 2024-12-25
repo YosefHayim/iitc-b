@@ -5,9 +5,12 @@ import toggleBusiness from "@/api/business/toggleBusinessPost";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const userId = useSelector((state) => state.user.id);
+
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -50,7 +53,6 @@ const Home = () => {
   const handleDeleteReview = (e: any) => {
     const reviewId = e.target.dataset.reviewId;
     const businessPostId = e.target.dataset.businessId;
-    const userId = "676bb51cf578bc1fd14f4620";
 
     if (reviewId && businessPostId) {
       deleteCommentMutation.mutate({
@@ -76,7 +78,6 @@ const Home = () => {
     const comment = formData.get("comment");
 
     const businessPostId = e.target.id;
-    const userId = "676b1bca7c698fd6fc3f0d2a";
 
     if (comment) {
       addCommentMutation.mutate({
@@ -91,7 +92,6 @@ const Home = () => {
 
   const handleToggleBusiness = (e: any) => {
     const businessPostId = e.target.id;
-    const userId = "676b1bca7c698fd6fc3f0d2a";
 
     toggleBusinessPostMutation.mutate({ userId, businessId: businessPostId });
   };

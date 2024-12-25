@@ -17,7 +17,12 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(logger);
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Replace with your frontend URL
+    credentials: true, // Allow credentials (cookies)
+  })
+);
 app.use(morgan("tiny"));
 app.use(cookieParser());
 

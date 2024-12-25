@@ -1,8 +1,8 @@
-import axios from "axios";
+import apiClient from "../apiClient";
 
 const getAllBusiness = async () => {
   try {
-    const { data } = await axios.get("http://localhost:3000/api/business/");
+    const { data } = await apiClient.get("http://localhost:3000/api/business/");
 
     if (data) {
       return data.response;

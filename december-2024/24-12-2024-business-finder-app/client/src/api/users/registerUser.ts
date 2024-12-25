@@ -1,16 +1,13 @@
-import axios from "axios";
+import apiClient from "../apiClient";
 
-const registerUser = async (data: any) => {
+const registerUser = async (data) => {
   try {
-    const url = `http://localhost:3000/api/users/register`;
-
-    const response = await axios.post(url, data);
-
+    const response = await apiClient.post(`/api/users/register`, data);
     if (response) {
       return response.data;
     }
   } catch (error) {
-    console.error("Error adding business post:", error);
+    console.error("Error registering user:", error.message);
     throw error;
   }
 };

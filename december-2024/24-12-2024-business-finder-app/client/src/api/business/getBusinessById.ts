@@ -1,8 +1,8 @@
-import axios from "axios";
+import apiClient from "../apiClient";
 
 const getBusinessById = async (businessId: string) => {
   try {
-    const { data } = await axios.get(
+    const { data } = await apiClient.get(
       `http://localhost:3000/api/business/${businessId}`
     );
     console.log(data);

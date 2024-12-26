@@ -19,10 +19,12 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import EditProfile from "./pages/EditProfile/EditProfile";
 import Pricing from "./pages/Pricing/Pricing";
 import Blog from "./pages/Blog/Blog";
+import ChatComponent from "./components/Chat/Chat";
 
 function App() {
   return (
     <div>
+      <ChatComponent />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

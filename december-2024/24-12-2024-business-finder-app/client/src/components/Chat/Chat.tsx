@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
+import { Button } from "../ui/button";
 
 const SOCKET_URL = "http://localhost:3000"; // Replace with your backend URL
 
@@ -39,12 +40,13 @@ const ChatComponent: React.FC = () => {
 
   return (
     <div>
-      <h1>Chat Component</h1>
       <div
         style={{
+          background: "white",
           border: "1px solid #ccc",
           padding: "10px",
           height: "200px",
+          width: "200px",
           overflowY: "auto",
         }}
       >
@@ -53,14 +55,16 @@ const ChatComponent: React.FC = () => {
           <div key={index}>{msg}</div>
         ))}
       </div>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Type a message..."
-        style={{ width: "80%", marginRight: "10px" }}
-      />
-      <button onClick={sendMessage}>Send</button>
+      <div className="flex flex-col items-start">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type a message..."
+          style={{ width: "200px", marginRight: "10px" }}
+        />
+        <Button onClick={sendMessage}>Send message</Button>
+      </div>
     </div>
   );
 };

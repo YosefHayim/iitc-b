@@ -14,7 +14,7 @@ const CustomerSuccess = () => {
             alt=""
           />
           <h2>7.89%</h2>
-          <div className="flex justify-center items-center bg-pink-600 rounded-[100em] text-white p-[0.1em]">
+          <div className="flex justify-center items-center bg-pink-600 rounded-[100em] text-white px-[0.3em] py-[0.1em]">
             <p>50%</p>
             <IoIosArrowRoundUp />
           </div>

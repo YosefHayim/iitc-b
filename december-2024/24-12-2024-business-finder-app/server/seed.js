@@ -52,7 +52,7 @@ const seedDatabase = async () => {
         })),
       });
     }
-    const createdBusinesses = await Business.insertMany(businesses);
+    const createdBusinesses = await business.insertMany(businesses);
     console.log(`${createdBusinesses.length} businesses added`);
 
     // Close the database connection

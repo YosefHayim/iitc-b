@@ -24,7 +24,7 @@ const ProductDesigner = () => {
         </div>
       </div>
       <div>
-        <div className="flex gap-[1em]">
+        <div className="flex gap-[1em] justify-center mb-[0.5em]">
           <p className="rounded-[100em] border border-gray-200 px-[0.5em]">
             Full Time
           </p>
@@ -32,7 +32,7 @@ const ProductDesigner = () => {
             Remote
           </p>
         </div>
-        <div className="flex items-start">
+        <div className="flex items-start gap-[0.5em]">
           <CiLocationOn />
           <p className="text-[0.8em]">
             New York, America Serlikat <b>$152K</b>/month

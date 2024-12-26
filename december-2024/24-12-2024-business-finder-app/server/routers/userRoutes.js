@@ -8,6 +8,7 @@ const {
   validateUser,
   contactUsEmail,
 } = require("../controllers/userControllers");
+const { isUserAuth } = require("../middlewares/authAccess");
 
 const router = express.Router();
 
@@ -18,7 +19,7 @@ router.post("/register", createUser);
 router.post("/login", validateUser);
 router.post("/send-email", contactUsEmail);
 
-router.put("/:id", updateUserById);
+router.put("/:id", isUserAuth, updateUserById);
 router.delete("/:id", deleteUserById);
 
 module.exports = router;

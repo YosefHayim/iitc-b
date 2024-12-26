@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import SignUpImg from "/images/sign-up-page-img.svg";
 import { FcGoogle } from "react-icons/fc";
 import { inputStyle } from "@/utils/stylesWarehouse";
+import loginUser from "@/api/users/loginUser";
 
 const Register = () => {
   const queryClient = useQueryClient();
@@ -24,6 +25,16 @@ const Register = () => {
     },
   });
 
+  const loginMutation = useMutation({
+    mutationFn: loginUser,
+    onSuccess: (data) => {
+      console.log(data);
+    },
+    onError: (error) => {
+      console.error("Login Failed:", error);
+    },
+  });
+
   const handleRegister = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -36,6 +47,8 @@ const Register = () => {
       name,
       password,
     });
+    loginMutation.mutate({ email, password });
+    navigate("/");
   };
 
   return (

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/Input";
 import { GoSearch } from "react-icons/go";
 import StatisticsData from "./StatisticsData/StatisticsData";
 import { btnStyle, pSize, titleSize } from "@/utils/stylesWarehouse";
+import bgImg from "/images/background-home.svg";
 
 const Home = () => {
   return (

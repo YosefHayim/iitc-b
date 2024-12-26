@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import {
+  setEmail,
   setId,
   setName,
   setPlan,
@@ -29,10 +30,13 @@ const Login = () => {
       console.log(data);
       Cookies.set("cookie", data.cookie, { expires: 1 });
       const decoded = jwtDecode(data.cookie);
+      console.log(decoded);
+
       dispatch(setId(decoded.id));
       dispatch(setName(decoded.name));
       dispatch(setProfilePicUser(decoded.profileImg));
       dispatch(setPlan(decoded.plan));
+      dispatch(setEmail(decoded.email));
       navigate("/");
     },
     onError: (error) => {

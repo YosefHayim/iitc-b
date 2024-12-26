@@ -5,7 +5,8 @@ const userSlice = createSlice({
   initialState: {
     id: "id",
     name: "user",
-    profileImg: "../../../public/default-profile-img.svg",
+    email: "example@gmail.com",
+    profileImg: "images/default-profile-img.svg",
     plan: "unknown",
   },
   reducers: {
@@ -21,9 +22,13 @@ const userSlice = createSlice({
     setPlan: (state, action) => {
       state.plan = action.payload;
     },
+    setEmail: (state, action) => {
+      state.email = action.payload;
+    },
   },
 });
 
-export const { setName, setProfilePicUser, setPlan, setId } = userSlice.actions;
+export const { setName, setProfilePicUser, setPlan, setId, setEmail } =
+  userSlice.actions;
 
 export default userSlice.reducer;

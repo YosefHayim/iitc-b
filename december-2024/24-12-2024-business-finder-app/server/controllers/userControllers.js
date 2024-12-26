@@ -86,6 +86,7 @@ const validateUser = async (req, res, next) => {
         profileImg: isUser.profileImg,
         plan: isUser.plan,
         name: isUser.name,
+        email: isUser.email,
       };
 
       const token = await generateToken(payload);

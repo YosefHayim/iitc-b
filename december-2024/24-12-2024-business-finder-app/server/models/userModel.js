@@ -6,7 +6,7 @@ const userSchema = new Schema(
     email: { type: String, required: true, unique: true },
     profileImg: {
       type: String,
-      default: "../public/default-profile-img.svg",
+      default: "images/default-profile-img.svg",
     },
     password: { type: String, required: true },
     plan: {

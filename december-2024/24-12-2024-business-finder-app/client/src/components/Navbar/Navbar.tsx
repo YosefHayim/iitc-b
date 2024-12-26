@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cookies from "js-cookie";
-import logo from "/images/logo.svg";
 import { navbarStyle } from "@/utils/stylesWarehouse";
+import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -20,10 +20,7 @@ const Navbar = () => {
   return (
     <div className="bg-transparent flex flex-row items-center justify-around w-full gap-[1em] absolute top-0 left-0 py-[0.1em] bg-transBg transition ease-in duration-[5000ms]">
       <div className="flex flex-row items-center justify-center">
-        <Link to="/">
-          <img src={logo} alt="" className="h-[2em]" />
-          <h1>HireMe</h1>
-        </Link>
+        <Logo />
       </div>
       <div className={`${navbarStyle}`}>
         <Link to="/">

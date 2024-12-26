@@ -55,14 +55,14 @@ const Login = () => {
   return (
     <div>
       <h1 className="text-[4em] text-white text-center">Sign In</h1>
-      <div className="flex bg-black rounded-[1em] p-[1em] gap-[1em]">
+      <div className="flex bg-black rounded-[1em] p-[1em]">
         <div className="w-[350px] bg-gray-800 rounded-[1em]">
           <img src={SignInImg} alt="" className="rounded-[1em]" />
         </div>
         <div className="flex flex-col items-center justify-center">
           <form
             onSubmit={handleLogin}
-            className="flex flex-col items-start justify-start gap-[0.5em]"
+            className="flex flex-col items-start justify-start  gap-[0.5em]"
           >
             <Label htmlFor="email" className="text-white">
               Email Address

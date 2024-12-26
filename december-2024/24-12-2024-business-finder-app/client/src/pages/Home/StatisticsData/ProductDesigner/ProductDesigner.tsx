@@ -8,7 +8,7 @@ import { MdVerified } from "react-icons/md";
 const ProductDesigner = () => {
   return (
     <div className={`${statsStyle}`}>
-      <div className="flex w-full justify-center">
+      <div className="flex w-full justify-between">
         <div>
           <FaSpotify style={{ fontSize: "2em", color: "pink" }} />
         </div>

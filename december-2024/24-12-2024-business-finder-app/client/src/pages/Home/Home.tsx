@@ -3,7 +3,7 @@ import styles from "./Home.module.css";
 import { Input } from "@/components/ui/Input";
 import { GoSearch } from "react-icons/go";
 import StatisticsData from "./StatisticsData/StatisticsData";
-import { pSize, titleSize } from "@/utils/stylesWarehouse";
+import { btnStyle, pSize, titleSize } from "@/utils/stylesWarehouse";
 
 const Home = () => {
   return (
@@ -27,7 +27,9 @@ const Home = () => {
             />
             <GoSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
           </div>
-          <Button className="w-1/4 p-2 bg-black text-white rounded-[100em]">
+          <Button
+            className={`${btnStyle} w-1/4 p-2 rounded-[100em] bg-black text-white hover:bg-white hover:text-black`}
+          >
             Search
           </Button>
         </div>

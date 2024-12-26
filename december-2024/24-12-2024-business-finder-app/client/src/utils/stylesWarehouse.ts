@@ -9,8 +9,10 @@ export const titleSize = "text-[4em] text-white";
 export const pSize = "text-[1.5em] text-white";
 
 export const btnStyle =
-  "bg-black text-white rounded-[100em] px-4 py-[1em] ml-4 transition ease-in duration-[5000ms] hover:bg-white hover:text-black";
-
+  "w-full flex items-center justify-center gap-2 transition ease-in duration-[5000ms] hover:bg-black hover:text-white text-black font-bText shadow-statShadow bg-white";
 export const jobTextSize = "text-[0.8em]";
 
 export const centerDesign = "flex items-center";
+
+export const inputStyle =
+  "bg-white focus:border-none focus:outline-none focus:bg-black focus:text-white";

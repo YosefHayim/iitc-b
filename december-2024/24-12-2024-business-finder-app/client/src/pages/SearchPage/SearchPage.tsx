@@ -16,7 +16,8 @@ const SearchPage = () => {
 
   return (
     <div>
-      <div className="text-center">
+      <div className="text-center mt-[3em] text-white">
+        <p>Realize your Career Dreams</p>
         <h1 className={`${titleSize}`}>Search and Discover</h1>
         <h2 className={`${titleSize}`}>your Jobs Here</h2>
       </div>

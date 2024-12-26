@@ -10,3 +10,7 @@ export const pSize = "text-[1.5em] text-white";
 
 export const btnStyle =
   "bg-black text-white rounded-[100em] px-4 py-[1em] ml-4 transition ease-in duration-[5000ms] hover:bg-white hover:text-black";
+
+export const jobTextSize = "text-[0.8em]";
+
+export const centerDesign = "flex items-center";

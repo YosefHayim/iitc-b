@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { btnStyle, titleSize } from "@/utils/stylesWarehouse";
 import { GoSearch } from "react-icons/go";
 import { FaLaptopCode, FaChartBar, FaUsers, FaCog } from "react-icons/fa";
+
+import BusinessPost from "../BusinessPost/BusinessPost";
 
 const SearchPage = () => {
   const [activeButton, setActiveButton] = useState(null);
@@ -99,6 +101,7 @@ const SearchPage = () => {
           Project Management
         </Button>
       </div>
+      <BusinessPost />
     </div>
   );
 };

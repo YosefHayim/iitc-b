@@ -1,5 +1,4 @@
 import { statsStyle } from "@/utils/stylesWarehouse";
-import React from "react";
 import { BsDot } from "react-icons/bs";
 import { PiOpenAiLogoThin } from "react-icons/pi";
 

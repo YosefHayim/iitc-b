@@ -57,6 +57,9 @@ export default {
       backgroundColor: {
         transBg: "#00000008",
       },
+      fontFamily: {
+        bText: "Latinka Medium",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

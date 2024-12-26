@@ -122,7 +122,7 @@ const BusinessFeed = () => {
             <p className="text-gray-600">{businessPost.description}</p>
             <h3 className="mt-4 text-lg font-semibold">Reviews:</h3>
             <div className="pl-4">
-              {businessPost.reviews?.length > 0 ? (
+              {businessPost.reviews?.length > 0 ?
                 businessPost.reviews.map((review: any) => (
                   <div key={review._id} className="mb-2">
                     <p className="font-medium">User: {review.userId.name}</p>
@@ -145,9 +145,7 @@ const BusinessFeed = () => {
                     </form>
                   </div>
                 ))
-              ) : (
-                <p className="text-gray-500">No reviews yet.</p>
-              )}
+              : <p className="text-gray-500">No reviews yet.</p>}
             </div>
           </div>
         ))}

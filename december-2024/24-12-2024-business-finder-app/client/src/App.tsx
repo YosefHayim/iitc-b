@@ -15,6 +15,7 @@ import TermsOfService from "./pages/TermsOfService/TermsOfService";
 import GoogleCallback from "./pages/GoogleCallback/GoogleCallback";
 import Companies from "./pages/Companies/Companies";
 import HowItWorks from "./pages/HowItWorks/HowItWorks";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/business-feed" element={<BusinessFeed />} />
+        <Route path="/search-job" element={<SearchPage />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/register" element={<Register />} />
         <Route path="/privacy" element={<Privacy />} />

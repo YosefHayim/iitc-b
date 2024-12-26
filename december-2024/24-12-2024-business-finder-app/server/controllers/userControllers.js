@@ -169,7 +169,6 @@ deleteUserById = async (req, res, next) => {
 
 const contactUsEmail = async (req, res, next) => {
   const { email, message, subject, name } = req.body;
-  console.log(email, message, subject, name);
 
   try {
     // Send email using the email sender function

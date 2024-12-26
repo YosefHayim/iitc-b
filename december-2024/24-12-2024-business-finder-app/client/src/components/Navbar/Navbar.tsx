@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cookies from "js-cookie";
-import logo from "../../../public/images/logo.svg";
+import logo from "/images/logo.svg";
 import { navbarStyle } from "@/utils/stylesWarehouse";
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-around w-full gap-[1em] absolute top-0 left-0 py-[1.5em] hover:bg-transBg">
+    <div className="bg-transparent flex flex-row items-center justify-around w-full gap-[1em] absolute top-0 left-0 py-[1.5em] hover:bg-transBg transition ease-in duration-[5000ms]">
       <div className="flex flex-row items-center justify-center">
         <Link to="/">
           <img src={logo} alt="" className="h-[2em]" />
@@ -54,14 +54,14 @@ const Navbar = () => {
       <div className="flex flex-row gap-[1em]">
         <div>
           <Link to="/login">
-            <button className="text-white border border-white rounded-[100em] px-[0.5em] py-[0.2em] hover:text-white hover:bg-black hover:border-none">
+            <button className="text-white border border-white rounded-[100em] px-[0.5em] py-[0.2em] hover:text-white hover:bg-black hover:border-none transition ease-in duration-[5000ms]">
               Sign In
             </button>
           </Link>
         </div>
         <div>
           <Link to="/register">
-            <button className="border border-black rounded-[100em] px-[0.5em] py-[0.2em] bg-black text-white hover:text-white hover:bg-slate-700">
+            <button className="text-white border border-white rounded-[100em] px-[0.5em] py-[0.2em] hover:text-white hover:bg-black hover:border-none transition ease-in duration-[5000ms]">
               Sign Up
             </button>
           </Link>

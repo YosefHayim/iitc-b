@@ -12,20 +12,12 @@ const transporter = nodemailer.createTransport({
 
 const emailSender = async (
   guestEmail,
-  name,
   subject,
+  name,
   message,
   additionalRecipients = []
 ) => {
   try {
-    console.log("Starting email send process...");
-
-    // Log email sender and recipients
-    console.log("Email Sender:", process.env.EMAIL_SENDER);
-    console.log("Email Password Loaded:", !!process.env.EMAIL_PW); // true if password exists
-    console.log("Primary Recipient:", guestEmail);
-    console.log("Additional Recipients:", additionalRecipients);
-
     // Combine guestEmail with additional recipients
     const recipients = [
       guestEmail,
@@ -33,14 +25,12 @@ const emailSender = async (
       ...additionalRecipients,
     ].join(",");
 
-    console.log("Final Recipient List:", recipients);
-
     const info = await transporter.sendMail({
       from: process.env.EMAIL_SENDER,
       to: recipients, // Send to all recipients
       subject,
-      text: `hi ${name} Your message has been received:\n\n${message}`, // Plain text version
-      html: `<p>Your message has been received:</p><p>${message}</p>`, // HTML version
+      text: `Hello ${name}, Your message has been received:\n\n${message}`, // Plain text version
+      html: `<h1>Your message has been received:</h1></br><p>${message}</p>`, // HTML version
     });
 
     console.log("Email sent successfully:", info.response);

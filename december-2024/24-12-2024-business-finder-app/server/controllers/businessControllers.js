@@ -23,7 +23,7 @@ getAllBusinesses = async (req, res, next) => {
   } catch (error) {
     const err = error.statusCode
       ? error
-      : new Error("Failed to fetch businesses.");
+      : new Erro("Failed to fetch businesses.");
     err.statusCode = error.statusCode || 500; // Internal Server Error
     next(err);
   }

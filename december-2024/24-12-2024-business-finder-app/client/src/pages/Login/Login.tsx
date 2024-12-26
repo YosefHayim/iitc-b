@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { FcGoogle } from "react-icons/fc";
 import SignInImg from "/images/sign-in-page-img.svg";
-import { inputStyle } from "@/utils/stylesWarehouse";
+import { btnStyle, inputStyle } from "@/utils/stylesWarehouse";
 
 const Login = () => {
   const queryClient = useQueryClient();
@@ -86,16 +86,10 @@ const Login = () => {
               name="password"
               id="password"
             ></Input>
-            <Button
-              type="submit"
-              className="w-full flex items-center justify-center gap-2 transition ease-in duration-[5000ms] hover:bg-black hover:text-white text-black font-bText shadow-statShadow bg-white"
-            >
+            <Button type="submit" className={`${btnStyle}`}>
               Login
             </Button>
-            <Button
-              onClick={handleGoogleSignIn}
-              className="w-full flex items-center justify-center gap-2 transition ease-in duration-[5000ms] hover:bg-black hover:text-white text-black font-bText shadow-statShadow bg-white"
-            >
+            <Button onClick={handleGoogleSignIn} className={`${btnStyle}`}>
               <FcGoogle className="text-lg" />
               Sign in with Google
             </Button>

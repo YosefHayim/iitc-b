@@ -5,7 +5,7 @@ import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
-import { inputStyle } from "@/utils/stylesWarehouse";
+import { btnStyle, inputStyle } from "@/utils/stylesWarehouse";
 import contactUsImg from "/images/contact-us-page-img.svg";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@radix-ui/react-label";
@@ -47,7 +47,7 @@ const Contact = () => {
           <img src={contactUsImg} alt="" className="rounded-[1em]" />
           hi
         </div>
-        <div>
+        <div className="w-[350px]">
           <form
             onSubmit={handleContact}
             className="flex flex-col items-start justify-center w-full gap-[1em] w-[200px]"
@@ -88,10 +88,7 @@ const Contact = () => {
               placeholder="Enter message"
               required
             />
-            <Button
-              type="submit"
-              className="w-full transition ease-in duration-[5000ms] hover:bg-white hover:text-black font-bText shadow-statShadow"
-            >
+            <Button type="submit" className={`${btnStyle}`}>
               Send
             </Button>
           </form>

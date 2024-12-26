@@ -29,7 +29,7 @@ const Navbar = () => {
   }, [username, profilePic]);
 
   return (
-    <div className="flex flex-row items-center justify-around w-full gap-[1em] absolute top-0 left-0 py-[0.1em] bg-transBg transition ease-in duration-[5000ms]">
+    <div className="flex flex-row items-center justify-around w-full gap-[1em] absolute top-0 left-0 py-[0.1em] bg-transBg">
       <div className="flex flex-row items-center justify-center">
         <Logo />
       </div>

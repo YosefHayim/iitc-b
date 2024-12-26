@@ -120,11 +120,11 @@ const Register = () => {
                   type="submit"
                   className="w-full flex items-center justify-center gap-2 transition ease-in duration-[5000ms] hover:bg-black hover:text-white text-black font-bText shadow-statShadow bg-white"
                 >
-                  Register
+                  Sign Up
                 </Button>
                 <Button className="w-full flex items-center justify-center gap-2 transition ease-in duration-[5000ms] hover:bg-black hover:text-white text-black font-bText shadow-statShadow bg-white">
                   <FcGoogle className="text-lg" />
-                  Sign up with Google
+                  Sign Up With Google
                 </Button>
               </form>
             </div>

@@ -23,9 +23,7 @@ const io = new Server(server, {
     credentials: true,
   },
 });
-
 socketHandler(io);
-
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());

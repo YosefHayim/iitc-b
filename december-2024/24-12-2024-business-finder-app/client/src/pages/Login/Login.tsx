@@ -26,7 +26,7 @@ const Login = () => {
 
   const mutation = useMutation({
     mutationFn: loginUser,
-    onSuccess: (data) => {
+    onSuccess: (data:any) => {
       console.log(data);
       Cookies.set("cookie", data.cookie, { expires: 1 });
       const decoded = jwtDecode(data.cookie);
@@ -39,7 +39,7 @@ const Login = () => {
       dispatch(setEmail(decoded.email));
       navigate("/");
     },
-    onError: (error) => {
+    onError: (error: any) => {
       console.error("Login Failed:", error);
     },
   });

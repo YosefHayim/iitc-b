@@ -26,8 +26,7 @@ const Login = () => {
 
   const mutation = useMutation({
     mutationFn: loginUser,
-    onSuccess: (data:any) => {
-      console.log(data);
+    onSuccess: (data: any) => {
       Cookies.set("cookie", data.cookie, { expires: 1 });
       const decoded = jwtDecode(data.cookie);
       console.log(decoded);

@@ -1,0 +1,38 @@
+.popular-movies-of-week-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.template-title {
+  text-align: center;
+  position: relative;
+}
+
+.buttons-pagination-container-search-bar {
+  display: flex;
+}
+
+.template-title-container {
+  width: 90%;
+}
+
+@media screen and (min-width: 1024px) {
+  .popular-movies-of-week-container {
+    flex-direction: row;
+    margin-top: 1em;
+  }
+
+  .navbar-desktop {
+    display: flex;
+    background: black;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+  }
+}

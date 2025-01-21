@@ -1,0 +1,19 @@
+.ButtonContainer {
+  text-align: center;
+}
+
+.PokemonProfileBtn {
+  cursor: pointer;
+  background: #000000;
+  border: none;
+  border-radius: 100em;
+  padding: 1em;
+  font-weight: 100;
+  color: white;
+  width: 100%;
+}
+
+.PokemonProfileBtn:hover {
+  background: #00000075;
+  color: white;
+}

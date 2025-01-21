@@ -1,0 +1,30 @@
+.TermsAndConditionsContainer {
+  margin-top: 3em;
+  color: white;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+  padding: 1.5em;
+  gap: 1em;
+}
+
+.PageTitle {
+  font-weight: 100;
+}
+
+.TagLink {
+  text-decoration: none;
+  color: black;
+  background: #ffdb00;
+  border-radius: 0.2em;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.TagLink:hover {
+  background: white;
+}

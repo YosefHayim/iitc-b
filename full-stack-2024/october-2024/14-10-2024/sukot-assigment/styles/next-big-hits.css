@@ -1,0 +1,13 @@
+.buttons-pagination-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5em;
+  gap: 8.5em;
+}
+
+.upcoming-movies-container {
+  margin-bottom: 10em;
+}

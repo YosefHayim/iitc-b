@@ -1,0 +1,33 @@
+.popular-of-day-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.template-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.buttons-pagination-container-search-bar {
+  display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+  .popular-of-day-container {
+    flex-direction: row;
+  }
+
+  body > footer {
+    position: relative;
+    bottom: 0;
+  }
+}

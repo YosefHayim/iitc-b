@@ -1,0 +1,201 @@
+.fav-movies-container {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  margin-top: 4em;
+  flex-wrap: wrap;
+  margin-bottom: 4em;
+}
+
+.fav-play-button-btn,
+.fav-white-share-trailer-btn,
+.fav-white-data-btn,
+.fav-remove-btn-icon {
+  background: none;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+}
+.fav-play-button-btn {
+  transform: translate(0, -22.5em);
+}
+.fav-remove-btn-img {
+  transform: translate(5em, -9em);
+}
+
+.fav-white-data-btn {
+  transform: translate(0em, -9em);
+}
+
+.title-img-container-fav {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 1.5em;
+}
+
+.tim-favorites {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  animation: flowUpDown 3s ease-in-out infinite;
+  border-radius: 100em;
+  width: 15em;
+}
+
+.go-grab-movie {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--lighter-red-color);
+  box-shadow: 0em 0em 2.5em -1em;
+  font-size: 2em;
+  border-radius: 5em;
+  margin-top: 1em;
+  padding: 0em;
+  text-align: center;
+  border: none;
+  font-family: Bebas Neue;
+  height: 2.5em;
+  width: 9em;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.go-grab-movie:hover {
+  opacity: 1;
+}
+
+.tim-favorites:hover {
+  box-shadow: 0em 0em 2em 0.2em var(--rating--color);
+}
+
+@keyframes flowUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fav-white-share-trailer-btn {
+  text-decoration: none;
+  background: none;
+  font-size: 0.9em;
+}
+
+.fav-white-share-img {
+  background: black;
+  border-radius: 100em;
+  padding: 0.5em;
+  height: 3em;
+  transform: translate(-7em, -12em);
+}
+
+.favorite-movies-container-title {
+  width: auto;
+}
+
+.fav-remove-btn-img:active,
+.fav-white-data-img:active,
+.fav-white-share-img:active,
+.fav-play-button-img:active {
+  background-color: red;
+}
+
+.fav-play-button-img:hover,
+.fav-white-share-img:hover,
+.fav-remove-btn-img:hover,
+.fav-white-share-img:hover,
+.fav-white-data-img:hover {
+  background-color: red;
+}
+
+.fav-play-button-img,
+.fav-remove-btn-img,
+.fav-white-data-img {
+  height: 2em;
+  border: 1px solid #00000063;
+  background: black;
+  border-radius: 2em;
+  padding: 0.5em;
+  position: relative;
+}
+
+.remove-all-fav {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--lighter-red-color);
+  box-shadow: 0em 0em 2.5em -1em;
+  font-size: 2em;
+  border-radius: 5em;
+  margin-top: 1em;
+  padding: 0em;
+  text-align: center;
+  border: none;
+  font-family: Bebas Neue;
+  height: 2.5em;
+  width: 9em;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.remove-all-fav:hover {
+  opacity: 1;
+}
+
+.fav-play-button-img {
+  height: 3em;
+}
+
+@media screen and (min-width: 1024px) {
+  .fav-white-share-img {
+    transform: translate(-5em, -6.95em);
+  }
+
+  .fav-white-data-btn {
+    transform: translate(0em, -7.5em);
+  }
+
+  .fav-remove-btn-img {
+    transform: translate(5em, -7.5em);
+  }
+
+  .remove-all-fav,
+  .go-grab-movie {
+    margin-right: 1em;
+  }
+
+  .tim-favorites {
+    border-radius: 100em;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-bottom: 4em;
+  }
+
+  .tim-favorites {
+    width: 15em;
+  }
+
+  .fav-movies-container {
+    flex-direction: row;
+  }
+
+  body > footer {
+    position: relative;
+  }
+}

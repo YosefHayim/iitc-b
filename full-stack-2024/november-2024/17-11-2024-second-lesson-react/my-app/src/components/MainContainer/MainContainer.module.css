@@ -1,0 +1,15 @@
+.FatherContainer {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1em;
+  margin: 1em;
+  border-radius: 1.2em;
+  background: linear-gradient(
+    to bottom,
+    hsl(213, 19%, 18%),
+    hsl(213deg 19% 28% / 11%)
+  );
+}

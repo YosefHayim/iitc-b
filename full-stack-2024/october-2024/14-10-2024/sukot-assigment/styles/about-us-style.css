@@ -1,0 +1,249 @@
+.about-us-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-about-us {
+  animation: flowUpDown 5s ease-in-out infinite;
+  width: 20em;
+}
+
+.about-us-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 1.5em;
+}
+
+br {
+  display: none;
+}
+
+.special-title {
+  color: var(--rating--color);
+}
+
+.sub-header {
+  text-align: center;
+}
+
+.about-us-title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--lighter-red-color);
+  box-shadow: 0em 0em 2.5em -1em;
+  font-size: 2em;
+  border-radius: 5em;
+  margin-top: 1em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+#grand-finalle {
+  background: black;
+  color: white;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+#grand-finalle:hover,
+#grand-finalle:active {
+  background: white;
+  color: black;
+}
+
+.about-us-img {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 15em;
+  border-radius: 0.7em;
+}
+
+.p-two-container,
+.p-three-container,
+.p-four-container,
+.p-five-container,
+.p-six-container,
+.p-seven-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.about-us-section-container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 1em;
+  line-height: 2.5em;
+}
+
+@keyframes flowUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.contact-info {
+  background: black;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.about-us-container-title {
+  padding: 1em;
+  font-size: 2.5em;
+}
+
+h2 {
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+
+blockquote {
+  margin-top: 0.3em;
+  font-size: 1.4em;
+}
+
+.tim-red-carpet-img {
+  margin-top: 1em;
+  width: 15em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0em 0em 2em 0.2em snow;
+}
+
+.t-king-og-legends {
+  color: var(--lighter-red-color);
+  font-size: 1.3em;
+}
+
+@media screen and (min-width: 1024px) {
+  br {
+    display: block;
+  }
+
+  .p-two-container:hover h2,
+  .p-two-container:hover p,
+  .p-two-container:hover img,
+  .p-three-container:hover h2,
+  .p-three-container:hover p,
+  .p-three-container:hover img,
+  .p-four-container:hover h2,
+  .p-four-container:hover p,
+  .p-four-container:hover img,
+  .p-five-container:hover h2,
+  .p-five-container:hover p,
+  .p-five-container:hover img,
+  .p-six-container:hover h2,
+  .p-six-container:hover p,
+  .p-six-container:hover img,
+  .p-seven-container:hover h2,
+  .p-seven-container:hover p,
+  .p-seven-container:hover img,
+  .p-seven-container:hover #grand-finalle {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+
+  img {
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  h2 {
+    opacity: 0;
+  }
+
+  h2:hover {
+    color: var(--lighter-red-color);
+  }
+
+  #grand-finalle {
+    opacity: 0;
+  }
+
+  #about-us > div.p-five-container > div > h2:hover {
+    color: var(--rating--color);
+  }
+
+  p {
+    opacity: 0;
+  }
+
+  .p-two,
+  .p-three,
+  .p-four,
+  .p-five,
+  .p-six,
+  .p-seven {
+    padding-right: 1em;
+    padding-left: 1em;
+    line-height: 1.5em;
+  }
+
+  .p-two-container {
+    flex-direction: row;
+  }
+
+  .p-three-container {
+    flex-direction: row-reverse;
+  }
+
+  .p-four-container {
+    flex-direction: row;
+  }
+
+  .p-five-container {
+    flex-direction: row-reverse;
+  }
+
+  .p-six-container {
+    flex-direction: row;
+  }
+
+  .p-seven-container {
+    flex-direction: column;
+  }
+
+  .about-us-section-container {
+    flex-wrap: unset;
+  }
+
+  .hero-image-about-us {
+    height: auto;
+    width: auto;
+  }
+
+  .about-us-section {
+    margin-top: 1em;
+    font-size: 1.5em;
+  }
+
+  body > footer {
+    position: unset;
+    bottom: 0;
+  }
+}

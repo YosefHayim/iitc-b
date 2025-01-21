@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omer T 18.09.2024</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Today To-Do-List</h1>
+
+    <label for="task-filter">Filter:</label>
+    <select id="task-filter">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="uncompleted">Uncompleted</option>
+    </select>
+
+    <form>
+      <ul></ul>
+      <br />
+      <div>
+        <label for="subject-name">Subject Name:</label>
+        <input
+          type="text"
+          id="subject-name"
+          placeholder="Type the subject here"
+        />
+        <label for="task-name">Task Name:</label>
+        <input type="text" id="task-name" placeholder="Type the task here" />
+      </div>
+      <br />
+      <button class="add">Add The Subject and Task</button>
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>

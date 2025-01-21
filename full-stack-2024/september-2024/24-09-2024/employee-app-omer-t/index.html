@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omer T 24.09.2024</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>Employee Management Application</h1>
+    </div>
+    <div class="filling-form">
+      <form class="formData">
+        <h2>Add another employee to the list:</h2>
+        <label for="fname">Type below employee first name:</label>
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Type your first name here"
+        />
+        <label for="lname">Type below employee last name:</label>
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder=" Type your last name here"
+        />
+        <label for="age">Type below employee age:</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Type your age here (Max: 120)."
+          min="0"
+          max="120"
+        />
+        <label for="start-date">Type below employee start date:</label>
+        <input
+          type="date"
+          id="start-date"
+          name="startDate"
+          placeholder="Type the date you joined here."
+        />
+        <label for="department-employees">Choose employee department:</label>
+        <select name="department" id="department-employees">
+          <option value="marketing">Marketing</option>
+          <option value="sales">Sales</option>
+          <option value="it">IT</option>
+          <option value="finance">Finance</option>
+          <option value="hr">HR</option>
+          <option value="operations">Operations</option>
+          <option value="logistics">Logistics</option>
+        </select>
+        <br />
+        <label for="salary">Type below employee salary:</label>
+        <input
+          type="text"
+          id="salary"
+          name="salary"
+          placeholder="Type the salary here."
+        />
+        <input class="submit" type="submit" value="Submit" />
+      </form>
+    </div>
+    <div class="filter-data-department">
+      <h2>Filter the required department:</h2>
+      <select
+        class="filter-department"
+        name="filter-department"
+        id="filter-department"
+      >
+        <option value="all">All Departments</option>
+        <option value="marketing">Marketing</option>
+        <option value="sales">Sales</option>
+        <option value="it">IT</option>
+        <option value="finance">Finance</option>
+        <option value="hr">HR</option>
+        <option value="operations">Operations</option>
+        <option value="logistics">Logistics</option>
+      </select>
+    </div>
+    <div class="employee-data">
+      <ol class="employee-list"></ol>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

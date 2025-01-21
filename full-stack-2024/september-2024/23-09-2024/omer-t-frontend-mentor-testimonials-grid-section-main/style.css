@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgba(145, 140, 140, 0.356);
+  height: 100%;
+  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 4rem;
+  color: hsl(0, 0%, 100%);
+  padding: 5rem;
+  margin: 0 auto;
+}
+
+.qutation-mark {
+  margin-left: 11.1rem;
+  margin-top: -3.9rem;
+}
+.Daniel {
+  background-color: #7541c8;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.Jonathan {
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.Jeanette {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  color: black;
+  width: 100%;
+  max-width: 100%;
+}
+
+.Patrick {
+  background-color: hsl(219, 29%, 14%);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.Kira {
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.verified-graduate {
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 0.8rem;
+}
+
+.profile-daniel,
+.profile-jonathan,
+.profile-Jeanette,
+.profile-Patrick,
+.profile-Kira {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.tag-name {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.2rem;
+  margin-left: 1.3rem;
+  font-size: 0.7rem;
+}
+
+body > div.Daniel > div.profile-daniel > div.image-daniel > img {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px #854be4;
+}
+
+.image-daniel {
+  width: 30px;
+  height: 30px;
+  margin-left: -7px;
+}
+
+body > div.Jonathan > div.profile-jonathan > div.image-jonathan > img {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px rgba(204, 196, 196, 0.719);
+}
+
+.image-jonathan {
+  width: 30px;
+  height: 30px;
+  margin-left: -7px;
+}
+
+body > div.Jeanette > div.profile-Jeanette > div.image-Jeanette > img {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px white;
+}
+
+.image-Jeanette {
+  width: 30px;
+  height: 30px;
+  margin-left: -7px;
+}
+
+body > div.Patrick > div.profile-Patrick > div.image-Patrick > img {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px hsl(263, 55%, 52%);
+}
+
+.image-Patrick {
+  width: 30px;
+  height: 30px;
+  margin-left: -7px;
+}
+
+body > div.Kira > div.profile-Kira > div.image-Kira > img {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px white;
+}
+
+.image-Kira {
+  width: 30px;
+  height: 30px;
+  margin-left: -7px;
+}
+
+p {
+  font-family: "Barlow Semi Condensed", system-ui;
+  font-weight: 400;
+  color: hsl(0, 0%, 70%);
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-family: "Barlow Semi Condensed", system-ui;
+  font-weight: 500;
+  position: relative;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.verified-gradute {
+  color: rgba(163, 158, 158, 0.5);
+}
+
+.name-profile {
+  color: white;
+}
+
+body > div.Jeanette > div.profile-Jeanette > div.tag-name > p.name-profile,
+body > div.Kira > div.profile-Kira > div.tag-name > p.name-profile {
+  color: hsl(217, 19%, 35%);
+}
+
+body > div.Jeanette > div:nth-child(2) > div:nth-child(1) > h3,
+body > div.Kira > div:nth-child(2) > h3 {
+  color: hsl(217, 19%, 35%);
+}
+
+.Daniel {
+  height: 100%;
+  padding: 20px;
+  display: grid;
+}
+
+.Jonathan {
+  height: 100%;
+  padding: 20px;
+  display: grid;
+}
+
+.Jeanette {
+  height: 100%;
+  padding: 20px;
+  display: grid;
+}
+
+.Patrick {
+  height: 100%;
+  padding: 20px;
+  display: grid;
+}
+
+.Kira {
+  height: 100%;
+  padding: 20px;
+  display: grid;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 70%;
+    max-width: 100%;
+    align-items: center;
+    gap: 3.4rem;
+  }
+  .Kira,
+  .Patrick,
+  .Jeanette,
+  .Jonathan,
+  .Daniel {
+    font-size: 0.8rem;
+  }
+
+  .Daniel {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .Jonathan {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+  .Jeanette {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  .Patrick {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+  .Kira {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: -1;
+  }
+}

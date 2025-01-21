@@ -1,0 +1,56 @@
+.ThankYouPageContainer {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1em;
+  margin: 1em;
+  border-radius: 1.2em;
+
+}
+
+.ImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ThankYouImg {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.Title {
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5em;
+  font-size: 1.8em;
+}
+
+.ThanksParagraph {
+  text-align: center;
+  color: var(--neutral-light-grey);
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.VoteResult {
+  text-align: center;
+  width: 40vw;
+  color: var(--primary-orange);
+  padding: 0.5em;
+  background: var(--neutral-dark-blue);
+  border-radius: 100em;
+  opacity: 0.7;
+}
+
+.VoteResultContainer {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}

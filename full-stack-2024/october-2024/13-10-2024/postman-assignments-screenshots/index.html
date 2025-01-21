@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Playground Exercise</title>
+</head>
+<body>
+  <main>
+    <h1>API Playground Exercise</h1>
+    <div class="error-message" style="display: none; color: red;">Error: Could not fetch the post.</div>
+
+    <form class="display-posts">
+      <div>
+        <label for="exercise-11" class="exercise-11-label">Exercise 11 - create a title</label>
+        <input type="text" class="exercise-11-input-title">
+      </div>
+
+      <div>
+        <label for="exercise-11" class="exercise-11-label">Exercise 11 - create a content</label>
+        <input type="text" class="exercise-11-input-content">
+      </div>
+      <button class="submit">Submit Post</button>
+    </form>
+
+    <form class="update-post">
+      <div>
+        <div>
+          <label for="exercise-12" class="exercise-12-update-post-title">exercise 12 update title</label>
+          <input type="text" class="exercise-12-input-title">
+        </div>
+        <label for="exercise-12" class="exercise-12-update-post-id">exercise 12 provide id to update</label>
+        <input type="text" class="exercise-12-input-id-update">
+      </div>
+      <button class="submit-update-post">update Post</button>
+    </form>
+
+    <form class="delete-post">
+        <div>
+          <label for="exercise-12" class="exercise-13-delete-post-by-id">exercise 13 delete post by id</label>
+          <input type="text" class="exercise-13-input-id">
+        </div>
+      <button class="submit-delete-post">delete Post</button>
+    </form>
+
+    <form class="filter-post">
+      <div>
+        <label for="exercise-12" class="exercise-19-filter-post-by-title">exercise 19 delete post by title</label>
+        <input type="text" class="exercise-19-filter-post-by-title-input">
+      </div>
+    <button class="submit-delete-post">filter Posts</button>
+  </form>
+  <button class="sort-alphabetic">
+    Sort alphabetic
+  </button>
+  </main>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>

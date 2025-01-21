@@ -1,0 +1,596 @@
+
+  Activity received at: 10/31/2024, 6:23:41 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:25:04 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:37:40 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"nir forster","text":"dsadasdasdasdasdasdas","providerName":"312321321","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:38:04 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"nir forster","text":"dsadasdasdasdasdasdas","providerName":"312321321","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:42:09 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"nir forster","text":"dsadasdasdasdasdasdas","providerName":"joseph","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:42:40 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"nir forster","text":"dsadasdasdasdasdasdas","providerName":"joseph","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:47:04 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"Juki","text":"Why did the scarecrow win an award? Because he was outstanding in his field!","providerName":"JokeMaster3000","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:47:06 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"Juki","text":"Why did the scarecrow win an award? Because he was outstanding in his field!","providerName":"JokeMaster3000","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:52:24 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"nir forster","text":"dsadasdasdasdasdasdas","providerName":"joseph","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:53:25 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"Juki","text":"Why did the scarecrow win an award? Because he was outstanding in his field!","providerName":"JokeMaster3000","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:54:28 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"Juki","text":"Why did the scarecrow win an award? Because he was outstanding in his field!","providerName":"JokeMaster3000","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:54:43 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"productTitle":"Dummy Product123","productDescription":"This is a placeholder description for the dummy product.","productPrice":19.99,"availableQuantity":"50","productWarehouse":"Warehouse A","productSupplierName":"Supplier X"}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:55:34 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"fName":"John12312312","lName":"Doe","age":30,"gender":"Male","birthDate":"1993-01-15","location":"New York, USA","email":"john.doe@example.com","agreeToTerms":true}
+  Status Code: 200 
+
+  Activity received at: 10/31/2024, 6:55:44 PM
+  Path parameters received: undefined
+  Query parameters received: {}
+  Body parameters received: {"name":"Juki","text":"Why did the scarecrow win an award? Because he was outstanding in his field!","providerName":"JokeMaster3000","favoritePizzaToppings":"Mushrooms, Pepperoni, Extra Cheese"}
+  Status Code: 200 
+
+  Activity received at: 11/3/2024, 11:42:11 AM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 11:42:48 AM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Funny Guy","text":"Why did the scarecrow win an award? Because he was outstanding in his field!","providerName":"JokeHub","favoritePizzaToppings":"Pepperoni, Mushrooms, Olives"} 
+
+  
+  Activity received at: 11/3/2024, 11:44:17 AM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Funny Guy","text":"Why did the scarecrow win an award? Because he was outstanding in his field!","providerName":"JokeHub","favoritePizzaToppings":"Pepperoni, Mushrooms, Olives"} 
+
+  
+  Activity received at: 11/3/2024, 11:45:15 AM
+  Method : PATCH
+  Path received at: /api/jokes/672745f174276e0c7e777b08
+  Status Code: 200
+  Body: {"name":"Guy"} 
+
+  
+  Activity received at: 11/3/2024, 11:46:02 AM
+  Method : PUT
+  Path received at: /api/jokes/672745f174276e0c7e777b08
+  Status Code: 200
+  Body: {"name":"Guy"} 
+
+  
+  Activity received at: 11/3/2024, 11:46:43 AM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Jester Joe","text":"I told my wife she was drawing her eyebrows too high. She looked surprised.","providerName":"JokePlanet","favoritePizzaToppings":"Pineapple, Bacon"} 
+
+  
+  Activity received at: 11/3/2024, 11:46:48 AM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Pun Master","text":"I’m reading a book on anti-gravity. It’s impossible to put down!","providerName":"LaughLab","favoritePizzaToppings":"Sausage, Green Peppers"} 
+
+  
+  Activity received at: 11/3/2024, 11:46:52 AM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Giggles Galore","text":"Parallel lines have so much in common. It’s a shame they’ll never meet.","providerName":"ComedyCentral"} 
+
+  
+  Activity received at: 11/3/2024, 11:47:26 AM
+  Method : DELETE
+  Path received at: /api/jokes/672745f174276e0c7e777b08
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 11:47:31 AM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 11:51:36 AM
+  Method : GET
+  Path received at: /api/jokes/672745f174276e0c7e777b08
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 11:51:46 AM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 11:57:46 AM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"productTitle":"Wireless Headphones","productDescription":"High-quality noise-canceling wireless headphones.","productPrice":99.99,"availableQuantity":"50","productWarehouse":"Warehouse A","productSupplierName":"SoundWave Supplies"} 
+
+  
+  Activity received at: 11/3/2024, 11:58:04 AM
+  Method : POST
+  Path received at: /api/products
+  Status Code: 200
+  Body: {"productTitle":"Wireless Headphones","productDescription":"High-quality noise-canceling wireless headphones.","productPrice":99.99,"availableQuantity":"50","productWarehouse":"Warehouse A","productSupplierName":"SoundWave Supplies"} 
+
+  
+  Activity received at: 11/3/2024, 11:58:46 AM
+  Method : POST
+  Path received at: /api/products
+  Status Code: 200
+  Body: {"productTitle":"Smartwatch","productDescription":"Water-resistant smartwatch with fitness tracking.","productPrice":149.99,"availableQuantity":"120","productWarehouse":"Warehouse B","productSupplierName":"Tech Innovators"} 
+
+  
+  Activity received at: 11/3/2024, 11:58:51 AM
+  Method : POST
+  Path received at: /api/products
+  Status Code: 200
+  Body: {"productTitle":"Smartwatch","productDescription":"Water-resistant smartwatch with fitness tracking.","productPrice":149.99,"availableQuantity":"120","productWarehouse":"Warehouse B","productSupplierName":"Tech Innovators"} 
+
+  
+  Activity received at: 11/3/2024, 12:07:37 PM
+  Method : GET
+  Path received at: /api/products
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 12:07:44 PM
+  Method : GET
+  Path received at: /api/products/6727492c76ee09ec141e0632
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 12:07:47 PM
+  Method : GET
+  Path received at: /api/products
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 12:08:06 PM
+  Method : GET
+  Path received at: /api/products
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 12:08:31 PM
+  Method : PUT
+  Path received at: /api/products/6727492c76ee09ec141e0632
+  Status Code: 200
+  Body: {"productTitle":"Apple Headphones"} 
+
+  
+  Activity received at: 11/3/2024, 12:08:40 PM
+  Method : DELETE
+  Path received at: /api/products/6727492c76ee09ec141e0632
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 12:09:27 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Alice","lName":"Johnson","age":30,"gender":"Female","birthDate":"1993-06-15","location":"New York, USA","email":"alice.johnson@example.com","agreeToTerms":true} 
+
+  
+  Activity received at: 11/3/2024, 12:09:34 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Bob","lName":"Smith","age":45,"gender":"Male","birthDate":"1978-04-20","location":"Toronto, Canada","email":"bob.smith@example.com"} 
+
+  
+  Activity received at: 11/3/2024, 12:09:37 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Clara","lName":"Wang","age":27,"gender":"Female","birthDate":"1996-09-05","location":"Sydney, Australia","agreeToTerms":false} 
+
+  
+  Activity received at: 11/3/2024, 12:09:42 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Clara","lName":"Wang","age":27,"gender":"Female","birthDate":"1996-09-05","location":"Sydney, Australia","agreeToTerms":false} 
+
+  
+  Activity received at: 11/3/2024, 12:09:47 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"David","lName":"Brown","age":34,"gender":"Male","birthDate":"1989-12-01","location":"London, UK","email":"david.brown@example.com","agreeToTerms":true} 
+
+  
+  Activity received at: 11/3/2024, 12:10:07 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Clara","lName":"Wang","age":27,"gender":"Female","birthDate":"1996-09-05","location":"Sydney, Australia","agreeToTerms":true} 
+
+  
+  Activity received at: 11/3/2024, 12:10:23 PM
+  Method : GET
+  Path received at: /api/users/67274bd776ee09ec141e063e
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 12:10:25 PM
+  Method : GET
+  Path received at: /api/users
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 12:10:35 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Emma","lName":"Garcia","age":22,"gender":"Female","birthDate":"2002-03-14","location":"Madrid, Spain","email":"emma.garcia@example.com","agreeToTerms":true} 
+
+  
+  Activity received at: 11/3/2024, 12:10:56 PM
+  Method : PUT
+  Path received at: /api/users/67274bd776ee09ec141e063e
+  Status Code: 200
+  Body: {"fName":"Alica"} 
+
+  
+  Activity received at: 11/3/2024, 12:11:03 PM
+  Method : DELETE
+  Path received at: /api/users/67274bd776ee09ec141e063e
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 1:28:33 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 3:41:47 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:05:37 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:05:55 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:06:00 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:07:17 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:07:24 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:07:37 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:02 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:30 PM
+  Method : GET
+  Path received at: /api/jokes/672746882698d13ee1cd297b
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:47 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:09:52 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:12:10 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:14:49 PM
+  Method : GET
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:17:36 PM
+  Method : GET
+  Path received at: /api/products/6727492c76ee09ec141e0632
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:17:43 PM
+  Method : GET
+  Path received at: /api/products
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:17:49 PM
+  Method : GET
+  Path received at: /api/products/6727495676ee09ec141e0634
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:18:07 PM
+  Method : GET
+  Path received at: /api/products/6727495676ee09ec141e0634
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:18:41 PM
+  Method : GET
+  Path received at: /api/products
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:22:35 PM
+  Method : GET
+  Path received at: /api/users/67274bd776ee09ec141e063e
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:22:37 PM
+  Method : GET
+  Path received at: /api/users
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:22:42 PM
+  Method : GET
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:33:26 PM
+  Method : GET
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:34:04 PM
+  Method : POST
+  Path received at: /api/users
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01","location":"Israel, Tel Aviv","email":"Michelleos.sabagos@example.com","agreeToTerms":true} 
+
+  
+  Activity received at: 11/3/2024, 4:36:44 PM
+  Method : POST
+  Path received at: /api/users/432432
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:36:50 PM
+  Method : POST
+  Path received at: /api/users/43243254654
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:38:47 PM
+  Method : POST
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:40:18 PM
+  Method : POST
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:40:27 PM
+  Method : POST
+  Path received at: /api/users/67274bde76ee09ec141e0640
+  Status Code: 200
+  Body: {"fName":"Michelle","lName":"Sabag","age":40,"gender":"Male","birthDate":"1979-07-01"} 
+
+  
+  Activity received at: 11/3/2024, 4:41:10 PM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Giggles Galore","text":"Parallel lines have so much in common. It’s a shame they’ll never meet."} 
+
+  
+  Activity received at: 11/3/2024, 4:41:15 PM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Funny Joke","text":"This is hilarious!","providerName":""} 
+
+  
+  Activity received at: 11/3/2024, 4:44:25 PM
+  Method : POST
+  Path received at: /api/jokes
+  Status Code: 200
+  Body: {"name":"Funny Joke","text":"This is hilarious!","providerName":""} 
+
+  
+  Activity received at: 11/3/2024, 4:50:19 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:50:21 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd29
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:50:24 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:51:43 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:51:56 PM
+  Method : GET
+  Path received at: /api/jokes/
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:52:05 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:52:08 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd29792
+  Status Code: 200
+  Body: {} 
+
+  
+  Activity received at: 11/3/2024, 4:52:10 PM
+  Method : GET
+  Path received at: /api/jokes/672746832698d13ee1cd2979
+  Status Code: 200
+  Body: {} 
+
+  

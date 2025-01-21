@@ -1,0 +1,156 @@
+.genre-image img {
+  max-width: 13em;
+  display: block;
+  margin: 0 auto;
+  border-radius: 1em;
+  opacity: 0.5;
+  margin: 1em;
+}
+
+.genres-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.button-t {
+  color: white;
+}
+
+.genre-title,
+.shortphrase-genre {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.genre-title {
+  font-size: 2.5em;
+}
+
+.shortphrase-genre {
+  padding: 0.5em;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: opacity 1s;
+  position: relative;
+  width: 100%;
+  color: white;
+}
+
+.genre-card:hover .shortphrase-genre {
+  opacity: 1;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.genre-card:hover .genre-title {
+  color: var(--lighter-red-color);
+  opacity: 1;
+}
+
+.genre-card:hover .genre-direct-btn {
+  opacity: 0.9;
+}
+
+.genre-card:hover .genre-image img {
+  box-shadow: 0em 0em 2em 0.01em var(--color-text);
+  opacity: 1;
+  border-radius: 100em;
+}
+
+.genre-card:hover .button-t {
+  animation: blink 1s infinite;
+}
+
+.special {
+  color: white;
+}
+
+.special:hover {
+  color: black;
+}
+
+.genre-card:hover img:hover {
+  animation: blink 3s infinite;
+}
+
+.genre-card:hover .button-t:hover {
+  animation: none;
+  color: black;
+}
+
+.genre-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 3em;
+  color: white;
+  border-radius: 1em;
+}
+
+.genre-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 14em;
+  border-radius: 0.5em;
+}
+
+.genre-direct-btn {
+  cursor: pointer;
+  background: var(--lighter-red-color);
+  padding: 0.5em;
+  border-radius: 100em;
+  border: none;
+  font-family: "Bebas Neue";
+  font-size: 1.4em;
+  opacity: 0.5;
+}
+
+.page-title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--lighter-red-color);
+  box-shadow: 0em 0em 2.5em -1em;
+  font-size: 1.5em;
+  border-radius: 5em;
+  margin-top: 1em;
+  padding: 0.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1024px) {
+  .genre-title {
+    font-size: 3em;
+    letter-spacing: 0.09em;
+  }
+
+  .shortphrase-genre {
+    font-size: 1.2em;
+  }
+
+  .genres-container {
+    flex-direction: row-reverse;
+    gap: 5em;
+  }
+
+  .genre-info {
+    width: 15em;
+  }
+
+  .genre-card {
+    flex-direction: column;
+  }
+}

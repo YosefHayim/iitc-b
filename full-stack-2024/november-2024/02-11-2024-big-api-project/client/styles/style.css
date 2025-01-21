@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "";
+  src: url();
+}
+
+:root {
+  --font-size: 1em;
+  --hover-button-color: ;
+  --active-button-color: ;
+  --background-color: ;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  min-height: 100vh;
+}
+
+body,
+nav,
+.search-input-container,
+.ul-mobile-top-navbar,
+.welcome-hero-section,
+.feature-section,
+.trending-projects-section,
+.join-community-section,
+.policy-pages-container,
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input-container {
+  margin-bottom: 1em;
+}
+
+li {
+  list-style-type: none;
+}
+
+.policy-pages-container {
+  flex-direction: row;
+  margin-top: 1em;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+footer {
+  position: absolute;
+  margin-bottom: 1em;
+  bottom: 0;
+}
+
+.ul-mobile-top-navbar {
+  position: absolute;
+  margin-top: 4em;
+  top: 0;
+}

@@ -1,0 +1,64 @@
+.return-home-btn {
+  opacity: 0.5;
+  padding: 1em;
+  background: var(--lighter-red-color);
+  color: white;
+  font-size: 1.5em;
+  border-radius: 5em;
+  margin-top: 1em;
+  font-family: "Bebas Neue", "Roboto";
+  cursor: pointer;
+  border: none;
+}
+
+.sorry-message {
+  animation: blink 1s infinite;
+  color: var(--rating--color);
+  font-family: "Bebas Neue", "Roboto";
+  font-size: 2.5em;
+  background: black;
+  border-radius: 0.3em;
+  padding: 0.3em;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.return-home-btn:active,
+.return-home-btn:hover {
+  border: none;
+  opacity: 1;
+}
+
+body > main > div.error-container > p {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+body > main > div.error-container > span {
+  margin-top: 1em;
+  font-size: 2em;
+  font-family: "Bebas Neue", "Roboto";
+}
+
+.error-img-404 {
+  width: 15em;
+  border-radius: 100em;
+}
+
+@media screen and (min-width: 1024px) {
+  .error-img-404 {
+    width: 30em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .return-home-btn {
+    font-size: 1.8em;
+  }
+}

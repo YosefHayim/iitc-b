@@ -1,0 +1,270 @@
+/* Font face definitions */
+@font-face {
+  font-family: "Lato-light";
+  src: url("./fonts/Lato-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lato-bold";
+  src: url("./fonts/Lato-Bold.ttf") format("truetype");
+}
+
+/* General reset and box-sizing */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* HTML and body styling */
+html,
+body {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato-light", sans-serif;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  grid-template-rows: auto;
+  gap: 2rem;
+  margin: auto;
+  text-align: center;
+}
+
+/* Title styling */
+.title {
+  margin-top: 3rem;
+  font-family: "Lato-bold";
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+body > div.filling-form > form > h2 {
+  margin-top: 3rem;
+  font-family: "Lato-bold";
+  border-radius: 5px;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 5px;
+}
+
+#department-employees {
+  padding: 15px;
+}
+
+/* Filter department styling */
+.filter-department {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: lightcoral;
+  border-radius: 5px;
+  color: white;
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+/* Employee list and info layout */
+.employee-info,
+.employee-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.employee-info {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.employee-list {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* List item styling */
+li {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+li:hover,
+.submit:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Button styling */
+button,
+.submit {
+  font-weight: 700;
+  border-radius: 5px;
+  border: 0.1px solid white;
+  padding: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.submit {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
+
+.update-button {
+  background-color: #dbdbdb;
+  color: white;
+}
+
+.edit-button {
+  background-color: lightcoral;
+  color: white;
+}
+
+.submit {
+  background-color: rgb(18, 205, 18);
+  color: white;
+}
+
+/* Button hover effects */
+.delete-button:hover,
+.edit-button:hover,
+.update-button:hover,
+#fname:hover,
+#lname:hover,
+#age:hover,
+#start-date:hover,
+#id:hover,
+#salary:hover,
+#department-employees:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: black;
+}
+
+.filter-department:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.profile-image:hover {
+  transform: translateY(-2px) scale(1.25);
+}
+
+.salary:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: hsla(120, 100%, 50%, 0.5);
+  font-size: large;
+  font-weight: 900;
+}
+
+/* Action buttons layout */
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.formData {
+  gap: 0.4rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.filling-form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  background-color: hsl(0, 0%, 90%);
+}
+
+/* Filter data styling */
+.filter-data-department {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: lightcoral;
+  border-radius: 5px;
+  color: white;
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+/* Select input styling */
+select {
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-align-last: center;
+}
+
+/* Select wrapper for better UI */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Image styling */
+img {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: -12px;
+  margin-left: 15px;
+}
+
+/* Paragraph styling */
+p {
+  font-size: 0.8rem;
+}
+
+.no-employee-message {
+  font-family: "Lato-bold";
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  display: inline-block;
+}

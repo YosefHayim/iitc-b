@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/post-a-project.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="ul-mobile-top-navbar">
+        <div class="search-input-container">
+          <input type="text" placeholder="Search for a project" />
+        </div>
+        <li>
+          <a href="../index.html"
+            ><img src="" alt="Logo" class="logo-img-mobile"
+          /></a>
+        </li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./about-us.html">About us</a></li>
+        <li><a href="./projects-data.html">Past Projects</a></li>
+        <li><a href="./contact-us.html">Contact Us</a></li>
+        <li><a href="./post-a-project.html">Get a Freelance</a></li>
+        <li><a href="./login.html">Login</a></li>
+        <li><a href="./sign-up.html">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Hire an expert!</h1>
+      <form class="post-a-project-form">
+        <div class="name-project-container">
+          <label for="name">Project Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="project-name"
+            required
+            minlength="3"
+            placeholder="Enter project name"
+          />
+        </div>
+
+        <div class="description-project-container">
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            required
+            minlength="3"
+            placeholder="Describe your project"
+          ></textarea>
+        </div>
+
+        <div class="status-project-container">
+          <label for="status">Status:</label>
+          <select id="status" name="status">
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+          </select>
+        </div>
+
+        <div class="submit-project-container">
+          <button type="submit">Submit Project</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <nav>
+        <ul class="ul-mobile-footer-navbar">
+          <li>
+            <a href="../index.html"
+              ><img src="" alt="Logo" class="logo-img-mobile"
+            /></a>
+          </li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./about-us.html">About us</a></li>
+          <li><a href="./projects-data.html">Past Projects</a></li>
+          <li><a href="./contact-us.html">Contact Us</a></li>
+          <li><a href="./post-a-project.html">Get a Freelance</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./sign-up.html">Sign up</a></li>
+        </ul>
+
+        <div>
+          <ul class="policy-pages-container">
+            <li><a href="./terms-of-service.html">Terms Of Service</a></li>
+            <li><a href="./user-agreement.html">User Agreement</a></li>
+            <li><a href="./privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+    <script type="module" src="../scripts/global/main.js"></script>
+  </body>
+</html>

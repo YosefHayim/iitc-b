@@ -140,3 +140,19 @@
 # print(theater.book_ticket(4))
 # print(theater.cancel_ticket(2))
 # print(theater.check_seats())
+
+
+# inheritance
+# class Animal:
+#     def speak(self):
+#         return "I make a sound"
+
+# class Dog(Animal):
+#     def speak(self):
+#         return super().speak() + " and I bark"
+
+# # Using the Dog class
+# dog = Dog()
+# print(dog.speak())  # Output: "I make a sound and I bark"
+
+# using the _attribute wont allow to change outside of the class only inside with a fn.

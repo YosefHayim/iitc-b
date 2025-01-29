@@ -61,4 +61,13 @@ def product_categories():
             print('It is valid.')
             driver.quit()
 
+
+def get_product_imgs():
+  driver.get('https://atid.store/store/')
+  all_imgs_of_page = driver.find_elements(By.TAG_NAME,'img')
+  for img in all_imgs_of_page:
+      img_url = img.get_attribute("src") 
+      print(img_url)
+  driver.quit() 
+
 time.sleep(1000)

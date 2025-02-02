@@ -1,0 +1,21 @@
+2025-02-02 15:55:25,390 - INFO - starting Automation Test ... ✅
+2025-02-02 15:55:26,269 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 15:55:26,269 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 15:55:27,295 - INFO - Checking the search input
+2025-02-02 15:55:27,303 - INFO - ✅ search input found!
+2025-02-02 15:55:27,400 - INFO - ✅ The search input is displayed !
+2025-02-02 15:55:27,400 - INFO - Checking the dark/light mode checkbox
+2025-02-02 15:55:27,403 - INFO - ✅ dark/light mode checkbox found!
+2025-02-02 15:55:27,442 - INFO - ✅ The dark/light mode checkbox is displayed !
+2025-02-02 15:55:27,442 - INFO - Checking the cart button
+2025-02-02 15:55:27,446 - INFO - ✅ cart button found!
+2025-02-02 15:55:27,478 - INFO - ✅ The cart button is displayed !
+2025-02-02 15:55:27,479 - INFO - Checking the broken action button
+2025-02-02 15:55:27,482 - INFO - ✅ broken action button found!
+2025-02-02 15:55:27,528 - INFO - ✅ The broken action button is displayed !
+2025-02-02 15:55:27,528 - INFO - Checking the Featured Products h4
+2025-02-02 15:55:27,532 - INFO - ✅ Featured Products h4 found!
+2025-02-02 15:55:27,578 - INFO - ✅ The Featured Products h4 is displayed !
+2025-02-02 15:55:27,578 - INFO - Checking email field behavior...
+2025-02-02 15:55:32,731 - ERROR - ❌ Email field was not found in time!
+2025-02-02 15:55:32,731 - INFO - Checking email field behavior...

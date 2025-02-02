@@ -1,0 +1,6 @@
+2025-02-02 16:11:40,232 - INFO - starting Automation Test ... ✅
+2025-02-02 16:11:40,892 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 16:11:40,893 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 16:11:42,023 - INFO - Checking the Featured Products h4
+2025-02-02 16:11:42,032 - INFO - ✅ Featured Products h4 found!
+2025-02-02 16:11:42,121 - INFO - ✅ The Featured Products h4 is displayed !

@@ -1,0 +1,12 @@
+2025-02-02 16:13:50,785 - INFO - starting Automation Test ... ✅
+2025-02-02 16:13:56,652 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 16:13:56,652 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 16:13:57,680 - INFO - Checking the Featured Products h4
+2025-02-02 16:13:57,685 - INFO - ✅ Featured Products h4 found!
+2025-02-02 16:13:58,757 - INFO - ✅ The Featured Products h4 is displayed !
+2025-02-02 16:13:58,757 - INFO - Checking email field behavior...
+2025-02-02 16:14:03,859 - ERROR - ❌ Email field was not found in time!
+2025-02-02 16:14:03,860 - INFO - Checking email field behavior...
+2025-02-02 16:14:08,992 - ERROR - ❌ Email field was not found in time!
+2025-02-02 16:14:08,992 - INFO - Checking email field behavior...
+2025-02-02 16:14:14,097 - ERROR - ❌ Email field was not found in time!

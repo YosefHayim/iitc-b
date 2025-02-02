@@ -1,0 +1,15 @@
+2025-02-02 15:32:57,405 - INFO - starting Automation Test ... ✅
+2025-02-02 15:33:04,190 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 15:33:04,191 - WARNING - Metadata cannot be written in cache (/Users/havivbitton/.cache/selenium): Permission denied (os error 13)
+2025-02-02 15:33:05,238 - INFO - Checking the search input
+2025-02-02 15:33:05,244 - INFO - ✅ search input found!
+2025-02-02 15:33:05,325 - INFO - ✅ The search input is displayed !
+2025-02-02 15:33:05,325 - INFO - Checking the dark/light mode checkbox
+2025-02-02 15:33:05,328 - INFO - ✅ dark/light mode checkbox found!
+2025-02-02 15:33:05,368 - INFO - ✅ The dark/light mode checkbox is displayed !
+2025-02-02 15:33:05,368 - INFO - Checking the cart button
+2025-02-02 15:33:05,372 - INFO - ✅ cart button found!
+2025-02-02 15:33:05,407 - INFO - ✅ The cart button is displayed !
+2025-02-02 15:33:05,407 - INFO - Checking the broken action button
+2025-02-02 15:33:05,411 - INFO - ✅ broken action button found!
+2025-02-02 15:33:05,454 - INFO - ✅ The broken action button is displayed !

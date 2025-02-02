@@ -1,0 +1,10 @@
+2025-02-02 16:16:04,435 - INFO - starting Automation Test ... ✅
+2025-02-02 16:16:05,717 - INFO - Checking the Featured Products h4
+2025-02-02 16:16:05,722 - INFO - ✅ Featured Products h4 found!
+2025-02-02 16:16:07,155 - INFO - ✅ The Featured Products h4 is displayed !
+2025-02-02 16:16:07,155 - INFO - Checking email field behavior...
+2025-02-02 16:16:12,279 - ERROR - ❌ Email field was not found in time!
+2025-02-02 16:16:12,279 - INFO - Checking email field behavior...
+2025-02-02 16:16:17,388 - ERROR - ❌ Email field was not found in time!
+2025-02-02 16:16:17,388 - INFO - Checking email field behavior...
+2025-02-02 16:16:22,480 - ERROR - ❌ Email field was not found in time!

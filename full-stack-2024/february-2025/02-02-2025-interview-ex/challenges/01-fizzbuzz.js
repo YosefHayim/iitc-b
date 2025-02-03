@@ -14,7 +14,20 @@
 // 3. Think about the ordering of conditions and possible edge cases.
 // 4. Test your function with various values of N.
 function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i > 0 && i % 3 === 0 && i % 5 === 0) {
+      console.log(`FizzBuzz`);
+    } else if (i > 0 && i % 5 === 0) {
+      console.log(`Buzz`);
+    } else if (i > 0 && i % 3 === 0) {
+      console.log(`Fizz`);
+    } else {
+      console.log(i);
+    }
+  }
   // TODO: Use a loop from 1 to n.
   // TODO: For each iteration, check the conditions in the suggested order.
   // TODO: Console.log the appropriate string or the number.
 }
+
+fizzBuzz(15);

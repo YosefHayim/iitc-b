@@ -24,9 +24,9 @@ def check_error(driver):
 
 @pytest.mark.parametrize('credentials ,is_valid',[
   ({'username':'usertest','password':'password123'},True)
-  ({'username':'usertest','password':'password123'},False)
-  ({'username':'usertest','password':'password123'},False)
-  ({'username':'usertest','password':'password123'},False)
+  ({'username':'testuser','password':'kokoloko'},False)
+  ({'username':'baba','password':'password123'},False)
+  ({'username':'baba','password':'kokoloko'},False)
   ])
 def test_login(driver,credentials,is_valid):
   try:

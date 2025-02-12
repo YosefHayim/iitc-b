@@ -32,14 +32,14 @@ def test_login(driver,credentials,is_valid):
   try:
     login_page = LoginPage(driver)
     login_page.access_page()
-    login_page.enter_username(credentials.username)
-    login_page.enter_password(credentials.password)
+    login_page.enter_username(credentials['username'])
+    login_page.enter_password(credentials['password'])
     login_page.submit_login()
 
     if is_valid:
       check_title(driver.title,'Dashboard')
     else:
-      assert check_error()
+      assert check_error(driver)
 
   except Exception as e:
     print('An exception occurred',e)

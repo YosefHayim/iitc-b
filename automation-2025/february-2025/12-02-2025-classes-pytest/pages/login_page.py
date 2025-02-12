@@ -18,6 +18,8 @@ class LoginPage:
 
   def submit_login(self):
     self.wait.until(EC.presence_of_element_located(self.submit_btn)).click()
+
+  def access_page(self,driver):
+    driver.get('http://127.0.0.1:5500/12-02-2025-classes-pytest/client/index.html')
   
-
-
+  

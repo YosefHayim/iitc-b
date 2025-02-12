@@ -195,11 +195,83 @@ def add_to_cart():
 
     log_test_case(test_id, scenario, steps, expected, actual, status)
 
+
+    # Test Case 5: fill checkout information
+    test_id = "TC_105"
+    scenario = "User fill checkout information"
+    steps = "filling inputs information"
+    expected = "successfully place the order"
+
+    try:
+        # Billing First Name
+        first_name = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="billing_first_name"]')))
+        assert first_name is not None
+        first_name.send_keys('Joseph')
+        take_screenshot("first_name_input")
+        
+        # Billing Last Name
+        last_name = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="billing_last_name"]')))
+        assert last_name is not None
+        last_name.send_keys('Doe')
+        take_screenshot("last_name_input")
+
+        # Billing Company
+        company = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="billing_company"]')))
+        assert company is not None
+        company.send_keys('TechCorp')
+        take_screenshot("company_input")
+
+        # Billing Address
+        address = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="billing_address_1"]')))
+        assert address is not None
+        address.send_keys('123 Main Street')
+        take_screenshot("address_input")
+
+        # Town/ city
+        town = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="billing_city"]')))
+        assert address is not None
+        town.send_keys('holon')
+        take_screenshot('town_input')
+
+        # Billing Postcode
+        postcode = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="billing_postcode"]')))
+        assert postcode is not None
+        postcode.send_keys('123456')
+        take_screenshot("postcode_input")
+
+        # Billing Phone
+        phone = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="billing_phone"]')))
+        assert phone is not None
+        phone.send_keys('1234567890')
+        take_screenshot("phone_input")
+
+        # Billing Email
+        email = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="billing_email"]')))
+        assert email is not None
+        email.send_keys('joseph@example.com')
+        take_screenshot("email_input")
+
+        # Place Order Button
+        place_order = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="place_order"]')))
+        assert place_order is not None
+        place_order.click()
+        take_screenshot("order_placed")
+
+        actual = "Filled all billing inputs and placed order"
+        status = "Pass"
+
+    except Exception as e:
+        actual = f"Failed to complete checkout form - {str(e)}"
+        status = "Fail"
+
+    log_test_case(test_id, scenario, steps, expected, actual, status)
+
+
 # Run the add to cart function
 add_to_cart()
 
 logging.info("Add to Cart Test completed successfully")
-time.sleep(5)
+time.sleep(5000)
 
 driver.quit()
 logging.info("Closed WebDriver")

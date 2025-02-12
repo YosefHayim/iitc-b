@@ -1,0 +1,66 @@
+2025-02-12 13:53:40,850 - INFO - Starting Automation Test... \u2705
+2025-02-12 13:53:44,196 - INFO - Opened website: https://atid.store/
+2025-02-12 13:53:45,206 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\shoes_item_page_13-53-44.png
+2025-02-12 13:53:45,206 - INFO - 
+    ==============================
+    Test Case ID: TC_101
+    Test Scenario: User navigates to Shoes Page
+    Steps: Click on shoes item link
+    Expected Result: Shoes product page should open
+    Actual Result: Shoes product page opened successfully
+    Status: Pass
+    ==============================
+    
+2025-02-12 13:53:46,097 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\add_to_cart_13-53-45.png
+2025-02-12 13:53:46,098 - INFO - 
+    ==============================
+    Test Case ID: TC_102
+    Test Scenario: User adds a product to cart
+    Steps: Click 'Add to Cart' button
+    Expected Result: Product should be added to cart
+    Actual Result: Product added to cart successfully
+    Status: Pass
+    ==============================
+    
+2025-02-12 13:53:47,177 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\cart_page_13-53-47.png
+2025-02-12 13:53:47,177 - INFO - 
+    ==============================
+    Test Case ID: TC_103
+    Test Scenario: User navigates to Cart Page
+    Steps: Click 'Go to Cart' button
+    Expected Result: Cart page should open
+    Actual Result: Cart page opened successfully
+    Status: Pass
+    ==============================
+    
+2025-02-12 13:53:47,982 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\checkout_page_13-53-47.png
+2025-02-12 13:53:47,982 - INFO - 
+    ==============================
+    Test Case ID: TC_104
+    Test Scenario: User proceeds to checkout
+    Steps: Click 'Checkout' button
+    Expected Result: Checkout page should open
+    Actual Result: Checkout page opened successfully
+    Status: Pass
+    ==============================
+    
+2025-02-12 13:53:48,275 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\first_name_input_13-53-48.png
+2025-02-12 13:53:48,486 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\last_name_input_13-53-48.png
+2025-02-12 13:53:48,724 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\company_input_13-53-48.png
+2025-02-12 13:53:48,986 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\address_input_13-53-48.png
+2025-02-12 13:53:49,215 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\town_input_13-53-49.png
+2025-02-12 13:53:49,429 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\postcode_input_13-53-49.png
+2025-02-12 13:53:49,742 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\phone_input_13-53-49.png
+2025-02-12 13:53:50,055 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\email_input_13-53-49.png
+2025-02-12 13:53:50,518 - INFO - Screenshot taken: screenshots_2025-02-12_13-53-40\order_placed_13-53-50.png
+2025-02-12 13:53:50,518 - INFO - 
+    ==============================
+    Test Case ID: TC_105
+    Test Scenario: User fill checkout information
+    Steps: filling inputs information
+    Expected Result: successfully place the order
+    Actual Result: Filled all billing inputs and placed order
+    Status: Pass
+    ==============================
+    
+2025-02-12 13:53:50,518 - INFO - Add to Cart Test completed successfully

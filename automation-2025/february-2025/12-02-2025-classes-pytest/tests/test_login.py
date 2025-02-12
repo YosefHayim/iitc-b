@@ -1,9 +1,9 @@
 import pytest
 from selenium import webdriver
-from pages.login_page import LoginPage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from pages.login_page import LoginPage
 
 @pytest.fixture
 def driver():
@@ -23,11 +23,11 @@ def check_error(driver):
     return False
 
 @pytest.mark.parametrize('credentials ,is_valid',[
-  ({'username':'usertest','password':'password123'},True)
-  ({'username':'testuser','password':'kokoloko'},False)
-  ({'username':'baba','password':'password123'},False)
+  ({'username':'usertest','password':'password123'},True),
+  ({'username':'testuser','password':'kokoloko'},False),
+  ({'username':'baba','password':'password123'},False),
   ({'username':'baba','password':'kokoloko'},False)
-  ])
+])
 def test_login(driver,credentials,is_valid):
   try:
     login_page = LoginPage(driver)

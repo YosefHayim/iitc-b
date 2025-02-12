@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 class DashboardPage():
     def __init__(self  ,driver):
@@ -13,4 +12,3 @@ class DashboardPage():
 
     def check_url(self,driver,current_url):
         return driver.url == current_url
-    

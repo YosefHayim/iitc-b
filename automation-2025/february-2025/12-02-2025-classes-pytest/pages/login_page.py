@@ -8,7 +8,7 @@ class LoginPage:
     self.username_input = (By.ID,'username')
     self.password_input = (By.ID,'password')
     self.submit_btn = (By.TAG_NAME,'button')
-    self.wait = WebDriverWait(driver,10)
+    self.wait = WebDriverWait(driver,30)
 
   def enter_username(self,username):
     self.wait.until(EC.presence_of_element_located(self.username_input)).send_keys(username)
@@ -19,7 +19,8 @@ class LoginPage:
   def submit_login(self):
     self.wait.until(EC.presence_of_element_located(self.submit_btn)).click()
 
-  def access_page(self,driver):
-    driver.get('http://127.0.0.1:5500/12-02-2025-classes-pytest/client/index.html')
+  def access_page(self, url):
+      self.driver.get(url)
+
   
   

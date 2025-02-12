@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.login_page import LoginPage
+import time
 
 @pytest.fixture
 def driver():
@@ -31,10 +32,14 @@ def check_error(driver):
 def test_login(driver,credentials,is_valid):
   try:
     login_page = LoginPage(driver)
-    login_page.access_page()
+    login_page.access_page('http://127.0.0.1:5500/client/')
+    time.sleep(3)
     login_page.enter_username(credentials['username'])
+    time.sleep(3)
     login_page.enter_password(credentials['password'])
+    time.sleep(3)
     login_page.submit_login()
+    time.sleep(3)
 
     if is_valid:
       check_title(driver.title,'Dashboard')

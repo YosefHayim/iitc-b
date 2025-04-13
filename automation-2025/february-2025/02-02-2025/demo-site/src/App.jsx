@@ -1,10 +1,9 @@
-import React from 'react';
-import Header from './components/Header';
-import SearchInput from './components/SearchInput';
-import SubmitButton from './components/SubmitButton';
-import ErrorSimulator from './components/ErrorSimulator';
-import NavigationLink from './components/NavigationLink';
-import LoginForm from './components/LoginForm';
+import Header from "./components/Header";
+import SearchInput from "./components/SearchInput";
+import SubmitButton from "./components/SubmitButton";
+import ErrorSimulator from "./components/ErrorSimulator";
+import NavigationLink from "./components/NavigationLink";
+import LoginForm from "./components/LoginForm";
 
 const App = () => {
   return (
